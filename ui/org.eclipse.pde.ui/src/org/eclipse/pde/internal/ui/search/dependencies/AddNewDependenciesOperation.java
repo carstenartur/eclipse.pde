@@ -102,9 +102,9 @@ public class AddNewDependenciesOperation extends WorkspaceModifyOperation {
 		Set<String> manifestPlugins = findManifestPlugins(bundle, ignorePkgs);
 
 		List<String> result = new LinkedList<>();
-		for (int i = 0; i < secDeps.length; i++)
-			if (!manifestPlugins.contains(secDeps[i]))
-				result.add(secDeps[i]);
+		for (String secDep : secDeps)
+			if (!manifestPlugins.contains(secDep))
+				result.add(secDep);
 
 		return result.toArray(new String[result.size()]);
 	}
@@ -404,12 +404,10 @@ public class AddNewDependenciesOperation extends WorkspaceModifyOperation {
 		if (bundle == null)
 			return;
 		HashSet<String> added = new HashSet<>();
-		Iterator<String> it = depsToAdd.iterator();
 		IManifestHeader mheader = bundle.getManifestHeader(Constants.REQUIRE_BUNDLE);
 		if (mheader instanceof RequireBundleHeader) {
 			RequireBundleHeader header = (RequireBundleHeader) mheader;
-			while (it.hasNext()) {
-				String pluginId = it.next();
+			for (String pluginId : depsToAdd) {
 				if (!added.contains(pluginId))
 					try {
 						header.addBundle(pluginId);
@@ -439,11 +437,9 @@ public class AddNewDependenciesOperation extends WorkspaceModifyOperation {
 
 	protected final void addRequireBundles(final Collection<String> depsToAdd, final IPluginBase base, IBuildEntry entry) {
 		HashSet<String> added = new HashSet<>();
-		Iterator<String> it = depsToAdd.iterator();
 		// must call getImports to initialize IPluginBase.  Otherwise the .add(plugin) will not trigger a modification event.
 		base.getImports();
-		while (it.hasNext()) {
-			String pluginId = it.next();
+		for (String pluginId : depsToAdd) {
 			if (!added.contains(pluginId))
 				try {
 					PluginImport plugin = new PluginImport();

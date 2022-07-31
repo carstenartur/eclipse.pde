@@ -525,9 +525,7 @@ public class TargetPlatformPreferencePage extends PreferencePage implements IWor
 		if (service != null) {
 			try {
 				fPrevious = service.getWorkspaceTargetDefinition();
-				Iterator<ITargetDefinition> iterator = fTargets.iterator();
-				while (iterator.hasNext()) {
-					ITargetDefinition target = iterator.next();
+				for (ITargetDefinition target : fTargets) {
 					if (target.getHandle().equals(fPrevious.getHandle())) {
 						fActiveTarget = target;
 						fTableViewer.setCheckedElements(new Object[] {fActiveTarget});
@@ -883,10 +881,7 @@ public class TargetPlatformPreferencePage extends PreferencePage implements IWor
 			}
 		}
 
-		// Remove any definitions that have been removed
-		Iterator<ITargetDefinition> iterator = fRemoved.iterator();
-		while (iterator.hasNext()) {
-			ITargetDefinition target = iterator.next();
+		for (ITargetDefinition target : fRemoved) {
 			try {
 				service.deleteTarget(target.getHandle());
 			} catch (CoreException e) {
