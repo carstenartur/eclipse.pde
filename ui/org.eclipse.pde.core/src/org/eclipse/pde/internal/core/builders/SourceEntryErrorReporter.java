@@ -485,19 +485,17 @@ public class SourceEntryErrorReporter extends BuildErrorReporter {
 						default :
 							//error - targeted to diff libs
 							String erringSrcFolders = join(sourceFolders.toArray(new SourceFolder[sourceFolders.size()]));
-							for (int j = 0; j < sourceFolders.size(); j++) {
-								SourceFolder srcFolder = sourceFolders.get(j);
-								for (int k = 0; k < srcFolder.getLibs().size(); k++) {
-									String libName = srcFolder.getLibs().get(k);
-									String message = NLS.bind(PDECoreMessages.SourceEntryErrorReporter_DifferentTargetLibrary, erringSrcFolders);
-									prepareError(PROPERTY_SOURCE_PREFIX + libName, srcFolder.getToken(), message, PDEMarkerFactory.M_ONLY_CONFIG_SEV, fSrcLibSeverity,CompilerFlags.P_BUILD_SOURCE_LIBRARY, PDEMarkerFactory.CAT_OTHER);
-								}
+						for (SourceFolder srcFolder : sourceFolders) {
+							for (String libName : srcFolder.getLibs()) {
+								String message = NLS.bind(PDECoreMessages.SourceEntryErrorReporter_DifferentTargetLibrary, erringSrcFolders);
+								prepareError(PROPERTY_SOURCE_PREFIX + libName, srcFolder.getToken(), message, PDEMarkerFactory.M_ONLY_CONFIG_SEV, fSrcLibSeverity,CompilerFlags.P_BUILD_SOURCE_LIBRARY, PDEMarkerFactory.CAT_OTHER);
 							}
+						}
 					}
 				}
-				for (int i = 0; i < outputFolderLibs.size(); i++) {
-					String message = NLS.bind(PDECoreMessages.SourceEntryErrorReporter_ExtraOutputFolder, outputFolder.getPath().toString(), PROPERTY_SOURCE_PREFIX + outputFolderLibs.get(i));
-					prepareError(PROPERTY_OUTPUT_PREFIX + outputFolderLibs.get(i), outputFolder.getToken(), message, PDEMarkerFactory.B_REMOVAL, fOututLibSeverity,CompilerFlags.P_BUILD_OUTPUT_LIBRARY, PDEMarkerFactory.CAT_OTHER);
+				for (String outputFolderLib : outputFolderLibs) {
+					String message = NLS.bind(PDECoreMessages.SourceEntryErrorReporter_ExtraOutputFolder, outputFolder.getPath().toString(), PROPERTY_SOURCE_PREFIX + outputFolderLib);
+					prepareError(PROPERTY_OUTPUT_PREFIX + outputFolderLib, outputFolder.getToken(), message, PDEMarkerFactory.B_REMOVAL, fOututLibSeverity,CompilerFlags.P_BUILD_OUTPUT_LIBRARY, PDEMarkerFactory.CAT_OTHER);
 				}
 
 				if (outputFolder.getDupeLibName() != null) {
@@ -565,8 +563,7 @@ public class SourceEntryErrorReporter extends BuildErrorReporter {
 				}
 
 				ArrayList<String> srcLibs = sourceFolder.getLibs();
-				for (int i = 0; i < srcLibs.size(); i++) {
-					String libName = srcLibs.get(i);
+				for (String libName : srcLibs) {
 					prepareError(PROPERTY_SOURCE_PREFIX + libName, sourceFolder.getToken(), message, PDEMarkerFactory.B_REMOVAL, fSrcLibSeverity,CompilerFlags.P_BUILD_SOURCE_LIBRARY, PDEMarkerFactory.CAT_OTHER);
 				}
 			} else {
@@ -605,10 +602,7 @@ public class SourceEntryErrorReporter extends BuildErrorReporter {
 
 		if (fEncodingSeverity == CompilerFlags.ERROR || fEncodingSeverity == CompilerFlags.WARNING
 				|| fEncodingSeverity == CompilerFlags.INFO) {
-			// build map of expected encodings
-			Iterator<SourceFolder> iterator = toValidate.iterator();
-			while (iterator.hasNext()) {
-				SourceFolder sourceFolder = iterator.next();
+			for (SourceFolder sourceFolder : toValidate) {
 				IPath sourcePath = sourceFolder.getPath();
 				IContainer container = fProject;
 				if (!sourcePath.isEmpty() && !sourcePath.isRoot()) {
@@ -688,9 +682,7 @@ public class SourceEntryErrorReporter extends BuildErrorReporter {
 							prepareError(name, null, NLS.bind(PDECoreMessages.SourceEntryErrorReporter_5, lib), PDEMarkerFactory.B_REMOVAL,fEncodingSeverity,CompilerFlags.P_BUILD_ENCODINGS, PDEMarkerFactory.CAT_OTHER);
 						} else {
 							Map<IResource, String> map = new HashMap<>();
-							Iterator<EncodingEntry> iter = workspace.iterator();
-							while (iter.hasNext()) {
-								EncodingEntry ee = iter.next();
+							for (EncodingEntry ee : workspace) {
 								map.put(ee.getResource(), ee.getEncoding());
 							}
 							iter = encodings.iterator();
@@ -708,9 +700,7 @@ public class SourceEntryErrorReporter extends BuildErrorReporter {
 							}
 							// anything left in the workspace map?
 							if (!map.isEmpty()) {
-								Iterator<Entry<IResource, String>> iter2 = map.entrySet().iterator();
-								while (iter2.hasNext()) {
-									Entry<IResource, String> en = iter2.next();
+								for (Entry<IResource, String> en : map.entrySet()) {
 									IResource res = en.getKey();
 									String expected = en.getValue();
 									EncodingEntry missing = new EncodingEntry(res, expected);
@@ -739,9 +729,7 @@ public class SourceEntryErrorReporter extends BuildErrorReporter {
 				Entry<String, List<EncodingEntry>> entry = iter2.next();
 				String lib = entry.getKey();
 				List<EncodingEntry> encodings = entry.getValue();
-				Iterator<EncodingEntry> iterator2 = encodings.iterator();
-				while (iterator2.hasNext()) {
-					EncodingEntry encoding = iterator2.next();
+				for (EncodingEntry encoding : encodings) {
 					String m = NLS.bind(PDECoreMessages.SourceEntryErrorReporter_10, new String[] {encoding.getEncoding(), encoding.getResource().getProjectRelativePath().toString()});
 					prepareError(PROPERTY_JAVAC_CUSTOM_ENCODINGS_PREFIX + lib, encoding.getValue(), m, PDEMarkerFactory.B_ADDITION, fEncodingSeverity, CompilerFlags.P_BUILD_ENCODINGS,PDEMarkerFactory.CAT_OTHER);
 				}

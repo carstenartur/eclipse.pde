@@ -412,32 +412,32 @@ public class Site extends SiteObject implements ISite {
 
 	@Override
 	public boolean isValid() {
-		for (int i = 0; i < features.size(); i++) {
-			ISiteFeature feature = (ISiteFeature) features.get(i);
+		for (ISiteObject feature2 : features) {
+			ISiteFeature feature = (ISiteFeature) feature2;
 			if (!feature.isValid()) {
 				return false;
 			}
 		}
-		for (int i = 0; i < bundles.size(); i++) {
-			ISiteBundle bundle = (ISiteBundle) bundles.get(i);
+		for (ISiteObject bundle2 : bundles) {
+			ISiteBundle bundle = (ISiteBundle) bundle2;
 			if (!bundle.isValid()) {
 				return false;
 			}
 		}
-		for (int i = 0; i < archives.size(); i++) {
-			ISiteArchive archive = (ISiteArchive) archives.get(i);
+		for (ISiteObject element : archives) {
+			ISiteArchive archive = (ISiteArchive) element;
 			if (!archive.isValid()) {
 				return false;
 			}
 		}
-		for (int i = 0; i < categoryDefs.size(); i++) {
-			ISiteCategoryDefinition def = (ISiteCategoryDefinition) categoryDefs.get(i);
+		for (ISiteObject categoryDef : categoryDefs) {
+			ISiteCategoryDefinition def = (ISiteCategoryDefinition) categoryDef;
 			if (!def.isValid()) {
 				return false;
 			}
 		}
-		for (int i = 0; i < repositoryReferences.size(); i++) {
-			IRepositoryReference repo = (IRepositoryReference) repositoryReferences.get(i);
+		for (ISiteObject element : repositoryReferences) {
+			IRepositoryReference repo = (IRepositoryReference) element;
 			if (!repo.isValid()) {
 				return false;
 			}
@@ -446,8 +446,7 @@ public class Site extends SiteObject implements ISite {
 	}
 
 	private void writeChildren(String indent, Vector<ISiteObject> children, PrintWriter writer) {
-		for (int i = 0; i < children.size(); i++) {
-			IWritable writable = children.get(i);
+		for (ISiteObject writable : children) {
 			writable.write(indent, writer);
 		}
 	}

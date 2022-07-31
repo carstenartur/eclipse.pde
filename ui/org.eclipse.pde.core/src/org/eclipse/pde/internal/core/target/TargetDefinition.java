@@ -26,7 +26,6 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -484,9 +483,9 @@ public class TargetDefinition implements ITargetDefinition {
 				// Check if any of the included bundles have problems
 				// build status from bundle list
 				TargetBundle[] bundles = getBundles();
-				for (int i = 0; i < bundles.length; i++) {
-					if (!bundles[i].getStatus().isOK()) {
-						result.add(bundles[i].getStatus());
+				for (TargetBundle bundle : bundles) {
+					if (!bundle.getStatus().isOK()) {
+						result.add(bundle.getStatus());
 					}
 				}
 
@@ -726,9 +725,7 @@ public class TargetDefinition implements ITargetDefinition {
 				TargetBundle rb = list.get(list.size() - 1);
 				return rb;
 			}
-			Iterator<TargetBundle> iterator = list.iterator();
-			while (iterator.hasNext()) {
-				TargetBundle bundle = iterator.next();
+			for (TargetBundle bundle : list) {
 				if (bundle.getBundleInfo().getVersion().equals(version)) {
 					return bundle;
 				}

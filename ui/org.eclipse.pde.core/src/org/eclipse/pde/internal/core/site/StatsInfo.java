@@ -141,13 +141,11 @@ public class StatsInfo extends SiteObject implements IStatsInfo {
 			writer.println(">"); //$NON-NLS-1$
 			String indent2 = indent + INDENT;
 			// features
-			for (int i = 0; i < featureArtifacts.size(); i++) {
-				IWritable writable = featureArtifacts.get(i);
+			for (ISiteObject writable : featureArtifacts) {
 				writable.write(indent2, writer);
 			}
 			// bundles
-			for (int i = 0; i < bundleArtifacts.size(); i++) {
-				IWritable writable = bundleArtifacts.get(i);
+			for (ISiteObject writable : bundleArtifacts) {
 				writable.write(indent2, writer);
 			}
 			writer.println(indent + "</stats>"); //$NON-NLS-1$
@@ -160,14 +158,14 @@ public class StatsInfo extends SiteObject implements IStatsInfo {
 
 	@Override
 	public boolean isValid() {
-		for (int i = 0; i < featureArtifacts.size(); i++) {
-			ISiteFeature feature = (ISiteFeature) featureArtifacts.get(i);
+		for (ISiteObject featureArtifact : featureArtifacts) {
+			ISiteFeature feature = (ISiteFeature) featureArtifact;
 			if (!feature.isValid()) {
 				return false;
 			}
 		}
-		for (int i = 0; i < bundleArtifacts.size(); i++) {
-			ISiteBundle bundle = (ISiteBundle) bundleArtifacts.get(i);
+		for (ISiteObject bundleArtifact : bundleArtifacts) {
+			ISiteBundle bundle = (ISiteBundle) bundleArtifact;
 			if (!bundle.isValid()) {
 				return false;
 			}

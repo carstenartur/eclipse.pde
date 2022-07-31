@@ -22,7 +22,6 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
@@ -172,9 +171,7 @@ public class RequiredPluginsClasspathContainer extends PDEClasspathContainer imp
 			// add Import-Package
 			// sort by symbolicName_version to get a consistent order
 			Map<String, BundleDescription> sortedMap = new TreeMap<>();
-			Iterator<BundleDescription> iter = map.keySet().iterator();
-			while (iter.hasNext()) {
-				BundleDescription bundle = iter.next();
+			for (BundleDescription bundle : map.keySet()) {
 				sortedMap.put(bundle.toString(), bundle);
 			}
 
@@ -297,9 +294,9 @@ public class RequiredPluginsClasspathContainer extends PDEClasspathContainer imp
 		addPlugin(desc, useInclusion, map, entries);
 
 		// add fragments that are not patches after the host
-		for (int i = 0; i < fragments.length; i++) {
-			if (fragments[i].isResolved() && !ClasspathUtilCore.isPatchFragment(fragments[i])) {
-				addDependency(fragments[i], added, map, entries, useInclusion);
+		for (BundleDescription fragment : fragments) {
+			if (fragment.isResolved() && !ClasspathUtilCore.isPatchFragment(fragment)) {
+				addDependency(fragment, added, map, entries, useInclusion);
 			}
 		}
 
