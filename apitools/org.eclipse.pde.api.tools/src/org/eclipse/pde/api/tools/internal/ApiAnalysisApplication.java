@@ -18,8 +18,6 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 import java.util.function.Predicate;
 
@@ -31,16 +29,15 @@ import org.eclipse.core.resources.IProjectDescription;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IWorkspaceDescription;
 import org.eclipse.core.resources.IncrementalProjectBuilder;
-import org.eclipse.core.resources.ProjectScope;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.ICoreRunnable;
+import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.jobs.Job;
-import org.eclipse.core.runtime.preferences.IEclipsePreferences;
 import org.eclipse.equinox.app.IApplication;
 import org.eclipse.equinox.app.IApplicationContext;
 import org.eclipse.equinox.frameworkadmin.BundleInfo;
@@ -49,7 +46,6 @@ import org.eclipse.pde.api.tools.internal.model.BundleComponent;
 import org.eclipse.pde.api.tools.internal.provisional.ApiPlugin;
 import org.eclipse.pde.api.tools.internal.provisional.model.IApiBaseline;
 import org.eclipse.pde.api.tools.internal.provisional.model.IApiComponent;
-import org.eclipse.pde.api.tools.internal.provisional.problems.IApiProblemTypes;
 import org.eclipse.pde.core.target.ITargetDefinition;
 import org.eclipse.pde.core.target.ITargetLocation;
 import org.eclipse.pde.core.target.ITargetPlatformService;
@@ -128,7 +124,6 @@ public class ApiAnalysisApplication implements IApplication {
 				return IStatus.ERROR;
 			}
 			setTargetPlatform(args.tpFile);
-			configureSeverity(project);
 
 			project.build(IncrementalProjectBuilder.FULL_BUILD, new NullProgressMonitor());
 			IMarker[] allProblemMarkers = project.findMarkers(IMarker.PROBLEM, true, IResource.DEPTH_INFINITE);
@@ -150,7 +145,7 @@ public class ApiAnalysisApplication implements IApplication {
 			if (allNonAPIErrors.length > 0) {
 				System.err.println("Some blocking (most likely link/compilation) errors are present:"); //$NON-NLS-1$
 				for (IMarker marker : allNonAPIErrors) {
-					System.err.println("* " + marker); //$NON-NLS-1$
+					printMarker(marker, "FATAL"); //$NON-NLS-1$
 				}
 				System.err.println("Some blocking (most likely link/compilation) errors are present ^^^"); //$NON-NLS-1$
 				return 10;
@@ -161,7 +156,7 @@ public class ApiAnalysisApplication implements IApplication {
 					.toArray(IMarker[]::new);
 			System.err.println(errorMarkers.length + " API ERRORS"); //$NON-NLS-1$
 			for (IMarker marker : errorMarkers) {
-				System.err.println("* " + marker); //$NON-NLS-1$
+				printMarker(marker, "API ERROR"); //$NON-NLS-1$
 			}
 			// warnings
 			IMarker[] warningMarkers = Arrays.stream(allAPIProbleMarkers)
@@ -169,7 +164,7 @@ public class ApiAnalysisApplication implements IApplication {
 					.toArray(IMarker[]::new);
 			System.out.println(warningMarkers.length + " API warnings"); //$NON-NLS-1$
 			for (IMarker marker : warningMarkers) {
-				System.out.println("* " + marker); //$NON-NLS-1$
+				printMarker(marker, "API WARNING"); //$NON-NLS-1$
 			}
 			// fail
 			if (args.failOnError && errorMarkers.length > 0) {
@@ -187,6 +182,31 @@ public class ApiAnalysisApplication implements IApplication {
 				restoreOriginalProjectState.run(new NullProgressMonitor());
 			}
 		}
+	}
+
+	private static void printMarker(IMarker marker, String type) {
+		String path = getFullPath(marker);
+		String file = marker.getResource().getName();
+		int lineNumber = marker.getAttribute(IMarker.LINE_NUMBER, -1);
+		String message = marker.getAttribute(IMarker.MESSAGE, "").trim(); //$NON-NLS-1$
+		String description = marker.getAttribute("description", "").trim(); //$NON-NLS-1$ //$NON-NLS-2$
+		if (!description.isEmpty()) {
+			message = String.format("%s %s", message, description); //$NON-NLS-1$
+		}
+		System.out.println(String.format("[%s] File %s at line %d: %s (location: %s)", type, file, lineNumber, //$NON-NLS-1$
+				message, path));
+	}
+
+	private static String getFullPath(IMarker marker) {
+		IResource resource = marker.getResource();
+		IPath location = resource.getLocation();
+		if (location != null) {
+			File file = location.toFile();
+			if (file != null) {
+				return file.getAbsolutePath();
+			}
+		}
+		return resource.getFullPath().toString();
 	}
 
 	private void setTargetPlatform(File dependencyList) throws IOException, CoreException, InterruptedException {
@@ -214,19 +234,6 @@ public class ApiAnalysisApplication implements IApplication {
 			job.schedule();
 			job.join();
 		}
-	}
-
-	protected void configureSeverity(IProject project) {
-		Map<String, String> enforcedSeverities = new HashMap<>();
-		enforcedSeverities.put(IApiProblemTypes.INCOMPATIBLE_API_COMPONENT_VERSION_REPORT_MAJOR_WITHOUT_BREAKING_CHANGE,
-				ApiPlugin.VALUE_ERROR);
-		enforcedSeverities.put(IApiProblemTypes.INCOMPATIBLE_API_COMPONENT_VERSION_REPORT_MINOR_WITHOUT_API_CHANGE,
-				ApiPlugin.VALUE_ERROR);
-		IEclipsePreferences projectNode = new ProjectScope(project).getNode(ApiPlugin.PLUGIN_ID);
-		enforcedSeverities.forEach((key, value) -> {
-			PDECore.getDefault().getPreferencesManager().setValue(key, value);
-			projectNode.put(key, value);
-		});
 	}
 
 	private IApiBaseline setBaseline(File baselinePath) throws CoreException {
