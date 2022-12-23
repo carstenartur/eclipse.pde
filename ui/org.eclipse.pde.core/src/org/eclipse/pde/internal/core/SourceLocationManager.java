@@ -1,5 +1,5 @@
 /*******************************************************************************
- *  Copyright (c) 2000, 2013 IBM Corporation and others.
+ *  Copyright (c) 2000, 2022 IBM Corporation and others.
  *
  *  This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License 2.0
@@ -10,6 +10,7 @@
  *
  *  Contributors:
  *     IBM Corporation - initial API and implementation
+ *     Christoph Läubrich - Issue #202
  *******************************************************************************/
 package org.eclipse.pde.internal.core;
 
@@ -21,20 +22,30 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 import java.util.StringTokenizer;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IExtension;
+import org.eclipse.core.runtime.IExtensionPoint;
+import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.URIUtil;
 import org.eclipse.core.runtime.spi.RegistryContributor;
 import org.eclipse.osgi.service.resolver.BundleDescription;
+import org.eclipse.pde.core.IPluginSourcePathLocator;
 import org.eclipse.pde.core.plugin.IPluginBase;
 import org.eclipse.pde.core.plugin.IPluginModelBase;
 import org.eclipse.pde.core.plugin.ModelEntry;
 import org.eclipse.pde.core.plugin.PluginRegistry;
+import org.eclipse.pde.core.target.ITargetDefinition;
+import org.eclipse.pde.core.target.TargetBundle;
+import org.eclipse.pde.internal.core.target.TargetPlatformService;
 import org.osgi.framework.Version;
 
 /**
@@ -46,7 +57,7 @@ public class SourceLocationManager implements ICoreConstants {
 	/**
 	 * List of source locations that have been discovered using extension points
 	 */
-	private List<SourceLocation> fExtensionLocations = null;
+	private SourceExtensions fExtensionLocations;
 
 	/**
 	 * Manages locations of individual source bundles
@@ -74,7 +85,7 @@ public class SourceLocationManager implements ICoreConstants {
 		if (result == null) {
 			result = searchBundleManifestLocations(pluginBase);
 			if (result == null) {
-				result = searchExtensionLocations(relativePath);
+				result = searchExtensionLocations(relativePath, pluginBase);
 			}
 		}
 		return result;
@@ -108,7 +119,7 @@ public class SourceLocationManager implements ICoreConstants {
 					PDECore.log(e);
 				}
 			}
-			result = searchExtensionLocations(relativePath);
+			result = searchExtensionLocations(relativePath, pluginBase);
 		}
 		if (result != null) {
 			try {
@@ -211,7 +222,11 @@ public class SourceLocationManager implements ICoreConstants {
 	/**
 	 * @return array of source locations that have been added via extension point
 	 */
-	public List<SourceLocation> getExtensionLocations() {
+	public Collection<SourceLocation> getExtensionLocations() {
+		return getExtensions().locations;
+	}
+
+	private SourceExtensions getExtensions() {
 		if (fExtensionLocations == null) {
 			fExtensionLocations = processExtensions();
 		}
@@ -288,21 +303,30 @@ public class SourceLocationManager implements ICoreConstants {
 	}
 
 	/**
-	 * Searches through all known source locations added via extension points, appending
-	 * the relative path and checking if that file exists.
-	 * @param relativePath location of source file within the source location
-	 * @return path to the source file or <code>null</code> if one could not be found or if the file does not exist
+	 * Searches through all known source locations added via extension points,
+	 * appending the relative path and checking if that file exists.
+	 *
+	 * @param relativePath
+	 *            location of source file within the source location
+	 * @param plugin
+	 * @return path to the source file or <code>null</code> if one could not be
+	 *         found or if the file does not exist
 	 */
-	private IPath searchExtensionLocations(IPath relativePath) {
-		List<SourceLocation> extensionLocations = getExtensionLocations();
-		for (SourceLocation location : extensionLocations) {
+	private IPath searchExtensionLocations(IPath relativePath, IPluginBase plugin) {
+		for (SourceLocation location : getExtensionLocations()) {
 			IPath fullPath = location.getPath().append(relativePath);
 			File file = fullPath.toFile();
 			if (file.exists()) {
 				return fullPath;
 			}
 		}
-		return null;
+		return getExtensions().locators.stream().map(locator -> {
+			try {
+				return locator.locator.locateSource(plugin);
+			} catch (RuntimeException e) {
+				return null;
+			}
+		}).filter(Objects::nonNull).findFirst().orElse(null);
 	}
 
 	/**
@@ -362,9 +386,10 @@ public class SourceLocationManager implements ICoreConstants {
 	/**
 	 * @return array of source locations that were added via extension point
 	 */
-	private static List<SourceLocation> processExtensions() {
-		ArrayList<SourceLocation> result = new ArrayList<>();
-		IExtension[] extensions = PDECore.getDefault().getExtensionsRegistry().findExtensions(PDECore.PLUGIN_ID + ".source", false); //$NON-NLS-1$
+	private static SourceExtensions processExtensions() {
+		SourceExtensions result = new SourceExtensions();
+		PDEExtensionRegistry extensionsRegistry = PDECore.getDefault().getExtensionsRegistry();
+		IExtension[] extensions = extensionsRegistry.findExtensions(PDECore.PLUGIN_ID + ".source", false); //$NON-NLS-1$
 		for (IExtension extension : extensions) {
 			IConfigurationElement[] children = extension.getConfigurationElements();
 			RegistryContributor contributor = (RegistryContributor) extension.getContributor();
@@ -394,14 +419,38 @@ public class SourceLocationManager implements ICoreConstants {
 					if (path.toFile().exists()) {
 						SourceLocation location = new SourceLocation(path);
 						location.setUserDefined(false);
-						if (!result.contains(location)) {
-							result.add(location);
-						}
+						result.locations.add(location);
 					}
 				}
 			}
 		}
+		// For the source locators we need to query the platform registry
+		IExtensionRegistry registry = Platform.getExtensionRegistry();
+		IExtensionPoint point = registry.getExtensionPoint(PDECore.PLUGIN_ID, "dynamicSource"); //$NON-NLS-1$
+		for (IExtension extension : point.getExtensions()) {
+			for (IConfigurationElement element : extension.getConfigurationElements()) {
+				if (element.getName().equals("locator")) { //$NON-NLS-1$
+					try {
+						IPluginSourcePathLocator locator = (IPluginSourcePathLocator) element
+								.createExecutableExtension("class"); //$NON-NLS-1$
+						LocatorComplexity complexity = getComplexity(element);
+						result.locators.add(new OrderedPluginSourcePathLocator(locator, complexity));
+					} catch (CoreException e) {
+						PDECore.log(e.getStatus());
+					}
+				}
+			}
+		}
+		Collections.sort(result.locators);
 		return result;
+	}
+
+	private static LocatorComplexity getComplexity(IConfigurationElement element) {
+		try {
+			return LocatorComplexity.valueOf(element.getAttribute("complexity")); //$NON-NLS-1$
+		} catch (RuntimeException e) {
+			return LocatorComplexity.unkown;
+		}
 	}
 
 	/**
@@ -412,7 +461,43 @@ public class SourceLocationManager implements ICoreConstants {
 	protected BundleManifestSourceLocationManager initializeBundleManifestLocations() {
 		BundleManifestSourceLocationManager manager = new BundleManifestSourceLocationManager();
 		manager.setPlugins(PDECore.getDefault().getModelManager().getExternalModels());
+		try {
+			ITargetDefinition definition = TargetPlatformService.getDefault().getWorkspaceTargetDefinition();
+			if (definition != null && definition.isResolved()) {
+				TargetBundle[] bundles = definition.getAllBundles();
+				if (bundles != null) {
+					manager.setTargetBundles(bundles);
+				}
+			}
+		} catch (CoreException e) {
+			// can't use this then...
+		}
 		return manager;
 	}
 
+	private static final class SourceExtensions {
+		final Collection<SourceLocation> locations = new LinkedHashSet<>();
+		final List<OrderedPluginSourcePathLocator> locators = new ArrayList<>();
+	}
+
+	private static final class OrderedPluginSourcePathLocator implements Comparable<OrderedPluginSourcePathLocator> {
+
+		private IPluginSourcePathLocator locator;
+		private LocatorComplexity complexity;
+
+		OrderedPluginSourcePathLocator(IPluginSourcePathLocator locator, LocatorComplexity complexity) {
+			this.locator = locator;
+			this.complexity = complexity;
+		}
+
+		@Override
+		public int compareTo(OrderedPluginSourcePathLocator o) {
+			return complexity.compareTo(o.complexity);
+		}
+
+	}
+
+	private enum LocatorComplexity {
+		low, medium, high, unkown;
+	}
 }

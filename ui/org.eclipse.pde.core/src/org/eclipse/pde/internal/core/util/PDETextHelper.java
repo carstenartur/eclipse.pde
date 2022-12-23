@@ -1,5 +1,5 @@
 /*******************************************************************************
- *  Copyright (c) 2006, 2017 IBM Corporation and others.
+ *  Copyright (c) 2006, 2022 IBM Corporation and others.
  *
  *  This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License 2.0
@@ -15,7 +15,6 @@ package org.eclipse.pde.internal.core.util;
 
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 import java.util.regex.Matcher;
@@ -43,7 +42,7 @@ public class PDETextHelper {
 	}
 
 	public static boolean isDefined(String text) {
-		if ((text == null) || (text.length() == 0)) {
+		if ((text == null) || (text.isEmpty())) {
 			return false;
 		}
 		return true;
@@ -54,7 +53,7 @@ public class PDETextHelper {
 			return false;
 		}
 		String trimmedText = text.trim();
-		if (trimmedText.length() == 0) {
+		if (trimmedText.isEmpty()) {
 			return false;
 		}
 		return true;
@@ -96,7 +95,7 @@ public class PDETextHelper {
 				previousChar = currentChar;
 			}
 		}
-		String result = buffer.toString(); //$NON-NLS-1$
+		String result = buffer.toString();
 		if (PDEHTMLHelper.isAllWhitespace(result)) {
 			return ""; //$NON-NLS-1$
 		}
@@ -114,15 +113,12 @@ public class PDETextHelper {
 		}
 		// Process tag exceptions if provided
 		boolean processTagExceptions = false;
-		int scanLimit = 0;
-		if ((tagExceptions != null) && (tagExceptions.isEmpty() == false)) {
+		if ((tagExceptions != null) && (!tagExceptions.isEmpty())) {
 			processTagExceptions = true;
-			// Use the biggest entry in the set as the limit
-			scanLimit = determineMaxLength(tagExceptions);
 		}
 		// Process substitute characters if provided
 		boolean processSubstituteChars = false;
-		if ((substituteChars != null) && (substituteChars.isEmpty() == false)) {
+		if ((substituteChars != null) && (!substituteChars.isEmpty())) {
 			processSubstituteChars = true;
 		}
 		// Translated buffer
@@ -135,19 +131,19 @@ public class PDETextHelper {
 			// If we are processing tag exceptions, check to see if this
 			// character is part of a tag exception and process it accordingly
 			// if it is
-			if ((processed == false) && (processTagExceptions == true)) {
-				processed = processTagExceptions(currentChar, substituteChars, tagExceptions, buffer, scanLimit, text, index);
+			if (!processed && processTagExceptions) {
+				processed = processTagExceptions(currentChar, substituteChars, tagExceptions, buffer, text, index);
 			}
 			// If the character was not part of a tag exception and we are
 			// processing substitution characters, check to see if this
 			// character needs to be translated and process it accordingly if
 			// it is
-			if ((processed == false) && (processSubstituteChars == true)) {
+			if (!processed && processSubstituteChars) {
 				processed = processSubstituteChars(currentChar, substituteChars, buffer);
 			}
 			// If the character did not need to be translated, just append it
 			// as is to the buffer
-			if (processed == false) {
+			if (!processed) {
 				buffer.append(currentChar);
 			}
 		}
@@ -171,7 +167,7 @@ public class PDETextHelper {
 	}
 
 	private static boolean processTagExceptions(char currentChar, Map<Character, String> substituteChars,
-			Set<String> tagExceptions, StringBuilder buffer, int scanLimit, String text, IntegerPointer index) {
+			Set<String> tagExceptions, StringBuilder buffer, String text, IntegerPointer index) {
 		// If the current character is an open angle bracket, then it may be
 		// part of a valid tag exception
 		if (currentChar == '<') {
@@ -218,7 +214,7 @@ public class PDETextHelper {
 		// It may contain trailing spaces or a trailing '/'
 		String attributeList = text.substring(tagName.length());
 		// If the attribute list is not valid, discard the attribute list
-		if ((isValidTagAttributeList(attributeList) == false)) {
+		if (!isValidTagAttributeList(attributeList)) {
 			buffer.append('<');
 			buffer.append(tagName);
 			// Since, this tag has an attribute list and we are discarding it,
@@ -228,7 +224,7 @@ public class PDETextHelper {
 			}
 			buffer.append('>');
 			return;
-		} else if (attributeList.length() == 0) {
+		} else if (attributeList.isEmpty()) {
 			// If the tag has no attribute list then just return the tag
 			// as is (trailing slash is already including in the tag name)
 			buffer.append('<');
@@ -263,7 +259,7 @@ public class PDETextHelper {
 			}
 			// If the character did not require translation, just append it
 			// as-is
-			if (processed == false) {
+			if (!processed) {
 				buffer.append(currentChar);
 			}
 		}
@@ -317,19 +313,6 @@ public class PDETextHelper {
 			tagName.append(character);
 		}
 		return tagName.toString();
-	}
-
-	private static int determineMaxLength(Set<String> set) {
-		Iterator<String> iterator = set.iterator();
-		int maxLength = -1;
-		while (iterator.hasNext()) {
-			// Has to be a String
-			String object = iterator.next();
-			if (object.length() > maxLength) {
-				maxLength = object.length();
-			}
-		}
-		return maxLength;
 	}
 
 	private static class IntegerPointer {
