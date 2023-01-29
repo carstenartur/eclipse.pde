@@ -182,27 +182,13 @@ public class TargetPlatformPreferencePage extends PreferencePage implements IWor
 		 * target with the same handle
 		 */
 		private boolean isResolved(ITargetDefinition target) {
-			boolean isResolved = false;
 			if (target.equals(fActiveTarget) && target.isResolved()) {
-				isResolved = true;
-
-			} else {
-				// checked earlier status of earlier resolved targets
-				HashMap<ITargetHandle, List<TargetDefinition>> targetFlagMap = TargetPlatformHelper
-						.getTargetDefinitionMap();
-				for (Entry<ITargetHandle, List<TargetDefinition>> entry : targetFlagMap.entrySet()) {
-					if (entry.getKey().equals(target.getHandle())) {
-						if (!entry.getValue().isEmpty()) {
-							if (entry.getValue().get(0).isContentEquivalent(target)) {
-								isResolved = true;
-								break;
-							}
-						}
-					}
-				}
+				return true;
 			}
-			return isResolved;
-
+			// checked earlier status of earlier resolved targets
+			Map<ITargetHandle, List<TargetDefinition>> targetFlagMap = TargetPlatformHelper.getTargetDefinitionMap();
+			List<TargetDefinition> targets = targetFlagMap.get(target.getHandle());
+			return targets != null && !targets.isEmpty() && targets.get(0).isContentEquivalent(target);
 		}
 
 		private Image getImage(ITargetDefinition target) {
@@ -218,31 +204,24 @@ public class TargetPlatformPreferencePage extends PreferencePage implements IWor
 			} else {
 				// checked earlier status of earlier resolved targets
 				boolean isResolved = false;
-				HashMap<ITargetHandle, List<TargetDefinition>> targetFlagMap = TargetPlatformHelper
-						.getTargetDefinitionMap();
-				for (Entry<ITargetHandle, List<TargetDefinition>> entry : targetFlagMap.entrySet()) {
-					if (entry.getKey().equals(target.getHandle())) {
-						List<TargetDefinition> targetList = entry.getValue();
-						if (!targetList.isEmpty()) {
-							if (targetList.get(0).isContentEquivalent(target)
-									&& targetList.get(0).getStatus() != null) {
-								int value = targetList.get(0).getStatus().getSeverity();
-								if (value == IStatus.WARNING) {
-									flag = SharedLabelProvider.F_WARNING;
-								} else if (value == IStatus.ERROR) {
-									flag = SharedLabelProvider.F_ERROR;
-								}
-								isResolved = true;
-							}
-							else
-								isResolved = false;
-							break;
-
+				List<TargetDefinition> targets = TargetPlatformHelper.getTargetDefinitionMap().get(target.getHandle());
+				if (targets != null && !targets.isEmpty()) {
+					TargetDefinition targetDef = targets.get(0);
+					if (targetDef.isContentEquivalent(target) && targetDef.getStatus() != null) {
+						int value = targetDef.getStatus().getSeverity();
+						if (value == IStatus.WARNING) {
+							flag = SharedLabelProvider.F_WARNING;
+						} else if (value == IStatus.ERROR) {
+							flag = SharedLabelProvider.F_ERROR;
 						}
+						isResolved = true;
+					} else {
+						isResolved = false;
 					}
 				}
-				if (isResolved == false)
+				if (!isResolved) {
 					flag = SharedLabelProvider.F_WARNING;
+				}
 			}
 			if (target.getTargetLocations() == null)
 				flag = 0;
@@ -396,19 +375,15 @@ public class TargetPlatformPreferencePage extends PreferencePage implements IWor
 		job.addJobChangeListener(new JobChangeAdapter() {
 			@Override
 			public void done(final IJobChangeEvent event) {
-				UIJob job = new UIJob(Messages.UpdateTargetJob_UpdateJobName) {
-					@Override
-					public IStatus runInUIThread(IProgressMonitor monitor) {
-						TargetDefinition target = ((LoadDefaultTargetJob) event.getJob()).defaultTarget;
-						if (target != null && fLabelProvider != null) {
-							fLabelProvider.setDefaultTarget(target);
-							if (fTableViewer != null && !fTableViewer.getTable().isDisposed()) {
-								fTableViewer.refresh(true);
-							}
+				UIJob job = UIJob.create(Messages.UpdateTargetJob_UpdateJobName, monitor -> {
+					TargetDefinition target = ((LoadDefaultTargetJob) event.getJob()).defaultTarget;
+					if (target != null && fLabelProvider != null) {
+						fLabelProvider.setDefaultTarget(target);
+						if (fTableViewer != null && !fTableViewer.getTable().isDisposed()) {
+							fTableViewer.refresh(true);
 						}
-						return Status.OK_STATUS;
 					}
-				};
+				});
 				job.schedule();
 			}
 		});
