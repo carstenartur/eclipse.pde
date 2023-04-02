@@ -702,11 +702,8 @@ public class ReferenceExtractor extends ClassVisitor {
 		 * Resolve any synthetic field access to their accessor
 		 */
 		public void resolveSyntheticFields() {
-			Reference field = null;
-			List<Reference> refs = null;
-			for (int i = 0; i < fields.size(); i++) {
-				field = fields.get(i);
-				refs = accessors.get(field.getMember().getName());
+			for (Reference field : fields) {
+				List<Reference> refs = accessors.get(field.getMember().getName());
 				if (refs != null) {
 					for (Reference accessor : refs) {
 						Reference refer = Reference.fieldReference(accessor.getMember(), field.getReferencedTypeName(), field.getReferencedMemberName(), field.getReferenceKind());

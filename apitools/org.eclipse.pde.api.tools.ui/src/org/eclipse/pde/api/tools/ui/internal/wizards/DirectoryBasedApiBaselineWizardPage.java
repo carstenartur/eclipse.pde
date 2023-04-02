@@ -20,6 +20,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
 import java.nio.file.Paths;
 import java.util.HashSet;
+import java.util.Set;
 
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
@@ -242,26 +243,25 @@ public class DirectoryBasedApiBaselineWizardPage extends ApiBaselineWizardPage {
 			if (fProfile != null) {
 				nametext.setText(fProfile.getName());
 				IApiComponent[] components = fProfile.getApiComponents();
-				HashSet<String> locations = new HashSet<>();
+				Set<String> locations = new HashSet<>();
 				String loc = fProfile.getLocation();
-				IPath location = null;
 				if (loc != null) {
-					location = new Path(loc);
+					IPath location = new Path(loc);
 					// check if the location is a file
 					if (location.toFile().isDirectory()) {
 						locations.add(location.removeTrailingSeparator().toOSString());
 					}
 				} else {
-					for (int i = 0; i < components.length; i++) {
-						if (!components[i].isSystemComponent()) {
-							location = new Path(components[i].getLocation()).removeLastSegments(1);
+					for (IApiComponent component : components) {
+						if (!component.isSystemComponent()) {
+							IPath location = new Path(component.getLocation()).removeLastSegments(1);
 							if (location.toFile().isDirectory()) {
 								locations.add(location.removeTrailingSeparator().toOSString());
 							}
 						}
 					}
 				}
-				if (locations.size() > 0) {
+				if (!locations.isEmpty()) {
 					locationcombo.setItems(locations.toArray(new String[locations.size()]));
 					locationcombo.select(0);
 				}

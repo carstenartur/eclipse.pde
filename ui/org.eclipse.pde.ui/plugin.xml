@@ -343,7 +343,8 @@
             id="org.eclipse.pde.ui.manifestEditor">
             <contentTypeBinding contentTypeId="org.eclipse.pde.pluginManifest"/>
             <contentTypeBinding contentTypeId="org.eclipse.pde.fragmentManifest"/>
-            <contentTypeBinding contentTypeId="org.eclipse.pde.bundleManifest"/>            
+            <contentTypeBinding contentTypeId="org.eclipse.pde.bundleManifest"/>
+            <contentTypeBinding contentTypeId="org.eclipse.pde.bndInstructions"/>
       </editor>
       <editor
             default="true"
@@ -2388,4 +2389,47 @@
          </managedMarker>
       </compilationParticipant>
    </extension>
+      <extension
+            point="org.eclipse.ui.navigator.navigatorContent">
+         <commonWizard
+               menuGroupId="org.eclipse.pde.PDE"
+               type="new"
+               wizardId="org.eclipse.pde.ui.NewProjectWizard">
+		    <enablement>
+				<with variable="activeWorkbenchWindow.activePerspective">
+					<equals value="org.eclipse.pde.ui.PDEPerspective"/>
+				</with>
+			</enablement>
+         </commonWizard>
+         <commonWizard
+               menuGroupId="org.eclipse.pde.PDE"
+               type="new"
+               wizardId="org.eclipse.pde.ui.NewFeatureProjectWizard">
+		    <enablement>
+				<with variable="activeWorkbenchWindow.activePerspective">
+					<equals value="org.eclipse.pde.ui.PDEPerspective"/>
+				</with>
+			</enablement>
+         </commonWizard>
+         <commonWizard
+               menuGroupId="org.eclipse.pde.PDE"
+               type="new"
+               wizardId="org.eclipse.pde.ui.NewProductConfigurationWizard">
+		    <enablement>
+				<with variable="activeWorkbenchWindow.activePerspective">
+					<equals value="org.eclipse.pde.ui.PDEPerspective"/>
+				</with>
+			</enablement>
+         </commonWizard>
+         <commonWizard
+               menuGroupId="org.eclipse.pde.PDE"
+               type="new"
+               wizardId="org.eclipse.pde.ui.NewProfileWizard">
+		    <enablement>
+				<with variable="activeWorkbenchWindow.activePerspective">
+					<equals value="org.eclipse.pde.ui.PDEPerspective"/>
+				</with>
+			</enablement>
+         </commonWizard>
+      </extension>
 </plugin>

@@ -400,14 +400,7 @@ public class ApiDescriptionProcessor {
 		 *         tag
 		 */
 		private boolean containsRestrictionTag(List<TagElement> tags, String tag) {
-			TagElement tagelement = null;
-			for (int i = 0; i < tags.size(); i++) {
-				tagelement = tags.get(i);
-				if (tag.equals(tagelement.getTagName())) {
-					return true;
-				}
-			}
-			return false;
+			return tags.stream().map(TagElement::getTagName).anyMatch(tag::equals);
 		}
 
 		/**
@@ -419,9 +412,7 @@ public class ApiDescriptionProcessor {
 		 * @return the matching {@link IElementDescriptor} or <code>null</code>
 		 */
 		private IElementDescriptor findDescriptorByName(String name, String signature) {
-			IElementDescriptor desc = null;
-			for (int i = 0; i < apis.size(); i++) {
-				desc = apis.get(i);
+			for (IElementDescriptor desc : apis) {
 				switch (desc.getElementType()) {
 					case IElementDescriptor.TYPE: {
 						if (((IReferenceTypeDescriptor) desc).getName().equals(name)) {
