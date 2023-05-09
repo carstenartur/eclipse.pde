@@ -13,11 +13,17 @@
  *******************************************************************************/
 package org.eclipse.pde.internal.ui.templates.e4;
 
+import java.util.List;
 import org.eclipse.pde.internal.ui.templates.PDETemplateMessages;
 import org.eclipse.pde.ui.IFieldData;
 import org.eclipse.pde.ui.templates.ITemplateSection;
 
 public class E4ToolbarContributionNewWizard extends AbstractE4NewPluginTemplateWizard {
+
+	private static final List<String> PACKAGE_IMPORTS = List.of( //
+			"javax.annotation;version=\"[1.2.0,2.0.0)\"", //$NON-NLS-1$
+			"javax.inject;version=\"[1.0.0,2.0.0)\"", //$NON-NLS-1$
+			"org.osgi.framework;version=\"[1.10.0,2.0.0)\""); //$NON-NLS-1$
 
 	@Override
 	public void init(IFieldData data) {
@@ -37,7 +43,7 @@ public class E4ToolbarContributionNewWizard extends AbstractE4NewPluginTemplateW
 
 	@Override
 	public String[] getImportPackages() {
-		return new String[] {"javax.annotation;version=\"1.2.0\""}; //$NON-NLS-1$
+		return PACKAGE_IMPORTS.toArray(String[]::new);
 	}
 
 }

@@ -15,18 +15,16 @@
 package org.eclipse.pde.core.tests.internal.classpath;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import java.util.Arrays;
-import java.util.Set;
+import java.util.*;
 import java.util.function.Predicate;
 import org.eclipse.core.resources.*;
-import org.eclipse.core.runtime.IPath;
-import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.core.runtime.*;
 import org.eclipse.jdt.core.*;
 import org.eclipse.jdt.launching.JavaRuntime;
 import org.eclipse.jdt.launching.environments.IExecutionEnvironment;
+import org.eclipse.pde.core.plugin.IPluginModelBase;
 import org.eclipse.pde.internal.core.PDECore;
 import org.eclipse.pde.internal.core.RequiredPluginsClasspathContainer;
 import org.eclipse.pde.ui.tests.util.ProjectUtils;
@@ -34,6 +32,7 @@ import org.eclipse.pde.ui.tests.util.TargetPlatformUtil;
 import org.junit.*;
 import org.junit.rules.TestRule;
 import org.osgi.framework.Bundle;
+import org.osgi.framework.FrameworkUtil;
 
 public class ClasspathResolutionTest {
 
@@ -44,6 +43,14 @@ public class ClasspathResolutionTest {
 	public static final TestRule CLEAR_WORKSPACE = ProjectUtils.DELETE_ALL_WORKSPACE_PROJECTS_BEFORE_AND_AFTER;
 	@Rule
 	public final TestRule deleteCreatedTestProjectsAfter = ProjectUtils.DELETE_CREATED_WORKSPACE_PROJECTS_AFTER;
+
+	private static String javaxAnnotationProviderBSN;
+
+	@BeforeClass
+	public static void getJavaxAnnotationProviderBSN() {
+		Bundle bundle = FrameworkUtil.getBundle(javax.annotation.PostConstruct.class);
+		javaxAnnotationProviderBSN = bundle.getSymbolicName();
+	}
 
 	@Test
 	public void testImportSystemPackageDoesntAddExtraBundleJava11() throws Exception {
@@ -75,63 +82,56 @@ public class ClasspathResolutionTest {
 
 	@Test
 	public void testImportExternalPreviouslySystemPackageAddsExtraBundle() throws Exception {
-		loadTargetPlatform("javax.annotation");
+		loadTargetPlatform(javaxAnnotationProviderBSN);
 		IProject project = ProjectUtils.importTestProject("tests/projects/demoMissedExternalPackage");
-		project.build(IncrementalProjectBuilder.FULL_BUILD, new NullProgressMonitor());
 		// In Java 11, javax.annotation is not present, so the bundle *must* be
 		// part of classpath
-		RequiredPluginsClasspathContainer container = new RequiredPluginsClasspathContainer(
-				PDECore.getDefault().getModelManager().findModel(project), project);
-		assertTrue("javax.annotation is missing from required bundle",
-				Arrays.stream(container.getClasspathEntries()).map(IClasspathEntry::getPath).map(IPath::lastSegment)
-				.anyMatch(fileName -> fileName.contains("javax.annotation")));
+		List<String> classpathEntries = getRequiredPluginContainerEntries(project);
+		assertThat(classpathEntries).anyMatch(filename -> filename.contains(javaxAnnotationProviderBSN));
 	}
 
 	@Test
 	public void testImportExternalPreviouslySystemPackageAddsExtraBundle_missingBREE() throws Exception {
-		loadTargetPlatform("javax.annotation");
+		loadTargetPlatform(javaxAnnotationProviderBSN);
 		IProject project = ProjectUtils.importTestProject("tests/projects/demoMissedExternalPackageNoBREE");
 
 		IExecutionEnvironment java11 = JavaRuntime.getExecutionEnvironmentsManager().getEnvironment("JavaSE-11");
 		assertThat(JavaRuntime.getVMInstall(JavaCore.create(project))).isIn(Arrays.asList(java11.getCompatibleVMs()));
-
-		project.build(IncrementalProjectBuilder.FULL_BUILD, new NullProgressMonitor());
 		// In Java 11, javax.annotation is not present, so the bundle *must* be
 		// part of classpath, even if no BREE is specified
-		RequiredPluginsClasspathContainer container = new RequiredPluginsClasspathContainer(
-				PDECore.getDefault().getModelManager().findModel(project), project);
-		assertTrue("javax.annotation is missing from required bundle",
-				Arrays.stream(container.getClasspathEntries()).map(IClasspathEntry::getPath).map(IPath::lastSegment)
-				.anyMatch(fileName -> fileName.contains("javax.annotation")));
+		List<String> classpathEntries = getRequiredPluginContainerEntries(project);
+		assertThat(classpathEntries).anyMatch(filename -> filename.contains(javaxAnnotationProviderBSN));
 	}
 
 	@Test
 	public void testImportSystemPackageDoesntAddExtraBundleJava8() throws Exception {
-		loadTargetPlatform("javax.annotation");
+		loadTargetPlatform(javaxAnnotationProviderBSN);
 		IProject project = ProjectUtils.importTestProject("tests/projects/demoMissedSystemPackageJava8");
-		project.build(IncrementalProjectBuilder.FULL_BUILD, new NullProgressMonitor());
 		// In Java 8, javax.annotation is present, so the bundle must *NOT* be
 		// part of classpath
-		RequiredPluginsClasspathContainer container = new RequiredPluginsClasspathContainer(
-				PDECore.getDefault().getModelManager().findModel(project), project);
-		assertTrue("javax.annotations shouldn't be present in required bundles",
-				Arrays.stream(container.getClasspathEntries()).map(IClasspathEntry::getPath).map(IPath::lastSegment)
-				.noneMatch(fileName -> fileName.contains("javax.annotation")));
+		List<String> classpathEntries = getRequiredPluginContainerEntries(project);
+		assertThat(classpathEntries).isEmpty();
 	}
 
 	@Test
 	public void testImportSystemPackageDoesntAddExtraBundleJava8_osgiEERequirement() throws Exception {
-		loadTargetPlatform("javax.annotation");
+		loadTargetPlatform(javaxAnnotationProviderBSN);
 		IProject project = ProjectUtils.importTestProject("tests/projects/demoMissedSystemPackageJava8OsgiEERequirement");
-		project.build(IncrementalProjectBuilder.FULL_BUILD, new NullProgressMonitor());
 		// bundle is build with java 11, but declares java 8 requirement via
 		// Require-Capability
 		// --> javax.annotation bundle must not be on the classpath
-		RequiredPluginsClasspathContainer container = new RequiredPluginsClasspathContainer(
-				PDECore.getDefault().getModelManager().findModel(project), project);
-		assertTrue("javax.annotations shouldn't be present in required bundles",
-				Arrays.stream(container.getClasspathEntries()).map(IClasspathEntry::getPath).map(IPath::lastSegment)
-				.noneMatch(fileName -> fileName.contains("javax.annotation")));
+		List<String> classpathEntries = getRequiredPluginContainerEntries(project);
+		assertThat(classpathEntries).isEmpty();
+	}
+
+	// --- utilitiy methods ---
+
+	private List<String> getRequiredPluginContainerEntries(IProject project) throws CoreException {
+		project.build(IncrementalProjectBuilder.FULL_BUILD, new NullProgressMonitor());
+		IPluginModelBase model = PDECore.getDefault().getModelManager().findModel(project);
+		IClasspathContainer requiredPluginsClasspathContainer = new RequiredPluginsClasspathContainer(model, project);
+		return Arrays.stream(requiredPluginsClasspathContainer.getClasspathEntries()).map(IClasspathEntry::getPath)
+				.map(IPath::lastSegment).toList();
 	}
 
 	private void loadTargetPlatform(String bundleName) throws Exception {
