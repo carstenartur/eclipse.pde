@@ -18,25 +18,47 @@
  *******************************************************************************/
 package org.eclipse.pde.internal.ui.editor.feature;
 
-import static org.eclipse.swt.events.SelectionListener.widgetSelectedAdapter;
-
 import java.util.ArrayList;
 import java.util.Iterator;
-import org.eclipse.core.runtime.*;
-import org.eclipse.core.runtime.preferences.IEclipsePreferences;
-import org.eclipse.jface.action.*;
-import org.eclipse.jface.viewers.*;
+
+import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.Status;
+import org.eclipse.jface.action.Action;
+import org.eclipse.jface.action.GroupMarker;
+import org.eclipse.jface.action.IMenuManager;
+import org.eclipse.jface.action.MenuManager;
+import org.eclipse.jface.action.Separator;
+import org.eclipse.jface.action.ToolBarManager;
+import org.eclipse.jface.viewers.IStructuredContentProvider;
+import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.viewers.StructuredSelection;
+import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.jface.window.Window;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.pde.core.IModelChangedEvent;
-import org.eclipse.pde.core.plugin.*;
-import org.eclipse.pde.internal.core.*;
+import org.eclipse.pde.core.plugin.IPlugin;
+import org.eclipse.pde.core.plugin.IPluginBase;
+import org.eclipse.pde.core.plugin.IPluginModelBase;
+import org.eclipse.pde.core.plugin.ModelEntry;
+import org.eclipse.pde.core.plugin.PluginRegistry;
+import org.eclipse.pde.internal.core.FeatureModelManager;
+import org.eclipse.pde.internal.core.IFeatureModelDelta;
+import org.eclipse.pde.internal.core.IFeatureModelListener;
+import org.eclipse.pde.internal.core.IPluginModelListener;
+import org.eclipse.pde.internal.core.PDECore;
+import org.eclipse.pde.internal.core.PluginModelDelta;
 import org.eclipse.pde.internal.core.feature.FeatureImport;
-import org.eclipse.pde.internal.core.ifeature.*;
-import org.eclipse.pde.internal.ui.*;
+import org.eclipse.pde.internal.core.ifeature.IFeature;
+import org.eclipse.pde.internal.core.ifeature.IFeatureImport;
+import org.eclipse.pde.internal.core.ifeature.IFeatureModel;
+import org.eclipse.pde.internal.core.ifeature.IFeaturePlugin;
+import org.eclipse.pde.internal.ui.PDEPlugin;
+import org.eclipse.pde.internal.ui.PDEUIMessages;
 import org.eclipse.pde.internal.ui.dialogs.FeatureSelectionDialog;
 import org.eclipse.pde.internal.ui.dialogs.PluginSelectionDialog;
-import org.eclipse.pde.internal.ui.editor.*;
+import org.eclipse.pde.internal.ui.editor.FormLayoutFactory;
+import org.eclipse.pde.internal.ui.editor.ModelDataTransfer;
+import org.eclipse.pde.internal.ui.editor.TableSection;
 import org.eclipse.pde.internal.ui.editor.actions.SortAction;
 import org.eclipse.pde.internal.ui.editor.plugin.ManifestEditor;
 import org.eclipse.pde.internal.ui.parts.TablePart;
@@ -46,35 +68,34 @@ import org.eclipse.swt.custom.BusyIndicator;
 import org.eclipse.swt.dnd.Clipboard;
 import org.eclipse.swt.graphics.Cursor;
 import org.eclipse.swt.layout.GridData;
-import org.eclipse.swt.widgets.*;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Table;
+import org.eclipse.swt.widgets.TableItem;
+import org.eclipse.swt.widgets.ToolBar;
 import org.eclipse.ui.IEditorSite;
 import org.eclipse.ui.IWorkbenchActionConstants;
 import org.eclipse.ui.actions.ActionFactory;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.Section;
-import org.osgi.service.prefs.Preferences;
 
 public class RequiresSection extends TableSection implements IPluginModelListener, IFeatureModelListener {
 
-	private static final int RECOMPUTE_IMPORT = 3;
 	private static final int REMOVE = 2;
 	private static final int NEW_FEATURE = 1;
 	private static final int NEW_PLUGIN = 0;
-
-	private Button fSyncButton;
 
 	private TableViewer fPluginViewer;
 
 	private Action fDeleteAction;
 
-	private SortAction fSortAction;
 	private Action fOpenAction;
 
 	static class ImportContentProvider implements IStructuredContentProvider {
 		@Override
 		public Object[] getElements(Object parent) {
-			if (parent instanceof IFeature) {
-				IFeatureImport[] imports = ((IFeature) parent).getImports();
+			if (parent instanceof IFeature feature) {
+				IFeatureImport[] imports = feature.getImports();
 				ArrayList<IFeatureImport> displayable = new ArrayList<>();
 				for (IFeatureImport featureImport : imports) {
 					if (featureImport.isPatch())
@@ -89,39 +110,19 @@ public class RequiresSection extends TableSection implements IPluginModelListene
 	}
 
 	public RequiresSection(FeatureDependenciesPage page, Composite parent) {
-		super(page, parent, Section.DESCRIPTION, new String[] {PDEUIMessages.FeatureEditor_RequiresSection_plugin, PDEUIMessages.FeatureEditor_RequiresSection_feature, PDEUIMessages.FeatureEditor_RequiresSection_remove, PDEUIMessages.FeatureEditor_RequiresSection_compute});
+		super(page, parent, Section.DESCRIPTION, new String[] {PDEUIMessages.FeatureEditor_RequiresSection_plugin, PDEUIMessages.FeatureEditor_RequiresSection_feature, PDEUIMessages.FeatureEditor_RequiresSection_remove});
 		getSection().setText(PDEUIMessages.FeatureEditor_RequiresSection_title);
 		getSection().setDescription(PDEUIMessages.FeatureEditor_RequiresSection_desc);
 		getTablePart().setEditable(false);
 	}
 
 	@Override
-	public void commit(boolean onSave) {
-		super.commit(onSave);
-	}
-
-	@Override
 	public void createClient(Section section, FormToolkit toolkit) {
-
-		final IFeatureModel model = (IFeatureModel) getPage().getModel();
 		section.setLayout(FormLayoutFactory.createClearGridLayout(false, 1));
 		GridData data = new GridData(GridData.FILL_BOTH);
 		section.setLayoutData(data);
 
 		Composite container = createClientContainer(section, 2, toolkit);
-
-		fSyncButton = toolkit.createButton(container, PDEUIMessages.FeatureEditor_RequiresSection_sync, SWT.CHECK);
-		// syncButton.setSelection(true);
-		GridData gd = new GridData(GridData.HORIZONTAL_ALIGN_FILL);
-		gd.horizontalSpan = 2;
-		fSyncButton.setLayoutData(gd);
-
-		fSyncButton.addSelectionListener(widgetSelectedAdapter(e -> {
-			IEclipsePreferences eclipsePrefs = Platform.getPreferencesService().getRootNode();
-			Preferences prefs = eclipsePrefs.node(Plugin.PLUGIN_PREFERENCE_SCOPE).node(IPDEUIConstants.PLUGIN_ID);
-			prefs.putBoolean(model.getFeature().getLabel(), fSyncButton.getSelection());
-		}));
-
 		createViewerPartControl(container, SWT.MULTI, 2, toolkit);
 
 		TablePart tablePart = getTablePart();
@@ -147,21 +148,18 @@ public class RequiresSection extends TableSection implements IPluginModelListene
 		toolkit.paintBordersFor(container);
 		section.setClient(container);
 		initialize();
-		createSectionToolbar(section, toolkit);
+		createSectionToolbar(section);
 	}
 
-	/**
-	 * @param section
-	 * @param toolkit
-	 */
-	private void createSectionToolbar(Section section, FormToolkit toolkit) {
+	private void createSectionToolbar(Section section) {
 
 		ToolBarManager toolBarManager = new ToolBarManager(SWT.FLAT);
 		ToolBar toolbar = toolBarManager.createControl(section);
 		final Cursor handCursor = Display.getCurrent().getSystemCursor(SWT.CURSOR_HAND);
 		toolbar.setCursor(handCursor);
 		// Add sort action to the tool bar
-		fSortAction = new SortAction(getStructuredViewerPart().getViewer(), PDEUIMessages.FeatureEditor_RequiresSection_sortAlpha, ListUtil.NAME_COMPARATOR, null, null);
+		SortAction fSortAction = new SortAction(getStructuredViewerPart().getViewer(),
+				PDEUIMessages.FeatureEditor_RequiresSection_sortAlpha, ListUtil.NAME_COMPARATOR, null, null);
 
 		toolBarManager.add(fSortAction);
 
@@ -172,12 +170,12 @@ public class RequiresSection extends TableSection implements IPluginModelListene
 
 	@Override
 	protected void buttonSelected(int index) {
-		switch (index) {
+		switch (index)
+			{
 			case NEW_PLUGIN -> handleNewPlugin();
 			case NEW_FEATURE -> handleNewFeature();
 			case REMOVE -> handleDelete();
-			case RECOMPUTE_IMPORT -> recomputeImports();
-		};
+			}
 	}
 
 	private void handleNewPlugin() {
@@ -249,8 +247,7 @@ public class RequiresSection extends TableSection implements IPluginModelListene
 		IFeatureImport[] added = new IFeatureImport[candidates.length];
 		for (int i = 0; i < candidates.length; i++) {
 			FeatureImport fimport = (FeatureImport) model.getFactory().createImport();
-			if (candidates[i] instanceof IFeatureModel) {
-				IFeatureModel candidate = (IFeatureModel) candidates[i];
+			if (candidates[i] instanceof IFeatureModel candidate) {
 				fimport.loadFrom(candidate.getFeature());
 			} else { // instanceof IPluginModelBase
 				IPluginModelBase candidate = (IPluginModelBase) candidates[i];
@@ -313,8 +310,7 @@ public class RequiresSection extends TableSection implements IPluginModelListene
 		IStructuredSelection sel = fPluginViewer.getStructuredSelection();
 		Object obj = sel.getFirstElement();
 
-		if (obj instanceof FeatureImport) {
-			FeatureImport featureImport = (FeatureImport) obj;
+		if (obj instanceof FeatureImport featureImport) {
 			if (featureImport.getType() == IFeatureImport.PLUGIN) {
 				IPlugin plugin = featureImport.getPlugin();
 				if (plugin == null) {
@@ -323,8 +319,7 @@ public class RequiresSection extends TableSection implements IPluginModelListene
 
 				}
 				ManifestEditor.open(plugin, false);
-			}
-			else if (featureImport.getType() == IFeatureImport.FEATURE) {
+			} else if (featureImport.getType() == IFeatureImport.FEATURE) {
 				IFeature feature = featureImport.getFeature();
 				if (feature == null) {
 					logNullFeatureImport(obj);
@@ -411,23 +406,18 @@ public class RequiresSection extends TableSection implements IPluginModelListene
 		Table table = tablePart.getTableViewer().getTable();
 		TableItem[] tableSelection = table.getSelection();
 		boolean hasSelection = tableSelection.length > 0;
-		//delete
+		// delete
 		tablePart.setButtonEnabled(REMOVE, isEditable() && hasSelection);
 	}
 
 	public void initialize() {
 		IFeatureModel model = (IFeatureModel) getPage().getModel();
 		refresh();
-		if (model.isEditable() == false) {
+		if (!model.isEditable()) {
 			getTablePart().setButtonEnabled(NEW_PLUGIN, false);
 			getTablePart().setButtonEnabled(NEW_FEATURE, false);
 			getTablePart().setButtonEnabled(REMOVE, false);
-			getTablePart().setButtonEnabled(RECOMPUTE_IMPORT, false);
-			fSyncButton.setEnabled(false);
 		}
-		IEclipsePreferences eclipsePrefs = Platform.getPreferencesService().getRootNode();
-		Preferences prefs = eclipsePrefs.node(Plugin.PLUGIN_PREFERENCE_SCOPE).node(IPDEUIConstants.PLUGIN_ID);
-		fSyncButton.setSelection(prefs.getBoolean(model.getFeature().getLabel(), false));
 		model.addModelChangedListener(this);
 		PDECore.getDefault().getModelManager().addPluginModelListener(this);
 		PDECore.getDefault().getFeatureModelManager().addFeatureModelListener(this);
@@ -437,7 +427,6 @@ public class RequiresSection extends TableSection implements IPluginModelListene
 	public void modelChanged(IModelChangedEvent e) {
 		if (e.getChangeType() == IModelChangedEvent.WORLD_CHANGED) {
 			markStale();
-			return;
 		} else if (e.getChangeType() == IModelChangedEvent.CHANGE) {
 			Object obj = e.getChangedObjects()[0];
 			if (obj instanceof IFeatureImport) {
@@ -451,23 +440,10 @@ public class RequiresSection extends TableSection implements IPluginModelListene
 					if (e.getChangedObjects().length > 0) {
 						fPluginViewer.setSelection(new StructuredSelection(e.getChangedObjects()[0]));
 					}
-				} else
+				} else {
 					fPluginViewer.remove(e.getChangedObjects());
-			} else if (obj instanceof IFeaturePlugin) {
-				if (fSyncButton.getSelection()) {
-					recomputeImports();
 				}
 			}
-		}
-	}
-
-	private void recomputeImports() {
-		IFeatureModel model = (IFeatureModel) getPage().getModel();
-		IFeature feature = model.getFeature();
-		try {
-			feature.computeImports();
-		} catch (CoreException e) {
-			PDEPlugin.logException(e);
 		}
 	}
 
