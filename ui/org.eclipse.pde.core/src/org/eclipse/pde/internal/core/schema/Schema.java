@@ -1,5 +1,5 @@
 /*******************************************************************************
- *  Copyright (c) 2000, 2016 IBM Corporation and others.
+ *  Copyright (c) 2000, 2026 IBM Corporation and others.
  *
  *  This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License 2.0
@@ -345,7 +345,8 @@ public class Schema extends PlatformObject implements ISchema {
 		return fName;
 	}
 
-	private String getNormalizedText(String source) {
+	private String getNormalizedText(Node node) {
+		String source = node == null ? null : node.getNodeValue();
 		if (source == null) {
 			return ""; //$NON-NLS-1$
 		}
@@ -522,7 +523,7 @@ public class Schema extends PlatformObject implements ISchema {
 				if (child.getNodeName().equals("documentation")) { //$NON-NLS-1$
 					Node doc = child.getFirstChild();
 					if (doc != null) {
-						element.setDescription(getNormalizedText(doc.getNodeValue()));
+						element.setDescription(getNormalizedText(doc));
 					}
 				} else if (child.getNodeName().equals("appInfo") || child.getNodeName().equals("appinfo")) { //$NON-NLS-1$ //$NON-NLS-2$
 					NodeList infos = child.getChildNodes();
@@ -767,7 +768,7 @@ public class Schema extends PlatformObject implements ISchema {
 			Node child = children.item(i);
 			if (child.getNodeType() == Node.ELEMENT_NODE) {
 				if (child.getNodeName().equals("documentation") && !fAbbreviated) { //$NON-NLS-1$
-					element.setDescription(getNormalizedText(child.getFirstChild().getNodeValue()));
+					element.setDescription(getNormalizedText(child.getFirstChild()));
 				} else if (child.getNodeName().equals("appInfo") || child.getNodeName().equals("appinfo")) { //$NON-NLS-1$ //$NON-NLS-2$
 					NodeList infos = child.getChildNodes();
 					for (int j = 0; j < infos.getLength(); j++) {
@@ -826,7 +827,7 @@ public class Schema extends PlatformObject implements ISchema {
 			Node child = children.item(i);
 			if (child.getNodeType() == Node.ELEMENT_NODE) {
 				if (child.getNodeName().equals("documentation") && !fAbbreviated) { //$NON-NLS-1$
-					String text = getNormalizedText(child.getFirstChild().getNodeValue());
+					String text = getNormalizedText(child.getFirstChild());
 					if (section != null) {
 						if (section.equals("overview")) { //$NON-NLS-1$
 							setDescription(text);

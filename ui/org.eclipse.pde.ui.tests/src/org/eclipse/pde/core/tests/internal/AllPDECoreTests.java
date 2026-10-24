@@ -6,6 +6,7 @@ import org.junit.platform.suite.api.Suite;
 
 @Suite
 @SelectClasses({ //
+	SchemaDocumentationTest.class, //
 	DependencyManagerTest.class, //
 	DependencyLoopFinderTest.class, //
 	StaleDependencyResolutionTest.class, //
