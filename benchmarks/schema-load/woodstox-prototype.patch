@@ -1,0 +1,232 @@
+From 0353472b03c3dac60a79193ee789906935f656a0 Mon Sep 17 00:00:00 2001
+From: Codex <codex@openai.com>
+Date: Sat, 24 Oct 2026 10:51:32 -0700
+Subject: [PATCH] Prototype a local Woodstox provider for schema loading
+
+Evaluation only: retain fresh parsers and explicit DOCTYPE rejection. Native target resolution requires selecting Woodstox and Stax2 bundles; do not promote before weighing first-use cost and target packaging.
+
+Signed-off-by: Codex <codex@openai.com>
+---
+ ui/org.eclipse.pde.core/META-INF/MANIFEST.MF  |  2 +
+ .../pde/internal/core/schema/Schema.java      |  7 +-
+ .../internal/core/schema/SchemaXmlReader.java | 67 +++++++++++++++
+ .../core/tests/internal/AllPDECoreTests.java  |  1 +
+ .../tests/internal/SchemaXmlReaderTest.java   | 82 +++++++++++++++++++
+ 5 files changed, 153 insertions(+), 6 deletions(-)
+ create mode 100644 ui/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/schema/SchemaXmlReader.java
+ create mode 100644 ui/org.eclipse.pde.ui.tests/src/org/eclipse/pde/core/tests/internal/SchemaXmlReaderTest.java
+
+diff --git a/ui/org.eclipse.pde.core/META-INF/MANIFEST.MF b/ui/org.eclipse.pde.core/META-INF/MANIFEST.MF
+index 47a1029..176f0fc 100644
+--- a/ui/org.eclipse.pde.core/META-INF/MANIFEST.MF
++++ b/ui/org.eclipse.pde.core/META-INF/MANIFEST.MF
+@@ -119,6 +119,8 @@ Import-Package: aQute.bnd.build;version="[4.4.0,5.0.0)",
+  aQute.bnd.service.progress;version="[1.3.0,2.0.0)",
+  aQute.bnd.version;version="[2.2.0,3.0.0)",
+  aQute.service.reporter;version="[1.2.0,2.0.0)",
++ com.ctc.wstx.sax;version="[7.3.0,8.0.0)",
++ com.ctc.wstx.stax;version="[7.3.0,8.0.0)",
+  org.bndtools.versioncontrol.ignores.manager.api;version="[1.0.0,2.0.0)",
+  org.eclipse.equinox.internal.p2.publisher.eclipse,
+  org.eclipse.equinox.p2.publisher,
+diff --git a/ui/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/schema/Schema.java b/ui/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/schema/Schema.java
+index 21a0598..a3e4bbf 100644
+--- a/ui/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/schema/Schema.java
++++ b/ui/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/schema/Schema.java
+@@ -26,8 +26,6 @@ import java.util.Iterator;
+ import java.util.Locale;
+ import java.util.Vector;
+ 
+-import javax.xml.parsers.SAXParser;
+-
+ import org.eclipse.core.runtime.ListenerList;
+ import org.eclipse.core.runtime.PlatformObject;
+ import org.eclipse.pde.core.IModelChangedEvent;
+@@ -448,10 +446,7 @@ public class Schema extends PlatformObject implements ISchema {
+ 	public void load(InputStream stream) {
+ 		try {
+ 			XMLDefaultHandler handler = new XMLDefaultHandler(fAbbreviated);
+-			@SuppressWarnings("restriction")
+-			SAXParser parser = org.eclipse.core.internal.runtime.XmlProcessorFactory
+-					.createSAXParserWithErrorOnDOCTYPE();
+-			parser.parse(stream, handler);
++			SchemaXmlReader.parse(stream, handler);
+ 			traverseDocumentTree(handler.getDocumentElement());
+ 		} catch (SAXException e) {
+ 			// ignore parse errors - 'loaded' will be false anyway
+diff --git a/ui/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/schema/SchemaXmlReader.java b/ui/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/schema/SchemaXmlReader.java
+new file mode 100644
+index 0000000..6a1f461
+--- /dev/null
++++ b/ui/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/schema/SchemaXmlReader.java
+@@ -0,0 +1,67 @@
++/*******************************************************************************
++ * Copyright (c) 2026 Contributors to the Eclipse Foundation.
++ *
++ * This program and the accompanying materials are made available under the
++ * terms of the Eclipse Public License 2.0 which accompanies this distribution,
++ * and is available at https://www.eclipse.org/legal/epl-2.0/
++ *
++ * SPDX-License-Identifier: EPL-2.0
++ *******************************************************************************/
++package org.eclipse.pde.internal.core.schema;
++
++import java.io.IOException;
++import java.io.InputStream;
++
++import javax.xml.stream.XMLInputFactory;
++import javax.xml.stream.XMLStreamException;
++
++import org.eclipse.pde.internal.core.XMLDefaultHandler;
++import org.xml.sax.InputSource;
++import org.xml.sax.SAXException;
++import org.xml.sax.XMLReader;
++import org.xml.sax.ext.DefaultHandler2;
++
++import com.ctc.wstx.sax.WstxSAXParserFactory;
++import com.ctc.wstx.stax.WstxInputFactory;
++
++/** Experimental, locally selected provider for schema loading only. */
++final class SchemaXmlReader {
++
++	private static final WstxSAXParserFactory FACTORY = createFactory();
++
++	private static final DefaultHandler2 REJECT_DOCTYPE = new DefaultHandler2() {
++		@Override
++		public void startDTD(String name, String publicId, String systemId) throws SAXException {
++			throw new SAXException("DOCTYPE is not allowed in extension point schemas"); //$NON-NLS-1$
++		}
++	};
++
++	private SchemaXmlReader() {
++	}
++
++	private static WstxSAXParserFactory createFactory() {
++		WstxInputFactory input = new WstxInputFactory();
++		input.setProperty(XMLInputFactory.IS_NAMESPACE_AWARE, false);
++		input.setProperty(XMLInputFactory.SUPPORT_DTD, false);
++		input.setProperty(XMLInputFactory.IS_SUPPORTING_EXTERNAL_ENTITIES, false);
++		input.setXMLResolver((publicId, systemId, base, namespace) -> {
++			throw new XMLStreamException("External entity resolution is not allowed"); //$NON-NLS-1$
++		});
++		return new WstxSAXParserFactory(input);
++	}
++
++	static void parse(InputStream stream, XMLDefaultHandler handler) throws SAXException, IOException {
++		XMLReader reader;
++		synchronized (FACTORY) {
++			reader = FACTORY.newSAXParser().getXMLReader();
++		}
++		reader.setProperty("http://xml.org/sax/properties/lexical-handler", REJECT_DOCTYPE); //$NON-NLS-1$
++		reader.setContentHandler(handler);
++		reader.setDTDHandler(handler);
++		reader.setErrorHandler(handler);
++		reader.setEntityResolver((publicId, systemId) -> {
++			throw new SAXException("External entity resolution is not allowed"); //$NON-NLS-1$
++		});
++		reader.parse(new InputSource(stream));
++	}
++}
+diff --git a/ui/org.eclipse.pde.ui.tests/src/org/eclipse/pde/core/tests/internal/AllPDECoreTests.java b/ui/org.eclipse.pde.ui.tests/src/org/eclipse/pde/core/tests/internal/AllPDECoreTests.java
+index 0532ded..870e880 100644
+--- a/ui/org.eclipse.pde.ui.tests/src/org/eclipse/pde/core/tests/internal/AllPDECoreTests.java
++++ b/ui/org.eclipse.pde.ui.tests/src/org/eclipse/pde/core/tests/internal/AllPDECoreTests.java
+@@ -13,6 +13,7 @@ import org.junit.platform.suite.api.Suite;
+ 	WorkspaceProductModelManagerTest.class, //
+ 	ModelManagerBackgroundInitializationTest.class, //
+ 	XMLDefaultHandlerTest.class, //
++	SchemaXmlReaderTest.class, //
+ })
+ public class AllPDECoreTests {
+ }
+diff --git a/ui/org.eclipse.pde.ui.tests/src/org/eclipse/pde/core/tests/internal/SchemaXmlReaderTest.java b/ui/org.eclipse.pde.ui.tests/src/org/eclipse/pde/core/tests/internal/SchemaXmlReaderTest.java
+new file mode 100644
+index 0000000..b777108
+--- /dev/null
++++ b/ui/org.eclipse.pde.ui.tests/src/org/eclipse/pde/core/tests/internal/SchemaXmlReaderTest.java
+@@ -0,0 +1,82 @@
++/*******************************************************************************
++ * Copyright (c) 2026 Contributors to the Eclipse Foundation.
++ *
++ * This program and the accompanying materials are made available under the
++ * terms of the Eclipse Public License 2.0 which accompanies this distribution,
++ * and is available at https://www.eclipse.org/legal/epl-2.0/
++ *
++ * SPDX-License-Identifier: EPL-2.0
++ *******************************************************************************/
++package org.eclipse.pde.core.tests.internal;
++
++import static org.junit.jupiter.api.Assertions.assertEquals;
++import static org.junit.jupiter.api.Assertions.assertFalse;
++import static org.junit.jupiter.api.Assertions.assertTrue;
++
++import java.io.ByteArrayInputStream;
++import java.nio.charset.StandardCharsets;
++import java.util.ArrayList;
++import java.util.List;
++import java.util.concurrent.Callable;
++import java.util.concurrent.Executors;
++import java.util.concurrent.TimeUnit;
++
++import org.eclipse.pde.internal.core.schema.Schema;
++import org.junit.jupiter.api.Test;
++
++public class SchemaXmlReaderTest {
++
++	private static String document(String name) {
++		return "<schema><annotation><appinfo><meta.schema plugin='test' id='point' name='" + name
++				+ "'/></appinfo><documentation> leading<![CDATA[ <raw>]]>&amp;middle<!--comment-->tail </documentation>"
++				+ "</annotation><element name='extension'><complexType><attribute name='id' type='string' use='required'/>"
++				+ "</complexType></element></schema>";
++	}
++
++	private static Schema load(String xml) {
++		Schema schema = new Schema("test", "point", "Test", false);
++		schema.load(new ByteArrayInputStream(xml.getBytes(StandardCharsets.UTF_8)));
++		return schema;
++	}
++
++	@Test
++	public void loadsModelWithMixedDocumentation() {
++		Schema schema = load(document("Test"));
++		assertTrue(schema.isLoaded());
++		assertTrue(schema.isValid());
++		assertEquals("leading <raw>&middletail", schema.getDescription());
++		assertEquals(1, schema.getElementCount());
++		assertEquals("id", schema.findElement("extension").getAttributes()[0].getName());
++	}
++
++	@Test
++	public void rejectsDoctypeAndMalformedXml() {
++		for (String declaration : List.of("<!DOCTYPE schema>",
++				"<!DOCTYPE schema [<!ENTITY e 'value'>]>",
++				"<!DOCTYPE schema SYSTEM 'file:///intentionally-missing.dtd'>",
++				"<!DOCTYPE schema SYSTEM 'http://127.0.0.1:9/intentionally-missing.dtd'>",
++				"<!DOCTYPE schema [<!ENTITY % e SYSTEM 'file:///intentionally-missing.dtd'>%e;]>")) {
++			assertFalse(load(declaration + document("Test")).isLoaded(), declaration);
++			assertTrue(load(document("After rejection")).isLoaded());
++		}
++		assertFalse(load("<schema><element></schema>").isLoaded());
++	}
++
++	@Test
++	public void concurrentLoadsKeepSeparateModels() throws Exception {
++		var executor = Executors.newFixedThreadPool(4);
++		try {
++			List<Callable<String>> calls = new ArrayList<>();
++			for (int i = 0; i < 32; i++) {
++				String name = "Schema " + i;
++				calls.add(() -> load(document(name)).getName());
++			}
++			var results = executor.invokeAll(calls, 10, TimeUnit.SECONDS);
++			for (int i = 0; i < results.size(); i++) {
++				assertEquals("Schema " + i, results.get(i).get());
++			}
++		} finally {
++			executor.shutdownNow();
++		}
++	}
++}
+-- 
+2.51.1
+

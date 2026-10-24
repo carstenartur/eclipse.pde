@@ -1,0 +1,264 @@
+{
+  "repository": "eclipse-platform/eclipse.platform.ui",
+  "commit": "1c2ae81706700d6744babb3db81d0a99cf4520ce",
+  "bundle": "org.eclipse.ui",
+  "files": [
+    {
+      "path": "plugin.xml",
+      "sha": "199ad5a6a1e17c66f14d99b3bca9b9d12d719f20",
+      "size": 108152
+    },
+    {
+      "path": "schema/acceleratorConfigurations.exsd",
+      "sha": "385275b49d0ca3554dc5e8f82fd7af6117730313",
+      "size": 6512
+    },
+    {
+      "path": "schema/acceleratorScopes.exsd",
+      "sha": "bbbe7837759fa80ab76a1e7bc504be52a875621a",
+      "size": 6354
+    },
+    {
+      "path": "schema/acceleratorSets.exsd",
+      "sha": "d23e223edb58ed61b2ecbfac125c729fc413cadb",
+      "size": 9738
+    },
+    {
+      "path": "schema/actionDefinitions.exsd",
+      "sha": "8d3bb39842463dde35f000c65f1902bf0172ff40",
+      "size": 5835
+    },
+    {
+      "path": "schema/actionSetPartAssociations.exsd",
+      "sha": "cba4ef01653e8b7d577ec2f0d9bdad99b83da82d",
+      "size": 5359
+    },
+    {
+      "path": "schema/actionSets.exsd",
+      "sha": "37575e88db9ee3d2aa0b6f59a37ac3b8badc52e1",
+      "size": 31920
+    },
+    {
+      "path": "schema/activities.exsd",
+      "sha": "3789f9ca43d5abd8f820182f239016e8250135d5",
+      "size": 14411
+    },
+    {
+      "path": "schema/activitySupport.exsd",
+      "sha": "251857eaae64096ceb6aa5f1442ad307c68819c7",
+      "size": 11473
+    },
+    {
+      "path": "schema/bindings.exsd",
+      "sha": "0133c9a6beca81e3e1e2d58e918ff4e2c86411bd",
+      "size": 22130
+    },
+    {
+      "path": "schema/browserSupport.exsd",
+      "sha": "385465e0c53c1033eeb1eb750acf0d0e3f004f7c",
+      "size": 5163
+    },
+    {
+      "path": "schema/commandImages.exsd",
+      "sha": "d6bd61e7f6ba96db4b0ba9a69d94346d3dd713de",
+      "size": 7150
+    },
+    {
+      "path": "schema/commands.exsd",
+      "sha": "ca7cf540f0b19677c7b90ccf07f0d1387a5f36de",
+      "size": 43190
+    },
+    {
+      "path": "schema/commonAction.exsd",
+      "sha": "53e5cea56a4fb0dc6a7cd9b24af78aa258a5a66f",
+      "size": 5987
+    },
+    {
+      "path": "schema/commonExpression.exsd",
+      "sha": "617dd7bdf6b460be0368d4bcdf66986e36dda27d",
+      "size": 10151
+    },
+    {
+      "path": "schema/contexts.exsd",
+      "sha": "bf5a540b2e7e532e52694db15650cf9b6a7fbb6c",
+      "size": 5214
+    },
+    {
+      "path": "schema/decorators.exsd",
+      "sha": "ac36f1b5d892ea2c4af69ff51579361263f28894",
+      "size": 12652
+    },
+    {
+      "path": "schema/dropActions.exsd",
+      "sha": "0e4c601389949deda691370a201befbf95394b6d",
+      "size": 6214
+    },
+    {
+      "path": "schema/editorActions.exsd",
+      "sha": "573d7c8f46507e6709065e8f2b916b6a2e8df258",
+      "size": 27288
+    },
+    {
+      "path": "schema/editors.exsd",
+      "sha": "cbfc98a56ab6143e1c2add8d64e9df25ae9f4552",
+      "size": 17269
+    },
+    {
+      "path": "schema/elementFactories.exsd",
+      "sha": "87b29c3f9237aca8fea3a0cd27fffba966ad44f9",
+      "size": 5871
+    },
+    {
+      "path": "schema/encodings.exsd",
+      "sha": "e76f9e6b3dc76cd7124fea03cd4fe48dc019c736",
+      "size": 4058
+    },
+    {
+      "path": "schema/exportWizards.exsd",
+      "sha": "9565a0e22c28ca6e0e5b4ab29830da51d7519f48",
+      "size": 9955
+    },
+    {
+      "path": "schema/fontDefinitions.exsd",
+      "sha": "7917e75f132478fd6f54e00b22e896028d166602",
+      "size": 7266
+    },
+    {
+      "path": "schema/handlers.exsd",
+      "sha": "8492075220475ae40f6509d5f6d7e0ef735a3263",
+      "size": 13995
+    },
+    {
+      "path": "schema/helpSupport.exsd",
+      "sha": "dd5e7f8aa281769a0ee8827a6ff1d53600088004",
+      "size": 3958
+    },
+    {
+      "path": "schema/importWizards.exsd",
+      "sha": "42ca874d097f10f957a9f75de4d6491603c4187b",
+      "size": 9980
+    },
+    {
+      "path": "schema/installationPages.exsd",
+      "sha": "ca517d71bd286a353262982dac3a6b005680df77",
+      "size": 5612
+    },
+    {
+      "path": "schema/internalTweaklets.exsd",
+      "sha": "8ba23c7dbb9ef8ff6272d5bbca96c8647a0221dd",
+      "size": 5938
+    },
+    {
+      "path": "schema/intro.exsd",
+      "sha": "dc25290cad981f0a8a6619be8844250d6ad61bb7",
+      "size": 9039
+    },
+    {
+      "path": "schema/keywords.exsd",
+      "sha": "9cf41799427dafc1a17dc2a24c679776a9855b44",
+      "size": 4314
+    },
+    {
+      "path": "schema/menus.exsd",
+      "sha": "bd60daa7742782081d951cb1047ab75ca92f64a5",
+      "size": 50796
+    },
+    {
+      "path": "schema/newWizards.exsd",
+      "sha": "282c753aa0d9ace087a9986033ec1d3721a15dcd",
+      "size": 14108
+    },
+    {
+      "path": "schema/perspectiveExtensions.exsd",
+      "sha": "7da19739ca418d800d558257a76cb1bd57637aad",
+      "size": 18295
+    },
+    {
+      "path": "schema/perspectives.exsd",
+      "sha": "52fbd4a71c9de1c13871fc4be3f823dfe8783578",
+      "size": 8117
+    },
+    {
+      "path": "schema/popupMenus.exsd",
+      "sha": "2d289e489d233e2f728044dadcbe122dccbb789f",
+      "size": 32707
+    },
+    {
+      "path": "schema/preferencePages.exsd",
+      "sha": "4693d3db99a7272e2e260d04f83370318b189341",
+      "size": 6994
+    },
+    {
+      "path": "schema/preferenceTransfer.exsd",
+      "sha": "cf9a9c037400f79d9336c929de97c5dfde0388a8",
+      "size": 12045
+    },
+    {
+      "path": "schema/propertiesView.exsd",
+      "sha": "6ae46f4e9e2f612b97a7129d576e3467cbb2fd67",
+      "size": 3334
+    },
+    {
+      "path": "schema/propertyPages.exsd",
+      "sha": "ffda589c275c8920935e6c351cac3a09a4d3f780",
+      "size": 14646
+    },
+    {
+      "path": "schema/quickAccess.exsd",
+      "sha": "13ecfca5b73a3944074c2e74c5d6f7511ea16dd0",
+      "size": 4351
+    },
+    {
+      "path": "schema/services.exsd",
+      "sha": "5a01b2c364ef7e0ce6c550f046927a7e08fcba56",
+      "size": 9239
+    },
+    {
+      "path": "schema/splashHandlers.exsd",
+      "sha": "6757b02e95d2589f2ff3ef01aeaf9f0747b2b9e5",
+      "size": 6743
+    },
+    {
+      "path": "schema/startup.exsd",
+      "sha": "f821e91910dea79da545aca736c5dbf2aaf4d3fd",
+      "size": 4349
+    },
+    {
+      "path": "schema/statusHandlers.exsd",
+      "sha": "268ea8ee9da09c5d79470f1e7c04b5dce1adac31",
+      "size": 9678
+    },
+    {
+      "path": "schema/systemSummarySections.exsd",
+      "sha": "411103cdbaceaacde3999b9fb1284d22f74f0ae8",
+      "size": 5392
+    },
+    {
+      "path": "schema/themes.exsd",
+      "sha": "21983524f1e0a4a02078d0d42de9176cd2d319cc",
+      "size": 31011
+    },
+    {
+      "path": "schema/viewActions.exsd",
+      "sha": "7bbddbec63852191bae503a9f51a1dce035696cf",
+      "size": 24831
+    },
+    {
+      "path": "schema/views.exsd",
+      "sha": "d184cb95d7809bbb7bf5bf61a05a8fcfe5ca3c1d",
+      "size": 17999
+    },
+    {
+      "path": "schema/workingSets.exsd",
+      "sha": "50b68c0cbaa4596aacf273b7ca58eff658be8f20",
+      "size": 9210
+    }
+  ],
+  "raw_url_template": "https://raw.githubusercontent.com/eclipse-platform/eclipse.platform.ui/{commit}/bundles/org.eclipse.ui/{path}",
+  "transformed_variants": {
+    "safe-indented": "Whitespace-preserving cleanup, indentation enabled",
+    "safe-compact": "Whitespace-preserving cleanup, indentation disabled",
+    "cleanup_repository": "https://github.com/carstenartur/sandbox",
+    "cleanup_commit": "8c32b87bf2b61906a5a622f6609fbdaf7bd9c427"
+  }
+}

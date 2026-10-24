@@ -1,0 +1,22 @@
+{
+  "repository": "carstenartur/eclipse.pde",
+  "archive": {
+    "name": "reproduction.zip",
+    "size_bytes": 15367548,
+    "sha256": "9c558850d36959a7ed899dcdcf2375ae58a612aee60b550b744869e98cc12355"
+  },
+  "parts": [
+    {
+      "name": "reproduction.zip.part1",
+      "size_bytes": 7500000,
+      "sha256": "ffd289f36b9cd6fb74692ce0ffd52ee886611b3ea60ff5e16437932d3b6a2962",
+      "blob_sha": "90456e29151da48ad729d03e07a3e7f3085d4aff"
+    },
+    {
+      "name": "reproduction.zip.part2",
+      "size_bytes": 7867548,
+      "sha256": "f470fca259b4e9c20b9153299e60d564b34be5f62fc496ef7dffca60b30c58e4",
+      "blob_sha": "adfa899503ac1c4091b2e373461043861dc5defb"
+    }
+  ]
+}

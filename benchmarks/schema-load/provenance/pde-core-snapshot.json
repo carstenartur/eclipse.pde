@@ -1,0 +1,16 @@
+{
+  "binary_jar": "lib/pde/pde-core-benchmark-snapshot.jar",
+  "sha256": "4e6fcc158524c1a871b1885b7a5fbf5bf60c863dea9f2b13ab3fdb34679c21af",
+  "bytes": 3407314,
+  "entry_count": 674,
+  "source_jar": "lib/pde/pde-core-benchmark-snapshot-sources.jar",
+  "source_jar_sha256": "c8fc44b0310e1268d75edb8bf4b955df2720f7e8cfdb854070edd1d4287b8e4f",
+  "repository": "https://github.com/eclipse-pde/eclipse.pde",
+  "base_commit": "081876347068847fff2f06e11f8a945a393d0a79",
+  "bundle": "org.eclipse.pde.core",
+  "bundle_version": "3.21.500.qualifier",
+  "origin": "Stable copy of the Tycho-compiled PDE core classes from the coalescing baseline; not an upstream published JAR",
+  "archive_method": "Deterministic ZIP_STORED, preserving all 674 original files byte-for-byte",
+  "runtime_handling": "The build command extracts this archive and uses the extracted class directory at runtime, matching the recorded benchmark layout. Source variants precede it on the classpath.",
+  "license": "EPL-2.0"
+}

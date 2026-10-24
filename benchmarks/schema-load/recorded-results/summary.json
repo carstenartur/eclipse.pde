@@ -1,0 +1,297 @@
+{
+  "warm": {
+    "coalesced-original": {
+      "cpu_ms_forks": [
+        13.22426221545428,
+        12.548936216637351,
+        14.905624950811688
+      ],
+      "allocated_bytes_forks": [
+        8185188.258216574,
+        8185102.1077328585,
+        8186702.4644083055
+      ],
+      "wall_ms_forks": [
+        23.607646931948523,
+        17.977754015001413,
+        23.94848751369354
+      ],
+      "cpu_ms_mean": 13.559607794301106,
+      "cpu_ms_min_max": [
+        12.548936216637351,
+        14.905624950811688
+      ],
+      "allocated_bytes_mean": 8185664.276785913,
+      "allocated_bytes_min_max": [
+        8185102.1077328585,
+        8186702.4644083055
+      ],
+      "wall_ms_mean": 21.844629486881157,
+      "wall_ms_min_max": [
+        17.977754015001413,
+        23.94848751369354
+      ]
+    },
+    "combined-original": {
+      "cpu_ms_forks": [
+        13.589455313839727,
+        10.796970440869412,
+        11.674029195742856
+      ],
+      "allocated_bytes_forks": [
+        6000403.828616161,
+        5977620.49383481,
+        5993507.601073351
+      ],
+      "wall_ms_forks": [
+        22.93759289851796,
+        16.189893172232235,
+        18.310897733557724
+      ],
+      "cpu_ms_mean": 12.020151650150664,
+      "cpu_ms_min_max": [
+        10.796970440869412,
+        13.589455313839727
+      ],
+      "allocated_bytes_mean": 5990510.641174774,
+      "allocated_bytes_min_max": [
+        5977620.49383481,
+        6000403.828616161
+      ],
+      "wall_ms_mean": 19.146127934769307,
+      "wall_ms_min_max": [
+        16.189893172232235,
+        22.93759289851796
+      ]
+    },
+    "combined-safe-compact": {
+      "cpu_ms_forks": [
+        10.34713376892715,
+        10.841266753011363,
+        10.172090571457193
+      ],
+      "allocated_bytes_forks": [
+        5263304.037937123,
+        5274808.159879565,
+        5266775.539059134
+      ],
+      "wall_ms_forks": [
+        11.743896204145054,
+        15.3725266746892,
+        12.824243524163293
+      ],
+      "cpu_ms_mean": 10.453497031131903,
+      "cpu_ms_min_max": [
+        10.172090571457193,
+        10.841266753011363
+      ],
+      "allocated_bytes_mean": 5268295.912291941,
+      "allocated_bytes_min_max": [
+        5263304.037937123,
+        5274808.159879565
+      ],
+      "wall_ms_mean": 13.313555467665848,
+      "wall_ms_min_max": [
+        11.743896204145054,
+        15.3725266746892
+      ]
+    },
+    "combined-safe-indented": {
+      "cpu_ms_forks": [
+        11.811414071244652,
+        10.792793060586957,
+        10.739983215396002
+      ],
+      "allocated_bytes_forks": [
+        5911706.927515201,
+        5910731.724417774,
+        5904246.47106543
+      ],
+      "wall_ms_forks": [
+        20.259122652772646,
+        14.950668168658424,
+        15.445498869265101
+      ],
+      "cpu_ms_mean": 11.114730115742537,
+      "cpu_ms_min_max": [
+        10.739983215396002,
+        11.811414071244652
+      ],
+      "allocated_bytes_mean": 5908895.040999468,
+      "allocated_bytes_min_max": [
+        5904246.47106543,
+        5911706.927515201
+      ],
+      "wall_ms_mean": 16.88509656356539,
+      "wall_ms_min_max": [
+        14.950668168658424,
+        20.259122652772646
+      ]
+    },
+    "reuse-original": {
+      "cpu_ms_forks": [
+        16.418100409337672,
+        14.437839856285423,
+        14.383715115576774
+      ],
+      "allocated_bytes_forks": [
+        25811340.92783075,
+        25797393.128001165,
+        25801655.634431392
+      ],
+      "wall_ms_forks": [
+        26.224164694781837,
+        19.497561520287316,
+        19.36295376592401
+      ],
+      "cpu_ms_mean": 15.079885127066623,
+      "cpu_ms_min_max": [
+        14.383715115576774,
+        16.418100409337672
+      ],
+      "allocated_bytes_mean": 25803463.23008777,
+      "allocated_bytes_min_max": [
+        25797393.128001165,
+        25811340.92783075
+      ],
+      "wall_ms_mean": 21.69489332699772,
+      "wall_ms_min_max": [
+        19.36295376592401,
+        26.224164694781837
+      ]
+    },
+    "upstream-original": {
+      "cpu_ms_forks": [
+        17.66579513567367,
+        14.775323503029597,
+        15.206448004974215
+      ],
+      "allocated_bytes_forks": [
+        28006786.484188035,
+        27991260.04114114,
+        27995516.47463768
+      ],
+      "wall_ms_forks": [
+        29.202944967594743,
+        19.01152254656258,
+        21.582892790796393
+      ],
+      "cpu_ms_mean": 15.88252221455916,
+      "cpu_ms_min_max": [
+        14.775323503029597,
+        17.66579513567367
+      ],
+      "allocated_bytes_mean": 27997854.333322287,
+      "allocated_bytes_min_max": [
+        27991260.04114114,
+        28006786.484188035
+      ],
+      "wall_ms_mean": 23.265786768317906,
+      "wall_ms_min_max": [
+        19.01152254656258,
+        29.202944967594743
+      ]
+    },
+    "woodstox-original": {
+      "cpu_ms_forks": [
+        8.824568624851526,
+        9.453712957596085,
+        8.693798263418747
+      ],
+      "allocated_bytes_forks": [
+        6073944.1165048545,
+        6078256.12,
+        6079792.114285714
+      ],
+      "wall_ms_forks": [
+        8.949684532414514,
+        9.595700787867186,
+        8.80836777723477
+      ],
+      "cpu_ms_mean": 8.990693281955453,
+      "cpu_ms_min_max": [
+        8.693798263418747,
+        9.453712957596085
+      ],
+      "allocated_bytes_mean": 6077330.7835968565,
+      "allocated_bytes_min_max": [
+        6073944.1165048545,
+        6079792.114285714
+      ],
+      "wall_ms_mean": 9.117917699172157,
+      "wall_ms_min_max": [
+        8.80836777723477,
+        9.595700787867186
+      ]
+    }
+  },
+  "comparisons": {
+    "upstream-original -> reuse-original": {
+      "cpu_ms_reduction_pct": 5.053587060352271,
+      "allocated_bytes_reduction_pct": 7.837711694295136,
+      "wall_ms_reduction_pct": 6.751946353515725
+    },
+    "upstream-original -> coalesced-original": {
+      "cpu_ms_reduction_pct": 14.625601581899183,
+      "allocated_bytes_reduction_pct": 70.76324428531812,
+      "wall_ms_reduction_pct": 6.1083568571685065
+    },
+    "coalesced-original -> combined-original": {
+      "cpu_ms_reduction_pct": 11.353249795303455,
+      "allocated_bytes_reduction_pct": 26.8170494340511,
+      "wall_ms_reduction_pct": 12.353157803534465
+    },
+    "upstream-original -> combined-original": {
+      "cpu_ms_reduction_pct": 24.31837029554377,
+      "allocated_bytes_reduction_pct": 78.60367951823712,
+      "wall_ms_reduction_pct": 17.706939698933923
+    },
+    "combined-original -> combined-safe-indented": {
+      "cpu_ms_reduction_pct": 7.532530044217689,
+      "allocated_bytes_reduction_pct": 1.3624147433164424,
+      "wall_ms_reduction_pct": 11.809340138680946
+    },
+    "combined-original -> combined-safe-compact": {
+      "cpu_ms_reduction_pct": 13.033567833556614,
+      "allocated_bytes_reduction_pct": 12.055979400467297,
+      "wall_ms_reduction_pct": 30.46345708633611
+    },
+    "coalesced-original -> woodstox-original": {
+      "cpu_ms_reduction_pct": 33.69503441143702,
+      "allocated_bytes_reduction_pct": 25.756412942174677,
+      "wall_ms_reduction_pct": 58.260140302915445
+    }
+  },
+  "first_batch": {
+    "upstream": {
+      "cpu_ms_median": 242.78700800000001,
+      "wall_ms_median": 615.2344445,
+      "allocated_bytes_median": 34414748.0,
+      "loaded_classes_median": 322.0
+    },
+    "reuse": {
+      "cpu_ms_median": 236.00068449999998,
+      "wall_ms_median": 581.6682105,
+      "allocated_bytes_median": 32057608.0,
+      "loaded_classes_median": 330.0,
+      "paired_cpu_delta_median": -7.088416999999993,
+      "paired_cpu_delta_bootstrap_95_pct": [
+        -18.670123500000003,
+        4.722862499999991
+      ],
+      "faster_pairs": 12
+    },
+    "combined": {
+      "cpu_ms_median": 220.436349,
+      "wall_ms_median": 539.2176065,
+      "allocated_bytes_median": 12107720.0,
+      "loaded_classes_median": 330.0,
+      "paired_cpu_delta_median": -24.854637499999995,
+      "paired_cpu_delta_bootstrap_95_pct": [
+        -39.134666499999994,
+        -17.789761999999996
+      ],
+      "faster_pairs": 19
+    }
+  }
+}

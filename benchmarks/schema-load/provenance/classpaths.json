@@ -1,0 +1,25 @@
+{
+  "eclipse": [
+    "lib/eclipse/org.eclipse.core.runtime-3.35.100.v20261023-0640.jar",
+    "lib/eclipse/org.eclipse.equinox.common-3.21.100.v20260829-1451.jar",
+    "lib/eclipse/org.eclipse.osgi-3.25.0.v20261008-2211.jar",
+    "lib/eclipse/org.eclipse.core.resources-3.25.0.v20261023-0640.jar",
+    "lib/eclipse/org.eclipse.core.jobs-3.15.900.v20260604-0622.jar",
+    "lib/eclipse/org.eclipse.jdt.core-3.48.0.v20261023-0812.jar",
+    "lib/eclipse/org.eclipse.equinox.preferences-3.12.200.v20261023-0641.jar",
+    "lib/eclipse/org.eclipse.equinox.registry-3.12.700.v20261023-0641.jar",
+    "lib/eclipse/org.eclipse.core.expressions-3.9.800.v20261023-0640.jar",
+    "lib/eclipse/org.eclipse.text-3.14.900.v20261012-1310.jar"
+  ],
+  "benchmark": [
+    "lib/benchmark/commons-math3-3.6.1.jar",
+    "lib/benchmark/jmh-core-1.37.jar",
+    "lib/benchmark/jmh-generator-annprocess-1.37.jar",
+    "lib/benchmark/jopt-simple-5.0.4.jar"
+  ],
+  "woodstox": [
+    "lib/woodstox/woodstox-core-7.3.0.jar",
+    "lib/woodstox/stax2-api-4.3.2.jar"
+  ],
+  "snapshot": "lib/pde/pde-core-benchmark-snapshot.jar"
+}

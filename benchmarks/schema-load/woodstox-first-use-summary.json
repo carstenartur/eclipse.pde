@@ -1,0 +1,250 @@
+{
+  "cold": {
+    "views.exsd": {
+      "baseline": {
+        "wall_ms": {
+          "median": 228.561026,
+          "min": 198.50904,
+          "max": 290.073844
+        },
+        "cpu_ms": {
+          "median": 102.490296,
+          "min": 85.108955,
+          "max": 130.802287
+        },
+        "allocated_bytes": {
+          "median": 5091440.0,
+          "min": 5091440.0,
+          "max": 5091824.0
+        },
+        "loaded_classes": {
+          "median": 319.0,
+          "min": 319.0,
+          "max": 319.0
+        }
+      },
+      "woodstox": {
+        "wall_ms": {
+          "median": 314.78387699999996,
+          "min": 275.303483,
+          "max": 368.499187
+        },
+        "cpu_ms": {
+          "median": 138.700242,
+          "min": 121.976996,
+          "max": 158.310805
+        },
+        "allocated_bytes": {
+          "median": 7227044.0,
+          "min": 7219768.0,
+          "max": 7227232.0
+        },
+        "loaded_classes": {
+          "median": 452.0,
+          "min": 452.0,
+          "max": 452.0
+        }
+      },
+      "paired_cpu_ms": {
+        "median": 36.9250015,
+        "median_bootstrap95": [
+          30.965773000000013,
+          45.208606
+        ],
+        "woodstox_slower_pairs": 20,
+        "pairs": 20
+      },
+      "paired_wall_ms": {
+        "median": 87.69707950000002,
+        "median_bootstrap95": [
+          71.30709899999998,
+          98.736858
+        ],
+        "woodstox_slower_pairs": 20,
+        "pairs": 20
+      }
+    },
+    "menus.exsd": {
+      "baseline": {
+        "wall_ms": {
+          "median": 284.755664,
+          "min": 241.266906,
+          "max": 327.524974
+        },
+        "cpu_ms": {
+          "median": 119.852992,
+          "min": 104.029034,
+          "max": 134.683762
+        },
+        "allocated_bytes": {
+          "median": 5543472.0,
+          "min": 5543472.0,
+          "max": 5543704.0
+        },
+        "loaded_classes": {
+          "median": 322.0,
+          "min": 322.0,
+          "max": 322.0
+        }
+      },
+      "woodstox": {
+        "wall_ms": {
+          "median": 351.446821,
+          "min": 285.519959,
+          "max": 475.526022
+        },
+        "cpu_ms": {
+          "median": 155.1858515,
+          "min": 125.901669,
+          "max": 209.721253
+        },
+        "allocated_bytes": {
+          "median": 7641524.0,
+          "min": 7641144.0,
+          "max": 7642448.0
+        },
+        "loaded_classes": {
+          "median": 455.0,
+          "min": 455.0,
+          "max": 455.0
+        }
+      },
+      "paired_cpu_ms": {
+        "median": 34.8610465,
+        "median_bootstrap95": [
+          29.291442000000004,
+          39.919997
+        ],
+        "woodstox_slower_pairs": 20,
+        "pairs": 20
+      },
+      "paired_wall_ms": {
+        "median": 71.25977250000003,
+        "median_bootstrap95": [
+          53.95275549999997,
+          83.71587
+        ],
+        "woodstox_slower_pairs": 20,
+        "pairs": 20
+      }
+    },
+    "all": {
+      "baseline": {
+        "wall_ms": {
+          "median": 622.5869379999999,
+          "min": 529.701186,
+          "max": 726.304126
+        },
+        "cpu_ms": {
+          "median": 248.69282299999998,
+          "min": 214.860341,
+          "max": 294.380411
+        },
+        "allocated_bytes": {
+          "median": 14505856.0,
+          "min": 14505512.0,
+          "max": 14508192.0
+        },
+        "loaded_classes": {
+          "median": 322.0,
+          "min": 322.0,
+          "max": 322.0
+        }
+      },
+      "woodstox": {
+        "wall_ms": {
+          "median": 636.4984045,
+          "min": 515.628848,
+          "max": 740.963309
+        },
+        "cpu_ms": {
+          "median": 262.3858295,
+          "min": 214.245974,
+          "max": 300.06534
+        },
+        "allocated_bytes": {
+          "median": 14178696.0,
+          "min": 14178112.0,
+          "max": 14179848.0
+        },
+        "loaded_classes": {
+          "median": 455.0,
+          "min": 455.0,
+          "max": 455.0
+        }
+      },
+      "paired_cpu_ms": {
+        "median": 11.241533999999987,
+        "median_bootstrap95": [
+          -8.939609499999975,
+          23.724724499999994
+        ],
+        "woodstox_slower_pairs": 12,
+        "pairs": 20
+      },
+      "paired_wall_ms": {
+        "median": 14.057404499999961,
+        "median_bootstrap95": [
+          -24.02451149999996,
+          47.681719499999986
+        ],
+        "woodstox_slower_pairs": 12,
+        "pairs": 20
+      }
+    }
+  },
+  "warm_pilot": {
+    "baseline": {
+      "cpuMs": {
+        "mean": 19.1727304609724,
+        "fork_means": [
+          19.317372882164065,
+          19.73509926848391,
+          18.465719232269223
+        ]
+      },
+      "allocatedBytes": {
+        "mean": 8321433.092269309,
+        "fork_means": [
+          8301338.128045977,
+          8307666.527434251,
+          8355294.621327696
+        ]
+      },
+      "wallMs": {
+        "mean": 39.238933964639436,
+        "fork_means": [
+          39.7581708573098,
+          40.3034305911597,
+          37.65520044544881
+        ]
+      }
+    },
+    "woodstox": {
+      "cpuMs": {
+        "mean": 11.624616194424144,
+        "fork_means": [
+          10.229045837563389,
+          11.450081330727073,
+          13.19472141498197
+        ]
+      },
+      "allocatedBytes": {
+        "mean": 6121035.654851746,
+        "fork_means": [
+          6117276.058834727,
+          6118690.048128396,
+          6127140.857592113
+        ]
+      },
+      "wallMs": {
+        "mean": 21.319099585551907,
+        "fork_means": [
+          16.572263580873468,
+          22.147868358516167,
+          25.237166817266086
+        ]
+      }
+    }
+  }
+}

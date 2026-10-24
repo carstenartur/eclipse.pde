@@ -1,0 +1,12 @@
+Exception in thread "main" java.lang.RuntimeException: java.lang.NullPointerException: Cannot invoke "org.w3c.dom.Node.getNodeValue()" because the return value of "org.w3c.dom.Node.getFirstChild()" is null
+	at org.eclipse.pde.internal.core.schema.Schema.load(Schema.java:461)
+	at org.eclipse.pde.internal.core.schema.Schema.load(Schema.java:432)
+	at org.eclipse.pde.internal.core.schema.SchemaDescriptor.getSchema(SchemaDescriptor.java:89)
+	at bench.SchemaLoadBenchmark.load(SchemaLoadBenchmark.java:82)
+	at bench.SchemaLoadBenchmark.first(SchemaLoadBenchmark.java:167)
+	at bench.SchemaLoadBenchmark.main(SchemaLoadBenchmark.java:180)
+Caused by: java.lang.NullPointerException: Cannot invoke "org.w3c.dom.Node.getNodeValue()" because the return value of "org.w3c.dom.Node.getFirstChild()" is null
+	at org.eclipse.pde.internal.core.schema.Schema.processSchemaAnnotation(Schema.java:829)
+	at org.eclipse.pde.internal.core.schema.Schema.traverseDocumentTree(Schema.java:1052)
+	at org.eclipse.pde.internal.core.schema.Schema.load(Schema.java:455)
+	... 5 more

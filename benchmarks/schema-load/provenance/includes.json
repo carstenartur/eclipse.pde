@@ -1,0 +1,12 @@
+{
+  "bundle": "org.eclipse.core.expressions.source",
+  "version": "3.9.800.v20261023-0640",
+  "artifact_sha256": "14ffca9c57a69e529203213895194832762f213b503a199014775dd7b274fc56",
+  "download_url": "https://download.eclipse.org/eclipse/updates/4.42-I-builds/I20261023-2300/plugins/org.eclipse.core.expressions.source_3.9.800.v20261023-0640.jar",
+  "files": {
+    "corpus-includes/schema/expressionLanguage.exsd": "c2ac781d85656d41b52aa8a2d831951877ddcd3b7a061e1eff869a941b888e00",
+    "corpus-includes/schema/propertyTesters.exsd": "d58dc7cd4aa7de1607a6ecace7b5d463c1a9794b18cfb2fa9659a00332c03edb",
+    "corpus-includes/schema/definitions.exsd": "43c0fd09474947e601182de575ab012a97a76c4af807a782f013fa0bbe7543db"
+  },
+  "license": "EPL-2.0"
+}

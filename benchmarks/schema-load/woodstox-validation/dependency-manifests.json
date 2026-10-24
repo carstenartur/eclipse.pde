@@ -1,0 +1,14 @@
+[
+  {
+    "Bundle-SymbolicName": "stax2-api",
+    "Bundle-Version": "4.3.2",
+    "Import-Package": "javax.xml.namespace,javax.xml.stream,javax.xml.stream.events,javax.xml.stream.util,javax.xml.transform,javax.xml.transform.dom,org.w3c.dom",
+    "Require-Capability": "osgi.ee;filter:=\"(&(osgi.ee=JavaSE)(version=1.8))\""
+  },
+  {
+    "Bundle-SymbolicName": "com.fasterxml.woodstox.woodstox-core",
+    "Bundle-Version": "7.3.0",
+    "Import-Package": "com.ctc.wstx.api;version=\"[7.3,8)\",com.ctc.wstx.cfg;version=\"[7.3,8)\",com.ctc.wstx.dom;version=\"[7.3,8)\",com.ctc.wstx.dtd;version=\"[7.3,8)\",com.ctc.wstx.ent;version=\"[7.3,8)\",com.ctc.wstx.evt;version=\"[7.3,8)\",com.ctc.wstx.exc;version=\"[7.3,8)\",com.ctc.wstx.io;version=\"[7.3,8)\",com.ctc.wstx.msv;version=\"[7.3,8)\",com.ctc.wstx.sr;version=\"[7.3,8)\",com.ctc.wstx.stax;version=\"[7.3,8)\",com.ctc.wstx.sw;version=\"[7.3,8)\",com.ctc.wstx.util;version=\"[7.3,8)\",com.ctc.wstx.shaded.msv_core.grammar;version=\"[2022.7,2023)\";resolution:=optional,com.ctc.wstx.shaded.msv_core.grammar.trex;version=\"[2022.7,2023)\";resolution:=optional,com.ctc.wstx.shaded.msv_core.grammar.xmlschema;version=\"[2022.7,2023)\";resolution:=optional,com.ctc.wstx.shaded.msv_core.reader;version=\"[2022.7,2023)\";resolution:=optional,com.ctc.wstx.shaded.msv_core.reader.trex.ng;version=\"[2022.7,2023)\";resolution:=optional,com.ctc.wstx.shaded.msv_core.reader.util;version=\"[2022.7,2023)\";resolution:=optional,com.ctc.wstx.shaded.msv_core.reader.xmlschema;version=\"[2022.7,2023)\";resolution:=optional,com.ctc.wstx.shaded.msv_core.util;resolution:=optional,com.ctc.wstx.shaded.msv_core.verifier;version=\"[2022.7,2023)\";resolution:=optional,com.ctc.wstx.shaded.msv_core.verifier.regexp;version=\"[2022.7,2023)\";resolution:=optional,com.ctc.wstx.shaded.msv_core.verifier.regexp.xmlschema;version=\"[2022.7,2023)\";resolution:=optional,javax.xml.namespace,javax.xml.parsers,javax.xml.stream,javax.xml.stream.events,javax.xml.stream.util,javax.xml.transform,javax.xml.transform.dom,javax.xml.transform.sax,javax.xml.transform.stream,org.codehaus.stax2;version=\"[4.3,5)\",org.codehaus.stax2.io;version=\"[4.3,5)\",org.codehaus.stax2.osgi;version=\"[4.3,5)\",org.codehaus.stax2.ri;version=\"[4.3,5)\",org.codehaus.stax2.ri.dom;version=\"[4.3,5)\",org.codehaus.stax2.ri.evt;version=\"[4.3,5)\",org.codehaus.stax2.ri.typed;version=\"[4.3,5)\",org.codehaus.stax2.typed;version=\"[4.3,5)\",org.codehaus.stax2.validation;version=\"[4.3,5)\",org.osgi.framework;version=\"[1.7,2)\";resolution:=optional,com.ctc.wstx.shaded.msv.relaxng_datatype;resolution:=optional,org.w3c.dom,org.xml.sax,org.xml.sax.ext,org.xml.sax.helpers",
+    "Require-Capability": "osgi.extender;filter:=\"(&(osgi.extender=osgi.serviceloader.registrar)(version>=1.0.0)(!(version>=2.0.0)))\";resolution:=optional,osgi.ee;filter:=\"(&(osgi.ee=JavaSE)(version=1.8))\""
+  }
+]

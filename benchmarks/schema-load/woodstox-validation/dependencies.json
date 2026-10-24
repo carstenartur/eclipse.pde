@@ -1,0 +1,12 @@
+[
+  {
+    "filename": "woodstox-core-7.3.0.jar",
+    "bytes": 1626149,
+    "sha256": "246cb4845991ab52196ef90ee8a361164512b5cc7ec0547c9fab8f3db75f2679"
+  },
+  {
+    "filename": "stax2-api-4.3.2.jar",
+    "bytes": 196095,
+    "sha256": "7fd6d60212696fb5d6dc422c2a1c8fb82c088d66dd7e4f30738d5d7606eabcd1"
+  }
+]

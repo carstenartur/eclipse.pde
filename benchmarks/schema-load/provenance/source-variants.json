@@ -1,0 +1,44 @@
+{
+  "upstream": {
+    "files": {
+      "sources/upstream/org/eclipse/pde/internal/core/XMLDefaultHandler.java": "e15bb2bb62f1a745d98fb6eb1e1dfb44e829b4f34d81fe0174dcffca0af2fb73",
+      "sources/upstream/org/eclipse/pde/internal/core/schema/Schema.java": "4f6d5b3211455b656ad4dbbf55feb638c7c1075986448bee2e573de9f5cd38a3"
+    },
+    "source_commit": "feabce4240a1268adcb8d26733a02d028eadea02"
+  },
+  "reuse": {
+    "files": {
+      "sources/reuse/org/eclipse/pde/internal/core/XMLDefaultHandler.java": "e15bb2bb62f1a745d98fb6eb1e1dfb44e829b4f34d81fe0174dcffca0af2fb73",
+      "sources/reuse/org/eclipse/pde/internal/core/schema/SchemaReader.java": "02811fc912abbb805692038054aa399d0fc859f380684eda897220a63a326ac3",
+      "sources/reuse/org/eclipse/pde/internal/core/schema/Schema.java": "919bdf5fee3ad6a0f6b395302fb7cf02f673d5e2d4302edb87272132e8937d0e"
+    },
+    "source_commit": "873bde74ae7d955014b42e2565c2a9fe8e516c74"
+  },
+  "coalesced": {
+    "files": {
+      "sources/coalesced/org/eclipse/pde/internal/core/XMLDefaultHandler.java": "8f7e65e695c8b49a9383c32686a79b37c47fa60f28899264c16ab33a97a32cb5",
+      "sources/coalesced/org/eclipse/pde/internal/core/schema/Schema.java": "4f6d5b3211455b656ad4dbbf55feb638c7c1075986448bee2e573de9f5cd38a3"
+    },
+    "source_commit": "081876347068847fff2f06e11f8a945a393d0a79"
+  },
+  "combined": {
+    "files": {
+      "sources/combined/org/eclipse/pde/internal/core/XMLDefaultHandler.java": "8f7e65e695c8b49a9383c32686a79b37c47fa60f28899264c16ab33a97a32cb5",
+      "sources/combined/org/eclipse/pde/internal/core/schema/SchemaReader.java": "02811fc912abbb805692038054aa399d0fc859f380684eda897220a63a326ac3",
+      "sources/combined/org/eclipse/pde/internal/core/schema/Schema.java": "919bdf5fee3ad6a0f6b395302fb7cf02f673d5e2d4302edb87272132e8937d0e"
+    },
+    "composition": {
+      "Schema.java_and_SchemaReader.java": "873bde74ae7d955014b42e2565c2a9fe8e516c74",
+      "XMLDefaultHandler.java": "081876347068847fff2f06e11f8a945a393d0a79"
+    }
+  },
+  "woodstox": {
+    "source_commit": "0353472b03c3dac60a79193ee789906935f656a0",
+    "status": "Local evaluation-only prototype; source files included; not a published production change",
+    "files": {
+      "sources/woodstox/org/eclipse/pde/internal/core/XMLDefaultHandler.java": "8f7e65e695c8b49a9383c32686a79b37c47fa60f28899264c16ab33a97a32cb5",
+      "sources/woodstox/org/eclipse/pde/internal/core/schema/SchemaXmlReader.java": "97fefb5de6c0fac9b9cca583b330f1bdbf5b084165c60a384ef702bcaa338012",
+      "sources/woodstox/org/eclipse/pde/internal/core/schema/Schema.java": "8d360ab60016b5268cd0549376b3c87eac92dea85cdec714ae940a7aee0696cf"
+    }
+  }
+}

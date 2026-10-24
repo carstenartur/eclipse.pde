@@ -1,0 +1,17 @@
+{
+  "original": {
+    "files": 49,
+    "xml_bytes": 617841,
+    "zip_bytes": 132358
+  },
+  "safe-indented": {
+    "files": 49,
+    "xml_bytes": 563380,
+    "zip_bytes": 130135
+  },
+  "safe-compact": {
+    "files": 49,
+    "xml_bytes": 534827,
+    "zip_bytes": 127999
+  }
+}

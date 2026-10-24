@@ -1,0 +1,212 @@
+[
+  {
+    "file": "lib/eclipse/org.eclipse.core.runtime-3.35.100.v20261023-0640.jar",
+    "bytes": 92543,
+    "sha256": "936fdab4324693ba60fd23b39a3fab865b76aa9e621ee9be0704b83cc17f46c2",
+    "download_url": "https://download.eclipse.org/eclipse/updates/4.42-I-builds/I20261023-2300/plugins/org.eclipse.core.runtime_3.35.100.v20261023-0640.jar",
+    "source_download_url": "https://download.eclipse.org/eclipse/updates/4.42-I-builds/I20261023-2300/plugins/org.eclipse.core.runtime.source_3.35.100.v20261023-0640.jar",
+    "bundle_id": "org.eclipse.core.runtime",
+    "version": "3.35.100.v20261023-0640",
+    "license": "EPL-2.0; see embedded about.html and included notices",
+    "included_notices": [
+      "licenses/org.eclipse.core.runtime-3.35.100.v20261023-0640/about.html"
+    ]
+  },
+  {
+    "file": "lib/eclipse/org.eclipse.equinox.common-3.21.100.v20260829-1451.jar",
+    "bytes": 161105,
+    "sha256": "28749ec64dac9d0e20e00becc3d5f9daccb5637455c9c546ab07be324011ef84",
+    "download_url": "https://download.eclipse.org/eclipse/updates/4.42-I-builds/I20261020-2300/plugins/org.eclipse.equinox.common_3.21.100.v20260829-1451.jar",
+    "source_download_url": "https://download.eclipse.org/eclipse/updates/4.42-I-builds/I20261020-2300/plugins/org.eclipse.equinox.common.source_3.21.100.v20260829-1451.jar",
+    "bundle_id": "org.eclipse.equinox.common",
+    "version": "3.21.100.v20260829-1451",
+    "license": "EPL-2.0; see embedded about.html and included notices",
+    "included_notices": [
+      "licenses/org.eclipse.equinox.common-3.21.100.v20260829-1451/about.html"
+    ]
+  },
+  {
+    "file": "lib/eclipse/org.eclipse.osgi-3.25.0.v20261008-2211.jar",
+    "bytes": 1618877,
+    "sha256": "fe66fd0b071bebc7e1a122be571ed8ecde373d2966fa6b1e161a899b3c7a054d",
+    "download_url": "https://download.eclipse.org/eclipse/updates/4.42-I-builds/I20261020-2300/plugins/org.eclipse.osgi_3.25.0.v20261008-2211.jar",
+    "source_download_url": "https://download.eclipse.org/eclipse/updates/4.42-I-builds/I20261020-2300/plugins/org.eclipse.osgi.source_3.25.0.v20261008-2211.jar",
+    "bundle_id": "org.eclipse.osgi",
+    "version": "3.25.0.v20261008-2211",
+    "license": "EPL-2.0; see embedded about.html and included notices",
+    "included_notices": [
+      "licenses/org.eclipse.osgi-3.25.0.v20261008-2211/about_files/LICENSE-2.0.txt",
+      "licenses/org.eclipse.osgi-3.25.0.v20261008-2211/about.html"
+    ]
+  },
+  {
+    "file": "lib/eclipse/org.eclipse.core.resources-3.25.0.v20261023-0640.jar",
+    "bytes": 986525,
+    "sha256": "a003c10ac47dadbb08fe0bbeb4f509e4835f418c2895b607f7106d5a1cd66fa3",
+    "download_url": "https://download.eclipse.org/eclipse/updates/4.42-I-builds/I20261023-2300/plugins/org.eclipse.core.resources_3.25.0.v20261023-0640.jar",
+    "source_download_url": "https://download.eclipse.org/eclipse/updates/4.42-I-builds/I20261023-2300/plugins/org.eclipse.core.resources.source_3.25.0.v20261023-0640.jar",
+    "bundle_id": "org.eclipse.core.resources",
+    "version": "3.25.0.v20261023-0640",
+    "license": "EPL-2.0; see embedded about.html and included notices",
+    "included_notices": [
+      "licenses/org.eclipse.core.resources-3.25.0.v20261023-0640/about.html"
+    ]
+  },
+  {
+    "file": "lib/eclipse/org.eclipse.core.jobs-3.15.900.v20260604-0622.jar",
+    "bytes": 120947,
+    "sha256": "941b3c5feeba4ec0a949a8a94ff10283b2505813fa736c9e6345f146ae1b7e8a",
+    "download_url": "https://download.eclipse.org/eclipse/updates/4.42-I-builds/I20261020-2300/plugins/org.eclipse.core.jobs_3.15.900.v20260604-0622.jar",
+    "source_download_url": "https://download.eclipse.org/eclipse/updates/4.42-I-builds/I20261020-2300/plugins/org.eclipse.core.jobs.source_3.15.900.v20260604-0622.jar",
+    "bundle_id": "org.eclipse.core.jobs",
+    "version": "3.15.900.v20260604-0622",
+    "license": "EPL-2.0; see embedded about.html and included notices",
+    "included_notices": [
+      "licenses/org.eclipse.core.jobs-3.15.900.v20260604-0622/about.html"
+    ]
+  },
+  {
+    "file": "lib/eclipse/org.eclipse.jdt.core-3.48.0.v20261023-0812.jar",
+    "bytes": 4545899,
+    "sha256": "149ff07ddcbb6fa155f5231b0713ceecb3bf5e266597b55be68f2b2e86f017e7",
+    "download_url": "https://download.eclipse.org/eclipse/updates/4.42-I-builds/I20261023-2300/plugins/org.eclipse.jdt.core_3.48.0.v20261023-0812.jar",
+    "source_download_url": "https://download.eclipse.org/eclipse/updates/4.42-I-builds/I20261023-2300/plugins/org.eclipse.jdt.core.source_3.48.0.v20261023-0812.jar",
+    "bundle_id": "org.eclipse.jdt.core",
+    "version": "3.48.0.v20261023-0812",
+    "license": "EPL-2.0; see embedded about.html and included notices",
+    "included_notices": [
+      "licenses/org.eclipse.jdt.core-3.48.0.v20261023-0812/about.html"
+    ]
+  },
+  {
+    "file": "lib/eclipse/org.eclipse.equinox.preferences-3.12.200.v20261023-0641.jar",
+    "bytes": 132341,
+    "sha256": "39042040a14c9bb832884c8d8764c2508fe8b1c5e85756d06a68b05539566e67",
+    "download_url": "https://download.eclipse.org/eclipse/updates/4.42-I-builds/I20261023-2300/plugins/org.eclipse.equinox.preferences_3.12.200.v20261023-0641.jar",
+    "source_download_url": "https://download.eclipse.org/eclipse/updates/4.42-I-builds/I20261023-2300/plugins/org.eclipse.equinox.preferences.source_3.12.200.v20261023-0641.jar",
+    "bundle_id": "org.eclipse.equinox.preferences",
+    "version": "3.12.200.v20261023-0641",
+    "license": "EPL-2.0; see embedded about.html and included notices",
+    "included_notices": [
+      "licenses/org.eclipse.equinox.preferences-3.12.200.v20261023-0641/about_files/LICENSE-2.0.txt",
+      "licenses/org.eclipse.equinox.preferences-3.12.200.v20261023-0641/about.html"
+    ]
+  },
+  {
+    "file": "lib/eclipse/org.eclipse.equinox.registry-3.12.700.v20261023-0641.jar",
+    "bytes": 208135,
+    "sha256": "8084c5518d7f95e55254c0145e6da8aa4071060bbaeabe56843dbf01615dbc70",
+    "download_url": "https://download.eclipse.org/eclipse/updates/4.42-I-builds/I20261023-2300/plugins/org.eclipse.equinox.registry_3.12.700.v20261023-0641.jar",
+    "source_download_url": "https://download.eclipse.org/eclipse/updates/4.42-I-builds/I20261023-2300/plugins/org.eclipse.equinox.registry.source_3.12.700.v20261023-0641.jar",
+    "bundle_id": "org.eclipse.equinox.registry",
+    "version": "3.12.700.v20261023-0641",
+    "license": "EPL-2.0; see embedded about.html and included notices",
+    "included_notices": [
+      "licenses/org.eclipse.equinox.registry-3.12.700.v20261023-0641/about_files/LICENSE-2.0.txt",
+      "licenses/org.eclipse.equinox.registry-3.12.700.v20261023-0641/about_files/NOTICE.txt",
+      "licenses/org.eclipse.equinox.registry-3.12.700.v20261023-0641/about.html"
+    ]
+  },
+  {
+    "file": "lib/eclipse/org.eclipse.core.expressions-3.9.800.v20261023-0640.jar",
+    "bytes": 106017,
+    "sha256": "b1afd1cc57466e48025d852cc623b1eb8ae6bac61dc3a7c1ba8ccc02906239d6",
+    "download_url": "https://download.eclipse.org/eclipse/updates/4.42-I-builds/I20261023-2300/plugins/org.eclipse.core.expressions_3.9.800.v20261023-0640.jar",
+    "source_download_url": "https://download.eclipse.org/eclipse/updates/4.42-I-builds/I20261023-2300/plugins/org.eclipse.core.expressions.source_3.9.800.v20261023-0640.jar",
+    "bundle_id": "org.eclipse.core.expressions",
+    "version": "3.9.800.v20261023-0640",
+    "license": "EPL-2.0; see embedded about.html and included notices",
+    "included_notices": [
+      "licenses/org.eclipse.core.expressions-3.9.800.v20261023-0640/about.html"
+    ]
+  },
+  {
+    "file": "lib/eclipse/org.eclipse.text-3.14.900.v20261012-1310.jar",
+    "bytes": 364070,
+    "sha256": "0ca3b552c867619285b8ae36c7defdd6c0f013e692643d433fd111796da55f19",
+    "download_url": "https://download.eclipse.org/eclipse/updates/4.42-I-builds/I20261020-2300/plugins/org.eclipse.text_3.14.900.v20261012-1310.jar",
+    "source_download_url": "https://download.eclipse.org/eclipse/updates/4.42-I-builds/I20261020-2300/plugins/org.eclipse.text.source_3.14.900.v20261012-1310.jar",
+    "bundle_id": "org.eclipse.text",
+    "version": "3.14.900.v20261012-1310",
+    "license": "EPL-2.0; see embedded about.html and included notices",
+    "included_notices": [
+      "licenses/org.eclipse.text-3.14.900.v20261012-1310/about.html"
+    ]
+  },
+  {
+    "file": "lib/benchmark/commons-math3-3.6.1.jar",
+    "bytes": 2213560,
+    "sha256": "1e56d7b058d28b65abd256b8458e3885b674c1d588fa43cd7d1cbb9c7ef2b308",
+    "download_url": "https://repo.maven.apache.org/maven2/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar",
+    "source_download_url": "https://repo.maven.apache.org/maven2/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1-sources.jar",
+    "license": "Apache-2.0",
+    "included_notices": [
+      "licenses/commons-math3-3.6.1/META-INF/LICENSE.txt",
+      "licenses/commons-math3-3.6.1/META-INF/NOTICE.txt"
+    ]
+  },
+  {
+    "file": "lib/benchmark/jmh-core-1.37.jar",
+    "bytes": 552986,
+    "sha256": "dc0eaf2bbf0036a70b60798c785d6e03a9daf06b68b8edb0f1ba9eb3421baeb3",
+    "download_url": "https://repo.maven.apache.org/maven2/org/openjdk/jmh/jmh-core/1.37/jmh-core-1.37.jar",
+    "source_download_url": "https://repo.maven.apache.org/maven2/org/openjdk/jmh/jmh-core/1.37/jmh-core-1.37-sources.jar",
+    "license": "GPL-2.0 with Classpath exception",
+    "included_notices": [
+      "licenses/jmh-core-1.37/THIRD-PARTY",
+      "licenses/jmh-core-1.37/LICENSE"
+    ]
+  },
+  {
+    "file": "lib/benchmark/jmh-generator-annprocess-1.37.jar",
+    "bytes": 30881,
+    "sha256": "6a5604b5b804e0daca1145df1077609321687734a8b49387e49f10557c186c77",
+    "download_url": "https://repo.maven.apache.org/maven2/org/openjdk/jmh/jmh-generator-annprocess/1.37/jmh-generator-annprocess-1.37.jar",
+    "source_download_url": "https://repo.maven.apache.org/maven2/org/openjdk/jmh/jmh-generator-annprocess/1.37/jmh-generator-annprocess-1.37-sources.jar",
+    "license": "GPL-2.0 with Classpath exception",
+    "included_notices": [
+      "licenses/jmh-generator-annprocess-1.37/THIRD-PARTY",
+      "licenses/jmh-generator-annprocess-1.37/LICENSE"
+    ]
+  },
+  {
+    "file": "lib/benchmark/jopt-simple-5.0.4.jar",
+    "bytes": 78146,
+    "sha256": "df26cc58f235f477db07f753ba5a3ab243ebe5789d9f89ecf68dd62ea9a66c28",
+    "download_url": "https://repo.maven.apache.org/maven2/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar",
+    "source_download_url": "https://repo.maven.apache.org/maven2/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4-sources.jar",
+    "license": "MIT",
+    "included_notices": [
+      "licenses/jopt-simple-5.0.4/META-INF/maven/net.sf.jopt-simple/jopt-simple/pom.xml",
+      "licenses/jopt-simple-5.0.4/SOURCE-LICENSE.txt"
+    ],
+    "source_license_origin": {
+      "url": "https://repo.maven.apache.org/maven2/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4-sources.jar",
+      "entry": "joptsimple/OptionParser.java",
+      "extraction": "Initial complete source copyright/license comment",
+      "sha256": "91d37fd637f457bd1f95b288f8eb6d33df6ea9de7a76e766ec8cf71f2bf71406"
+    }
+  },
+  {
+    "file": "lib/woodstox/woodstox-core-7.3.0.jar",
+    "bytes": 1626149,
+    "sha256": "246cb4845991ab52196ef90ee8a361164512b5cc7ec0547c9fab8f3db75f2679",
+    "download_url": "https://repo.maven.apache.org/maven2/com/fasterxml/woodstox/woodstox-core/7.3.0/woodstox-core-7.3.0.jar",
+    "source_download_url": "https://repo.maven.apache.org/maven2/com/fasterxml/woodstox/woodstox-core/7.3.0/woodstox-core-7.3.0-sources.jar",
+    "license": "Apache-2.0",
+    "included_notices": [
+      "licenses/woodstox-core-7.3.0/META-INF/LICENSE"
+    ]
+  },
+  {
+    "file": "lib/woodstox/stax2-api-4.3.2.jar",
+    "bytes": 196095,
+    "sha256": "7fd6d60212696fb5d6dc422c2a1c8fb82c088d66dd7e4f30738d5d7606eabcd1",
+    "download_url": "https://repo.maven.apache.org/maven2/org/codehaus/woodstox/stax2-api/4.3.2/stax2-api-4.3.2.jar",
+    "source_download_url": "https://repo.maven.apache.org/maven2/org/codehaus/woodstox/stax2-api/4.3.2/stax2-api-4.3.2-sources.jar",
+    "license": "BSD-2-Clause",
+    "included_notices": [
+      "licenses/stax2-api-4.3.2/META-INF/LICENSE"
+    ]
+  }
+]

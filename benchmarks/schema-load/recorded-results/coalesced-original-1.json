@@ -1,0 +1,127 @@
+[
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "bench.SchemaLoadBenchmark.loadSchemas",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/workspace/scratch/16f7543c9e7d/benchmark-deps/jdk25/usr/lib/jvm/java-25-openjdk-amd64/bin/java",
+        "jvmArgs" : [
+            "-Devaluation=/workspace/scratch/16f7543c9e7d/pde-woodstox-evaluation",
+            "-Dcorpus=/workspace/scratch/16f7543c9e7d/xml-followup-benchmark",
+            "-Xms512m",
+            "-Xmx512m",
+            "-XX:+UseSerialGC",
+            "-XX:ActiveProcessorCount=1"
+        ],
+        "jdkVersion" : "25.0.4",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "25.0.4+7-1-24.04-Ubuntu",
+        "warmupIterations" : 8,
+        "warmupTime" : "2 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 6,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "variant" : "original"
+        },
+        "primaryMetric" : {
+            "score" : 17.977754015001413,
+            "scoreError" : 25.48784064598701,
+            "scoreConfidence" : [
+                -7.510086630985597,
+                43.46559466098842
+            ],
+            "scorePercentiles" : {
+                "0.0" : 11.561116885057471,
+                "50.0" : 13.211661771132643,
+                "90.0" : 33.3520284,
+                "95.0" : 33.3520284,
+                "99.0" : 33.3520284,
+                "99.9" : 33.3520284,
+                "99.99" : 33.3520284,
+                "99.999" : 33.3520284,
+                "99.9999" : 33.3520284,
+                "100.0" : 33.3520284
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    33.3520284,
+                    24.920791170731707,
+                    14.027873273972602,
+                    12.395450268292683,
+                    11.561116885057471,
+                    11.609264091954023
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+            "allocatedBytes" : {
+                "score" : 4.911061264639715E7,
+                "scoreError" : "NaN",
+                "scoreConfidence" : [
+                    4.911061264639715E7,
+                    4.911061264639715E7
+                ],
+                "scorePercentiles" : {
+                    "0.0" : 8170744.0,
+                    "50.0" : 8174253.510190444,
+                    "90.0" : 8220128.0,
+                    "95.0" : 8220128.0,
+                    "99.0" : 8220128.0,
+                    "99.9" : 8220128.0,
+                    "99.99" : 8220128.0,
+                    "99.999" : 8220128.0,
+                    "99.9999" : 8220128.0,
+                    "100.0" : 8220128.0
+                },
+                "scoreUnit" : "#",
+                "rawData" : [
+                    [
+                        8220128.0,
+                        8197508.292682927,
+                        8174602.630136986,
+                        8173904.390243903,
+                        8173725.333333333,
+                        8170744.0
+                    ]
+                ]
+            },
+            "cpuMs" : {
+                "score" : 75.2936172998241,
+                "scoreError" : "NaN",
+                "scoreConfidence" : [
+                    75.2936172998241,
+                    75.2936172998241
+                ],
+                "scorePercentiles" : {
+                    "0.0" : 11.22074796551724,
+                    "50.0" : 11.949719371881132,
+                    "90.0" : 16.3474505,
+                    "95.0" : 16.3474505,
+                    "99.0" : 16.3474505,
+                    "99.9" : 16.3474505,
+                    "99.99" : 16.3474505,
+                    "99.999" : 16.3474505,
+                    "99.9999" : 16.3474505,
+                    "100.0" : 16.3474505
+                },
+                "scoreUnit" : "#",
+                "rawData" : [
+                    [
+                        16.3474505,
+                        12.379096341463415,
+                        12.545893602739726,
+                        11.280086487804878,
+                        11.22074796551724,
+                        11.52034240229885
+                    ]
+                ]
+            }
+        }
+    }
+]
+
+

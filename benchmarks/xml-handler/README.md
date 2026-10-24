@@ -1,5 +1,7 @@
 # PDE XML text coalescing benchmark
 
+> **Follow-up correction (24 October 2026):** the optional compact corpus below used the old cleanup, which removed whitespace-only documentation. Full PDE-model validation subsequently exposed a null dereference on the resulting empty documentation. Do not deploy that compact corpus. The original-file handler result is independent of the cleanup. See the [complete-model follow-up](../schema-load/README.md) for the corrected formatter, parser-reuse measurements, first-use results and reproduction bundle.
+
 This branch publishes the measurement harness separately from the production pull request. The production change introduces no JMH, parser or other library dependency.
 
 ## Recorded result

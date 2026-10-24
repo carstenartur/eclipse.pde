@@ -1,0 +1,93 @@
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by org.openjdk.jmh.util.Utils (file:/workspace/scratch/16f7543c9e7d/xml-benchmark/lib/jmh-core-1.37.jar)
+WARNING: Please consider reporting this to the maintainers of class org.openjdk.jmh.util.Utils
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+# JMH version: 1.37
+# VM version: JDK 25.0.4, OpenJDK 64-Bit Server VM, 25.0.4+7-1-24.04-Ubuntu
+# VM invoker: /workspace/scratch/16f7543c9e7d/benchmark-deps/jdk25/usr/lib/jvm/java-25-openjdk-amd64/bin/java
+# VM options: -Devaluation=/workspace/scratch/16f7543c9e7d/pde-woodstox-evaluation -Dcorpus=/workspace/scratch/16f7543c9e7d/xml-followup-benchmark -Xms512m -Xmx512m -XX:+UseSerialGC -XX:ActiveProcessorCount=1
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 8 iterations, 2 s each
+# Measurement: 6 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: bench.SchemaLoadBenchmark.loadSchemas
+# Parameters: (variant = safe-indented)
+
+# Run progress: 0.00% complete, ETA 00:00:22
+# Fork: 1 of 1
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by org.openjdk.jmh.util.Utils (file:/workspace/scratch/16f7543c9e7d/xml-benchmark/lib/jmh-core-1.37.jar)
+WARNING: Please consider reporting this to the maintainers of class org.openjdk.jmh.util.Utils
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+# Warmup Iteration   1: 66.089 ms/op
+# Warmup Iteration   2: 39.128 ms/op
+# Warmup Iteration   3: 32.292 ms/op
+# Warmup Iteration   4: 28.717 ms/op
+# Warmup Iteration   5: 30.071 ms/op
+# Warmup Iteration   6: 27.818 ms/op
+# Warmup Iteration   7: 29.895 ms/op
+# Warmup Iteration   8: 29.555 ms/op
+Iteration   1: 25.825 ms/op
+                 allocatedBytes: 5921965.744 #
+                 cpuMs:          12.887 #
+
+Iteration   2: 27.991 ms/op
+                 allocatedBytes: 5921949.111 #
+                 cpuMs:          14.011 #
+
+Iteration   3: 25.311 ms/op
+                 allocatedBytes: 5920950.600 #
+                 cpuMs:          12.615 #
+
+Iteration   4: 20.922 ms/op
+                 allocatedBytes: 5907888.667 #
+                 cpuMs:          11.333 #
+
+Iteration   5: 10.012 ms/op
+                 allocatedBytes: 5899713.743 #
+                 cpuMs:          9.283 #
+
+Iteration   6: 11.495 ms/op
+                 allocatedBytes: 5897773.701 #
+                 cpuMs:          10.738 #
+
+
+
+Result "bench.SchemaLoadBenchmark.loadSchemas":
+  20.259 ±(99.9%) 21.668 ms/op [Average]
+  (min, avg, max) = (10.012, 20.259, 27.991), stdev = 7.727
+  CI (99.9%): [≈ 0, 41.927] (assumes normal distribution)
+
+Secondary result "bench.SchemaLoadBenchmark.loadSchemas:allocatedBytes":
+  35470241.565 ±(99.9%) 0.001 # [Sum]
+  (min, avg, max) = (5897773.701, 5911706.928, 5921965.744), stdev = 11385.443
+  CI (99.9%): [35470241.565, 35470241.565] (assumes normal distribution)
+
+Secondary result "bench.SchemaLoadBenchmark.loadSchemas:cpuMs":
+  70.868 ±(99.9%) 0.001 # [Sum]
+  (min, avg, max) = (9.283, 11.811, 14.011), stdev = 1.698
+  CI (99.9%): [70.868, 70.868] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:00:23
+
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
+NOTE: Current JVM experimentally supports Compiler Blackholes, and they are in use. Please exercise
+extra caution when trusting the results, look into the generated code to check the benchmark still
+works, and factor in a small probability of new VM bugs. Additionally, while comparisons between
+different JVMs are already problematic, the performance difference caused by different Blackhole
+modes can be very significant. Please make sure you use the consistent Blackhole mode for comparisons.
+
+Benchmark                                           (variant)  Mode  Cnt         Score    Error  Units
+SchemaLoadBenchmark.loadSchemas                 safe-indented  avgt    6        20.259 ± 21.668  ms/op
+SchemaLoadBenchmark.loadSchemas:allocatedBytes  safe-indented  avgt    6  35470241.565               #
+SchemaLoadBenchmark.loadSchemas:cpuMs           safe-indented  avgt    6        70.868               #
+
+Benchmark result is saved to /workspace/scratch/16f7543c9e7d/xml-followup-benchmark/results/combined-safe-indented-0.json

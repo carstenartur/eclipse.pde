@@ -1,0 +1,32 @@
+
+Thanks for using JUnit! Support its development at https://junit.org/sponsoring
+
+
+Failures (1):
+  JUnit Jupiter:SchemaXmlReaderTest:rejectsDoctypeAndMalformedXml()
+    MethodSource [className = 'org.eclipse.pde.core.tests.internal.SchemaXmlReaderTest', methodName = 'rejectsDoctypeAndMalformedXml', methodParameterTypes = '']
+    => org.opentest4j.AssertionFailedError: <!DOCTYPE schema> ==> expected: <false> but was: <true>
+       org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+       org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+       org.junit.jupiter.api.AssertFalse.failNotFalse(AssertFalse.java:63)
+       org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:36)
+       org.junit.jupiter.api.Assertions.assertFalse(Assertions.java:239)
+       org.eclipse.pde.core.tests.internal.SchemaXmlReaderTest.rejectsDoctypeAndMalformedXml(SchemaXmlReaderTest.java:59)
+       java.base/java.lang.reflect.Method.invoke(Method.java:565)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+
+Test run finished after 194 ms
+[         5 containers found      ]
+[         0 containers skipped    ]
+[         5 containers started    ]
+[         0 containers aborted    ]
+[         5 containers successful ]
+[         0 containers failed     ]
+[         9 tests found           ]
+[         0 tests skipped         ]
+[         9 tests started         ]
+[         0 tests aborted         ]
+[         8 tests successful      ]
+[         1 tests failed          ]
+

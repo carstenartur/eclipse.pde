@@ -1,0 +1,17 @@
+{
+  "original": {
+    "files": 50,
+    "xml_bytes": 725993,
+    "jar_bytes": 142221
+  },
+  "safe-compact": {
+    "files": 50,
+    "xml_bytes": 620781,
+    "jar_bytes": 137158
+  },
+  "safe-indented": {
+    "files": 50,
+    "xml_bytes": 650687,
+    "jar_bytes": 139317
+  }
+}
