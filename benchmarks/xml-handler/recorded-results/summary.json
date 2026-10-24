@@ -1,0 +1,134 @@
+{
+  "abbreviated": {
+    "original": {
+      "baseline_cpu_ms": 8.732971164550191,
+      "baseline_cpu_ms_by_fork": [
+        9.073082456833568,
+        7.988734610562865,
+        9.13709642625414
+      ],
+      "baseline_allocated_bytes": 4183540.7564156977,
+      "baseline_allocated_bytes_by_fork": [
+        4181995.1944444445,
+        4179141.093137255,
+        4189485.9816653933
+      ],
+      "patched_cpu_ms": 8.773186175644529,
+      "patched_cpu_ms_by_fork": [
+        9.454178041112279,
+        7.931766417881407,
+        8.933614067939903
+      ],
+      "patched_allocated_bytes": 4183609.5748351864,
+      "patched_allocated_bytes_by_fork": [
+        4182076.8444444444,
+        4179280.019607843,
+        4189471.8604532722
+      ],
+      "cpu_saved_ci95": [
+        -0.7958024594601845,
+        0.7153724372715065
+      ],
+      "cpu_reduction_pct": -0.4604963229190906,
+      "allocation_reduction_pct": -0.0016449802570539518
+    },
+    "compact": {
+      "baseline_cpu_ms": 7.856714269625658,
+      "baseline_cpu_ms_by_fork": [
+        8.270526622928339,
+        7.201411097619969,
+        8.098205088328665
+      ],
+      "baseline_allocated_bytes": 4151834.0266771354,
+      "baseline_allocated_bytes_by_fork": [
+        4150201.6277777776,
+        4147495.0980392154,
+        4157805.354214413
+      ],
+      "patched_cpu_ms": 8.128388015329005,
+      "patched_cpu_ms_by_fork": [
+        8.840026712336602,
+        7.426990172127622,
+        8.11814716152279
+      ],
+      "patched_allocated_bytes": 4151740.136567354,
+      "patched_allocated_bytes_by_fork": [
+        4150382.7,
+        4147405.254901961,
+        4157432.454800102
+      ],
+      "cpu_saved_ci95": [
+        -0.9614282205822677,
+        0.4180807291755733
+      ],
+      "cpu_reduction_pct": -3.4578544717305926,
+      "allocation_reduction_pct": 0.00226141288832693
+    }
+  },
+  "full": {
+    "original": {
+      "baseline_cpu_ms": 14.316834921967992,
+      "baseline_cpu_ms_by_fork": [
+        14.362109092754467,
+        14.79262735666278,
+        13.795768316486729
+      ],
+      "baseline_allocated_bytes": 23122856.285567325,
+      "baseline_allocated_bytes_by_fork": [
+        23131053.213675212,
+        23131309.7003367,
+        23106205.94269006
+      ],
+      "patched_cpu_ms": 10.871203992422084,
+      "patched_cpu_ms_by_fork": [
+        10.731748144832945,
+        11.36476484657472,
+        10.517098985858585
+      ],
+      "patched_allocated_bytes": 5484902.289922164,
+      "patched_allocated_bytes_by_fork": [
+        5491374.025641026,
+        5494120.757575758,
+        5469212.086549708
+      ],
+      "cpu_saved_ci95": [
+        3.007136389927066,
+        3.8841254691647515
+      ],
+      "cpu_reduction_pct": 24.066987908471827,
+      "allocation_reduction_pct": 76.27930467506432
+    },
+    "compact": {
+      "baseline_cpu_ms": 12.391510114320216,
+      "baseline_cpu_ms_by_fork": [
+        12.641218599009324,
+        12.660951421283347,
+        11.872360322667975
+      ],
+      "baseline_allocated_bytes": 18650167.92252348,
+      "baseline_allocated_bytes_by_fork": [
+        18658453.777777776,
+        18658640.7979798,
+        18633409.191812865
+      ],
+      "patched_cpu_ms": 9.42145418920764,
+      "patched_cpu_ms_by_fork": [
+        9.58835361416084,
+        9.49663650404688,
+        9.179372449415204
+      ],
+      "patched_allocated_bytes": 4726785.24385465,
+      "patched_allocated_bytes_by_fork": [
+        4733330.615384615,
+        4735914.851851852,
+        4711110.264327485
+      ],
+      "cpu_saved_ci95": [
+        2.358129045246047,
+        3.581982804979101
+      ],
+      "cpu_reduction_pct": 23.968474364397586,
+      "allocation_reduction_pct": 74.65553520219947
+    }
+  }
+}

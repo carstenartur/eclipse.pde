@@ -1,0 +1,350 @@
+{
+  "baseline_commit": "feabce4240a1268adcb8d26733a02d028eadea02",
+  "patched_path": "ui/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/XMLDefaultHandler.java",
+  "patched_sha256": "8f7e65e695c8b49a9383c32686a79b37c47fa60f28899264c16ab33a97a32cb5",
+  "downloads": [
+    {
+      "path": "corpus/original/plugin.xml",
+      "url": "https://raw.githubusercontent.com/eclipse-platform/eclipse.platform.ui/1c2ae81706700d6744babb3db81d0a99cf4520ce/bundles/org.eclipse.ui/plugin.xml",
+      "sha256": "6eb4a924c278e4f94d0830fc3004177ee4c4269cdc06f6effdfe995746d659a7"
+    },
+    {
+      "path": "corpus/original/schema/acceleratorConfigurations.exsd",
+      "url": "https://raw.githubusercontent.com/eclipse-platform/eclipse.platform.ui/1c2ae81706700d6744babb3db81d0a99cf4520ce/bundles/org.eclipse.ui/schema/acceleratorConfigurations.exsd",
+      "sha256": "6f565f40a9b79d77c5af3e5613be6eff33f5907105460d69649198a1de6884ec"
+    },
+    {
+      "path": "corpus/original/schema/acceleratorScopes.exsd",
+      "url": "https://raw.githubusercontent.com/eclipse-platform/eclipse.platform.ui/1c2ae81706700d6744babb3db81d0a99cf4520ce/bundles/org.eclipse.ui/schema/acceleratorScopes.exsd",
+      "sha256": "79763b01a0f895b8ccd25cf7d8f84f6c3f9d2d7fca4695e5d3e6d2ae360e50e1"
+    },
+    {
+      "path": "corpus/original/schema/acceleratorSets.exsd",
+      "url": "https://raw.githubusercontent.com/eclipse-platform/eclipse.platform.ui/1c2ae81706700d6744babb3db81d0a99cf4520ce/bundles/org.eclipse.ui/schema/acceleratorSets.exsd",
+      "sha256": "5f499ff555dee8ace32b7349d5a70750d8ab210e8e1d1c3aa405a86cafd81b7b"
+    },
+    {
+      "path": "corpus/original/schema/actionDefinitions.exsd",
+      "url": "https://raw.githubusercontent.com/eclipse-platform/eclipse.platform.ui/1c2ae81706700d6744babb3db81d0a99cf4520ce/bundles/org.eclipse.ui/schema/actionDefinitions.exsd",
+      "sha256": "491d1f020044ede10ed96a8cbe16602bb4225797022e669e03cc64ca159f45b5"
+    },
+    {
+      "path": "corpus/original/schema/actionSetPartAssociations.exsd",
+      "url": "https://raw.githubusercontent.com/eclipse-platform/eclipse.platform.ui/1c2ae81706700d6744babb3db81d0a99cf4520ce/bundles/org.eclipse.ui/schema/actionSetPartAssociations.exsd",
+      "sha256": "1db7b00ddf709630d8931e22a52814c6f37820b000cdf6f17e48a9f79ff92929"
+    },
+    {
+      "path": "corpus/original/schema/actionSets.exsd",
+      "url": "https://raw.githubusercontent.com/eclipse-platform/eclipse.platform.ui/1c2ae81706700d6744babb3db81d0a99cf4520ce/bundles/org.eclipse.ui/schema/actionSets.exsd",
+      "sha256": "44bf9ee667daab40488b917d2c79a1b0e7a91f86e560d773e0a99fb7559314bc"
+    },
+    {
+      "path": "corpus/original/schema/activities.exsd",
+      "url": "https://raw.githubusercontent.com/eclipse-platform/eclipse.platform.ui/1c2ae81706700d6744babb3db81d0a99cf4520ce/bundles/org.eclipse.ui/schema/activities.exsd",
+      "sha256": "46a9b6e943632cb2a86f42fb2aea2872e449f93db378d7db94d1a050c94963d8"
+    },
+    {
+      "path": "corpus/original/schema/activitySupport.exsd",
+      "url": "https://raw.githubusercontent.com/eclipse-platform/eclipse.platform.ui/1c2ae81706700d6744babb3db81d0a99cf4520ce/bundles/org.eclipse.ui/schema/activitySupport.exsd",
+      "sha256": "c27f15a6b91762435e7c5b9850b4d66780e0bc0c8ce610b34fb657d911869a7d"
+    },
+    {
+      "path": "corpus/original/schema/bindings.exsd",
+      "url": "https://raw.githubusercontent.com/eclipse-platform/eclipse.platform.ui/1c2ae81706700d6744babb3db81d0a99cf4520ce/bundles/org.eclipse.ui/schema/bindings.exsd",
+      "sha256": "b9caea00d18aedb1f0b04e7f0925f1c081023eeb572991a16f72ab3755a6f709"
+    },
+    {
+      "path": "corpus/original/schema/browserSupport.exsd",
+      "url": "https://raw.githubusercontent.com/eclipse-platform/eclipse.platform.ui/1c2ae81706700d6744babb3db81d0a99cf4520ce/bundles/org.eclipse.ui/schema/browserSupport.exsd",
+      "sha256": "378faf49333cb4919b0dc29cb5d21a9880d75f0c27c5745f998828972ece2580"
+    },
+    {
+      "path": "corpus/original/schema/commandImages.exsd",
+      "url": "https://raw.githubusercontent.com/eclipse-platform/eclipse.platform.ui/1c2ae81706700d6744babb3db81d0a99cf4520ce/bundles/org.eclipse.ui/schema/commandImages.exsd",
+      "sha256": "dcda672d5415d07f0b0c24e4aa02c7da705397acfe170e549a5ccb5e3fce5710"
+    },
+    {
+      "path": "corpus/original/schema/commands.exsd",
+      "url": "https://raw.githubusercontent.com/eclipse-platform/eclipse.platform.ui/1c2ae81706700d6744babb3db81d0a99cf4520ce/bundles/org.eclipse.ui/schema/commands.exsd",
+      "sha256": "4dabce123c73fd0a19a82ad3e85f2a0945cdd12a9278c8c5615aae25f33c7a74"
+    },
+    {
+      "path": "corpus/original/schema/commonAction.exsd",
+      "url": "https://raw.githubusercontent.com/eclipse-platform/eclipse.platform.ui/1c2ae81706700d6744babb3db81d0a99cf4520ce/bundles/org.eclipse.ui/schema/commonAction.exsd",
+      "sha256": "2610b35378a66e70096ad987726b07c1c58332d6f49e85f1006fca5e66922252"
+    },
+    {
+      "path": "corpus/original/schema/commonExpression.exsd",
+      "url": "https://raw.githubusercontent.com/eclipse-platform/eclipse.platform.ui/1c2ae81706700d6744babb3db81d0a99cf4520ce/bundles/org.eclipse.ui/schema/commonExpression.exsd",
+      "sha256": "c9614c7f1d714e5abfd189e07c6c3dcb0732e0f67de4144fc0aa9871ae747d7e"
+    },
+    {
+      "path": "corpus/original/schema/contexts.exsd",
+      "url": "https://raw.githubusercontent.com/eclipse-platform/eclipse.platform.ui/1c2ae81706700d6744babb3db81d0a99cf4520ce/bundles/org.eclipse.ui/schema/contexts.exsd",
+      "sha256": "1b5eb32164046e1ff93a013586b1b7ad6191c9d03d126396ce265187cc2fba98"
+    },
+    {
+      "path": "corpus/original/schema/decorators.exsd",
+      "url": "https://raw.githubusercontent.com/eclipse-platform/eclipse.platform.ui/1c2ae81706700d6744babb3db81d0a99cf4520ce/bundles/org.eclipse.ui/schema/decorators.exsd",
+      "sha256": "7486864e5057d1806a47aaab0431e4174718a63abed3308449aa70e655431dfd"
+    },
+    {
+      "path": "corpus/original/schema/dropActions.exsd",
+      "url": "https://raw.githubusercontent.com/eclipse-platform/eclipse.platform.ui/1c2ae81706700d6744babb3db81d0a99cf4520ce/bundles/org.eclipse.ui/schema/dropActions.exsd",
+      "sha256": "7c6932a5ce67dcd5bbe3a210926bd2f6825dda159e888d0c73b116c5d56af8fe"
+    },
+    {
+      "path": "corpus/original/schema/editorActions.exsd",
+      "url": "https://raw.githubusercontent.com/eclipse-platform/eclipse.platform.ui/1c2ae81706700d6744babb3db81d0a99cf4520ce/bundles/org.eclipse.ui/schema/editorActions.exsd",
+      "sha256": "530de61aca877b34ddd6b2991cb171d4d0657103f0d3cbeb6a6916368f4f3d0c"
+    },
+    {
+      "path": "corpus/original/schema/editors.exsd",
+      "url": "https://raw.githubusercontent.com/eclipse-platform/eclipse.platform.ui/1c2ae81706700d6744babb3db81d0a99cf4520ce/bundles/org.eclipse.ui/schema/editors.exsd",
+      "sha256": "8fa740f0654878a87885964cc898d06ddb1dbe9d577757f274c3735f442912e5"
+    },
+    {
+      "path": "corpus/original/schema/elementFactories.exsd",
+      "url": "https://raw.githubusercontent.com/eclipse-platform/eclipse.platform.ui/1c2ae81706700d6744babb3db81d0a99cf4520ce/bundles/org.eclipse.ui/schema/elementFactories.exsd",
+      "sha256": "02e3b5d5da27e21af6b880e580e461a96bdefb4b5db6837f184543846f6597be"
+    },
+    {
+      "path": "corpus/original/schema/encodings.exsd",
+      "url": "https://raw.githubusercontent.com/eclipse-platform/eclipse.platform.ui/1c2ae81706700d6744babb3db81d0a99cf4520ce/bundles/org.eclipse.ui/schema/encodings.exsd",
+      "sha256": "5e04e8b504cdb05b0e0bf0db94cfa44fe1b921abb5794022dba86e165255b568"
+    },
+    {
+      "path": "corpus/original/schema/exportWizards.exsd",
+      "url": "https://raw.githubusercontent.com/eclipse-platform/eclipse.platform.ui/1c2ae81706700d6744babb3db81d0a99cf4520ce/bundles/org.eclipse.ui/schema/exportWizards.exsd",
+      "sha256": "7815c6360bef1f3125999506c4928f0aec1cd14c9384c811d90178ba4bae93c9"
+    },
+    {
+      "path": "corpus/original/schema/fontDefinitions.exsd",
+      "url": "https://raw.githubusercontent.com/eclipse-platform/eclipse.platform.ui/1c2ae81706700d6744babb3db81d0a99cf4520ce/bundles/org.eclipse.ui/schema/fontDefinitions.exsd",
+      "sha256": "c0604f178e5f06e53a94016e648956c449408867d146b45ccd68971fe6e65ba3"
+    },
+    {
+      "path": "corpus/original/schema/handlers.exsd",
+      "url": "https://raw.githubusercontent.com/eclipse-platform/eclipse.platform.ui/1c2ae81706700d6744babb3db81d0a99cf4520ce/bundles/org.eclipse.ui/schema/handlers.exsd",
+      "sha256": "f250168f69de3563a13a2f09e00737382918f0ce07b94a166c64edb059d0978f"
+    },
+    {
+      "path": "corpus/original/schema/helpSupport.exsd",
+      "url": "https://raw.githubusercontent.com/eclipse-platform/eclipse.platform.ui/1c2ae81706700d6744babb3db81d0a99cf4520ce/bundles/org.eclipse.ui/schema/helpSupport.exsd",
+      "sha256": "f63bff2969f08f7af655fd5dce5ef7444ed211d976a3564aa598709dd34d48e3"
+    },
+    {
+      "path": "corpus/original/schema/importWizards.exsd",
+      "url": "https://raw.githubusercontent.com/eclipse-platform/eclipse.platform.ui/1c2ae81706700d6744babb3db81d0a99cf4520ce/bundles/org.eclipse.ui/schema/importWizards.exsd",
+      "sha256": "6db68ee7751775d2a71defa7cb8d2f3dc9e3f3487a1ee27dbda4a4428206f9f9"
+    },
+    {
+      "path": "corpus/original/schema/installationPages.exsd",
+      "url": "https://raw.githubusercontent.com/eclipse-platform/eclipse.platform.ui/1c2ae81706700d6744babb3db81d0a99cf4520ce/bundles/org.eclipse.ui/schema/installationPages.exsd",
+      "sha256": "49e01f01eded0b6d06a285c6a2e9c3c6c723ad0c7f66887db1d0668f6d7798e3"
+    },
+    {
+      "path": "corpus/original/schema/internalTweaklets.exsd",
+      "url": "https://raw.githubusercontent.com/eclipse-platform/eclipse.platform.ui/1c2ae81706700d6744babb3db81d0a99cf4520ce/bundles/org.eclipse.ui/schema/internalTweaklets.exsd",
+      "sha256": "2e4b4f8857a9d95a644fa01af08ba117e75047d80c516db3d9ff1f6de425ca12"
+    },
+    {
+      "path": "corpus/original/schema/intro.exsd",
+      "url": "https://raw.githubusercontent.com/eclipse-platform/eclipse.platform.ui/1c2ae81706700d6744babb3db81d0a99cf4520ce/bundles/org.eclipse.ui/schema/intro.exsd",
+      "sha256": "5ef58228c24549b36de140425c43e67a02de86b63641a9780286601468a9095b"
+    },
+    {
+      "path": "corpus/original/schema/keywords.exsd",
+      "url": "https://raw.githubusercontent.com/eclipse-platform/eclipse.platform.ui/1c2ae81706700d6744babb3db81d0a99cf4520ce/bundles/org.eclipse.ui/schema/keywords.exsd",
+      "sha256": "d5c14388d7ae4b3022159b2fd8e2065c664b3e11ddb9c67cdb03d0f89cecc56d"
+    },
+    {
+      "path": "corpus/original/schema/menus.exsd",
+      "url": "https://raw.githubusercontent.com/eclipse-platform/eclipse.platform.ui/1c2ae81706700d6744babb3db81d0a99cf4520ce/bundles/org.eclipse.ui/schema/menus.exsd",
+      "sha256": "6222650011564b73351db61a118374839f13d22be9e094988d9817256afedb03"
+    },
+    {
+      "path": "corpus/original/schema/newWizards.exsd",
+      "url": "https://raw.githubusercontent.com/eclipse-platform/eclipse.platform.ui/1c2ae81706700d6744babb3db81d0a99cf4520ce/bundles/org.eclipse.ui/schema/newWizards.exsd",
+      "sha256": "463a78c66344a1d71dcf859c8fc07dd9adead33eee1192ffb736ebae8c520b01"
+    },
+    {
+      "path": "corpus/original/schema/perspectiveExtensions.exsd",
+      "url": "https://raw.githubusercontent.com/eclipse-platform/eclipse.platform.ui/1c2ae81706700d6744babb3db81d0a99cf4520ce/bundles/org.eclipse.ui/schema/perspectiveExtensions.exsd",
+      "sha256": "1c12362ffdaf29819e5b127ea5b56a4eda6f6a1183fdf20fe63b93d45baa4f77"
+    },
+    {
+      "path": "corpus/original/schema/perspectives.exsd",
+      "url": "https://raw.githubusercontent.com/eclipse-platform/eclipse.platform.ui/1c2ae81706700d6744babb3db81d0a99cf4520ce/bundles/org.eclipse.ui/schema/perspectives.exsd",
+      "sha256": "eb8c4e0b0a337975aedd402f652206de40fa3bfe4e6fc47f7e627f21d8cd20c1"
+    },
+    {
+      "path": "corpus/original/schema/popupMenus.exsd",
+      "url": "https://raw.githubusercontent.com/eclipse-platform/eclipse.platform.ui/1c2ae81706700d6744babb3db81d0a99cf4520ce/bundles/org.eclipse.ui/schema/popupMenus.exsd",
+      "sha256": "af618ca858a5c812dfa2d25489ec0cd933442c1f23323dd5d64f6be07bf556a0"
+    },
+    {
+      "path": "corpus/original/schema/preferencePages.exsd",
+      "url": "https://raw.githubusercontent.com/eclipse-platform/eclipse.platform.ui/1c2ae81706700d6744babb3db81d0a99cf4520ce/bundles/org.eclipse.ui/schema/preferencePages.exsd",
+      "sha256": "099df3602c128e3da99488642dec21e67af0f930f59be933f9f9e665f6fbb0d0"
+    },
+    {
+      "path": "corpus/original/schema/preferenceTransfer.exsd",
+      "url": "https://raw.githubusercontent.com/eclipse-platform/eclipse.platform.ui/1c2ae81706700d6744babb3db81d0a99cf4520ce/bundles/org.eclipse.ui/schema/preferenceTransfer.exsd",
+      "sha256": "7831ecafe2eac7d211523264b89715671bb47322c635e3e244d651260dffb5cb"
+    },
+    {
+      "path": "corpus/original/schema/propertiesView.exsd",
+      "url": "https://raw.githubusercontent.com/eclipse-platform/eclipse.platform.ui/1c2ae81706700d6744babb3db81d0a99cf4520ce/bundles/org.eclipse.ui/schema/propertiesView.exsd",
+      "sha256": "0f87db7a5f23656557d3c3ea1486ccdb71eed99310038eb66ad95f34c6211459"
+    },
+    {
+      "path": "corpus/original/schema/propertyPages.exsd",
+      "url": "https://raw.githubusercontent.com/eclipse-platform/eclipse.platform.ui/1c2ae81706700d6744babb3db81d0a99cf4520ce/bundles/org.eclipse.ui/schema/propertyPages.exsd",
+      "sha256": "c8b5b46bb199b08b1ce08472bdebcce9a47440192ec3eeb76b0a762211f81d2d"
+    },
+    {
+      "path": "corpus/original/schema/quickAccess.exsd",
+      "url": "https://raw.githubusercontent.com/eclipse-platform/eclipse.platform.ui/1c2ae81706700d6744babb3db81d0a99cf4520ce/bundles/org.eclipse.ui/schema/quickAccess.exsd",
+      "sha256": "e827af762565d95fbe62fee1124ffa7881f947e98478ebad1d67fe0bb8d025f9"
+    },
+    {
+      "path": "corpus/original/schema/services.exsd",
+      "url": "https://raw.githubusercontent.com/eclipse-platform/eclipse.platform.ui/1c2ae81706700d6744babb3db81d0a99cf4520ce/bundles/org.eclipse.ui/schema/services.exsd",
+      "sha256": "90eb448b43815da073b90077e6255ab084affb695db4193e0eeb65fe90a7665b"
+    },
+    {
+      "path": "corpus/original/schema/splashHandlers.exsd",
+      "url": "https://raw.githubusercontent.com/eclipse-platform/eclipse.platform.ui/1c2ae81706700d6744babb3db81d0a99cf4520ce/bundles/org.eclipse.ui/schema/splashHandlers.exsd",
+      "sha256": "465a87ead7da5908ce12a7e9433b60d98af4f3d99e9d1ef4c8206dd24d20b50d"
+    },
+    {
+      "path": "corpus/original/schema/startup.exsd",
+      "url": "https://raw.githubusercontent.com/eclipse-platform/eclipse.platform.ui/1c2ae81706700d6744babb3db81d0a99cf4520ce/bundles/org.eclipse.ui/schema/startup.exsd",
+      "sha256": "e5850ad8261c218a1bc79c779952cbc6df230e5c1f00c6f71a4477b524fd6e80"
+    },
+    {
+      "path": "corpus/original/schema/statusHandlers.exsd",
+      "url": "https://raw.githubusercontent.com/eclipse-platform/eclipse.platform.ui/1c2ae81706700d6744babb3db81d0a99cf4520ce/bundles/org.eclipse.ui/schema/statusHandlers.exsd",
+      "sha256": "a0c92535c15733df21226f9806e8185e9518c702f13d2975f81cae4ca692da59"
+    },
+    {
+      "path": "corpus/original/schema/systemSummarySections.exsd",
+      "url": "https://raw.githubusercontent.com/eclipse-platform/eclipse.platform.ui/1c2ae81706700d6744babb3db81d0a99cf4520ce/bundles/org.eclipse.ui/schema/systemSummarySections.exsd",
+      "sha256": "f379355ff0ef6a1d9dd22d12ba4fe80582e9c87e1495e3f6f6cdf024db17a273"
+    },
+    {
+      "path": "corpus/original/schema/themes.exsd",
+      "url": "https://raw.githubusercontent.com/eclipse-platform/eclipse.platform.ui/1c2ae81706700d6744babb3db81d0a99cf4520ce/bundles/org.eclipse.ui/schema/themes.exsd",
+      "sha256": "cd3e29647fbe76495c572cb6e16dc6e455dd62274d5bfa4f991d527e2dd49f7e"
+    },
+    {
+      "path": "corpus/original/schema/viewActions.exsd",
+      "url": "https://raw.githubusercontent.com/eclipse-platform/eclipse.platform.ui/1c2ae81706700d6744babb3db81d0a99cf4520ce/bundles/org.eclipse.ui/schema/viewActions.exsd",
+      "sha256": "c7c250d1357963844782cd600ae6d79d412f790ecc87cffdeddd4d375cf2f15d"
+    },
+    {
+      "path": "corpus/original/schema/views.exsd",
+      "url": "https://raw.githubusercontent.com/eclipse-platform/eclipse.platform.ui/1c2ae81706700d6744babb3db81d0a99cf4520ce/bundles/org.eclipse.ui/schema/views.exsd",
+      "sha256": "e0b173439c045a8ff3b0d9c1132efa169126af8ce80c21fa36b4bde40b60c252"
+    },
+    {
+      "path": "corpus/original/schema/workingSets.exsd",
+      "url": "https://raw.githubusercontent.com/eclipse-platform/eclipse.platform.ui/1c2ae81706700d6744babb3db81d0a99cf4520ce/bundles/org.eclipse.ui/schema/workingSets.exsd",
+      "sha256": "313d232428060afba41f07fa257c4cb3b0800417636173effeb4f02cd9bd6e8d"
+    },
+    {
+      "path": "sources/BaselineXMLDefaultHandler.java",
+      "url": "https://raw.githubusercontent.com/eclipse-pde/eclipse.pde/feabce4240a1268adcb8d26733a02d028eadea02/ui/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/XMLDefaultHandler.java",
+      "sha256": "e15bb2bb62f1a745d98fb6eb1e1dfb44e829b4f34d81fe0174dcffca0af2fb73",
+      "transform": "rename-baseline-handler"
+    },
+    {
+      "path": "sources/src/org/eclipse/core/internal/runtime/XmlProcessorFactory.java",
+      "url": "https://raw.githubusercontent.com/eclipse-platform/eclipse.platform/119d38bd6b19b4b455359f404dc2746160b0189a/runtime/bundles/org.eclipse.core.runtime/src/org/eclipse/core/internal/runtime/XmlProcessorFactory.java",
+      "sha256": "b8f067281b44033d367e13c803650a5706d532738a58ba238ba71801e9a8906e"
+    },
+    {
+      "path": "sources/src/org/sandbox/jdt/internal/corext/fix/helper/SchemaTransformationUtils.java",
+      "url": "https://raw.githubusercontent.com/carstenartur/sandbox/8c6b6ea67f691318e9ce36be74ca881da6e6d9fc/sandbox_xml_cleanup/src/org/sandbox/jdt/internal/corext/fix/helper/SchemaTransformationUtils.java",
+      "sha256": "dbea2fb2b6d3d79397a91dd2a5dd8e45ec20b3b278178cd34a2998b89a3dbf52"
+    },
+    {
+      "path": "classes/resources/formatter.xsl",
+      "url": "https://raw.githubusercontent.com/carstenartur/sandbox/8c6b6ea67f691318e9ce36be74ca881da6e6d9fc/sandbox_xml_cleanup/src/resources/formatter.xsl",
+      "sha256": "1cd472252899d8db004dd07107517176a09ddeb947a2a2a831f71a8f5422ca0e"
+    },
+    {
+      "path": "lib/jmh-core-1.37.jar",
+      "url": "https://repo.maven.apache.org/maven2/org/openjdk/jmh/jmh-core/1.37/jmh-core-1.37.jar",
+      "sha256": "dc0eaf2bbf0036a70b60798c785d6e03a9daf06b68b8edb0f1ba9eb3421baeb3"
+    },
+    {
+      "path": "lib/jmh-generator-annprocess-1.37.jar",
+      "url": "https://repo.maven.apache.org/maven2/org/openjdk/jmh/jmh-generator-annprocess/1.37/jmh-generator-annprocess-1.37.jar",
+      "sha256": "6a5604b5b804e0daca1145df1077609321687734a8b49387e49f10557c186c77"
+    },
+    {
+      "path": "lib/jopt-simple-5.0.4.jar",
+      "url": "https://repo.maven.apache.org/maven2/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar",
+      "sha256": "df26cc58f235f477db07f753ba5a3ab243ebe5789d9f89ecf68dd62ea9a66c28"
+    },
+    {
+      "path": "lib/commons-math3-3.6.1.jar",
+      "url": "https://repo.maven.apache.org/maven2/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar",
+      "sha256": "1e56d7b058d28b65abd256b8458e3885b674c1d588fa43cd7d1cbb9c7ef2b308"
+    }
+  ],
+  "compact_sha256": {
+    "plugin.xml": "6f983b6b3e2f5f74188c78fc7bb5903a06754bc3e61881dee7f31a28ded85001",
+    "schema/acceleratorConfigurations.exsd": "a2c59867e906475d9dd451c85e61ef89370b60501a0d8079b8973c860b75d66a",
+    "schema/acceleratorScopes.exsd": "b53b0a0c4145b24cafb32e88a392bffcd2b694900b4b9c6574044c5d15ca601b",
+    "schema/acceleratorSets.exsd": "f82d3d4becaef7fb5e12d14b0cf3e767d9c3c43ff88134fa8d2e641d84af714f",
+    "schema/actionDefinitions.exsd": "e8ca8e5e2dc28ab2f6983f4e0b17042c58e7875cded664cbbdd958f2d6c82880",
+    "schema/actionSetPartAssociations.exsd": "6ed26b95cbf168fe5445f81b04032cfbce7043597b63dc05735eb6d632715b2d",
+    "schema/actionSets.exsd": "cb8636551d9e58aad4cb069d93626ff6c3397beb9a12bac536a15f67f3206f81",
+    "schema/activities.exsd": "d4248b077f3cb105d1a8d5917142b290aa751230059f92b32b667570a3e14a6d",
+    "schema/activitySupport.exsd": "d8413942426cc89c09f31fd1c83d05120482d64c9e9d10a512dedecc85c153f3",
+    "schema/bindings.exsd": "e04478c13acbc3a0ea045966b0491ac578927d34b1a0923b4ca7a21e3870a7cc",
+    "schema/browserSupport.exsd": "f6ac99db671bc09a647084edd5e1e9c61989ff150866c05f008659dfa9bc25c1",
+    "schema/commandImages.exsd": "cb46d6249e6bd13a0023dbb3f9136e8c988dbc426b0a9c16891774a8c27672a5",
+    "schema/commands.exsd": "7122c149d4fb53ab62108c620831715de3e1a8cf04ef2b9df7fa9d5e85f3a63b",
+    "schema/commonAction.exsd": "999dbd70cf595378c3a741366212ef944db5281a19b3cff6b106e60f7d83f6c1",
+    "schema/commonExpression.exsd": "3a90cc6e0c1d8c9ea01f397f3f98c202621d255d1f764182110dcb0a8a170a21",
+    "schema/contexts.exsd": "7b3c75614fcafa73a46777f862b3ead62d5a0bc2c08278172cdef75f815b0009",
+    "schema/decorators.exsd": "dd26fa5431347be5ebc2f642ead887d9cbe44fcbe81e7df2d2a19ef81053bfff",
+    "schema/dropActions.exsd": "9941ceb003e8a17103759aaf4991bd3d3a075d0b0df6180ef7f77a8b175d6480",
+    "schema/editorActions.exsd": "437e24493d886a0fcdce3e4be21039a25860a641c4ae216a1a6d04e78f163c3f",
+    "schema/editors.exsd": "335b94256864bd645eac0dda3c1660d9743858ce6c22a30acda0eece55eb29e4",
+    "schema/elementFactories.exsd": "c3b34d8757e9756a728c97973b421d1fc419a553a43070479f5cd0ee2e7c746b",
+    "schema/encodings.exsd": "3a02fa3a1809b6ddfcff319eb9d339a08e32ce7fa3db7d825a3c4546d4c5a088",
+    "schema/exportWizards.exsd": "bd7720cbfdc347f8ebda68ec3054271cb94e9bc502b33d8e96d932f901d12b1f",
+    "schema/fontDefinitions.exsd": "391ce929b8b52a6dee350c1d4ffe530ae5e9d3634d59b6c030b1ac7efe5c7a7e",
+    "schema/handlers.exsd": "613583c9ea3e49b816b867ccdc641f8b7e447a3a301b16f6e47c071e57140500",
+    "schema/helpSupport.exsd": "86a9334705d45933da18a58292d547e3e21603bed267ada476ea1fdcc975e5f2",
+    "schema/importWizards.exsd": "1ca9dc6292da29b7302f58c949429de408096ca39696a8d10a256f16da01dc15",
+    "schema/installationPages.exsd": "0377d53482925e6f98076a904a8103a365fe4173237aa26c4af9baed22430467",
+    "schema/internalTweaklets.exsd": "5a7bf9f4535a28680ab4a9d3d45b541bf6d246813acd76767227e73bbef94568",
+    "schema/intro.exsd": "e8267a6628cc4482831d1e516f42b75dea87f83758f6f6d778ff74c26ba9b0ec",
+    "schema/keywords.exsd": "37c9c9aa0c8230dbf44b5de2cd730fa0b936f36660b19d3125e075db7f5bae03",
+    "schema/menus.exsd": "049262bd6574ce7cbea2a34f5edd0ceda7515746dce4b9a58f93e7f1217ed559",
+    "schema/newWizards.exsd": "6afdd5c6599643182718bcf21706bc3fb31c45a8a605ce0bd22e24a43595e27d",
+    "schema/perspectiveExtensions.exsd": "db62d68dd4356f61a159cf198ae887e8c2859db822ad0256704271c82ef7a341",
+    "schema/perspectives.exsd": "85e53f8dd2b00cb83614bdb3f6fcfe7f5bead9d0861243f142fa793183ba2edf",
+    "schema/popupMenus.exsd": "3df14da27b356c65422df546947a2d523ff63fe071176241e06c64193ba294e1",
+    "schema/preferencePages.exsd": "e9e8bc62a780b027ea68b9d229e99db2dd5e6736bc550d129806be535f165c07",
+    "schema/preferenceTransfer.exsd": "67c6ce6ed1bcad20aa242a84321093cba3cec73d95b869816f8b3fc201172dde",
+    "schema/propertiesView.exsd": "e849365f4fb259cb767ea852fb210761ee0cd421203fd94bb0865587b9beec35",
+    "schema/propertyPages.exsd": "2824562d4093fc04e374628ccc4e1b12a30da0c67dbb5dfff3e93e9f34ea4459",
+    "schema/quickAccess.exsd": "a374599a7a95a52029d7b0957da506063b36033ca7d6716b250558a6a3394c05",
+    "schema/services.exsd": "79b5d9b74e89b60e02d3aac78092d49b4c8500af008dc53d14365538b8e64dbf",
+    "schema/splashHandlers.exsd": "c56011ac487c0cd15048b6d6893326509f4a062793618934765e7c667533e9e3",
+    "schema/startup.exsd": "1d8cee28a5c36ce8583b61a2d9f121fe0f40d2d7bf56c7a4df6eb679c0627493",
+    "schema/statusHandlers.exsd": "d8751fe0fd63a76013299d16466f1e7ce865078046157ba7d5332d2e9d54d6a6",
+    "schema/systemSummarySections.exsd": "b26688b95cc9bbd1afd960e332ee3cb2349d6e7d7733c43310a62d9700a8d37d",
+    "schema/themes.exsd": "779fdb0145a2b63291194ee879610aaffa2a6046dcc555b1025bddd6bfdfe1f0",
+    "schema/viewActions.exsd": "6f134bf1a209dc3fa4fcd00b0a158c9e803b30dbca037fd1999a205b7791dfec",
+    "schema/views.exsd": "11dcf07839da097ba90fd52501c9aee91119577d75e0a8f7e9cab3261619d5ef",
+    "schema/workingSets.exsd": "9313afd81571c43e95b7ee63c90c08e64d179a3d29599c79ffc35146c17ccb9d"
+  }
+}

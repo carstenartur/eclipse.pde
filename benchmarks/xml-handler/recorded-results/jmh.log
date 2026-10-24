@@ -1,0 +1,591 @@
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by org.openjdk.jmh.util.Utils (file:/workspace/scratch/16f7543c9e7d/xml-benchmark/lib/jmh-core-1.37.jar)
+WARNING: Please consider reporting this to the maintainers of class org.openjdk.jmh.util.Utils
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+# JMH version: 1.37
+# VM version: JDK 25.0.4, OpenJDK 64-Bit Server VM, 25.0.4+7-1-24.04-Ubuntu
+# VM invoker: /workspace/scratch/16f7543c9e7d/benchmark-deps/jdk25/usr/lib/jvm/java-25-openjdk-amd64/bin/java
+# VM options: -Xms512m -Xmx512m -XX:+UseSerialGC -XX:ActiveProcessorCount=1
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 4 iterations, 2 s each
+# Measurement: 6 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: bench.HandlerComparison.compare
+# Parameters: (mode = abbreviated)
+
+# Run progress: 0.00% complete, ETA 00:01:24
+# Fork: 1 of 3
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by org.openjdk.jmh.util.Utils (file:/workspace/scratch/16f7543c9e7d/xml-benchmark/lib/jmh-core-1.37.jar)
+WARNING: Please consider reporting this to the maintainers of class org.openjdk.jmh.util.Utils
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+# Warmup Iteration   1: Verified 98 exact DOM comparisons; mode=abbreviated
+211.126 ms/op
+# Warmup Iteration   2: 105.203 ms/op
+# Warmup Iteration   3: 88.626 ms/op
+# Warmup Iteration   4: 82.250 ms/op
+Iteration   1: 75.825 ms/op
+                 baselineCompactBytes:  4173336.000 #
+                 baselineCompactCpu:    8.820 #
+                 baselineOriginalBytes: 4205040.000 #
+                 baselineOriginalCpu:   9.786 #
+                 patchedCompactBytes:   4173336.000 #
+                 patchedCompactCpu:     9.067 #
+                 patchedOriginalBytes:  4205040.000 #
+                 patchedOriginalCpu:    9.635 #
+
+Iteration   2: 71.026 ms/op
+                 baselineCompactBytes:  4170884.267 #
+                 baselineCompactCpu:    8.921 #
+                 baselineOriginalBytes: 4202698.667 #
+                 baselineOriginalCpu:   9.491 #
+                 patchedCompactBytes:   4170827.200 #
+                 patchedCompactCpu:     8.967 #
+                 patchedOriginalBytes:  4202665.067 #
+                 patchedOriginalCpu:    9.764 #
+
+Iteration   3: 64.400 ms/op
+                 baselineCompactBytes:  4147653.500 #
+                 baselineCompactCpu:    7.883 #
+                 baselineOriginalBytes: 4180048.500 #
+                 baselineOriginalCpu:   8.843 #
+                 patchedCompactBytes:   4149061.000 #
+                 patchedCompactCpu:     8.310 #
+                 patchedOriginalBytes:  4180572.000 #
+                 patchedOriginalCpu:    8.479 #
+
+Iteration   4: 62.013 ms/op
+                 baselineCompactBytes:  4137272.000 #
+                 baselineCompactCpu:    7.084 #
+                 baselineOriginalBytes: 4168976.000 #
+                 baselineOriginalCpu:   8.183 #
+                 patchedCompactBytes:   4137272.000 #
+                 patchedCompactCpu:     7.129 #
+                 patchedOriginalBytes:  4168976.000 #
+                 patchedOriginalCpu:    8.203 #
+
+Iteration   5: 67.361 ms/op
+                 baselineCompactBytes:  4137272.000 #
+                 baselineCompactCpu:    8.398 #
+                 baselineOriginalBytes: 4168976.000 #
+                 baselineOriginalCpu:   8.293 #
+                 patchedCompactBytes:   4137272.000 #
+                 patchedCompactCpu:     8.503 #
+                 patchedOriginalBytes:  4168976.000 #
+                 patchedOriginalCpu:    8.464 #
+
+Iteration   6: 83.343 ms/op
+                 baselineCompactBytes:  4134792.000 #
+                 baselineCompactCpu:    8.518 #
+                 baselineOriginalBytes: 4166232.000 #
+                 baselineOriginalCpu:   9.843 #
+                 patchedCompactBytes:   4134528.000 #
+                 patchedCompactCpu:     11.065 #
+                 patchedOriginalBytes:  4166232.000 #
+                 patchedOriginalCpu:    12.180 #
+
+
+# Run progress: 16.67% complete, ETA 00:01:20
+# Fork: 2 of 3
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by org.openjdk.jmh.util.Utils (file:/workspace/scratch/16f7543c9e7d/xml-benchmark/lib/jmh-core-1.37.jar)
+WARNING: Please consider reporting this to the maintainers of class org.openjdk.jmh.util.Utils
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+# Warmup Iteration   1: Verified 98 exact DOM comparisons; mode=abbreviated
+174.031 ms/op
+# Warmup Iteration   2: 77.941 ms/op
+# Warmup Iteration   3: 73.704 ms/op
+# Warmup Iteration   4: 70.832 ms/op
+Iteration   1: 66.669 ms/op
+                 baselineCompactBytes:  4170009.000 #
+                 baselineCompactCpu:    8.104 #
+                 baselineOriginalBytes: 4201572.500 #
+                 baselineOriginalCpu:   9.100 #
+                 patchedCompactBytes:   4169094.000 #
+                 patchedCompactCpu:     8.510 #
+                 patchedOriginalBytes:  4201563.000 #
+                 patchedOriginalCpu:    8.827 #
+
+Iteration   2: 59.097 ms/op
+                 baselineCompactBytes:  4157494.588 #
+                 baselineCompactCpu:    7.024 #
+                 baselineOriginalBytes: 4188991.059 #
+                 baselineOriginalCpu:   7.786 #
+                 patchedCompactBytes:   4157527.529 #
+                 patchedCompactCpu:     7.260 #
+                 patchedOriginalBytes:  4189294.118 #
+                 patchedOriginalCpu:    7.924 #
+
+Iteration   3: 64.742 ms/op
+                 baselineCompactBytes:  4156872.000 #
+                 baselineCompactCpu:    7.653 #
+                 baselineOriginalBytes: 4188576.000 #
+                 baselineOriginalCpu:   8.670 #
+                 patchedCompactBytes:   4156872.000 #
+                 patchedCompactCpu:     7.910 #
+                 patchedOriginalBytes:  4188576.000 #
+                 patchedOriginalCpu:    7.736 #
+
+Iteration   4: 65.311 ms/op
+                 baselineCompactBytes:  4149522.000 #
+                 baselineCompactCpu:    7.598 #
+                 baselineOriginalBytes: 4181226.000 #
+                 baselineOriginalCpu:   8.284 #
+                 patchedCompactBytes:   4149522.000 #
+                 patchedCompactCpu:     8.237 #
+                 patchedOriginalBytes:  4181766.000 #
+                 patchedOriginalCpu:    8.481 #
+
+Iteration   5: 42.270 ms/op
+                 baselineCompactBytes:  4126737.000 #
+                 baselineCompactCpu:    6.510 #
+                 baselineOriginalBytes: 4158441.000 #
+                 baselineOriginalCpu:   7.228 #
+                 patchedCompactBytes:   4127080.000 #
+                 patchedCompactCpu:     6.461 #
+                 patchedOriginalBytes:  4158441.000 #
+                 patchedOriginalCpu:    7.382 #
+
+Iteration   6: 26.777 ms/op
+                 baselineCompactBytes:  4124336.000 #
+                 baselineCompactCpu:    6.318 #
+                 baselineOriginalBytes: 4156040.000 #
+                 baselineOriginalCpu:   6.864 #
+                 patchedCompactBytes:   4124336.000 #
+                 patchedCompactCpu:     6.185 #
+                 patchedOriginalBytes:  4156040.000 #
+                 patchedOriginalCpu:    7.241 #
+
+
+# Run progress: 33.33% complete, ETA 00:01:02
+# Fork: 3 of 3
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by org.openjdk.jmh.util.Utils (file:/workspace/scratch/16f7543c9e7d/xml-benchmark/lib/jmh-core-1.37.jar)
+WARNING: Please consider reporting this to the maintainers of class org.openjdk.jmh.util.Utils
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+# Warmup Iteration   1: Verified 98 exact DOM comparisons; mode=abbreviated
+172.880 ms/op
+# Warmup Iteration   2: 83.552 ms/op
+# Warmup Iteration   3: 71.119 ms/op
+# Warmup Iteration   4: 81.173 ms/op
+Iteration   1: 75.497 ms/op
+                 baselineCompactBytes:  4183621.714 #
+                 baselineCompactCpu:    8.941 #
+                 baselineOriginalBytes: 4215316.000 #
+                 baselineOriginalCpu:   9.822 #
+                 patchedCompactBytes:   4182574.857 #
+                 patchedCompactCpu:     8.749 #
+                 patchedOriginalBytes:  4214861.143 #
+                 patchedOriginalCpu:    9.586 #
+
+Iteration   2: 60.522 ms/op
+                 baselineCompactBytes:  4166187.294 #
+                 baselineCompactCpu:    7.415 #
+                 baselineOriginalBytes: 4197887.059 #
+                 baselineOriginalCpu:   8.217 #
+                 patchedCompactBytes:   4166276.235 #
+                 patchedCompactCpu:     7.382 #
+                 patchedOriginalBytes:  4197975.059 #
+                 patchedOriginalCpu:    8.647 #
+
+Iteration   3: 67.778 ms/op
+                 baselineCompactBytes:  4162752.000 #
+                 baselineCompactCpu:    7.448 #
+                 baselineOriginalBytes: 4194456.000 #
+                 baselineOriginalCpu:   9.375 #
+                 patchedCompactBytes:   4162752.000 #
+                 patchedCompactCpu:     8.079 #
+                 patchedOriginalBytes:  4194456.000 #
+                 patchedOriginalCpu:    8.425 #
+
+Iteration   4: 69.613 ms/op
+                 baselineCompactBytes:  4162752.000 #
+                 baselineCompactCpu:    8.618 #
+                 baselineOriginalBytes: 4194456.000 #
+                 baselineOriginalCpu:   8.939 #
+                 patchedCompactBytes:   4162752.000 #
+                 patchedCompactCpu:     8.526 #
+                 patchedOriginalBytes:  4194456.000 #
+                 patchedOriginalCpu:    8.652 #
+
+Iteration   5: 72.872 ms/op
+                 baselineCompactBytes:  4142924.571 #
+                 baselineCompactCpu:    8.800 #
+                 baselineOriginalBytes: 4174502.286 #
+                 baselineOriginalCpu:   9.685 #
+                 patchedCompactBytes:   4141556.000 #
+                 patchedCompactCpu:     8.434 #
+                 patchedOriginalBytes:  4174517.143 #
+                 patchedOriginalCpu:    9.505 #
+
+Iteration   6: 46.199 ms/op
+                 baselineCompactBytes:  4128594.545 #
+                 baselineCompactCpu:    7.366 #
+                 baselineOriginalBytes: 4160298.545 #
+                 baselineOriginalCpu:   8.785 #
+                 patchedCompactBytes:   4128683.636 #
+                 patchedCompactCpu:     7.538 #
+                 patchedOriginalBytes:  4160565.818 #
+                 patchedOriginalCpu:    8.787 #
+
+
+
+Result "bench.HandlerComparison.compare":
+  63.407 ±(99.9%) 12.517 ms/op [Average]
+  (min, avg, max) = (26.777, 63.407, 83.343), stdev = 13.393
+  CI (99.9%): [50.890, 75.923] (assumes normal distribution)
+
+Secondary result "bench.HandlerComparison.compare:baselineCompactBytes":
+  74733012.480 ±(99.9%) 0.001 # [Sum]
+  (min, avg, max) = (4124336.000, 4151834.027, 4183621.714), stdev = 17840.287
+  CI (99.9%): [74733012.480, 74733012.480] (assumes normal distribution)
+
+Secondary result "bench.HandlerComparison.compare:baselineCompactCpu":
+  141.421 ±(99.9%) 0.001 # [Sum]
+  (min, avg, max) = (6.318, 7.857, 8.941), stdev = 0.829
+  CI (99.9%): [141.421, 141.421] (assumes normal distribution)
+
+Secondary result "bench.HandlerComparison.compare:baselineOriginalBytes":
+  75303733.615 ±(99.9%) 0.001 # [Sum]
+  (min, avg, max) = (4156040.000, 4183540.756, 4215316.000), stdev = 17843.781
+  CI (99.9%): [75303733.615, 75303733.615] (assumes normal distribution)
+
+Secondary result "bench.HandlerComparison.compare:baselineOriginalCpu":
+  157.193 ±(99.9%) 0.001 # [Sum]
+  (min, avg, max) = (6.864, 8.733, 9.843), stdev = 0.882
+  CI (99.9%): [157.193, 157.193] (assumes normal distribution)
+
+Secondary result "bench.HandlerComparison.compare:patchedCompactBytes":
+  74731322.458 ±(99.9%) 0.001 # [Sum]
+  (min, avg, max) = (4124336.000, 4151740.137, 4182574.857), stdev = 17686.355
+  CI (99.9%): [74731322.458, 74731322.458] (assumes normal distribution)
+
+Secondary result "bench.HandlerComparison.compare:patchedCompactCpu":
+  146.311 ±(99.9%) 0.001 # [Sum]
+  (min, avg, max) = (6.185, 8.128, 11.065), stdev = 1.097
+  CI (99.9%): [146.311, 146.311] (assumes normal distribution)
+
+Secondary result "bench.HandlerComparison.compare:patchedOriginalBytes":
+  75304972.347 ±(99.9%) 0.001 # [Sum]
+  (min, avg, max) = (4156040.000, 4183609.575, 4214861.143), stdev = 17773.264
+  CI (99.9%): [75304972.347, 75304972.347] (assumes normal distribution)
+
+Secondary result "bench.HandlerComparison.compare:patchedOriginalCpu":
+  157.917 ±(99.9%) 0.001 # [Sum]
+  (min, avg, max) = (7.241, 8.773, 12.180), stdev = 1.121
+  CI (99.9%): [157.917, 157.917] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 25.0.4, OpenJDK 64-Bit Server VM, 25.0.4+7-1-24.04-Ubuntu
+# VM invoker: /workspace/scratch/16f7543c9e7d/benchmark-deps/jdk25/usr/lib/jvm/java-25-openjdk-amd64/bin/java
+# VM options: -Xms512m -Xmx512m -XX:+UseSerialGC -XX:ActiveProcessorCount=1
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 4 iterations, 2 s each
+# Measurement: 6 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: bench.HandlerComparison.compare
+# Parameters: (mode = full)
+
+# Run progress: 50.00% complete, ETA 00:00:46
+# Fork: 1 of 3
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by org.openjdk.jmh.util.Utils (file:/workspace/scratch/16f7543c9e7d/xml-benchmark/lib/jmh-core-1.37.jar)
+WARNING: Please consider reporting this to the maintainers of class org.openjdk.jmh.util.Utils
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+# Warmup Iteration   1: Verified 98 exact DOM comparisons; mode=full
+191.666 ms/op
+# Warmup Iteration   2: 97.329 ms/op
+# Warmup Iteration   3: 98.055 ms/op
+# Warmup Iteration   4: 90.595 ms/op
+Iteration   1: 86.259 ms/op
+                 baselineCompactBytes:  18668432.000 #
+                 baselineCompactCpu:    12.838 #
+                 baselineOriginalBytes: 23141296.000 #
+                 baselineOriginalCpu:   13.701 #
+                 patchedCompactBytes:   4745928.000 #
+                 patchedCompactCpu:     8.875 #
+                 patchedOriginalBytes:  5503992.000 #
+                 patchedOriginalCpu:    10.923 #
+
+Iteration   2: 78.649 ms/op
+                 baselineCompactBytes:  18666816.000 #
+                 baselineCompactCpu:    11.159 #
+                 baselineOriginalBytes: 23139848.615 #
+                 baselineOriginalCpu:   13.315 #
+                 patchedCompactBytes:   4743755.692 #
+                 patchedCompactCpu:     9.062 #
+                 patchedOriginalBytes:  5501614.154 #
+                 patchedOriginalCpu:    10.219 #
+
+Iteration   3: 86.730 ms/op
+                 baselineCompactBytes:  18659072.000 #
+                 baselineCompactCpu:    12.642 #
+                 baselineOriginalBytes: 23131691.333 #
+                 baselineOriginalCpu:   14.450 #
+                 patchedCompactBytes:   4733090.000 #
+                 patchedCompactCpu:     9.943 #
+                 patchedOriginalBytes:  5491154.000 #
+                 patchedOriginalCpu:    10.115 #
+
+Iteration   4: 104.711 ms/op
+                 baselineCompactBytes:  18657064.000 #
+                 baselineCompactCpu:    13.767 #
+                 baselineOriginalBytes: 23129928.000 #
+                 baselineOriginalCpu:   15.477 #
+                 patchedCompactBytes:   4731032.000 #
+                 patchedCompactCpu:     10.405 #
+                 patchedOriginalBytes:  5489096.000 #
+                 patchedOriginalCpu:    12.382 #
+
+Iteration   5: 93.117 ms/op
+                 baselineCompactBytes:  18657064.000 #
+                 baselineCompactCpu:    11.780 #
+                 baselineOriginalBytes: 23129928.000 #
+                 baselineOriginalCpu:   14.581 #
+                 patchedCompactBytes:   4731032.000 #
+                 patchedCompactCpu:     9.720 #
+                 patchedOriginalBytes:  5489096.000 #
+                 patchedOriginalCpu:    10.315 #
+
+Iteration   6: 89.480 ms/op
+                 baselineCompactBytes:  18642274.667 #
+                 baselineCompactCpu:    13.661 #
+                 baselineOriginalBytes: 23113627.333 #
+                 baselineOriginalCpu:   14.648 #
+                 patchedCompactBytes:   4715146.000 #
+                 patchedCompactCpu:     9.525 #
+                 patchedOriginalBytes:  5473292.000 #
+                 patchedOriginalCpu:    10.435 #
+
+
+# Run progress: 66.67% complete, ETA 00:00:31
+# Fork: 2 of 3
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by org.openjdk.jmh.util.Utils (file:/workspace/scratch/16f7543c9e7d/xml-benchmark/lib/jmh-core-1.37.jar)
+WARNING: Please consider reporting this to the maintainers of class org.openjdk.jmh.util.Utils
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+# Warmup Iteration   1: Verified 98 exact DOM comparisons; mode=full
+235.778 ms/op
+# Warmup Iteration   2: 113.634 ms/op
+# Warmup Iteration   3: 98.089 ms/op
+# Warmup Iteration   4: 88.376 ms/op
+Iteration   1: 101.983 ms/op
+                 baselineCompactBytes:  18670000.000 #
+                 baselineCompactCpu:    13.867 #
+                 baselineOriginalBytes: 23142864.000 #
+                 baselineOriginalCpu:   15.164 #
+                 patchedCompactBytes:   4747496.000 #
+                 patchedCompactCpu:     9.488 #
+                 patchedOriginalBytes:  5505560.000 #
+                 patchedOriginalCpu:    12.296 #
+
+Iteration   2: 112.765 ms/op
+                 baselineCompactBytes:  18670000.000 #
+                 baselineCompactCpu:    14.366 #
+                 baselineOriginalBytes: 23142297.778 #
+                 baselineOriginalCpu:   17.925 #
+                 patchedCompactBytes:   4746929.778 #
+                 patchedCompactCpu:     11.054 #
+                 patchedOriginalBytes:  5505352.000 #
+                 patchedOriginalCpu:    12.489 #
+
+Iteration   3: 84.898 ms/op
+                 baselineCompactBytes:  18661675.333 #
+                 baselineCompactCpu:    13.291 #
+                 baselineOriginalBytes: 23134547.333 #
+                 baselineOriginalCpu:   15.725 #
+                 patchedCompactBytes:   4738839.333 #
+                 patchedCompactCpu:     9.822 #
+                 patchedOriginalBytes:  5496966.000 #
+                 patchedOriginalCpu:    12.239 #
+
+Iteration   4: 96.434 ms/op
+                 baselineCompactBytes:  18653289.455 #
+                 baselineCompactCpu:    13.678 #
+                 baselineOriginalBytes: 23125541.091 #
+                 baselineOriginalCpu:   14.572 #
+                 patchedCompactBytes:   4730352.000 #
+                 patchedCompactCpu:     10.492 #
+                 patchedOriginalBytes:  5488846.545 #
+                 patchedOriginalCpu:    12.262 #
+
+Iteration   5: 81.716 ms/op
+                 baselineCompactBytes:  18648440.000 #
+                 baselineCompactCpu:    10.483 #
+                 baselineOriginalBytes: 23121304.000 #
+                 baselineOriginalCpu:   12.729 #
+                 patchedCompactBytes:   4725936.000 #
+                 patchedCompactCpu:     8.011 #
+                 patchedOriginalBytes:  5484000.000 #
+                 patchedOriginalCpu:    9.429 #
+
+Iteration   6: 81.196 ms/op
+                 baselineCompactBytes:  18648440.000 #
+                 baselineCompactCpu:    10.282 #
+                 baselineOriginalBytes: 23121304.000 #
+                 baselineOriginalCpu:   12.640 #
+                 patchedCompactBytes:   4725936.000 #
+                 patchedCompactCpu:     8.112 #
+                 patchedOriginalBytes:  5484000.000 #
+                 patchedOriginalCpu:    9.472 #
+
+
+# Run progress: 83.33% complete, ETA 00:00:15
+# Fork: 3 of 3
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by org.openjdk.jmh.util.Utils (file:/workspace/scratch/16f7543c9e7d/xml-benchmark/lib/jmh-core-1.37.jar)
+WARNING: Please consider reporting this to the maintainers of class org.openjdk.jmh.util.Utils
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+# Warmup Iteration   1: Verified 98 exact DOM comparisons; mode=full
+203.431 ms/op
+# Warmup Iteration   2: 120.530 ms/op
+# Warmup Iteration   3: 115.855 ms/op
+# Warmup Iteration   4: 96.429 ms/op
+Iteration   1: 100.800 ms/op
+                 baselineCompactBytes:  18660552.800 #
+                 baselineCompactCpu:    12.422 #
+                 baselineOriginalBytes: 23133215.200 #
+                 baselineOriginalCpu:   15.077 #
+                 patchedCompactBytes:   4738111.200 #
+                 patchedCompactCpu:     10.683 #
+                 patchedOriginalBytes:  5496112.800 #
+                 patchedOriginalCpu:    11.804 #
+
+Iteration   2: 84.783 ms/op
+                 baselineCompactBytes:  18649910.000 #
+                 baselineCompactCpu:    13.321 #
+                 baselineOriginalBytes: 23122928.000 #
+                 baselineOriginalCpu:   14.860 #
+                 patchedCompactBytes:   4727175.333 #
+                 patchedCompactCpu:     10.327 #
+                 patchedOriginalBytes:  5485306.667 #
+                 patchedOriginalCpu:    11.621 #
+
+Iteration   3: 87.102 ms/op
+                 baselineCompactBytes:  18627646.667 #
+                 baselineCompactCpu:    12.247 #
+                 baselineOriginalBytes: 23100552.667 #
+                 baselineOriginalCpu:   13.970 #
+                 patchedCompactBytes:   4706506.000 #
+                 patchedCompactCpu:     9.078 #
+                 patchedOriginalBytes:  5464792.000 #
+                 patchedOriginalCpu:    10.971 #
+
+Iteration   4: 94.407 ms/op
+                 baselineCompactBytes:  18622960.000 #
+                 baselineCompactCpu:    11.981 #
+                 baselineOriginalBytes: 23095824.000 #
+                 baselineOriginalCpu:   13.198 #
+                 patchedCompactBytes:   4700456.000 #
+                 patchedCompactCpu:     9.330 #
+                 patchedOriginalBytes:  5458520.000 #
+                 patchedOriginalCpu:    10.976 #
+
+Iteration   5: 84.234 ms/op
+                 baselineCompactBytes:  18622960.000 #
+                 baselineCompactCpu:    11.489 #
+                 baselineOriginalBytes: 23095824.000 #
+                 baselineOriginalCpu:   13.213 #
+                 patchedCompactBytes:   4700456.000 #
+                 patchedCompactCpu:     7.948 #
+                 patchedOriginalBytes:  5458520.000 #
+                 patchedOriginalCpu:    9.265 #
+
+Iteration   6: 54.119 ms/op
+                 baselineCompactBytes:  18616425.684 #
+                 baselineCompactCpu:    9.775 #
+                 baselineOriginalBytes: 23088891.789 #
+                 baselineOriginalCpu:   12.456 #
+                 patchedCompactBytes:   4693957.053 #
+                 patchedCompactCpu:     7.710 #
+                 patchedOriginalBytes:  5452021.053 #
+                 patchedOriginalCpu:    8.465 #
+
+
+
+Result "bench.HandlerComparison.compare":
+  89.077 ±(99.9%) 11.849 ms/op [Average]
+  (min, avg, max) = (54.119, 89.077, 112.765), stdev = 12.678
+  CI (99.9%): [77.228, 100.925] (assumes normal distribution)
+
+Secondary result "bench.HandlerComparison.compare:baselineCompactBytes":
+  335703022.605 ±(99.9%) 0.001 # [Sum]
+  (min, avg, max) = (18616425.684, 18650167.923, 18670000.000), stdev = 17177.946
+  CI (99.9%): [335703022.605, 335703022.605] (assumes normal distribution)
+
+Secondary result "bench.HandlerComparison.compare:baselineCompactCpu":
+  223.047 ±(99.9%) 0.001 # [Sum]
+  (min, avg, max) = (9.775, 12.392, 14.366), stdev = 1.351
+  CI (99.9%): [223.047, 223.047] (assumes normal distribution)
+
+Secondary result "bench.HandlerComparison.compare:baselineOriginalBytes":
+  416211413.140 ±(99.9%) 0.001 # [Sum]
+  (min, avg, max) = (23088891.789, 23122856.286, 23142864.000), stdev = 17216.340
+  CI (99.9%): [416211413.140, 416211413.140] (assumes normal distribution)
+
+Secondary result "bench.HandlerComparison.compare:baselineOriginalCpu":
+  257.703 ±(99.9%) 0.001 # [Sum]
+  (min, avg, max) = (12.456, 14.317, 17.925), stdev = 1.350
+  CI (99.9%): [257.703, 257.703] (assumes normal distribution)
+
+Secondary result "bench.HandlerComparison.compare:patchedCompactBytes":
+  85082134.389 ±(99.9%) 0.001 # [Sum]
+  (min, avg, max) = (4693957.053, 4726785.244, 4747496.000), stdev = 16914.598
+  CI (99.9%): [85082134.389, 85082134.389] (assumes normal distribution)
+
+Secondary result "bench.HandlerComparison.compare:patchedCompactCpu":
+  169.586 ±(99.9%) 0.001 # [Sum]
+  (min, avg, max) = (7.710, 9.421, 11.054), stdev = 1.003
+  CI (99.9%): [169.586, 169.586] (assumes normal distribution)
+
+Secondary result "bench.HandlerComparison.compare:patchedOriginalBytes":
+  98728241.219 ±(99.9%) 0.001 # [Sum]
+  (min, avg, max) = (5452021.053, 5484902.290, 5505560.000), stdev = 16914.838
+  CI (99.9%): [98728241.219, 98728241.219] (assumes normal distribution)
+
+Secondary result "bench.HandlerComparison.compare:patchedOriginalCpu":
+  195.682 ±(99.9%) 0.001 # [Sum]
+  (min, avg, max) = (8.465, 10.871, 12.489), stdev = 1.239
+  CI (99.9%): [195.682, 195.682] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:01:34
+
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
+NOTE: Current JVM experimentally supports Compiler Blackholes, and they are in use. Please exercise
+extra caution when trusting the results, look into the generated code to check the benchmark still
+works, and factor in a small probability of new VM bugs. Additionally, while comparisons between
+different JVMs are already problematic, the performance difference caused by different Blackhole
+modes can be very significant. Please make sure you use the consistent Blackhole mode for comparisons.
+
+Benchmark                                             (mode)  Mode  Cnt          Score    Error  Units
+HandlerComparison.compare                        abbreviated  avgt   18         63.407 ± 12.517  ms/op
+HandlerComparison.compare:baselineCompactBytes   abbreviated  avgt   18   74733012.480               #
+HandlerComparison.compare:baselineCompactCpu     abbreviated  avgt   18        141.421               #
+HandlerComparison.compare:baselineOriginalBytes  abbreviated  avgt   18   75303733.615               #
+HandlerComparison.compare:baselineOriginalCpu    abbreviated  avgt   18        157.193               #
+HandlerComparison.compare:patchedCompactBytes    abbreviated  avgt   18   74731322.458               #
+HandlerComparison.compare:patchedCompactCpu      abbreviated  avgt   18        146.311               #
+HandlerComparison.compare:patchedOriginalBytes   abbreviated  avgt   18   75304972.347               #
+HandlerComparison.compare:patchedOriginalCpu     abbreviated  avgt   18        157.917               #
+HandlerComparison.compare                               full  avgt   18         89.077 ± 11.849  ms/op
+HandlerComparison.compare:baselineCompactBytes          full  avgt   18  335703022.605               #
+HandlerComparison.compare:baselineCompactCpu            full  avgt   18        223.047               #
+HandlerComparison.compare:baselineOriginalBytes         full  avgt   18  416211413.140               #
+HandlerComparison.compare:baselineOriginalCpu           full  avgt   18        257.703               #
+HandlerComparison.compare:patchedCompactBytes           full  avgt   18   85082134.389               #
+HandlerComparison.compare:patchedCompactCpu             full  avgt   18        169.586               #
+HandlerComparison.compare:patchedOriginalBytes          full  avgt   18   98728241.219               #
+HandlerComparison.compare:patchedOriginalCpu            full  avgt   18        195.682               #
+
+Benchmark result is saved to /workspace/scratch/16f7543c9e7d/xml-benchmark/extensions/handler-coalescing/results/jmh.json
