@@ -1,0 +1,3167 @@
+{
+  "description": "Real-source file and JAR handle lifecycle probe with synthetic schema inputs.",
+  "baseline_commit": "ba6a5d6f2f455ab7dfe972ce678d07d9f80de267",
+  "java_version": {
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "openjdk version \"25.0.5\" 2026-10-20 LTS\nOpenJDK Runtime Environment Temurin-25.0.5+8 (build 25.0.5+8-LTS)\nOpenJDK 64-Bit Server VM Temurin-25.0.5+8 (build 25.0.5+8-LTS, mixed mode, sharing)\n"
+  },
+  "pde_sdk_sha256": "6c8e23b59dc7e7644deb2e4c8388531029326689ba8b6fcb0a2bc773dff72125",
+  "sdk_plugins": "/workspace/scratch/a8e2e1882d42/verification/startup-environment/reference-ide/plugins",
+  "source_sha256": {
+    "ui/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/schema/Schema.java": "4f6d5b3211455b656ad4dbbf55feb638c7c1075986448bee2e573de9f5cd38a3",
+    "ui/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/schema/SchemaDescriptor.java": "30c8441a03c3937fe1879126162c8c88b13f22b641a4140ed2aa5505a5eca68c",
+    "ui/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/util/SchemaUtil.java": "5927f48768954d6357b418d929f64023a1202ceddd748464c2a09235afad7983",
+    "ui/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/XMLDefaultHandler.java": "e15bb2bb62f1a745d98fb6eb1e1dfb44e829b4f34d81fe0174dcffca0af2fb73"
+  },
+  "probe_sha256": "2a126f6dd8453da970a3c84ed35eeca06fe35407a29b295198d488e116945b41",
+  "fixture_inputs": {
+    "valid": "<schema><element name='root'/></schema>",
+    "malformed_xml": "<schema><element name='root'></schema>",
+    "missing_element_name": "<schema><element/></schema>"
+  },
+  "warmup_operations_per_phase": 64,
+  "rounds_per_phase": 5,
+  "operations_per_round": 128,
+  "forced_gc": false,
+  "limitations": [
+    "Classpath-only lifecycle measurement, not a full Eclipse/OSGi process or startup timing.",
+    "Synthetic failure cases are not evidence of defective installed production schemas.",
+    "Stable fixture handle counts do not rule out unrelated IDE handles or leaks on untested paths/providers/JDKs.",
+    "Total FD changes may reflect class loading; fixture handles and target deltas are recorded separately.",
+    "Probe-created /proc directory handles are reported and excluded from adjusted /proc totals."
+  ],
+  "cases": [
+    {
+      "protocol": "file",
+      "fixture": "valid",
+      "abbreviated": false,
+      "process": {
+        "exit_code": 0,
+        "stdout": "{\"protocol\":\"file\",\"fixture\":\"valid\",\"synthetic_input\":true,\"abbreviated\":false,\"expected_schema_loaded\":true,\"positive_control_open\":{\"proc_fds_excluding_probe_directory\":7,\"fixture_targets\":{\"/tmp/pde-schema-handles-iwlayu2f/fixtures/file-valid-False/fixture.exsd\":1},\"mxbean_open_fds\":5,\"proc_raw_fds\":7,\"fixture_handle_count\":1,\"probe_directory_fds\":0},\"positive_control_closed\":{\"proc_fds_excluding_probe_directory\":6,\"fixture_targets\":{},\"mxbean_open_fds\":4,\"proc_raw_fds\":6,\"fixture_handle_count\":0,\"probe_directory_fds\":0},\"forced_gc\":false,\"fresh_jvm_for_case\":true,\"phases\":[{\"mode\":\"cached_descriptor_queries\",\"before_warmup\":{\"proc_fds_excluding_probe_directory\":6,\"fixture_targets\":{},\"mxbean_open_fds\":4,\"proc_raw_fds\":6,\"fixture_handle_count\":0,\"probe_directory_fds\":0},\"after_initial_load\":{\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0},\"after_warmup\":{\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0},\"warmup_operations\":64,\"rounds\":[{\"round\":1,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":2,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":3,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":4,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":5,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}}],\"total_operations\":704,\"post_operation_samples\":705,\"max_fixture_handles_after_operation\":0,\"schema_loaded\":true,\"fixture_handles_retained\":false},{\"mode\":\"new_descriptor_per_operation\",\"before_warmup\":{\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0},\"after_initial_load\":{\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0},\"after_warmup\":{\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0},\"warmup_operations\":64,\"rounds\":[{\"round\":1,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":2,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":3,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":4,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":5,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}}],\"total_operations\":704,\"post_operation_samples\":705,\"max_fixture_handles_after_operation\":0,\"schema_loaded\":true,\"fixture_handles_retained\":false}],\"fixture_handles_retained\":false}\n",
+        "stderr": ""
+      },
+      "observations": {
+        "protocol": "file",
+        "fixture": "valid",
+        "synthetic_input": true,
+        "abbreviated": false,
+        "expected_schema_loaded": true,
+        "positive_control_open": {
+          "proc_fds_excluding_probe_directory": 7,
+          "fixture_targets": {
+            "/tmp/pde-schema-handles-iwlayu2f/fixtures/file-valid-False/fixture.exsd": 1
+          },
+          "mxbean_open_fds": 5,
+          "proc_raw_fds": 7,
+          "fixture_handle_count": 1,
+          "probe_directory_fds": 0
+        },
+        "positive_control_closed": {
+          "proc_fds_excluding_probe_directory": 6,
+          "fixture_targets": {},
+          "mxbean_open_fds": 4,
+          "proc_raw_fds": 6,
+          "fixture_handle_count": 0,
+          "probe_directory_fds": 0
+        },
+        "forced_gc": false,
+        "fresh_jvm_for_case": true,
+        "phases": [
+          {
+            "mode": "cached_descriptor_queries",
+            "before_warmup": {
+              "proc_fds_excluding_probe_directory": 6,
+              "fixture_targets": {},
+              "mxbean_open_fds": 4,
+              "proc_raw_fds": 6,
+              "fixture_handle_count": 0,
+              "probe_directory_fds": 0
+            },
+            "after_initial_load": {
+              "proc_fds_excluding_probe_directory": 308,
+              "fixture_targets": {},
+              "mxbean_open_fds": 306,
+              "proc_raw_fds": 308,
+              "fixture_handle_count": 0,
+              "probe_directory_fds": 0
+            },
+            "after_warmup": {
+              "proc_fds_excluding_probe_directory": 308,
+              "fixture_targets": {},
+              "mxbean_open_fds": 306,
+              "proc_raw_fds": 308,
+              "fixture_handle_count": 0,
+              "probe_directory_fds": 0
+            },
+            "warmup_operations": 64,
+            "rounds": [
+              {
+                "round": 1,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {},
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 2,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {},
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 3,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {},
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 4,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {},
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 5,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {},
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              }
+            ],
+            "total_operations": 704,
+            "post_operation_samples": 705,
+            "max_fixture_handles_after_operation": 0,
+            "schema_loaded": true,
+            "fixture_handles_retained": false
+          },
+          {
+            "mode": "new_descriptor_per_operation",
+            "before_warmup": {
+              "proc_fds_excluding_probe_directory": 308,
+              "fixture_targets": {},
+              "mxbean_open_fds": 306,
+              "proc_raw_fds": 308,
+              "fixture_handle_count": 0,
+              "probe_directory_fds": 0
+            },
+            "after_initial_load": {
+              "proc_fds_excluding_probe_directory": 308,
+              "fixture_targets": {},
+              "mxbean_open_fds": 306,
+              "proc_raw_fds": 308,
+              "fixture_handle_count": 0,
+              "probe_directory_fds": 0
+            },
+            "after_warmup": {
+              "proc_fds_excluding_probe_directory": 308,
+              "fixture_targets": {},
+              "mxbean_open_fds": 306,
+              "proc_raw_fds": 308,
+              "fixture_handle_count": 0,
+              "probe_directory_fds": 0
+            },
+            "warmup_operations": 64,
+            "rounds": [
+              {
+                "round": 1,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {},
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 2,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {},
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 3,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {},
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 4,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {},
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 5,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {},
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              }
+            ],
+            "total_operations": 704,
+            "post_operation_samples": 705,
+            "max_fixture_handles_after_operation": 0,
+            "schema_loaded": true,
+            "fixture_handles_retained": false
+          }
+        ],
+        "fixture_handles_retained": false
+      }
+    },
+    {
+      "protocol": "file",
+      "fixture": "valid",
+      "abbreviated": true,
+      "process": {
+        "exit_code": 0,
+        "stdout": "{\"protocol\":\"file\",\"fixture\":\"valid\",\"synthetic_input\":true,\"abbreviated\":true,\"expected_schema_loaded\":true,\"positive_control_open\":{\"probe_directory_fds\":0,\"fixture_handle_count\":1,\"proc_raw_fds\":7,\"mxbean_open_fds\":5,\"fixture_targets\":{\"/tmp/pde-schema-handles-iwlayu2f/fixtures/file-valid-True/fixture.exsd\":1},\"proc_fds_excluding_probe_directory\":7},\"positive_control_closed\":{\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":6,\"mxbean_open_fds\":4,\"fixture_targets\":{},\"proc_fds_excluding_probe_directory\":6},\"forced_gc\":false,\"fresh_jvm_for_case\":true,\"phases\":[{\"mode\":\"cached_descriptor_queries\",\"before_warmup\":{\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":6,\"mxbean_open_fds\":4,\"fixture_targets\":{},\"proc_fds_excluding_probe_directory\":6},\"after_initial_load\":{\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308,\"mxbean_open_fds\":306,\"fixture_targets\":{},\"proc_fds_excluding_probe_directory\":308},\"after_warmup\":{\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308,\"mxbean_open_fds\":306,\"fixture_targets\":{},\"proc_fds_excluding_probe_directory\":308},\"warmup_operations\":64,\"rounds\":[{\"round\":1,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308,\"mxbean_open_fds\":306,\"fixture_targets\":{},\"proc_fds_excluding_probe_directory\":308},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":2,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308,\"mxbean_open_fds\":306,\"fixture_targets\":{},\"proc_fds_excluding_probe_directory\":308},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":3,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308,\"mxbean_open_fds\":306,\"fixture_targets\":{},\"proc_fds_excluding_probe_directory\":308},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":4,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308,\"mxbean_open_fds\":306,\"fixture_targets\":{},\"proc_fds_excluding_probe_directory\":308},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":5,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308,\"mxbean_open_fds\":306,\"fixture_targets\":{},\"proc_fds_excluding_probe_directory\":308},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}}],\"total_operations\":704,\"post_operation_samples\":705,\"max_fixture_handles_after_operation\":0,\"schema_loaded\":true,\"fixture_handles_retained\":false},{\"mode\":\"new_descriptor_per_operation\",\"before_warmup\":{\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308,\"mxbean_open_fds\":306,\"fixture_targets\":{},\"proc_fds_excluding_probe_directory\":308},\"after_initial_load\":{\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308,\"mxbean_open_fds\":306,\"fixture_targets\":{},\"proc_fds_excluding_probe_directory\":308},\"after_warmup\":{\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308,\"mxbean_open_fds\":306,\"fixture_targets\":{},\"proc_fds_excluding_probe_directory\":308},\"warmup_operations\":64,\"rounds\":[{\"round\":1,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308,\"mxbean_open_fds\":306,\"fixture_targets\":{},\"proc_fds_excluding_probe_directory\":308},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":2,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308,\"mxbean_open_fds\":306,\"fixture_targets\":{},\"proc_fds_excluding_probe_directory\":308},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":3,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308,\"mxbean_open_fds\":306,\"fixture_targets\":{},\"proc_fds_excluding_probe_directory\":308},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":4,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308,\"mxbean_open_fds\":306,\"fixture_targets\":{},\"proc_fds_excluding_probe_directory\":308},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":5,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308,\"mxbean_open_fds\":306,\"fixture_targets\":{},\"proc_fds_excluding_probe_directory\":308},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}}],\"total_operations\":704,\"post_operation_samples\":705,\"max_fixture_handles_after_operation\":0,\"schema_loaded\":true,\"fixture_handles_retained\":false}],\"fixture_handles_retained\":false}\n",
+        "stderr": ""
+      },
+      "observations": {
+        "protocol": "file",
+        "fixture": "valid",
+        "synthetic_input": true,
+        "abbreviated": true,
+        "expected_schema_loaded": true,
+        "positive_control_open": {
+          "probe_directory_fds": 0,
+          "fixture_handle_count": 1,
+          "proc_raw_fds": 7,
+          "mxbean_open_fds": 5,
+          "fixture_targets": {
+            "/tmp/pde-schema-handles-iwlayu2f/fixtures/file-valid-True/fixture.exsd": 1
+          },
+          "proc_fds_excluding_probe_directory": 7
+        },
+        "positive_control_closed": {
+          "probe_directory_fds": 0,
+          "fixture_handle_count": 0,
+          "proc_raw_fds": 6,
+          "mxbean_open_fds": 4,
+          "fixture_targets": {},
+          "proc_fds_excluding_probe_directory": 6
+        },
+        "forced_gc": false,
+        "fresh_jvm_for_case": true,
+        "phases": [
+          {
+            "mode": "cached_descriptor_queries",
+            "before_warmup": {
+              "probe_directory_fds": 0,
+              "fixture_handle_count": 0,
+              "proc_raw_fds": 6,
+              "mxbean_open_fds": 4,
+              "fixture_targets": {},
+              "proc_fds_excluding_probe_directory": 6
+            },
+            "after_initial_load": {
+              "probe_directory_fds": 0,
+              "fixture_handle_count": 0,
+              "proc_raw_fds": 308,
+              "mxbean_open_fds": 306,
+              "fixture_targets": {},
+              "proc_fds_excluding_probe_directory": 308
+            },
+            "after_warmup": {
+              "probe_directory_fds": 0,
+              "fixture_handle_count": 0,
+              "proc_raw_fds": 308,
+              "mxbean_open_fds": 306,
+              "fixture_targets": {},
+              "proc_fds_excluding_probe_directory": 308
+            },
+            "warmup_operations": 64,
+            "rounds": [
+              {
+                "round": 1,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "probe_directory_fds": 0,
+                  "fixture_handle_count": 0,
+                  "proc_raw_fds": 308,
+                  "mxbean_open_fds": 306,
+                  "fixture_targets": {},
+                  "proc_fds_excluding_probe_directory": 308
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 2,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "probe_directory_fds": 0,
+                  "fixture_handle_count": 0,
+                  "proc_raw_fds": 308,
+                  "mxbean_open_fds": 306,
+                  "fixture_targets": {},
+                  "proc_fds_excluding_probe_directory": 308
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 3,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "probe_directory_fds": 0,
+                  "fixture_handle_count": 0,
+                  "proc_raw_fds": 308,
+                  "mxbean_open_fds": 306,
+                  "fixture_targets": {},
+                  "proc_fds_excluding_probe_directory": 308
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 4,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "probe_directory_fds": 0,
+                  "fixture_handle_count": 0,
+                  "proc_raw_fds": 308,
+                  "mxbean_open_fds": 306,
+                  "fixture_targets": {},
+                  "proc_fds_excluding_probe_directory": 308
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 5,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "probe_directory_fds": 0,
+                  "fixture_handle_count": 0,
+                  "proc_raw_fds": 308,
+                  "mxbean_open_fds": 306,
+                  "fixture_targets": {},
+                  "proc_fds_excluding_probe_directory": 308
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              }
+            ],
+            "total_operations": 704,
+            "post_operation_samples": 705,
+            "max_fixture_handles_after_operation": 0,
+            "schema_loaded": true,
+            "fixture_handles_retained": false
+          },
+          {
+            "mode": "new_descriptor_per_operation",
+            "before_warmup": {
+              "probe_directory_fds": 0,
+              "fixture_handle_count": 0,
+              "proc_raw_fds": 308,
+              "mxbean_open_fds": 306,
+              "fixture_targets": {},
+              "proc_fds_excluding_probe_directory": 308
+            },
+            "after_initial_load": {
+              "probe_directory_fds": 0,
+              "fixture_handle_count": 0,
+              "proc_raw_fds": 308,
+              "mxbean_open_fds": 306,
+              "fixture_targets": {},
+              "proc_fds_excluding_probe_directory": 308
+            },
+            "after_warmup": {
+              "probe_directory_fds": 0,
+              "fixture_handle_count": 0,
+              "proc_raw_fds": 308,
+              "mxbean_open_fds": 306,
+              "fixture_targets": {},
+              "proc_fds_excluding_probe_directory": 308
+            },
+            "warmup_operations": 64,
+            "rounds": [
+              {
+                "round": 1,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "probe_directory_fds": 0,
+                  "fixture_handle_count": 0,
+                  "proc_raw_fds": 308,
+                  "mxbean_open_fds": 306,
+                  "fixture_targets": {},
+                  "proc_fds_excluding_probe_directory": 308
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 2,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "probe_directory_fds": 0,
+                  "fixture_handle_count": 0,
+                  "proc_raw_fds": 308,
+                  "mxbean_open_fds": 306,
+                  "fixture_targets": {},
+                  "proc_fds_excluding_probe_directory": 308
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 3,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "probe_directory_fds": 0,
+                  "fixture_handle_count": 0,
+                  "proc_raw_fds": 308,
+                  "mxbean_open_fds": 306,
+                  "fixture_targets": {},
+                  "proc_fds_excluding_probe_directory": 308
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 4,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "probe_directory_fds": 0,
+                  "fixture_handle_count": 0,
+                  "proc_raw_fds": 308,
+                  "mxbean_open_fds": 306,
+                  "fixture_targets": {},
+                  "proc_fds_excluding_probe_directory": 308
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 5,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "probe_directory_fds": 0,
+                  "fixture_handle_count": 0,
+                  "proc_raw_fds": 308,
+                  "mxbean_open_fds": 306,
+                  "fixture_targets": {},
+                  "proc_fds_excluding_probe_directory": 308
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              }
+            ],
+            "total_operations": 704,
+            "post_operation_samples": 705,
+            "max_fixture_handles_after_operation": 0,
+            "schema_loaded": true,
+            "fixture_handles_retained": false
+          }
+        ],
+        "fixture_handles_retained": false
+      }
+    },
+    {
+      "protocol": "file",
+      "fixture": "malformed_xml",
+      "abbreviated": false,
+      "process": {
+        "exit_code": 0,
+        "stdout": "{\"protocol\":\"file\",\"fixture\":\"malformed_xml\",\"synthetic_input\":true,\"abbreviated\":false,\"expected_schema_loaded\":false,\"positive_control_open\":{\"mxbean_open_fds\":5,\"proc_raw_fds\":7,\"fixture_handle_count\":1,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":7,\"fixture_targets\":{\"/tmp/pde-schema-handles-iwlayu2f/fixtures/file-malformed_xml-False/fixture.exsd\":1}},\"positive_control_closed\":{\"mxbean_open_fds\":4,\"proc_raw_fds\":6,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":6,\"fixture_targets\":{}},\"forced_gc\":false,\"fresh_jvm_for_case\":true,\"phases\":[{\"mode\":\"cached_descriptor_queries\",\"before_warmup\":{\"mxbean_open_fds\":4,\"proc_raw_fds\":6,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":6,\"fixture_targets\":{}},\"after_initial_load\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"after_warmup\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"warmup_operations\":64,\"rounds\":[{\"round\":1,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":2,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":3,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":4,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":5,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}}],\"total_operations\":704,\"post_operation_samples\":705,\"max_fixture_handles_after_operation\":0,\"schema_loaded\":false,\"fixture_handles_retained\":false},{\"mode\":\"new_descriptor_per_operation\",\"before_warmup\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"after_initial_load\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"after_warmup\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"warmup_operations\":64,\"rounds\":[{\"round\":1,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":2,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":3,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":4,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":5,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}}],\"total_operations\":704,\"post_operation_samples\":705,\"max_fixture_handles_after_operation\":0,\"schema_loaded\":false,\"fixture_handles_retained\":false}],\"fixture_handles_retained\":false}\n",
+        "stderr": ""
+      },
+      "observations": {
+        "protocol": "file",
+        "fixture": "malformed_xml",
+        "synthetic_input": true,
+        "abbreviated": false,
+        "expected_schema_loaded": false,
+        "positive_control_open": {
+          "mxbean_open_fds": 5,
+          "proc_raw_fds": 7,
+          "fixture_handle_count": 1,
+          "probe_directory_fds": 0,
+          "proc_fds_excluding_probe_directory": 7,
+          "fixture_targets": {
+            "/tmp/pde-schema-handles-iwlayu2f/fixtures/file-malformed_xml-False/fixture.exsd": 1
+          }
+        },
+        "positive_control_closed": {
+          "mxbean_open_fds": 4,
+          "proc_raw_fds": 6,
+          "fixture_handle_count": 0,
+          "probe_directory_fds": 0,
+          "proc_fds_excluding_probe_directory": 6,
+          "fixture_targets": {}
+        },
+        "forced_gc": false,
+        "fresh_jvm_for_case": true,
+        "phases": [
+          {
+            "mode": "cached_descriptor_queries",
+            "before_warmup": {
+              "mxbean_open_fds": 4,
+              "proc_raw_fds": 6,
+              "fixture_handle_count": 0,
+              "probe_directory_fds": 0,
+              "proc_fds_excluding_probe_directory": 6,
+              "fixture_targets": {}
+            },
+            "after_initial_load": {
+              "mxbean_open_fds": 306,
+              "proc_raw_fds": 308,
+              "fixture_handle_count": 0,
+              "probe_directory_fds": 0,
+              "proc_fds_excluding_probe_directory": 308,
+              "fixture_targets": {}
+            },
+            "after_warmup": {
+              "mxbean_open_fds": 306,
+              "proc_raw_fds": 308,
+              "fixture_handle_count": 0,
+              "probe_directory_fds": 0,
+              "proc_fds_excluding_probe_directory": 308,
+              "fixture_targets": {}
+            },
+            "warmup_operations": 64,
+            "rounds": [
+              {
+                "round": 1,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0,
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {}
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 2,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0,
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {}
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 3,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0,
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {}
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 4,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0,
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {}
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 5,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0,
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {}
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              }
+            ],
+            "total_operations": 704,
+            "post_operation_samples": 705,
+            "max_fixture_handles_after_operation": 0,
+            "schema_loaded": false,
+            "fixture_handles_retained": false
+          },
+          {
+            "mode": "new_descriptor_per_operation",
+            "before_warmup": {
+              "mxbean_open_fds": 306,
+              "proc_raw_fds": 308,
+              "fixture_handle_count": 0,
+              "probe_directory_fds": 0,
+              "proc_fds_excluding_probe_directory": 308,
+              "fixture_targets": {}
+            },
+            "after_initial_load": {
+              "mxbean_open_fds": 306,
+              "proc_raw_fds": 308,
+              "fixture_handle_count": 0,
+              "probe_directory_fds": 0,
+              "proc_fds_excluding_probe_directory": 308,
+              "fixture_targets": {}
+            },
+            "after_warmup": {
+              "mxbean_open_fds": 306,
+              "proc_raw_fds": 308,
+              "fixture_handle_count": 0,
+              "probe_directory_fds": 0,
+              "proc_fds_excluding_probe_directory": 308,
+              "fixture_targets": {}
+            },
+            "warmup_operations": 64,
+            "rounds": [
+              {
+                "round": 1,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0,
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {}
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 2,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0,
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {}
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 3,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0,
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {}
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 4,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0,
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {}
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 5,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0,
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {}
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              }
+            ],
+            "total_operations": 704,
+            "post_operation_samples": 705,
+            "max_fixture_handles_after_operation": 0,
+            "schema_loaded": false,
+            "fixture_handles_retained": false
+          }
+        ],
+        "fixture_handles_retained": false
+      }
+    },
+    {
+      "protocol": "file",
+      "fixture": "malformed_xml",
+      "abbreviated": true,
+      "process": {
+        "exit_code": 0,
+        "stdout": "{\"protocol\":\"file\",\"fixture\":\"malformed_xml\",\"synthetic_input\":true,\"abbreviated\":true,\"expected_schema_loaded\":false,\"positive_control_open\":{\"proc_fds_excluding_probe_directory\":7,\"fixture_targets\":{\"/tmp/pde-schema-handles-iwlayu2f/fixtures/file-malformed_xml-True/fixture.exsd\":1},\"mxbean_open_fds\":5,\"proc_raw_fds\":7,\"fixture_handle_count\":1,\"probe_directory_fds\":0},\"positive_control_closed\":{\"proc_fds_excluding_probe_directory\":6,\"fixture_targets\":{},\"mxbean_open_fds\":4,\"proc_raw_fds\":6,\"fixture_handle_count\":0,\"probe_directory_fds\":0},\"forced_gc\":false,\"fresh_jvm_for_case\":true,\"phases\":[{\"mode\":\"cached_descriptor_queries\",\"before_warmup\":{\"proc_fds_excluding_probe_directory\":6,\"fixture_targets\":{},\"mxbean_open_fds\":4,\"proc_raw_fds\":6,\"fixture_handle_count\":0,\"probe_directory_fds\":0},\"after_initial_load\":{\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0},\"after_warmup\":{\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0},\"warmup_operations\":64,\"rounds\":[{\"round\":1,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":2,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":3,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":4,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":5,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}}],\"total_operations\":704,\"post_operation_samples\":705,\"max_fixture_handles_after_operation\":0,\"schema_loaded\":false,\"fixture_handles_retained\":false},{\"mode\":\"new_descriptor_per_operation\",\"before_warmup\":{\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0},\"after_initial_load\":{\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0},\"after_warmup\":{\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0},\"warmup_operations\":64,\"rounds\":[{\"round\":1,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":2,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":3,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":4,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":5,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}}],\"total_operations\":704,\"post_operation_samples\":705,\"max_fixture_handles_after_operation\":0,\"schema_loaded\":false,\"fixture_handles_retained\":false}],\"fixture_handles_retained\":false}\n",
+        "stderr": ""
+      },
+      "observations": {
+        "protocol": "file",
+        "fixture": "malformed_xml",
+        "synthetic_input": true,
+        "abbreviated": true,
+        "expected_schema_loaded": false,
+        "positive_control_open": {
+          "proc_fds_excluding_probe_directory": 7,
+          "fixture_targets": {
+            "/tmp/pde-schema-handles-iwlayu2f/fixtures/file-malformed_xml-True/fixture.exsd": 1
+          },
+          "mxbean_open_fds": 5,
+          "proc_raw_fds": 7,
+          "fixture_handle_count": 1,
+          "probe_directory_fds": 0
+        },
+        "positive_control_closed": {
+          "proc_fds_excluding_probe_directory": 6,
+          "fixture_targets": {},
+          "mxbean_open_fds": 4,
+          "proc_raw_fds": 6,
+          "fixture_handle_count": 0,
+          "probe_directory_fds": 0
+        },
+        "forced_gc": false,
+        "fresh_jvm_for_case": true,
+        "phases": [
+          {
+            "mode": "cached_descriptor_queries",
+            "before_warmup": {
+              "proc_fds_excluding_probe_directory": 6,
+              "fixture_targets": {},
+              "mxbean_open_fds": 4,
+              "proc_raw_fds": 6,
+              "fixture_handle_count": 0,
+              "probe_directory_fds": 0
+            },
+            "after_initial_load": {
+              "proc_fds_excluding_probe_directory": 308,
+              "fixture_targets": {},
+              "mxbean_open_fds": 306,
+              "proc_raw_fds": 308,
+              "fixture_handle_count": 0,
+              "probe_directory_fds": 0
+            },
+            "after_warmup": {
+              "proc_fds_excluding_probe_directory": 308,
+              "fixture_targets": {},
+              "mxbean_open_fds": 306,
+              "proc_raw_fds": 308,
+              "fixture_handle_count": 0,
+              "probe_directory_fds": 0
+            },
+            "warmup_operations": 64,
+            "rounds": [
+              {
+                "round": 1,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {},
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 2,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {},
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 3,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {},
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 4,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {},
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 5,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {},
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              }
+            ],
+            "total_operations": 704,
+            "post_operation_samples": 705,
+            "max_fixture_handles_after_operation": 0,
+            "schema_loaded": false,
+            "fixture_handles_retained": false
+          },
+          {
+            "mode": "new_descriptor_per_operation",
+            "before_warmup": {
+              "proc_fds_excluding_probe_directory": 308,
+              "fixture_targets": {},
+              "mxbean_open_fds": 306,
+              "proc_raw_fds": 308,
+              "fixture_handle_count": 0,
+              "probe_directory_fds": 0
+            },
+            "after_initial_load": {
+              "proc_fds_excluding_probe_directory": 308,
+              "fixture_targets": {},
+              "mxbean_open_fds": 306,
+              "proc_raw_fds": 308,
+              "fixture_handle_count": 0,
+              "probe_directory_fds": 0
+            },
+            "after_warmup": {
+              "proc_fds_excluding_probe_directory": 308,
+              "fixture_targets": {},
+              "mxbean_open_fds": 306,
+              "proc_raw_fds": 308,
+              "fixture_handle_count": 0,
+              "probe_directory_fds": 0
+            },
+            "warmup_operations": 64,
+            "rounds": [
+              {
+                "round": 1,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {},
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 2,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {},
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 3,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {},
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 4,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {},
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 5,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {},
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              }
+            ],
+            "total_operations": 704,
+            "post_operation_samples": 705,
+            "max_fixture_handles_after_operation": 0,
+            "schema_loaded": false,
+            "fixture_handles_retained": false
+          }
+        ],
+        "fixture_handles_retained": false
+      }
+    },
+    {
+      "protocol": "file",
+      "fixture": "missing_element_name",
+      "abbreviated": false,
+      "process": {
+        "exit_code": 0,
+        "stdout": "{\"protocol\":\"file\",\"fixture\":\"missing_element_name\",\"synthetic_input\":true,\"abbreviated\":false,\"expected_schema_loaded\":false,\"positive_control_open\":{\"fixture_targets\":{\"/tmp/pde-schema-handles-iwlayu2f/fixtures/file-missing_element_name-False/fixture.exsd\":1},\"proc_fds_excluding_probe_directory\":7,\"probe_directory_fds\":0,\"fixture_handle_count\":1,\"proc_raw_fds\":7,\"mxbean_open_fds\":5},\"positive_control_closed\":{\"fixture_targets\":{},\"proc_fds_excluding_probe_directory\":6,\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":6,\"mxbean_open_fds\":4},\"forced_gc\":false,\"fresh_jvm_for_case\":true,\"phases\":[{\"mode\":\"cached_descriptor_queries\",\"before_warmup\":{\"fixture_targets\":{},\"proc_fds_excluding_probe_directory\":6,\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":6,\"mxbean_open_fds\":4},\"after_initial_load\":{\"fixture_targets\":{},\"proc_fds_excluding_probe_directory\":308,\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308,\"mxbean_open_fds\":306},\"after_warmup\":{\"fixture_targets\":{},\"proc_fds_excluding_probe_directory\":308,\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308,\"mxbean_open_fds\":306},\"warmup_operations\":64,\"rounds\":[{\"round\":1,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"fixture_targets\":{},\"proc_fds_excluding_probe_directory\":308,\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308,\"mxbean_open_fds\":306},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":2,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"fixture_targets\":{},\"proc_fds_excluding_probe_directory\":308,\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308,\"mxbean_open_fds\":306},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":3,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"fixture_targets\":{},\"proc_fds_excluding_probe_directory\":308,\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308,\"mxbean_open_fds\":306},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":4,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"fixture_targets\":{},\"proc_fds_excluding_probe_directory\":308,\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308,\"mxbean_open_fds\":306},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":5,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"fixture_targets\":{},\"proc_fds_excluding_probe_directory\":308,\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308,\"mxbean_open_fds\":306},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}}],\"total_operations\":704,\"post_operation_samples\":705,\"max_fixture_handles_after_operation\":0,\"schema_loaded\":false,\"fixture_handles_retained\":false},{\"mode\":\"new_descriptor_per_operation\",\"before_warmup\":{\"fixture_targets\":{},\"proc_fds_excluding_probe_directory\":308,\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308,\"mxbean_open_fds\":306},\"after_initial_load\":{\"fixture_targets\":{},\"proc_fds_excluding_probe_directory\":308,\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308,\"mxbean_open_fds\":306},\"after_warmup\":{\"fixture_targets\":{},\"proc_fds_excluding_probe_directory\":308,\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308,\"mxbean_open_fds\":306},\"warmup_operations\":64,\"rounds\":[{\"round\":1,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"fixture_targets\":{},\"proc_fds_excluding_probe_directory\":308,\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308,\"mxbean_open_fds\":306},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":2,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"fixture_targets\":{},\"proc_fds_excluding_probe_directory\":308,\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308,\"mxbean_open_fds\":306},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":3,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"fixture_targets\":{},\"proc_fds_excluding_probe_directory\":308,\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308,\"mxbean_open_fds\":306},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":4,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"fixture_targets\":{},\"proc_fds_excluding_probe_directory\":308,\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308,\"mxbean_open_fds\":306},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":5,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"fixture_targets\":{},\"proc_fds_excluding_probe_directory\":308,\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308,\"mxbean_open_fds\":306},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}}],\"total_operations\":704,\"post_operation_samples\":705,\"max_fixture_handles_after_operation\":0,\"schema_loaded\":false,\"fixture_handles_retained\":false}],\"fixture_handles_retained\":false}\n",
+        "stderr": ""
+      },
+      "observations": {
+        "protocol": "file",
+        "fixture": "missing_element_name",
+        "synthetic_input": true,
+        "abbreviated": false,
+        "expected_schema_loaded": false,
+        "positive_control_open": {
+          "fixture_targets": {
+            "/tmp/pde-schema-handles-iwlayu2f/fixtures/file-missing_element_name-False/fixture.exsd": 1
+          },
+          "proc_fds_excluding_probe_directory": 7,
+          "probe_directory_fds": 0,
+          "fixture_handle_count": 1,
+          "proc_raw_fds": 7,
+          "mxbean_open_fds": 5
+        },
+        "positive_control_closed": {
+          "fixture_targets": {},
+          "proc_fds_excluding_probe_directory": 6,
+          "probe_directory_fds": 0,
+          "fixture_handle_count": 0,
+          "proc_raw_fds": 6,
+          "mxbean_open_fds": 4
+        },
+        "forced_gc": false,
+        "fresh_jvm_for_case": true,
+        "phases": [
+          {
+            "mode": "cached_descriptor_queries",
+            "before_warmup": {
+              "fixture_targets": {},
+              "proc_fds_excluding_probe_directory": 6,
+              "probe_directory_fds": 0,
+              "fixture_handle_count": 0,
+              "proc_raw_fds": 6,
+              "mxbean_open_fds": 4
+            },
+            "after_initial_load": {
+              "fixture_targets": {},
+              "proc_fds_excluding_probe_directory": 308,
+              "probe_directory_fds": 0,
+              "fixture_handle_count": 0,
+              "proc_raw_fds": 308,
+              "mxbean_open_fds": 306
+            },
+            "after_warmup": {
+              "fixture_targets": {},
+              "proc_fds_excluding_probe_directory": 308,
+              "probe_directory_fds": 0,
+              "fixture_handle_count": 0,
+              "proc_raw_fds": 308,
+              "mxbean_open_fds": 306
+            },
+            "warmup_operations": 64,
+            "rounds": [
+              {
+                "round": 1,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "fixture_targets": {},
+                  "proc_fds_excluding_probe_directory": 308,
+                  "probe_directory_fds": 0,
+                  "fixture_handle_count": 0,
+                  "proc_raw_fds": 308,
+                  "mxbean_open_fds": 306
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 2,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "fixture_targets": {},
+                  "proc_fds_excluding_probe_directory": 308,
+                  "probe_directory_fds": 0,
+                  "fixture_handle_count": 0,
+                  "proc_raw_fds": 308,
+                  "mxbean_open_fds": 306
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 3,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "fixture_targets": {},
+                  "proc_fds_excluding_probe_directory": 308,
+                  "probe_directory_fds": 0,
+                  "fixture_handle_count": 0,
+                  "proc_raw_fds": 308,
+                  "mxbean_open_fds": 306
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 4,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "fixture_targets": {},
+                  "proc_fds_excluding_probe_directory": 308,
+                  "probe_directory_fds": 0,
+                  "fixture_handle_count": 0,
+                  "proc_raw_fds": 308,
+                  "mxbean_open_fds": 306
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 5,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "fixture_targets": {},
+                  "proc_fds_excluding_probe_directory": 308,
+                  "probe_directory_fds": 0,
+                  "fixture_handle_count": 0,
+                  "proc_raw_fds": 308,
+                  "mxbean_open_fds": 306
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              }
+            ],
+            "total_operations": 704,
+            "post_operation_samples": 705,
+            "max_fixture_handles_after_operation": 0,
+            "schema_loaded": false,
+            "fixture_handles_retained": false
+          },
+          {
+            "mode": "new_descriptor_per_operation",
+            "before_warmup": {
+              "fixture_targets": {},
+              "proc_fds_excluding_probe_directory": 308,
+              "probe_directory_fds": 0,
+              "fixture_handle_count": 0,
+              "proc_raw_fds": 308,
+              "mxbean_open_fds": 306
+            },
+            "after_initial_load": {
+              "fixture_targets": {},
+              "proc_fds_excluding_probe_directory": 308,
+              "probe_directory_fds": 0,
+              "fixture_handle_count": 0,
+              "proc_raw_fds": 308,
+              "mxbean_open_fds": 306
+            },
+            "after_warmup": {
+              "fixture_targets": {},
+              "proc_fds_excluding_probe_directory": 308,
+              "probe_directory_fds": 0,
+              "fixture_handle_count": 0,
+              "proc_raw_fds": 308,
+              "mxbean_open_fds": 306
+            },
+            "warmup_operations": 64,
+            "rounds": [
+              {
+                "round": 1,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "fixture_targets": {},
+                  "proc_fds_excluding_probe_directory": 308,
+                  "probe_directory_fds": 0,
+                  "fixture_handle_count": 0,
+                  "proc_raw_fds": 308,
+                  "mxbean_open_fds": 306
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 2,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "fixture_targets": {},
+                  "proc_fds_excluding_probe_directory": 308,
+                  "probe_directory_fds": 0,
+                  "fixture_handle_count": 0,
+                  "proc_raw_fds": 308,
+                  "mxbean_open_fds": 306
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 3,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "fixture_targets": {},
+                  "proc_fds_excluding_probe_directory": 308,
+                  "probe_directory_fds": 0,
+                  "fixture_handle_count": 0,
+                  "proc_raw_fds": 308,
+                  "mxbean_open_fds": 306
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 4,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "fixture_targets": {},
+                  "proc_fds_excluding_probe_directory": 308,
+                  "probe_directory_fds": 0,
+                  "fixture_handle_count": 0,
+                  "proc_raw_fds": 308,
+                  "mxbean_open_fds": 306
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 5,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "fixture_targets": {},
+                  "proc_fds_excluding_probe_directory": 308,
+                  "probe_directory_fds": 0,
+                  "fixture_handle_count": 0,
+                  "proc_raw_fds": 308,
+                  "mxbean_open_fds": 306
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              }
+            ],
+            "total_operations": 704,
+            "post_operation_samples": 705,
+            "max_fixture_handles_after_operation": 0,
+            "schema_loaded": false,
+            "fixture_handles_retained": false
+          }
+        ],
+        "fixture_handles_retained": false
+      }
+    },
+    {
+      "protocol": "file",
+      "fixture": "missing_element_name",
+      "abbreviated": true,
+      "process": {
+        "exit_code": 0,
+        "stdout": "{\"protocol\":\"file\",\"fixture\":\"missing_element_name\",\"synthetic_input\":true,\"abbreviated\":true,\"expected_schema_loaded\":false,\"positive_control_open\":{\"proc_fds_excluding_probe_directory\":7,\"fixture_targets\":{\"/tmp/pde-schema-handles-iwlayu2f/fixtures/file-missing_element_name-True/fixture.exsd\":1},\"mxbean_open_fds\":5,\"proc_raw_fds\":7,\"fixture_handle_count\":1,\"probe_directory_fds\":0},\"positive_control_closed\":{\"proc_fds_excluding_probe_directory\":6,\"fixture_targets\":{},\"mxbean_open_fds\":4,\"proc_raw_fds\":6,\"fixture_handle_count\":0,\"probe_directory_fds\":0},\"forced_gc\":false,\"fresh_jvm_for_case\":true,\"phases\":[{\"mode\":\"cached_descriptor_queries\",\"before_warmup\":{\"proc_fds_excluding_probe_directory\":6,\"fixture_targets\":{},\"mxbean_open_fds\":4,\"proc_raw_fds\":6,\"fixture_handle_count\":0,\"probe_directory_fds\":0},\"after_initial_load\":{\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0},\"after_warmup\":{\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0},\"warmup_operations\":64,\"rounds\":[{\"round\":1,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":2,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":3,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":4,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":5,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}}],\"total_operations\":704,\"post_operation_samples\":705,\"max_fixture_handles_after_operation\":0,\"schema_loaded\":false,\"fixture_handles_retained\":false},{\"mode\":\"new_descriptor_per_operation\",\"before_warmup\":{\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0},\"after_initial_load\":{\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0},\"after_warmup\":{\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0},\"warmup_operations\":64,\"rounds\":[{\"round\":1,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":2,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":3,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":4,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":5,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}}],\"total_operations\":704,\"post_operation_samples\":705,\"max_fixture_handles_after_operation\":0,\"schema_loaded\":false,\"fixture_handles_retained\":false}],\"fixture_handles_retained\":false}\n",
+        "stderr": ""
+      },
+      "observations": {
+        "protocol": "file",
+        "fixture": "missing_element_name",
+        "synthetic_input": true,
+        "abbreviated": true,
+        "expected_schema_loaded": false,
+        "positive_control_open": {
+          "proc_fds_excluding_probe_directory": 7,
+          "fixture_targets": {
+            "/tmp/pde-schema-handles-iwlayu2f/fixtures/file-missing_element_name-True/fixture.exsd": 1
+          },
+          "mxbean_open_fds": 5,
+          "proc_raw_fds": 7,
+          "fixture_handle_count": 1,
+          "probe_directory_fds": 0
+        },
+        "positive_control_closed": {
+          "proc_fds_excluding_probe_directory": 6,
+          "fixture_targets": {},
+          "mxbean_open_fds": 4,
+          "proc_raw_fds": 6,
+          "fixture_handle_count": 0,
+          "probe_directory_fds": 0
+        },
+        "forced_gc": false,
+        "fresh_jvm_for_case": true,
+        "phases": [
+          {
+            "mode": "cached_descriptor_queries",
+            "before_warmup": {
+              "proc_fds_excluding_probe_directory": 6,
+              "fixture_targets": {},
+              "mxbean_open_fds": 4,
+              "proc_raw_fds": 6,
+              "fixture_handle_count": 0,
+              "probe_directory_fds": 0
+            },
+            "after_initial_load": {
+              "proc_fds_excluding_probe_directory": 308,
+              "fixture_targets": {},
+              "mxbean_open_fds": 306,
+              "proc_raw_fds": 308,
+              "fixture_handle_count": 0,
+              "probe_directory_fds": 0
+            },
+            "after_warmup": {
+              "proc_fds_excluding_probe_directory": 308,
+              "fixture_targets": {},
+              "mxbean_open_fds": 306,
+              "proc_raw_fds": 308,
+              "fixture_handle_count": 0,
+              "probe_directory_fds": 0
+            },
+            "warmup_operations": 64,
+            "rounds": [
+              {
+                "round": 1,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {},
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 2,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {},
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 3,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {},
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 4,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {},
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 5,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {},
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              }
+            ],
+            "total_operations": 704,
+            "post_operation_samples": 705,
+            "max_fixture_handles_after_operation": 0,
+            "schema_loaded": false,
+            "fixture_handles_retained": false
+          },
+          {
+            "mode": "new_descriptor_per_operation",
+            "before_warmup": {
+              "proc_fds_excluding_probe_directory": 308,
+              "fixture_targets": {},
+              "mxbean_open_fds": 306,
+              "proc_raw_fds": 308,
+              "fixture_handle_count": 0,
+              "probe_directory_fds": 0
+            },
+            "after_initial_load": {
+              "proc_fds_excluding_probe_directory": 308,
+              "fixture_targets": {},
+              "mxbean_open_fds": 306,
+              "proc_raw_fds": 308,
+              "fixture_handle_count": 0,
+              "probe_directory_fds": 0
+            },
+            "after_warmup": {
+              "proc_fds_excluding_probe_directory": 308,
+              "fixture_targets": {},
+              "mxbean_open_fds": 306,
+              "proc_raw_fds": 308,
+              "fixture_handle_count": 0,
+              "probe_directory_fds": 0
+            },
+            "warmup_operations": 64,
+            "rounds": [
+              {
+                "round": 1,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {},
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 2,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {},
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 3,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {},
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 4,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {},
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 5,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {},
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              }
+            ],
+            "total_operations": 704,
+            "post_operation_samples": 705,
+            "max_fixture_handles_after_operation": 0,
+            "schema_loaded": false,
+            "fixture_handles_retained": false
+          }
+        ],
+        "fixture_handles_retained": false
+      }
+    },
+    {
+      "protocol": "jar",
+      "fixture": "valid",
+      "abbreviated": false,
+      "process": {
+        "exit_code": 0,
+        "stdout": "{\"protocol\":\"jar\",\"fixture\":\"valid\",\"synthetic_input\":true,\"abbreviated\":false,\"expected_schema_loaded\":true,\"positive_control_open\":{\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":7,\"fixture_targets\":{\"/tmp/pde-schema-handles-iwlayu2f/fixtures/jar-valid-False/fixture.jar\":1},\"mxbean_open_fds\":5,\"proc_raw_fds\":7,\"fixture_handle_count\":1},\"positive_control_closed\":{\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":6,\"fixture_targets\":{},\"mxbean_open_fds\":4,\"proc_raw_fds\":6,\"fixture_handle_count\":0},\"forced_gc\":false,\"fresh_jvm_for_case\":true,\"phases\":[{\"mode\":\"cached_descriptor_queries\",\"before_warmup\":{\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":6,\"fixture_targets\":{},\"mxbean_open_fds\":4,\"proc_raw_fds\":6,\"fixture_handle_count\":0},\"after_initial_load\":{\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0},\"after_warmup\":{\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0},\"warmup_operations\":64,\"rounds\":[{\"round\":1,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":2,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":3,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":4,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":5,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}}],\"total_operations\":704,\"post_operation_samples\":705,\"max_fixture_handles_after_operation\":0,\"schema_loaded\":true,\"fixture_handles_retained\":false},{\"mode\":\"new_descriptor_per_operation\",\"before_warmup\":{\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0},\"after_initial_load\":{\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0},\"after_warmup\":{\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0},\"warmup_operations\":64,\"rounds\":[{\"round\":1,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":2,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":3,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":4,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":5,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{},\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}}],\"total_operations\":704,\"post_operation_samples\":705,\"max_fixture_handles_after_operation\":0,\"schema_loaded\":true,\"fixture_handles_retained\":false}],\"fixture_handles_retained\":false}\n",
+        "stderr": ""
+      },
+      "observations": {
+        "protocol": "jar",
+        "fixture": "valid",
+        "synthetic_input": true,
+        "abbreviated": false,
+        "expected_schema_loaded": true,
+        "positive_control_open": {
+          "probe_directory_fds": 0,
+          "proc_fds_excluding_probe_directory": 7,
+          "fixture_targets": {
+            "/tmp/pde-schema-handles-iwlayu2f/fixtures/jar-valid-False/fixture.jar": 1
+          },
+          "mxbean_open_fds": 5,
+          "proc_raw_fds": 7,
+          "fixture_handle_count": 1
+        },
+        "positive_control_closed": {
+          "probe_directory_fds": 0,
+          "proc_fds_excluding_probe_directory": 6,
+          "fixture_targets": {},
+          "mxbean_open_fds": 4,
+          "proc_raw_fds": 6,
+          "fixture_handle_count": 0
+        },
+        "forced_gc": false,
+        "fresh_jvm_for_case": true,
+        "phases": [
+          {
+            "mode": "cached_descriptor_queries",
+            "before_warmup": {
+              "probe_directory_fds": 0,
+              "proc_fds_excluding_probe_directory": 6,
+              "fixture_targets": {},
+              "mxbean_open_fds": 4,
+              "proc_raw_fds": 6,
+              "fixture_handle_count": 0
+            },
+            "after_initial_load": {
+              "probe_directory_fds": 0,
+              "proc_fds_excluding_probe_directory": 308,
+              "fixture_targets": {},
+              "mxbean_open_fds": 306,
+              "proc_raw_fds": 308,
+              "fixture_handle_count": 0
+            },
+            "after_warmup": {
+              "probe_directory_fds": 0,
+              "proc_fds_excluding_probe_directory": 308,
+              "fixture_targets": {},
+              "mxbean_open_fds": 306,
+              "proc_raw_fds": 308,
+              "fixture_handle_count": 0
+            },
+            "warmup_operations": 64,
+            "rounds": [
+              {
+                "round": 1,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "probe_directory_fds": 0,
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {},
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 2,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "probe_directory_fds": 0,
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {},
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 3,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "probe_directory_fds": 0,
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {},
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 4,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "probe_directory_fds": 0,
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {},
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 5,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "probe_directory_fds": 0,
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {},
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              }
+            ],
+            "total_operations": 704,
+            "post_operation_samples": 705,
+            "max_fixture_handles_after_operation": 0,
+            "schema_loaded": true,
+            "fixture_handles_retained": false
+          },
+          {
+            "mode": "new_descriptor_per_operation",
+            "before_warmup": {
+              "probe_directory_fds": 0,
+              "proc_fds_excluding_probe_directory": 308,
+              "fixture_targets": {},
+              "mxbean_open_fds": 306,
+              "proc_raw_fds": 308,
+              "fixture_handle_count": 0
+            },
+            "after_initial_load": {
+              "probe_directory_fds": 0,
+              "proc_fds_excluding_probe_directory": 308,
+              "fixture_targets": {},
+              "mxbean_open_fds": 306,
+              "proc_raw_fds": 308,
+              "fixture_handle_count": 0
+            },
+            "after_warmup": {
+              "probe_directory_fds": 0,
+              "proc_fds_excluding_probe_directory": 308,
+              "fixture_targets": {},
+              "mxbean_open_fds": 306,
+              "proc_raw_fds": 308,
+              "fixture_handle_count": 0
+            },
+            "warmup_operations": 64,
+            "rounds": [
+              {
+                "round": 1,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "probe_directory_fds": 0,
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {},
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 2,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "probe_directory_fds": 0,
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {},
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 3,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "probe_directory_fds": 0,
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {},
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 4,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "probe_directory_fds": 0,
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {},
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 5,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "probe_directory_fds": 0,
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {},
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              }
+            ],
+            "total_operations": 704,
+            "post_operation_samples": 705,
+            "max_fixture_handles_after_operation": 0,
+            "schema_loaded": true,
+            "fixture_handles_retained": false
+          }
+        ],
+        "fixture_handles_retained": false
+      }
+    },
+    {
+      "protocol": "jar",
+      "fixture": "valid",
+      "abbreviated": true,
+      "process": {
+        "exit_code": 0,
+        "stdout": "{\"protocol\":\"jar\",\"fixture\":\"valid\",\"synthetic_input\":true,\"abbreviated\":true,\"expected_schema_loaded\":true,\"positive_control_open\":{\"mxbean_open_fds\":5,\"fixture_targets\":{\"/tmp/pde-schema-handles-iwlayu2f/fixtures/jar-valid-True/fixture.jar\":1},\"proc_fds_excluding_probe_directory\":7,\"probe_directory_fds\":0,\"fixture_handle_count\":1,\"proc_raw_fds\":7},\"positive_control_closed\":{\"mxbean_open_fds\":4,\"fixture_targets\":{},\"proc_fds_excluding_probe_directory\":6,\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":6},\"forced_gc\":false,\"fresh_jvm_for_case\":true,\"phases\":[{\"mode\":\"cached_descriptor_queries\",\"before_warmup\":{\"mxbean_open_fds\":4,\"fixture_targets\":{},\"proc_fds_excluding_probe_directory\":6,\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":6},\"after_initial_load\":{\"mxbean_open_fds\":306,\"fixture_targets\":{},\"proc_fds_excluding_probe_directory\":308,\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308},\"after_warmup\":{\"mxbean_open_fds\":306,\"fixture_targets\":{},\"proc_fds_excluding_probe_directory\":308,\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308},\"warmup_operations\":64,\"rounds\":[{\"round\":1,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"mxbean_open_fds\":306,\"fixture_targets\":{},\"proc_fds_excluding_probe_directory\":308,\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":2,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"mxbean_open_fds\":306,\"fixture_targets\":{},\"proc_fds_excluding_probe_directory\":308,\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":3,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"mxbean_open_fds\":306,\"fixture_targets\":{},\"proc_fds_excluding_probe_directory\":308,\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":4,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"mxbean_open_fds\":306,\"fixture_targets\":{},\"proc_fds_excluding_probe_directory\":308,\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":5,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"mxbean_open_fds\":306,\"fixture_targets\":{},\"proc_fds_excluding_probe_directory\":308,\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}}],\"total_operations\":704,\"post_operation_samples\":705,\"max_fixture_handles_after_operation\":0,\"schema_loaded\":true,\"fixture_handles_retained\":false},{\"mode\":\"new_descriptor_per_operation\",\"before_warmup\":{\"mxbean_open_fds\":306,\"fixture_targets\":{},\"proc_fds_excluding_probe_directory\":308,\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308},\"after_initial_load\":{\"mxbean_open_fds\":306,\"fixture_targets\":{},\"proc_fds_excluding_probe_directory\":308,\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308},\"after_warmup\":{\"mxbean_open_fds\":306,\"fixture_targets\":{},\"proc_fds_excluding_probe_directory\":308,\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308},\"warmup_operations\":64,\"rounds\":[{\"round\":1,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"mxbean_open_fds\":306,\"fixture_targets\":{},\"proc_fds_excluding_probe_directory\":308,\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":2,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"mxbean_open_fds\":306,\"fixture_targets\":{},\"proc_fds_excluding_probe_directory\":308,\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":3,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"mxbean_open_fds\":306,\"fixture_targets\":{},\"proc_fds_excluding_probe_directory\":308,\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":4,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"mxbean_open_fds\":306,\"fixture_targets\":{},\"proc_fds_excluding_probe_directory\":308,\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":5,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"mxbean_open_fds\":306,\"fixture_targets\":{},\"proc_fds_excluding_probe_directory\":308,\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}}],\"total_operations\":704,\"post_operation_samples\":705,\"max_fixture_handles_after_operation\":0,\"schema_loaded\":true,\"fixture_handles_retained\":false}],\"fixture_handles_retained\":false}\n",
+        "stderr": ""
+      },
+      "observations": {
+        "protocol": "jar",
+        "fixture": "valid",
+        "synthetic_input": true,
+        "abbreviated": true,
+        "expected_schema_loaded": true,
+        "positive_control_open": {
+          "mxbean_open_fds": 5,
+          "fixture_targets": {
+            "/tmp/pde-schema-handles-iwlayu2f/fixtures/jar-valid-True/fixture.jar": 1
+          },
+          "proc_fds_excluding_probe_directory": 7,
+          "probe_directory_fds": 0,
+          "fixture_handle_count": 1,
+          "proc_raw_fds": 7
+        },
+        "positive_control_closed": {
+          "mxbean_open_fds": 4,
+          "fixture_targets": {},
+          "proc_fds_excluding_probe_directory": 6,
+          "probe_directory_fds": 0,
+          "fixture_handle_count": 0,
+          "proc_raw_fds": 6
+        },
+        "forced_gc": false,
+        "fresh_jvm_for_case": true,
+        "phases": [
+          {
+            "mode": "cached_descriptor_queries",
+            "before_warmup": {
+              "mxbean_open_fds": 4,
+              "fixture_targets": {},
+              "proc_fds_excluding_probe_directory": 6,
+              "probe_directory_fds": 0,
+              "fixture_handle_count": 0,
+              "proc_raw_fds": 6
+            },
+            "after_initial_load": {
+              "mxbean_open_fds": 306,
+              "fixture_targets": {},
+              "proc_fds_excluding_probe_directory": 308,
+              "probe_directory_fds": 0,
+              "fixture_handle_count": 0,
+              "proc_raw_fds": 308
+            },
+            "after_warmup": {
+              "mxbean_open_fds": 306,
+              "fixture_targets": {},
+              "proc_fds_excluding_probe_directory": 308,
+              "probe_directory_fds": 0,
+              "fixture_handle_count": 0,
+              "proc_raw_fds": 308
+            },
+            "warmup_operations": 64,
+            "rounds": [
+              {
+                "round": 1,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "mxbean_open_fds": 306,
+                  "fixture_targets": {},
+                  "proc_fds_excluding_probe_directory": 308,
+                  "probe_directory_fds": 0,
+                  "fixture_handle_count": 0,
+                  "proc_raw_fds": 308
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 2,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "mxbean_open_fds": 306,
+                  "fixture_targets": {},
+                  "proc_fds_excluding_probe_directory": 308,
+                  "probe_directory_fds": 0,
+                  "fixture_handle_count": 0,
+                  "proc_raw_fds": 308
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 3,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "mxbean_open_fds": 306,
+                  "fixture_targets": {},
+                  "proc_fds_excluding_probe_directory": 308,
+                  "probe_directory_fds": 0,
+                  "fixture_handle_count": 0,
+                  "proc_raw_fds": 308
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 4,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "mxbean_open_fds": 306,
+                  "fixture_targets": {},
+                  "proc_fds_excluding_probe_directory": 308,
+                  "probe_directory_fds": 0,
+                  "fixture_handle_count": 0,
+                  "proc_raw_fds": 308
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 5,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "mxbean_open_fds": 306,
+                  "fixture_targets": {},
+                  "proc_fds_excluding_probe_directory": 308,
+                  "probe_directory_fds": 0,
+                  "fixture_handle_count": 0,
+                  "proc_raw_fds": 308
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              }
+            ],
+            "total_operations": 704,
+            "post_operation_samples": 705,
+            "max_fixture_handles_after_operation": 0,
+            "schema_loaded": true,
+            "fixture_handles_retained": false
+          },
+          {
+            "mode": "new_descriptor_per_operation",
+            "before_warmup": {
+              "mxbean_open_fds": 306,
+              "fixture_targets": {},
+              "proc_fds_excluding_probe_directory": 308,
+              "probe_directory_fds": 0,
+              "fixture_handle_count": 0,
+              "proc_raw_fds": 308
+            },
+            "after_initial_load": {
+              "mxbean_open_fds": 306,
+              "fixture_targets": {},
+              "proc_fds_excluding_probe_directory": 308,
+              "probe_directory_fds": 0,
+              "fixture_handle_count": 0,
+              "proc_raw_fds": 308
+            },
+            "after_warmup": {
+              "mxbean_open_fds": 306,
+              "fixture_targets": {},
+              "proc_fds_excluding_probe_directory": 308,
+              "probe_directory_fds": 0,
+              "fixture_handle_count": 0,
+              "proc_raw_fds": 308
+            },
+            "warmup_operations": 64,
+            "rounds": [
+              {
+                "round": 1,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "mxbean_open_fds": 306,
+                  "fixture_targets": {},
+                  "proc_fds_excluding_probe_directory": 308,
+                  "probe_directory_fds": 0,
+                  "fixture_handle_count": 0,
+                  "proc_raw_fds": 308
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 2,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "mxbean_open_fds": 306,
+                  "fixture_targets": {},
+                  "proc_fds_excluding_probe_directory": 308,
+                  "probe_directory_fds": 0,
+                  "fixture_handle_count": 0,
+                  "proc_raw_fds": 308
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 3,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "mxbean_open_fds": 306,
+                  "fixture_targets": {},
+                  "proc_fds_excluding_probe_directory": 308,
+                  "probe_directory_fds": 0,
+                  "fixture_handle_count": 0,
+                  "proc_raw_fds": 308
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 4,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "mxbean_open_fds": 306,
+                  "fixture_targets": {},
+                  "proc_fds_excluding_probe_directory": 308,
+                  "probe_directory_fds": 0,
+                  "fixture_handle_count": 0,
+                  "proc_raw_fds": 308
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 5,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "mxbean_open_fds": 306,
+                  "fixture_targets": {},
+                  "proc_fds_excluding_probe_directory": 308,
+                  "probe_directory_fds": 0,
+                  "fixture_handle_count": 0,
+                  "proc_raw_fds": 308
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              }
+            ],
+            "total_operations": 704,
+            "post_operation_samples": 705,
+            "max_fixture_handles_after_operation": 0,
+            "schema_loaded": true,
+            "fixture_handles_retained": false
+          }
+        ],
+        "fixture_handles_retained": false
+      }
+    },
+    {
+      "protocol": "jar",
+      "fixture": "malformed_xml",
+      "abbreviated": false,
+      "process": {
+        "exit_code": 0,
+        "stdout": "{\"protocol\":\"jar\",\"fixture\":\"malformed_xml\",\"synthetic_input\":true,\"abbreviated\":false,\"expected_schema_loaded\":false,\"positive_control_open\":{\"mxbean_open_fds\":5,\"proc_raw_fds\":7,\"fixture_handle_count\":1,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":7,\"fixture_targets\":{\"/tmp/pde-schema-handles-iwlayu2f/fixtures/jar-malformed_xml-False/fixture.jar\":1}},\"positive_control_closed\":{\"mxbean_open_fds\":4,\"proc_raw_fds\":6,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":6,\"fixture_targets\":{}},\"forced_gc\":false,\"fresh_jvm_for_case\":true,\"phases\":[{\"mode\":\"cached_descriptor_queries\",\"before_warmup\":{\"mxbean_open_fds\":4,\"proc_raw_fds\":6,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":6,\"fixture_targets\":{}},\"after_initial_load\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"after_warmup\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"warmup_operations\":64,\"rounds\":[{\"round\":1,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":2,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":3,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":4,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":5,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}}],\"total_operations\":704,\"post_operation_samples\":705,\"max_fixture_handles_after_operation\":0,\"schema_loaded\":false,\"fixture_handles_retained\":false},{\"mode\":\"new_descriptor_per_operation\",\"before_warmup\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"after_initial_load\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"after_warmup\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"warmup_operations\":64,\"rounds\":[{\"round\":1,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":2,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":3,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":4,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":5,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}}],\"total_operations\":704,\"post_operation_samples\":705,\"max_fixture_handles_after_operation\":0,\"schema_loaded\":false,\"fixture_handles_retained\":false}],\"fixture_handles_retained\":false}\n",
+        "stderr": ""
+      },
+      "observations": {
+        "protocol": "jar",
+        "fixture": "malformed_xml",
+        "synthetic_input": true,
+        "abbreviated": false,
+        "expected_schema_loaded": false,
+        "positive_control_open": {
+          "mxbean_open_fds": 5,
+          "proc_raw_fds": 7,
+          "fixture_handle_count": 1,
+          "probe_directory_fds": 0,
+          "proc_fds_excluding_probe_directory": 7,
+          "fixture_targets": {
+            "/tmp/pde-schema-handles-iwlayu2f/fixtures/jar-malformed_xml-False/fixture.jar": 1
+          }
+        },
+        "positive_control_closed": {
+          "mxbean_open_fds": 4,
+          "proc_raw_fds": 6,
+          "fixture_handle_count": 0,
+          "probe_directory_fds": 0,
+          "proc_fds_excluding_probe_directory": 6,
+          "fixture_targets": {}
+        },
+        "forced_gc": false,
+        "fresh_jvm_for_case": true,
+        "phases": [
+          {
+            "mode": "cached_descriptor_queries",
+            "before_warmup": {
+              "mxbean_open_fds": 4,
+              "proc_raw_fds": 6,
+              "fixture_handle_count": 0,
+              "probe_directory_fds": 0,
+              "proc_fds_excluding_probe_directory": 6,
+              "fixture_targets": {}
+            },
+            "after_initial_load": {
+              "mxbean_open_fds": 306,
+              "proc_raw_fds": 308,
+              "fixture_handle_count": 0,
+              "probe_directory_fds": 0,
+              "proc_fds_excluding_probe_directory": 308,
+              "fixture_targets": {}
+            },
+            "after_warmup": {
+              "mxbean_open_fds": 306,
+              "proc_raw_fds": 308,
+              "fixture_handle_count": 0,
+              "probe_directory_fds": 0,
+              "proc_fds_excluding_probe_directory": 308,
+              "fixture_targets": {}
+            },
+            "warmup_operations": 64,
+            "rounds": [
+              {
+                "round": 1,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0,
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {}
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 2,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0,
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {}
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 3,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0,
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {}
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 4,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0,
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {}
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 5,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0,
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {}
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              }
+            ],
+            "total_operations": 704,
+            "post_operation_samples": 705,
+            "max_fixture_handles_after_operation": 0,
+            "schema_loaded": false,
+            "fixture_handles_retained": false
+          },
+          {
+            "mode": "new_descriptor_per_operation",
+            "before_warmup": {
+              "mxbean_open_fds": 306,
+              "proc_raw_fds": 308,
+              "fixture_handle_count": 0,
+              "probe_directory_fds": 0,
+              "proc_fds_excluding_probe_directory": 308,
+              "fixture_targets": {}
+            },
+            "after_initial_load": {
+              "mxbean_open_fds": 306,
+              "proc_raw_fds": 308,
+              "fixture_handle_count": 0,
+              "probe_directory_fds": 0,
+              "proc_fds_excluding_probe_directory": 308,
+              "fixture_targets": {}
+            },
+            "after_warmup": {
+              "mxbean_open_fds": 306,
+              "proc_raw_fds": 308,
+              "fixture_handle_count": 0,
+              "probe_directory_fds": 0,
+              "proc_fds_excluding_probe_directory": 308,
+              "fixture_targets": {}
+            },
+            "warmup_operations": 64,
+            "rounds": [
+              {
+                "round": 1,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0,
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {}
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 2,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0,
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {}
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 3,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0,
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {}
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 4,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0,
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {}
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 5,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0,
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {}
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              }
+            ],
+            "total_operations": 704,
+            "post_operation_samples": 705,
+            "max_fixture_handles_after_operation": 0,
+            "schema_loaded": false,
+            "fixture_handles_retained": false
+          }
+        ],
+        "fixture_handles_retained": false
+      }
+    },
+    {
+      "protocol": "jar",
+      "fixture": "malformed_xml",
+      "abbreviated": true,
+      "process": {
+        "exit_code": 0,
+        "stdout": "{\"protocol\":\"jar\",\"fixture\":\"malformed_xml\",\"synthetic_input\":true,\"abbreviated\":true,\"expected_schema_loaded\":false,\"positive_control_open\":{\"proc_fds_excluding_probe_directory\":7,\"probe_directory_fds\":0,\"fixture_handle_count\":1,\"proc_raw_fds\":7,\"mxbean_open_fds\":5,\"fixture_targets\":{\"/tmp/pde-schema-handles-iwlayu2f/fixtures/jar-malformed_xml-True/fixture.jar\":1}},\"positive_control_closed\":{\"proc_fds_excluding_probe_directory\":6,\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":6,\"mxbean_open_fds\":4,\"fixture_targets\":{}},\"forced_gc\":false,\"fresh_jvm_for_case\":true,\"phases\":[{\"mode\":\"cached_descriptor_queries\",\"before_warmup\":{\"proc_fds_excluding_probe_directory\":6,\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":6,\"mxbean_open_fds\":4,\"fixture_targets\":{}},\"after_initial_load\":{\"proc_fds_excluding_probe_directory\":308,\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308,\"mxbean_open_fds\":306,\"fixture_targets\":{}},\"after_warmup\":{\"proc_fds_excluding_probe_directory\":308,\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308,\"mxbean_open_fds\":306,\"fixture_targets\":{}},\"warmup_operations\":64,\"rounds\":[{\"round\":1,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"proc_fds_excluding_probe_directory\":308,\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308,\"mxbean_open_fds\":306,\"fixture_targets\":{}},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":2,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"proc_fds_excluding_probe_directory\":308,\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308,\"mxbean_open_fds\":306,\"fixture_targets\":{}},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":3,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"proc_fds_excluding_probe_directory\":308,\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308,\"mxbean_open_fds\":306,\"fixture_targets\":{}},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":4,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"proc_fds_excluding_probe_directory\":308,\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308,\"mxbean_open_fds\":306,\"fixture_targets\":{}},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":5,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"proc_fds_excluding_probe_directory\":308,\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308,\"mxbean_open_fds\":306,\"fixture_targets\":{}},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}}],\"total_operations\":704,\"post_operation_samples\":705,\"max_fixture_handles_after_operation\":0,\"schema_loaded\":false,\"fixture_handles_retained\":false},{\"mode\":\"new_descriptor_per_operation\",\"before_warmup\":{\"proc_fds_excluding_probe_directory\":308,\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308,\"mxbean_open_fds\":306,\"fixture_targets\":{}},\"after_initial_load\":{\"proc_fds_excluding_probe_directory\":308,\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308,\"mxbean_open_fds\":306,\"fixture_targets\":{}},\"after_warmup\":{\"proc_fds_excluding_probe_directory\":308,\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308,\"mxbean_open_fds\":306,\"fixture_targets\":{}},\"warmup_operations\":64,\"rounds\":[{\"round\":1,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"proc_fds_excluding_probe_directory\":308,\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308,\"mxbean_open_fds\":306,\"fixture_targets\":{}},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":2,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"proc_fds_excluding_probe_directory\":308,\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308,\"mxbean_open_fds\":306,\"fixture_targets\":{}},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":3,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"proc_fds_excluding_probe_directory\":308,\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308,\"mxbean_open_fds\":306,\"fixture_targets\":{}},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":4,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"proc_fds_excluding_probe_directory\":308,\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308,\"mxbean_open_fds\":306,\"fixture_targets\":{}},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":5,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"proc_fds_excluding_probe_directory\":308,\"probe_directory_fds\":0,\"fixture_handle_count\":0,\"proc_raw_fds\":308,\"mxbean_open_fds\":306,\"fixture_targets\":{}},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}}],\"total_operations\":704,\"post_operation_samples\":705,\"max_fixture_handles_after_operation\":0,\"schema_loaded\":false,\"fixture_handles_retained\":false}],\"fixture_handles_retained\":false}\n",
+        "stderr": ""
+      },
+      "observations": {
+        "protocol": "jar",
+        "fixture": "malformed_xml",
+        "synthetic_input": true,
+        "abbreviated": true,
+        "expected_schema_loaded": false,
+        "positive_control_open": {
+          "proc_fds_excluding_probe_directory": 7,
+          "probe_directory_fds": 0,
+          "fixture_handle_count": 1,
+          "proc_raw_fds": 7,
+          "mxbean_open_fds": 5,
+          "fixture_targets": {
+            "/tmp/pde-schema-handles-iwlayu2f/fixtures/jar-malformed_xml-True/fixture.jar": 1
+          }
+        },
+        "positive_control_closed": {
+          "proc_fds_excluding_probe_directory": 6,
+          "probe_directory_fds": 0,
+          "fixture_handle_count": 0,
+          "proc_raw_fds": 6,
+          "mxbean_open_fds": 4,
+          "fixture_targets": {}
+        },
+        "forced_gc": false,
+        "fresh_jvm_for_case": true,
+        "phases": [
+          {
+            "mode": "cached_descriptor_queries",
+            "before_warmup": {
+              "proc_fds_excluding_probe_directory": 6,
+              "probe_directory_fds": 0,
+              "fixture_handle_count": 0,
+              "proc_raw_fds": 6,
+              "mxbean_open_fds": 4,
+              "fixture_targets": {}
+            },
+            "after_initial_load": {
+              "proc_fds_excluding_probe_directory": 308,
+              "probe_directory_fds": 0,
+              "fixture_handle_count": 0,
+              "proc_raw_fds": 308,
+              "mxbean_open_fds": 306,
+              "fixture_targets": {}
+            },
+            "after_warmup": {
+              "proc_fds_excluding_probe_directory": 308,
+              "probe_directory_fds": 0,
+              "fixture_handle_count": 0,
+              "proc_raw_fds": 308,
+              "mxbean_open_fds": 306,
+              "fixture_targets": {}
+            },
+            "warmup_operations": 64,
+            "rounds": [
+              {
+                "round": 1,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "proc_fds_excluding_probe_directory": 308,
+                  "probe_directory_fds": 0,
+                  "fixture_handle_count": 0,
+                  "proc_raw_fds": 308,
+                  "mxbean_open_fds": 306,
+                  "fixture_targets": {}
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 2,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "proc_fds_excluding_probe_directory": 308,
+                  "probe_directory_fds": 0,
+                  "fixture_handle_count": 0,
+                  "proc_raw_fds": 308,
+                  "mxbean_open_fds": 306,
+                  "fixture_targets": {}
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 3,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "proc_fds_excluding_probe_directory": 308,
+                  "probe_directory_fds": 0,
+                  "fixture_handle_count": 0,
+                  "proc_raw_fds": 308,
+                  "mxbean_open_fds": 306,
+                  "fixture_targets": {}
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 4,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "proc_fds_excluding_probe_directory": 308,
+                  "probe_directory_fds": 0,
+                  "fixture_handle_count": 0,
+                  "proc_raw_fds": 308,
+                  "mxbean_open_fds": 306,
+                  "fixture_targets": {}
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 5,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "proc_fds_excluding_probe_directory": 308,
+                  "probe_directory_fds": 0,
+                  "fixture_handle_count": 0,
+                  "proc_raw_fds": 308,
+                  "mxbean_open_fds": 306,
+                  "fixture_targets": {}
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              }
+            ],
+            "total_operations": 704,
+            "post_operation_samples": 705,
+            "max_fixture_handles_after_operation": 0,
+            "schema_loaded": false,
+            "fixture_handles_retained": false
+          },
+          {
+            "mode": "new_descriptor_per_operation",
+            "before_warmup": {
+              "proc_fds_excluding_probe_directory": 308,
+              "probe_directory_fds": 0,
+              "fixture_handle_count": 0,
+              "proc_raw_fds": 308,
+              "mxbean_open_fds": 306,
+              "fixture_targets": {}
+            },
+            "after_initial_load": {
+              "proc_fds_excluding_probe_directory": 308,
+              "probe_directory_fds": 0,
+              "fixture_handle_count": 0,
+              "proc_raw_fds": 308,
+              "mxbean_open_fds": 306,
+              "fixture_targets": {}
+            },
+            "after_warmup": {
+              "proc_fds_excluding_probe_directory": 308,
+              "probe_directory_fds": 0,
+              "fixture_handle_count": 0,
+              "proc_raw_fds": 308,
+              "mxbean_open_fds": 306,
+              "fixture_targets": {}
+            },
+            "warmup_operations": 64,
+            "rounds": [
+              {
+                "round": 1,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "proc_fds_excluding_probe_directory": 308,
+                  "probe_directory_fds": 0,
+                  "fixture_handle_count": 0,
+                  "proc_raw_fds": 308,
+                  "mxbean_open_fds": 306,
+                  "fixture_targets": {}
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 2,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "proc_fds_excluding_probe_directory": 308,
+                  "probe_directory_fds": 0,
+                  "fixture_handle_count": 0,
+                  "proc_raw_fds": 308,
+                  "mxbean_open_fds": 306,
+                  "fixture_targets": {}
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 3,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "proc_fds_excluding_probe_directory": 308,
+                  "probe_directory_fds": 0,
+                  "fixture_handle_count": 0,
+                  "proc_raw_fds": 308,
+                  "mxbean_open_fds": 306,
+                  "fixture_targets": {}
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 4,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "proc_fds_excluding_probe_directory": 308,
+                  "probe_directory_fds": 0,
+                  "fixture_handle_count": 0,
+                  "proc_raw_fds": 308,
+                  "mxbean_open_fds": 306,
+                  "fixture_targets": {}
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 5,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "proc_fds_excluding_probe_directory": 308,
+                  "probe_directory_fds": 0,
+                  "fixture_handle_count": 0,
+                  "proc_raw_fds": 308,
+                  "mxbean_open_fds": 306,
+                  "fixture_targets": {}
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              }
+            ],
+            "total_operations": 704,
+            "post_operation_samples": 705,
+            "max_fixture_handles_after_operation": 0,
+            "schema_loaded": false,
+            "fixture_handles_retained": false
+          }
+        ],
+        "fixture_handles_retained": false
+      }
+    },
+    {
+      "protocol": "jar",
+      "fixture": "missing_element_name",
+      "abbreviated": false,
+      "process": {
+        "exit_code": 0,
+        "stdout": "{\"protocol\":\"jar\",\"fixture\":\"missing_element_name\",\"synthetic_input\":true,\"abbreviated\":false,\"expected_schema_loaded\":false,\"positive_control_open\":{\"mxbean_open_fds\":5,\"proc_raw_fds\":7,\"fixture_handle_count\":1,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":7,\"fixture_targets\":{\"/tmp/pde-schema-handles-iwlayu2f/fixtures/jar-missing_element_name-False/fixture.jar\":1}},\"positive_control_closed\":{\"mxbean_open_fds\":4,\"proc_raw_fds\":6,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":6,\"fixture_targets\":{}},\"forced_gc\":false,\"fresh_jvm_for_case\":true,\"phases\":[{\"mode\":\"cached_descriptor_queries\",\"before_warmup\":{\"mxbean_open_fds\":4,\"proc_raw_fds\":6,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":6,\"fixture_targets\":{}},\"after_initial_load\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"after_warmup\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"warmup_operations\":64,\"rounds\":[{\"round\":1,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":2,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":3,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":4,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":5,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}}],\"total_operations\":704,\"post_operation_samples\":705,\"max_fixture_handles_after_operation\":0,\"schema_loaded\":false,\"fixture_handles_retained\":false},{\"mode\":\"new_descriptor_per_operation\",\"before_warmup\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"after_initial_load\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"after_warmup\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"warmup_operations\":64,\"rounds\":[{\"round\":1,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":2,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":3,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":4,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":5,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}}],\"total_operations\":704,\"post_operation_samples\":705,\"max_fixture_handles_after_operation\":0,\"schema_loaded\":false,\"fixture_handles_retained\":false}],\"fixture_handles_retained\":false}\n",
+        "stderr": ""
+      },
+      "observations": {
+        "protocol": "jar",
+        "fixture": "missing_element_name",
+        "synthetic_input": true,
+        "abbreviated": false,
+        "expected_schema_loaded": false,
+        "positive_control_open": {
+          "mxbean_open_fds": 5,
+          "proc_raw_fds": 7,
+          "fixture_handle_count": 1,
+          "probe_directory_fds": 0,
+          "proc_fds_excluding_probe_directory": 7,
+          "fixture_targets": {
+            "/tmp/pde-schema-handles-iwlayu2f/fixtures/jar-missing_element_name-False/fixture.jar": 1
+          }
+        },
+        "positive_control_closed": {
+          "mxbean_open_fds": 4,
+          "proc_raw_fds": 6,
+          "fixture_handle_count": 0,
+          "probe_directory_fds": 0,
+          "proc_fds_excluding_probe_directory": 6,
+          "fixture_targets": {}
+        },
+        "forced_gc": false,
+        "fresh_jvm_for_case": true,
+        "phases": [
+          {
+            "mode": "cached_descriptor_queries",
+            "before_warmup": {
+              "mxbean_open_fds": 4,
+              "proc_raw_fds": 6,
+              "fixture_handle_count": 0,
+              "probe_directory_fds": 0,
+              "proc_fds_excluding_probe_directory": 6,
+              "fixture_targets": {}
+            },
+            "after_initial_load": {
+              "mxbean_open_fds": 306,
+              "proc_raw_fds": 308,
+              "fixture_handle_count": 0,
+              "probe_directory_fds": 0,
+              "proc_fds_excluding_probe_directory": 308,
+              "fixture_targets": {}
+            },
+            "after_warmup": {
+              "mxbean_open_fds": 306,
+              "proc_raw_fds": 308,
+              "fixture_handle_count": 0,
+              "probe_directory_fds": 0,
+              "proc_fds_excluding_probe_directory": 308,
+              "fixture_targets": {}
+            },
+            "warmup_operations": 64,
+            "rounds": [
+              {
+                "round": 1,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0,
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {}
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 2,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0,
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {}
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 3,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0,
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {}
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 4,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0,
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {}
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 5,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0,
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {}
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              }
+            ],
+            "total_operations": 704,
+            "post_operation_samples": 705,
+            "max_fixture_handles_after_operation": 0,
+            "schema_loaded": false,
+            "fixture_handles_retained": false
+          },
+          {
+            "mode": "new_descriptor_per_operation",
+            "before_warmup": {
+              "mxbean_open_fds": 306,
+              "proc_raw_fds": 308,
+              "fixture_handle_count": 0,
+              "probe_directory_fds": 0,
+              "proc_fds_excluding_probe_directory": 308,
+              "fixture_targets": {}
+            },
+            "after_initial_load": {
+              "mxbean_open_fds": 306,
+              "proc_raw_fds": 308,
+              "fixture_handle_count": 0,
+              "probe_directory_fds": 0,
+              "proc_fds_excluding_probe_directory": 308,
+              "fixture_targets": {}
+            },
+            "after_warmup": {
+              "mxbean_open_fds": 306,
+              "proc_raw_fds": 308,
+              "fixture_handle_count": 0,
+              "probe_directory_fds": 0,
+              "proc_fds_excluding_probe_directory": 308,
+              "fixture_targets": {}
+            },
+            "warmup_operations": 64,
+            "rounds": [
+              {
+                "round": 1,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0,
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {}
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 2,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0,
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {}
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 3,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0,
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {}
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 4,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0,
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {}
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 5,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0,
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {}
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              }
+            ],
+            "total_operations": 704,
+            "post_operation_samples": 705,
+            "max_fixture_handles_after_operation": 0,
+            "schema_loaded": false,
+            "fixture_handles_retained": false
+          }
+        ],
+        "fixture_handles_retained": false
+      }
+    },
+    {
+      "protocol": "jar",
+      "fixture": "missing_element_name",
+      "abbreviated": true,
+      "process": {
+        "exit_code": 0,
+        "stdout": "{\"protocol\":\"jar\",\"fixture\":\"missing_element_name\",\"synthetic_input\":true,\"abbreviated\":true,\"expected_schema_loaded\":false,\"positive_control_open\":{\"mxbean_open_fds\":5,\"proc_raw_fds\":7,\"fixture_handle_count\":1,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":7,\"fixture_targets\":{\"/tmp/pde-schema-handles-iwlayu2f/fixtures/jar-missing_element_name-True/fixture.jar\":1}},\"positive_control_closed\":{\"mxbean_open_fds\":4,\"proc_raw_fds\":6,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":6,\"fixture_targets\":{}},\"forced_gc\":false,\"fresh_jvm_for_case\":true,\"phases\":[{\"mode\":\"cached_descriptor_queries\",\"before_warmup\":{\"mxbean_open_fds\":4,\"proc_raw_fds\":6,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":6,\"fixture_targets\":{}},\"after_initial_load\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"after_warmup\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"warmup_operations\":64,\"rounds\":[{\"round\":1,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":2,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":3,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":4,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":5,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}}],\"total_operations\":704,\"post_operation_samples\":705,\"max_fixture_handles_after_operation\":0,\"schema_loaded\":false,\"fixture_handles_retained\":false},{\"mode\":\"new_descriptor_per_operation\",\"before_warmup\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"after_initial_load\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"after_warmup\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"warmup_operations\":64,\"rounds\":[{\"round\":1,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":2,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":3,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":4,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}},{\"round\":5,\"operations\":128,\"max_fixture_handles_after_operation\":0,\"end\":{\"mxbean_open_fds\":306,\"proc_raw_fds\":308,\"fixture_handle_count\":0,\"probe_directory_fds\":0,\"proc_fds_excluding_probe_directory\":308,\"fixture_targets\":{}},\"mxbean_delta_since_warmup\":0,\"fd_target_delta_since_warmup\":{}}],\"total_operations\":704,\"post_operation_samples\":705,\"max_fixture_handles_after_operation\":0,\"schema_loaded\":false,\"fixture_handles_retained\":false}],\"fixture_handles_retained\":false}\n",
+        "stderr": ""
+      },
+      "observations": {
+        "protocol": "jar",
+        "fixture": "missing_element_name",
+        "synthetic_input": true,
+        "abbreviated": true,
+        "expected_schema_loaded": false,
+        "positive_control_open": {
+          "mxbean_open_fds": 5,
+          "proc_raw_fds": 7,
+          "fixture_handle_count": 1,
+          "probe_directory_fds": 0,
+          "proc_fds_excluding_probe_directory": 7,
+          "fixture_targets": {
+            "/tmp/pde-schema-handles-iwlayu2f/fixtures/jar-missing_element_name-True/fixture.jar": 1
+          }
+        },
+        "positive_control_closed": {
+          "mxbean_open_fds": 4,
+          "proc_raw_fds": 6,
+          "fixture_handle_count": 0,
+          "probe_directory_fds": 0,
+          "proc_fds_excluding_probe_directory": 6,
+          "fixture_targets": {}
+        },
+        "forced_gc": false,
+        "fresh_jvm_for_case": true,
+        "phases": [
+          {
+            "mode": "cached_descriptor_queries",
+            "before_warmup": {
+              "mxbean_open_fds": 4,
+              "proc_raw_fds": 6,
+              "fixture_handle_count": 0,
+              "probe_directory_fds": 0,
+              "proc_fds_excluding_probe_directory": 6,
+              "fixture_targets": {}
+            },
+            "after_initial_load": {
+              "mxbean_open_fds": 306,
+              "proc_raw_fds": 308,
+              "fixture_handle_count": 0,
+              "probe_directory_fds": 0,
+              "proc_fds_excluding_probe_directory": 308,
+              "fixture_targets": {}
+            },
+            "after_warmup": {
+              "mxbean_open_fds": 306,
+              "proc_raw_fds": 308,
+              "fixture_handle_count": 0,
+              "probe_directory_fds": 0,
+              "proc_fds_excluding_probe_directory": 308,
+              "fixture_targets": {}
+            },
+            "warmup_operations": 64,
+            "rounds": [
+              {
+                "round": 1,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0,
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {}
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 2,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0,
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {}
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 3,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0,
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {}
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 4,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0,
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {}
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 5,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0,
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {}
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              }
+            ],
+            "total_operations": 704,
+            "post_operation_samples": 705,
+            "max_fixture_handles_after_operation": 0,
+            "schema_loaded": false,
+            "fixture_handles_retained": false
+          },
+          {
+            "mode": "new_descriptor_per_operation",
+            "before_warmup": {
+              "mxbean_open_fds": 306,
+              "proc_raw_fds": 308,
+              "fixture_handle_count": 0,
+              "probe_directory_fds": 0,
+              "proc_fds_excluding_probe_directory": 308,
+              "fixture_targets": {}
+            },
+            "after_initial_load": {
+              "mxbean_open_fds": 306,
+              "proc_raw_fds": 308,
+              "fixture_handle_count": 0,
+              "probe_directory_fds": 0,
+              "proc_fds_excluding_probe_directory": 308,
+              "fixture_targets": {}
+            },
+            "after_warmup": {
+              "mxbean_open_fds": 306,
+              "proc_raw_fds": 308,
+              "fixture_handle_count": 0,
+              "probe_directory_fds": 0,
+              "proc_fds_excluding_probe_directory": 308,
+              "fixture_targets": {}
+            },
+            "warmup_operations": 64,
+            "rounds": [
+              {
+                "round": 1,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0,
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {}
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 2,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0,
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {}
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 3,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0,
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {}
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 4,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0,
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {}
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              },
+              {
+                "round": 5,
+                "operations": 128,
+                "max_fixture_handles_after_operation": 0,
+                "end": {
+                  "mxbean_open_fds": 306,
+                  "proc_raw_fds": 308,
+                  "fixture_handle_count": 0,
+                  "probe_directory_fds": 0,
+                  "proc_fds_excluding_probe_directory": 308,
+                  "fixture_targets": {}
+                },
+                "mxbean_delta_since_warmup": 0,
+                "fd_target_delta_since_warmup": {}
+              }
+            ],
+            "total_operations": 704,
+            "post_operation_samples": 705,
+            "max_fixture_handles_after_operation": 0,
+            "schema_loaded": false,
+            "fixture_handles_retained": false
+          }
+        ],
+        "fixture_handles_retained": false
+      }
+    }
+  ],
+  "compile": {
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "Note: /tmp/pde-schema-handles-iwlayu2f/baseline-source/ui/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/schema/SchemaDescriptor.java uses or overrides a deprecated API.\nNote: Recompile with -Xlint:deprecation for details.\n"
+  },
+  "summary": {
+    "cases_expected": 12,
+    "cases_completed": 12,
+    "cases_failed": 0,
+    "startup_effect_demonstrated": false
+  }
+}

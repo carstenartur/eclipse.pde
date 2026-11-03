@@ -1,0 +1,154 @@
+{
+  "scope": "Narrow resource-lifetime review around schema loading and schema editor storage. This is not a whole-Eclipse handle audit.",
+  "historical_bug": {
+    "id": 326263,
+    "title": "Windows File Locks are obtained on bundles exporting extension points and not released.",
+    "bug_url": "https://bugs.eclipse.org/bugs/show_bug.cgi?id=326263",
+    "bug_page_direct_access": "Unavailable through the web retrieval tool in this session.",
+    "official_source_url": "https://eclipse.dev/eclipse/development/readme_eclipse_3.6.2.html",
+    "official_archive_url": "https://download.eclipse.org/oomph/archive/website/www.eclipse.org-eclipse/development/readme_eclipse_3.6.2.html",
+    "official_section": "7.1 Defects fixed in release 3.6.2 since 3.6.1",
+    "release_notes_last_revised": "2011-02-10",
+    "interpretation": "An official historical schema/extension-point file-lock defect and its maintenance-release fix are documented. This does not identify the incident remembered by the user or prove a current recurrence."
+  },
+  "resource_paths": [
+    {
+      "path": "ui/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/schema/Schema.java",
+      "revision": "ba6a5d6f2f455ab7dfe972ce678d07d9f80de267",
+      "source_sha256": "4f6d5b3211455b656ad4dbbf55feb638c7c1075986448bee2e573de9f5cd38a3",
+      "symbol": "Schema.load()",
+      "evidence_kind": "runtime_matrix",
+      "finding": "The input stream is scoped by try-with-resources. A JarURLConnection additionally has its JarFile closed in finally, including malformed-XML/model failures handled inside load(InputStream).",
+      "excerpt_first_line": 426,
+      "excerpt_last_line": 448,
+      "excerpt": "\n\tpublic void load() {\n\t\tURLConnection connection = null;\n\t\ttry {\n\t\t\tconnection = SchemaUtil.getURLConnection(fURL);\n\t\t\ttry (InputStream input = connection.getInputStream()) {\n\t\t\t\tload(input);\n\t\t\t}\n\t\t} catch (FileNotFoundException e) {\n\t\t\tfLoaded = false;\n\t\t} catch (IOException e) {\n\t\t\tPDECore.logException(e);\n\t\t} finally {\n\t\t\ttry {\n\t\t\t\tif (connection instanceof JarURLConnection) {\n\t\t\t\t\t((JarURLConnection) connection).getJarFile().close();\n\t\t\t\t}\n\t\t\t} catch (IOException e1) {\n\t\t\t}\n\t\t}\n\t}\n\n\tpublic void load(InputStream stream) {",
+      "source_url": "https://github.com/eclipse-pde/eclipse.pde/blob/ba6a5d6f2f455ab7dfe972ce678d07d9f80de267/ui/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/schema/Schema.java"
+    },
+    {
+      "path": "ui/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/util/SchemaUtil.java",
+      "revision": "ba6a5d6f2f455ab7dfe972ce678d07d9f80de267",
+      "source_sha256": "5927f48768954d6357b418d929f64023a1202ceddd748464c2a09235afad7983",
+      "symbol": "SchemaUtil.getURLConnection()",
+      "evidence_kind": "static_review",
+      "finding": "JarURLConnection caching is disabled. The API comment explicitly assigns a separate JarFile.close obligation and names Bug 326263.",
+      "excerpt_first_line": 37,
+      "excerpt_last_line": 60,
+      "excerpt": "\t/**\n\t * Returns a URL connection that an input stream can be obtained from.  The\n\t * URL Connection can handle urls of a variety of types including files, jar\n\t * files and remote urls.\n\t * <p>\n\t * NOTE: If the connection is of type {@link JarURLConnection} the zip file\n\t * should be independantly closed using {@link JarURLConnection#getJarFile()}.close()\n\t * https://bugs.eclipse.org/bugs/show_bug.cgi?id=326263\n\t * </p>\n\t *\n\t * @param url URL to open connection to\n\t * @return the url connection\n\t * @throws MalformedURLException if the url is null\n\t * @throws IOException if there is a problem accessing the resource specified by the url\n\t */\n\tpublic static URLConnection getURLConnection(URL url) throws MalformedURLException, IOException {\n\t\tif (url == null) {\n\t\t\tthrow new MalformedURLException(\"URL specified is null\"); //$NON-NLS-1$\n\t\t}\n\t\tURLConnection connection = url.openConnection();\n\t\tif (connection instanceof JarURLConnection) {\n\t\t\tconnection.setUseCaches(false);\n\t\t}\n\t\treturn connection;",
+      "source_url": "https://github.com/eclipse-pde/eclipse.pde/blob/ba6a5d6f2f455ab7dfe972ce678d07d9f80de267/ui/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/util/SchemaUtil.java"
+    },
+    {
+      "path": "ui/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/util/SchemaUtil.java",
+      "revision": "ba6a5d6f2f455ab7dfe972ce678d07d9f80de267",
+      "source_sha256": "5927f48768954d6357b418d929f64023a1202ceddd748464c2a09235afad7983",
+      "symbol": "SchemaUtil.parseURL()",
+      "evidence_kind": "static_review",
+      "finding": "The stream uses try-with-resources and the JarFile has a separate finally close; used by schema documentation and content-assist readers.",
+      "excerpt_first_line": 63,
+      "excerpt_last_line": 89,
+      "excerpt": "\tpublic static void parseURL(URL url, DefaultHandler handler) {\n\t\tURLConnection connection = null;\n\t\ttry {\n\t\t\tconnection = getURLConnection(url);\n\t\t\ttry (InputStream input = connection.getInputStream()) {\n\t\t\t\t@SuppressWarnings(\"restriction\")\n\t\t\t\tSAXParser parser = org.eclipse.core.internal.runtime.XmlProcessorFactory\n\t\t\t\t\t\t.createSAXParserWithErrorOnDOCTYPE();\n\t\t\t\tparser.parse(input, handler);\n\t\t\t}\n\t\t} catch (MalformedURLException | SAXException e) {\n\t\t\t// Ignore\n\t\t\t// Caused when URL is null\n\t\t\t// This occurs when the extension point schema is first\n\t\t\t// created.\n\t\t} catch (IOException | ParserConfigurationException | FactoryConfigurationError e) {\n\t\t\tPDECore.logException(e);\n\t\t} finally {\n\t\t\ttry {\n\t\t\t\tif (connection instanceof JarURLConnection) {\n\t\t\t\t\t// https://bugs.eclipse.org/bugs/show_bug.cgi?id=326263\n\t\t\t\t\t((JarURLConnection) connection).getJarFile().close();\n\t\t\t\t}\n\t\t\t} catch (IOException e1) {\n\t\t\t}\n\t\t}\n\t}",
+      "source_url": "https://github.com/eclipse-pde/eclipse.pde/blob/ba6a5d6f2f455ab7dfe972ce678d07d9f80de267/ui/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/util/SchemaUtil.java"
+    },
+    {
+      "path": "ui/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/util/CoreUtility.java",
+      "revision": "ba6a5d6f2f455ab7dfe972ce678d07d9f80de267",
+      "source_sha256": "337923f54bf2d62c8a79307eca70d0915831b2af6ac1836327d6f90a9d99a351",
+      "symbol": "CoreUtility.jarContainsResource()",
+      "evidence_kind": "static_review",
+      "finding": "SchemaRegistry schema-URL lookup uses this helper; it opens ZipFile in try-with-resources even on an early return.",
+      "excerpt_first_line": 148,
+      "excerpt_last_line": 160,
+      "excerpt": "\tpublic static boolean jarContainsResource(File file, String resource, boolean directory) {\n\t\ttry (ZipFile jarFile = new ZipFile(file, ZipFile.OPEN_READ);) {\n\t\t\tZipEntry resourceEntry = jarFile.getEntry(resource);\n\t\t\tif (resourceEntry != null) {\n\t\t\t\treturn directory ? resourceEntry.isDirectory() : true;\n\t\t\t}\n\t\t} catch (IOException | FactoryConfigurationError e) {\n\t\t\tPDECore.logException(e);\n\t\t}\n\t\treturn false;\n\t}\n\n\tpublic static void copyFile(IPath originPath, String name, File target) {",
+      "source_url": "https://github.com/eclipse-pde/eclipse.pde/blob/ba6a5d6f2f455ab7dfe972ce678d07d9f80de267/ui/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/util/CoreUtility.java"
+    },
+    {
+      "path": "ui/org.eclipse.pde.ui/src/org/eclipse/pde/internal/ui/editor/schema/SchemaEditor.java",
+      "revision": "ba6a5d6f2f455ab7dfe972ce678d07d9f80de267",
+      "source_sha256": "da8e076b659edd9c5a70a02cfa651a8c968262247bd7e1f54723f67deab74e67",
+      "symbol": "SchemaEditor.openSchema(File, String)",
+      "evidence_kind": "static_review",
+      "finding": "The editor-opening owner wraps ZipFile in try-with-resources. No whole-editor lifecycle execution was performed.",
+      "excerpt_first_line": 239,
+      "excerpt_last_line": 260,
+      "excerpt": "\tpublic static boolean openSchema(File jarFile, String schemaJarFileEntry) {\n\t\t// Ensure the file exists\n\t\tif ((jarFile == null) || (jarFile.exists() == false)) {\n\t\t\treturn false;\n\t\t}\n\t\t// Open the jar archive\n\t\ttry (ZipFile zipFile = new ZipFile(jarFile);) {\n\t\t\t// Ensure the schema file exists in the jar archive\n\t\t\tif ((schemaJarFileEntry == null) || zipFile.getEntry(schemaJarFileEntry) == null) {\n\t\t\t\treturn false;\n\t\t\t}\n\t\t\t// Create the editor input\n\t\t\tIStorage storage = new JarEntryFile(zipFile, schemaJarFileEntry);\n\t\t\tIEditorInput input = new JarEntryEditorInput(storage);\n\t\t\treturn openEditor(input);\n\t\t} catch (IOException e) {\n\t\t\tPDEPlugin.log(e);\n\t\t}\n\t\treturn false;\n\t}\n\n\tpublic static void openToElement(IPath path, ISchemaElement element) {",
+      "source_url": "https://github.com/eclipse-pde/eclipse.pde/blob/ba6a5d6f2f455ab7dfe972ce678d07d9f80de267/ui/org.eclipse.pde.ui/src/org/eclipse/pde/internal/ui/editor/schema/SchemaEditor.java"
+    },
+    {
+      "path": "ui/org.eclipse.pde.ui/src/org/eclipse/pde/internal/ui/editor/JarEntryFile.java",
+      "revision": "ba6a5d6f2f455ab7dfe972ce678d07d9f80de267",
+      "source_sha256": "583fb509538b6e92d8b8a68d56373726d06c13662ea22a31782460c2e9b7f131",
+      "symbol": "JarEntryFile.getContents()",
+      "evidence_kind": "static_review",
+      "finding": "The IStorage implementation returns an entry stream from a caller-owned ZipFile. It does not open a second archive; ownership is with the creator, not each entry stream.",
+      "excerpt_first_line": 29,
+      "excerpt_last_line": 46,
+      "excerpt": "\tprivate final ZipFile fZipFile;\n\tprivate final String fEntryName;\n\n\tpublic JarEntryFile(ZipFile zipFile, String entryName) {\n\t\tfZipFile = zipFile;\n\t\tfEntryName = entryName;\n\t}\n\n\t@Override\n\tpublic InputStream getContents() throws CoreException {\n\t\ttry {\n\t\t\tZipEntry zipEntry = fZipFile.getEntry(fEntryName);\n\t\t\treturn fZipFile.getInputStream(zipEntry);\n\t\t} catch (Exception e) {\n\t\t\tthrow new CoreException(Status.error(e.getMessage(), e));\n\t\t}\n\t}\n",
+      "source_url": "https://github.com/eclipse-pde/eclipse.pde/blob/ba6a5d6f2f455ab7dfe972ce678d07d9f80de267/ui/org.eclipse.pde.ui/src/org/eclipse/pde/internal/ui/editor/JarEntryFile.java"
+    },
+    {
+      "path": "ui/org.eclipse.pde.ui/src/org/eclipse/pde/internal/ui/editor/schema/SchemaInputContext.java",
+      "revision": "ba6a5d6f2f455ab7dfe972ce678d07d9f80de267",
+      "source_sha256": "3e4286813248f2e6d9597ab8d016d00c806cd212632faca59f6a64f3345e0721",
+      "symbol": "SchemaInputContext.createStorageModel()",
+      "evidence_kind": "static_review",
+      "finding": "Calls StorageSchemaDescriptor for IStorageEditorInput, so the double-getContents fix belongs to an editor-storage path. No startup reachability was established.",
+      "excerpt_first_line": 105,
+      "excerpt_last_line": 117,
+      "excerpt": "\n\tprivate IBaseModel createStorageModel(IStorageEditorInput input) {\n\t\ttry {\n\t\t\tIStorage storage = input.getStorage();\n\t\t\tStorageSchemaDescriptor sd = new StorageSchemaDescriptor(storage);\n\t\t\tISchema schema = sd.getSchema(false);\n\t\t\treturn schema;\n\t\t} catch (CoreException e) {\n\t\t\tPDEPlugin.logException(e);\n\t\t\treturn null;\n\t\t}\n\t}\n",
+      "source_url": "https://github.com/eclipse-pde/eclipse.pde/blob/ba6a5d6f2f455ab7dfe972ce678d07d9f80de267/ui/org.eclipse.pde.ui/src/org/eclipse/pde/internal/ui/editor/schema/SchemaInputContext.java"
+    },
+    {
+      "path": "ui/org.eclipse.pde.ui/src/org/eclipse/pde/internal/ui/editor/PDEStorageDocumentProvider.java",
+      "revision": "ba6a5d6f2f455ab7dfe972ce678d07d9f80de267",
+      "source_sha256": "e807c4b79a12e1b6d4c9a9f05bfddbab6a70481774272cbe1cb3109a8cddc8a8",
+      "symbol": "PDEStorageDocumentProvider.setDocumentContent()",
+      "evidence_kind": "static_review",
+      "finding": "Its URI-input fallback closes the EFS stream with try-with-resources. The superclass IStorage path was not independently exercised.",
+      "excerpt_first_line": 43,
+      "excerpt_last_line": 62,
+      "excerpt": "\t// is there a better way to do this?\n\t@Override\n\tprotected boolean setDocumentContent(IDocument document, IEditorInput editorInput, String encoding) throws CoreException {\n\t\tboolean set = super.setDocumentContent(document, editorInput, encoding);\n\t\tif (!set) {\n\t\t\tif (editorInput instanceof IURIEditorInput input) {\n\t\t\t\tIFileStore store = EFS.getStore(input.getURI());\n\t\t\t\ttry (InputStream is = store.openInputStream(EFS.CACHE, new NullProgressMonitor())) {\n\t\t\t\t\tsetDocumentContent(document, is, encoding);\n\t\t\t\t} catch (IOException closeException) {\n\t\t\t\t\t// ignore\n\t\t\t\t}\n\t\t\t\tset = true;\n\t\t\t}\n\t\t}\n\t\treturn set;\n\t}\n\n\t@Override\n\tprotected void setupDocument(Object element, IDocument document) {",
+      "source_url": "https://github.com/eclipse-pde/eclipse.pde/blob/ba6a5d6f2f455ab7dfe972ce678d07d9f80de267/ui/org.eclipse.pde.ui/src/org/eclipse/pde/internal/ui/editor/PDEStorageDocumentProvider.java"
+    },
+    {
+      "path": "ui/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/util/ManifestUtils.java",
+      "revision": "ba6a5d6f2f455ab7dfe972ce678d07d9f80de267",
+      "source_sha256": "48c863f8f982eb3dd6256b329c32c0b31553e3bf43f91de159ad653e5d4d41ef",
+      "symbol": "ManifestUtils.closeZipFileAndStream()",
+      "evidence_kind": "static_review",
+      "finding": "The adjacent manifest helper closes the stream and archive in separate try/catch blocks so one IOException does not skip the archive close.",
+      "excerpt_first_line": 274,
+      "excerpt_last_line": 291,
+      "excerpt": "\tprivate static void closeZipFileAndStream(InputStream stream, ZipFile jarFile) {\n\t\ttry {\n\t\t\tif (stream != null) {\n\t\t\t\tstream.close();\n\t\t\t}\n\t\t} catch (IOException e) {\n\t\t\tPDECore.log(e);\n\t\t}\n\t\ttry {\n\t\t\tif (jarFile != null) {\n\t\t\t\tjarFile.close();\n\t\t\t}\n\t\t} catch (IOException e) {\n\t\t\tPDECore.log(e);\n\t\t}\n\t}\n\n\tprivate static void writeEntry(Writer out, String key, String value) throws IOException {",
+      "source_url": "https://github.com/eclipse-pde/eclipse.pde/blob/ba6a5d6f2f455ab7dfe972ce678d07d9f80de267/ui/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/util/ManifestUtils.java"
+    }
+  ],
+  "runtime_result_file": "schema_handle-results.json",
+  "runtime_observation": {
+    "os": "Linux (/proc/self/fd)",
+    "jdk": "Temurin 25.0.5+8",
+    "cases": 12,
+    "phases_per_case": 2,
+    "operations_total": 16896,
+    "max_fixture_handles_immediately_after_operations": 0,
+    "positive_control": "Each case observed an intentionally open fixture handle and 0 after its explicit close.",
+    "forced_gc": false,
+    "total_mxbean_fds_before_warmup": 4,
+    "total_mxbean_fds_after_warmup": 306,
+    "total_mxbean_fds_at_all_measured_round_ends": 306,
+    "all_fd_target_deltas_since_warmup_empty": true,
+    "limits": [
+      "No evidence of retained fixture handles in these baseline loader cases.",
+      "The 4-to-306 warmup increase is a classpath-harness observation, not an IDE leak finding; individual warmup target differences were not serialized in this run.",
+      "No Windows locking experiment or full Eclipse/OSGi handle inventory was performed by this probe.",
+      "No timing benefit or absence of leaks in unrelated Eclipse plugins is established."
+    ]
+  },
+  "storage_stream_fix": {
+    "production_path": "ui/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/schema/StorageSchemaDescriptor.java",
+    "change": "Pass the existing try-with-resources stream to fSchema.load(stream), eliminating the second getContents() call.",
+    "regression_results_file": "storage_stream-results.json",
+    "baseline": "3 tests started, 1 successful, 2 failed: expected one opening, observed two.",
+    "fixed": "3 tests started, 3 successful, 0 failed.",
+    "closure_observation": "Close assertions passed on the baseline too with this JDK/parser. A resource leak was not demonstrated.",
+    "startup_effect_demonstrated": false
+  }
+}

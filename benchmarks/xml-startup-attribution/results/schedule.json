@@ -1,0 +1,85 @@
+{
+  "seed": 20261103,
+  "order": [
+    {
+      "block": 1,
+      "variant": "H1W0"
+    },
+    {
+      "block": 1,
+      "variant": "H0W1"
+    },
+    {
+      "block": 1,
+      "variant": "H1W1"
+    },
+    {
+      "block": 1,
+      "variant": "H0W0"
+    },
+    {
+      "block": 2,
+      "variant": "H1W1"
+    },
+    {
+      "block": 2,
+      "variant": "H0W1"
+    },
+    {
+      "block": 2,
+      "variant": "H0W0"
+    },
+    {
+      "block": 2,
+      "variant": "H1W0"
+    },
+    {
+      "block": 3,
+      "variant": "H1W1"
+    },
+    {
+      "block": 3,
+      "variant": "H1W0"
+    },
+    {
+      "block": 3,
+      "variant": "H0W1"
+    },
+    {
+      "block": 3,
+      "variant": "H0W0"
+    },
+    {
+      "block": 4,
+      "variant": "H0W1"
+    },
+    {
+      "block": 4,
+      "variant": "H1W0"
+    },
+    {
+      "block": 4,
+      "variant": "H1W1"
+    },
+    {
+      "block": 4,
+      "variant": "H0W0"
+    },
+    {
+      "block": 5,
+      "variant": "H0W1"
+    },
+    {
+      "block": 5,
+      "variant": "H0W0"
+    },
+    {
+      "block": 5,
+      "variant": "H1W1"
+    },
+    {
+      "block": 5,
+      "variant": "H1W0"
+    }
+  ]
+}

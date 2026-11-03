@@ -1,0 +1,295 @@
+{
+  "excludedInEntirety": true,
+  "reason": "Missing libXtst.so.6 caused SVG/AWT class initialization failures and repeated Eclipse error logging. These runs are not used for any timing comparison. matrix-v1 also predates complete directory-bundle corpus coverage.",
+  "runs": [
+    {
+      "series": "matrix-v1",
+      "run": "prepare-H0W0",
+      "sha256": "be3ebdee2cf288b997a3ba1bd844894cf47268666ba9fd2ca19d95fcf28c1c7b",
+      "bytes": 2580,
+      "eclipseErrorEntries": 0
+    },
+    {
+      "series": "matrix-v1",
+      "run": "prepare-H0W0D1",
+      "sha256": "cfdbf2ead61f0284321453846053393424e5537d35725bcd119b70c5a8bbbfd0",
+      "bytes": 2580,
+      "eclipseErrorEntries": 0
+    },
+    {
+      "series": "matrix-v1",
+      "run": "prepare-H0W1",
+      "sha256": "8aefe86afc885960f2f124926341c7a0c47462688806bafc4021d4374ca04f42",
+      "bytes": 2580,
+      "eclipseErrorEntries": 0
+    },
+    {
+      "series": "matrix-v1",
+      "run": "prepare-H1W0",
+      "sha256": "b957539412280264c580975dea3e0d759d70f034ac774869eaa31a2bf44336c6",
+      "bytes": 2580,
+      "eclipseErrorEntries": 0
+    },
+    {
+      "series": "matrix-v1",
+      "run": "prepare-H1W1",
+      "sha256": "b20b34aff891323e286ab17c1df972c0524ab27985e7a75750d29cdabfc1ba74",
+      "bytes": 3208,
+      "eclipseErrorEntries": 0
+    },
+    {
+      "series": "matrix-v1",
+      "run": "warmup-H0W0",
+      "sha256": "762c025857ee791be3aef8d7b25eeeef15cc62b8affe6ab9eaec58201c6bf497",
+      "bytes": 6508141,
+      "eclipseErrorEntries": 220
+    },
+    {
+      "series": "matrix-v1",
+      "run": "warmup-H0W0D1",
+      "sha256": "7ba27ed6c15018d6e3734bce678918b57ab328fc6b802a16550979b2fa160b59",
+      "bytes": 6834175,
+      "eclipseErrorEntries": 220
+    },
+    {
+      "series": "matrix-v1",
+      "run": "warmup-H0W1",
+      "sha256": "9bdd04dd47b5052a0b9f6ba7342c41c1dc543b2728a11e03afe8d3177bab8fca",
+      "bytes": 6508142,
+      "eclipseErrorEntries": 220
+    },
+    {
+      "series": "matrix-v1",
+      "run": "warmup-H1W0",
+      "sha256": "1b76d6333149b7bb8aff73831474c21752ab0e627c332786d8d8a92d0f8acc38",
+      "bytes": 6508144,
+      "eclipseErrorEntries": 220
+    },
+    {
+      "series": "matrix-v1",
+      "run": "warmup-H1W1",
+      "sha256": "2a079bb86284e92be55ccf30be28f3bb6d3049d0ecfd7ab1bbbcf0ff7dfce02f",
+      "bytes": 6509608,
+      "eclipseErrorEntries": 220
+    },
+    {
+      "series": "matrix-v2",
+      "run": "block-01-H0W0",
+      "sha256": "4cf3021ef91557f73091484618187ad00ea956dc0d77d12cd8e05c819e910146",
+      "bytes": 2525205,
+      "eclipseErrorEntries": 114
+    },
+    {
+      "series": "matrix-v2",
+      "run": "block-01-H0W1",
+      "sha256": "f275edf241bf8dd08e759bcf7dd6caf943971a50cc1c1fddd9f630d550ec7769",
+      "bytes": 2524717,
+      "eclipseErrorEntries": 114
+    },
+    {
+      "series": "matrix-v2",
+      "run": "block-01-H1W0",
+      "sha256": "9f25e3f5a3132540040ffc95d94f386ec08f2182266d4f2aa31055997214a077",
+      "bytes": 2524987,
+      "eclipseErrorEntries": 114
+    },
+    {
+      "series": "matrix-v2",
+      "run": "block-01-H1W1",
+      "sha256": "b09ca2433e44e689dfb6f9e97b38ef55d4404b74a0578350993e9df27d81840b",
+      "bytes": 2524717,
+      "eclipseErrorEntries": 114
+    },
+    {
+      "series": "matrix-v2",
+      "run": "block-02-H0W0",
+      "sha256": "c2e3351b52f1ee4dfd176f746de53663f1ce441d304ebe669977b3672becda8c",
+      "bytes": 2524707,
+      "eclipseErrorEntries": 114
+    },
+    {
+      "series": "matrix-v2",
+      "run": "block-02-H0W1",
+      "sha256": "8da885ec0633d47e2553f4ecb6944efa6aeffa3a0ca58858623c5465bea277f2",
+      "bytes": 2524717,
+      "eclipseErrorEntries": 114
+    },
+    {
+      "series": "matrix-v2",
+      "run": "block-02-H1W0",
+      "sha256": "bd17299d593068717f41ec5cca17700cfd9fd65e765485b499be10af7587de27",
+      "bytes": 2525354,
+      "eclipseErrorEntries": 114
+    },
+    {
+      "series": "matrix-v2",
+      "run": "block-02-H1W1",
+      "sha256": "b59a48fb9f71e1e61a601561f724002be736851047a45551f0c4d3b523650553",
+      "bytes": 2524717,
+      "eclipseErrorEntries": 114
+    },
+    {
+      "series": "matrix-v2",
+      "run": "block-03-H0W0",
+      "sha256": "f50dea5604f83e213d50912d72a2acb66565a57e1c3dac9c54950522202e7643",
+      "bytes": 2525352,
+      "eclipseErrorEntries": 114
+    },
+    {
+      "series": "matrix-v2",
+      "run": "block-03-H0W1",
+      "sha256": "ced3913365a968bfd02f5f63a12572973e362d7bbf1927e0e8bf1a37b175ca89",
+      "bytes": 2524719,
+      "eclipseErrorEntries": 114
+    },
+    {
+      "series": "matrix-v2",
+      "run": "block-03-H1W0",
+      "sha256": "dc7f70b4d72ee314dc86f323e97bd4ed14c3c39dda31389cfc180de2a1eb7284",
+      "bytes": 2524388,
+      "eclipseErrorEntries": 114
+    },
+    {
+      "series": "matrix-v2",
+      "run": "block-03-H1W1",
+      "sha256": "d74d15f2b9689e86c651ea9c70e94c88c55461eaad82075c4291a46779bbca48",
+      "bytes": 2525130,
+      "eclipseErrorEntries": 114
+    },
+    {
+      "series": "matrix-v2",
+      "run": "block-04-H0W0",
+      "sha256": "ccf68b11c0d1a34b394c5f0506fb151047c5ec33bb6e32598ed075294b46a2da",
+      "bytes": 2524390,
+      "eclipseErrorEntries": 114
+    },
+    {
+      "series": "matrix-v2",
+      "run": "block-04-H0W1",
+      "sha256": "872e9e67eb43e36fdf607146bab782aee3217a111966352042243c390c5d08a4",
+      "bytes": 2525357,
+      "eclipseErrorEntries": 114
+    },
+    {
+      "series": "matrix-v2",
+      "run": "block-04-H1W0",
+      "sha256": "53e6a3ad25d2f161c1583da775fafa1f9de0868bcde3e422ab9ac1a5a2c03bd4",
+      "bytes": 2524553,
+      "eclipseErrorEntries": 114
+    },
+    {
+      "series": "matrix-v2",
+      "run": "block-04-H1W1",
+      "sha256": "c1935441b76e99123d98c095bcb7350e29d93e0d34fafb5531beac0631894d2f",
+      "bytes": 2524717,
+      "eclipseErrorEntries": 114
+    },
+    {
+      "series": "matrix-v2",
+      "run": "block-05-H0W0",
+      "sha256": "bba90bb51abf7cb468bc35e30d057b55473d418814d9cdb257d1b1c315cb0dfa",
+      "bytes": 2524726,
+      "eclipseErrorEntries": 114
+    },
+    {
+      "series": "matrix-v2",
+      "run": "block-05-H0W1",
+      "sha256": "0437bb4d6e5f6471b34779836e77dcccc23e469f04ba2dfb9d9c128a918c9775",
+      "bytes": 2524528,
+      "eclipseErrorEntries": 114
+    },
+    {
+      "series": "matrix-v2",
+      "run": "block-05-H1W0",
+      "sha256": "790c3af879ac362d1faf74b66691b2ec502204960cebb2f687a02afb455b441b",
+      "bytes": 2524564,
+      "eclipseErrorEntries": 114
+    },
+    {
+      "series": "matrix-v2",
+      "run": "block-05-H1W1",
+      "sha256": "8c307fad9d9cf8b7275d75989cd080ab21a67bce64be81ac57d0bef2f9d3155b",
+      "bytes": 2524717,
+      "eclipseErrorEntries": 114
+    },
+    {
+      "series": "matrix-v2",
+      "run": "diagnostic-H0W0D1",
+      "sha256": "c1e17d6af4397c2bd5b7ff4d1b5674e2d92da2c46266177f3270a1dd3508da04",
+      "bytes": 2850685,
+      "eclipseErrorEntries": 114
+    },
+    {
+      "series": "matrix-v2",
+      "run": "prepare-H0W0",
+      "sha256": "0a1000b28ed17b470565151a66cb750fe0ce5dfc234af24837204322a771ff56",
+      "bytes": 2628,
+      "eclipseErrorEntries": 0
+    },
+    {
+      "series": "matrix-v2",
+      "run": "prepare-H0W0D1",
+      "sha256": "ab0f6980ec3dcb077751554a033e170e1ca0b9d41057b57920922723984e62ec",
+      "bytes": 2628,
+      "eclipseErrorEntries": 0
+    },
+    {
+      "series": "matrix-v2",
+      "run": "prepare-H0W1",
+      "sha256": "8975a7e09f1b363ed816e1e430659fe9af197818298ad017186a444c20fb5ecc",
+      "bytes": 3256,
+      "eclipseErrorEntries": 0
+    },
+    {
+      "series": "matrix-v2",
+      "run": "prepare-H1W0",
+      "sha256": "32bbb3d666e1246d1923811176443aa2c7340117d1c6ab2f2f853d99c802ccac",
+      "bytes": 2628,
+      "eclipseErrorEntries": 0
+    },
+    {
+      "series": "matrix-v2",
+      "run": "prepare-H1W1",
+      "sha256": "0f74c6c20596d00b215438a698a10dbc861169cd7ed6a08a747cf475f1f8e990",
+      "bytes": 2628,
+      "eclipseErrorEntries": 0
+    },
+    {
+      "series": "matrix-v2",
+      "run": "warmup-H0W0",
+      "sha256": "5df41d1ab39e7265e8c620ea9f7742c679d5430efca6278947b73739ab08e4bf",
+      "bytes": 5009125,
+      "eclipseErrorEntries": 171
+    },
+    {
+      "series": "matrix-v2",
+      "run": "warmup-H0W0D1",
+      "sha256": "674ac362a72cf4f342325eabf98f01b7fcaf3917dba8fe54ee8bd63871cf2a94",
+      "bytes": 7062820,
+      "eclipseErrorEntries": 228
+    },
+    {
+      "series": "matrix-v2",
+      "run": "warmup-H0W1",
+      "sha256": "ac095452a4e07939c07c8687451e7ee2d63515b5fe6cbf55bd1a9a802afc7690",
+      "bytes": 6744941,
+      "eclipseErrorEntries": 228
+    },
+    {
+      "series": "matrix-v2",
+      "run": "warmup-H1W0",
+      "sha256": "5b0fb6ed008f6e49f2811e0c1c39cf59ebe1155276313d8c83fcfb3d6072d96d",
+      "bytes": 6743837,
+      "eclipseErrorEntries": 228
+    },
+    {
+      "series": "matrix-v2",
+      "run": "warmup-H1W1",
+      "sha256": "cd42364fc011c4f361fe97e270db53d11280153a320df527d798bab6cc951c26",
+      "bytes": 6743976,
+      "eclipseErrorEntries": 228
+    }
+  ],
+  "retainedArchive": "excluded-environment-runs.tar.xz",
+  "replacementSeries": "matrix-v3"
+}

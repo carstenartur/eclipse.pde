@@ -1,0 +1,1512 @@
+{
+  "report_version": 1,
+  "method": {
+    "complete_pde_validator": false,
+    "pde_runtime_executed": false,
+    "w3c_xsd_validation": false,
+    "parser": "Python standard-library xml.etree.ElementTree",
+    "rule_sources": {
+      "ui/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/builders/SchemaErrorReporter.java": [
+        "validate: duplicate element names",
+        "validateUse: default/value pairs",
+        "validateElementReference: locally defined references"
+      ],
+      "ui/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/schema/Schema.java": [
+        "getAttribute/processElementDeclaration/processAttribute: nonempty names",
+        "getMinOccurs/getMaxOccurs: Java integer parsing",
+        "processSchemaAnnotation/processElementAnnotation: documentation firstChild"
+      ],
+      "ui/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/builders/ExtensionsErrorReporter.java": [
+        "validateElement/computeAllowedElements: child names and Java-attribute child syntax",
+        "validateRequiredExtensionAttributes: required attribute presence",
+        "validateExistingExtensionAttributes: known attribute names"
+      ]
+    },
+    "limitations": [
+      "EXSD is PDE's custom grammar; appInfo/appinfo, use=default, and default/no namespace are preserved.",
+      "No target-platform lookup, schema:// resolution, XML Schema type checking, or arbitrary documentation markup validation.",
+      "No extension cardinality, Java class, resource, identifier, localization, deprecation, or preference-severity checks.",
+      "Extension checks cover plugin.xml contributions to local production schemas without includes only.",
+      "Static parse results are not proof of Schema.isLoaded state, marker behavior, or startup performance."
+    ]
+  },
+  "repository": {
+    "head_commit": "ba6a5d6f2f455ab7dfe972ce678d07d9f80de267",
+    "baseline_commit": "ba6a5d6f2f455ab7dfe972ce678d07d9f80de267",
+    "input_selection": "Paths tracked in the pinned baseline, read from the current worktree; experiment and generated files excluded."
+  },
+  "scope": {
+    "tracked_exsd": 21,
+    "production_exsd": 19,
+    "tracked_xml": 209,
+    "non_fixture_xml_checked": 105,
+    "excluded_xml_count": 104,
+    "excluded_xml_counts_by_reason": {
+      "source_template": 18,
+      "test_fixture_or_bundle": 86
+    },
+    "exclusion_rules": [
+      "Any path component equal to tests or ending in .tests: test fixture/bundle.",
+      "Any path component equal to testdata: testdata fixture.",
+      "Any path component equal to templates or starting with templates_: source template.",
+      "Excluded XML is not parsed. Nonproduction EXSD is parsed/inventoried, but cannot produce production findings."
+    ],
+    "excluded_xml": [
+      {
+        "path": "apitools/org.eclipse.pde.api.tools.tests/pom.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "apitools/org.eclipse.pde.api.tools.tests/test-anttasks/apitooling.analysis/test1/build.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "apitools/org.eclipse.pde.api.tools.tests/test-anttasks/apitooling.analysis/test2/build.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "apitools/org.eclipse.pde.api.tools.tests/test-anttasks/apitooling.analysis/test3/build.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "apitools/org.eclipse.pde.api.tools.tests/test-anttasks/apitooling.analysis/test4/build.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "apitools/org.eclipse.pde.api.tools.tests/test-anttasks/apitooling.analysis/test5/build.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "apitools/org.eclipse.pde.api.tools.tests/test-anttasks/apitooling.analysis/test6/build.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "apitools/org.eclipse.pde.api.tools.tests/test-anttasks/apitooling.analysis/test7/build.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "apitools/org.eclipse.pde.api.tools.tests/test-anttasks/apitooling.apifreeze/test1/build.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "apitools/org.eclipse.pde.api.tools.tests/test-anttasks/apitooling.apifreeze/test2/build.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "apitools/org.eclipse.pde.api.tools.tests/test-anttasks/apitooling.apifreeze/test3/build.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "apitools/org.eclipse.pde.api.tools.tests/test-anttasks/apitooling.apifreeze/test4/build.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "apitools/org.eclipse.pde.api.tools.tests/test-anttasks/apitooling.apiuse/test1/build.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "apitools/org.eclipse.pde.api.tools.tests/test-anttasks/apitooling.apiuse/test2/build.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "apitools/org.eclipse.pde.api.tools.tests/test-anttasks/apitooling.apiuse/test3/build.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "apitools/org.eclipse.pde.api.tools.tests/test-anttasks/apitooling.apiuse/testIllegalUse/build.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "apitools/org.eclipse.pde.api.tools.tests/test-anttasks/apitooling.apiuse/testIllegalUseFiltered/build.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "apitools/org.eclipse.pde.api.tools.tests/test-anttasks/apitooling.compare/test1/build.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "apitools/org.eclipse.pde.api.tools.tests/test-anttasks/apitooling.compare/test2/build.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "apitools/org.eclipse.pde.api.tools.tests/test-anttasks/apitooling.compare/test3/build.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "apitools/org.eclipse.pde.api.tools.tests/test-source/javadoc/component.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "apitools/org.eclipse.pde.api.tools.tests/test.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "build/org.eclipse.pde.build.tests/pom.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "build/org.eclipse.pde.build.tests/resources/114150/allElements.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "build/org.eclipse.pde.build.tests/resources/114150/features/a.feature.sdk/feature.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "build/org.eclipse.pde.build.tests/resources/114150/features/a.feature/feature.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "build/org.eclipse.pde.build.tests/resources/114150/plugins/a.plugin/build.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "build/org.eclipse.pde.build.tests/resources/171869/features/org.eclipse.pde.build.container.feature/feature.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "build/org.eclipse.pde.build.tests/resources/174194/testbuild.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "build/org.eclipse.pde.build.tests/resources/179612_custom/allElements.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "build/org.eclipse.pde.build.tests/resources/183869/features/a.feature/callbacks/customBuildCallbacks.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "build/org.eclipse.pde.build.tests/resources/183869/features/a.feature/feature.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "build/org.eclipse.pde.build.tests/resources/183869/plugins/a.plugin/callbacks/customBuildCallbacks.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "build/org.eclipse.pde.build.tests/resources/183924/platform.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "build/org.eclipse.pde.build.tests/resources/184920/features/a.feature.sdk/feature.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "build/org.eclipse.pde.build.tests/resources/184920/features/a.feature/feature.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "build/org.eclipse.pde.build.tests/resources/192127/plugins/rcp/plugin.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "build/org.eclipse.pde.build.tests/resources/237922/rcp/plugin.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "build/org.eclipse.pde.build.tests/resources/248767/build1/plugins/A/plugin.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "build/org.eclipse.pde.build.tests/resources/264743/build1/features/ee/customBuildCallbacks.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "build/org.eclipse.pde.build.tests/resources/264743/build1/features/ee/feature.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "build/org.eclipse.pde.build.tests/resources/264743/build1/features/ee/target.build.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "build/org.eclipse.pde.build.tests/resources/309572/plugins/test.flex.root/some/place/contexts.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "build/org.eclipse.pde.build.tests/resources/309572/plugins/test.flex.root/some/place/plugin.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "build/org.eclipse.pde.build.tests/resources/allElements.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "build/org.eclipse.pde.build.tests/resources/customAssembly/customAssembly.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "build/org.eclipse.pde.build.tests/resources/emptyLicenseTests/features/F1/emptyLicenseDescFeature.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "build/org.eclipse.pde.build.tests/resources/emptyLicenseTests/features/F1/emptyLicenseURLFeature.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "build/org.eclipse.pde.build.tests/resources/emptyLicenseTests/features/F1/noLicenseURLFeature.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "build/org.eclipse.pde.build.tests/resources/emptyLicenseTests/features/F1/nonEmptyLicenseDescFeature.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "build/org.eclipse.pde.build.tests/resources/emptyLicenseTests/features/F1/nonEmptyLicenseURLFeature.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "build/org.eclipse.pde.build.tests/resources/emptyLicenseTests/features/L1/emptyLicenseDescFeature.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "build/org.eclipse.pde.build.tests/resources/emptyLicenseTests/features/L1/emptyLicenseURLFeature.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "build/org.eclipse.pde.build.tests/resources/emptyLicenseTests/features/L1/noLicenseURLFeature.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "build/org.eclipse.pde.build.tests/resources/emptyLicenseTests/features/L1/nonEmptyLicenseDescFeature.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "build/org.eclipse.pde.build.tests/resources/emptyLicenseTests/features/L1/nonEmptyLicenseURLFeature.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "build/org.eclipse.pde.build.tests/resources/licenseFeature1/features/F1/feature.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "build/org.eclipse.pde.build.tests/resources/licenseFeature1/features/L1/feature.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "build/org.eclipse.pde.build.tests/resources/p2.SimpleProduct/plugins/test/plugin.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "build/org.eclipse.pde.build.tests/resources/p2.get/features/org.eclipse.pde.build.container.feature/feature.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "build/org.eclipse.pde.build.tests/resources/repos/1/artifacts.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "build/org.eclipse.pde.build.tests/resources/repos/1/content.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "build/org.eclipse.pde.build.tests/resources/rootNoRef/features/F1/feature.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "build/org.eclipse.pde.build.tests/resources/rootNoRef/features/L1/feature.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "build/org.eclipse.pde.build.tests/test.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "build/org.eclipse.pde.build/templates/features/customBuildCallbacks.xml",
+        "reason": "source_template"
+      },
+      {
+        "path": "build/org.eclipse.pde.build/templates/headless-build/allElements.xml",
+        "reason": "source_template"
+      },
+      {
+        "path": "build/org.eclipse.pde.build/templates/headless-build/customAssembly.xml",
+        "reason": "source_template"
+      },
+      {
+        "path": "build/org.eclipse.pde.build/templates/headless-build/customTargets.xml",
+        "reason": "source_template"
+      },
+      {
+        "path": "build/org.eclipse.pde.build/templates/packager/customTargets.xml",
+        "reason": "source_template"
+      },
+      {
+        "path": "build/org.eclipse.pde.build/templates/plugins/customBuildCallbacks.xml",
+        "reason": "source_template"
+      },
+      {
+        "path": "ds/org.eclipse.pde.ds.annotations.tests/test.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "ds/org.eclipse.pde.ds.tests/test.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "e4tools/bundles/org.eclipse.e4.tools.jdt.templates/templates/default-e4templates.xml",
+        "reason": "source_template"
+      },
+      {
+        "path": "e4tools/tests/org.eclipse.e4.tools.compatibility.migration.tests/pom.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "e4tools/tests/org.eclipse.e4.tools.compatibility.migration.tests/resources/e4_test.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "e4tools/tests/org.eclipse.e4.tools.compatibility.migration.tests/resources/perspective_3x.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "e4tools/tests/org.eclipse.e4.tools.persistence.tests/plugin.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "e4tools/tests/org.eclipse.e4.tools.persistence.tests/pom.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "ua/org.eclipse.pde.ua.tests/pom.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "ua/org.eclipse.pde.ua.tests/test.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "ui/org.eclipse.pde.genericeditor.extension.tests/pom.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "ui/org.eclipse.pde.genericeditor.extension.tests/test.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "ui/org.eclipse.pde.junit.runtime.tests/pom.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "ui/org.eclipse.pde.junit.runtime.tests/test.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "ui/org.eclipse.pde.ui.templates.tests/pom.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "ui/org.eclipse.pde.ui.templates.tests/test.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "ui/org.eclipse.pde.ui.templates/templates_3.1/help/bin/tocconcepts.xml",
+        "reason": "source_template"
+      },
+      {
+        "path": "ui/org.eclipse.pde.ui.templates/templates_3.1/help/bin/tocgettingstarted.xml",
+        "reason": "source_template"
+      },
+      {
+        "path": "ui/org.eclipse.pde.ui.templates/templates_3.1/help/bin/tocreference.xml",
+        "reason": "source_template"
+      },
+      {
+        "path": "ui/org.eclipse.pde.ui.templates/templates_3.1/help/bin/tocsamples.xml",
+        "reason": "source_template"
+      },
+      {
+        "path": "ui/org.eclipse.pde.ui.templates/templates_3.1/help/bin/toctasks.xml",
+        "reason": "source_template"
+      },
+      {
+        "path": "ui/org.eclipse.pde.ui.templates/templates_3.1/help/testToc.xml",
+        "reason": "source_template"
+      },
+      {
+        "path": "ui/org.eclipse.pde.ui.templates/templates_3.1/help/toc.xml",
+        "reason": "source_template"
+      },
+      {
+        "path": "ui/org.eclipse.pde.ui.templates/templates_3.1/view/contexts.xml",
+        "reason": "source_template"
+      },
+      {
+        "path": "ui/org.eclipse.pde.ui.templates/templates_3.2/universalWelcome/$introDir$/sample.xml",
+        "reason": "source_template"
+      },
+      {
+        "path": "ui/org.eclipse.pde.ui.templates/templates_3.3/intro/ext.xml",
+        "reason": "source_template"
+      },
+      {
+        "path": "ui/org.eclipse.pde.ui.templates/templates_3.3/intro/introContent.xml",
+        "reason": "source_template"
+      },
+      {
+        "path": "ui/org.eclipse.pde.ui.tests/plugin.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "ui/org.eclipse.pde.ui.tests/pom.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "ui/org.eclipse.pde.ui.tests/test.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "ui/org.eclipse.pde.ui.tests/tests/performance/plugin/org.eclipse.jdt.ui/plugin.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "ui/org.eclipse.pde.ui.tests/tests/sites/site.a.b/site.xml",
+        "reason": "test_fixture_or_bundle"
+      },
+      {
+        "path": "ui/org.eclipse.pde.ui.tests/tests/smartImport/FeatureProject/feature.xml",
+        "reason": "test_fixture_or_bundle"
+      }
+    ]
+  },
+  "checked_files": [
+    {
+      "path": ".mvn/extensions.xml",
+      "role": "production",
+      "sha256": "9be8254b8373103a6c9042c122f48ba2aaf86277a46f491edb35d8b8bf1ffffe",
+      "well_formed": true
+    },
+    {
+      "path": "apitools/org.eclipse.pde.api.tools.ui/plugin.xml",
+      "role": "production",
+      "sha256": "188034b9dd81a023b41404529220b47bf1056cf373d4ad026cbdc1ecb5936942",
+      "well_formed": true
+    },
+    {
+      "path": "apitools/org.eclipse.pde.api.tools/plugin.xml",
+      "role": "production",
+      "sha256": "efead8e42fbaed81899aa6548c749d60c06d087fd607e7976debe218ab7799c7",
+      "well_formed": true
+    },
+    {
+      "path": "apitools/org.eclipse.pde.api.tools/scripts/api-tasks.xml",
+      "role": "production",
+      "sha256": "96b44139e0c5d6d44189075944407e71a22432e4d4eb24457c444ed6b2e26403",
+      "well_formed": true
+    },
+    {
+      "path": "apitools/org.eclipse.pde.api.tools/scripts/buildApiToolsAntSupportJar.xml",
+      "role": "production",
+      "sha256": "a589e49c6b8c83c752a8e01c4bc01eed09b045b654bb45f35d34c0d62f4938a0",
+      "well_formed": true
+    },
+    {
+      "path": "apitools/org.eclipse.pde.api.tools/scripts/usescan.xml",
+      "role": "production",
+      "sha256": "143ab52af336bfbff4483d4fc06a01a3ebc9a8ae252786552f23f2d96343cd07",
+      "well_formed": true
+    },
+    {
+      "path": "apitools/pom.xml",
+      "role": "production",
+      "sha256": "472cf6cd8e2d90f23027e5c4e1f5e6e279d18f5bfbafe51aedd2b9284b250b8c",
+      "well_formed": true
+    },
+    {
+      "path": "build/org.eclipse.pde.build/data/21/fragment/fragment.xml",
+      "role": "production",
+      "sha256": "c7afecfbbd817efcd442787c3db318a84af517b144bb656836b3cd7bf00ee7d7",
+      "well_formed": true
+    },
+    {
+      "path": "build/org.eclipse.pde.build/data/21/plugin/plugin.xml",
+      "role": "production",
+      "sha256": "cb73e557694727ead7066e0f2cb2e0f81b10a68be8c8ffa301b05d7215012629",
+      "well_formed": true
+    },
+    {
+      "path": "build/org.eclipse.pde.build/data/30/fragment/fragment.xml",
+      "role": "production",
+      "sha256": "e5d236c502239598fd4a0421731e1da6a3f1e3a7030b6f4e8a84c6b49fb782de",
+      "well_formed": true
+    },
+    {
+      "path": "build/org.eclipse.pde.build/data/30/plugin/plugin.xml",
+      "role": "production",
+      "sha256": "9d265d6fbbfce6d07339a7101623777c9110f4ae987d29fe8722eb1f6b61957d",
+      "well_formed": true
+    },
+    {
+      "path": "build/org.eclipse.pde.build/localbuild.xml",
+      "role": "production",
+      "sha256": "645020cc9b1da0a8380fffe11cffd25d62241c0d7da2db3bff99a23d01534db4",
+      "well_formed": true
+    },
+    {
+      "path": "build/org.eclipse.pde.build/plugin.xml",
+      "role": "production",
+      "sha256": "f04fc1c0a7dfe057e799d2cb779ae9d3a1afcd81fe2bca356a1417f793b1e093",
+      "well_formed": true
+    },
+    {
+      "path": "build/org.eclipse.pde.build/schema/fetchFactories.exsd",
+      "role": "production",
+      "sha256": "2de3d41bebc016e1ad5241e578f29a5f7faa49aaddfdc26483393d34e3c778d1",
+      "well_formed": true,
+      "schema_rule_subset": {
+        "declarations": 2,
+        "includes": [],
+        "nonlocal_references": [],
+        "external_resolution": "not_needed"
+      }
+    },
+    {
+      "path": "build/org.eclipse.pde.build/scripts/build.xml",
+      "role": "production",
+      "sha256": "c6779834c58ca4d72de26ee673fcf28a39dbb4c9e8ab8d7cbed323bbc40dfb6b",
+      "well_formed": true
+    },
+    {
+      "path": "build/org.eclipse.pde.build/scripts/genericTargets.xml",
+      "role": "production",
+      "sha256": "77e8b2bedffe75d54e177f14355a3a19817af6f7b470f5ed8661899baeff253a",
+      "well_formed": true
+    },
+    {
+      "path": "build/org.eclipse.pde.build/scripts/package.xml",
+      "role": "production",
+      "sha256": "1a313af8135e7bf9bfb1d14b8556c2ac2b0067ae3a589d796e3d8185b59492d4",
+      "well_formed": true
+    },
+    {
+      "path": "build/org.eclipse.pde.build/scripts/productBuild/allElements.xml",
+      "role": "production",
+      "sha256": "24f250f40cb56c29274ea0c335ab4d8bef03f854bf190d8e65c64a7d2d994688",
+      "well_formed": true
+    },
+    {
+      "path": "build/org.eclipse.pde.build/scripts/productBuild/productBuild.xml",
+      "role": "production",
+      "sha256": "16acd378dbf57b1dc64743ac1eda54422da59c1faabb1917e55c60f8aeedcb7d",
+      "well_formed": true
+    },
+    {
+      "path": "build/pom.xml",
+      "role": "production",
+      "sha256": "be214168dc0840740d91a254c964c0186cbdfbc25694a73d36aadb4e81b07702",
+      "well_formed": true
+    },
+    {
+      "path": "ds/org.eclipse.pde.ds.annotations/plugin.xml",
+      "role": "production",
+      "sha256": "c232f2979886e8d0ab3d9e57d691be88fbde62759c1abcaf70bc22af43f7619e",
+      "well_formed": true
+    },
+    {
+      "path": "ds/org.eclipse.pde.ds.core/plugin.xml",
+      "role": "production",
+      "sha256": "f065daba4600687606b16f4b940c3249c4d117fc8bb87737c637cd4beed7b963",
+      "well_formed": true
+    },
+    {
+      "path": "ds/org.eclipse.pde.ds.tck/pom.xml",
+      "role": "production",
+      "sha256": "ba5ab8895cf207952af4850db0cfefc39718512f96055cef15ac5666e8ebbfe9",
+      "well_formed": true
+    },
+    {
+      "path": "ds/org.eclipse.pde.ds.ui/plugin.xml",
+      "role": "production",
+      "sha256": "b75fe897828f7c9d2504fc732382fa5a7cc4b3681b0212060d1a59d6d104ca14",
+      "well_formed": true
+    },
+    {
+      "path": "ds/pom.xml",
+      "role": "production",
+      "sha256": "6a520651195794a1c4b03e6a65291d3a4b0838547fb00a4ce718feef5d0cd35c",
+      "well_formed": true
+    },
+    {
+      "path": "e4tools/bundles/org.eclipse.e4.tools.compat/plugin.xml",
+      "role": "production",
+      "sha256": "bc60bf984408be3413c9774495c9fc53c1c681554f9c5a6595c69056b44d75ed",
+      "well_formed": true
+    },
+    {
+      "path": "e4tools/bundles/org.eclipse.e4.tools.emf.editor3x/OSGI-INF/modelextractor.xml",
+      "role": "production",
+      "sha256": "6fdbc5f595795bb1117dce668fa84a9095cf5b678f92b5832eef34f2d735e426",
+      "well_formed": true
+    },
+    {
+      "path": "e4tools/bundles/org.eclipse.e4.tools.emf.editor3x/OSGI-INF/pdecontributionprovider.xml",
+      "role": "production",
+      "sha256": "729503478bb1385aaf21d53b76506469c353d843427ee7889d2dae47fdac0c87",
+      "well_formed": true
+    },
+    {
+      "path": "e4tools/bundles/org.eclipse.e4.tools.emf.editor3x/OSGI-INF/pdee4xmiprovider.xml",
+      "role": "production",
+      "sha256": "830412b395af56b86f7e418d0fa56c0b904bcabffea3e7bf15e747b6e5095a97",
+      "well_formed": true
+    },
+    {
+      "path": "e4tools/bundles/org.eclipse.e4.tools.emf.editor3x/OSGI-INF/pdeextensionlookup.xml",
+      "role": "production",
+      "sha256": "21a927ce92fa04940b155168cfd8dc97026bf835adb4d0f94184608d963f6048",
+      "well_formed": true
+    },
+    {
+      "path": "e4tools/bundles/org.eclipse.e4.tools.emf.editor3x/OSGI-INF/projectfunction.xml",
+      "role": "production",
+      "sha256": "ad5f90519db563da9a646fab8df0aee8e1982c4dc13fbc889adcff65770e2d54",
+      "well_formed": true
+    },
+    {
+      "path": "e4tools/bundles/org.eclipse.e4.tools.emf.editor3x/OSGI-INF/xmiresourcecontextfunction.xml",
+      "role": "production",
+      "sha256": "ef2dd4077bba872090942b62c690b9a510faa81951db312aead5455580c6cf0e",
+      "well_formed": true
+    },
+    {
+      "path": "e4tools/bundles/org.eclipse.e4.tools.emf.editor3x/plugin.xml",
+      "role": "production",
+      "sha256": "f3d8a41674af01c57e28cd40022cd94cc83a212c3b5f90d41d08629a07b4cd3e",
+      "well_formed": true
+    },
+    {
+      "path": "e4tools/bundles/org.eclipse.e4.tools.emf.ui/OSGI-INF/contributioncollector.xml",
+      "role": "production",
+      "sha256": "0d4239bd11c2c7e8f97a33709f9bb6bbc3aac7570c01c6750970fc6e99019535",
+      "well_formed": true
+    },
+    {
+      "path": "e4tools/bundles/org.eclipse.e4.tools.emf.ui/OSGI-INF/resourceprovider.xml",
+      "role": "production",
+      "sha256": "8b40fd745e82820e7149218f9debfa0b04a13e51f0222aed50488de863e3bb29",
+      "well_formed": true
+    },
+    {
+      "path": "e4tools/bundles/org.eclipse.e4.tools.emf.ui/plugin.xml",
+      "role": "production",
+      "sha256": "45568974e47f3cf3a16187f0093e84f0a1224bcc7e202a8e10e1d0127d0d8b40",
+      "well_formed": true
+    },
+    {
+      "path": "e4tools/bundles/org.eclipse.e4.tools.emf.ui/pom.xml",
+      "role": "production",
+      "sha256": "c320187fa171072b162234051a9483d37894219587c2ea079f86ce07fa78f50f",
+      "well_formed": true
+    },
+    {
+      "path": "e4tools/bundles/org.eclipse.e4.tools.emf.ui/schema/org.eclipse.e4.tools.emf.ui.editors.exsd",
+      "role": "production",
+      "sha256": "6d9d21cc123adccf77cf827849d27942f966814c44a44c04950db58686c00224",
+      "well_formed": true,
+      "schema_rule_subset": {
+        "declarations": 6,
+        "includes": [],
+        "nonlocal_references": [],
+        "external_resolution": "not_needed"
+      }
+    },
+    {
+      "path": "e4tools/bundles/org.eclipse.e4.tools.emf.ui/schema/org.eclipse.e4.tools.emf.ui.scripting.exsd",
+      "role": "production",
+      "sha256": "5811505ffd541d85985f4e71b1e5803d649bd46d0cac356db78c0366b26d5938",
+      "well_formed": true,
+      "schema_rule_subset": {
+        "declarations": 2,
+        "includes": [],
+        "nonlocal_references": [],
+        "external_resolution": "not_needed"
+      }
+    },
+    {
+      "path": "e4tools/bundles/org.eclipse.e4.tools.jdt.templates/plugin.xml",
+      "role": "production",
+      "sha256": "a5d02bca546b82cf61cb2beb1e7a88343596aa34396a61b3754168faa93590de",
+      "well_formed": true
+    },
+    {
+      "path": "e4tools/bundles/org.eclipse.e4.tools.persistence/plugin.xml",
+      "role": "production",
+      "sha256": "31a168c6c89cc5478b8ae33f75b4dbdf20f491a4ce83e8259f1fc55c9bca897a",
+      "well_formed": true
+    },
+    {
+      "path": "e4tools/bundles/org.eclipse.e4.tools.services/OSGI-INF/resourcepoolfunction.xml",
+      "role": "production",
+      "sha256": "9539014515938f0e3ad61d9c8ce88d82ee309c19a9afcfa9872435de8d30cbae",
+      "well_formed": true
+    },
+    {
+      "path": "e4tools/bundles/org.eclipse.e4.tools.services/OSGI-INF/resourceservice.xml",
+      "role": "production",
+      "sha256": "e4cc4e8a1c3c34c1e05d1f4ceff42e9a8e7d9801a831958a48cd4bc86991892b",
+      "well_formed": true
+    },
+    {
+      "path": "e4tools/bundles/org.eclipse.e4.tools/plugin.xml",
+      "role": "production",
+      "sha256": "60865b052906b04c7682b504d99254913f37cbdf58e9658b4f78e85693557f88",
+      "well_formed": true
+    },
+    {
+      "path": "e4tools/pom.xml",
+      "role": "production",
+      "sha256": "2362b2bd04bf8b722aeca97abdde38329f2a24a6ba17831e3bb1d21431aa636d",
+      "well_formed": true
+    },
+    {
+      "path": "features/org.eclipse.e4.core.tools.feature/feature.xml",
+      "role": "production",
+      "sha256": "3d8022d33e4af651786b25de36ac101ce94eb7a3139d6972399ccaca77633fd3",
+      "well_formed": true
+    },
+    {
+      "path": "features/org.eclipse.e4.tools.persistence.feature/feature.xml",
+      "role": "production",
+      "sha256": "c42ed816acd1d452a2a9543d6ffd18b33b4f01f44a7e364d154cb9b1fb48c913",
+      "well_formed": true
+    },
+    {
+      "path": "features/org.eclipse.pde-feature/feature.xml",
+      "role": "production",
+      "sha256": "10f406817dc7812b9215397070ba593a344634bb9e807a3b3830f80822159b9e",
+      "well_formed": true
+    },
+    {
+      "path": "features/org.eclipse.pde.osgitest.dependencies.feature/feature.xml",
+      "role": "production",
+      "sha256": "e6fb56e582143504b15cfe9f67c987850147e53544197a6406b57c9eaee60429",
+      "well_formed": true
+    },
+    {
+      "path": "features/org.eclipse.pde.spies-feature/feature.xml",
+      "role": "production",
+      "sha256": "eac88776672d5cf50db1698a83b595c9cdb49e5490bab53e0e189cd4ad76c637",
+      "well_formed": true
+    },
+    {
+      "path": "features/org.eclipse.pde.unittest.junit-feature/feature.xml",
+      "role": "production",
+      "sha256": "a2766d436d332f9361082fa12b278d83e14cb8c16fa3cc3e5aa588fb19d39a4d",
+      "well_formed": true
+    },
+    {
+      "path": "org.eclipse.pde.doc.user/api_contexts.xml",
+      "role": "production",
+      "sha256": "8b3dccb79f9b22714c3d68d00f723c27a507d58faa86df9f4904a65920c0d1a5",
+      "well_formed": true
+    },
+    {
+      "path": "org.eclipse.pde.doc.user/contexts_PDE.xml",
+      "role": "production",
+      "sha256": "ff2be9dbbf4396ef7961f30fdf49f21b178e2b18264dfee841bbcb49423cf195",
+      "well_formed": true
+    },
+    {
+      "path": "org.eclipse.pde.doc.user/ds_annotation_contexts.xml",
+      "role": "production",
+      "sha256": "5f88f652559c19b69efd367936a14ffb1357122ba59b38af8c0ae300c733a900",
+      "well_formed": true
+    },
+    {
+      "path": "org.eclipse.pde.doc.user/plugin.xml",
+      "role": "production",
+      "sha256": "b6b691f0bdf00722274b7282ab4135a313a0786dbc858489fade85f4ffe95b9d",
+      "well_formed": true
+    },
+    {
+      "path": "org.eclipse.pde.doc.user/pom.xml",
+      "role": "production",
+      "sha256": "d547cad6738988cd7675cdd4ffbd0c1fc729cfcdf9175e2edae419c21b887466",
+      "well_formed": true
+    },
+    {
+      "path": "org.eclipse.pde.doc.user/toc.xml",
+      "role": "production",
+      "sha256": "95224b82612ed4d2c885306110f15d5921881d8f6ce641711e7bde1cda3bdc81",
+      "well_formed": true
+    },
+    {
+      "path": "org.eclipse.pde.doc.user/topics_Reference.xml",
+      "role": "production",
+      "sha256": "7c47dc7c64996f846c4034cf33cd8d758970a3b54d544093b853be34a5306e9b",
+      "well_formed": true
+    },
+    {
+      "path": "org.eclipse.pde.doc.user/topics_Tasks.xml",
+      "role": "production",
+      "sha256": "630c96f1441e3d01dee7738005edac699cd17a66d649fec0d700fb35d993158f",
+      "well_formed": true
+    },
+    {
+      "path": "org.eclipse.pde.doc.user/topics_WhatsNew.xml",
+      "role": "production",
+      "sha256": "494a0c8cd44888a3175bc013f0c1a29ec54af57d7a4dcdd62ee8c50daad2e969",
+      "well_formed": true
+    },
+    {
+      "path": "pom.xml",
+      "role": "production",
+      "sha256": "bffa2ab1d6f2d9e0d62e59884e1349d3a4e06f834eda76094e64db3e4332d15a",
+      "well_formed": true
+    },
+    {
+      "path": "repository/category.xml",
+      "role": "production",
+      "sha256": "51610ba2c818688fc6ea9e38c51e2e65a32a00b5cc2b261010df9966c6f606db",
+      "well_formed": true
+    },
+    {
+      "path": "ua/org.eclipse.pde.ua.core/plugin.xml",
+      "role": "production",
+      "sha256": "023709d3cbfc0a2af61984880b3ddff13240f7a36ebf88753a04e5c17f9fb4a8",
+      "well_formed": true
+    },
+    {
+      "path": "ua/org.eclipse.pde.ua.ui/plugin.xml",
+      "role": "production",
+      "sha256": "e09552fa11cf905e2f59b0700e45dc3a678af417849e817425692b0c581db7a6",
+      "well_formed": true
+    },
+    {
+      "path": "ua/pom.xml",
+      "role": "production",
+      "sha256": "def20753abcab6bfc688e7b8252899e26cfe3865e3f2c1c98270a81eb2f7801e",
+      "well_formed": true
+    },
+    {
+      "path": "ui/org.eclipse.pde.bnd.ui/plugin.xml",
+      "role": "production",
+      "sha256": "1333d7afecd00de96b8563d84b869624dc93a43ee3e46eb865603390d975029d",
+      "well_formed": true
+    },
+    {
+      "path": "ui/org.eclipse.pde.core/localbuild.xml",
+      "role": "production",
+      "sha256": "dc33296479697136e7bd9b98eec7e2de764f0ba727eb6ece22d126914e036582",
+      "well_formed": true
+    },
+    {
+      "path": "ui/org.eclipse.pde.core/plugin.xml",
+      "role": "production",
+      "sha256": "65ea6e57b0073e5b1f6aa0ae61ca9a4bc20e5de9889c0812f4d37c87ec8ba022",
+      "well_formed": true
+    },
+    {
+      "path": "ui/org.eclipse.pde.core/schema/bundleClasspathResolvers.exsd",
+      "role": "production",
+      "sha256": "fa9a126456e4e8de13e342832578707d7464bf001cbc4011797fc671010c70f1",
+      "well_formed": true,
+      "schema_rule_subset": {
+        "declarations": 2,
+        "includes": [],
+        "nonlocal_references": [],
+        "external_resolution": "not_needed"
+      }
+    },
+    {
+      "path": "ui/org.eclipse.pde.core/schema/dynamicSource.exsd",
+      "role": "production",
+      "sha256": "1ba8031cc5b5a0a3aada40a2d8274c21d8d04edda62a812810a8d536c9f58079",
+      "well_formed": true,
+      "schema_rule_subset": {
+        "declarations": 2,
+        "includes": [],
+        "nonlocal_references": [],
+        "external_resolution": "not_needed"
+      }
+    },
+    {
+      "path": "ui/org.eclipse.pde.core/schema/javadoc.exsd",
+      "role": "production",
+      "sha256": "87f5f447b138b5f91dd1ed82c0940176f4a12e60a56ce127afebe00ef87cdaab",
+      "well_formed": true,
+      "schema_rule_subset": {
+        "declarations": 3,
+        "includes": [],
+        "nonlocal_references": [],
+        "external_resolution": "not_needed"
+      }
+    },
+    {
+      "path": "ui/org.eclipse.pde.core/schema/pluginClasspathContributors.exsd",
+      "role": "production",
+      "sha256": "8fad54a898217ba11e2dd232c0b9809ed397e9f08e3da737f36b4231e8792e94",
+      "well_formed": true,
+      "schema_rule_subset": {
+        "declarations": 2,
+        "includes": [],
+        "nonlocal_references": [],
+        "external_resolution": "not_needed"
+      }
+    },
+    {
+      "path": "ui/org.eclipse.pde.core/schema/source.exsd",
+      "role": "production",
+      "sha256": "438e89e772a1b00ff21f6905bbd0d4bc1c53e6d9f5130d7e9c73705a73d2e311",
+      "well_formed": true,
+      "schema_rule_subset": {
+        "declarations": 2,
+        "includes": [],
+        "nonlocal_references": [],
+        "external_resolution": "not_needed"
+      }
+    },
+    {
+      "path": "ui/org.eclipse.pde.core/schema/targetLocations.exsd",
+      "role": "production",
+      "sha256": "565d9e6c81508abe252dd5751832e8c10f533812d538d14f72ecc239930899b6",
+      "well_formed": true,
+      "schema_rule_subset": {
+        "declarations": 2,
+        "includes": [],
+        "nonlocal_references": [],
+        "external_resolution": "not_needed"
+      }
+    },
+    {
+      "path": "ui/org.eclipse.pde.core/schema/targets.exsd",
+      "role": "production",
+      "sha256": "9a8d545ac82a1515a725234e76cd1f42e0f17cad7dfdefc810d90caefb605ff0",
+      "well_formed": true,
+      "schema_rule_subset": {
+        "declarations": 3,
+        "includes": [],
+        "nonlocal_references": [],
+        "external_resolution": "not_needed"
+      }
+    },
+    {
+      "path": "ui/org.eclipse.pde.genericeditor.extension/plugin.xml",
+      "role": "production",
+      "sha256": "4950b96554a722a763c6b525d642638f132b8073dc0d3fb6e2fede8187672c88",
+      "well_formed": true
+    },
+    {
+      "path": "ui/org.eclipse.pde.junit.runtime/plugin.xml",
+      "role": "production",
+      "sha256": "cdd42dfdd4e8f4cc93ef73fcfa97ad238ec97f8b2fb02a28cc6367603a030ac1",
+      "well_formed": true
+    },
+    {
+      "path": "ui/org.eclipse.pde.launching/plugin.xml",
+      "role": "production",
+      "sha256": "9d4fcf10927da7e43f46d88d942c2bbb338817eda04d9628bd0727dedf208de5",
+      "well_formed": true
+    },
+    {
+      "path": "ui/org.eclipse.pde.launching/schema/osgiFrameworks.exsd",
+      "role": "production",
+      "sha256": "b721f547d64df6fb73e0b7177acc1968cab3eca509966f0d9a913b6f76b10a96",
+      "well_formed": true,
+      "schema_rule_subset": {
+        "declarations": 2,
+        "includes": [],
+        "nonlocal_references": [],
+        "external_resolution": "not_needed"
+      }
+    },
+    {
+      "path": "ui/org.eclipse.pde.runtime/plugin.xml",
+      "role": "production",
+      "sha256": "7e44ede4ebd4e9662133415101116e1a93f1d27f3c26e04cfd695ddb1f92592a",
+      "well_formed": true
+    },
+    {
+      "path": "ui/org.eclipse.pde.spy.bundle/plugin.xml",
+      "role": "production",
+      "sha256": "b417953d13922b962e21a531b6cd4f91419442e978a28228fe91ea53efafe3ce",
+      "well_formed": true
+    },
+    {
+      "path": "ui/org.eclipse.pde.spy.context/plugin.xml",
+      "role": "production",
+      "sha256": "259e9550f8ed9cc58856dd8fed93303be476412826c17ff2fb089971d2ebe259",
+      "well_formed": true
+    },
+    {
+      "path": "ui/org.eclipse.pde.spy.core/plugin.xml",
+      "role": "production",
+      "sha256": "87ab386a5322ae7b109ed30c1c1a56cf9069836947e65993b5e0cd8a66b2c2f2",
+      "well_formed": true
+    },
+    {
+      "path": "ui/org.eclipse.pde.spy.core/schema/spyPart.exsd",
+      "role": "production",
+      "sha256": "1dbae3053b5867dd7024ab1d8e165b4f0a5ad50cd9419aa0ed12617ce17435cd",
+      "well_formed": true,
+      "schema_rule_subset": {
+        "declarations": 2,
+        "includes": [],
+        "nonlocal_references": [],
+        "external_resolution": "not_needed"
+      }
+    },
+    {
+      "path": "ui/org.eclipse.pde.spy.css/plugin.xml",
+      "role": "production",
+      "sha256": "aebcc3a2729f26571344a37d57ace568cec6c201e2ff5caf90499020cee78c69",
+      "well_formed": true
+    },
+    {
+      "path": "ui/org.eclipse.pde.spy.event/plugin.xml",
+      "role": "production",
+      "sha256": "428db788c877fd2b702b6392a1dad354a3d28a688956626aeede7a263b8ce99f",
+      "well_formed": true
+    },
+    {
+      "path": "ui/org.eclipse.pde.spy.model/OSGI-INF/extensionlookup.xml",
+      "role": "production",
+      "sha256": "3f81cfe52c554e472de107ffa28d3734b613e3451a22cdfe6462c60072d8ab54",
+      "well_formed": true
+    },
+    {
+      "path": "ui/org.eclipse.pde.spy.model/plugin.xml",
+      "role": "production",
+      "sha256": "4b121fd1a4b3962e5102d72455a61cee27cde307ff089634ffbbe4a16a3b114d",
+      "well_formed": true
+    },
+    {
+      "path": "ui/org.eclipse.pde.spy.preferences/plugin.xml",
+      "role": "production",
+      "sha256": "35a3aa45c1c2fec96b0eda6f0719252ebe3a61e3d9983bfd86967c47ab730612",
+      "well_formed": true
+    },
+    {
+      "path": "ui/org.eclipse.pde.ui.templates/plugin.xml",
+      "role": "production",
+      "sha256": "81a8a94eb479a81d2b96030d5c2a04436c589a63449e5da12082ef85bec89c30",
+      "well_formed": true
+    },
+    {
+      "path": "ui/org.eclipse.pde.ui.templates/templates_3.3/splashHandlers/schema/splashExtension.exsd",
+      "role": "source_template",
+      "sha256": "69f749f6c8cb2be7b7e5d7d5398f16bfc78ba19c1d47969420d6a013bc15c5d3",
+      "well_formed": true,
+      "schema_rule_subset": {
+        "declarations": 2,
+        "includes": [],
+        "nonlocal_references": [],
+        "external_resolution": "not_needed"
+      }
+    },
+    {
+      "path": "ui/org.eclipse.pde.ui.tests/tests/performance/schema/navigatorContent.exsd",
+      "role": "test_fixture_or_bundle",
+      "sha256": "efa5216155371100c1ddc174386ea9571c15446dd29eb7d181c3c0e1df028192",
+      "well_formed": true,
+      "schema_rule_subset": {
+        "declarations": 14,
+        "includes": [
+          "schema://org.eclipse.core.expressions/schema/expressionLanguage.exsd"
+        ],
+        "nonlocal_references": [
+          "adapt",
+          "and",
+          "count",
+          "equals",
+          "instanceof",
+          "iterate",
+          "not",
+          "or",
+          "resolve",
+          "systemTest",
+          "test",
+          "with"
+        ],
+        "external_resolution": "not_attempted"
+      }
+    },
+    {
+      "path": "ui/org.eclipse.pde.ui/plugin.xml",
+      "role": "production",
+      "sha256": "8d98f6e3362d1e1e8599d497b2009d52810945094daec8066d38bc5cf3190cff",
+      "well_formed": true
+    },
+    {
+      "path": "ui/org.eclipse.pde.ui/schema/launchShortcuts.exsd",
+      "role": "production",
+      "sha256": "089f02878e71624cbcf75973365ca12c53cc5b0e0a415a97b8f90a34a7b125c9",
+      "well_formed": true,
+      "schema_rule_subset": {
+        "declarations": 2,
+        "includes": [],
+        "nonlocal_references": [],
+        "external_resolution": "not_needed"
+      }
+    },
+    {
+      "path": "ui/org.eclipse.pde.ui/schema/newExtension.exsd",
+      "role": "production",
+      "sha256": "8f1ec2b4783495e21182a0d2edce8de74fb5306fcbd457a403192b6e8ad90a4b",
+      "well_formed": true,
+      "schema_rule_subset": {
+        "declarations": 5,
+        "includes": [],
+        "nonlocal_references": [],
+        "external_resolution": "not_needed"
+      }
+    },
+    {
+      "path": "ui/org.eclipse.pde.ui/schema/pluginContent.exsd",
+      "role": "production",
+      "sha256": "f49ae3964d3250a4c640e897c710747dd70834b7bdf32e4aee9b94c4f4237ab8",
+      "well_formed": true,
+      "schema_rule_subset": {
+        "declarations": 3,
+        "includes": [],
+        "nonlocal_references": [],
+        "external_resolution": "not_needed"
+      }
+    },
+    {
+      "path": "ui/org.eclipse.pde.ui/schema/samples.exsd",
+      "role": "production",
+      "sha256": "b927c54f71d05c949d6febd537753676a1c3b37db02cb9af5eea348694a1eb8f",
+      "well_formed": true,
+      "schema_rule_subset": {
+        "declarations": 5,
+        "includes": [],
+        "nonlocal_references": [],
+        "external_resolution": "not_needed"
+      }
+    },
+    {
+      "path": "ui/org.eclipse.pde.ui/schema/targetLocationProvisioners.exsd",
+      "role": "production",
+      "sha256": "8b9c96504bf0305d268fbdcdc54680ec40f8186cc7249d6fa809d8e450494316",
+      "well_formed": true,
+      "schema_rule_subset": {
+        "declarations": 3,
+        "includes": [],
+        "nonlocal_references": [],
+        "external_resolution": "not_needed"
+      }
+    },
+    {
+      "path": "ui/org.eclipse.pde.ui/schema/templates.exsd",
+      "role": "production",
+      "sha256": "2a2921a188ec279f8f25798f0fc482572a8a5faa3a7cfba0469ffda6772e89c0",
+      "well_formed": true,
+      "schema_rule_subset": {
+        "declarations": 2,
+        "includes": [],
+        "nonlocal_references": [],
+        "external_resolution": "not_needed"
+      }
+    },
+    {
+      "path": "ui/org.eclipse.pde.unittest.junit/plugin.xml",
+      "role": "production",
+      "sha256": "368b9608984a517f82fc971b9fbe758f72eea5fe9edd3792a8e3123df0732b05",
+      "well_formed": true
+    },
+    {
+      "path": "ui/org.eclipse.pde/cheatsheets/helloworld-composite.xml",
+      "role": "production",
+      "sha256": "5300a67ad2cac07a1e87c6b35bc6b8db3a7cdaccfa281baa27a639e320465304",
+      "well_formed": true
+    },
+    {
+      "path": "ui/org.eclipse.pde/cheatsheets/helloworld/helloworld-create.xml",
+      "role": "production",
+      "sha256": "63208d54aa5f75635f90065bfc2645355c2b1294323bb59ce031962e4cb2bc08",
+      "well_formed": true
+    },
+    {
+      "path": "ui/org.eclipse.pde/cheatsheets/helloworld/helloworld-extension.xml",
+      "role": "production",
+      "sha256": "ed1d7cd986ac1ebc1a38f167d10c453e3a932f09b216cfd70df646846da19cae",
+      "well_formed": true
+    },
+    {
+      "path": "ui/org.eclipse.pde/cheatsheets/helloworld/helloworld-feature.xml",
+      "role": "production",
+      "sha256": "1dd63f2070658b18c33208664840a6cf3e6a8599718e4a7d05d758dc07f10d66",
+      "well_formed": true
+    },
+    {
+      "path": "ui/org.eclipse.pde/cheatsheets/helloworld/helloworld-install.xml",
+      "role": "production",
+      "sha256": "b341e660413ae94030f2e74e2ff1f93b8c3c061b499db0259041e05020fdf392",
+      "well_formed": true
+    },
+    {
+      "path": "ui/org.eclipse.pde/cheatsheets/helloworld/helloworld-update.xml",
+      "role": "production",
+      "sha256": "8b5d7f3b0bb0a3946183f460cc1b240fa928b166bb4590a3e5db57c9ee55dcb0",
+      "well_formed": true
+    },
+    {
+      "path": "ui/org.eclipse.pde/cheatsheets/rcpapp-composite.xml",
+      "role": "production",
+      "sha256": "4b056cb6d360a54731eb9c6b7689d750f92ba557945f49fce07c2a33024d67db",
+      "well_formed": true
+    },
+    {
+      "path": "ui/org.eclipse.pde/cheatsheets/rcpapp/rcpapp-create.xml",
+      "role": "production",
+      "sha256": "71081ff1a4d479eb9b83555e02b0249847a55a32c89feac223b3b36fd60778a8",
+      "well_formed": true
+    },
+    {
+      "path": "ui/org.eclipse.pde/cheatsheets/rcpapp/rcpapp-customize.xml",
+      "role": "production",
+      "sha256": "6b046172132a4e8525324f3b50317c20d5797c45bd93567240795d2723ae3431",
+      "well_formed": true
+    },
+    {
+      "path": "ui/org.eclipse.pde/cheatsheets/rcpapp/rcpapp-export.xml",
+      "role": "production",
+      "sha256": "3b1e7db9371692690526aa8110a88a726e2feb76137e819c8c220695e23df816",
+      "well_formed": true
+    },
+    {
+      "path": "ui/org.eclipse.pde/cheatsheets/rcpapp/rcpapp-feature-product.xml",
+      "role": "production",
+      "sha256": "3a714d3048a4953e8133b49d2b852708d3042dbf21739c7745d372ad5dfb55c2",
+      "well_formed": true
+    },
+    {
+      "path": "ui/org.eclipse.pde/cheatsheets/rcpapp/rcpapp-plugin-product.xml",
+      "role": "production",
+      "sha256": "aec584110c11806b5a1914dd9f7ed3e2401c904076b8fe293c37c8b9fd01c71b",
+      "well_formed": true
+    },
+    {
+      "path": "ui/org.eclipse.pde/cheatsheets/setup-apitools-existing-projects.xml",
+      "role": "production",
+      "sha256": "a6054320e41a801655bcdd50b11da2220510f65aa94186c35d059f8ed34cf1e2",
+      "well_formed": true
+    },
+    {
+      "path": "ui/org.eclipse.pde/intro/overviewExtensionContent.xml",
+      "role": "production",
+      "sha256": "fd0c2550b5e7808c3493265d0d5554e91ec0aa4126e04576fbf8535f07e3a4d6",
+      "well_formed": true
+    },
+    {
+      "path": "ui/org.eclipse.pde/intro/samplesExtensionContent.xml",
+      "role": "production",
+      "sha256": "324eed75b4e9552bd7271e05942a6099d321ff6be3a74c0c8052e685b9e23e85",
+      "well_formed": true
+    },
+    {
+      "path": "ui/org.eclipse.pde/intro/samplesExtensionContent2.xml",
+      "role": "production",
+      "sha256": "faff9a4c7c870e15463b5f982de858bf8b08121d957792a9044ce0dd024c8f40",
+      "well_formed": true
+    },
+    {
+      "path": "ui/org.eclipse.pde/intro/tutorialsExtensionContent.xml",
+      "role": "production",
+      "sha256": "733a67aabfc4750d334ce5b76f9fa70ae7f78580a9e2025b583592728305c954",
+      "well_formed": true
+    },
+    {
+      "path": "ui/org.eclipse.pde/intro/whatsnewExtensionContent.xml",
+      "role": "production",
+      "sha256": "386031e350ad44af104e5deffec28e02543be80caf9dd7538538f187a38051fd",
+      "well_formed": true
+    },
+    {
+      "path": "ui/org.eclipse.pde/plugin.xml",
+      "role": "production",
+      "sha256": "dbe1a239c5a1597423e1b8b631e1c48cce217e0a30dfbac963202c2a62170c6c",
+      "well_formed": true
+    },
+    {
+      "path": "ui/org.eclipse.pde/pom.xml",
+      "role": "production",
+      "sha256": "8739c7afd6bb45d6dd7ff1d5c1c0db869c3d42dc2f353edbf2fdb53b8ea1bd23",
+      "well_formed": true
+    },
+    {
+      "path": "ui/org.eclipse.swt.tools.spies/plugin.xml",
+      "role": "production",
+      "sha256": "3e694c01f42fe496de1bf541354374426e6328aff803db9151ca2b57faace289",
+      "well_formed": true
+    },
+    {
+      "path": "ui/org.eclipse.tools.layout.spy/plugin.xml",
+      "role": "production",
+      "sha256": "a0379f1010f2e2da896ba4e385b8e5e124669b2aa1d91fa2386b67253e5f21d7",
+      "well_formed": true
+    },
+    {
+      "path": "ui/org.eclipse.ui.trace/OSGI-INF/tracingInitializer.xml",
+      "role": "production",
+      "sha256": "86c41cb071fdfdc6c46e0e6d4e1053703aee487a1efa92b49b8e09977bc9b320",
+      "well_formed": true
+    },
+    {
+      "path": "ui/org.eclipse.ui.trace/plugin.xml",
+      "role": "production",
+      "sha256": "28cd20aec653c7a6002e80ea328dcbcbcd4bc172f2e66ca102ff4fc1d69a6f9a",
+      "well_formed": true
+    },
+    {
+      "path": "ui/org.eclipse.ui.trace/schema/traceComponents.exsd",
+      "role": "production",
+      "sha256": "c722e26633bdf7b611612a8486d89f409410a33eed586d80efed3e0227ef6b07",
+      "well_formed": true,
+      "schema_rule_subset": {
+        "declarations": 3,
+        "includes": [],
+        "nonlocal_references": [],
+        "external_resolution": "not_needed"
+      }
+    },
+    {
+      "path": "ui/pom.xml",
+      "role": "production",
+      "sha256": "e36f10cdc24ea5b0ecfbded0821e16c02330fdc8ec86468e09553802e8adeed9",
+      "well_formed": true
+    }
+  ],
+  "extension_checks": {
+    "extension_point_schema_paths_checked": 19,
+    "production_schemas_in_local_catalog": 19,
+    "extensions_checked": 23,
+    "extensions_skipped_without_supported_local_schema": {
+      "org.eclipse.ant.core.antProperties": 1,
+      "org.eclipse.ant.core.antTasks": 3,
+      "org.eclipse.ant.core.extraClasspathEntries": 2,
+      "org.eclipse.compare.contentMergeViewers": 1,
+      "org.eclipse.compare.structureMergeViewers": 1,
+      "org.eclipse.core.contenttype.contentTypes": 4,
+      "org.eclipse.core.expressions.definitions": 1,
+      "org.eclipse.core.expressions.propertyTesters": 5,
+      "org.eclipse.core.filebuffers.annotationModelCreation": 4,
+      "org.eclipse.core.filebuffers.documentCreation": 1,
+      "org.eclipse.core.filebuffers.documentSetup": 1,
+      "org.eclipse.core.resources.builders": 7,
+      "org.eclipse.core.resources.markers": 15,
+      "org.eclipse.core.resources.natures": 5,
+      "org.eclipse.core.runtime.adapters": 1,
+      "org.eclipse.core.runtime.applications": 7,
+      "org.eclipse.core.runtime.preferences": 6,
+      "org.eclipse.core.variables.dynamicVariables": 1,
+      "org.eclipse.debug.core.launchConfigurationTypes": 3,
+      "org.eclipse.debug.core.sourceLocators": 1,
+      "org.eclipse.debug.core.statusHandlers": 1,
+      "org.eclipse.debug.ui.launchConfigurationTabGroups": 3,
+      "org.eclipse.debug.ui.launchConfigurationTypeImages": 3,
+      "org.eclipse.debug.ui.launchShortcuts": 2,
+      "org.eclipse.e4.ui.css.swt.theme": 3,
+      "org.eclipse.e4.workbench.model": 5,
+      "org.eclipse.emf.ecore.generated_package": 1,
+      "org.eclipse.equinox.preferences.preferences": 1,
+      "org.eclipse.help.contexts": 2,
+      "org.eclipse.help.toc": 2,
+      "org.eclipse.jdt.core.classpathContainerInitializer": 1,
+      "org.eclipse.jdt.core.classpathVariableInitializer": 1,
+      "org.eclipse.jdt.core.compilationParticipant": 2,
+      "org.eclipse.jdt.junit.junitLaunchConfigs": 1,
+      "org.eclipse.jdt.launching.classpathProviders": 1,
+      "org.eclipse.jdt.ui.classpathContainerPage": 1,
+      "org.eclipse.jdt.ui.classpathFixProcessors": 1,
+      "org.eclipse.jdt.ui.javaCompletionProposalComputer": 4,
+      "org.eclipse.jdt.ui.javaElementFilters": 1,
+      "org.eclipse.jdt.ui.queryParticipants": 1,
+      "org.eclipse.jdt.ui.quickFixProcessors": 3,
+      "org.eclipse.ltk.core.refactoring.deleteParticipants": 3,
+      "org.eclipse.ltk.core.refactoring.moveParticipants": 4,
+      "org.eclipse.ltk.core.refactoring.renameParticipants": 4,
+      "org.eclipse.pde.spy.core.spyPart": 7,
+      "org.eclipse.search.searchPages": 1,
+      "org.eclipse.search.searchResultViewPages": 1,
+      "org.eclipse.team.core.fileTypes": 2,
+      "org.eclipse.team.core.repository": 1,
+      "org.eclipse.ui.actionSetPartAssociations": 2,
+      "org.eclipse.ui.actionSets": 1,
+      "org.eclipse.ui.bindings": 2,
+      "org.eclipse.ui.cheatsheets.cheatSheetContent": 1,
+      "org.eclipse.ui.commandImages": 2,
+      "org.eclipse.ui.commands": 5,
+      "org.eclipse.ui.console.consoleFactories": 1,
+      "org.eclipse.ui.console.consolePageParticipants": 1,
+      "org.eclipse.ui.contexts": 1,
+      "org.eclipse.ui.decorators": 1,
+      "org.eclipse.ui.editors": 4,
+      "org.eclipse.ui.editors.annotationTypes": 1,
+      "org.eclipse.ui.editors.markerAnnotationSpecification": 1,
+      "org.eclipse.ui.editors.templates": 1,
+      "org.eclipse.ui.elementFactories": 1,
+      "org.eclipse.ui.exportWizards": 1,
+      "org.eclipse.ui.genericeditor.contentAssistProcessors": 3,
+      "org.eclipse.ui.genericeditor.presentationReconcilers": 2,
+      "org.eclipse.ui.genericeditor.reconcilers": 1,
+      "org.eclipse.ui.handlers": 4,
+      "org.eclipse.ui.ide.markerResolution": 3,
+      "org.eclipse.ui.ide.markerSupport": 4,
+      "org.eclipse.ui.ide.projectConfigurators": 1,
+      "org.eclipse.ui.importWizards": 1,
+      "org.eclipse.ui.intro.configExtension": 2,
+      "org.eclipse.ui.keywords": 4,
+      "org.eclipse.ui.menus": 4,
+      "org.eclipse.ui.navigator.navigatorContent": 1,
+      "org.eclipse.ui.newWizards": 4,
+      "org.eclipse.ui.perspectiveExtensions": 2,
+      "org.eclipse.ui.perspectives": 1,
+      "org.eclipse.ui.popupMenus": 2,
+      "org.eclipse.ui.preferencePages": 5,
+      "org.eclipse.ui.preferenceTransfer": 1,
+      "org.eclipse.ui.propertyPages": 3,
+      "org.eclipse.ui.services": 1,
+      "org.eclipse.ui.themes": 2,
+      "org.eclipse.ui.viewActions": 1,
+      "org.eclipse.ui.views": 5,
+      "org.eclipse.ui.workbench.texteditor.codeMiningProviders": 1,
+      "org.eclipse.ui.workingSets": 1,
+      "org.eclipse.unittest.ui.unittestViewSupport": 1
+    }
+  },
+  "rule_findings": [],
+  "documentation_example": {
+    "path": "ui/org.eclipse.pde.ui/schema/targetLocationProvisioners.exsd",
+    "baseline_commit": "ba6a5d6f2f455ab7dfe972ce678d07d9f80de267",
+    "classification": "Malformed XML in escaped documentation, not malformed EXSD XML.",
+    "correction": "Append &gt; after name=&quot;%targetLocationProvider.example.name&quot;.",
+    "only_expected_file_change": true,
+    "startup_effect": {
+      "demonstrated": false,
+      "measured": false,
+      "explanation": "The defect is escaped text. Both containing EXSD documents parse; this fix does not repair a schema parse failure or demonstrate fewer Schema.load calls. This audit runs no Eclipse startup or PDE marker benchmark."
+    },
+    "before": {
+      "containing_exsd": {
+        "well_formed": true
+      },
+      "extracted_example": {
+        "well_formed": false,
+        "error": "not well-formed (invalid token): line 8, column 9",
+        "line_1_based": 8,
+        "column_0_based": 9
+      },
+      "example_sha256": "28d95dfbe3d59e852531a1c85690cfd5abea8cfba259a831c5d3075934100b22"
+    },
+    "after": {
+      "containing_exsd": {
+        "well_formed": true
+      },
+      "extracted_example": {
+        "well_formed": true
+      },
+      "example_sha256": "ebd4d2d96003c4d773fdd085829b79ef52e70882ef5860655343780eb68cb913"
+    },
+    "verified_fix": true
+  },
+  "summary": {
+    "production_rule_findings": 0,
+    "nonproduction_observations": 0,
+    "example_fix_verified": true,
+    "result": "pass",
+    "startup_effect_demonstrated": false
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "description": "Synthetic failure mechanism; not an Eclipse startup measurement",
+  "sources": {
+    "ui/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/schema/Schema.java": "4f6d5b3211455b656ad4dbbf55feb638c7c1075986448bee2e573de9f5cd38a3",
+    "ui/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/XMLDefaultHandler.java": "e15bb2bb62f1a745d98fb6eb1e1dfb44e829b4f34d81fe0174dcffca0af2fb73",
+    "benchmarks/xml-startup-attribution/src/SchemaFailureProbe.java": "6f48332619fb3286da83cebf01a39b48a0546f5bfa162a9dedca49dbeb9614da"
+  },
+  "original_pde_sdk_sha256": {
+    "org.eclipse.pde.core-3.21.400.jar": "6c8e23b59dc7e7644deb2e4c8388531029326689ba8b6fcb0a2bc773dff72125"
+  },
+  "dependency_handling": "Only temporary PDE SDK copies have signature entries removed; original jars are unchanged",
+  "observations": [
+    {
+      "fixture": "corrected",
+      "synthetic": true,
+      "abbreviated": false,
+      "queries": 24,
+      "streamOpens": 1,
+      "schemaLoaded": true
+    },
+    {
+      "fixture": "malformed_xml",
+      "synthetic": true,
+      "abbreviated": false,
+      "queries": 24,
+      "streamOpens": 25,
+      "schemaLoaded": false
+    },
+    {
+      "fixture": "missing_element_name",
+      "synthetic": true,
+      "abbreviated": false,
+      "queries": 24,
+      "streamOpens": 25,
+      "schemaLoaded": false
+    },
+    {
+      "fixture": "corrected",
+      "synthetic": true,
+      "abbreviated": true,
+      "queries": 24,
+      "streamOpens": 1,
+      "schemaLoaded": true
+    },
+    {
+      "fixture": "malformed_xml",
+      "synthetic": true,
+      "abbreviated": true,
+      "queries": 24,
+      "streamOpens": 25,
+      "schemaLoaded": false
+    },
+    {
+      "fixture": "missing_element_name",
+      "synthetic": true,
+      "abbreviated": true,
+      "queries": 24,
+      "streamOpens": 25,
+      "schemaLoaded": false
+    }
+  ]
+}

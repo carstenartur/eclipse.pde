@@ -1,0 +1,25 @@
+{
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "machine": "x86_64",
+  "python": "3.12.14",
+  "cpuCount": 9,
+  "cpuAffinity": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "jvmOptions": [
+    "-Xms256m",
+    "-Xmx1024m",
+    "--enable-native-access=ALL-UNNAMED"
+  ],
+  "runnerSha256": "168c8f7ab3bc3e9f7052cb8ec66f80d9f372198f36a2c43e58fdce418d1279e4",
+  "verifierSha256": "950d2e7456b0d45978a22f865e21dea6ec03271807c2ae12587d3a0947069a4e",
+  "xvfbWrapperSha256": "cffc5016ed9ebc6de300f38524148f47560495276cfa5e4ec7ec48fc0615043a"
+}

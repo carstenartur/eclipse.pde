@@ -1,0 +1,54 @@
+{
+  "runs": {
+    "baseline": {
+      "source_revision": "ba6a5d6f2f455ab7dfe972ce678d07d9f80de267",
+      "production_source_sha256": "8415aef158b7214dd4cc87f8622fadb3b95aa0424ca1da9befecaff59a10e9d1",
+      "test_source_sha256": "48cee271dccff7a62da50085220dada372e2d92c8c255de4c3baeb364be94537",
+      "java_version": {
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": "openjdk version \"25.0.5\" 2026-10-20 LTS\nOpenJDK Runtime Environment Temurin-25.0.5+8 (build 25.0.5+8-LTS)\nOpenJDK 64-Bit Server VM Temurin-25.0.5+8 (build 25.0.5+8-LTS, mixed mode, sharing)\n"
+      },
+      "pde_dependency_jar": "/workspace/scratch/a8e2e1882d42/verification/startup-environment/eclipse-extra/org.eclipse.pde.core-3.21.400.jar",
+      "pde_dependency_sha256": "6c8e23b59dc7e7644deb2e4c8388531029326689ba8b6fcb0a2bc773dff72125",
+      "sdk_plugins": "/workspace/scratch/a8e2e1882d42/verification/startup-environment/reference-ide/plugins",
+      "mode": "Compile the actual descriptor and regression test; run against official PDE, Eclipse, and JUnit classes.",
+      "scope_limit": "No OSGi/UI launch, full Tycho suite, startup timing, or guaranteed-leak claim.",
+      "compile": {
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "tests": {
+        "exit_code": 1,
+        "stdout": "tests_found=3 tests_started=3 tests_succeeded=1 tests_failed=2 tests_aborted=0 tests_skipped=0\nFAIL loadsSchemaFromOneClosedStorageStream()\norg.opentest4j.MultipleFailuresError: Multiple Failures (1 failure)\n\torg.opentest4j.AssertionFailedError: Loading a schema must open storage once ==> expected: <1> but was: <2>\n\tat org.junit.jupiter.api.AssertAll.assertAll(AssertAll.java:80)\n\tat org.junit.jupiter.api.AssertAll.assertAll(AssertAll.java:44)\n\tat org.junit.jupiter.api.AssertAll.assertAll(AssertAll.java:38)\n\tat org.junit.jupiter.api.Assertions.assertAll(Assertions.java:3048)\n\tat org.eclipse.pde.core.tests.internal.schema.StorageSchemaDescriptorTest.assertSingleClosedStream(StorageSchemaDescriptorTest.java:82)\n\tat org.eclipse.pde.core.tests.internal.schema.StorageSchemaDescriptorTest.loadsSchemaFromOneClosedStorageStream(StorageSchemaDescriptorTest.java:56)\n\tSuppressed: org.opentest4j.AssertionFailedError: Loading a schema must open storage once ==> expected: <1> but was: <2>\n\t\t... 3 more\nFAIL closesSingleStorageStreamAfterParseFailure()\norg.opentest4j.MultipleFailuresError: Multiple Failures (1 failure)\n\torg.opentest4j.AssertionFailedError: Loading a schema must open storage once ==> expected: <1> but was: <2>\n\tat org.junit.jupiter.api.AssertAll.assertAll(AssertAll.java:80)\n\tat org.junit.jupiter.api.AssertAll.assertAll(AssertAll.java:44)\n\tat org.junit.jupiter.api.AssertAll.assertAll(AssertAll.java:38)\n\tat org.junit.jupiter.api.Assertions.assertAll(Assertions.java:3048)\n\tat org.eclipse.pde.core.tests.internal.schema.StorageSchemaDescriptorTest.assertSingleClosedStream(StorageSchemaDescriptorTest.java:82)\n\tat org.eclipse.pde.core.tests.internal.schema.StorageSchemaDescriptorTest.closesSingleStorageStreamAfterParseFailure(StorageSchemaDescriptorTest.java:67)\n\tSuppressed: org.opentest4j.AssertionFailedError: Loading a schema must open storage once ==> expected: <1> but was: <2>\n\t\t... 3 more\n",
+        "stderr": ""
+      }
+    },
+    "fixed": {
+      "source_revision": "worktree",
+      "production_source_sha256": "b5e88bb047afa321d40400570caf59556c6d6b2d2820d6dc03fb920096eebd4c",
+      "test_source_sha256": "48cee271dccff7a62da50085220dada372e2d92c8c255de4c3baeb364be94537",
+      "java_version": {
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": "openjdk version \"25.0.5\" 2026-10-20 LTS\nOpenJDK Runtime Environment Temurin-25.0.5+8 (build 25.0.5+8-LTS)\nOpenJDK 64-Bit Server VM Temurin-25.0.5+8 (build 25.0.5+8-LTS, mixed mode, sharing)\n"
+      },
+      "pde_dependency_jar": "/workspace/scratch/a8e2e1882d42/verification/startup-environment/eclipse-extra/org.eclipse.pde.core-3.21.400.jar",
+      "pde_dependency_sha256": "6c8e23b59dc7e7644deb2e4c8388531029326689ba8b6fcb0a2bc773dff72125",
+      "sdk_plugins": "/workspace/scratch/a8e2e1882d42/verification/startup-environment/reference-ide/plugins",
+      "mode": "Compile the actual descriptor and regression test; run against official PDE, Eclipse, and JUnit classes.",
+      "scope_limit": "No OSGi/UI launch, full Tycho suite, startup timing, or guaranteed-leak claim.",
+      "compile": {
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "tests": {
+        "exit_code": 0,
+        "stdout": "tests_found=3 tests_started=3 tests_succeeded=3 tests_failed=0 tests_aborted=0 tests_skipped=0\n",
+        "stderr": ""
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "storageRegressionTests": {
+    "baseline": "3 tests; 2 expected failures (two opens rather than one)",
+    "fixed": "3 tests passed",
+    "independentFixedRerun": "3 tests passed"
+  },
+  "formattingTests": 6,
+  "probeChecks": {
+    "quietWindowChecks": 8,
+    "realFdChecks": 3,
+    "pythonTests": 8
+  },
+  "primaryRuns": 20,
+  "primaryEclipseErrorEntries": 0,
+  "fullTychoSuiteRun": false,
+  "postMeasurementFdScannerCorrection": {
+    "reason": "Canonical /proc/self/fd differs from ProcessHandle PID in this environment; exclude the scanner directory by canonical path",
+    "before": "Stronger real-FD regression test failed with scanner directory entries present",
+    "after": "3 real-FD checks passed",
+    "primaryProbeSha256": "ac26430041e2340fe12f19c616e98b16ceeb6c3c63ca356143efc97b568c3541",
+    "currentProbeSha256": "c8a4d9345ae5c9afecda4e1e83a36d03fe8291ace6931893fedf5ebeb860a67a",
+    "timingImpact": "none: original identical probe retained in all primary cells; FD scans were disabled"
+  },
+  "diagnosticRecovery": {
+    "primaryRunsAlreadyComplete": 20,
+    "cause": "Transient FileExistsError while copying final diagnostic seed workspace",
+    "action": "Retry only final diagnostic with --blocks 0 --skip-preparation; original timing rows and schedule retained",
+    "result": "diagnostic passed"
+  },
+  "independentReview": "All 36 contrasts, phase counts, sign conventions and t intervals independently recomputed."
+}

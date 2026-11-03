@@ -1,0 +1,14 @@
+{
+  "referenceInstall": "/workspace/scratch/a8e2e1882d42/verification/startup-environment/reference-ide",
+  "launcher": "/workspace/scratch/a8e2e1882d42/verification/startup-environment/reference-ide/plugins/org.eclipse.equinox.launcher_1.8.0.v20260804-1928.jar",
+  "probeSha256": "ac26430041e2340fe12f19c616e98b16ceeb6c3c63ca356143efc97b568c3541",
+  "probeLocalCopy": true,
+  "configuredBundles": 243,
+  "configuredSourceBundles": 50,
+  "configSha256": "0d72317f46dc5de17f3981242b29bd4ad27af2065e71ddf291d15a287b21c1ad",
+  "bundlesInfoSha256": "2abeff22eeb17a42af0e95ac833aab1303bbc0f8116865dd9ea1f825b342f63d",
+  "verifiedStartupLog": "/workspace/scratch/a8e2e1882d42/verification/startup-environment/smoke/stdout-final.log",
+  "verifiedStartupProbeSha256": "59a25443c09c939e63781425eb5f000c7004f4fee51b2ea31dcaecb7a523fabb",
+  "finalProbeChange": "Only sorted marker diagnostic collection/output added after successful startup smoke; validate final binary in required validation warmup.",
+  "configurationCache": "Generated smoke caches removed; only config.ini and org.eclipse.equinox.simpleconfigurator/bundles.info retained."
+}

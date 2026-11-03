@@ -1,0 +1,1217 @@
+[
+  {
+    "name": "aQute.libg",
+    "version": "7.3.0.202606021345",
+    "location": "aQute.libg_7.3.0.202606021345.jar"
+  },
+  {
+    "name": "bcpg",
+    "version": "1.85.0",
+    "location": "bcpg_1.85.jar"
+  },
+  {
+    "name": "bcprov",
+    "version": "1.85.2",
+    "location": "bcprov_1.85.2.jar"
+  },
+  {
+    "name": "bcutil",
+    "version": "1.85.0",
+    "location": "bcutil_1.85.jar"
+  },
+  {
+    "name": "biz.aQute.bnd.util",
+    "version": "7.3.0.202606021345",
+    "location": "biz.aQute.bnd.util_7.3.0.202606021345.jar"
+  },
+  {
+    "name": "biz.aQute.bndlib",
+    "version": "7.3.0.202606021345",
+    "location": "biz.aQute.bndlib_7.3.0.202606021345.jar"
+  },
+  {
+    "name": "biz.aQute.repository",
+    "version": "7.3.0.202606021345",
+    "location": "biz.aQute.repository_7.3.0.202606021345.jar"
+  },
+  {
+    "name": "biz.aQute.resolve",
+    "version": "7.3.0.202606021345",
+    "location": "biz.aQute.resolve_7.3.0.202606021345.jar"
+  },
+  {
+    "name": "bndtools.api",
+    "version": "7.3.0.202606021345",
+    "location": "bndtools.api_7.3.0.202606021345.jar"
+  },
+  {
+    "name": "com.github.weisj.jsvg",
+    "version": "2.1.0",
+    "location": "com.github.weisj.jsvg_2.1.0.jar"
+  },
+  {
+    "name": "com.sun.jna",
+    "version": "5.19.1",
+    "location": "com.sun.jna_5.19.1.jar"
+  },
+  {
+    "name": "com.sun.jna.platform",
+    "version": "5.19.1",
+    "location": "com.sun.jna.platform_5.19.1.jar"
+  },
+  {
+    "name": "jakarta.activation-api",
+    "version": "2.2.0.M2",
+    "location": "jakarta.activation-api_2.2.0.M2.jar"
+  },
+  {
+    "name": "jakarta.annotation-api",
+    "version": "2.1.1",
+    "location": "jakarta.annotation-api_2.1.1.jar"
+  },
+  {
+    "name": "jakarta.annotation-api",
+    "version": "3.0.0",
+    "location": "jakarta.annotation-api_3.0.0.jar"
+  },
+  {
+    "name": "jakarta.inject.jakarta.inject-api",
+    "version": "2.0.1",
+    "location": "jakarta.inject.jakarta.inject-api_2.0.1.jar"
+  },
+  {
+    "name": "jakarta.xml.bind-api",
+    "version": "4.0.5",
+    "location": "jakarta.xml.bind-api_4.0.5.jar"
+  },
+  {
+    "name": "junit-platform-commons",
+    "version": "6.1.3",
+    "location": "junit-platform-commons_6.1.3.jar"
+  },
+  {
+    "name": "junit-platform-engine",
+    "version": "6.1.3",
+    "location": "junit-platform-engine_6.1.3.jar"
+  },
+  {
+    "name": "junit-platform-launcher",
+    "version": "6.1.3",
+    "location": "junit-platform-launcher_6.1.3.jar"
+  },
+  {
+    "name": "org.apache.ant",
+    "version": "1.10.17.v20260410-1000",
+    "location": "org.apache.ant_1.10.17.v20260410-1000/"
+  },
+  {
+    "name": "org.apache.aries.spifly.dynamic.bundle",
+    "version": "1.3.8",
+    "location": "org.apache.aries.spifly.dynamic.bundle_1.3.8.jar"
+  },
+  {
+    "name": "org.apache.bcel",
+    "version": "6.13.0",
+    "location": "org.apache.bcel_6.13.0.jar"
+  },
+  {
+    "name": "org.apache.commons.commons-io",
+    "version": "2.22.0",
+    "location": "org.apache.commons.commons-io_2.22.0.jar"
+  },
+  {
+    "name": "org.apache.commons.commons-logging",
+    "version": "1.4.0",
+    "location": "org.apache.commons.commons-logging_1.4.0.jar"
+  },
+  {
+    "name": "org.apache.commons.commons-net",
+    "version": "3.13.0",
+    "location": "org.apache.commons.commons-net_3.13.0.jar"
+  },
+  {
+    "name": "org.apache.commons.lang3",
+    "version": "3.21.0",
+    "location": "org.apache.commons.lang3_3.21.0.jar"
+  },
+  {
+    "name": "org.apache.felix.scr",
+    "version": "2.2.18",
+    "location": "org.apache.felix.scr_2.2.18.jar"
+  },
+  {
+    "name": "org.apache.logging.log4j.api",
+    "version": "2.26.1",
+    "location": "org.apache.logging.log4j.api_2.26.1.jar"
+  },
+  {
+    "name": "org.apache.logging.log4j.to.slf4j",
+    "version": "2.26.1",
+    "location": "org.apache.logging.log4j.to.slf4j_2.26.1.jar"
+  },
+  {
+    "name": "org.apiguardian.api",
+    "version": "1.1.2",
+    "location": "org.apiguardian.api_1.1.2.jar"
+  },
+  {
+    "name": "org.bndtools.headless.build.manager",
+    "version": "7.3.0.202606021345",
+    "location": "org.bndtools.headless.build.manager_7.3.0.202606021345.jar"
+  },
+  {
+    "name": "org.bndtools.templating",
+    "version": "7.3.0.202606021345",
+    "location": "org.bndtools.templating_7.3.0.202606021345.jar"
+  },
+  {
+    "name": "org.bndtools.versioncontrol.ignores.manager",
+    "version": "7.3.0.202606021345",
+    "location": "org.bndtools.versioncontrol.ignores.manager_7.3.0.202606021345.jar"
+  },
+  {
+    "name": "org.commonmark",
+    "version": "0.30.0",
+    "location": "org.commonmark_0.30.0.jar"
+  },
+  {
+    "name": "org.commonmark.ext-gfm-tables",
+    "version": "0.30.0",
+    "location": "org.commonmark.ext-gfm-tables_0.30.0.jar"
+  },
+  {
+    "name": "org.eclipse.ant.core",
+    "version": "3.7.1000.v20260602-0655",
+    "location": "org.eclipse.ant.core_3.7.1000.v20260602-0655.jar"
+  },
+  {
+    "name": "org.eclipse.ant.core.source",
+    "version": "3.7.1000.v20260602-0655",
+    "location": "org.eclipse.ant.core.source_3.7.1000.v20260602-0655.jar"
+  },
+  {
+    "name": "org.eclipse.ant.launching",
+    "version": "1.4.1200.v20260722-1046",
+    "location": "org.eclipse.ant.launching_1.4.1200.v20260722-1046.jar"
+  },
+  {
+    "name": "org.eclipse.ant.ui",
+    "version": "3.10.600.v20260713-0848",
+    "location": "org.eclipse.ant.ui_3.10.600.v20260713-0848.jar"
+  },
+  {
+    "name": "org.eclipse.compare",
+    "version": "3.12.200.v20260814-1536",
+    "location": "org.eclipse.compare_3.12.200.v20260814-1536.jar"
+  },
+  {
+    "name": "org.eclipse.compare.core",
+    "version": "3.8.900.v20260731-0809",
+    "location": "org.eclipse.compare.core_3.8.900.v20260731-0809.jar"
+  },
+  {
+    "name": "org.eclipse.compare.source",
+    "version": "3.12.200.v20260814-1536",
+    "location": "org.eclipse.compare.source_3.12.200.v20260814-1536.jar"
+  },
+  {
+    "name": "org.eclipse.core.commands",
+    "version": "3.13.0.v20260605-1749",
+    "location": "org.eclipse.core.commands_3.13.0.v20260605-1749.jar"
+  },
+  {
+    "name": "org.eclipse.core.contenttype",
+    "version": "3.9.900.v20260617-0626",
+    "location": "org.eclipse.core.contenttype_3.9.900.v20260617-0626.jar"
+  },
+  {
+    "name": "org.eclipse.core.contenttype.source",
+    "version": "3.9.900.v20260617-0626",
+    "location": "org.eclipse.core.contenttype.source_3.9.900.v20260617-0626.jar"
+  },
+  {
+    "name": "org.eclipse.core.databinding",
+    "version": "1.13.700.v20251023-1511",
+    "location": "org.eclipse.core.databinding_1.13.700.v20251023-1511.jar"
+  },
+  {
+    "name": "org.eclipse.core.databinding.observable",
+    "version": "1.13.500.v20251103-0735",
+    "location": "org.eclipse.core.databinding.observable_1.13.500.v20251103-0735.jar"
+  },
+  {
+    "name": "org.eclipse.core.databinding.property",
+    "version": "1.10.500.v20250916-0931",
+    "location": "org.eclipse.core.databinding.property_1.10.500.v20250916-0931.jar"
+  },
+  {
+    "name": "org.eclipse.core.expressions",
+    "version": "3.9.700.v20260710-0925",
+    "location": "org.eclipse.core.expressions_3.9.700.v20260710-0925.jar"
+  },
+  {
+    "name": "org.eclipse.core.expressions.source",
+    "version": "3.9.700.v20260710-0925",
+    "location": "org.eclipse.core.expressions.source_3.9.700.v20260710-0925.jar"
+  },
+  {
+    "name": "org.eclipse.core.externaltools",
+    "version": "1.3.600.v20260307-0017",
+    "location": "org.eclipse.core.externaltools_1.3.600.v20260307-0017.jar"
+  },
+  {
+    "name": "org.eclipse.core.filebuffers",
+    "version": "3.8.600.v20260426-1223",
+    "location": "org.eclipse.core.filebuffers_3.8.600.v20260426-1223.jar"
+  },
+  {
+    "name": "org.eclipse.core.filebuffers.source",
+    "version": "3.8.600.v20260426-1223",
+    "location": "org.eclipse.core.filebuffers.source_3.8.600.v20260426-1223.jar"
+  },
+  {
+    "name": "org.eclipse.core.filesystem",
+    "version": "1.11.500.v20260721-1509",
+    "location": "org.eclipse.core.filesystem_1.11.500.v20260721-1509.jar"
+  },
+  {
+    "name": "org.eclipse.core.filesystem.source",
+    "version": "1.11.500.v20260721-1509",
+    "location": "org.eclipse.core.filesystem.source_1.11.500.v20260721-1509.jar"
+  },
+  {
+    "name": "org.eclipse.core.jobs",
+    "version": "3.15.900.v20260604-0622",
+    "location": "org.eclipse.core.jobs_3.15.900.v20260604-0622.jar"
+  },
+  {
+    "name": "org.eclipse.core.net",
+    "version": "1.5.900.v20260507-0401",
+    "location": "org.eclipse.core.net_1.5.900.v20260507-0401.jar"
+  },
+  {
+    "name": "org.eclipse.core.net.source",
+    "version": "1.5.900.v20260507-0401",
+    "location": "org.eclipse.core.net.source_1.5.900.v20260507-0401.jar"
+  },
+  {
+    "name": "org.eclipse.core.resources",
+    "version": "3.24.100.v20260812-0827",
+    "location": "org.eclipse.core.resources_3.24.100.v20260812-0827.jar"
+  },
+  {
+    "name": "org.eclipse.core.resources.source",
+    "version": "3.24.100.v20260812-0827",
+    "location": "org.eclipse.core.resources.source_3.24.100.v20260812-0827.jar"
+  },
+  {
+    "name": "org.eclipse.core.runtime",
+    "version": "3.35.0.v20260623-1631",
+    "location": "org.eclipse.core.runtime_3.35.0.v20260623-1631.jar"
+  },
+  {
+    "name": "org.eclipse.core.runtime.source",
+    "version": "3.35.0.v20260623-1631",
+    "location": "org.eclipse.core.runtime.source_3.35.0.v20260623-1631.jar"
+  },
+  {
+    "name": "org.eclipse.core.variables",
+    "version": "3.6.900.v20260602-0702",
+    "location": "org.eclipse.core.variables_3.6.900.v20260602-0702.jar"
+  },
+  {
+    "name": "org.eclipse.core.variables.source",
+    "version": "3.6.900.v20260602-0702",
+    "location": "org.eclipse.core.variables.source_3.6.900.v20260602-0702.jar"
+  },
+  {
+    "name": "org.eclipse.debug.core",
+    "version": "3.24.0.v20260714-0955",
+    "location": "org.eclipse.debug.core_3.24.0.v20260714-0955.jar"
+  },
+  {
+    "name": "org.eclipse.debug.core.source",
+    "version": "3.24.0.v20260714-0955",
+    "location": "org.eclipse.debug.core.source_3.24.0.v20260714-0955.jar"
+  },
+  {
+    "name": "org.eclipse.debug.ui",
+    "version": "3.22.0.v20260817-0925",
+    "location": "org.eclipse.debug.ui_3.22.0.v20260817-0925.jar"
+  },
+  {
+    "name": "org.eclipse.debug.ui.source",
+    "version": "3.22.0.v20260817-0925",
+    "location": "org.eclipse.debug.ui.source_3.22.0.v20260817-0925.jar"
+  },
+  {
+    "name": "org.eclipse.e4.core.commands",
+    "version": "1.1.800.v20260430-1313",
+    "location": "org.eclipse.e4.core.commands_1.1.800.v20260430-1313.jar"
+  },
+  {
+    "name": "org.eclipse.e4.core.contexts",
+    "version": "1.13.300.v20260605-0605",
+    "location": "org.eclipse.e4.core.contexts_1.13.300.v20260605-0605.jar"
+  },
+  {
+    "name": "org.eclipse.e4.core.di",
+    "version": "1.9.900.v20260731-1431",
+    "location": "org.eclipse.e4.core.di_1.9.900.v20260731-1431.jar"
+  },
+  {
+    "name": "org.eclipse.e4.core.di.annotations",
+    "version": "1.8.500.v20260307-0017",
+    "location": "org.eclipse.e4.core.di.annotations_1.8.500.v20260307-0017.jar"
+  },
+  {
+    "name": "org.eclipse.e4.core.di.extensions",
+    "version": "0.18.300.v20240413-1529",
+    "location": "org.eclipse.e4.core.di.extensions_0.18.300.v20240413-1529.jar"
+  },
+  {
+    "name": "org.eclipse.e4.core.di.extensions.supplier",
+    "version": "0.17.900.v20250609-0432",
+    "location": "org.eclipse.e4.core.di.extensions.supplier_0.17.900.v20250609-0432.jar"
+  },
+  {
+    "name": "org.eclipse.e4.core.services",
+    "version": "2.5.400.v20260430-1313",
+    "location": "org.eclipse.e4.core.services_2.5.400.v20260430-1313.jar"
+  },
+  {
+    "name": "org.eclipse.e4.emf.xpath",
+    "version": "0.6.100.v20251103-0738",
+    "location": "org.eclipse.e4.emf.xpath_0.6.100.v20251103-0738.jar"
+  },
+  {
+    "name": "org.eclipse.e4.ui.bindings",
+    "version": "0.15.200.v20260616-1114",
+    "location": "org.eclipse.e4.ui.bindings_0.15.200.v20260616-1114.jar"
+  },
+  {
+    "name": "org.eclipse.e4.ui.css.core",
+    "version": "0.14.800.v20260730-1500",
+    "location": "org.eclipse.e4.ui.css.core_0.14.800.v20260730-1500.jar"
+  },
+  {
+    "name": "org.eclipse.e4.ui.css.core.source",
+    "version": "0.14.800.v20260730-1500",
+    "location": "org.eclipse.e4.ui.css.core.source_0.14.800.v20260730-1500.jar"
+  },
+  {
+    "name": "org.eclipse.e4.ui.css.swt",
+    "version": "0.17.100.v20260730-1116",
+    "location": "org.eclipse.e4.ui.css.swt_0.17.100.v20260730-1116.jar"
+  },
+  {
+    "name": "org.eclipse.e4.ui.css.swt.theme",
+    "version": "0.15.200.v20260806-0515",
+    "location": "org.eclipse.e4.ui.css.swt.theme_0.15.200.v20260806-0515.jar"
+  },
+  {
+    "name": "org.eclipse.e4.ui.css.swt.theme.source",
+    "version": "0.15.200.v20260806-0515",
+    "location": "org.eclipse.e4.ui.css.swt.theme.source_0.15.200.v20260806-0515.jar"
+  },
+  {
+    "name": "org.eclipse.e4.ui.di",
+    "version": "1.5.700.v20250917-0901",
+    "location": "org.eclipse.e4.ui.di_1.5.700.v20250917-0901.jar"
+  },
+  {
+    "name": "org.eclipse.e4.ui.dialogs",
+    "version": "1.7.200.v20260612-1449",
+    "location": "org.eclipse.e4.ui.dialogs_1.7.200.v20260612-1449.jar"
+  },
+  {
+    "name": "org.eclipse.e4.ui.ide",
+    "version": "3.18.0.v20251217-1052",
+    "location": "org.eclipse.e4.ui.ide_3.18.0.v20251217-1052.jar"
+  },
+  {
+    "name": "org.eclipse.e4.ui.model.workbench",
+    "version": "2.4.900.v20260604-1631",
+    "location": "org.eclipse.e4.ui.model.workbench_2.4.900.v20260604-1631.jar"
+  },
+  {
+    "name": "org.eclipse.e4.ui.progress",
+    "version": "0.5.100.v20260516-1214",
+    "location": "org.eclipse.e4.ui.progress_0.5.100.v20260516-1214.jar"
+  },
+  {
+    "name": "org.eclipse.e4.ui.services",
+    "version": "1.6.700.v20260430-1313",
+    "location": "org.eclipse.e4.ui.services_1.6.700.v20260430-1313.jar"
+  },
+  {
+    "name": "org.eclipse.e4.ui.widgets",
+    "version": "1.5.0.v20251217-1052",
+    "location": "org.eclipse.e4.ui.widgets_1.5.0.v20251217-1052.jar"
+  },
+  {
+    "name": "org.eclipse.e4.ui.workbench",
+    "version": "1.18.300.v20260430-1313",
+    "location": "org.eclipse.e4.ui.workbench_1.18.300.v20260430-1313.jar"
+  },
+  {
+    "name": "org.eclipse.e4.ui.workbench.addons.swt",
+    "version": "1.6.100.v20260430-1313",
+    "location": "org.eclipse.e4.ui.workbench.addons.swt_1.6.100.v20260430-1313.jar"
+  },
+  {
+    "name": "org.eclipse.e4.ui.workbench.renderers.swt",
+    "version": "0.18.100.v20260622-1026",
+    "location": "org.eclipse.e4.ui.workbench.renderers.swt_0.18.100.v20260622-1026.jar"
+  },
+  {
+    "name": "org.eclipse.e4.ui.workbench.source",
+    "version": "1.18.300.v20260430-1313",
+    "location": "org.eclipse.e4.ui.workbench.source_1.18.300.v20260430-1313.jar"
+  },
+  {
+    "name": "org.eclipse.e4.ui.workbench.swt",
+    "version": "0.18.200.v20260707-1437",
+    "location": "org.eclipse.e4.ui.workbench.swt_0.18.200.v20260707-1437.jar"
+  },
+  {
+    "name": "org.eclipse.e4.ui.workbench3",
+    "version": "0.18.0.v20251216-1230",
+    "location": "org.eclipse.e4.ui.workbench3_0.18.0.v20251216-1230.jar"
+  },
+  {
+    "name": "org.eclipse.emf.common",
+    "version": "2.46.0.v20260704-1256",
+    "location": "org.eclipse.emf.common_2.46.0.v20260704-1256.jar"
+  },
+  {
+    "name": "org.eclipse.emf.ecore",
+    "version": "2.43.0.v20260704-1256",
+    "location": "org.eclipse.emf.ecore_2.43.0.v20260704-1256.jar"
+  },
+  {
+    "name": "org.eclipse.emf.ecore.change",
+    "version": "2.18.0.v20260704-1256",
+    "location": "org.eclipse.emf.ecore.change_2.18.0.v20260704-1256.jar"
+  },
+  {
+    "name": "org.eclipse.emf.ecore.xmi",
+    "version": "2.41.0.v20260704-1256",
+    "location": "org.eclipse.emf.ecore.xmi_2.41.0.v20260704-1256.jar"
+  },
+  {
+    "name": "org.eclipse.equinox.app",
+    "version": "1.7.600.v20251211-1038",
+    "location": "org.eclipse.equinox.app_1.7.600.v20251211-1038.jar"
+  },
+  {
+    "name": "org.eclipse.equinox.app.source",
+    "version": "1.7.600.v20251211-1038",
+    "location": "org.eclipse.equinox.app.source_1.7.600.v20251211-1038.jar"
+  },
+  {
+    "name": "org.eclipse.equinox.bidi",
+    "version": "1.5.400.v20250715-0436",
+    "location": "org.eclipse.equinox.bidi_1.5.400.v20250715-0436.jar"
+  },
+  {
+    "name": "org.eclipse.equinox.common",
+    "version": "3.21.0.v20260604-1221",
+    "location": "org.eclipse.equinox.common_3.21.0.v20260604-1221.jar"
+  },
+  {
+    "name": "org.eclipse.equinox.event",
+    "version": "1.7.300.v20250518-0609",
+    "location": "org.eclipse.equinox.event_1.7.300.v20250518-0609.jar"
+  },
+  {
+    "name": "org.eclipse.equinox.frameworkadmin",
+    "version": "2.3.600.v20260306-0554",
+    "location": "org.eclipse.equinox.frameworkadmin_2.3.600.v20260306-0554.jar"
+  },
+  {
+    "name": "org.eclipse.equinox.frameworkadmin.equinox",
+    "version": "1.3.400.v20250515-0513",
+    "location": "org.eclipse.equinox.frameworkadmin.equinox_1.3.400.v20250515-0513.jar"
+  },
+  {
+    "name": "org.eclipse.equinox.p2.artifact.repository",
+    "version": "1.5.1000.v20260713-1500",
+    "location": "org.eclipse.equinox.p2.artifact.repository_1.5.1000.v20260713-1500.jar"
+  },
+  {
+    "name": "org.eclipse.equinox.p2.artifact.repository.source",
+    "version": "1.5.1000.v20260713-1500",
+    "location": "org.eclipse.equinox.p2.artifact.repository.source_1.5.1000.v20260713-1500.jar"
+  },
+  {
+    "name": "org.eclipse.equinox.p2.core",
+    "version": "2.13.300.v20260108-1444",
+    "location": "org.eclipse.equinox.p2.core_2.13.300.v20260108-1444.jar"
+  },
+  {
+    "name": "org.eclipse.equinox.p2.director",
+    "version": "2.6.900.v20260512-1529",
+    "location": "org.eclipse.equinox.p2.director_2.6.900.v20260512-1529.jar"
+  },
+  {
+    "name": "org.eclipse.equinox.p2.directorywatcher",
+    "version": "1.4.800.v20250922-0444",
+    "location": "org.eclipse.equinox.p2.directorywatcher_1.4.800.v20250922-0444.jar"
+  },
+  {
+    "name": "org.eclipse.equinox.p2.engine",
+    "version": "2.11.200.v20260710-0940",
+    "location": "org.eclipse.equinox.p2.engine_2.11.200.v20260710-0940.jar"
+  },
+  {
+    "name": "org.eclipse.equinox.p2.engine.source",
+    "version": "2.11.200.v20260710-0940",
+    "location": "org.eclipse.equinox.p2.engine.source_2.11.200.v20260710-0940.jar"
+  },
+  {
+    "name": "org.eclipse.equinox.p2.extensionlocation",
+    "version": "1.5.700.v20250720-1526",
+    "location": "org.eclipse.equinox.p2.extensionlocation_1.5.700.v20250720-1526.jar"
+  },
+  {
+    "name": "org.eclipse.equinox.p2.garbagecollector",
+    "version": "1.3.700.v20250715-0459",
+    "location": "org.eclipse.equinox.p2.garbagecollector_1.3.700.v20250715-0459.jar"
+  },
+  {
+    "name": "org.eclipse.equinox.p2.jarprocessor",
+    "version": "1.3.700.v20260304-1232",
+    "location": "org.eclipse.equinox.p2.jarprocessor_1.3.700.v20260304-1232.jar"
+  },
+  {
+    "name": "org.eclipse.equinox.p2.metadata",
+    "version": "2.9.800.v20260727-1351",
+    "location": "org.eclipse.equinox.p2.metadata_2.9.800.v20260727-1351.jar"
+  },
+  {
+    "name": "org.eclipse.equinox.p2.metadata.repository",
+    "version": "1.5.800.v20260304-1232",
+    "location": "org.eclipse.equinox.p2.metadata.repository_1.5.800.v20260304-1232.jar"
+  },
+  {
+    "name": "org.eclipse.equinox.p2.metadata.repository.source",
+    "version": "1.5.800.v20260304-1232",
+    "location": "org.eclipse.equinox.p2.metadata.repository.source_1.5.800.v20260304-1232.jar"
+  },
+  {
+    "name": "org.eclipse.equinox.p2.operations",
+    "version": "2.7.800.v20260304-0655",
+    "location": "org.eclipse.equinox.p2.operations_2.7.800.v20260304-0655.jar"
+  },
+  {
+    "name": "org.eclipse.equinox.p2.publisher",
+    "version": "1.9.700.v20260512-1529",
+    "location": "org.eclipse.equinox.p2.publisher_1.9.700.v20260512-1529.jar"
+  },
+  {
+    "name": "org.eclipse.equinox.p2.publisher.eclipse",
+    "version": "1.6.800.v20260304-1232",
+    "location": "org.eclipse.equinox.p2.publisher.eclipse_1.6.800.v20260304-1232.jar"
+  },
+  {
+    "name": "org.eclipse.equinox.p2.repository",
+    "version": "2.9.800.v20260730-1413",
+    "location": "org.eclipse.equinox.p2.repository_2.9.800.v20260730-1413.jar"
+  },
+  {
+    "name": "org.eclipse.equinox.p2.repository.tools",
+    "version": "2.4.1000.v20260304-1232",
+    "location": "org.eclipse.equinox.p2.repository.tools_2.4.1000.v20260304-1232.jar"
+  },
+  {
+    "name": "org.eclipse.equinox.p2.repository.tools.source",
+    "version": "2.4.1000.v20260304-1232",
+    "location": "org.eclipse.equinox.p2.repository.tools.source_2.4.1000.v20260304-1232.jar"
+  },
+  {
+    "name": "org.eclipse.equinox.p2.touchpoint.eclipse",
+    "version": "2.4.600.v20250722-0413",
+    "location": "org.eclipse.equinox.p2.touchpoint.eclipse_2.4.600.v20250722-0413.jar"
+  },
+  {
+    "name": "org.eclipse.equinox.p2.ui",
+    "version": "2.9.200.v20260803-1203",
+    "location": "org.eclipse.equinox.p2.ui_2.9.200.v20260803-1203.jar"
+  },
+  {
+    "name": "org.eclipse.equinox.p2.updatesite",
+    "version": "1.3.900.v20260305-0658",
+    "location": "org.eclipse.equinox.p2.updatesite_1.3.900.v20260305-0658.jar"
+  },
+  {
+    "name": "org.eclipse.equinox.preferences",
+    "version": "3.12.100.v20251111-0704",
+    "location": "org.eclipse.equinox.preferences_3.12.100.v20251111-0704.jar"
+  },
+  {
+    "name": "org.eclipse.equinox.preferences.source",
+    "version": "3.12.100.v20251111-0704",
+    "location": "org.eclipse.equinox.preferences.source_3.12.100.v20251111-0704.jar"
+  },
+  {
+    "name": "org.eclipse.equinox.registry",
+    "version": "3.12.600.v20250906-0651",
+    "location": "org.eclipse.equinox.registry_3.12.600.v20250906-0651.jar"
+  },
+  {
+    "name": "org.eclipse.equinox.registry.source",
+    "version": "3.12.600.v20250906-0651",
+    "location": "org.eclipse.equinox.registry.source_3.12.600.v20250906-0651.jar"
+  },
+  {
+    "name": "org.eclipse.equinox.security",
+    "version": "1.4.700.v20250622-1644",
+    "location": "org.eclipse.equinox.security_1.4.700.v20250622-1644.jar"
+  },
+  {
+    "name": "org.eclipse.equinox.security.ui",
+    "version": "1.4.800.v20260604-1636",
+    "location": "org.eclipse.equinox.security.ui_1.4.800.v20260604-1636.jar"
+  },
+  {
+    "name": "org.eclipse.equinox.simpleconfigurator",
+    "version": "1.5.700.v20251111-1031",
+    "location": "org.eclipse.equinox.simpleconfigurator_1.5.700.v20251111-1031.jar"
+  },
+  {
+    "name": "org.eclipse.equinox.simpleconfigurator.manipulator",
+    "version": "2.3.700.v20260306-0556",
+    "location": "org.eclipse.equinox.simpleconfigurator.manipulator_2.3.700.v20260306-0556.jar"
+  },
+  {
+    "name": "org.eclipse.help",
+    "version": "3.11.200.v20260710-0925",
+    "location": "org.eclipse.help_3.11.200.v20260710-0925.jar"
+  },
+  {
+    "name": "org.eclipse.help.source",
+    "version": "3.11.200.v20260710-0925",
+    "location": "org.eclipse.help.source_3.11.200.v20260710-0925.jar"
+  },
+  {
+    "name": "org.eclipse.jdt.core",
+    "version": "3.47.0.v20260828-1141",
+    "location": "org.eclipse.jdt.core_3.47.0.v20260828-1141.jar"
+  },
+  {
+    "name": "org.eclipse.jdt.core.compiler.batch",
+    "version": "3.46.100.v20260826-1225",
+    "location": "org.eclipse.jdt.core.compiler.batch_3.46.100.v20260826-1225.jar"
+  },
+  {
+    "name": "org.eclipse.jdt.core.manipulation",
+    "version": "1.25.0.v20260813-1704",
+    "location": "org.eclipse.jdt.core.manipulation_1.25.0.v20260813-1704.jar"
+  },
+  {
+    "name": "org.eclipse.jdt.core.manipulation.source",
+    "version": "1.25.0.v20260813-1704",
+    "location": "org.eclipse.jdt.core.manipulation.source_1.25.0.v20260813-1704.jar"
+  },
+  {
+    "name": "org.eclipse.jdt.core.source",
+    "version": "3.47.0.v20260828-1141",
+    "location": "org.eclipse.jdt.core.source_3.47.0.v20260828-1141.jar"
+  },
+  {
+    "name": "org.eclipse.jdt.debug",
+    "version": "3.26.100.v20260714-1432",
+    "location": "org.eclipse.jdt.debug_3.26.100.v20260714-1432/"
+  },
+  {
+    "name": "org.eclipse.jdt.debug.source",
+    "version": "3.26.100.v20260714-1432",
+    "location": "org.eclipse.jdt.debug.source_3.26.100.v20260714-1432.jar"
+  },
+  {
+    "name": "org.eclipse.jdt.debug.ui",
+    "version": "3.15.500.v20260722-1406",
+    "location": "org.eclipse.jdt.debug.ui_3.15.500.v20260722-1406.jar"
+  },
+  {
+    "name": "org.eclipse.jdt.debug.ui.source",
+    "version": "3.15.500.v20260722-1406",
+    "location": "org.eclipse.jdt.debug.ui.source_3.15.500.v20260722-1406.jar"
+  },
+  {
+    "name": "org.eclipse.jdt.junit",
+    "version": "3.17.600.v20260715-0726",
+    "location": "org.eclipse.jdt.junit_3.17.600.v20260715-0726.jar"
+  },
+  {
+    "name": "org.eclipse.jdt.junit.core",
+    "version": "3.15.0.v20260713-1834",
+    "location": "org.eclipse.jdt.junit.core_3.15.0.v20260713-1834.jar"
+  },
+  {
+    "name": "org.eclipse.jdt.junit.core.source",
+    "version": "3.15.0.v20260713-1834",
+    "location": "org.eclipse.jdt.junit.core.source_3.15.0.v20260713-1834.jar"
+  },
+  {
+    "name": "org.eclipse.jdt.junit.runtime",
+    "version": "3.8.100.v20260507-0922",
+    "location": "org.eclipse.jdt.junit.runtime_3.8.100.v20260507-0922.jar"
+  },
+  {
+    "name": "org.eclipse.jdt.junit.source",
+    "version": "3.17.600.v20260715-0726",
+    "location": "org.eclipse.jdt.junit.source_3.17.600.v20260715-0726.jar"
+  },
+  {
+    "name": "org.eclipse.jdt.launching",
+    "version": "3.24.300.v20260609-0435",
+    "location": "org.eclipse.jdt.launching_3.24.300.v20260609-0435.jar"
+  },
+  {
+    "name": "org.eclipse.jdt.launching.source",
+    "version": "3.24.300.v20260609-0435",
+    "location": "org.eclipse.jdt.launching.source_3.24.300.v20260609-0435.jar"
+  },
+  {
+    "name": "org.eclipse.jdt.ui",
+    "version": "3.39.0.v20260812-2133",
+    "location": "org.eclipse.jdt.ui_3.39.0.v20260812-2133.jar"
+  },
+  {
+    "name": "org.eclipse.jdt.ui.source",
+    "version": "3.39.0.v20260812-2133",
+    "location": "org.eclipse.jdt.ui.source_3.39.0.v20260812-2133.jar"
+  },
+  {
+    "name": "org.eclipse.jface",
+    "version": "3.40.0.v20260710-0650",
+    "location": "org.eclipse.jface_3.40.0.v20260710-0650.jar"
+  },
+  {
+    "name": "org.eclipse.jface.databinding",
+    "version": "1.16.0.v20251216-1230",
+    "location": "org.eclipse.jface.databinding_1.16.0.v20251216-1230.jar"
+  },
+  {
+    "name": "org.eclipse.jface.notifications",
+    "version": "0.8.100.v20260326-1607",
+    "location": "org.eclipse.jface.notifications_0.8.100.v20260326-1607.jar"
+  },
+  {
+    "name": "org.eclipse.jface.text",
+    "version": "3.31.100.v20260814-0956",
+    "location": "org.eclipse.jface.text_3.31.100.v20260814-0956.jar"
+  },
+  {
+    "name": "org.eclipse.ltk.core.refactoring",
+    "version": "3.16.0.v20260702-0744",
+    "location": "org.eclipse.ltk.core.refactoring_3.16.0.v20260702-0744.jar"
+  },
+  {
+    "name": "org.eclipse.ltk.core.refactoring.source",
+    "version": "3.16.0.v20260702-0744",
+    "location": "org.eclipse.ltk.core.refactoring.source_3.16.0.v20260702-0744.jar"
+  },
+  {
+    "name": "org.eclipse.ltk.ui.refactoring",
+    "version": "3.14.200.v20260702-0744",
+    "location": "org.eclipse.ltk.ui.refactoring_3.14.200.v20260702-0744.jar"
+  },
+  {
+    "name": "org.eclipse.ltk.ui.refactoring.source",
+    "version": "3.14.200.v20260702-0744",
+    "location": "org.eclipse.ltk.ui.refactoring.source_3.14.200.v20260702-0744.jar"
+  },
+  {
+    "name": "org.eclipse.osgi",
+    "version": "3.24.300.v20260721-1251",
+    "location": "org.eclipse.osgi_3.24.300.v20260721-1251.jar"
+  },
+  {
+    "name": "org.eclipse.osgi.compatibility.state",
+    "version": "1.3.0.v20251022-1724",
+    "location": "org.eclipse.osgi.compatibility.state_1.3.0.v20251022-1724.jar"
+  },
+  {
+    "name": "org.eclipse.pde.bnd.ui",
+    "version": "1.2.700.v20260812-1037",
+    "location": "org.eclipse.pde.bnd.ui_1.2.700.v20260812-1037.jar"
+  },
+  {
+    "name": "org.eclipse.pde.build",
+    "version": "3.12.1000.v20260324-0702",
+    "location": "org.eclipse.pde.build_3.12.1000.v20260324-0702/"
+  },
+  {
+    "name": "org.eclipse.pde.build.source",
+    "version": "3.12.1000.v20260324-0702",
+    "location": "org.eclipse.pde.build.source_3.12.1000.v20260324-0702.jar"
+  },
+  {
+    "name": "org.eclipse.pde.core",
+    "version": "3.21.400.v20260810-0751",
+    "location": "org.eclipse.pde.core_3.21.400.v20260810-0751.jar"
+  },
+  {
+    "name": "org.eclipse.pde.core.source",
+    "version": "3.21.400.v20260810-0751",
+    "location": "org.eclipse.pde.core.source_3.21.400.v20260810-0751.jar"
+  },
+  {
+    "name": "org.eclipse.pde.ds.core",
+    "version": "1.3.900.v20260120-1314",
+    "location": "org.eclipse.pde.ds.core_1.3.900.v20260120-1314.jar"
+  },
+  {
+    "name": "org.eclipse.pde.launching",
+    "version": "3.14.0.v20260615-1349",
+    "location": "org.eclipse.pde.launching_3.14.0.v20260615-1349.jar"
+  },
+  {
+    "name": "org.eclipse.pde.launching.source",
+    "version": "3.14.0.v20260615-1349",
+    "location": "org.eclipse.pde.launching.source_3.14.0.v20260615-1349.jar"
+  },
+  {
+    "name": "org.eclipse.pde.ui",
+    "version": "3.16.600.v20260812-0659",
+    "location": "org.eclipse.pde.ui_3.16.600.v20260812-0659.jar"
+  },
+  {
+    "name": "org.eclipse.pde.ui.source",
+    "version": "3.16.600.v20260812-0659",
+    "location": "org.eclipse.pde.ui.source_3.16.600.v20260812-0659.jar"
+  },
+  {
+    "name": "org.eclipse.pde.xmlstudy.probe",
+    "version": "1.0.0",
+    "location": "org.eclipse.pde.xmlstudy.probe_1.0.0.jar"
+  },
+  {
+    "name": "org.eclipse.search",
+    "version": "3.19.0.v20260427-1401",
+    "location": "org.eclipse.search_3.19.0.v20260427-1401.jar"
+  },
+  {
+    "name": "org.eclipse.search.core",
+    "version": "3.16.700.v20260505-0615",
+    "location": "org.eclipse.search.core_3.16.700.v20260505-0615.jar"
+  },
+  {
+    "name": "org.eclipse.search.core.source",
+    "version": "3.16.700.v20260505-0615",
+    "location": "org.eclipse.search.core.source_3.16.700.v20260505-0615.jar"
+  },
+  {
+    "name": "org.eclipse.swt",
+    "version": "3.135.0.v20260819-1952",
+    "location": "org.eclipse.swt_3.135.0.v20260819-1952.jar"
+  },
+  {
+    "name": "org.eclipse.swt.gtk.linux.x86_64",
+    "version": "3.135.0.v20260819-1952",
+    "location": "org.eclipse.swt.gtk.linux.x86_64_3.135.0.v20260819-1952.jar"
+  },
+  {
+    "name": "org.eclipse.swt.svg",
+    "version": "3.133.100.v20260702-1546",
+    "location": "org.eclipse.swt.svg_3.133.100.v20260702-1546.jar"
+  },
+  {
+    "name": "org.eclipse.team.core",
+    "version": "3.10.1100.v20260612-1500",
+    "location": "org.eclipse.team.core_3.10.1100.v20260612-1500.jar"
+  },
+  {
+    "name": "org.eclipse.team.core.source",
+    "version": "3.10.1100.v20260612-1500",
+    "location": "org.eclipse.team.core.source_3.10.1100.v20260612-1500.jar"
+  },
+  {
+    "name": "org.eclipse.team.ui",
+    "version": "3.12.200.v20260608-1918",
+    "location": "org.eclipse.team.ui_3.12.200.v20260608-1918.jar"
+  },
+  {
+    "name": "org.eclipse.team.ui.source",
+    "version": "3.12.200.v20260608-1918",
+    "location": "org.eclipse.team.ui.source_3.12.200.v20260608-1918.jar"
+  },
+  {
+    "name": "org.eclipse.text",
+    "version": "3.14.800.v20260815-0849",
+    "location": "org.eclipse.text_3.14.800.v20260815-0849.jar"
+  },
+  {
+    "name": "org.eclipse.ui",
+    "version": "3.209.100.v20260703-0856",
+    "location": "org.eclipse.ui_3.209.100.v20260703-0856.jar"
+  },
+  {
+    "name": "org.eclipse.ui.cheatsheets",
+    "version": "3.9.200.v20260710-0925",
+    "location": "org.eclipse.ui.cheatsheets_3.9.200.v20260710-0925.jar"
+  },
+  {
+    "name": "org.eclipse.ui.cheatsheets.source",
+    "version": "3.9.200.v20260710-0925",
+    "location": "org.eclipse.ui.cheatsheets.source_3.9.200.v20260710-0925.jar"
+  },
+  {
+    "name": "org.eclipse.ui.console",
+    "version": "3.17.100.v20260804-1532",
+    "location": "org.eclipse.ui.console_3.17.100.v20260804-1532.jar"
+  },
+  {
+    "name": "org.eclipse.ui.console.source",
+    "version": "3.17.100.v20260804-1532",
+    "location": "org.eclipse.ui.console.source_3.17.100.v20260804-1532.jar"
+  },
+  {
+    "name": "org.eclipse.ui.editors",
+    "version": "3.22.100.v20260707-0708",
+    "location": "org.eclipse.ui.editors_3.22.100.v20260707-0708.jar"
+  },
+  {
+    "name": "org.eclipse.ui.editors.source",
+    "version": "3.22.100.v20260707-0708",
+    "location": "org.eclipse.ui.editors.source_3.22.100.v20260707-0708.jar"
+  },
+  {
+    "name": "org.eclipse.ui.externaltools",
+    "version": "3.7.100.v20260326-0937",
+    "location": "org.eclipse.ui.externaltools_3.7.100.v20260326-0937.jar"
+  },
+  {
+    "name": "org.eclipse.ui.externaltools.source",
+    "version": "3.7.100.v20260326-0937",
+    "location": "org.eclipse.ui.externaltools.source_3.7.100.v20260326-0937.jar"
+  },
+  {
+    "name": "org.eclipse.ui.forms",
+    "version": "3.14.200.v20260625-1839",
+    "location": "org.eclipse.ui.forms_3.14.200.v20260625-1839.jar"
+  },
+  {
+    "name": "org.eclipse.ui.genericeditor",
+    "version": "1.4.100.v20260516-1214",
+    "location": "org.eclipse.ui.genericeditor_1.4.100.v20260516-1214.jar"
+  },
+  {
+    "name": "org.eclipse.ui.ide",
+    "version": "3.23.200.v20260822-1631",
+    "location": "org.eclipse.ui.ide_3.23.200.v20260822-1631.jar"
+  },
+  {
+    "name": "org.eclipse.ui.ide.application",
+    "version": "1.6.200.v20260704-1759",
+    "location": "org.eclipse.ui.ide.application_1.6.200.v20260704-1759.jar"
+  },
+  {
+    "name": "org.eclipse.ui.ide.source",
+    "version": "3.23.200.v20260822-1631",
+    "location": "org.eclipse.ui.ide.source_3.23.200.v20260822-1631.jar"
+  },
+  {
+    "name": "org.eclipse.ui.intro",
+    "version": "3.8.200.v20260710-0925",
+    "location": "org.eclipse.ui.intro_3.8.200.v20260710-0925.jar"
+  },
+  {
+    "name": "org.eclipse.ui.intro.source",
+    "version": "3.8.200.v20260710-0925",
+    "location": "org.eclipse.ui.intro.source_3.8.200.v20260710-0925.jar"
+  },
+  {
+    "name": "org.eclipse.ui.navigator",
+    "version": "3.14.200.v20260731-0659",
+    "location": "org.eclipse.ui.navigator_3.14.200.v20260731-0659.jar"
+  },
+  {
+    "name": "org.eclipse.ui.navigator.resources",
+    "version": "3.10.100.v20260421-0620",
+    "location": "org.eclipse.ui.navigator.resources_3.10.100.v20260421-0620.jar"
+  },
+  {
+    "name": "org.eclipse.ui.navigator.source",
+    "version": "3.14.200.v20260731-0659",
+    "location": "org.eclipse.ui.navigator.source_3.14.200.v20260731-0659.jar"
+  },
+  {
+    "name": "org.eclipse.ui.source",
+    "version": "3.209.100.v20260703-0856",
+    "location": "org.eclipse.ui.source_3.209.100.v20260703-0856.jar"
+  },
+  {
+    "name": "org.eclipse.ui.themes",
+    "version": "1.3.0.v20260508-0854",
+    "location": "org.eclipse.ui.themes_1.3.0.v20260508-0854/"
+  },
+  {
+    "name": "org.eclipse.ui.views",
+    "version": "3.13.200.v20260703-1200",
+    "location": "org.eclipse.ui.views_3.13.200.v20260703-1200.jar"
+  },
+  {
+    "name": "org.eclipse.ui.views.log",
+    "version": "1.5.200.v20260822-1631",
+    "location": "org.eclipse.ui.views.log_1.5.200.v20260822-1631.jar"
+  },
+  {
+    "name": "org.eclipse.ui.views.properties.tabbed",
+    "version": "3.11.0.v20251217-0909",
+    "location": "org.eclipse.ui.views.properties.tabbed_3.11.0.v20251217-0909.jar"
+  },
+  {
+    "name": "org.eclipse.ui.views.properties.tabbed.source",
+    "version": "3.11.0.v20251217-0909",
+    "location": "org.eclipse.ui.views.properties.tabbed.source_3.11.0.v20251217-0909.jar"
+  },
+  {
+    "name": "org.eclipse.ui.workbench",
+    "version": "3.140.0.v20260810-1402",
+    "location": "org.eclipse.ui.workbench_3.140.0.v20260810-1402.jar"
+  },
+  {
+    "name": "org.eclipse.ui.workbench.texteditor",
+    "version": "3.20.200.v20260728-1331",
+    "location": "org.eclipse.ui.workbench.texteditor_3.20.200.v20260728-1331.jar"
+  },
+  {
+    "name": "org.eclipse.ui.workbench.texteditor.source",
+    "version": "3.20.200.v20260728-1331",
+    "location": "org.eclipse.ui.workbench.texteditor.source_3.20.200.v20260728-1331.jar"
+  },
+  {
+    "name": "org.eclipse.urischeme",
+    "version": "1.3.600.v20251023-1158",
+    "location": "org.eclipse.urischeme_1.3.600.v20251023-1158.jar"
+  },
+  {
+    "name": "org.hamcrest",
+    "version": "3.0.0",
+    "location": "org.hamcrest_3.0.0.jar"
+  },
+  {
+    "name": "org.jspecify.jspecify",
+    "version": "1.0.1",
+    "location": "org.jspecify.jspecify_1.0.1.jar"
+  },
+  {
+    "name": "org.junit",
+    "version": "4.13.2.v20240929-1000",
+    "location": "org.junit_4.13.2.v20240929-1000.jar"
+  },
+  {
+    "name": "org.objectweb.asm",
+    "version": "9.11.0",
+    "location": "org.objectweb.asm_9.11.jar"
+  },
+  {
+    "name": "org.objectweb.asm.commons",
+    "version": "9.11.0",
+    "location": "org.objectweb.asm.commons_9.11.jar"
+  },
+  {
+    "name": "org.objectweb.asm.tree",
+    "version": "9.11.0",
+    "location": "org.objectweb.asm.tree_9.11.jar"
+  },
+  {
+    "name": "org.objectweb.asm.tree.analysis",
+    "version": "9.11.0",
+    "location": "org.objectweb.asm.tree.analysis_9.11.jar"
+  },
+  {
+    "name": "org.objectweb.asm.util",
+    "version": "9.11.0",
+    "location": "org.objectweb.asm.util_9.11.jar"
+  },
+  {
+    "name": "org.opentest4j",
+    "version": "1.3.0",
+    "location": "org.opentest4j_1.3.0.jar"
+  },
+  {
+    "name": "org.osgi.namespace.contract",
+    "version": "1.0.0.201505202024",
+    "location": "org.osgi.namespace.contract_1.0.0.201505202024.jar"
+  },
+  {
+    "name": "org.osgi.namespace.extender",
+    "version": "1.0.1.201505202024",
+    "location": "org.osgi.namespace.extender_1.0.1.201505202024.jar"
+  },
+  {
+    "name": "org.osgi.namespace.service",
+    "version": "1.0.0.201505202024",
+    "location": "org.osgi.namespace.service_1.0.0.201505202024.jar"
+  },
+  {
+    "name": "org.osgi.service.component",
+    "version": "1.5.1.202212101352",
+    "location": "org.osgi.service.component_1.5.1.202212101352.jar"
+  },
+  {
+    "name": "org.osgi.service.coordinator",
+    "version": "1.0.2.201505202024",
+    "location": "org.osgi.service.coordinator_1.0.2.201505202024.jar"
+  },
+  {
+    "name": "org.osgi.service.event",
+    "version": "1.4.1.202109301733",
+    "location": "org.osgi.service.event_1.4.1.202109301733.jar"
+  },
+  {
+    "name": "org.osgi.service.metatype",
+    "version": "1.4.1.202109301733",
+    "location": "org.osgi.service.metatype_1.4.1.202109301733.jar"
+  },
+  {
+    "name": "org.osgi.service.prefs",
+    "version": "1.1.2.202109301733",
+    "location": "org.osgi.service.prefs_1.1.2.202109301733.jar"
+  },
+  {
+    "name": "org.osgi.service.repository",
+    "version": "1.1.0.201505202024",
+    "location": "org.osgi.service.repository_1.1.0.201505202024.jar"
+  },
+  {
+    "name": "org.osgi.util.function",
+    "version": "1.2.0.202109301733",
+    "location": "org.osgi.util.function_1.2.0.202109301733.jar"
+  },
+  {
+    "name": "org.osgi.util.promise",
+    "version": "1.3.0.202212101352",
+    "location": "org.osgi.util.promise_1.3.0.202212101352.jar"
+  },
+  {
+    "name": "org.sat4j.core",
+    "version": "2.3.6.v20201214",
+    "location": "org.sat4j.core_2.3.6.v20201214.jar"
+  },
+  {
+    "name": "org.sat4j.pb",
+    "version": "2.3.6.v20201214",
+    "location": "org.sat4j.pb_2.3.6.v20201214.jar"
+  },
+  {
+    "name": "org.tukaani.xz",
+    "version": "1.12.0",
+    "location": "org.tukaani.xz_1.12.jar"
+  },
+  {
+    "name": "slf4j.api",
+    "version": "2.0.20",
+    "location": "slf4j.api_2.0.20.jar"
+  },
+  {
+    "name": "slf4j.simple",
+    "version": "2.0.20",
+    "location": "slf4j.simple_2.0.20.jar"
+  }
+]
