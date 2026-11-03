@@ -44,7 +44,7 @@ public class StorageSchemaDescriptor implements ISchemaDescriptor {
 	protected void loadSchema(boolean abbreviated) {
 		fSchema = new Schema(this, null, false);
 		try (InputStream stream = fStorage.getContents()) {
-			fSchema.load(fStorage.getContents());
+			fSchema.load(stream);
 		} catch (CoreException | IOException e) {
 			PDECore.logException(e);
 		}

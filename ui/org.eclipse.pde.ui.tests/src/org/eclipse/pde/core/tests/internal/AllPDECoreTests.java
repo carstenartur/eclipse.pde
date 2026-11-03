@@ -1,6 +1,7 @@
 package org.eclipse.pde.core.tests.internal;
 
 import org.eclipse.pde.core.tests.internal.core.builders.DependencyLoopFinderTest;
+import org.eclipse.pde.core.tests.internal.schema.StorageSchemaDescriptorTest;
 import org.junit.platform.suite.api.SelectClasses;
 import org.junit.platform.suite.api.Suite;
 
@@ -12,6 +13,7 @@ import org.junit.platform.suite.api.Suite;
 	WorkspaceModelManagerTest.class, //
 	WorkspaceProductModelManagerTest.class, //
 	ModelManagerBackgroundInitializationTest.class, //
+	StorageSchemaDescriptorTest.class, //
 })
 public class AllPDECoreTests {
 }
