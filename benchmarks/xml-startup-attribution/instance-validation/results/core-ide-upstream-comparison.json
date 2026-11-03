@@ -1,0 +1,26 @@
+{
+  "observedOn": "2026-11-03",
+  "method": "GitHub source retrieval at pinned upstream refs; exact UTF-8 byte comparison against frozen corpus",
+  "files": [
+    {
+      "repo": "eclipse-platform/eclipse.platform",
+      "ref": "8719d5bc6f634ec397219fea5596a944cd6f8aa0",
+      "path": "runtime/bundles/org.eclipse.core.expressions/schema/expressionLanguage.exsd",
+      "local": "org.eclipse.core.expressions/schema/expressionLanguage.exsd",
+      "url": "https://api.github.com/repos/eclipse-platform/eclipse.platform/contents/runtime/bundles/org.eclipse.core.expressions/schema/expressionLanguage.exsd?ref=8719d5bc6f634ec397219fea5596a944cd6f8aa0",
+      "bytes": 21525,
+      "sha256": "c2ac781d85656d41b52aa8a2d831951877ddcd3b7a061e1eff869a941b888e00",
+      "matchesFrozen": true
+    },
+    {
+      "repo": "eclipse-platform/eclipse.platform.ui",
+      "ref": "97d1485879a8b9d245c8971bbe6276912765c9e1",
+      "path": "bundles/org.eclipse.ui.ide/schema/projectConfigurators.exsd",
+      "local": "org.eclipse.ui.ide/schema/projectConfigurators.exsd",
+      "url": "https://api.github.com/repos/eclipse-platform/eclipse.platform.ui/contents/bundles/org.eclipse.ui.ide/schema/projectConfigurators.exsd?ref=97d1485879a8b9d245c8971bbe6276912765c9e1",
+      "bytes": 6038,
+      "sha256": "612fa084f98529d0020a1c029f4c2f232badf8f8d599ae5719c215e8d89e9c46",
+      "matchesFrozen": true
+    }
+  ]
+}

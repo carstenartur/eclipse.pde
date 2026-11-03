@@ -3,6 +3,13 @@
 Study date: 2026-11-03. This branch contains two small, independently usable
 repairs and an experiment. It does not change the reviewed text-coalescing PR.
 
+**Follow-up:** [Actual extension-instance validation](instance-validation/README.md)
+now covers 939 contributions in all 83 configured production XML descriptors.
+It records schema/runtime inconsistencies, targeted schema patches, and actual
+missing production resources whose repeated-load diagnostic drops from 25
+attempts to one after authentic resource restoration. These findings extend
+the original schema-only checks below; they are not new startup timing data.
+
 ## Findings
 
 - A malformed or incompletely loadable schema can be parsed repeatedly even

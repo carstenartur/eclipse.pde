@@ -1,0 +1,11 @@
+--- a/bundles/org.eclipse.ui/schema/commands.exsd
++++ b/bundles/org.eclipse.ui/schema/commands.exsd
+@@ -369,7 +369,7 @@
+       </annotation>
+       <complexType>
+          <sequence>
+-            <element ref="parameter"/>
++            <element ref="parameter" minOccurs="0" maxOccurs="unbounded"/>
+          </sequence>
+          <attribute name="class" type="string" use="required">
+             <annotation>

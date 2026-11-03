@@ -1,0 +1,26 @@
+{
+  "observedOn": "2026-11-03",
+  "repository": "eclipse-platform/eclipse.platform.ui",
+  "ref": "97d1485879a8b9d245c8971bbe6276912765c9e1",
+  "method": "Retrieve each file at the pinned upstream ref via GitHub; compare the exact UTF-8 bytes with the frozen corpus, retaining SHA-256",
+  "files": [
+    {
+      "path": "org.eclipse.ui/schema/commands.exsd",
+      "bytes": 43190,
+      "sha256": "4dabce123c73fd0a19a82ad3e85f2a0945cdd12a9278c8c5615aae25f33c7a74",
+      "matchesFrozen": true
+    },
+    {
+      "path": "org.eclipse.e4.ui.css.core/schema/org.eclipse.e4.ui.css.core.elementProvider.exsd",
+      "bytes": 5099,
+      "sha256": "e25c9360cb07b54458e48f11142dae93eb4ee42ab54fec634e3be01dd1d5a603",
+      "matchesFrozen": true
+    },
+    {
+      "path": "org.eclipse.ui.navigator/schema/navigatorContent.exsd",
+      "bytes": 54224,
+      "sha256": "7651c18eab1bb064ab81163f441c32e83e70030886ffc3edce65047b8c1795bf",
+      "matchesFrozen": true
+    }
+  ]
+}

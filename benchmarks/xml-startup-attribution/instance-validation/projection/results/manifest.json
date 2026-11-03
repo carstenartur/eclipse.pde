@@ -1,0 +1,384 @@
+{
+  "formatVersion": 1,
+  "scope": "Existing projection and consumer evidence retained without rerunning experiments; original file bytes preserved.",
+  "members": [
+    {
+      "path": "audits/projected-findings-classification.json",
+      "bytes": 379965,
+      "sha256": "eaf8789ad5f11d4d537cf7cc4fd12cd329f3fc091a3b2655df3229cb789c95d6",
+      "source": "/workspace/scratch/a8e2e1882d42/verification/instance-validation/projected-findings-classification.json"
+    },
+    {
+      "path": "audits/projected-findings-final-repaired.json",
+      "bytes": 316503,
+      "sha256": "76ee10c87af83450d41224875202b155b6cfa515420d1367584dcb373b01aedb",
+      "source": "/workspace/scratch/a8e2e1882d42/verification/instance-validation/projected-findings-final-repaired.json"
+    },
+    {
+      "path": "audits/projected-findings-four-repaired.json",
+      "bytes": 309584,
+      "sha256": "201197806b12d4b25cf92de6862a5c2620e552088a3ce62c434c78ebffcd6e57",
+      "source": "/workspace/scratch/a8e2e1882d42/verification/instance-validation/projected-findings-four-repaired.json"
+    },
+    {
+      "path": "audits/projected-findings-repaired.json",
+      "bytes": 309821,
+      "sha256": "69f49ca3f55f16f8584be3c8cae0406addded5f5429d301944c6ccb9661b9c51",
+      "source": "/workspace/scratch/a8e2e1882d42/verification/instance-validation/projected-findings-repaired.json"
+    },
+    {
+      "path": "audits/projected-grammar-baseline.json",
+      "bytes": 1027312,
+      "sha256": "5167504320799843a5a162f6332ddc8aa905fd7873b924be8c7e6065873472d2",
+      "source": "/workspace/scratch/a8e2e1882d42/verification/instance-validation/projected-grammar-baseline.json"
+    },
+    {
+      "path": "audits/projected-grammar-final-repaired.json",
+      "bytes": 1011314,
+      "sha256": "1769f6d2efd492e88994101b99c466cd7cf132e74a3d6087cc987cd6c29d6bdf",
+      "source": "/workspace/scratch/a8e2e1882d42/verification/instance-validation/projected-grammar-final-repaired.json"
+    },
+    {
+      "path": "audits/projected-grammar-four-repaired.json",
+      "bytes": 1007285,
+      "sha256": "5bb1e2dcc06fc90d0dddc3762e4f56c18a16af690efb3286371b651cc6855151",
+      "source": "/workspace/scratch/a8e2e1882d42/verification/instance-validation/projected-grammar-four-repaired.json"
+    },
+    {
+      "path": "audits/projected-grammar-repaired.json",
+      "bytes": 1007388,
+      "sha256": "aba856dcb4743a34ea028f47b0dea06ed3008eb60d2de12c3a7e31c9f8ed974d",
+      "source": "/workspace/scratch/a8e2e1882d42/verification/instance-validation/projected-grammar-repaired.json"
+    },
+    {
+      "path": "consumer-source-members/org/eclipse/core/internal/registry/ConfigurationElement.java",
+      "bytes": 9690,
+      "sha256": "dad7049d1f6332d572f5471300926f2e12c102e5299a5bb81dd7a538a42bbd0a",
+      "source": "/workspace/scratch/a8e2e1882d42/verification/startup-environment/reference-ide/plugins/org.eclipse.equinox.registry.source_3.12.600.v20250906-0651.jar!/org/eclipse/core/internal/registry/ConfigurationElement.java"
+    },
+    {
+      "path": "consumer-source-members/org/eclipse/e4/ui/css/core/impl/engine/RegistryCSSElementProvider.java",
+      "bytes": 3376,
+      "sha256": "363873cc699b41943f57022dcff20109913246fc6edae5592620b5ece57937d1",
+      "source": "/workspace/scratch/a8e2e1882d42/verification/startup-environment/reference-ide/plugins/org.eclipse.e4.ui.css.core.source_0.14.800.v20260730-1500.jar!/org/eclipse/e4/ui/css/core/impl/engine/RegistryCSSElementProvider.java"
+    },
+    {
+      "path": "consumer-source-members/org/eclipse/ui/internal/navigator/actions/CommonActionProviderDescriptor.java",
+      "bytes": 13932,
+      "sha256": "0d9a53f453f14bf5b4f26b0e14c51d6e32e106cbe66585a37394033972ee6a18",
+      "source": "/workspace/scratch/a8e2e1882d42/verification/startup-environment/reference-ide/plugins/org.eclipse.ui.navigator.source_3.14.200.v20260731-0659.jar!/org/eclipse/ui/internal/navigator/actions/CommonActionProviderDescriptor.java"
+    },
+    {
+      "path": "consumer-source-members/org/eclipse/ui/internal/navigator/extensions/NavigatorContentDescriptor.java",
+      "bytes": 16032,
+      "sha256": "a7c6c0dafe18152faa6fa96e43fb58be30e28ac01bb9eb4ca608128dd8eded36",
+      "source": "/workspace/scratch/a8e2e1882d42/verification/startup-environment/reference-ide/plugins/org.eclipse.ui.navigator.source_3.14.200.v20260731-0659.jar!/org/eclipse/ui/internal/navigator/extensions/NavigatorContentDescriptor.java"
+    },
+    {
+      "path": "consumer-source-members/org/eclipse/ui/internal/navigator/wizards/CommonWizardDescriptor.java",
+      "bytes": 7700,
+      "sha256": "be7e6d4b230dcc942ce9950f7500906b3372eb4577d2b2c0254b99de28d02407",
+      "source": "/workspace/scratch/a8e2e1882d42/verification/startup-environment/reference-ide/plugins/org.eclipse.ui.navigator.source_3.14.200.v20260731-0659.jar!/org/eclipse/ui/internal/navigator/wizards/CommonWizardDescriptor.java"
+    },
+    {
+      "path": "excluded/consumer-contract-checks-excluded-standalone.json",
+      "bytes": 1374,
+      "sha256": "468e9f403192b89cad179fe259ca6532e11f55b7b6c4734312e20670eda0bf5a",
+      "source": "/workspace/scratch/a8e2e1882d42/verification/instance-validation/consumer-contract-checks-excluded-standalone.json"
+    },
+    {
+      "path": "inventories/corpus-final-repaired/corpus-manifest.json",
+      "bytes": 1816083,
+      "sha256": "5dcebc14378c386beb17b6339c80b8cdd4b50c1f2e39cd014f92797edc2d13d8",
+      "source": "/workspace/scratch/a8e2e1882d42/verification/instance-validation/corpus-final-repaired/corpus-manifest.json"
+    },
+    {
+      "path": "inventories/corpus-four-repaired/corpus-manifest.json",
+      "bytes": 1815057,
+      "sha256": "1a812789713c01be4a776c263cbb8d720b133d02b60f50555a634205dd1a268d",
+      "source": "/workspace/scratch/a8e2e1882d42/verification/instance-validation/corpus-four-repaired/corpus-manifest.json"
+    },
+    {
+      "path": "inventories/corpus-repaired/corpus-manifest.json",
+      "bytes": 1811751,
+      "sha256": "e3edc60852e7870b7447e0f1ec4ae7e216149e0cffb87fd462611942a2c11b91",
+      "source": "/workspace/scratch/a8e2e1882d42/verification/instance-validation/corpus-repaired/corpus-manifest.json"
+    },
+    {
+      "path": "inventories/corpus/corpus-manifest.json",
+      "bytes": 1806785,
+      "sha256": "4c4e76f48e8f0649395bc40ee963688b44915d936927fa04a8b91cf951bcc745",
+      "source": "/workspace/scratch/a8e2e1882d42/verification/instance-validation/corpus/corpus-manifest.json"
+    },
+    {
+      "path": "proof/HandlerPersistence-bytecode.txt",
+      "bytes": 21071,
+      "sha256": "a807a2c021f50745d9ba74e573a8c6be100700c3e1aff1db301584befd274b52",
+      "source": "/workspace/scratch/a8e2e1882d42/verification/instance-validation/HandlerPersistence-bytecode.txt"
+    },
+    {
+      "path": "proof/HandlerProxy-bytecode.txt",
+      "bytes": 39361,
+      "sha256": "9547aff4e2276c9df9db9e205e7923e23477ba7a9ff79c398e478b618206c8a0",
+      "source": "/workspace/scratch/a8e2e1882d42/verification/instance-validation/HandlerProxy-bytecode.txt"
+    },
+    {
+      "path": "proof/consumer-contract-checks-osgi.json",
+      "bytes": 48524,
+      "sha256": "fd2d08f063ba443ad776d3591579bea7e12f11dd7fdfeeffa847eaaee2fbcf2c",
+      "source": "/workspace/scratch/a8e2e1882d42/verification/instance-validation/consumer-contract-checks-osgi.json"
+    },
+    {
+      "path": "proof/extra-consumer-build/ExtraConsumerProbe$CapturingHandler.class",
+      "bytes": 780,
+      "sha256": "006aa60b6ce12414581ba0a1d2a4c6f7384b6ef9e136ff268939555d5c0322be",
+      "source": "/workspace/scratch/a8e2e1882d42/verification/instance-validation/extra-consumer-build/ExtraConsumerProbe$CapturingHandler.class"
+    },
+    {
+      "path": "proof/extra-consumer-build/ExtraConsumerProbe$ProviderA.class",
+      "bytes": 387,
+      "sha256": "47c3c4b4f3a660c6e5486bb7ab8c8afb3293f9ae0ac401a265ec15b53398d019",
+      "source": "/workspace/scratch/a8e2e1882d42/verification/instance-validation/extra-consumer-build/ExtraConsumerProbe$ProviderA.class"
+    },
+    {
+      "path": "proof/extra-consumer-build/ExtraConsumerProbe$ProviderB.class",
+      "bytes": 387,
+      "sha256": "ffa12fb170bf9bac7faf6d616b60c83fd81bfec9a0b4c39e99ab39b6386f87c7",
+      "source": "/workspace/scratch/a8e2e1882d42/verification/instance-validation/extra-consumer-build/ExtraConsumerProbe$ProviderB.class"
+    },
+    {
+      "path": "proof/extra-consumer-build/ExtraConsumerProbe$ProviderC.class",
+      "bytes": 387,
+      "sha256": "81b81432d165aee7150521287e8fdcaefd9e0289fe3435084812f93c2e6a3f1f",
+      "source": "/workspace/scratch/a8e2e1882d42/verification/instance-validation/extra-consumer-build/ExtraConsumerProbe$ProviderC.class"
+    },
+    {
+      "path": "proof/extra-consumer-build/ExtraConsumerProbe$ReturningProvider.class",
+      "bytes": 1128,
+      "sha256": "01789e0e618e3c6a87a98be5357b5383777426d6b92c50351ca8cfe4e937a4ab",
+      "source": "/workspace/scratch/a8e2e1882d42/verification/instance-validation/extra-consumer-build/ExtraConsumerProbe$ReturningProvider.class"
+    },
+    {
+      "path": "proof/extra-consumer-build/ExtraConsumerProbe$WidgetA.class",
+      "bytes": 302,
+      "sha256": "69008346d8bc6d7cf906aeacefe09678aadda5d6a413927ae65df93a8eb4e711",
+      "source": "/workspace/scratch/a8e2e1882d42/verification/instance-validation/extra-consumer-build/ExtraConsumerProbe$WidgetA.class"
+    },
+    {
+      "path": "proof/extra-consumer-build/ExtraConsumerProbe$WidgetB.class",
+      "bytes": 302,
+      "sha256": "2a1230be67f260d339a8f3664618fe76f76cf83c61de0f22229372c664e87a16",
+      "source": "/workspace/scratch/a8e2e1882d42/verification/instance-validation/extra-consumer-build/ExtraConsumerProbe$WidgetB.class"
+    },
+    {
+      "path": "proof/extra-consumer-build/ExtraConsumerProbe$WidgetC.class",
+      "bytes": 302,
+      "sha256": "18d5e4114d21dd2ea2a76fac5ee3cce651c92fcb04c1be2f4efc4b4324906b4d",
+      "source": "/workspace/scratch/a8e2e1882d42/verification/instance-validation/extra-consumer-build/ExtraConsumerProbe$WidgetC.class"
+    },
+    {
+      "path": "proof/extra-consumer-build/ExtraConsumerProbe.class",
+      "bytes": 7104,
+      "sha256": "625f81e9f3b0a82a31e849dd0e32fcaedd0752f454e5e6ff396296b9f995c995",
+      "source": "/workspace/scratch/a8e2e1882d42/verification/instance-validation/extra-consumer-build/ExtraConsumerProbe.class"
+    },
+    {
+      "path": "proof/extra-consumer-contract-checks.json",
+      "bytes": 1330,
+      "sha256": "313cab08b854b7413c1f7c0d20c8bfcfb17165c3e95c1a7050cc0748086697bc",
+      "source": "/workspace/scratch/a8e2e1882d42/verification/instance-validation/extra-consumer-contract-checks.json"
+    },
+    {
+      "path": "proof/extra-repair-source-evidence.json",
+      "bytes": 6600,
+      "sha256": "6a9acff21b8687f9db359c6fe6a7e90b3c8cd49074a6c022712214ead3d28a95",
+      "source": "/workspace/scratch/a8e2e1882d42/verification/instance-validation/extra-repair-source-evidence.json"
+    },
+    {
+      "path": "proof/navigator-companion-evidence.json",
+      "bytes": 4134,
+      "sha256": "0dc5b87997cadc93911f6dcc5855cddf8bc541baeac7f373e3597729413416ab",
+      "source": "/workspace/scratch/a8e2e1882d42/verification/instance-validation/navigator-companion-evidence.json"
+    },
+    {
+      "path": "schema-inputs/final/projects/org.eclipse.core.expressions/schema/expressionLanguage.exsd",
+      "bytes": 21497,
+      "sha256": "89467ca082951896cff9f726246107c50016937888cc468e3ee455eb358d2de3",
+      "source": "/workspace/scratch/a8e2e1882d42/verification/instance-validation/corpus-final-repaired/projects/org.eclipse.core.expressions/schema/expressionLanguage.exsd"
+    },
+    {
+      "path": "schema-inputs/final/projects/org.eclipse.e4.ui.css.core/schema/org.eclipse.e4.ui.css.core.elementProvider.exsd",
+      "bytes": 5121,
+      "sha256": "58d7f71e1f1750a8850aee53e6bc883ca8e03f72e56719249fd501cfe426242a",
+      "source": "/workspace/scratch/a8e2e1882d42/verification/instance-validation/corpus-final-repaired/projects/org.eclipse.e4.ui.css.core/schema/org.eclipse.e4.ui.css.core.elementProvider.exsd"
+    },
+    {
+      "path": "schema-inputs/final/projects/org.eclipse.ui.ide/schema/projectConfigurators.exsd",
+      "bytes": 6449,
+      "sha256": "241987739e61352846c6ec5e5d28da8b903c98fda7e225f0e982dd727a22e91a",
+      "source": "/workspace/scratch/a8e2e1882d42/verification/instance-validation/corpus-final-repaired/projects/org.eclipse.ui.ide/schema/projectConfigurators.exsd"
+    },
+    {
+      "path": "schema-inputs/final/projects/org.eclipse.ui.navigator/schema/navigatorContent.exsd",
+      "bytes": 54220,
+      "sha256": "4f9093bbf56e1870d33072176d56c9a4a5c40450a06907b1d773a80080154105",
+      "source": "/workspace/scratch/a8e2e1882d42/verification/instance-validation/corpus-final-repaired/projects/org.eclipse.ui.navigator/schema/navigatorContent.exsd"
+    },
+    {
+      "path": "schema-inputs/final/projects/org.eclipse.ui/schema/commands.exsd",
+      "bytes": 43226,
+      "sha256": "70f253d2deebe61677d1a6b35a20a1cf49d41e7e3dae77555cf5a543741ea7fd",
+      "source": "/workspace/scratch/a8e2e1882d42/verification/instance-validation/corpus-final-repaired/projects/org.eclipse.ui/schema/commands.exsd"
+    },
+    {
+      "path": "schema-inputs/original/projects/org.eclipse.core.expressions/schema/expressionLanguage.exsd",
+      "bytes": 21525,
+      "sha256": "c2ac781d85656d41b52aa8a2d831951877ddcd3b7a061e1eff869a941b888e00",
+      "source": "/workspace/scratch/a8e2e1882d42/verification/instance-validation/corpus/projects/org.eclipse.core.expressions/schema/expressionLanguage.exsd"
+    },
+    {
+      "path": "schema-inputs/original/projects/org.eclipse.e4.ui.css.core/schema/org.eclipse.e4.ui.css.core.elementProvider.exsd",
+      "bytes": 5099,
+      "sha256": "e25c9360cb07b54458e48f11142dae93eb4ee42ab54fec634e3be01dd1d5a603",
+      "source": "/workspace/scratch/a8e2e1882d42/verification/instance-validation/corpus/projects/org.eclipse.e4.ui.css.core/schema/org.eclipse.e4.ui.css.core.elementProvider.exsd"
+    },
+    {
+      "path": "schema-inputs/original/projects/org.eclipse.ui.ide/schema/projectConfigurators.exsd",
+      "bytes": 6038,
+      "sha256": "612fa084f98529d0020a1c029f4c2f232badf8f8d599ae5719c215e8d89e9c46",
+      "source": "/workspace/scratch/a8e2e1882d42/verification/instance-validation/corpus/projects/org.eclipse.ui.ide/schema/projectConfigurators.exsd"
+    },
+    {
+      "path": "schema-inputs/original/projects/org.eclipse.ui.navigator/schema/navigatorContent.exsd",
+      "bytes": 54224,
+      "sha256": "7651c18eab1bb064ab81163f441c32e83e70030886ffc3edce65047b8c1795bf",
+      "source": "/workspace/scratch/a8e2e1882d42/verification/instance-validation/corpus/projects/org.eclipse.ui.navigator/schema/navigatorContent.exsd"
+    },
+    {
+      "path": "schema-inputs/original/projects/org.eclipse.ui/schema/commands.exsd",
+      "bytes": 43190,
+      "sha256": "4dabce123c73fd0a19a82ad3e85f2a0945cdd12a9278c8c5615aae25f33c7a74",
+      "source": "/workspace/scratch/a8e2e1882d42/verification/instance-validation/corpus/projects/org.eclipse.ui/schema/commands.exsd"
+    },
+    {
+      "path": "test-records/final-python-tests.json",
+      "bytes": 967,
+      "sha256": "ad12158a389747a2b114f0a80413ea37bb0e86f4847876147a19edace28f3171",
+      "source": "/workspace/scratch/a8e2e1882d42/pde-xml-startup-study/benchmarks/xml-startup-attribution/instance-validation/results/final-python-tests.json"
+    },
+    {
+      "path": "test-records/schema-repairs-red-green.json",
+      "bytes": 9958,
+      "sha256": "cd155cdb3231db20b78b43354c594d7aa2a867161b5c03976c9fcad966b3e62a",
+      "source": "/workspace/scratch/a8e2e1882d42/pde-xml-startup-study/benchmarks/xml-startup-attribution/instance-validation/fixes/results/schema-repairs-red-green.json"
+    },
+    {
+      "path": "tool-snapshot/fixes/ConsumerContractProbe.java",
+      "bytes": 4281,
+      "sha256": "978a43cb545db1dd7b4b265f40e79da54135eabfdc708c251ebcd35c84d000ca",
+      "source": "/workspace/scratch/a8e2e1882d42/pde-xml-startup-study/benchmarks/xml-startup-attribution/instance-validation/fixes/ConsumerContractProbe.java"
+    },
+    {
+      "path": "tool-snapshot/fixes/prepare_repairs.py",
+      "bytes": 5991,
+      "sha256": "32ebea03016686d24755c972d928af61aff21d8bc7917499445e846fbc43fd0f",
+      "source": "/workspace/scratch/a8e2e1882d42/pde-xml-startup-study/benchmarks/xml-startup-attribution/instance-validation/fixes/prepare_repairs.py"
+    },
+    {
+      "path": "tool-snapshot/fixes/test_schema_repairs.py",
+      "bytes": 3163,
+      "sha256": "29ef5ed1eb9d02594f898b18ed8a4b108fd530a22dc329c2af5673f35c4c8235",
+      "source": "/workspace/scratch/a8e2e1882d42/pde-xml-startup-study/benchmarks/xml-startup-attribution/instance-validation/fixes/test_schema_repairs.py"
+    },
+    {
+      "path": "tool-snapshot/projection/README.md",
+      "bytes": 12390,
+      "sha256": "5c52bff2a020653e74f31e0a7ef0fef43ec9efd337c618c629be64ca539e65e1",
+      "source": "/workspace/scratch/a8e2e1882d42/pde-xml-startup-study/benchmarks/xml-startup-attribution/instance-validation/projection/README.md"
+    },
+    {
+      "path": "tool-snapshot/projection/classify_findings.py",
+      "bytes": 7914,
+      "sha256": "cc14cc1a3652244e8d991f0dfb5beb15afc4d9152b1cc4fc98d2b9e91af5775d",
+      "source": "/workspace/scratch/a8e2e1882d42/pde-xml-startup-study/benchmarks/xml-startup-attribution/instance-validation/projection/classify_findings.py"
+    },
+    {
+      "path": "tool-snapshot/projection/extra-repairs/ExtraConsumerProbe.java",
+      "bytes": 7677,
+      "sha256": "99ec44c09b9a7e2ac1fb4da4bf60c3bb7a3efeaa1fb3a53c8cbea1d89b67c939",
+      "source": "/workspace/scratch/a8e2e1882d42/pde-xml-startup-study/benchmarks/xml-startup-attribution/instance-validation/projection/extra-repairs/ExtraConsumerProbe.java"
+    },
+    {
+      "path": "tool-snapshot/projection/extra-repairs/patches/default-handler-parameters.patch",
+      "bytes": 411,
+      "sha256": "37ea4f3eb45a307552328539f08bc3f61d8f2246be6819dc75de540d410e22de",
+      "source": "/workspace/scratch/a8e2e1882d42/pde-xml-startup-study/benchmarks/xml-startup-attribution/instance-validation/projection/extra-repairs/patches/default-handler-parameters.patch"
+    },
+    {
+      "path": "tool-snapshot/projection/extra-repairs/patches/multiple-element-providers.patch",
+      "bytes": 485,
+      "sha256": "3a70e381f34f9745452e23d725fa3494926eebb2689740a69de71035cc52a25b",
+      "source": "/workspace/scratch/a8e2e1882d42/pde-xml-startup-study/benchmarks/xml-startup-attribution/instance-validation/projection/extra-repairs/patches/multiple-element-providers.patch"
+    },
+    {
+      "path": "tool-snapshot/projection/extra-repairs/patches/navigator-enablement-companion.patch",
+      "bytes": 653,
+      "sha256": "871f2ad9b200670c724a441e07950f1bcd46adc6f34305711297ec18af650ff9",
+      "source": "/workspace/scratch/a8e2e1882d42/pde-xml-startup-study/benchmarks/xml-startup-attribution/instance-validation/projection/extra-repairs/patches/navigator-enablement-companion.patch"
+    },
+    {
+      "path": "tool-snapshot/projection/extra-repairs/prepare_extra_repairs.py",
+      "bytes": 6597,
+      "sha256": "5226567cb5bd96febd02f9b024c0e0349179a9d45da141d3cb6c8e103349a6ff",
+      "source": "/workspace/scratch/a8e2e1882d42/pde-xml-startup-study/benchmarks/xml-startup-attribution/instance-validation/projection/extra-repairs/prepare_extra_repairs.py"
+    },
+    {
+      "path": "tool-snapshot/projection/extra-repairs/run_extra_consumer_checks.py",
+      "bytes": 2247,
+      "sha256": "64609ea0ccd76e8fe003d45e4dc740f2d6b2786ad17ffb3283038a8bd2d63e70",
+      "source": "/workspace/scratch/a8e2e1882d42/pde-xml-startup-study/benchmarks/xml-startup-attribution/instance-validation/projection/extra-repairs/run_extra_consumer_checks.py"
+    },
+    {
+      "path": "tool-snapshot/projection/extra-repairs/test_extra_schema_repairs.py",
+      "bytes": 3467,
+      "sha256": "3b7b54dc33e2a4a1d6d4f17886fbdb96ddb7f4f75858c6409f972b7df7d73113",
+      "source": "/workspace/scratch/a8e2e1882d42/pde-xml-startup-study/benchmarks/xml-startup-attribution/instance-validation/projection/extra-repairs/test_extra_schema_repairs.py"
+    },
+    {
+      "path": "tool-snapshot/projection/extra-repairs/test_navigator_companion.py",
+      "bytes": 2120,
+      "sha256": "23a13ec033343b224f1f110f282073b101e20f2521308f8956f700d5cccfc684",
+      "source": "/workspace/scratch/a8e2e1882d42/pde-xml-startup-study/benchmarks/xml-startup-attribution/instance-validation/projection/extra-repairs/test_navigator_companion.py"
+    },
+    {
+      "path": "tool-snapshot/projection/project_grammar.py",
+      "bytes": 13805,
+      "sha256": "223ca183296ae2cf80a81bd4806d4d15539e1c0560f2f20ed08d88c03dbf5989",
+      "source": "/workspace/scratch/a8e2e1882d42/pde-xml-startup-study/benchmarks/xml-startup-attribution/instance-validation/projection/project_grammar.py"
+    },
+    {
+      "path": "tool-snapshot/projection/test_classification.py",
+      "bytes": 3463,
+      "sha256": "306458d08fc34d42c57f596e3d0dee5cbad2476cf46af5caca4ed7d91bab4d7d",
+      "source": "/workspace/scratch/a8e2e1882d42/pde-xml-startup-study/benchmarks/xml-startup-attribution/instance-validation/projection/test_classification.py"
+    },
+    {
+      "path": "tool-snapshot/projection/test_projection.py",
+      "bytes": 10531,
+      "sha256": "b64cacab43938a98ef5c720c892fa2e928d6084e9949ed360e8b785e2c3e8f00",
+      "source": "/workspace/scratch/a8e2e1882d42/pde-xml-startup-study/benchmarks/xml-startup-attribution/instance-validation/projection/test_projection.py"
+    },
+    {
+      "path": "transitions/projected-grammar-final-transitions.json",
+      "bytes": 18798,
+      "sha256": "2945bc6eafa61842db424d2597cf01cc9420e77f7fc529e99f9a3607919242aa",
+      "source": "/workspace/scratch/a8e2e1882d42/verification/instance-validation/projected-grammar-final-transitions.json"
+    },
+    {
+      "path": "transitions/projected-grammar-transitions.json",
+      "bytes": 12156,
+      "sha256": "bcfb0c261f0ff8fe1081674c95969cafbfbd2e84734981771cd1e85053f45c83",
+      "source": "/workspace/scratch/a8e2e1882d42/verification/instance-validation/projected-grammar-transitions.json"
+    }
+  ]
+}

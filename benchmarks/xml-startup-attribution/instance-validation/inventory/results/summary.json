@@ -1,0 +1,125 @@
+{
+  "formatVersion": 1,
+  "pythonVersion": "3.12.14",
+  "parserVersions": {
+    "lxml": [
+      6,
+      1,
+      1,
+      0
+    ],
+    "libxml2": [
+      2,
+      14,
+      6
+    ]
+  },
+  "baseline": {
+    "configuredBundles": 243,
+    "configuredBinaryBundles": 193,
+    "productionBinaryBundles": 192,
+    "excludedInstrumentationBundles": 1,
+    "configuredSourceBundles": 50,
+    "projects": 83,
+    "descriptorFiles": 83,
+    "pluginXmlFiles": 83,
+    "fragmentXmlFiles": 0,
+    "schemaFiles": 298,
+    "schemaBytes": 2337930,
+    "binarySchemaFiles": 39,
+    "sourceSchemaFiles": 259,
+    "extensionPointDeclarations": 293,
+    "extensionContributions": 939,
+    "contributionSchemaStatus": {
+      "missing-schema": 3,
+      "present": 920,
+      "undeclared-point": 16
+    },
+    "missingDeclaredSchemas": 2,
+    "missingIncludes": 0,
+    "descriptorSyntaxErrors": 0,
+    "schemaSyntaxErrors": 0,
+    "unmatchedSourceBundles": 0
+  },
+  "baselineSchemaCorpusSha256": "442e16926ec5ee2e3842ee332ed93f6b5eba490c7c04b6bd9969e3ec95e7a491",
+  "descriptorCorpusSha256": "f3e2379e18bdbb93c6b1a3269f34ca7126b6704cbb55ead0da97f360c86bd556",
+  "restored": {
+    "configuredBundles": 243,
+    "configuredBinaryBundles": 193,
+    "productionBinaryBundles": 192,
+    "excludedInstrumentationBundles": 1,
+    "configuredSourceBundles": 50,
+    "projects": 83,
+    "descriptorFiles": 83,
+    "pluginXmlFiles": 83,
+    "fragmentXmlFiles": 0,
+    "schemaFiles": 300,
+    "schemaBytes": 2345248,
+    "binarySchemaFiles": 39,
+    "sourceSchemaFiles": 259,
+    "extensionPointDeclarations": 293,
+    "extensionContributions": 939,
+    "contributionSchemaStatus": {
+      "present": 923,
+      "undeclared-point": 16
+    },
+    "missingDeclaredSchemas": 0,
+    "missingIncludes": 0,
+    "descriptorSyntaxErrors": 0,
+    "schemaSyntaxErrors": 0,
+    "unmatchedSourceBundles": 0,
+    "restoredSchemaFiles": 2
+  },
+  "restoredSchemaCorpusSha256": "eb010347fc95f7a8e00b12524ceaae19f2b6477e6adc733eca79394c4f9c8a6f",
+  "restoredDescriptorCorpusSha256": "f3e2379e18bdbb93c6b1a3269f34ca7126b6704cbb55ead0da97f360c86bd556",
+  "rawXsdCompilation": {
+    "schemaFiles": 298,
+    "xmlWellFormed": 298,
+    "xsdCompilePassed": 1,
+    "xsdCompileFailed": 297,
+    "blockedOrMissingResources": 0,
+    "filesWithBlockedOrMissingResources": 0,
+    "filesWithLegacyAppInfo": 225,
+    "filesWithDefaultUse": 38,
+    "filesWithoutXsdRootNamespace": 94,
+    "diagnosticTypes": {
+      "SCHEMAP_INVALID_ATTR_USE": 45,
+      "SCHEMAP_NOT_SCHEMA": 94,
+      "SCHEMAP_S4S_ATTR_NOT_ALLOWED": 45,
+      "SCHEMAP_S4S_ELEM_NOT_ALLOWED": 1198,
+      "SCHEMAP_SRC_INCLUDE": 29,
+      "SCHEMAP_SRC_RESOLVE": 101
+    }
+  },
+  "onlyRawXsdCompilePass": [
+    {
+      "bundleId": "org.eclipse.jdt.debug",
+      "relativePath": "schema/jdiclient.exsd",
+      "sha256": "b5efa1de30f2c81d3b23b5e240b4a50cb264bea6009177619b7253a289df7b8c"
+    }
+  ],
+  "archives": [
+    {
+      "file": "corpus-manifest.json.xz",
+      "uncompressedBytes": 1806785,
+      "uncompressedSha256": "4c4e76f48e8f0649395bc40ee963688b44915d936927fa04a8b91cf951bcc745",
+      "compressedBytes": 103028,
+      "compressedSha256": "7843744bafd795294ae49ce54f5e6dcf3985078eaf8c1beb1c0e024a1f05b837"
+    },
+    {
+      "file": "restored-corpus-manifest.json.xz",
+      "uncompressedBytes": 1820810,
+      "uncompressedSha256": "1273b55caf5d1a174ceea60ec6aa6038d6948889f595fcf995c5f525e177feb1",
+      "compressedBytes": 104152,
+      "compressedSha256": "f11706d9b6e8f9b4b0110b90cc1664dd9fc32f411e147997ac3d647cafa3700c"
+    },
+    {
+      "file": "raw-xsd-audit.json.xz",
+      "uncompressedBytes": 1050499,
+      "uncompressedSha256": "481235090abb2ba2faa8ee68e59538e043e0f328d0dc0ec7e13693917e4a97f5",
+      "compressedBytes": 33008,
+      "compressedSha256": "5438702183b7e6d84c2f9b5b1deb415dc4d36f320c395cdf430e0e9b587d2701"
+    }
+  ],
+  "interpretation": "The raw XSD audit compiles schema documents, not XML contribution instances. Standard-XSD incompatibility is not automatically a PDE failure. Restored corpus only adds exact source-version resources already shipped by later upstream packaging fixes."
+}

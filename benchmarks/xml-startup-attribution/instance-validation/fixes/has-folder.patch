@@ -1,0 +1,26 @@
+--- a/bundles/org.eclipse.ui.ide/schema/projectConfigurators.exsd
++++ b/bundles/org.eclipse.ui.ide/schema/projectConfigurators.exsd
+@@ -103,10 +103,23 @@
+             <element ref="adapt"/>
+             <element ref="iterate"/>
+             <element ref="reference"/>
++            <element ref="hasFolder"/>
+             <element ref="hasFile"/>
+             <element ref="hasFileRecursively"/>
+             <element ref="hasFileWithSuffixRecursively"/>
+          </choice>
++      </complexType>
++   </element>
++
++   <element name="hasFolder">
++      <complexType>
++         <attribute name="path" type="string" use="required">
++            <annotation>
++               <documentation>
++                  Path of the folder to look for, relative to the contextual container.
++               </documentation>
++            </annotation>
++         </attribute>
+       </complexType>
+    </element>
+ 

@@ -1,0 +1,261 @@
+--- a/runtime/bundles/org.eclipse.core.expressions/schema/expressionLanguage.exsd
++++ b/runtime/bundles/org.eclipse.core.expressions/schema/expressionLanguage.exsd
+@@ -18,21 +18,21 @@
+          </documentation>
+       </annotation>
+       <complexType>
+-         <sequence minOccurs="0" maxOccurs="unbounded">
+-            <element ref="not"/>
+-            <element ref="and"/>
+-            <element ref="or"/>
+-            <element ref="instanceof"/>
+-            <element ref="test"/>
+-            <element ref="systemTest"/>
+-            <element ref="equals"/>
+-            <element ref="count"/>
+-            <element ref="with"/>
+-            <element ref="resolve"/>
+-            <element ref="adapt"/>
+-            <element ref="iterate"/>
+-            <element ref="reference"/>
+-         </sequence>
++         <choice minOccurs="0" maxOccurs="unbounded">
++            <element ref="not"/>
++            <element ref="and"/>
++            <element ref="or"/>
++            <element ref="instanceof"/>
++            <element ref="test"/>
++            <element ref="systemTest"/>
++            <element ref="equals"/>
++            <element ref="count"/>
++            <element ref="with"/>
++            <element ref="resolve"/>
++            <element ref="adapt"/>
++            <element ref="iterate"/>
++            <element ref="reference"/>
++         </choice>
+       </complexType>
+    </element>
+ 
+@@ -68,21 +68,21 @@
+          </documentation>
+       </annotation>
+       <complexType>
+-         <sequence minOccurs="0" maxOccurs="unbounded">
+-            <element ref="not"/>
+-            <element ref="and"/>
+-            <element ref="or"/>
+-            <element ref="instanceof"/>
+-            <element ref="test"/>
+-            <element ref="systemTest"/>
+-            <element ref="equals"/>
+-            <element ref="count"/>
+-            <element ref="with"/>
+-            <element ref="resolve"/>
+-            <element ref="adapt"/>
+-            <element ref="iterate"/>
+-            <element ref="reference"/>
+-         </sequence>
++         <choice minOccurs="0" maxOccurs="unbounded">
++            <element ref="not"/>
++            <element ref="and"/>
++            <element ref="or"/>
++            <element ref="instanceof"/>
++            <element ref="test"/>
++            <element ref="systemTest"/>
++            <element ref="equals"/>
++            <element ref="count"/>
++            <element ref="with"/>
++            <element ref="resolve"/>
++            <element ref="adapt"/>
++            <element ref="iterate"/>
++            <element ref="reference"/>
++         </choice>
+       </complexType>
+    </element>
+ 
+@@ -93,21 +93,21 @@
+          </documentation>
+       </annotation>
+       <complexType>
+-         <sequence minOccurs="0" maxOccurs="unbounded">
+-            <element ref="not"/>
+-            <element ref="and"/>
+-            <element ref="or"/>
+-            <element ref="instanceof"/>
+-            <element ref="test"/>
+-            <element ref="systemTest"/>
+-            <element ref="equals"/>
+-            <element ref="count"/>
+-            <element ref="with"/>
+-            <element ref="resolve"/>
+-            <element ref="adapt"/>
+-            <element ref="iterate"/>
+-            <element ref="reference"/>
+-         </sequence>
++         <choice minOccurs="0" maxOccurs="unbounded">
++            <element ref="not"/>
++            <element ref="and"/>
++            <element ref="or"/>
++            <element ref="instanceof"/>
++            <element ref="test"/>
++            <element ref="systemTest"/>
++            <element ref="equals"/>
++            <element ref="count"/>
++            <element ref="with"/>
++            <element ref="resolve"/>
++            <element ref="adapt"/>
++            <element ref="iterate"/>
++            <element ref="reference"/>
++         </choice>
+       </complexType>
+    </element>
+ 
+@@ -295,21 +295,21 @@
+          </documentation>
+       </annotation>
+       <complexType>
+-         <sequence minOccurs="0" maxOccurs="unbounded">
+-            <element ref="not"/>
+-            <element ref="and"/>
+-            <element ref="or"/>
+-            <element ref="instanceof"/>
+-            <element ref="test"/>
+-            <element ref="systemTest"/>
+-            <element ref="equals"/>
+-            <element ref="count"/>
+-            <element ref="with"/>
+-            <element ref="resolve"/>
+-            <element ref="adapt"/>
+-            <element ref="iterate"/>
+-            <element ref="reference"/>
+-         </sequence>
++         <choice minOccurs="0" maxOccurs="unbounded">
++            <element ref="not"/>
++            <element ref="and"/>
++            <element ref="or"/>
++            <element ref="instanceof"/>
++            <element ref="test"/>
++            <element ref="systemTest"/>
++            <element ref="equals"/>
++            <element ref="count"/>
++            <element ref="with"/>
++            <element ref="resolve"/>
++            <element ref="adapt"/>
++            <element ref="iterate"/>
++            <element ref="reference"/>
++         </choice>
+          <attribute name="variable" type="string" use="required">
+             <annotation>
+                <documentation>
+@@ -334,21 +334,21 @@
+          </documentation>
+       </annotation>
+       <complexType>
+-         <sequence minOccurs="0" maxOccurs="unbounded">
+-            <element ref="not"/>
+-            <element ref="and"/>
+-            <element ref="or"/>
+-            <element ref="instanceof"/>
+-            <element ref="test"/>
+-            <element ref="systemTest"/>
+-            <element ref="equals"/>
+-            <element ref="count"/>
+-            <element ref="with"/>
+-            <element ref="resolve"/>
+-            <element ref="adapt"/>
+-            <element ref="iterate"/>
+-            <element ref="reference"/>
+-         </sequence>
++         <choice minOccurs="0" maxOccurs="unbounded">
++            <element ref="not"/>
++            <element ref="and"/>
++            <element ref="or"/>
++            <element ref="instanceof"/>
++            <element ref="test"/>
++            <element ref="systemTest"/>
++            <element ref="equals"/>
++            <element ref="count"/>
++            <element ref="with"/>
++            <element ref="resolve"/>
++            <element ref="adapt"/>
++            <element ref="iterate"/>
++            <element ref="reference"/>
++         </choice>
+          <attribute name="variable" type="string" use="required">
+             <annotation>
+                <documentation>
+@@ -384,21 +384,21 @@
+          </documentation>
+       </annotation>
+       <complexType>
+-         <sequence minOccurs="0" maxOccurs="unbounded">
+-            <element ref="not"/>
+-            <element ref="and"/>
+-            <element ref="or"/>
+-            <element ref="instanceof"/>
+-            <element ref="test"/>
+-            <element ref="systemTest"/>
+-            <element ref="equals"/>
+-            <element ref="count"/>
+-            <element ref="with"/>
+-            <element ref="resolve"/>
+-            <element ref="adapt"/>
+-            <element ref="iterate"/>
+-            <element ref="reference"/>
+-         </sequence>
++         <choice minOccurs="0" maxOccurs="unbounded">
++            <element ref="not"/>
++            <element ref="and"/>
++            <element ref="or"/>
++            <element ref="instanceof"/>
++            <element ref="test"/>
++            <element ref="systemTest"/>
++            <element ref="equals"/>
++            <element ref="count"/>
++            <element ref="with"/>
++            <element ref="resolve"/>
++            <element ref="adapt"/>
++            <element ref="iterate"/>
++            <element ref="reference"/>
++         </choice>
+          <attribute name="type" type="string" use="required">
+             <annotation>
+                <documentation>
+@@ -422,21 +422,21 @@
+          </documentation>
+       </annotation>
+       <complexType>
+-         <sequence minOccurs="0" maxOccurs="unbounded">
+-            <element ref="not"/>
+-            <element ref="and"/>
+-            <element ref="or"/>
+-            <element ref="instanceof"/>
+-            <element ref="test"/>
+-            <element ref="systemTest"/>
+-            <element ref="equals"/>
+-            <element ref="count"/>
+-            <element ref="with"/>
+-            <element ref="resolve"/>
+-            <element ref="adapt"/>
+-            <element ref="iterate"/>
+-            <element ref="reference"/>
+-         </sequence>
++         <choice minOccurs="0" maxOccurs="unbounded">
++            <element ref="not"/>
++            <element ref="and"/>
++            <element ref="or"/>
++            <element ref="instanceof"/>
++            <element ref="test"/>
++            <element ref="systemTest"/>
++            <element ref="equals"/>
++            <element ref="count"/>
++            <element ref="with"/>
++            <element ref="resolve"/>
++            <element ref="adapt"/>
++            <element ref="iterate"/>
++            <element ref="reference"/>
++         </choice>
+          <attribute name="operator">
+             <annotation>
+                <documentation>

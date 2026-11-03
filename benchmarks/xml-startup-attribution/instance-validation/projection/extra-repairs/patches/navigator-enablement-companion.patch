@@ -1,0 +1,20 @@
+--- a/bundles/org.eclipse.ui.navigator/schema/navigatorContent.exsd
++++ b/bundles/org.eclipse.ui.navigator/schema/navigatorContent.exsd
+@@ -225,7 +225,7 @@
+          </documentation>
+       </annotation>
+       <complexType>
+-         <sequence minOccurs="0" maxOccurs="unbounded">
++         <choice minOccurs="0" maxOccurs="unbounded">
+             <element ref="not"/>
+             <element ref="and"/>
+             <element ref="or"/>
+@@ -239,7 +239,7 @@
+             <element ref="adapt"/>
+             <element ref="iterate"/>
+             <element ref="reference"/>
+-         </sequence>
++         </choice>
+       </complexType>
+    </element>
+ 

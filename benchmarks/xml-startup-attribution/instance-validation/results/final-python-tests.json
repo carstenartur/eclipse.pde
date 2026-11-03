@@ -1,0 +1,26 @@
+{
+  "scope": "Final focused Python tool/repair checks, not a full Tycho suite",
+  "corpus": "corpus-final-repaired",
+  "checks": [
+    {
+      "suite": "inventory",
+      "exitCode": 0,
+      "output": "...........\n----------------------------------------------------------------------\nRan 11 tests in 0.032s\n\nOK\n"
+    },
+    {
+      "suite": "projection_and_classification",
+      "exitCode": 0,
+      "output": ".................\n----------------------------------------------------------------------\nRan 17 tests in 0.014s\n\nOK\n"
+    },
+    {
+      "suite": "initial_schema_repairs",
+      "exitCode": 0,
+      "output": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.023s\n\nOK\n"
+    },
+    {
+      "suite": "extra_and_navigator_repairs",
+      "exitCode": 0,
+      "output": ".........\n----------------------------------------------------------------------\nRan 9 tests in 1.031s\n\nOK\n"
+    }
+  ]
+}

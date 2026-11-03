@@ -1,0 +1,263 @@
+{
+  "scope": "Bounded projected grammar and consumer contract evidence; not raw EXSD/XMLSpy equivalence, full PDE validation, or startup timing.",
+  "archive": {
+    "file": "projection-evidence.tar.xz",
+    "bytes": 237692,
+    "sha256": "89c30d19ff8b9c5bb34e2732671586179cfca94e1a07176ae7c1cbd587e203c9",
+    "dataMembers": 63,
+    "dataBytesUncompressed": 13190714,
+    "allArchivedMembersByteVerified": true
+  },
+  "versions": {
+    "lxml": [
+      6,
+      1,
+      1,
+      0
+    ],
+    "libxml2": [
+      2,
+      14,
+      6
+    ]
+  },
+  "variants": {
+    "baseline": {
+      "originalInput": {
+        "contributions": 939,
+        "statuses": {
+          "valid": 337,
+          "invalid": 551,
+          "unchecked": 51
+        },
+        "uncheckedReasons": {
+          "executable_extension_child": 16,
+          "conflicting_declaration": 16,
+          "missing-schema": 3,
+          "undeclared-point": 16
+        },
+        "compiledSchemas": 209,
+        "uncompiledSchemas": 1
+      },
+      "classification": {
+        "diagnosticsByCategory": {
+          "empty_content_xml_whitespace": 1623,
+          "identifier_enumeration": 44,
+          "other_grammar": 263
+        },
+        "contributionsWithOnlyEmptyContentWhitespace": 425,
+        "filesWithOnlyEmptyContentWhitespaceDiagnostics": 31,
+        "sensitivityStatuses": {
+          "valid": 762,
+          "invalid": 126,
+          "unchecked": 51
+        },
+        "removedWhitespaceCharacters": 14469
+      },
+      "originalInputAudit": "audits/projected-grammar-baseline.json",
+      "classificationAudit": "audits/projected-findings-classification.json",
+      "sourceFilesUnchanged": true
+    },
+    "two-repairs": {
+      "originalInput": {
+        "contributions": 939,
+        "statuses": {
+          "valid": 365,
+          "invalid": 516,
+          "unchecked": 58
+        },
+        "uncheckedReasons": {
+          "executable_extension_child": 16,
+          "conflicting_declaration": 23,
+          "missing-schema": 3,
+          "undeclared-point": 16
+        },
+        "compiledSchemas": 208,
+        "uncompiledSchemas": 2
+      },
+      "classification": {
+        "diagnosticsByCategory": {
+          "empty_content_xml_whitespace": 1718,
+          "identifier_enumeration": 44,
+          "other_grammar": 82
+        },
+        "contributionsWithOnlyEmptyContentWhitespace": 451,
+        "filesWithOnlyEmptyContentWhitespaceDiagnostics": 34,
+        "sensitivityStatuses": {
+          "valid": 816,
+          "invalid": 65,
+          "unchecked": 58
+        },
+        "removedWhitespaceCharacters": 16174
+      },
+      "originalInputAudit": "audits/projected-grammar-repaired.json",
+      "classificationAudit": "audits/projected-findings-repaired.json",
+      "sourceFilesUnchanged": true
+    },
+    "four-repairs": {
+      "originalInput": {
+        "contributions": 939,
+        "statuses": {
+          "valid": 365,
+          "invalid": 516,
+          "unchecked": 58
+        },
+        "uncheckedReasons": {
+          "executable_extension_child": 16,
+          "conflicting_declaration": 23,
+          "missing-schema": 3,
+          "undeclared-point": 16
+        },
+        "compiledSchemas": 208,
+        "uncompiledSchemas": 2
+      },
+      "classification": {
+        "diagnosticsByCategory": {
+          "empty_content_xml_whitespace": 1718,
+          "identifier_enumeration": 44,
+          "other_grammar": 81
+        },
+        "contributionsWithOnlyEmptyContentWhitespace": 452,
+        "filesWithOnlyEmptyContentWhitespaceDiagnostics": 35,
+        "sensitivityStatuses": {
+          "valid": 817,
+          "invalid": 64,
+          "unchecked": 58
+        },
+        "removedWhitespaceCharacters": 16174
+      },
+      "originalInputAudit": "audits/projected-grammar-four-repaired.json",
+      "classificationAudit": "audits/projected-findings-four-repaired.json",
+      "sourceFilesUnchanged": true
+    },
+    "final-with-companion": {
+      "originalInput": {
+        "contributions": 939,
+        "statuses": {
+          "valid": 367,
+          "invalid": 521,
+          "unchecked": 51
+        },
+        "uncheckedReasons": {
+          "executable_extension_child": 16,
+          "conflicting_declaration": 16,
+          "missing-schema": 3,
+          "undeclared-point": 16
+        },
+        "compiledSchemas": 209,
+        "uncompiledSchemas": 1
+      },
+      "classification": {
+        "diagnosticsByCategory": {
+          "empty_content_xml_whitespace": 1722,
+          "identifier_enumeration": 44,
+          "other_grammar": 95
+        },
+        "contributionsWithOnlyEmptyContentWhitespace": 452,
+        "filesWithOnlyEmptyContentWhitespaceDiagnostics": 35,
+        "sensitivityStatuses": {
+          "valid": 819,
+          "invalid": 69,
+          "unchecked": 51
+        },
+        "removedWhitespaceCharacters": 16239
+      },
+      "originalInputAudit": "audits/projected-grammar-final-repaired.json",
+      "classificationAudit": "audits/projected-findings-final-repaired.json",
+      "sourceFilesUnchanged": true
+    }
+  },
+  "baselineToFinalTransitions": {
+    "from": "baseline",
+    "to": "finalWithCompanion",
+    "rawTransitions": [
+      {
+        "before": "invalid",
+        "after": "invalid",
+        "contributions": 521
+      },
+      {
+        "before": "invalid",
+        "after": "valid",
+        "contributions": 30
+      },
+      {
+        "before": "unchecked",
+        "after": "unchecked",
+        "contributions": 51
+      },
+      {
+        "before": "valid",
+        "after": "valid",
+        "contributions": 337
+      }
+    ],
+    "sensitivityTransitions": [
+      {
+        "before": "invalid",
+        "after": "invalid",
+        "contributions": 69
+      },
+      {
+        "before": "invalid",
+        "after": "valid",
+        "contributions": 57
+      },
+      {
+        "before": "unchecked",
+        "after": "unchecked",
+        "contributions": 51
+      },
+      {
+        "before": "valid",
+        "after": "valid",
+        "contributions": 762
+      }
+    ]
+  },
+  "finalCoverage": {
+    "newlyUncheckedContributions": 0,
+    "validToInvalidContributions": 0,
+    "unchangedOriginalDescriptors": 83,
+    "schemaFilesChanged": 5,
+    "issuesAddressed": 4
+  },
+  "consumerChecks": {
+    "extraExecutableExtensionAndCSS": {
+      "passed": true,
+      "checks": 8,
+      "artifact": "proof/extra-consumer-contract-checks.json"
+    },
+    "coreExpressionsAndHasFolder": {
+      "passed": true,
+      "checks": 10,
+      "artifact": "proof/consumer-contract-checks-osgi.json"
+    }
+  },
+  "testEvidence": {
+    "initialSchemaRepairs": {
+      "provenance": "Full recorded console outputs for baseline failures and two-repair success",
+      "artifact": "test-records/schema-repairs-red-green.json"
+    },
+    "extraCardinalityRepairs": {
+      "provenance": "Existing structured observation record; original red console was emitted in tool session, not retained as a separate raw file",
+      "baselinePositiveAssertionFailures": 3,
+      "repairedMethodsPassed": 7,
+      "artifact": "proof/extra-repair-source-evidence.json"
+    },
+    "navigatorCompanion": {
+      "provenance": "Existing structured observation record; original red console was emitted in tool session, not retained as a separate raw file",
+      "predecessorCompilationErrors": 1,
+      "predecessorUncheckedAssertionsFailed": 7,
+      "finalCompanionMethodsPassed": 2,
+      "artifact": "proof/navigator-companion-evidence.json"
+    },
+    "finalPythonRun": {
+      "provenance": "Full recorded console outputs",
+      "methodsPassed": 42,
+      "artifact": "test-records/final-python-tests.json"
+    }
+  },
+  "excludedSetup": "excluded/consumer-contract-checks-excluded-standalone.json",
+  "retentionMethod": "Archive creation only. No validators, consumer probes or tests rerun; all stored byte streams verified after compression."
+}

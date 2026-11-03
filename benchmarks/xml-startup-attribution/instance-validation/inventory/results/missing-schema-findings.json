@@ -1,0 +1,102 @@
+{
+  "formatVersion": 1,
+  "missingResources": [
+    {
+      "bundleId": "org.eclipse.ui.externaltools",
+      "bundleVersion": "3.7.100.v20260326-0937",
+      "relativePath": "schema/configurationDuplicationMaps.exsd",
+      "resourceFile": "resources/org.eclipse.ui.externaltools/schema/configurationDuplicationMaps.exsd",
+      "bytes": 4253,
+      "sha256": "749a3a0754a620a60cb80aecece7c6b7d5a7e2cbf950a70f87e586bdcf7b664b",
+      "gitBlobSha1": "a657b1f887122124bbbab7de72cb9080ab3e3ec1",
+      "repository": "eclipse-platform/eclipse.platform",
+      "sourceCommit": "4d9d68a9615c267f272840f344afa6f7e6c14523",
+      "sourcePath": "debug/org.eclipse.ui.externaltools/schema/configurationDuplicationMaps.exsd",
+      "sourceUrl": "https://raw.githubusercontent.com/eclipse-platform/eclipse.platform/4d9d68a9615c267f272840f344afa6f7e6c14523/debug/org.eclipse.ui.externaltools/schema/configurationDuplicationMaps.exsd",
+      "binarySourceReference": "scm:git:https://github.com/eclipse-platform/eclipse.platform.git;path=\"debug/org.eclipse.ui.externaltools\";tag=\"I20260326-1800\";commitId=4d9d68a9615c267f272840f344afa6f7e6c14523",
+      "packagingFixCommit": "11c69009825fac418d1bf9668b887da1413d0a72",
+      "packagingFixDate": "2026-10-23",
+      "packagingFixUrl": "https://github.com/eclipse-platform/eclipse.platform/commit/11c69009825fac418d1bf9668b887da1413d0a72",
+      "identicalContentVerifiedAtCommits": [
+        "e44cc1b8be5011ce3e8a459d0b41777ac6333869",
+        "4d9d68a9615c267f272840f344afa6f7e6c14523",
+        "11c69009825fac418d1bf9668b887da1413d0a72"
+      ],
+      "lastSchemaPathChangeCommit": "e44cc1b8be5011ce3e8a459d0b41777ac6333869",
+      "lastSchemaPathChangeDate": "2023-06-28T13:43:52Z"
+    },
+    {
+      "bundleId": "org.eclipse.equinox.p2.repository.tools",
+      "bundleVersion": "2.4.1000.v20260304-1232",
+      "relativePath": "schema/org.eclipse.equinox.p2.repository.tools.verifier.exsd",
+      "resourceFile": "resources/org.eclipse.equinox.p2.repository.tools/schema/org.eclipse.equinox.p2.repository.tools.verifier.exsd",
+      "bytes": 3065,
+      "sha256": "56da575f201901156a5a2af782fbac85bb9ad5a69047930762873b8a92a99687",
+      "gitBlobSha1": "ba2d23b96f036bdaccbc6feb9862493193458a66",
+      "repository": "eclipse-equinox/p2",
+      "sourceCommit": "b8b9780b20896ad5482568ceffca8d1f686102cf",
+      "sourcePath": "bundles/org.eclipse.equinox.p2.repository.tools/schema/org.eclipse.equinox.p2.repository.tools.verifier.exsd",
+      "sourceUrl": "https://raw.githubusercontent.com/eclipse-equinox/p2/b8b9780b20896ad5482568ceffca8d1f686102cf/bundles/org.eclipse.equinox.p2.repository.tools/schema/org.eclipse.equinox.p2.repository.tools.verifier.exsd",
+      "binarySourceReference": "scm:git:https://github.com/eclipse-equinox/p2.git;path=\"bundles/org.eclipse.equinox.p2.repository.tools\";tag=\"I20260304-1800\";commitId=b8b9780b20896ad5482568ceffca8d1f686102cf",
+      "packagingFixCommit": "b97f8c833af78b65eacf7a9c4e59d8aad0fb0240",
+      "packagingFixDate": "2026-10-23",
+      "packagingFixUrl": "https://github.com/eclipse-equinox/p2/commit/b97f8c833af78b65eacf7a9c4e59d8aad0fb0240",
+      "identicalContentVerifiedAtCommits": [
+        "18189f0d42f7375660762dc6c885cf31683ae562",
+        "b8b9780b20896ad5482568ceffca8d1f686102cf",
+        "b97f8c833af78b65eacf7a9c4e59d8aad0fb0240"
+      ],
+      "lastSchemaPathChangeCommit": "18189f0d42f7375660762dc6c885cf31683ae562",
+      "lastSchemaPathChangeDate": "2010-01-13T17:29:41Z"
+    }
+  ],
+  "cause": "Both frozen build.properties omitted schema/ from both binary and source inclusion lists; files existed at exact embedded source commits. Already repaired upstream on 2026-10-23.",
+  "productionXmlContributionsAffected": [
+    {
+      "bundleId": "org.eclipse.ant.ui",
+      "descriptor": "plugin.xml",
+      "line": 386,
+      "extensionPointId": "org.eclipse.ui.externaltools.configurationDuplicationMaps"
+    },
+    {
+      "bundleId": "org.eclipse.ui.externaltools",
+      "descriptor": "plugin.xml",
+      "line": 99,
+      "extensionPointId": "org.eclipse.ui.externaltools.configurationDuplicationMaps"
+    },
+    {
+      "bundleId": "org.eclipse.equinox.p2.repository.tools",
+      "descriptor": "plugin.xml",
+      "line": 6,
+      "extensionPointId": "org.eclipse.equinox.p2.repository.tools.verifier"
+    }
+  ],
+  "consumerContracts": [
+    {
+      "bundleId": "org.eclipse.ui.externaltools",
+      "class": "org.eclipse.ui.externaltools.internal.model.BuilderUtils",
+      "method": "getConfigurationDuplicationType",
+      "sourceUrl": "https://github.com/eclipse-platform/eclipse.platform/blob/4d9d68a9615c267f272840f344afa6f7e6c14523/debug/org.eclipse.ui.externaltools/External%20Tools%20Base/org/eclipse/ui/externaltools/internal/model/BuilderUtils.java",
+      "behavior": "Reads configurationMap elements; matches sourceType, looks up builderType, otherwise retains original launch configuration type."
+    },
+    {
+      "bundleId": "org.eclipse.equinox.p2.repository.tools",
+      "class": "org.eclipse.equinox.p2.internal.repository.tools.RepositoryAnalyzer",
+      "method": "analyze",
+      "sourceUrl": "https://github.com/eclipse-equinox/p2/blob/b8b9780b20896ad5482568ceffca8d1f686102cf/bundles/org.eclipse.equinox.p2.repository.tools/src/org/eclipse/equinox/p2/internal/repository/tools/RepositoryAnalyzer.java",
+      "behavior": "Obtains verifier extensions by IIUAnalyzer.ID, instantiates class, casts to IIUAnalyzer, reads optional name for IUAnalyzer, runs analysis callbacks."
+    }
+  ],
+  "additionalReadOnlyFinding": {
+    "schema": "org.eclipse.equinox.p2.repository.tools/schema/org.eclipse.equinox.p2.repository.tools.verifier.exsd",
+    "attribute": "IUAnalysis/class meta.attribute@basedOn",
+    "currentValue": ":org.eclipse.equinox.p2.metadata.analyzer.IIUAnalysis",
+    "actualRequiredInterface": "org.eclipse.equinox.p2.repository.tools.analyzer.IIUAnalyzer",
+    "actualInterfaceSourceUrl": "https://github.com/eclipse-equinox/p2/blob/b8b9780b20896ad5482568ceffca8d1f686102cf/bundles/org.eclipse.equinox.p2.repository.tools/src/org/eclipse/equinox/p2/repository/tools/analyzer/IIUAnalyzer.java",
+    "obsoleteTypeFoundInReferenceArtifacts": false,
+    "proposedMinimalChange": ":org.eclipse.equinox.p2.repository.tools.analyzer.IIUAnalyzer",
+    "applied": false,
+    "note": "The public interface recommends extending IUAnalyzer; metadata repair needs separate review. Exact restored schema content intentionally retains this pre-existing drift."
+  },
+  "performance": "No timing or retry-count conclusion from inventory. Real PDE runner evaluates the before/after paths separately."
+}

@@ -1,0 +1,11 @@
+--- a/bundles/org.eclipse.e4.ui.css.core/schema/org.eclipse.e4.ui.css.core.elementProvider.exsd
++++ b/bundles/org.eclipse.e4.ui.css.core/schema/org.eclipse.e4.ui.css.core.elementProvider.exsd
+@@ -21,7 +21,7 @@
+       </annotation>
+       <complexType>
+          <sequence>
+-            <element ref="provider"/>
++            <element ref="provider" maxOccurs="unbounded"/>
+          </sequence>
+          <attribute name="point" type="string" use="required">
+             <annotation>

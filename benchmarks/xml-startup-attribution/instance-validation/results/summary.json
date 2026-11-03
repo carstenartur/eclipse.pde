@@ -1,0 +1,690 @@
+{
+  "scope": "Instance validation and operation counts; no startup timing",
+  "nativeComparisons": {
+    "pde-baseline-final": {
+      "summary": {
+        "information": 0,
+        "diagnostics": 119,
+        "extensionContributions": 939,
+        "errors": 119,
+        "contributionsByCoverage": {
+          "schema-load-failed": 3,
+          "schema-model-loaded": 920,
+          "unknown-extension-point": 16
+        },
+        "warnings": 0,
+        "descriptorFiles": 83
+      },
+      "diagnosticsByPoint": {
+        "org.eclipse.e4.ui.css.core.elementProvider": 1,
+        "org.eclipse.help.base.searchParticipant": 2,
+        "org.eclipse.ui.commands": 2,
+        "org.eclipse.ui.ide.projectConfigurators": 1,
+        "org.eclipse.ui.popupMenus": 99,
+        "org.eclipse.ui.trace.traceComponents": 14
+      },
+      "controls": 19,
+      "verification": "passed",
+      "repeatedLoadCases": [
+        {
+          "point": "org.eclipse.equinox.p2.repository.tools.verifier",
+          "abbreviated": false,
+          "subsequentQueries": 24,
+          "loadedAfterQueries": false,
+          "streamAttemptsAfterQueries": 25,
+          "successfulInputStreams": 0,
+          "closedSuccessfulStreams": 0,
+          "targetHandlesBefore": 0,
+          "targetHandlesAfter": 0,
+          "streamExceptionCount": 25
+        },
+        {
+          "point": "org.eclipse.equinox.p2.repository.tools.verifier",
+          "abbreviated": true,
+          "subsequentQueries": 24,
+          "loadedAfterQueries": false,
+          "streamAttemptsAfterQueries": 25,
+          "successfulInputStreams": 0,
+          "closedSuccessfulStreams": 0,
+          "targetHandlesBefore": 0,
+          "targetHandlesAfter": 0,
+          "streamExceptionCount": 25
+        },
+        {
+          "point": "org.eclipse.ui.externaltools.configurationDuplicationMaps",
+          "abbreviated": false,
+          "subsequentQueries": 24,
+          "loadedAfterQueries": false,
+          "streamAttemptsAfterQueries": 25,
+          "successfulInputStreams": 0,
+          "closedSuccessfulStreams": 0,
+          "targetHandlesBefore": 1,
+          "targetHandlesAfter": 1,
+          "streamExceptionCount": 25
+        },
+        {
+          "point": "org.eclipse.ui.externaltools.configurationDuplicationMaps",
+          "abbreviated": true,
+          "subsequentQueries": 24,
+          "loadedAfterQueries": false,
+          "streamAttemptsAfterQueries": 25,
+          "successfulInputStreams": 0,
+          "closedSuccessfulStreams": 0,
+          "targetHandlesBefore": 1,
+          "targetHandlesAfter": 1,
+          "streamExceptionCount": 25
+        },
+        {
+          "point": "org.eclipse.core.runtime.applications",
+          "abbreviated": false,
+          "subsequentQueries": 24,
+          "loadedAfterQueries": true,
+          "streamAttemptsAfterQueries": 1,
+          "successfulInputStreams": 1,
+          "closedSuccessfulStreams": 1,
+          "targetHandlesBefore": 0,
+          "targetHandlesAfter": 0,
+          "streamExceptionCount": 0
+        },
+        {
+          "point": "org.eclipse.core.runtime.applications",
+          "abbreviated": true,
+          "subsequentQueries": 24,
+          "loadedAfterQueries": true,
+          "streamAttemptsAfterQueries": 1,
+          "successfulInputStreams": 1,
+          "closedSuccessfulStreams": 1,
+          "targetHandlesBefore": 0,
+          "targetHandlesAfter": 0,
+          "streamExceptionCount": 0
+        }
+      ]
+    },
+    "pde-repaired": {
+      "summary": {
+        "descriptorFiles": 83,
+        "warnings": 0,
+        "contributionsByCoverage": {
+          "schema-load-failed": 3,
+          "schema-model-loaded": 920,
+          "unknown-extension-point": 16
+        },
+        "errors": 118,
+        "extensionContributions": 939,
+        "diagnostics": 118,
+        "information": 0
+      },
+      "diagnosticsByPoint": {
+        "org.eclipse.e4.ui.css.core.elementProvider": 1,
+        "org.eclipse.help.base.searchParticipant": 2,
+        "org.eclipse.ui.commands": 2,
+        "org.eclipse.ui.popupMenus": 99,
+        "org.eclipse.ui.trace.traceComponents": 14
+      },
+      "controls": 19,
+      "verification": "passed",
+      "repeatedLoadCases": [
+        {
+          "point": "org.eclipse.equinox.p2.repository.tools.verifier",
+          "abbreviated": false,
+          "subsequentQueries": 24,
+          "loadedAfterQueries": false,
+          "streamAttemptsAfterQueries": 25,
+          "successfulInputStreams": 0,
+          "closedSuccessfulStreams": 0,
+          "targetHandlesBefore": 0,
+          "targetHandlesAfter": 0,
+          "streamExceptionCount": 25
+        },
+        {
+          "point": "org.eclipse.equinox.p2.repository.tools.verifier",
+          "abbreviated": true,
+          "subsequentQueries": 24,
+          "loadedAfterQueries": false,
+          "streamAttemptsAfterQueries": 25,
+          "successfulInputStreams": 0,
+          "closedSuccessfulStreams": 0,
+          "targetHandlesBefore": 0,
+          "targetHandlesAfter": 0,
+          "streamExceptionCount": 25
+        },
+        {
+          "point": "org.eclipse.ui.externaltools.configurationDuplicationMaps",
+          "abbreviated": false,
+          "subsequentQueries": 24,
+          "loadedAfterQueries": false,
+          "streamAttemptsAfterQueries": 25,
+          "successfulInputStreams": 0,
+          "closedSuccessfulStreams": 0,
+          "targetHandlesBefore": 1,
+          "targetHandlesAfter": 1,
+          "streamExceptionCount": 25
+        },
+        {
+          "point": "org.eclipse.ui.externaltools.configurationDuplicationMaps",
+          "abbreviated": true,
+          "subsequentQueries": 24,
+          "loadedAfterQueries": false,
+          "streamAttemptsAfterQueries": 25,
+          "successfulInputStreams": 0,
+          "closedSuccessfulStreams": 0,
+          "targetHandlesBefore": 1,
+          "targetHandlesAfter": 1,
+          "streamExceptionCount": 25
+        },
+        {
+          "point": "org.eclipse.core.runtime.applications",
+          "abbreviated": false,
+          "subsequentQueries": 24,
+          "loadedAfterQueries": true,
+          "streamAttemptsAfterQueries": 1,
+          "successfulInputStreams": 1,
+          "closedSuccessfulStreams": 1,
+          "targetHandlesBefore": 0,
+          "targetHandlesAfter": 0,
+          "streamExceptionCount": 0
+        },
+        {
+          "point": "org.eclipse.core.runtime.applications",
+          "abbreviated": true,
+          "subsequentQueries": 24,
+          "loadedAfterQueries": true,
+          "streamAttemptsAfterQueries": 1,
+          "successfulInputStreams": 1,
+          "closedSuccessfulStreams": 1,
+          "targetHandlesBefore": 0,
+          "targetHandlesAfter": 0,
+          "streamExceptionCount": 0
+        }
+      ]
+    },
+    "pde-four-repaired": {
+      "summary": {
+        "warnings": 0,
+        "contributionsByCoverage": {
+          "schema-load-failed": 3,
+          "schema-model-loaded": 920,
+          "unknown-extension-point": 16
+        },
+        "errors": 115,
+        "extensionContributions": 939,
+        "diagnostics": 115,
+        "information": 0,
+        "descriptorFiles": 83
+      },
+      "diagnosticsByPoint": {
+        "org.eclipse.help.base.searchParticipant": 2,
+        "org.eclipse.ui.popupMenus": 99,
+        "org.eclipse.ui.trace.traceComponents": 14
+      },
+      "controls": 19,
+      "verification": "passed",
+      "repeatedLoadCases": [
+        {
+          "point": "org.eclipse.equinox.p2.repository.tools.verifier",
+          "abbreviated": false,
+          "subsequentQueries": 24,
+          "loadedAfterQueries": false,
+          "streamAttemptsAfterQueries": 25,
+          "successfulInputStreams": 0,
+          "closedSuccessfulStreams": 0,
+          "targetHandlesBefore": 0,
+          "targetHandlesAfter": 0,
+          "streamExceptionCount": 25
+        },
+        {
+          "point": "org.eclipse.equinox.p2.repository.tools.verifier",
+          "abbreviated": true,
+          "subsequentQueries": 24,
+          "loadedAfterQueries": false,
+          "streamAttemptsAfterQueries": 25,
+          "successfulInputStreams": 0,
+          "closedSuccessfulStreams": 0,
+          "targetHandlesBefore": 0,
+          "targetHandlesAfter": 0,
+          "streamExceptionCount": 25
+        },
+        {
+          "point": "org.eclipse.ui.externaltools.configurationDuplicationMaps",
+          "abbreviated": false,
+          "subsequentQueries": 24,
+          "loadedAfterQueries": false,
+          "streamAttemptsAfterQueries": 25,
+          "successfulInputStreams": 0,
+          "closedSuccessfulStreams": 0,
+          "targetHandlesBefore": 1,
+          "targetHandlesAfter": 1,
+          "streamExceptionCount": 25
+        },
+        {
+          "point": "org.eclipse.ui.externaltools.configurationDuplicationMaps",
+          "abbreviated": true,
+          "subsequentQueries": 24,
+          "loadedAfterQueries": false,
+          "streamAttemptsAfterQueries": 25,
+          "successfulInputStreams": 0,
+          "closedSuccessfulStreams": 0,
+          "targetHandlesBefore": 1,
+          "targetHandlesAfter": 1,
+          "streamExceptionCount": 25
+        },
+        {
+          "point": "org.eclipse.core.runtime.applications",
+          "abbreviated": false,
+          "subsequentQueries": 24,
+          "loadedAfterQueries": true,
+          "streamAttemptsAfterQueries": 1,
+          "successfulInputStreams": 1,
+          "closedSuccessfulStreams": 1,
+          "targetHandlesBefore": 0,
+          "targetHandlesAfter": 0,
+          "streamExceptionCount": 0
+        },
+        {
+          "point": "org.eclipse.core.runtime.applications",
+          "abbreviated": true,
+          "subsequentQueries": 24,
+          "loadedAfterQueries": true,
+          "streamAttemptsAfterQueries": 1,
+          "successfulInputStreams": 1,
+          "closedSuccessfulStreams": 1,
+          "targetHandlesBefore": 0,
+          "targetHandlesAfter": 0,
+          "streamExceptionCount": 0
+        }
+      ]
+    },
+    "pde-final-repaired": {
+      "summary": {
+        "diagnostics": 115,
+        "extensionContributions": 939,
+        "errors": 115,
+        "contributionsByCoverage": {
+          "schema-load-failed": 3,
+          "schema-model-loaded": 920,
+          "unknown-extension-point": 16
+        },
+        "warnings": 0,
+        "descriptorFiles": 83,
+        "information": 0
+      },
+      "diagnosticsByPoint": {
+        "org.eclipse.help.base.searchParticipant": 2,
+        "org.eclipse.ui.popupMenus": 99,
+        "org.eclipse.ui.trace.traceComponents": 14
+      },
+      "controls": 19,
+      "verification": "passed",
+      "repeatedLoadCases": [
+        {
+          "point": "org.eclipse.equinox.p2.repository.tools.verifier",
+          "abbreviated": false,
+          "subsequentQueries": 24,
+          "loadedAfterQueries": false,
+          "streamAttemptsAfterQueries": 25,
+          "successfulInputStreams": 0,
+          "closedSuccessfulStreams": 0,
+          "targetHandlesBefore": 0,
+          "targetHandlesAfter": 0,
+          "streamExceptionCount": 25
+        },
+        {
+          "point": "org.eclipse.equinox.p2.repository.tools.verifier",
+          "abbreviated": true,
+          "subsequentQueries": 24,
+          "loadedAfterQueries": false,
+          "streamAttemptsAfterQueries": 25,
+          "successfulInputStreams": 0,
+          "closedSuccessfulStreams": 0,
+          "targetHandlesBefore": 0,
+          "targetHandlesAfter": 0,
+          "streamExceptionCount": 25
+        },
+        {
+          "point": "org.eclipse.ui.externaltools.configurationDuplicationMaps",
+          "abbreviated": false,
+          "subsequentQueries": 24,
+          "loadedAfterQueries": false,
+          "streamAttemptsAfterQueries": 25,
+          "successfulInputStreams": 0,
+          "closedSuccessfulStreams": 0,
+          "targetHandlesBefore": 1,
+          "targetHandlesAfter": 1,
+          "streamExceptionCount": 25
+        },
+        {
+          "point": "org.eclipse.ui.externaltools.configurationDuplicationMaps",
+          "abbreviated": true,
+          "subsequentQueries": 24,
+          "loadedAfterQueries": false,
+          "streamAttemptsAfterQueries": 25,
+          "successfulInputStreams": 0,
+          "closedSuccessfulStreams": 0,
+          "targetHandlesBefore": 1,
+          "targetHandlesAfter": 1,
+          "streamExceptionCount": 25
+        },
+        {
+          "point": "org.eclipse.core.runtime.applications",
+          "abbreviated": false,
+          "subsequentQueries": 24,
+          "loadedAfterQueries": true,
+          "streamAttemptsAfterQueries": 1,
+          "successfulInputStreams": 1,
+          "closedSuccessfulStreams": 1,
+          "targetHandlesBefore": 0,
+          "targetHandlesAfter": 0,
+          "streamExceptionCount": 0
+        },
+        {
+          "point": "org.eclipse.core.runtime.applications",
+          "abbreviated": true,
+          "subsequentQueries": 24,
+          "loadedAfterQueries": true,
+          "streamAttemptsAfterQueries": 1,
+          "successfulInputStreams": 1,
+          "closedSuccessfulStreams": 1,
+          "targetHandlesBefore": 0,
+          "targetHandlesAfter": 0,
+          "streamExceptionCount": 0
+        }
+      ]
+    },
+    "pde-restored": {
+      "summary": {
+        "information": 0,
+        "descriptorFiles": 83,
+        "warnings": 0,
+        "contributionsByCoverage": {
+          "schema-model-loaded": 923,
+          "unknown-extension-point": 16
+        },
+        "errors": 119,
+        "extensionContributions": 939,
+        "diagnostics": 119
+      },
+      "diagnosticsByPoint": {
+        "org.eclipse.e4.ui.css.core.elementProvider": 1,
+        "org.eclipse.help.base.searchParticipant": 2,
+        "org.eclipse.ui.commands": 2,
+        "org.eclipse.ui.ide.projectConfigurators": 1,
+        "org.eclipse.ui.popupMenus": 99,
+        "org.eclipse.ui.trace.traceComponents": 14
+      },
+      "controls": 19,
+      "verification": "passed",
+      "repeatedLoadCases": [
+        {
+          "point": "org.eclipse.equinox.p2.repository.tools.verifier",
+          "abbreviated": false,
+          "subsequentQueries": 24,
+          "loadedAfterQueries": true,
+          "streamAttemptsAfterQueries": 1,
+          "successfulInputStreams": 1,
+          "closedSuccessfulStreams": 1,
+          "targetHandlesBefore": 0,
+          "targetHandlesAfter": 0,
+          "streamExceptionCount": 0
+        },
+        {
+          "point": "org.eclipse.equinox.p2.repository.tools.verifier",
+          "abbreviated": true,
+          "subsequentQueries": 24,
+          "loadedAfterQueries": true,
+          "streamAttemptsAfterQueries": 1,
+          "successfulInputStreams": 1,
+          "closedSuccessfulStreams": 1,
+          "targetHandlesBefore": 0,
+          "targetHandlesAfter": 0,
+          "streamExceptionCount": 0
+        },
+        {
+          "point": "org.eclipse.ui.externaltools.configurationDuplicationMaps",
+          "abbreviated": false,
+          "subsequentQueries": 24,
+          "loadedAfterQueries": true,
+          "streamAttemptsAfterQueries": 1,
+          "successfulInputStreams": 1,
+          "closedSuccessfulStreams": 1,
+          "targetHandlesBefore": 0,
+          "targetHandlesAfter": 0,
+          "streamExceptionCount": 0
+        },
+        {
+          "point": "org.eclipse.ui.externaltools.configurationDuplicationMaps",
+          "abbreviated": true,
+          "subsequentQueries": 24,
+          "loadedAfterQueries": true,
+          "streamAttemptsAfterQueries": 1,
+          "successfulInputStreams": 1,
+          "closedSuccessfulStreams": 1,
+          "targetHandlesBefore": 0,
+          "targetHandlesAfter": 0,
+          "streamExceptionCount": 0
+        },
+        {
+          "point": "org.eclipse.core.runtime.applications",
+          "abbreviated": false,
+          "subsequentQueries": 24,
+          "loadedAfterQueries": true,
+          "streamAttemptsAfterQueries": 1,
+          "successfulInputStreams": 1,
+          "closedSuccessfulStreams": 1,
+          "targetHandlesBefore": 0,
+          "targetHandlesAfter": 0,
+          "streamExceptionCount": 0
+        },
+        {
+          "point": "org.eclipse.core.runtime.applications",
+          "abbreviated": true,
+          "subsequentQueries": 24,
+          "loadedAfterQueries": true,
+          "streamAttemptsAfterQueries": 1,
+          "successfulInputStreams": 1,
+          "closedSuccessfulStreams": 1,
+          "targetHandlesBefore": 0,
+          "targetHandlesAfter": 0,
+          "streamExceptionCount": 0
+        }
+      ]
+    }
+  },
+  "projectionComparisons": {
+    "baseline": {
+      "contributions": 939,
+      "statuses": {
+        "valid": 337,
+        "invalid": 551,
+        "unchecked": 51
+      },
+      "uncheckedReasons": {
+        "executable_extension_child": 16,
+        "conflicting_declaration": 16,
+        "missing-schema": 3,
+        "undeclared-point": 16
+      },
+      "compiledSchemas": 209,
+      "uncompiledSchemas": 1
+    },
+    "repaired": {
+      "contributions": 939,
+      "statuses": {
+        "valid": 365,
+        "invalid": 516,
+        "unchecked": 58
+      },
+      "uncheckedReasons": {
+        "executable_extension_child": 16,
+        "conflicting_declaration": 23,
+        "missing-schema": 3,
+        "undeclared-point": 16
+      },
+      "compiledSchemas": 208,
+      "uncompiledSchemas": 2
+    },
+    "four-repaired": {
+      "contributions": 939,
+      "statuses": {
+        "valid": 365,
+        "invalid": 516,
+        "unchecked": 58
+      },
+      "uncheckedReasons": {
+        "executable_extension_child": 16,
+        "conflicting_declaration": 23,
+        "missing-schema": 3,
+        "undeclared-point": 16
+      },
+      "compiledSchemas": 208,
+      "uncompiledSchemas": 2
+    },
+    "final-repaired": {
+      "contributions": 939,
+      "statuses": {
+        "valid": 367,
+        "invalid": 521,
+        "unchecked": 51
+      },
+      "uncheckedReasons": {
+        "executable_extension_child": 16,
+        "conflicting_declaration": 16,
+        "missing-schema": 3,
+        "undeclared-point": 16
+      },
+      "compiledSchemas": 209,
+      "uncompiledSchemas": 1
+    }
+  },
+  "inputs": {
+    "pde-baseline-final/pde-validation.json": "91d32adf3c36fd9ec7e586c059272df74d9667273811f3c306937715e7e50157",
+    "pde-baseline-final/execution.json": "8a82831ddc112f8026d8c06815e32128238be4b2d90dcaadece279d86b6cb86c",
+    "pde-repaired/pde-validation.json": "2a605313cc88deda20dc0fba2e127811bde6ab604212e1d82eb7421ca3a979ae",
+    "pde-repaired/execution.json": "83904484f6f3d15ff50a136ad3aff4033e9baeeba45d1c4bb4fcf13839e7b240",
+    "pde-four-repaired/pde-validation.json": "983949c4ddb5e38b55e0862d630ba9060491af05ac9aa7f6a2a7ff1507c42af3",
+    "pde-four-repaired/execution.json": "90b0bbe3a6053f32de9e331da40b62b413be649b819398729a341365d2700b96",
+    "pde-final-repaired/pde-validation.json": "e417a1d137a32b6bfe3b2263adc902d5cb8e101ed9904ad5c7dd48749387cb1c",
+    "pde-final-repaired/execution.json": "46cec0fbfa11f412f4a240961287243ee0876d5759b4d386af37a41873d1e6f1",
+    "pde-restored/pde-validation.json": "8fdbaf6fb4ecc7c36041677af3e7f0a7c185081dbd3bb8b250d9ad886de90f30",
+    "pde-restored/execution.json": "c28fb4da63959cdd555ce1b8f5178c717135a16584e48df82e0bb5055475cbda",
+    "projected-grammar-baseline.json": "5167504320799843a5a162f6332ddc8aa905fd7873b924be8c7e6065873472d2",
+    "projected-grammar-repaired.json": "aba856dcb4743a34ea028f47b0dea06ed3008eb60d2de12c3a7e31c9f8ed974d",
+    "projected-grammar-four-repaired.json": "5bb1e2dcc06fc90d0dddc3762e4f56c18a16af690efb3286371b651cc6855151",
+    "projected-grammar-final-repaired.json": "1769f6d2efd492e88994101b99c466cd7cf132e74a3d6087cc987cd6c29d6bdf",
+    "projected-findings-classification.json": "eaf8789ad5f11d4d537cf7cc4fd12cd329f3fc091a3b2655df3229cb789c95d6",
+    "projected-findings-repaired.json": "69f49ca3f55f16f8584be3c8cae0406addded5f5429d301944c6ccb9661b9c51",
+    "projected-findings-four-repaired.json": "201197806b12d4b25cf92de6862a5c2620e552088a3ce62c434c78ebffcd6e57",
+    "projected-findings-final-repaired.json": "76ee10c87af83450d41224875202b155b6cfa515420d1367584dcb373b01aedb",
+    "consumer-contract-checks-osgi.json": "fd2d08f063ba443ad776d3591579bea7e12f11dd7fdfeeffa847eaaee2fbcf2c",
+    "extra-consumer-contract-checks.json": "313cab08b854b7413c1f7c0d20c8bfcfb17165c3e95c1a7050cc0748086697bc"
+  },
+  "nativeRunnerSha256": "7648f2e7ef7ae4da86f9c3a005f5f6ed034cd6926aa581a04ed45d0b03312a62",
+  "nativePreferencesIdentical": true,
+  "allOriginalDescriptorBytesIdenticalAcrossNativeRuns": true,
+  "classificationComparisons": {
+    "projected-findings-classification.json": {
+      "diagnosticsByCategory": {
+        "empty_content_xml_whitespace": 1623,
+        "identifier_enumeration": 44,
+        "other_grammar": 263
+      },
+      "contributionsWithOnlyEmptyContentWhitespace": 425,
+      "filesWithOnlyEmptyContentWhitespaceDiagnostics": 31,
+      "sensitivityStatuses": {
+        "valid": 762,
+        "invalid": 126,
+        "unchecked": 51
+      },
+      "removedWhitespaceCharacters": 14469
+    },
+    "projected-findings-repaired.json": {
+      "diagnosticsByCategory": {
+        "empty_content_xml_whitespace": 1718,
+        "identifier_enumeration": 44,
+        "other_grammar": 82
+      },
+      "contributionsWithOnlyEmptyContentWhitespace": 451,
+      "filesWithOnlyEmptyContentWhitespaceDiagnostics": 34,
+      "sensitivityStatuses": {
+        "valid": 816,
+        "invalid": 65,
+        "unchecked": 58
+      },
+      "removedWhitespaceCharacters": 16174
+    },
+    "projected-findings-four-repaired.json": {
+      "diagnosticsByCategory": {
+        "empty_content_xml_whitespace": 1718,
+        "identifier_enumeration": 44,
+        "other_grammar": 81
+      },
+      "contributionsWithOnlyEmptyContentWhitespace": 452,
+      "filesWithOnlyEmptyContentWhitespaceDiagnostics": 35,
+      "sensitivityStatuses": {
+        "valid": 817,
+        "invalid": 64,
+        "unchecked": 58
+      },
+      "removedWhitespaceCharacters": 16174
+    },
+    "projected-findings-final-repaired.json": {
+      "diagnosticsByCategory": {
+        "empty_content_xml_whitespace": 1722,
+        "identifier_enumeration": 44,
+        "other_grammar": 95
+      },
+      "contributionsWithOnlyEmptyContentWhitespace": 452,
+      "filesWithOnlyEmptyContentWhitespaceDiagnostics": 35,
+      "sensitivityStatuses": {
+        "valid": 819,
+        "invalid": 69,
+        "unchecked": 51
+      },
+      "removedWhitespaceCharacters": 16239
+    }
+  },
+  "consumerChecks": {
+    "consumer-contract-checks-osgi.json": {
+      "sourceSha256": "978a43cb545db1dd7b4b265f40e79da54135eabfdc708c251ebcd35c84d000ca",
+      "scope": "Unchanged ConsumerContractProbe in a real OSGi IApplication; actual SDK expression conversion/evaluation and hasFolder consumer semantics; no startup timing",
+      "compileExit": 0,
+      "exitCode": 0,
+      "passed": true,
+      "passedChecks": 10,
+      "checks": [
+        "PASS expression enablement children=3 result=TRUE",
+        "PASS expression and children=3 result=TRUE",
+        "PASS expression or children=3 result=TRUE",
+        "PASS expression with children=3 result=TRUE",
+        "PASS expression resolve children=3 result=TRUE",
+        "PASS expression adapt children=3 result=TRUE",
+        "PASS expression iterate children=3 result=TRUE",
+        "PASS hasFolder directory=TRUE",
+        "PASS hasFolder file=FALSE",
+        "PASS hasFolder absent=FALSE"
+      ],
+      "sourceUnchanged": true,
+      "platformRunning": true,
+      "sdkBundleHashes": {
+        "org.eclipse.core.expressions_3.9.700.v20260710-0925.jar": "06a18236ae181659e1e5499d912d68de527720686f1f51dab632d3e298e32b78",
+        "org.eclipse.ui.ide_3.23.200.v20260822-1631.jar": "286cc2e99b9793ae3fc5d7f7eaa16e0ac9b07b606dc6d3308d79c7813e562b2b"
+      },
+      "bundleVersions": {
+        "expressions": "3.9.700.v20260710-0925",
+        "uiIde": "3.23.200.v20260822-1631"
+      },
+      "codeSources": {
+        "expressions": "file:/workspace/scratch/a8e2e1882d42/verification/instance-validation/consumer-contract-checks-osgi-run/eclipse/plugins/org.eclipse.core.expressions_3.9.700.v20260710-0925.jar",
+        "hasFolder": "file:/workspace/scratch/a8e2e1882d42/verification/instance-validation/consumer-contract-checks-osgi-run/eclipse/plugins/org.eclipse.ui.ide_3.23.200.v20260822-1631.jar",
+        "probe": "file:/workspace/scratch/a8e2e1882d42/verification/instance-validation/consumer-contract-checks-osgi-run/eclipse/plugins/org.eclipse.pde.xmlstudy.consumer_1.0.0.jar"
+      }
+    },
+    "extra-consumer-contract-checks.json": {
+      "sourceSha256": "99ec44c09b9a7e2ac1fb4da4bf60c3bb7a3efeaa1fb3a53c8cbea1d89b67c939",
+      "scope": "Actual SDK standalone registry and CSS consumer with fixture contributions; no startup timing",
+      "compileExit": 0,
+      "exitCode": 0,
+      "passed": true,
+      "passedChecks": 8
+    }
+  }
+}

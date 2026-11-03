@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension id="validate" point="org.eclipse.core.runtime.applications">
+      <application cardinality="singleton-global" thread="main" visible="false">
+         <run class="org.eclipse.pde.xmlstudy.instances.ValidationApplication"/>
+      </application>
+   </extension>
+</plugin>

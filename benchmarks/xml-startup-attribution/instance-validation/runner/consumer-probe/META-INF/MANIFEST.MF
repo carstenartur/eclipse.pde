@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: XML Schema Consumer Contract Probe
+Bundle-SymbolicName: org.eclipse.pde.xmlstudy.consumer;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.equinox.app,
+ org.eclipse.core.expressions,
+ org.eclipse.ui.ide
+

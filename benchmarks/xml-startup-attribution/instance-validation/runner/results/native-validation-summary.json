@@ -1,0 +1,1580 @@
+{
+  "scope": "Actual installed PDE ExtensionsErrorReporter in headless Eclipse; all 83 corpus descriptors and 939 contributions; no startup timing claim.",
+  "nativeJarSha256": "2e9776076b9855a7e99ae861cabae144eb29e98450cca8e20ec8ff8d0669fd31",
+  "nativeRunnerSha256": "7648f2e7ef7ae4da86f9c3a005f5f6ed034cd6926aa581a04ed45d0b03312a62",
+  "preferences": {
+    "compilers.p.unknown-element": 0,
+    "compilers.p.unknown-attribute": 0,
+    "compilers.p.no-required-att": 0,
+    "compilers.p.unresolved-ex-points": 0,
+    "compilers.p.unknown-class": 2,
+    "compilers.p.discouraged-class": 2,
+    "compilers.p.unknown-resource": 2,
+    "compilers.p.not-externalized-att": 2,
+    "compilers.p.unknown-identifier": 2,
+    "compilers.p.deprecated": 2,
+    "compilers.p.internal": 2
+  },
+  "preferenceQualifier": "org.eclipse.pde",
+  "controls": [
+    {
+      "file": "cases/valid.xml",
+      "description": "Valid grammar comparator",
+      "expectation": "accept",
+      "harnessCheckPassed": true,
+      "diagnosticCount": 0,
+      "pdeReportedDiagnostic": false
+    },
+    {
+      "file": "cases/unknown-attribute.xml",
+      "description": "Unknown attribute on a known element",
+      "expectation": "reject",
+      "harnessCheckPassed": true,
+      "diagnosticCount": 1,
+      "pdeReportedDiagnostic": true
+    },
+    {
+      "file": "cases/required-attribute.xml",
+      "description": "Missing required name attribute",
+      "expectation": "reject",
+      "harnessCheckPassed": true,
+      "diagnosticCount": 1,
+      "pdeReportedDiagnostic": true
+    },
+    {
+      "file": "cases/unknown-child.xml",
+      "description": "Unknown child under extension",
+      "expectation": "reject",
+      "harnessCheckPassed": true,
+      "diagnosticCount": 1,
+      "pdeReportedDiagnostic": true
+    },
+    {
+      "file": "cases/cardinality-max.xml",
+      "description": "Two children where maximum is one",
+      "expectation": "reject",
+      "harnessCheckPassed": true,
+      "diagnosticCount": 1,
+      "pdeReportedDiagnostic": true
+    },
+    {
+      "file": "cases/cardinality-min.xml",
+      "description": "Zero children where minimum is one",
+      "expectation": "reject",
+      "harnessCheckPassed": true,
+      "diagnosticCount": 1,
+      "pdeReportedDiagnostic": true
+    },
+    {
+      "file": "cases/enumeration.xml",
+      "description": "Invalid enumeration value",
+      "expectation": "reject",
+      "harnessCheckPassed": true,
+      "diagnosticCount": 1,
+      "pdeReportedDiagnostic": true
+    },
+    {
+      "file": "cases/unknown-point.xml",
+      "description": "Undeclared extension point",
+      "expectation": "reject-point",
+      "harnessCheckPassed": true,
+      "diagnosticCount": 1,
+      "pdeReportedDiagnostic": true
+    },
+    {
+      "file": "cases/missing-schema.xml",
+      "description": "Declared point whose schema file is missing",
+      "expectation": "coverage-gap",
+      "harnessCheckPassed": true,
+      "diagnosticCount": 0,
+      "pdeReportedDiagnostic": false
+    },
+    {
+      "file": "cases/undeclared-schema.xml",
+      "description": "Declared point without a schema declaration",
+      "expectation": "coverage-gap",
+      "harnessCheckPassed": true,
+      "diagnosticCount": 0,
+      "pdeReportedDiagnostic": false
+    },
+    {
+      "file": "cases/boolean.xml",
+      "description": "Invalid lexical boolean value",
+      "expectation": "observe-invalid",
+      "harnessCheckPassed": true,
+      "diagnosticCount": 0,
+      "pdeReportedDiagnostic": false
+    },
+    {
+      "file": "cases/sequence-valid.xml",
+      "description": "Valid sequence order comparator",
+      "expectation": "accept",
+      "harnessCheckPassed": true,
+      "diagnosticCount": 0,
+      "pdeReportedDiagnostic": false
+    },
+    {
+      "file": "cases/sequence-reversed.xml",
+      "description": "Reversed children in declared sequence",
+      "expectation": "observe-invalid",
+      "harnessCheckPassed": true,
+      "diagnosticCount": 0,
+      "pdeReportedDiagnostic": false
+    },
+    {
+      "file": "cases/choice-valid.xml",
+      "description": "Valid nested choice comparator",
+      "expectation": "accept",
+      "harnessCheckPassed": true,
+      "diagnosticCount": 0,
+      "pdeReportedDiagnostic": false
+    },
+    {
+      "file": "cases/choice-both.xml",
+      "description": "Both arms of a single nested choice",
+      "expectation": "observe-invalid",
+      "harnessCheckPassed": true,
+      "diagnosticCount": 2,
+      "pdeReportedDiagnostic": true
+    },
+    {
+      "file": "cases/choice-sequence-valid.xml",
+      "description": "Valid sequence arm inside choice",
+      "expectation": "accept",
+      "harnessCheckPassed": true,
+      "diagnosticCount": 0,
+      "pdeReportedDiagnostic": false
+    },
+    {
+      "file": "cases/choice-sequence-tail.xml",
+      "description": "Valid element arm beside sequence inside choice",
+      "expectation": "accept",
+      "harnessCheckPassed": true,
+      "diagnosticCount": 0,
+      "pdeReportedDiagnostic": false
+    },
+    {
+      "file": "cases/choice-sequence-missing.xml",
+      "description": "Incomplete sequence arm inside choice",
+      "expectation": "observe-invalid",
+      "harnessCheckPassed": true,
+      "diagnosticCount": 0,
+      "pdeReportedDiagnostic": false
+    },
+    {
+      "file": "cases/text-content.xml",
+      "description": "Character content in an attribute-only complex element",
+      "expectation": "observe-invalid",
+      "harnessCheckPassed": true,
+      "diagnosticCount": 0,
+      "pdeReportedDiagnostic": false
+    }
+  ],
+  "runs": {
+    "pde-baseline-final": {
+      "verification": "passed",
+      "summary": {
+        "information": 0,
+        "diagnostics": 119,
+        "extensionContributions": 939,
+        "errors": 119,
+        "contributionsByCoverage": {
+          "schema-load-failed": 3,
+          "schema-model-loaded": 920,
+          "unknown-extension-point": 16
+        },
+        "warnings": 0,
+        "descriptorFiles": 83
+      },
+      "registeredModelCount": 245,
+      "controlCount": 19,
+      "controlsPassed": true,
+      "exitCode": 0,
+      "eclipseErrorEntries": 0,
+      "inputHashesUnchanged": true,
+      "removedDiagnosticsVersusBaseline": [],
+      "addedDiagnosticsVersusBaseline": [],
+      "repeatedLoadDiagnostic": [
+        {
+          "point": "org.eclipse.equinox.p2.repository.tools.verifier",
+          "sourceUrl": "jar:file:/workspace/scratch/a8e2e1882d42/verification/instance-validation/pde-baseline-final/eclipse/plugins/org.eclipse.equinox.p2.repository.tools.source_2.4.1000.v20260304-1232.jar!/schema/org.eclipse.equinox.p2.repository.tools.verifier.exsd",
+          "abbreviated": false,
+          "subsequentQueries": 24,
+          "sameModelRetained": true,
+          "loadedAfterInitial": false,
+          "loadedAfterQueries": false,
+          "validAfterQueries": false,
+          "streamAttemptsAfterInitial": 1,
+          "streamAttemptsAfterQueries": 25,
+          "successfulInputStreams": 0,
+          "closedSuccessfulStreams": 0,
+          "connectionAttempts": 25,
+          "fileHandleTarget": "/workspace/scratch/a8e2e1882d42/verification/startup-environment/eclipse-sources/org.eclipse.equinox.p2.repository.tools.source_2.4.1000.v20260304-1232.jar",
+          "targetHandlesBefore": 0,
+          "targetHandlesAfter": 0,
+          "handlePositiveControl": {
+            "supported": true,
+            "whileOpen": 1,
+            "afterClose": 0,
+            "before": 0,
+            "passed": true
+          },
+          "streamExceptionCount": 25,
+          "streamExceptionTypes": [
+            "java.io.FileNotFoundException"
+          ],
+          "jarUseCachesValues": [
+            false
+          ]
+        },
+        {
+          "point": "org.eclipse.equinox.p2.repository.tools.verifier",
+          "sourceUrl": "jar:file:/workspace/scratch/a8e2e1882d42/verification/instance-validation/pde-baseline-final/eclipse/plugins/org.eclipse.equinox.p2.repository.tools.source_2.4.1000.v20260304-1232.jar!/schema/org.eclipse.equinox.p2.repository.tools.verifier.exsd",
+          "abbreviated": true,
+          "subsequentQueries": 24,
+          "sameModelRetained": true,
+          "loadedAfterInitial": false,
+          "loadedAfterQueries": false,
+          "validAfterQueries": false,
+          "streamAttemptsAfterInitial": 1,
+          "streamAttemptsAfterQueries": 25,
+          "successfulInputStreams": 0,
+          "closedSuccessfulStreams": 0,
+          "connectionAttempts": 25,
+          "fileHandleTarget": "/workspace/scratch/a8e2e1882d42/verification/startup-environment/eclipse-sources/org.eclipse.equinox.p2.repository.tools.source_2.4.1000.v20260304-1232.jar",
+          "targetHandlesBefore": 0,
+          "targetHandlesAfter": 0,
+          "handlePositiveControl": {
+            "supported": true,
+            "whileOpen": 1,
+            "afterClose": 0,
+            "before": 0,
+            "passed": true
+          },
+          "streamExceptionCount": 25,
+          "streamExceptionTypes": [
+            "java.io.FileNotFoundException"
+          ],
+          "jarUseCachesValues": [
+            false
+          ]
+        },
+        {
+          "point": "org.eclipse.ui.externaltools.configurationDuplicationMaps",
+          "sourceUrl": "jar:file:/workspace/scratch/a8e2e1882d42/verification/instance-validation/pde-baseline-final/eclipse/plugins/org.eclipse.ui.externaltools.source_3.7.100.v20260326-0937.jar!/schema/configurationDuplicationMaps.exsd",
+          "abbreviated": false,
+          "subsequentQueries": 24,
+          "sameModelRetained": true,
+          "loadedAfterInitial": false,
+          "loadedAfterQueries": false,
+          "validAfterQueries": false,
+          "streamAttemptsAfterInitial": 1,
+          "streamAttemptsAfterQueries": 25,
+          "successfulInputStreams": 0,
+          "closedSuccessfulStreams": 0,
+          "connectionAttempts": 25,
+          "fileHandleTarget": "/workspace/scratch/a8e2e1882d42/verification/startup-environment/eclipse-sources/org.eclipse.ui.externaltools.source_3.7.100.v20260326-0937.jar",
+          "targetHandlesBefore": 1,
+          "targetHandlesAfter": 1,
+          "handlePositiveControl": {
+            "supported": true,
+            "whileOpen": 2,
+            "afterClose": 1,
+            "before": 1,
+            "passed": true
+          },
+          "streamExceptionCount": 25,
+          "streamExceptionTypes": [
+            "java.io.FileNotFoundException"
+          ],
+          "jarUseCachesValues": [
+            false
+          ]
+        },
+        {
+          "point": "org.eclipse.ui.externaltools.configurationDuplicationMaps",
+          "sourceUrl": "jar:file:/workspace/scratch/a8e2e1882d42/verification/instance-validation/pde-baseline-final/eclipse/plugins/org.eclipse.ui.externaltools.source_3.7.100.v20260326-0937.jar!/schema/configurationDuplicationMaps.exsd",
+          "abbreviated": true,
+          "subsequentQueries": 24,
+          "sameModelRetained": true,
+          "loadedAfterInitial": false,
+          "loadedAfterQueries": false,
+          "validAfterQueries": false,
+          "streamAttemptsAfterInitial": 1,
+          "streamAttemptsAfterQueries": 25,
+          "successfulInputStreams": 0,
+          "closedSuccessfulStreams": 0,
+          "connectionAttempts": 25,
+          "fileHandleTarget": "/workspace/scratch/a8e2e1882d42/verification/startup-environment/eclipse-sources/org.eclipse.ui.externaltools.source_3.7.100.v20260326-0937.jar",
+          "targetHandlesBefore": 1,
+          "targetHandlesAfter": 1,
+          "handlePositiveControl": {
+            "supported": true,
+            "whileOpen": 2,
+            "afterClose": 1,
+            "before": 1,
+            "passed": true
+          },
+          "streamExceptionCount": 25,
+          "streamExceptionTypes": [
+            "java.io.FileNotFoundException"
+          ],
+          "jarUseCachesValues": [
+            false
+          ]
+        },
+        {
+          "point": "org.eclipse.core.runtime.applications",
+          "sourceUrl": "file:/workspace/scratch/a8e2e1882d42/verification/instance-validation/pde-baseline-final/corpus/projects/org.eclipse.equinox.app/schema/applications.exsd",
+          "abbreviated": false,
+          "subsequentQueries": 24,
+          "sameModelRetained": true,
+          "loadedAfterInitial": true,
+          "loadedAfterQueries": true,
+          "validAfterQueries": true,
+          "streamAttemptsAfterInitial": 1,
+          "streamAttemptsAfterQueries": 1,
+          "successfulInputStreams": 1,
+          "closedSuccessfulStreams": 1,
+          "connectionAttempts": 1,
+          "fileHandleTarget": "/workspace/scratch/a8e2e1882d42/verification/instance-validation/pde-baseline-final/corpus/projects/org.eclipse.equinox.app/schema/applications.exsd",
+          "targetHandlesBefore": 0,
+          "targetHandlesAfter": 0,
+          "handlePositiveControl": {
+            "supported": true,
+            "whileOpen": 1,
+            "afterClose": 0,
+            "before": 0,
+            "passed": true
+          },
+          "streamExceptionCount": 0,
+          "streamExceptionTypes": [],
+          "jarUseCachesValues": []
+        },
+        {
+          "point": "org.eclipse.core.runtime.applications",
+          "sourceUrl": "file:/workspace/scratch/a8e2e1882d42/verification/instance-validation/pde-baseline-final/corpus/projects/org.eclipse.equinox.app/schema/applications.exsd",
+          "abbreviated": true,
+          "subsequentQueries": 24,
+          "sameModelRetained": true,
+          "loadedAfterInitial": true,
+          "loadedAfterQueries": true,
+          "validAfterQueries": true,
+          "streamAttemptsAfterInitial": 1,
+          "streamAttemptsAfterQueries": 1,
+          "successfulInputStreams": 1,
+          "closedSuccessfulStreams": 1,
+          "connectionAttempts": 1,
+          "fileHandleTarget": "/workspace/scratch/a8e2e1882d42/verification/instance-validation/pde-baseline-final/corpus/projects/org.eclipse.equinox.app/schema/applications.exsd",
+          "targetHandlesBefore": 0,
+          "targetHandlesAfter": 0,
+          "handlePositiveControl": {
+            "supported": true,
+            "whileOpen": 1,
+            "afterClose": 0,
+            "before": 0,
+            "passed": true
+          },
+          "streamExceptionCount": 0,
+          "streamExceptionTypes": [],
+          "jarUseCachesValues": []
+        }
+      ]
+    },
+    "pde-repaired": {
+      "verification": "passed",
+      "summary": {
+        "descriptorFiles": 83,
+        "warnings": 0,
+        "contributionsByCoverage": {
+          "schema-load-failed": 3,
+          "schema-model-loaded": 920,
+          "unknown-extension-point": 16
+        },
+        "errors": 118,
+        "extensionContributions": 939,
+        "diagnostics": 118,
+        "information": 0
+      },
+      "registeredModelCount": 245,
+      "controlCount": 19,
+      "controlsPassed": true,
+      "exitCode": 0,
+      "eclipseErrorEntries": 0,
+      "inputHashesUnchanged": true,
+      "removedDiagnosticsVersusBaseline": [
+        {
+          "count": 1,
+          "attributes": {
+            "categoryId": "fatal",
+            "compilerKey": "compilers.p.unknown-element",
+            "lineNumber": 2675,
+            "message": "Element 'hasFolder' is not legal as a child of element 'activeWhen'.",
+            "problemId": 12289,
+            "severity": 2,
+            "xmlTree.locationPath": "(0)plugin>(46)extension>(0)projectConfigurator>(0)activeWhen>(0)hasFolder"
+          },
+          "file": "plugin.xml",
+          "project": "org.eclipse.ui.ide",
+          "type": "org.eclipse.pde.core.problem"
+        }
+      ],
+      "addedDiagnosticsVersusBaseline": [],
+      "repeatedLoadDiagnostic": [
+        {
+          "point": "org.eclipse.equinox.p2.repository.tools.verifier",
+          "sourceUrl": "jar:file:/workspace/scratch/a8e2e1882d42/verification/instance-validation/pde-repaired/eclipse/plugins/org.eclipse.equinox.p2.repository.tools.source_2.4.1000.v20260304-1232.jar!/schema/org.eclipse.equinox.p2.repository.tools.verifier.exsd",
+          "abbreviated": false,
+          "subsequentQueries": 24,
+          "sameModelRetained": true,
+          "loadedAfterInitial": false,
+          "loadedAfterQueries": false,
+          "validAfterQueries": false,
+          "streamAttemptsAfterInitial": 1,
+          "streamAttemptsAfterQueries": 25,
+          "successfulInputStreams": 0,
+          "closedSuccessfulStreams": 0,
+          "connectionAttempts": 25,
+          "fileHandleTarget": "/workspace/scratch/a8e2e1882d42/verification/startup-environment/eclipse-sources/org.eclipse.equinox.p2.repository.tools.source_2.4.1000.v20260304-1232.jar",
+          "targetHandlesBefore": 0,
+          "targetHandlesAfter": 0,
+          "handlePositiveControl": {
+            "passed": true,
+            "before": 0,
+            "afterClose": 0,
+            "whileOpen": 1,
+            "supported": true
+          },
+          "streamExceptionCount": 25,
+          "streamExceptionTypes": [
+            "java.io.FileNotFoundException"
+          ],
+          "jarUseCachesValues": [
+            false
+          ]
+        },
+        {
+          "point": "org.eclipse.equinox.p2.repository.tools.verifier",
+          "sourceUrl": "jar:file:/workspace/scratch/a8e2e1882d42/verification/instance-validation/pde-repaired/eclipse/plugins/org.eclipse.equinox.p2.repository.tools.source_2.4.1000.v20260304-1232.jar!/schema/org.eclipse.equinox.p2.repository.tools.verifier.exsd",
+          "abbreviated": true,
+          "subsequentQueries": 24,
+          "sameModelRetained": true,
+          "loadedAfterInitial": false,
+          "loadedAfterQueries": false,
+          "validAfterQueries": false,
+          "streamAttemptsAfterInitial": 1,
+          "streamAttemptsAfterQueries": 25,
+          "successfulInputStreams": 0,
+          "closedSuccessfulStreams": 0,
+          "connectionAttempts": 25,
+          "fileHandleTarget": "/workspace/scratch/a8e2e1882d42/verification/startup-environment/eclipse-sources/org.eclipse.equinox.p2.repository.tools.source_2.4.1000.v20260304-1232.jar",
+          "targetHandlesBefore": 0,
+          "targetHandlesAfter": 0,
+          "handlePositiveControl": {
+            "passed": true,
+            "before": 0,
+            "afterClose": 0,
+            "whileOpen": 1,
+            "supported": true
+          },
+          "streamExceptionCount": 25,
+          "streamExceptionTypes": [
+            "java.io.FileNotFoundException"
+          ],
+          "jarUseCachesValues": [
+            false
+          ]
+        },
+        {
+          "point": "org.eclipse.ui.externaltools.configurationDuplicationMaps",
+          "sourceUrl": "jar:file:/workspace/scratch/a8e2e1882d42/verification/instance-validation/pde-repaired/eclipse/plugins/org.eclipse.ui.externaltools.source_3.7.100.v20260326-0937.jar!/schema/configurationDuplicationMaps.exsd",
+          "abbreviated": false,
+          "subsequentQueries": 24,
+          "sameModelRetained": true,
+          "loadedAfterInitial": false,
+          "loadedAfterQueries": false,
+          "validAfterQueries": false,
+          "streamAttemptsAfterInitial": 1,
+          "streamAttemptsAfterQueries": 25,
+          "successfulInputStreams": 0,
+          "closedSuccessfulStreams": 0,
+          "connectionAttempts": 25,
+          "fileHandleTarget": "/workspace/scratch/a8e2e1882d42/verification/startup-environment/eclipse-sources/org.eclipse.ui.externaltools.source_3.7.100.v20260326-0937.jar",
+          "targetHandlesBefore": 1,
+          "targetHandlesAfter": 1,
+          "handlePositiveControl": {
+            "passed": true,
+            "before": 1,
+            "afterClose": 1,
+            "whileOpen": 2,
+            "supported": true
+          },
+          "streamExceptionCount": 25,
+          "streamExceptionTypes": [
+            "java.io.FileNotFoundException"
+          ],
+          "jarUseCachesValues": [
+            false
+          ]
+        },
+        {
+          "point": "org.eclipse.ui.externaltools.configurationDuplicationMaps",
+          "sourceUrl": "jar:file:/workspace/scratch/a8e2e1882d42/verification/instance-validation/pde-repaired/eclipse/plugins/org.eclipse.ui.externaltools.source_3.7.100.v20260326-0937.jar!/schema/configurationDuplicationMaps.exsd",
+          "abbreviated": true,
+          "subsequentQueries": 24,
+          "sameModelRetained": true,
+          "loadedAfterInitial": false,
+          "loadedAfterQueries": false,
+          "validAfterQueries": false,
+          "streamAttemptsAfterInitial": 1,
+          "streamAttemptsAfterQueries": 25,
+          "successfulInputStreams": 0,
+          "closedSuccessfulStreams": 0,
+          "connectionAttempts": 25,
+          "fileHandleTarget": "/workspace/scratch/a8e2e1882d42/verification/startup-environment/eclipse-sources/org.eclipse.ui.externaltools.source_3.7.100.v20260326-0937.jar",
+          "targetHandlesBefore": 1,
+          "targetHandlesAfter": 1,
+          "handlePositiveControl": {
+            "passed": true,
+            "before": 1,
+            "afterClose": 1,
+            "whileOpen": 2,
+            "supported": true
+          },
+          "streamExceptionCount": 25,
+          "streamExceptionTypes": [
+            "java.io.FileNotFoundException"
+          ],
+          "jarUseCachesValues": [
+            false
+          ]
+        },
+        {
+          "point": "org.eclipse.core.runtime.applications",
+          "sourceUrl": "file:/workspace/scratch/a8e2e1882d42/verification/instance-validation/pde-repaired/corpus/projects/org.eclipse.equinox.app/schema/applications.exsd",
+          "abbreviated": false,
+          "subsequentQueries": 24,
+          "sameModelRetained": true,
+          "loadedAfterInitial": true,
+          "loadedAfterQueries": true,
+          "validAfterQueries": true,
+          "streamAttemptsAfterInitial": 1,
+          "streamAttemptsAfterQueries": 1,
+          "successfulInputStreams": 1,
+          "closedSuccessfulStreams": 1,
+          "connectionAttempts": 1,
+          "fileHandleTarget": "/workspace/scratch/a8e2e1882d42/verification/instance-validation/pde-repaired/corpus/projects/org.eclipse.equinox.app/schema/applications.exsd",
+          "targetHandlesBefore": 0,
+          "targetHandlesAfter": 0,
+          "handlePositiveControl": {
+            "passed": true,
+            "before": 0,
+            "afterClose": 0,
+            "whileOpen": 1,
+            "supported": true
+          },
+          "streamExceptionCount": 0,
+          "streamExceptionTypes": [],
+          "jarUseCachesValues": []
+        },
+        {
+          "point": "org.eclipse.core.runtime.applications",
+          "sourceUrl": "file:/workspace/scratch/a8e2e1882d42/verification/instance-validation/pde-repaired/corpus/projects/org.eclipse.equinox.app/schema/applications.exsd",
+          "abbreviated": true,
+          "subsequentQueries": 24,
+          "sameModelRetained": true,
+          "loadedAfterInitial": true,
+          "loadedAfterQueries": true,
+          "validAfterQueries": true,
+          "streamAttemptsAfterInitial": 1,
+          "streamAttemptsAfterQueries": 1,
+          "successfulInputStreams": 1,
+          "closedSuccessfulStreams": 1,
+          "connectionAttempts": 1,
+          "fileHandleTarget": "/workspace/scratch/a8e2e1882d42/verification/instance-validation/pde-repaired/corpus/projects/org.eclipse.equinox.app/schema/applications.exsd",
+          "targetHandlesBefore": 0,
+          "targetHandlesAfter": 0,
+          "handlePositiveControl": {
+            "passed": true,
+            "before": 0,
+            "afterClose": 0,
+            "whileOpen": 1,
+            "supported": true
+          },
+          "streamExceptionCount": 0,
+          "streamExceptionTypes": [],
+          "jarUseCachesValues": []
+        }
+      ]
+    },
+    "pde-restored": {
+      "verification": "passed",
+      "summary": {
+        "information": 0,
+        "descriptorFiles": 83,
+        "warnings": 0,
+        "contributionsByCoverage": {
+          "schema-model-loaded": 923,
+          "unknown-extension-point": 16
+        },
+        "errors": 119,
+        "extensionContributions": 939,
+        "diagnostics": 119
+      },
+      "registeredModelCount": 245,
+      "controlCount": 19,
+      "controlsPassed": true,
+      "exitCode": 0,
+      "eclipseErrorEntries": 0,
+      "inputHashesUnchanged": true,
+      "removedDiagnosticsVersusBaseline": [],
+      "addedDiagnosticsVersusBaseline": [],
+      "repeatedLoadDiagnostic": [
+        {
+          "point": "org.eclipse.equinox.p2.repository.tools.verifier",
+          "sourceUrl": "file:/workspace/scratch/a8e2e1882d42/verification/instance-validation/pde-restored/corpus/projects/org.eclipse.equinox.p2.repository.tools/schema/org.eclipse.equinox.p2.repository.tools.verifier.exsd",
+          "abbreviated": false,
+          "subsequentQueries": 24,
+          "sameModelRetained": true,
+          "loadedAfterInitial": true,
+          "loadedAfterQueries": true,
+          "validAfterQueries": true,
+          "streamAttemptsAfterInitial": 1,
+          "streamAttemptsAfterQueries": 1,
+          "successfulInputStreams": 1,
+          "closedSuccessfulStreams": 1,
+          "connectionAttempts": 1,
+          "fileHandleTarget": "/workspace/scratch/a8e2e1882d42/verification/instance-validation/pde-restored/corpus/projects/org.eclipse.equinox.p2.repository.tools/schema/org.eclipse.equinox.p2.repository.tools.verifier.exsd",
+          "targetHandlesBefore": 0,
+          "targetHandlesAfter": 0,
+          "handlePositiveControl": {
+            "supported": true,
+            "passed": true,
+            "before": 0,
+            "afterClose": 0,
+            "whileOpen": 1
+          },
+          "streamExceptionCount": 0,
+          "streamExceptionTypes": [],
+          "jarUseCachesValues": []
+        },
+        {
+          "point": "org.eclipse.equinox.p2.repository.tools.verifier",
+          "sourceUrl": "file:/workspace/scratch/a8e2e1882d42/verification/instance-validation/pde-restored/corpus/projects/org.eclipse.equinox.p2.repository.tools/schema/org.eclipse.equinox.p2.repository.tools.verifier.exsd",
+          "abbreviated": true,
+          "subsequentQueries": 24,
+          "sameModelRetained": true,
+          "loadedAfterInitial": true,
+          "loadedAfterQueries": true,
+          "validAfterQueries": true,
+          "streamAttemptsAfterInitial": 1,
+          "streamAttemptsAfterQueries": 1,
+          "successfulInputStreams": 1,
+          "closedSuccessfulStreams": 1,
+          "connectionAttempts": 1,
+          "fileHandleTarget": "/workspace/scratch/a8e2e1882d42/verification/instance-validation/pde-restored/corpus/projects/org.eclipse.equinox.p2.repository.tools/schema/org.eclipse.equinox.p2.repository.tools.verifier.exsd",
+          "targetHandlesBefore": 0,
+          "targetHandlesAfter": 0,
+          "handlePositiveControl": {
+            "supported": true,
+            "passed": true,
+            "before": 0,
+            "afterClose": 0,
+            "whileOpen": 1
+          },
+          "streamExceptionCount": 0,
+          "streamExceptionTypes": [],
+          "jarUseCachesValues": []
+        },
+        {
+          "point": "org.eclipse.ui.externaltools.configurationDuplicationMaps",
+          "sourceUrl": "file:/workspace/scratch/a8e2e1882d42/verification/instance-validation/pde-restored/corpus/projects/org.eclipse.ui.externaltools/schema/configurationDuplicationMaps.exsd",
+          "abbreviated": false,
+          "subsequentQueries": 24,
+          "sameModelRetained": true,
+          "loadedAfterInitial": true,
+          "loadedAfterQueries": true,
+          "validAfterQueries": true,
+          "streamAttemptsAfterInitial": 1,
+          "streamAttemptsAfterQueries": 1,
+          "successfulInputStreams": 1,
+          "closedSuccessfulStreams": 1,
+          "connectionAttempts": 1,
+          "fileHandleTarget": "/workspace/scratch/a8e2e1882d42/verification/instance-validation/pde-restored/corpus/projects/org.eclipse.ui.externaltools/schema/configurationDuplicationMaps.exsd",
+          "targetHandlesBefore": 0,
+          "targetHandlesAfter": 0,
+          "handlePositiveControl": {
+            "supported": true,
+            "passed": true,
+            "before": 0,
+            "afterClose": 0,
+            "whileOpen": 1
+          },
+          "streamExceptionCount": 0,
+          "streamExceptionTypes": [],
+          "jarUseCachesValues": []
+        },
+        {
+          "point": "org.eclipse.ui.externaltools.configurationDuplicationMaps",
+          "sourceUrl": "file:/workspace/scratch/a8e2e1882d42/verification/instance-validation/pde-restored/corpus/projects/org.eclipse.ui.externaltools/schema/configurationDuplicationMaps.exsd",
+          "abbreviated": true,
+          "subsequentQueries": 24,
+          "sameModelRetained": true,
+          "loadedAfterInitial": true,
+          "loadedAfterQueries": true,
+          "validAfterQueries": true,
+          "streamAttemptsAfterInitial": 1,
+          "streamAttemptsAfterQueries": 1,
+          "successfulInputStreams": 1,
+          "closedSuccessfulStreams": 1,
+          "connectionAttempts": 1,
+          "fileHandleTarget": "/workspace/scratch/a8e2e1882d42/verification/instance-validation/pde-restored/corpus/projects/org.eclipse.ui.externaltools/schema/configurationDuplicationMaps.exsd",
+          "targetHandlesBefore": 0,
+          "targetHandlesAfter": 0,
+          "handlePositiveControl": {
+            "supported": true,
+            "passed": true,
+            "before": 0,
+            "afterClose": 0,
+            "whileOpen": 1
+          },
+          "streamExceptionCount": 0,
+          "streamExceptionTypes": [],
+          "jarUseCachesValues": []
+        },
+        {
+          "point": "org.eclipse.core.runtime.applications",
+          "sourceUrl": "file:/workspace/scratch/a8e2e1882d42/verification/instance-validation/pde-restored/corpus/projects/org.eclipse.equinox.app/schema/applications.exsd",
+          "abbreviated": false,
+          "subsequentQueries": 24,
+          "sameModelRetained": true,
+          "loadedAfterInitial": true,
+          "loadedAfterQueries": true,
+          "validAfterQueries": true,
+          "streamAttemptsAfterInitial": 1,
+          "streamAttemptsAfterQueries": 1,
+          "successfulInputStreams": 1,
+          "closedSuccessfulStreams": 1,
+          "connectionAttempts": 1,
+          "fileHandleTarget": "/workspace/scratch/a8e2e1882d42/verification/instance-validation/pde-restored/corpus/projects/org.eclipse.equinox.app/schema/applications.exsd",
+          "targetHandlesBefore": 0,
+          "targetHandlesAfter": 0,
+          "handlePositiveControl": {
+            "supported": true,
+            "passed": true,
+            "before": 0,
+            "afterClose": 0,
+            "whileOpen": 1
+          },
+          "streamExceptionCount": 0,
+          "streamExceptionTypes": [],
+          "jarUseCachesValues": []
+        },
+        {
+          "point": "org.eclipse.core.runtime.applications",
+          "sourceUrl": "file:/workspace/scratch/a8e2e1882d42/verification/instance-validation/pde-restored/corpus/projects/org.eclipse.equinox.app/schema/applications.exsd",
+          "abbreviated": true,
+          "subsequentQueries": 24,
+          "sameModelRetained": true,
+          "loadedAfterInitial": true,
+          "loadedAfterQueries": true,
+          "validAfterQueries": true,
+          "streamAttemptsAfterInitial": 1,
+          "streamAttemptsAfterQueries": 1,
+          "successfulInputStreams": 1,
+          "closedSuccessfulStreams": 1,
+          "connectionAttempts": 1,
+          "fileHandleTarget": "/workspace/scratch/a8e2e1882d42/verification/instance-validation/pde-restored/corpus/projects/org.eclipse.equinox.app/schema/applications.exsd",
+          "targetHandlesBefore": 0,
+          "targetHandlesAfter": 0,
+          "handlePositiveControl": {
+            "supported": true,
+            "passed": true,
+            "before": 0,
+            "afterClose": 0,
+            "whileOpen": 1
+          },
+          "streamExceptionCount": 0,
+          "streamExceptionTypes": [],
+          "jarUseCachesValues": []
+        }
+      ]
+    },
+    "pde-four-repaired": {
+      "verification": "passed",
+      "summary": {
+        "warnings": 0,
+        "contributionsByCoverage": {
+          "schema-load-failed": 3,
+          "schema-model-loaded": 920,
+          "unknown-extension-point": 16
+        },
+        "errors": 115,
+        "extensionContributions": 939,
+        "diagnostics": 115,
+        "information": 0,
+        "descriptorFiles": 83
+      },
+      "registeredModelCount": 245,
+      "controlCount": 19,
+      "controlsPassed": true,
+      "exitCode": 0,
+      "eclipseErrorEntries": 0,
+      "inputHashesUnchanged": true,
+      "removedDiagnosticsVersusBaseline": [
+        {
+          "count": 1,
+          "attributes": {
+            "categoryId": "fatal",
+            "compilerKey": "compilers.p.unknown-element",
+            "lineNumber": 1951,
+            "message": "A minimum of 1 'parameter' elements must be specified.",
+            "problemId": 4135,
+            "severity": 2
+          },
+          "file": "plugin.xml",
+          "project": "org.eclipse.debug.ui",
+          "type": "org.eclipse.pde.core.problem"
+        },
+        {
+          "count": 1,
+          "attributes": {
+            "categoryId": "fatal",
+            "compilerKey": "compilers.p.unknown-element",
+            "lineNumber": 1960,
+            "message": "A minimum of 1 'parameter' elements must be specified.",
+            "problemId": 4135,
+            "severity": 2
+          },
+          "file": "plugin.xml",
+          "project": "org.eclipse.debug.ui",
+          "type": "org.eclipse.pde.core.problem"
+        },
+        {
+          "count": 1,
+          "attributes": {
+            "categoryId": "fatal",
+            "compilerKey": "compilers.p.unknown-element",
+            "lineNumber": 2675,
+            "message": "Element 'hasFolder' is not legal as a child of element 'activeWhen'.",
+            "problemId": 12289,
+            "severity": 2,
+            "xmlTree.locationPath": "(0)plugin>(46)extension>(0)projectConfigurator>(0)activeWhen>(0)hasFolder"
+          },
+          "file": "plugin.xml",
+          "project": "org.eclipse.ui.ide",
+          "type": "org.eclipse.pde.core.problem"
+        },
+        {
+          "count": 1,
+          "attributes": {
+            "categoryId": "fatal",
+            "compilerKey": "compilers.p.unknown-element",
+            "lineNumber": 53,
+            "message": "A maximum of 1 'provider' elements can be specified.",
+            "problemId": 12289,
+            "severity": 2,
+            "xmlTree.locationPath": "(0)plugin>(0)extension>(2)provider"
+          },
+          "file": "plugin.xml",
+          "project": "org.eclipse.e4.ui.css.swt",
+          "type": "org.eclipse.pde.core.problem"
+        }
+      ],
+      "addedDiagnosticsVersusBaseline": [],
+      "repeatedLoadDiagnostic": [
+        {
+          "point": "org.eclipse.equinox.p2.repository.tools.verifier",
+          "sourceUrl": "jar:file:/workspace/scratch/a8e2e1882d42/verification/instance-validation/pde-four-repaired/eclipse/plugins/org.eclipse.equinox.p2.repository.tools.source_2.4.1000.v20260304-1232.jar!/schema/org.eclipse.equinox.p2.repository.tools.verifier.exsd",
+          "abbreviated": false,
+          "subsequentQueries": 24,
+          "sameModelRetained": true,
+          "loadedAfterInitial": false,
+          "loadedAfterQueries": false,
+          "validAfterQueries": false,
+          "streamAttemptsAfterInitial": 1,
+          "streamAttemptsAfterQueries": 25,
+          "successfulInputStreams": 0,
+          "closedSuccessfulStreams": 0,
+          "connectionAttempts": 25,
+          "fileHandleTarget": "/workspace/scratch/a8e2e1882d42/verification/startup-environment/eclipse-sources/org.eclipse.equinox.p2.repository.tools.source_2.4.1000.v20260304-1232.jar",
+          "targetHandlesBefore": 0,
+          "targetHandlesAfter": 0,
+          "handlePositiveControl": {
+            "before": 0,
+            "afterClose": 0,
+            "whileOpen": 1,
+            "supported": true,
+            "passed": true
+          },
+          "streamExceptionCount": 25,
+          "streamExceptionTypes": [
+            "java.io.FileNotFoundException"
+          ],
+          "jarUseCachesValues": [
+            false
+          ]
+        },
+        {
+          "point": "org.eclipse.equinox.p2.repository.tools.verifier",
+          "sourceUrl": "jar:file:/workspace/scratch/a8e2e1882d42/verification/instance-validation/pde-four-repaired/eclipse/plugins/org.eclipse.equinox.p2.repository.tools.source_2.4.1000.v20260304-1232.jar!/schema/org.eclipse.equinox.p2.repository.tools.verifier.exsd",
+          "abbreviated": true,
+          "subsequentQueries": 24,
+          "sameModelRetained": true,
+          "loadedAfterInitial": false,
+          "loadedAfterQueries": false,
+          "validAfterQueries": false,
+          "streamAttemptsAfterInitial": 1,
+          "streamAttemptsAfterQueries": 25,
+          "successfulInputStreams": 0,
+          "closedSuccessfulStreams": 0,
+          "connectionAttempts": 25,
+          "fileHandleTarget": "/workspace/scratch/a8e2e1882d42/verification/startup-environment/eclipse-sources/org.eclipse.equinox.p2.repository.tools.source_2.4.1000.v20260304-1232.jar",
+          "targetHandlesBefore": 0,
+          "targetHandlesAfter": 0,
+          "handlePositiveControl": {
+            "before": 0,
+            "afterClose": 0,
+            "whileOpen": 1,
+            "supported": true,
+            "passed": true
+          },
+          "streamExceptionCount": 25,
+          "streamExceptionTypes": [
+            "java.io.FileNotFoundException"
+          ],
+          "jarUseCachesValues": [
+            false
+          ]
+        },
+        {
+          "point": "org.eclipse.ui.externaltools.configurationDuplicationMaps",
+          "sourceUrl": "jar:file:/workspace/scratch/a8e2e1882d42/verification/instance-validation/pde-four-repaired/eclipse/plugins/org.eclipse.ui.externaltools.source_3.7.100.v20260326-0937.jar!/schema/configurationDuplicationMaps.exsd",
+          "abbreviated": false,
+          "subsequentQueries": 24,
+          "sameModelRetained": true,
+          "loadedAfterInitial": false,
+          "loadedAfterQueries": false,
+          "validAfterQueries": false,
+          "streamAttemptsAfterInitial": 1,
+          "streamAttemptsAfterQueries": 25,
+          "successfulInputStreams": 0,
+          "closedSuccessfulStreams": 0,
+          "connectionAttempts": 25,
+          "fileHandleTarget": "/workspace/scratch/a8e2e1882d42/verification/startup-environment/eclipse-sources/org.eclipse.ui.externaltools.source_3.7.100.v20260326-0937.jar",
+          "targetHandlesBefore": 1,
+          "targetHandlesAfter": 1,
+          "handlePositiveControl": {
+            "before": 1,
+            "afterClose": 1,
+            "whileOpen": 2,
+            "supported": true,
+            "passed": true
+          },
+          "streamExceptionCount": 25,
+          "streamExceptionTypes": [
+            "java.io.FileNotFoundException"
+          ],
+          "jarUseCachesValues": [
+            false
+          ]
+        },
+        {
+          "point": "org.eclipse.ui.externaltools.configurationDuplicationMaps",
+          "sourceUrl": "jar:file:/workspace/scratch/a8e2e1882d42/verification/instance-validation/pde-four-repaired/eclipse/plugins/org.eclipse.ui.externaltools.source_3.7.100.v20260326-0937.jar!/schema/configurationDuplicationMaps.exsd",
+          "abbreviated": true,
+          "subsequentQueries": 24,
+          "sameModelRetained": true,
+          "loadedAfterInitial": false,
+          "loadedAfterQueries": false,
+          "validAfterQueries": false,
+          "streamAttemptsAfterInitial": 1,
+          "streamAttemptsAfterQueries": 25,
+          "successfulInputStreams": 0,
+          "closedSuccessfulStreams": 0,
+          "connectionAttempts": 25,
+          "fileHandleTarget": "/workspace/scratch/a8e2e1882d42/verification/startup-environment/eclipse-sources/org.eclipse.ui.externaltools.source_3.7.100.v20260326-0937.jar",
+          "targetHandlesBefore": 1,
+          "targetHandlesAfter": 1,
+          "handlePositiveControl": {
+            "before": 1,
+            "afterClose": 1,
+            "whileOpen": 2,
+            "supported": true,
+            "passed": true
+          },
+          "streamExceptionCount": 25,
+          "streamExceptionTypes": [
+            "java.io.FileNotFoundException"
+          ],
+          "jarUseCachesValues": [
+            false
+          ]
+        },
+        {
+          "point": "org.eclipse.core.runtime.applications",
+          "sourceUrl": "file:/workspace/scratch/a8e2e1882d42/verification/instance-validation/pde-four-repaired/corpus/projects/org.eclipse.equinox.app/schema/applications.exsd",
+          "abbreviated": false,
+          "subsequentQueries": 24,
+          "sameModelRetained": true,
+          "loadedAfterInitial": true,
+          "loadedAfterQueries": true,
+          "validAfterQueries": true,
+          "streamAttemptsAfterInitial": 1,
+          "streamAttemptsAfterQueries": 1,
+          "successfulInputStreams": 1,
+          "closedSuccessfulStreams": 1,
+          "connectionAttempts": 1,
+          "fileHandleTarget": "/workspace/scratch/a8e2e1882d42/verification/instance-validation/pde-four-repaired/corpus/projects/org.eclipse.equinox.app/schema/applications.exsd",
+          "targetHandlesBefore": 0,
+          "targetHandlesAfter": 0,
+          "handlePositiveControl": {
+            "before": 0,
+            "afterClose": 0,
+            "whileOpen": 1,
+            "supported": true,
+            "passed": true
+          },
+          "streamExceptionCount": 0,
+          "streamExceptionTypes": [],
+          "jarUseCachesValues": []
+        },
+        {
+          "point": "org.eclipse.core.runtime.applications",
+          "sourceUrl": "file:/workspace/scratch/a8e2e1882d42/verification/instance-validation/pde-four-repaired/corpus/projects/org.eclipse.equinox.app/schema/applications.exsd",
+          "abbreviated": true,
+          "subsequentQueries": 24,
+          "sameModelRetained": true,
+          "loadedAfterInitial": true,
+          "loadedAfterQueries": true,
+          "validAfterQueries": true,
+          "streamAttemptsAfterInitial": 1,
+          "streamAttemptsAfterQueries": 1,
+          "successfulInputStreams": 1,
+          "closedSuccessfulStreams": 1,
+          "connectionAttempts": 1,
+          "fileHandleTarget": "/workspace/scratch/a8e2e1882d42/verification/instance-validation/pde-four-repaired/corpus/projects/org.eclipse.equinox.app/schema/applications.exsd",
+          "targetHandlesBefore": 0,
+          "targetHandlesAfter": 0,
+          "handlePositiveControl": {
+            "before": 0,
+            "afterClose": 0,
+            "whileOpen": 1,
+            "supported": true,
+            "passed": true
+          },
+          "streamExceptionCount": 0,
+          "streamExceptionTypes": [],
+          "jarUseCachesValues": []
+        }
+      ]
+    },
+    "pde-final-repaired": {
+      "verification": "passed",
+      "summary": {
+        "diagnostics": 115,
+        "extensionContributions": 939,
+        "errors": 115,
+        "contributionsByCoverage": {
+          "schema-load-failed": 3,
+          "schema-model-loaded": 920,
+          "unknown-extension-point": 16
+        },
+        "warnings": 0,
+        "descriptorFiles": 83,
+        "information": 0
+      },
+      "registeredModelCount": 245,
+      "controlCount": 19,
+      "controlsPassed": true,
+      "exitCode": 0,
+      "eclipseErrorEntries": 0,
+      "inputHashesUnchanged": true,
+      "removedDiagnosticsVersusBaseline": [
+        {
+          "count": 1,
+          "attributes": {
+            "categoryId": "fatal",
+            "compilerKey": "compilers.p.unknown-element",
+            "lineNumber": 1951,
+            "message": "A minimum of 1 'parameter' elements must be specified.",
+            "problemId": 4135,
+            "severity": 2
+          },
+          "file": "plugin.xml",
+          "project": "org.eclipse.debug.ui",
+          "type": "org.eclipse.pde.core.problem"
+        },
+        {
+          "count": 1,
+          "attributes": {
+            "categoryId": "fatal",
+            "compilerKey": "compilers.p.unknown-element",
+            "lineNumber": 1960,
+            "message": "A minimum of 1 'parameter' elements must be specified.",
+            "problemId": 4135,
+            "severity": 2
+          },
+          "file": "plugin.xml",
+          "project": "org.eclipse.debug.ui",
+          "type": "org.eclipse.pde.core.problem"
+        },
+        {
+          "count": 1,
+          "attributes": {
+            "categoryId": "fatal",
+            "compilerKey": "compilers.p.unknown-element",
+            "lineNumber": 2675,
+            "message": "Element 'hasFolder' is not legal as a child of element 'activeWhen'.",
+            "problemId": 12289,
+            "severity": 2,
+            "xmlTree.locationPath": "(0)plugin>(46)extension>(0)projectConfigurator>(0)activeWhen>(0)hasFolder"
+          },
+          "file": "plugin.xml",
+          "project": "org.eclipse.ui.ide",
+          "type": "org.eclipse.pde.core.problem"
+        },
+        {
+          "count": 1,
+          "attributes": {
+            "categoryId": "fatal",
+            "compilerKey": "compilers.p.unknown-element",
+            "lineNumber": 53,
+            "message": "A maximum of 1 'provider' elements can be specified.",
+            "problemId": 12289,
+            "severity": 2,
+            "xmlTree.locationPath": "(0)plugin>(0)extension>(2)provider"
+          },
+          "file": "plugin.xml",
+          "project": "org.eclipse.e4.ui.css.swt",
+          "type": "org.eclipse.pde.core.problem"
+        }
+      ],
+      "addedDiagnosticsVersusBaseline": [],
+      "repeatedLoadDiagnostic": [
+        {
+          "point": "org.eclipse.equinox.p2.repository.tools.verifier",
+          "sourceUrl": "jar:file:/workspace/scratch/a8e2e1882d42/verification/instance-validation/pde-final-repaired/eclipse/plugins/org.eclipse.equinox.p2.repository.tools.source_2.4.1000.v20260304-1232.jar!/schema/org.eclipse.equinox.p2.repository.tools.verifier.exsd",
+          "abbreviated": false,
+          "subsequentQueries": 24,
+          "sameModelRetained": true,
+          "loadedAfterInitial": false,
+          "loadedAfterQueries": false,
+          "validAfterQueries": false,
+          "streamAttemptsAfterInitial": 1,
+          "streamAttemptsAfterQueries": 25,
+          "successfulInputStreams": 0,
+          "closedSuccessfulStreams": 0,
+          "connectionAttempts": 25,
+          "fileHandleTarget": "/workspace/scratch/a8e2e1882d42/verification/startup-environment/eclipse-sources/org.eclipse.equinox.p2.repository.tools.source_2.4.1000.v20260304-1232.jar",
+          "targetHandlesBefore": 0,
+          "targetHandlesAfter": 0,
+          "handlePositiveControl": {
+            "afterClose": 0,
+            "before": 0,
+            "passed": true,
+            "supported": true,
+            "whileOpen": 1
+          },
+          "streamExceptionCount": 25,
+          "streamExceptionTypes": [
+            "java.io.FileNotFoundException"
+          ],
+          "jarUseCachesValues": [
+            false
+          ]
+        },
+        {
+          "point": "org.eclipse.equinox.p2.repository.tools.verifier",
+          "sourceUrl": "jar:file:/workspace/scratch/a8e2e1882d42/verification/instance-validation/pde-final-repaired/eclipse/plugins/org.eclipse.equinox.p2.repository.tools.source_2.4.1000.v20260304-1232.jar!/schema/org.eclipse.equinox.p2.repository.tools.verifier.exsd",
+          "abbreviated": true,
+          "subsequentQueries": 24,
+          "sameModelRetained": true,
+          "loadedAfterInitial": false,
+          "loadedAfterQueries": false,
+          "validAfterQueries": false,
+          "streamAttemptsAfterInitial": 1,
+          "streamAttemptsAfterQueries": 25,
+          "successfulInputStreams": 0,
+          "closedSuccessfulStreams": 0,
+          "connectionAttempts": 25,
+          "fileHandleTarget": "/workspace/scratch/a8e2e1882d42/verification/startup-environment/eclipse-sources/org.eclipse.equinox.p2.repository.tools.source_2.4.1000.v20260304-1232.jar",
+          "targetHandlesBefore": 0,
+          "targetHandlesAfter": 0,
+          "handlePositiveControl": {
+            "afterClose": 0,
+            "before": 0,
+            "passed": true,
+            "supported": true,
+            "whileOpen": 1
+          },
+          "streamExceptionCount": 25,
+          "streamExceptionTypes": [
+            "java.io.FileNotFoundException"
+          ],
+          "jarUseCachesValues": [
+            false
+          ]
+        },
+        {
+          "point": "org.eclipse.ui.externaltools.configurationDuplicationMaps",
+          "sourceUrl": "jar:file:/workspace/scratch/a8e2e1882d42/verification/instance-validation/pde-final-repaired/eclipse/plugins/org.eclipse.ui.externaltools.source_3.7.100.v20260326-0937.jar!/schema/configurationDuplicationMaps.exsd",
+          "abbreviated": false,
+          "subsequentQueries": 24,
+          "sameModelRetained": true,
+          "loadedAfterInitial": false,
+          "loadedAfterQueries": false,
+          "validAfterQueries": false,
+          "streamAttemptsAfterInitial": 1,
+          "streamAttemptsAfterQueries": 25,
+          "successfulInputStreams": 0,
+          "closedSuccessfulStreams": 0,
+          "connectionAttempts": 25,
+          "fileHandleTarget": "/workspace/scratch/a8e2e1882d42/verification/startup-environment/eclipse-sources/org.eclipse.ui.externaltools.source_3.7.100.v20260326-0937.jar",
+          "targetHandlesBefore": 1,
+          "targetHandlesAfter": 1,
+          "handlePositiveControl": {
+            "afterClose": 1,
+            "before": 1,
+            "passed": true,
+            "supported": true,
+            "whileOpen": 2
+          },
+          "streamExceptionCount": 25,
+          "streamExceptionTypes": [
+            "java.io.FileNotFoundException"
+          ],
+          "jarUseCachesValues": [
+            false
+          ]
+        },
+        {
+          "point": "org.eclipse.ui.externaltools.configurationDuplicationMaps",
+          "sourceUrl": "jar:file:/workspace/scratch/a8e2e1882d42/verification/instance-validation/pde-final-repaired/eclipse/plugins/org.eclipse.ui.externaltools.source_3.7.100.v20260326-0937.jar!/schema/configurationDuplicationMaps.exsd",
+          "abbreviated": true,
+          "subsequentQueries": 24,
+          "sameModelRetained": true,
+          "loadedAfterInitial": false,
+          "loadedAfterQueries": false,
+          "validAfterQueries": false,
+          "streamAttemptsAfterInitial": 1,
+          "streamAttemptsAfterQueries": 25,
+          "successfulInputStreams": 0,
+          "closedSuccessfulStreams": 0,
+          "connectionAttempts": 25,
+          "fileHandleTarget": "/workspace/scratch/a8e2e1882d42/verification/startup-environment/eclipse-sources/org.eclipse.ui.externaltools.source_3.7.100.v20260326-0937.jar",
+          "targetHandlesBefore": 1,
+          "targetHandlesAfter": 1,
+          "handlePositiveControl": {
+            "afterClose": 1,
+            "before": 1,
+            "passed": true,
+            "supported": true,
+            "whileOpen": 2
+          },
+          "streamExceptionCount": 25,
+          "streamExceptionTypes": [
+            "java.io.FileNotFoundException"
+          ],
+          "jarUseCachesValues": [
+            false
+          ]
+        },
+        {
+          "point": "org.eclipse.core.runtime.applications",
+          "sourceUrl": "file:/workspace/scratch/a8e2e1882d42/verification/instance-validation/pde-final-repaired/corpus/projects/org.eclipse.equinox.app/schema/applications.exsd",
+          "abbreviated": false,
+          "subsequentQueries": 24,
+          "sameModelRetained": true,
+          "loadedAfterInitial": true,
+          "loadedAfterQueries": true,
+          "validAfterQueries": true,
+          "streamAttemptsAfterInitial": 1,
+          "streamAttemptsAfterQueries": 1,
+          "successfulInputStreams": 1,
+          "closedSuccessfulStreams": 1,
+          "connectionAttempts": 1,
+          "fileHandleTarget": "/workspace/scratch/a8e2e1882d42/verification/instance-validation/pde-final-repaired/corpus/projects/org.eclipse.equinox.app/schema/applications.exsd",
+          "targetHandlesBefore": 0,
+          "targetHandlesAfter": 0,
+          "handlePositiveControl": {
+            "afterClose": 0,
+            "before": 0,
+            "passed": true,
+            "supported": true,
+            "whileOpen": 1
+          },
+          "streamExceptionCount": 0,
+          "streamExceptionTypes": [],
+          "jarUseCachesValues": []
+        },
+        {
+          "point": "org.eclipse.core.runtime.applications",
+          "sourceUrl": "file:/workspace/scratch/a8e2e1882d42/verification/instance-validation/pde-final-repaired/corpus/projects/org.eclipse.equinox.app/schema/applications.exsd",
+          "abbreviated": true,
+          "subsequentQueries": 24,
+          "sameModelRetained": true,
+          "loadedAfterInitial": true,
+          "loadedAfterQueries": true,
+          "validAfterQueries": true,
+          "streamAttemptsAfterInitial": 1,
+          "streamAttemptsAfterQueries": 1,
+          "successfulInputStreams": 1,
+          "closedSuccessfulStreams": 1,
+          "connectionAttempts": 1,
+          "fileHandleTarget": "/workspace/scratch/a8e2e1882d42/verification/instance-validation/pde-final-repaired/corpus/projects/org.eclipse.equinox.app/schema/applications.exsd",
+          "targetHandlesBefore": 0,
+          "targetHandlesAfter": 0,
+          "handlePositiveControl": {
+            "afterClose": 0,
+            "before": 0,
+            "passed": true,
+            "supported": true,
+            "whileOpen": 1
+          },
+          "streamExceptionCount": 0,
+          "streamExceptionTypes": [],
+          "jarUseCachesValues": []
+        }
+      ]
+    }
+  },
+  "consumer": {
+    "passed": true,
+    "passedChecks": 10,
+    "checks": [
+      "PASS expression enablement children=3 result=TRUE",
+      "PASS expression and children=3 result=TRUE",
+      "PASS expression or children=3 result=TRUE",
+      "PASS expression with children=3 result=TRUE",
+      "PASS expression resolve children=3 result=TRUE",
+      "PASS expression adapt children=3 result=TRUE",
+      "PASS expression iterate children=3 result=TRUE",
+      "PASS hasFolder directory=TRUE",
+      "PASS hasFolder file=FALSE",
+      "PASS hasFolder absent=FALSE"
+    ],
+    "sourceSha256": "978a43cb545db1dd7b4b265f40e79da54135eabfdc708c251ebcd35c84d000ca",
+    "jarSha256": "778cb82a2013c8003e3774b119e03b511c742778b509f634ef14267bb944f40b",
+    "codeSources": {
+      "expressions": "file:/workspace/scratch/a8e2e1882d42/verification/instance-validation/consumer-contract-checks-osgi-run/eclipse/plugins/org.eclipse.core.expressions_3.9.700.v20260710-0925.jar",
+      "hasFolder": "file:/workspace/scratch/a8e2e1882d42/verification/instance-validation/consumer-contract-checks-osgi-run/eclipse/plugins/org.eclipse.ui.ide_3.23.200.v20260822-1631.jar",
+      "probe": "file:/workspace/scratch/a8e2e1882d42/verification/instance-validation/consumer-contract-checks-osgi-run/eclipse/plugins/org.eclipse.pde.xmlstudy.consumer_1.0.0.jar"
+    },
+    "bundleVersions": {
+      "expressions": "3.9.700.v20260710-0925",
+      "uiIde": "3.23.200.v20260822-1631"
+    },
+    "platformRunning": true,
+    "exitCode": 0,
+    "eclipseErrorEntries": 0,
+    "sourceUnchanged": true
+  },
+  "interpretationLimits": [
+    "Marker severities reflect explicitly enabled structural ERROR preferences, not default IDE severities.",
+    "Native PDE validation accepts invalid boolean values, reversed sequences, unexpected character content, and incomplete sequence arms in a complex choice; passing controls does not imply complete XSD validation.",
+    "Unknown extension points and unavailable schemas are coverage gaps, not validated inputs.",
+    "The 24 subsequent accessor queries in each retry case are deliberately induced; attempt counts do not establish startup frequency or duration.",
+    "There is no additional retained target handle across measured calls. The externaltools source JAR already has one retained handle; its ownership is not established.",
+    "Restoration changes missing JAR-entry URLs to copied schema-file URLs; the zero file-handle counts do not show that a preexisting source-JAR handle was closed.",
+    "The standalone consumer attempt is excluded setup evidence; only the real OSGi run supplies the 10 passing consumer checks."
+  ],
+  "rawArtifacts": {
+    "README.md": {
+      "bytes": 5172,
+      "sha256": "4bb47a84f6f3973ae19ea73fef12687ad15889aa292c101de5d854bec3828730"
+    },
+    "artifacts/org.eclipse.pde.xmlstudy.consumer_1.0.0.jar": {
+      "bytes": 9044,
+      "sha256": "778cb82a2013c8003e3774b119e03b511c742778b509f634ef14267bb944f40b"
+    },
+    "artifacts/org.eclipse.pde.xmlstudy.instances_1.0.0.jar": {
+      "bytes": 25558,
+      "sha256": "2e9776076b9855a7e99ae861cabae144eb29e98450cca8e20ec8ff8d0669fd31"
+    },
+    "consumer/application-result.json": {
+      "bytes": 2117,
+      "sha256": "9c9a0da968badb32b69bd4383a6c1380ad56d8efe0fbf26215cd0f6b2a010a9c"
+    },
+    "consumer/consumer-contract-checks-osgi.json": {
+      "bytes": 48524,
+      "sha256": "fd2d08f063ba443ad776d3591579bea7e12f11dd7fdfeeffa847eaaee2fbcf2c"
+    },
+    "consumer/eclipse.log": {
+      "bytes": 1103,
+      "sha256": "cd3c6b75b3d0cb2e898eea841527ed6f4778b90ec3ba37dac4e6e8e7fc21812c"
+    },
+    "consumer/excluded-standalone.json": {
+      "bytes": 1374,
+      "sha256": "468e9f403192b89cad179fe259ca6532e11f55b7b6c4734312e20670eda0bf5a"
+    },
+    "harness/fixes/ConsumerContractProbe.java": {
+      "bytes": 4281,
+      "sha256": "978a43cb545db1dd7b4b265f40e79da54135eabfdc708c251ebcd35c84d000ca"
+    },
+    "harness/fixes/run_consumer_checks.py": {
+      "bytes": 7211,
+      "sha256": "fa639af8632fa065292c91621a78c5e46750fd246b3efb55b9543354969a796e"
+    },
+    "harness/runner/.gitignore": {
+      "bytes": 21,
+      "sha256": "0cf256cc9234b415f912f5b0e9f8c9364688466041611047cd3f599c35f4efa6"
+    },
+    "harness/runner/META-INF/MANIFEST.MF": {
+      "bytes": 444,
+      "sha256": "98818b155c932b5696cd6320f06e136f315a0adec26a8f84d6b8c1164c02fec5"
+    },
+    "harness/runner/README.md": {
+      "bytes": 6923,
+      "sha256": "9e16de5c2b9917fb6d1b6283e1594ae8b2c8c7e81e95190d4426113275f13502"
+    },
+    "harness/runner/archive_results.py": {
+      "bytes": 9472,
+      "sha256": "865e1ca29d191a6165eab33631d9d789e85458aef9afc531a5b1ea2267d00a88"
+    },
+    "harness/runner/build_runner.py": {
+      "bytes": 2705,
+      "sha256": "eedb09cc213472ea0326028095d224a9edf80f215e2c170717e7ae61b6771189"
+    },
+    "harness/runner/consumer-probe/.gitignore": {
+      "bytes": 8,
+      "sha256": "020c2606e8ed484089c2083e0be438b9d0736bee1558a6b76af0d58bd23f69cf"
+    },
+    "harness/runner/consumer-probe/META-INF/MANIFEST.MF": {
+      "bytes": 356,
+      "sha256": "6bc0ba2ac8a3c355da84cc9df3a6ba286d9c4e2f5e9d485a62088af3912e4943"
+    },
+    "harness/runner/consumer-probe/plugin.xml": {
+      "bytes": 352,
+      "sha256": "c6f32847a8619d58c1c243e7b7c8e10d85073128b01ee627ed258d7e2c540c7c"
+    },
+    "harness/runner/consumer-probe/src/org/eclipse/pde/xmlstudy/consumer/ConsumerApplication.java": {
+      "bytes": 4458,
+      "sha256": "85b551fa807424ba5203a441087e17f4024aa5acc1eba409d6810a687f77eed4"
+    },
+    "harness/runner/consumer-probe/src/org/eclipse/pde/xmlstudy/consumer/Json.java": {
+      "bytes": 1658,
+      "sha256": "eb3518c96a8b919d16862122913ebbc5d4b9cef32bd89a32301f6e6a1ca2b29d"
+    },
+    "harness/runner/plugin.xml": {
+      "bytes": 358,
+      "sha256": "6f59a4cd98d88d480d3af8ddefbac56b16c1c03a980f1fa03b12bedeb5bbdde6"
+    },
+    "harness/runner/run_validation.py": {
+      "bytes": 13318,
+      "sha256": "7648f2e7ef7ae4da86f9c3a005f5f6ed034cd6926aa581a04ed45d0b03312a62"
+    },
+    "harness/runner/src/org/eclipse/pde/xmlstudy/instances/Json.java": {
+      "bytes": 1659,
+      "sha256": "a0cc672097822f75dc34a78b5e6ca6199a8be7a61fb27832175039a3d04837c6"
+    },
+    "harness/runner/src/org/eclipse/pde/xmlstudy/instances/RepeatedLoadProbe.java": {
+      "bytes": 8544,
+      "sha256": "8ec6dcedc6d330761920dce655717ce5a7ec6d52454a20d86e407d4e85041c9f"
+    },
+    "harness/runner/src/org/eclipse/pde/xmlstudy/instances/ValidationApplication.java": {
+      "bytes": 21509,
+      "sha256": "c8f5d479c45421211b6ebf64fa7550e3a8be87cf1b547d146720b6b236594160"
+    },
+    "runs/pde-baseline-final/build.json": {
+      "bytes": 864,
+      "sha256": "2346662c9ec4d4633bde309ffa00fc9165335223370835011846ff6b37241cc2"
+    },
+    "runs/pde-baseline-final/corpus-manifest.json": {
+      "bytes": 1806785,
+      "sha256": "4c4e76f48e8f0649395bc40ee963688b44915d936927fa04a8b91cf951bcc745"
+    },
+    "runs/pde-baseline-final/eclipse.log": {
+      "bytes": 2143,
+      "sha256": "f28aecc27f33124568419e6dc8c32e6ac702693f0af29f6bf07acddde54194ee"
+    },
+    "runs/pde-baseline-final/execution.json": {
+      "bytes": 124210,
+      "sha256": "8a82831ddc112f8026d8c06815e32128238be4b2d90dcaadece279d86b6cb86c"
+    },
+    "runs/pde-baseline-final/pde-validation.json": {
+      "bytes": 548591,
+      "sha256": "91d32adf3c36fd9ec7e586c059272df74d9667273811f3c306937715e7e50157"
+    },
+    "runs/pde-final-repaired/build.json": {
+      "bytes": 864,
+      "sha256": "2346662c9ec4d4633bde309ffa00fc9165335223370835011846ff6b37241cc2"
+    },
+    "runs/pde-final-repaired/corpus-manifest.json": {
+      "bytes": 1816083,
+      "sha256": "5dcebc14378c386beb17b6339c80b8cdd4b50c1f2e39cd014f92797edc2d13d8"
+    },
+    "runs/pde-final-repaired/eclipse.log": {
+      "bytes": 2143,
+      "sha256": "8ad3fc51bd74bd3978e347945ff1305084bc21abc20fef68ddebbb138c194efb"
+    },
+    "runs/pde-final-repaired/execution.json": {
+      "bytes": 124226,
+      "sha256": "46cec0fbfa11f412f4a240961287243ee0876d5759b4d386af37a41873d1e6f1"
+    },
+    "runs/pde-final-repaired/pde-validation.json": {
+      "bytes": 546586,
+      "sha256": "e417a1d137a32b6bfe3b2263adc902d5cb8e101ed9904ad5c7dd48749387cb1c"
+    },
+    "runs/pde-four-repaired/build.json": {
+      "bytes": 864,
+      "sha256": "2346662c9ec4d4633bde309ffa00fc9165335223370835011846ff6b37241cc2"
+    },
+    "runs/pde-four-repaired/corpus-manifest.json": {
+      "bytes": 1815057,
+      "sha256": "1a812789713c01be4a776c263cbb8d720b133d02b60f50555a634205dd1a268d"
+    },
+    "runs/pde-four-repaired/eclipse.log": {
+      "bytes": 2141,
+      "sha256": "b39829a34440f9fef88b417413ed34c13e33c1d980202ac1411cbe58903b466c"
+    },
+    "runs/pde-four-repaired/execution.json": {
+      "bytes": 124216,
+      "sha256": "90b0bbe3a6053f32de9e331da40b62b413be649b819398729a341365d2700b96"
+    },
+    "runs/pde-four-repaired/pde-validation.json": {
+      "bytes": 545683,
+      "sha256": "983949c4ddb5e38b55e0862d630ba9060491af05ac9aa7f6a2a7ff1507c42af3"
+    },
+    "runs/pde-repaired/build.json": {
+      "bytes": 864,
+      "sha256": "2346662c9ec4d4633bde309ffa00fc9165335223370835011846ff6b37241cc2"
+    },
+    "runs/pde-repaired/corpus-manifest.json": {
+      "bytes": 1811751,
+      "sha256": "e3edc60852e7870b7447e0f1ec4ae7e216149e0cffb87fd462611942a2c11b91"
+    },
+    "runs/pde-repaired/eclipse.log": {
+      "bytes": 2131,
+      "sha256": "9279b5db62900ee7f9f8ecc2ea738aa50e6c4c5945bf29dd02bb2c7a52f2c8f1"
+    },
+    "runs/pde-repaired/execution.json": {
+      "bytes": 124171,
+      "sha256": "83904484f6f3d15ff50a136ad3aff4033e9baeeba45d1c4bb4fcf13839e7b240"
+    },
+    "runs/pde-repaired/pde-validation.json": {
+      "bytes": 542530,
+      "sha256": "2a605313cc88deda20dc0fba2e127811bde6ab604212e1d82eb7421ca3a979ae"
+    },
+    "runs/pde-restored/build.json": {
+      "bytes": 864,
+      "sha256": "2346662c9ec4d4633bde309ffa00fc9165335223370835011846ff6b37241cc2"
+    },
+    "runs/pde-restored/corpus-manifest.json": {
+      "bytes": 1820810,
+      "sha256": "1273b55caf5d1a174ceea60ec6aa6038d6948889f595fcf995c5f525e177feb1"
+    },
+    "runs/pde-restored/eclipse.log": {
+      "bytes": 2108,
+      "sha256": "56c92e475e94df82b1a5da59daa27ac10a525f3a4d7ab584149f9b5dd92559bb"
+    },
+    "runs/pde-restored/execution.json": {
+      "bytes": 124462,
+      "sha256": "c28fb4da63959cdd555ce1b8f5178c717135a16584e48df82e0bb5055475cbda"
+    },
+    "runs/pde-restored/pde-validation.json": {
+      "bytes": 533839,
+      "sha256": "8fdbaf6fb4ecc7c36041677af3e7f0a7c185081dbd3bb8b250d9ad886de90f30"
+    }
+  }
+}
