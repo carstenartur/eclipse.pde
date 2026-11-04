@@ -1,0 +1,1383 @@
+{
+  "runId": 41904302644,
+  "head": "8f9e34d14c79bc6257a535abca9c6e8b07131826",
+  "artifactId": 13359139160,
+  "artifactSha256": "c8fcacc92eeaebbe63880c8a635392766cd0ab16c8e639c5debb14adcdfc7dff",
+  "indexedFiles": 43,
+  "sourceFiles": 28,
+  "pluginJars": 346,
+  "controls": [
+    {
+      "id": "jdk-controls",
+      "events": 56,
+      "closedSpans": 16,
+      "verification": {
+        "status": "ok",
+        "cases": 8,
+        "events": 56,
+        "zipBytes": 66,
+        "instrumentedMethods": 8
+      }
+    },
+    {
+      "id": "eclipse-controls",
+      "events": 5612,
+      "closedSpans": 2792,
+      "verification": {
+        "status": "ok",
+        "cases": 5,
+        "events": 5612,
+        "methods": 33
+      }
+    }
+  ],
+  "runs": [
+    {
+      "id": "headless-cold-registry",
+      "events": 7862,
+      "closedSpans": 3506,
+      "headless": true,
+      "boundary": "headless_application_entered",
+      "coverage": {
+        "registryLoadedFromCache": false,
+        "registryParses": 206,
+        "saxParses": 335,
+        "domParses": 6,
+        "emfLoads": 0
+      },
+      "phases": [
+        {
+          "phase": "headless_application_entered",
+          "jvmUptimeMs": 4918,
+          "thread": "main"
+        },
+        {
+          "phase": "explicit_pde_model_load_started",
+          "jvmUptimeMs": 6674,
+          "thread": "main"
+        },
+        {
+          "phase": "explicit_pde_schema_load_started",
+          "jvmUptimeMs": 6702,
+          "thread": "main"
+        },
+        {
+          "phase": "explicit_pde_loads_finished",
+          "jvmUptimeMs": 6737,
+          "thread": "main"
+        },
+        {
+          "phase": "headless_workspace_save_started",
+          "jvmUptimeMs": 15510,
+          "thread": "main"
+        },
+        {
+          "phase": "headless_background_settled",
+          "jvmUptimeMs": 15528,
+          "thread": "main"
+        }
+      ],
+      "operations": {
+        "beforeBoundary": {
+          "resource_lookup": 1278,
+          "resource_open": 946,
+          "zip_entry_open": 270,
+          "sax_parse": 291,
+          "registry_start": 1,
+          "registry_contribution": 340,
+          "registry_parse": 170,
+          "file_open": 21
+        },
+        "boundaryToSettled": {
+          "sax_parse": 44,
+          "resource_lookup": 19,
+          "resource_open": 20,
+          "dom_parse": 6,
+          "file_open": 23,
+          "pde_model_load": 3,
+          "schema_load": 2,
+          "registry_contribution": 36,
+          "registry_parse": 36
+        },
+        "afterSettled": {}
+      },
+      "xmlZipDeliveredBytes": {
+        "beforeBoundary": 2219945,
+        "boundaryToSettled": 0,
+        "afterSettled": 0
+      },
+      "jobEvents": 162,
+      "jobEventsBeforeProbe": null,
+      "builders": [],
+      "schemas": [
+        {
+          "method": "org.eclipse.pde.internal.core.schema.Schema.load()V",
+          "source": "file:/home/runner/work/_temp/xml-startup-results/headless-install-fixture/org.eclipse.pde.xmlstudy.control/schema/control.exsd",
+          "thread": "main",
+          "phase": "explicit_pde_schema_load_started",
+          "interval": "boundaryToSettled"
+        },
+        {
+          "method": "org.eclipse.pde.internal.core.schema.Schema.load(Ljava/io/InputStream;)V",
+          "source": "file:/home/runner/work/_temp/xml-startup-results/headless-install-fixture/org.eclipse.pde.xmlstudy.control/schema/control.exsd",
+          "thread": "main",
+          "phase": "explicit_pde_schema_load_started",
+          "interval": "boundaryToSettled"
+        }
+      ],
+      "emf": [],
+      "readyWorkspace": null
+    },
+    {
+      "id": "headless-prepared-restart",
+      "events": 2617,
+      "closedSpans": 1143,
+      "headless": true,
+      "boundary": "headless_application_entered",
+      "coverage": {
+        "registryLoadedFromCache": true,
+        "registryParses": 0,
+        "saxParses": 126,
+        "domParses": 2,
+        "emfLoads": 0
+      },
+      "phases": [
+        {
+          "phase": "headless_application_entered",
+          "jvmUptimeMs": 2059,
+          "thread": "main"
+        },
+        {
+          "phase": "explicit_pde_model_load_started",
+          "jvmUptimeMs": 2575,
+          "thread": "main"
+        },
+        {
+          "phase": "explicit_pde_schema_load_started",
+          "jvmUptimeMs": 2876,
+          "thread": "main"
+        },
+        {
+          "phase": "explicit_pde_loads_finished",
+          "jvmUptimeMs": 2893,
+          "thread": "main"
+        },
+        {
+          "phase": "headless_workspace_save_started",
+          "jvmUptimeMs": 3894,
+          "thread": "main"
+        },
+        {
+          "phase": "headless_background_settled",
+          "jvmUptimeMs": 3956,
+          "thread": "main"
+        }
+      ],
+      "operations": {
+        "beforeBoundary": {
+          "resource_lookup": 488,
+          "resource_open": 365,
+          "zip_entry_open": 119,
+          "sax_parse": 119,
+          "registry_start": 1
+        },
+        "boundaryToSettled": {
+          "sax_parse": 7,
+          "dom_parse": 2,
+          "file_open": 3,
+          "pde_model_load": 1,
+          "resource_lookup": 18,
+          "resource_open": 18,
+          "schema_load": 2
+        },
+        "afterSettled": {}
+      },
+      "xmlZipDeliveredBytes": {
+        "beforeBoundary": 63447,
+        "boundaryToSettled": 0,
+        "afterSettled": 0
+      },
+      "jobEvents": 35,
+      "jobEventsBeforeProbe": null,
+      "builders": [],
+      "schemas": [
+        {
+          "method": "org.eclipse.pde.internal.core.schema.Schema.load()V",
+          "source": "file:/home/runner/work/_temp/xml-startup-results/headless-install-fixture/org.eclipse.pde.xmlstudy.control/schema/control.exsd",
+          "thread": "main",
+          "phase": "explicit_pde_schema_load_started",
+          "interval": "boundaryToSettled"
+        },
+        {
+          "method": "org.eclipse.pde.internal.core.schema.Schema.load(Ljava/io/InputStream;)V",
+          "source": "file:/home/runner/work/_temp/xml-startup-results/headless-install-fixture/org.eclipse.pde.xmlstudy.control/schema/control.exsd",
+          "thread": "main",
+          "phase": "explicit_pde_schema_load_started",
+          "interval": "boundaryToSettled"
+        }
+      ],
+      "emf": [],
+      "readyWorkspace": null
+    },
+    {
+      "id": "headless-automatic-build",
+      "events": 4943,
+      "closedSpans": 2210,
+      "headless": true,
+      "boundary": "headless_application_entered",
+      "coverage": {
+        "registryLoadedFromCache": true,
+        "registryParses": 208,
+        "saxParses": 348,
+        "domParses": 10,
+        "emfLoads": 0,
+        "automaticBuild": {
+          "automaticBuildEvents": 1,
+          "autoBuildEnabled": true,
+          "trigger": "resource touches; no explicit workspace.build call",
+          "errorMarkers": [],
+          "pdeBuilders": 4,
+          "javaBuilders": 2,
+          "schemaLoads": 4,
+          "consumerXmlOpens": 7
+        }
+      },
+      "phases": [
+        {
+          "phase": "headless_application_entered",
+          "jvmUptimeMs": 2055,
+          "thread": "main"
+        },
+        {
+          "phase": "explicit_pde_model_load_started",
+          "jvmUptimeMs": 2569,
+          "thread": "main"
+        },
+        {
+          "phase": "explicit_pde_schema_load_started",
+          "jvmUptimeMs": 2840,
+          "thread": "main"
+        },
+        {
+          "phase": "explicit_pde_loads_finished",
+          "jvmUptimeMs": 2858,
+          "thread": "main"
+        },
+        {
+          "phase": "automatic_build_trigger_started",
+          "jvmUptimeMs": 2859,
+          "thread": "main"
+        },
+        {
+          "phase": "automatic_build_fixture_changed",
+          "jvmUptimeMs": 2939,
+          "thread": "main"
+        },
+        {
+          "phase": "automatic_build_finished",
+          "jvmUptimeMs": 5182,
+          "thread": "main"
+        },
+        {
+          "phase": "headless_workspace_save_started",
+          "jvmUptimeMs": 6183,
+          "thread": "main"
+        },
+        {
+          "phase": "headless_background_settled",
+          "jvmUptimeMs": 6271,
+          "thread": "main"
+        }
+      ],
+      "operations": {
+        "beforeBoundary": {
+          "resource_lookup": 488,
+          "resource_open": 365,
+          "zip_entry_open": 119,
+          "sax_parse": 119,
+          "registry_start": 1
+        },
+        "boundaryToSettled": {
+          "sax_parse": 229,
+          "dom_parse": 10,
+          "file_open": 64,
+          "pde_model_load": 3,
+          "resource_lookup": 211,
+          "resource_open": 23,
+          "schema_load": 6,
+          "registry_contribution": 208,
+          "registry_parse": 208,
+          "java_builder": 2,
+          "pde_builder": 4,
+          "zip_entry_open": 150
+        },
+        "afterSettled": {}
+      },
+      "xmlZipDeliveredBytes": {
+        "beforeBoundary": 63447,
+        "boundaryToSettled": 2156498,
+        "afterSettled": 0
+      },
+      "jobEvents": 66,
+      "jobEventsBeforeProbe": null,
+      "builders": [
+        {
+          "operation": "java_builder",
+          "project": "org.eclipse.pde.xmlstudy.control",
+          "buildKind": 6,
+          "thread": "Worker-0: Building",
+          "phase": "automatic_build_fixture_changed",
+          "interval": "boundaryToSettled"
+        },
+        {
+          "operation": "pde_builder",
+          "project": "org.eclipse.pde.xmlstudy.control",
+          "buildKind": 6,
+          "thread": "Worker-0: Building",
+          "phase": "automatic_build_fixture_changed",
+          "interval": "boundaryToSettled"
+        },
+        {
+          "operation": "pde_builder",
+          "project": "org.eclipse.pde.xmlstudy.control",
+          "buildKind": 6,
+          "thread": "Worker-0: Building",
+          "phase": "automatic_build_fixture_changed",
+          "interval": "boundaryToSettled"
+        },
+        {
+          "operation": "java_builder",
+          "project": "org.eclipse.pde.xmlstudy.consumer",
+          "buildKind": 6,
+          "thread": "Worker-0: Building",
+          "phase": "automatic_build_fixture_changed",
+          "interval": "boundaryToSettled"
+        },
+        {
+          "operation": "pde_builder",
+          "project": "org.eclipse.pde.xmlstudy.consumer",
+          "buildKind": 6,
+          "thread": "Worker-0: Building",
+          "phase": "automatic_build_fixture_changed",
+          "interval": "boundaryToSettled"
+        },
+        {
+          "operation": "pde_builder",
+          "project": "org.eclipse.pde.xmlstudy.consumer",
+          "buildKind": 6,
+          "thread": "Worker-0: Building",
+          "phase": "automatic_build_fixture_changed",
+          "interval": "boundaryToSettled"
+        }
+      ],
+      "schemas": [
+        {
+          "method": "org.eclipse.pde.internal.core.schema.Schema.load()V",
+          "source": "file:/home/runner/work/_temp/xml-startup-results/headless-install-fixture/org.eclipse.pde.xmlstudy.control/schema/control.exsd",
+          "thread": "main",
+          "phase": "explicit_pde_schema_load_started",
+          "interval": "boundaryToSettled"
+        },
+        {
+          "method": "org.eclipse.pde.internal.core.schema.Schema.load(Ljava/io/InputStream;)V",
+          "source": "file:/home/runner/work/_temp/xml-startup-results/headless-install-fixture/org.eclipse.pde.xmlstudy.control/schema/control.exsd",
+          "thread": "main",
+          "phase": "explicit_pde_schema_load_started",
+          "interval": "boundaryToSettled"
+        },
+        {
+          "method": "org.eclipse.pde.internal.core.schema.Schema.load()V",
+          "source": "file:/home/runner/work/_temp/xml-startup-results/headless-install-fixture/org.eclipse.pde.xmlstudy.control/schema/control.exsd",
+          "thread": "Worker-0: Building",
+          "phase": "automatic_build_fixture_changed",
+          "interval": "boundaryToSettled"
+        },
+        {
+          "method": "org.eclipse.pde.internal.core.schema.Schema.load(Ljava/io/InputStream;)V",
+          "source": "file:/home/runner/work/_temp/xml-startup-results/headless-install-fixture/org.eclipse.pde.xmlstudy.control/schema/control.exsd",
+          "thread": "Worker-0: Building",
+          "phase": "automatic_build_fixture_changed",
+          "interval": "boundaryToSettled"
+        },
+        {
+          "method": "org.eclipse.pde.internal.core.schema.Schema.load()V",
+          "source": "file:/home/runner/work/_temp/xml-startup-results/headless-install-fixture/org.eclipse.pde.xmlstudy.control/schema/control.exsd",
+          "thread": "Worker-0: Building",
+          "phase": "automatic_build_fixture_changed",
+          "interval": "boundaryToSettled"
+        },
+        {
+          "method": "org.eclipse.pde.internal.core.schema.Schema.load(Ljava/io/InputStream;)V",
+          "source": "file:/home/runner/work/_temp/xml-startup-results/headless-install-fixture/org.eclipse.pde.xmlstudy.control/schema/control.exsd",
+          "thread": "Worker-0: Building",
+          "phase": "automatic_build_fixture_changed",
+          "interval": "boundaryToSettled"
+        }
+      ],
+      "emf": [],
+      "readyWorkspace": null
+    },
+    {
+      "id": "gui-workspace-preparation",
+      "events": 9755,
+      "closedSpans": 4374,
+      "headless": true,
+      "boundary": "headless_application_entered",
+      "coverage": {
+        "registryLoadedFromCache": false,
+        "registryParses": 378,
+        "saxParses": 507,
+        "domParses": 6,
+        "emfLoads": 0
+      },
+      "phases": [
+        {
+          "phase": "headless_application_entered",
+          "jvmUptimeMs": 4935,
+          "thread": "main"
+        },
+        {
+          "phase": "explicit_pde_model_load_started",
+          "jvmUptimeMs": 7788,
+          "thread": "main"
+        },
+        {
+          "phase": "explicit_pde_schema_load_started",
+          "jvmUptimeMs": 7791,
+          "thread": "main"
+        },
+        {
+          "phase": "explicit_pde_loads_finished",
+          "jvmUptimeMs": 7819,
+          "thread": "main"
+        },
+        {
+          "phase": "headless_workspace_save_started",
+          "jvmUptimeMs": 8922,
+          "thread": "main"
+        },
+        {
+          "phase": "headless_background_settled",
+          "jvmUptimeMs": 8977,
+          "thread": "main"
+        }
+      ],
+      "operations": {
+        "beforeBoundary": {
+          "resource_lookup": 1278,
+          "resource_open": 946,
+          "zip_entry_open": 270,
+          "sax_parse": 291,
+          "registry_start": 1,
+          "registry_contribution": 340,
+          "registry_parse": 170,
+          "file_open": 21
+        },
+        "boundaryToSettled": {
+          "sax_parse": 216,
+          "resource_lookup": 204,
+          "resource_open": 15,
+          "dom_parse": 6,
+          "registry_contribution": 208,
+          "registry_parse": 208,
+          "file_open": 45,
+          "pde_model_load": 3,
+          "zip_entry_open": 150,
+          "schema_load": 2
+        },
+        "afterSettled": {}
+      },
+      "xmlZipDeliveredBytes": {
+        "beforeBoundary": 2219945,
+        "boundaryToSettled": 2156498,
+        "afterSettled": 0
+      },
+      "jobEvents": 174,
+      "jobEventsBeforeProbe": null,
+      "builders": [],
+      "schemas": [
+        {
+          "method": "org.eclipse.pde.internal.core.schema.Schema.load()V",
+          "source": "file:/home/runner/work/_temp/xml-startup-results/gui-install-fixture/org.eclipse.pde.xmlstudy.control/schema/control.exsd",
+          "thread": "main",
+          "phase": "explicit_pde_schema_load_started",
+          "interval": "boundaryToSettled"
+        },
+        {
+          "method": "org.eclipse.pde.internal.core.schema.Schema.load(Ljava/io/InputStream;)V",
+          "source": "file:/home/runner/work/_temp/xml-startup-results/gui-install-fixture/org.eclipse.pde.xmlstudy.control/schema/control.exsd",
+          "thread": "main",
+          "phase": "explicit_pde_schema_load_started",
+          "interval": "boundaryToSettled"
+        }
+      ],
+      "emf": [],
+      "readyWorkspace": null
+    },
+    {
+      "id": "gui-cold-registry",
+      "events": 10980,
+      "closedSpans": 4827,
+      "headless": false,
+      "boundary": "workbench_ready",
+      "coverage": {
+        "registryLoadedFromCache": false,
+        "registryParses": 206,
+        "saxParses": 336,
+        "domParses": 29,
+        "emfLoads": 6,
+        "readyUptimeMs": 11258,
+        "settledUptimeMs": 17408,
+        "workspace": {
+          "editors": [],
+          "editorObservation": "getEditor(false); no forced restoration",
+          "autoBuildEnabled": false
+        }
+      },
+      "phases": [
+        {
+          "phase": "probe_started",
+          "jvmUptimeMs": 2437,
+          "thread": "Start Level: Equinox Container: 45163195-ec94-4530-b33f-21cf92c2f838"
+        },
+        {
+          "phase": "application_running",
+          "jvmUptimeMs": 11039,
+          "thread": "main"
+        },
+        {
+          "phase": "workbench_ready",
+          "jvmUptimeMs": 11258,
+          "thread": "main"
+        },
+        {
+          "phase": "background_settled",
+          "jvmUptimeMs": 17408,
+          "thread": "main"
+        }
+      ],
+      "operations": {
+        "beforeBoundary": {
+          "resource_lookup": 2019,
+          "resource_open": 1316,
+          "zip_entry_open": 318,
+          "sax_parse": 297,
+          "registry_start": 1,
+          "registry_contribution": 340,
+          "registry_parse": 170,
+          "file_open": 62,
+          "stax_parse": 112,
+          "e4_model_load": 2,
+          "emf_load": 6,
+          "dom_parse": 29
+        },
+        "boundaryToSettled": {
+          "registry_contribution": 36,
+          "registry_parse": 36,
+          "sax_parse": 39,
+          "resource_lookup": 9,
+          "resource_open": 7,
+          "file_open": 21,
+          "stax_parse": 5,
+          "pde_model_load": 2
+        },
+        "afterSettled": {}
+      },
+      "xmlZipDeliveredBytes": {
+        "beforeBoundary": 2497500,
+        "boundaryToSettled": 0,
+        "afterSettled": 0
+      },
+      "jobEvents": 254,
+      "jobEventsBeforeProbe": 0,
+      "builders": [],
+      "schemas": [],
+      "emf": [
+        {
+          "method": "org.eclipse.emf.ecore.xmi.impl.XMLResourceImpl.doLoad(Ljava/io/InputStream;Ljava/util/Map;)V",
+          "source": "LegacyIDE.e4xmi",
+          "thread": "main",
+          "phase": "probe_started",
+          "interval": "beforeBoundary"
+        },
+        {
+          "method": "org.eclipse.emf.ecore.xmi.impl.XMLLoadImpl.load(Lorg/eclipse/emf/ecore/xmi/XMLResource;Ljava/io/InputStream;Ljava/util/Map;)V",
+          "source": "LegacyIDE.e4xmi",
+          "thread": "main",
+          "phase": "probe_started",
+          "interval": "beforeBoundary"
+        },
+        {
+          "method": "org.eclipse.emf.ecore.xmi.impl.XMLResourceImpl.doLoad(Ljava/io/InputStream;Ljava/util/Map;)V",
+          "source": "<unresolved>",
+          "thread": "main",
+          "phase": "probe_started",
+          "interval": "beforeBoundary"
+        },
+        {
+          "method": "org.eclipse.emf.ecore.xmi.impl.XMLLoadImpl.load(Lorg/eclipse/emf/ecore/xmi/XMLResource;Ljava/io/InputStream;Ljava/util/Map;)V",
+          "source": "<unresolved>",
+          "thread": "main",
+          "phase": "probe_started",
+          "interval": "beforeBoundary"
+        },
+        {
+          "method": "org.eclipse.emf.ecore.xmi.impl.XMLResourceImpl.doLoad(Ljava/io/InputStream;Ljava/util/Map;)V",
+          "source": "<unresolved>",
+          "thread": "main",
+          "phase": "probe_started",
+          "interval": "beforeBoundary"
+        },
+        {
+          "method": "org.eclipse.emf.ecore.xmi.impl.XMLLoadImpl.load(Lorg/eclipse/emf/ecore/xmi/XMLResource;Ljava/io/InputStream;Ljava/util/Map;)V",
+          "source": "<unresolved>",
+          "thread": "main",
+          "phase": "probe_started",
+          "interval": "beforeBoundary"
+        }
+      ],
+      "readyWorkspace": {
+        "editors": [],
+        "editorObservation": "getEditor(false); no forced restoration",
+        "autoBuildEnabled": false
+      }
+    },
+    {
+      "id": "gui-prepared-restart",
+      "events": 5469,
+      "closedSpans": 2283,
+      "headless": false,
+      "boundary": "workbench_ready",
+      "coverage": {
+        "registryLoadedFromCache": true,
+        "registryParses": 36,
+        "saxParses": 179,
+        "domParses": 24,
+        "emfLoads": 6,
+        "readyUptimeMs": 7991,
+        "settledUptimeMs": 9847,
+        "workspace": {
+          "editorObservation": "getEditor(false); no forced restoration",
+          "autoBuildEnabled": false,
+          "editors": []
+        }
+      },
+      "phases": [
+        {
+          "phase": "probe_started",
+          "jvmUptimeMs": 895,
+          "thread": "Start Level: Equinox Container: b7379dde-e25b-4dbe-96d8-61c3c4783341"
+        },
+        {
+          "phase": "application_running",
+          "jvmUptimeMs": 7753,
+          "thread": "main"
+        },
+        {
+          "phase": "workbench_ready",
+          "jvmUptimeMs": 7991,
+          "thread": "main"
+        },
+        {
+          "phase": "background_settled",
+          "jvmUptimeMs": 9847,
+          "thread": "main"
+        }
+      ],
+      "operations": {
+        "beforeBoundary": {
+          "resource_lookup": 920,
+          "resource_open": 793,
+          "zip_entry_open": 128,
+          "sax_parse": 159,
+          "registry_start": 1,
+          "file_open": 24,
+          "dom_parse": 22,
+          "stax_parse": 102,
+          "e4_model_load": 2,
+          "emf_load": 6,
+          "registry_contribution": 19,
+          "registry_parse": 19
+        },
+        "boundaryToSettled": {
+          "file_open": 13,
+          "registry_contribution": 17,
+          "registry_parse": 17,
+          "sax_parse": 20,
+          "resource_lookup": 8,
+          "resource_open": 6,
+          "dom_parse": 1,
+          "stax_parse": 2,
+          "pde_model_load": 2
+        },
+        "afterSettled": {
+          "file_open": 1,
+          "dom_parse": 1
+        }
+      },
+      "xmlZipDeliveredBytes": {
+        "beforeBoundary": 130512,
+        "boundaryToSettled": 0,
+        "afterSettled": 0
+      },
+      "jobEvents": 200,
+      "jobEventsBeforeProbe": 0,
+      "builders": [],
+      "schemas": [],
+      "emf": [
+        {
+          "method": "org.eclipse.emf.ecore.xmi.impl.XMLResourceImpl.doLoad(Ljava/io/InputStream;Ljava/util/Map;)V",
+          "source": "file:/home/runner/work/_temp/xml-startup-results/gui-install-workspace/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi",
+          "thread": "main",
+          "phase": "probe_started",
+          "interval": "beforeBoundary"
+        },
+        {
+          "method": "org.eclipse.emf.ecore.xmi.impl.XMLLoadImpl.load(Lorg/eclipse/emf/ecore/xmi/XMLResource;Ljava/io/InputStream;Ljava/util/Map;)V",
+          "source": "<unresolved>",
+          "thread": "main",
+          "phase": "probe_started",
+          "interval": "beforeBoundary"
+        },
+        {
+          "method": "org.eclipse.emf.ecore.xmi.impl.XMLResourceImpl.doLoad(Ljava/io/InputStream;Ljava/util/Map;)V",
+          "source": "<unresolved>",
+          "thread": "main",
+          "phase": "probe_started",
+          "interval": "beforeBoundary"
+        },
+        {
+          "method": "org.eclipse.emf.ecore.xmi.impl.XMLLoadImpl.load(Lorg/eclipse/emf/ecore/xmi/XMLResource;Ljava/io/InputStream;Ljava/util/Map;)V",
+          "source": "<unresolved>",
+          "thread": "main",
+          "phase": "probe_started",
+          "interval": "beforeBoundary"
+        },
+        {
+          "method": "org.eclipse.emf.ecore.xmi.impl.XMLResourceImpl.doLoad(Ljava/io/InputStream;Ljava/util/Map;)V",
+          "source": "<unresolved>",
+          "thread": "main",
+          "phase": "probe_started",
+          "interval": "beforeBoundary"
+        },
+        {
+          "method": "org.eclipse.emf.ecore.xmi.impl.XMLLoadImpl.load(Lorg/eclipse/emf/ecore/xmi/XMLResource;Ljava/io/InputStream;Ljava/util/Map;)V",
+          "source": "<unresolved>",
+          "thread": "main",
+          "phase": "probe_started",
+          "interval": "beforeBoundary"
+        }
+      ],
+      "readyWorkspace": {
+        "editorObservation": "getEditor(false); no forced restoration",
+        "autoBuildEnabled": false,
+        "editors": []
+      }
+    },
+    {
+      "id": "gui-automatic-build",
+      "events": 6976,
+      "closedSpans": 2998,
+      "headless": false,
+      "boundary": "workbench_ready",
+      "coverage": {
+        "registryLoadedFromCache": true,
+        "registryParses": 208,
+        "saxParses": 348,
+        "domParses": 27,
+        "emfLoads": 6,
+        "readyUptimeMs": 6476,
+        "settledUptimeMs": 8919,
+        "workspace": {
+          "editorObservation": "getEditor(false); no forced restoration",
+          "autoBuildEnabled": true,
+          "editors": []
+        },
+        "automaticBuild": {
+          "automaticBuildEvents": 2,
+          "autoBuildEnabled": true,
+          "trigger": "resource touches; no explicit workspace.build call",
+          "errorMarkers": [],
+          "pdeBuilders": 4,
+          "javaBuilders": 2,
+          "schemaLoads": 4,
+          "consumerXmlOpens": 7
+        }
+      },
+      "phases": [
+        {
+          "phase": "probe_started",
+          "jvmUptimeMs": 869,
+          "thread": "Start Level: Equinox Container: d470c6fd-41bc-4595-a491-a7563961bb79"
+        },
+        {
+          "phase": "automatic_build_trigger_started",
+          "jvmUptimeMs": 1942,
+          "thread": "Worker-0: XML diagnostic automatic-build trigger"
+        },
+        {
+          "phase": "automatic_build_fixture_changed",
+          "jvmUptimeMs": 1983,
+          "thread": "Worker-0: XML diagnostic automatic-build trigger"
+        },
+        {
+          "phase": "application_running",
+          "jvmUptimeMs": 6282,
+          "thread": "main"
+        },
+        {
+          "phase": "workbench_ready",
+          "jvmUptimeMs": 6476,
+          "thread": "main"
+        },
+        {
+          "phase": "automatic_build_finished",
+          "jvmUptimeMs": 7498,
+          "thread": "Worker-0: XML diagnostic automatic-build trigger"
+        },
+        {
+          "phase": "background_settled",
+          "jvmUptimeMs": 8919,
+          "thread": "main"
+        }
+      ],
+      "operations": {
+        "beforeBoundary": {
+          "resource_lookup": 826,
+          "resource_open": 698,
+          "zip_entry_open": 127,
+          "sax_parse": 164,
+          "registry_start": 1,
+          "dom_parse": 21,
+          "stax_parse": 100,
+          "file_open": 27,
+          "registry_contribution": 36,
+          "registry_parse": 36,
+          "e4_model_load": 2,
+          "emf_load": 6,
+          "pde_model_load": 2
+        },
+        "boundaryToSettled": {
+          "file_open": 40,
+          "dom_parse": 5,
+          "java_builder": 2,
+          "stax_parse": 3,
+          "pde_builder": 4,
+          "sax_parse": 184,
+          "resource_lookup": 201,
+          "resource_open": 13,
+          "registry_contribution": 172,
+          "registry_parse": 172,
+          "zip_entry_open": 150,
+          "schema_load": 4
+        },
+        "afterSettled": {
+          "file_open": 1,
+          "dom_parse": 1
+        }
+      },
+      "xmlZipDeliveredBytes": {
+        "beforeBoundary": 130512,
+        "boundaryToSettled": 2156498,
+        "afterSettled": 0
+      },
+      "jobEvents": 207,
+      "jobEventsBeforeProbe": 0,
+      "builders": [
+        {
+          "operation": "java_builder",
+          "project": "org.eclipse.pde.xmlstudy.control",
+          "buildKind": 6,
+          "thread": "Worker-3: Building",
+          "phase": "workbench_ready",
+          "interval": "boundaryToSettled"
+        },
+        {
+          "operation": "pde_builder",
+          "project": "org.eclipse.pde.xmlstudy.control",
+          "buildKind": 6,
+          "thread": "Worker-3: Building",
+          "phase": "workbench_ready",
+          "interval": "boundaryToSettled"
+        },
+        {
+          "operation": "pde_builder",
+          "project": "org.eclipse.pde.xmlstudy.control",
+          "buildKind": 6,
+          "thread": "Worker-3: Building",
+          "phase": "workbench_ready",
+          "interval": "boundaryToSettled"
+        },
+        {
+          "operation": "java_builder",
+          "project": "org.eclipse.pde.xmlstudy.consumer",
+          "buildKind": 6,
+          "thread": "Worker-3: Building",
+          "phase": "workbench_ready",
+          "interval": "boundaryToSettled"
+        },
+        {
+          "operation": "pde_builder",
+          "project": "org.eclipse.pde.xmlstudy.consumer",
+          "buildKind": 6,
+          "thread": "Worker-3: Building",
+          "phase": "workbench_ready",
+          "interval": "boundaryToSettled"
+        },
+        {
+          "operation": "pde_builder",
+          "project": "org.eclipse.pde.xmlstudy.consumer",
+          "buildKind": 6,
+          "thread": "Worker-3: Building",
+          "phase": "workbench_ready",
+          "interval": "boundaryToSettled"
+        }
+      ],
+      "schemas": [
+        {
+          "method": "org.eclipse.pde.internal.core.schema.Schema.load()V",
+          "source": "file:/home/runner/work/_temp/xml-startup-results/gui-install-fixture/org.eclipse.pde.xmlstudy.control/schema/control.exsd",
+          "thread": "Worker-3: Building",
+          "phase": "workbench_ready",
+          "interval": "boundaryToSettled"
+        },
+        {
+          "method": "org.eclipse.pde.internal.core.schema.Schema.load(Ljava/io/InputStream;)V",
+          "source": "file:/home/runner/work/_temp/xml-startup-results/gui-install-fixture/org.eclipse.pde.xmlstudy.control/schema/control.exsd",
+          "thread": "Worker-3: Building",
+          "phase": "workbench_ready",
+          "interval": "boundaryToSettled"
+        },
+        {
+          "method": "org.eclipse.pde.internal.core.schema.Schema.load()V",
+          "source": "file:/home/runner/work/_temp/xml-startup-results/gui-install-fixture/org.eclipse.pde.xmlstudy.control/schema/control.exsd",
+          "thread": "Worker-3: Building",
+          "phase": "workbench_ready",
+          "interval": "boundaryToSettled"
+        },
+        {
+          "method": "org.eclipse.pde.internal.core.schema.Schema.load(Ljava/io/InputStream;)V",
+          "source": "file:/home/runner/work/_temp/xml-startup-results/gui-install-fixture/org.eclipse.pde.xmlstudy.control/schema/control.exsd",
+          "thread": "Worker-3: Building",
+          "phase": "workbench_ready",
+          "interval": "boundaryToSettled"
+        }
+      ],
+      "emf": [
+        {
+          "method": "org.eclipse.emf.ecore.xmi.impl.XMLResourceImpl.doLoad(Ljava/io/InputStream;Ljava/util/Map;)V",
+          "source": "file:/home/runner/work/_temp/xml-startup-results/gui-install-workspace/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi",
+          "thread": "main",
+          "phase": "automatic_build_fixture_changed",
+          "interval": "beforeBoundary"
+        },
+        {
+          "method": "org.eclipse.emf.ecore.xmi.impl.XMLLoadImpl.load(Lorg/eclipse/emf/ecore/xmi/XMLResource;Ljava/io/InputStream;Ljava/util/Map;)V",
+          "source": "<unresolved>",
+          "thread": "main",
+          "phase": "automatic_build_fixture_changed",
+          "interval": "beforeBoundary"
+        },
+        {
+          "method": "org.eclipse.emf.ecore.xmi.impl.XMLResourceImpl.doLoad(Ljava/io/InputStream;Ljava/util/Map;)V",
+          "source": "<unresolved>",
+          "thread": "main",
+          "phase": "automatic_build_fixture_changed",
+          "interval": "beforeBoundary"
+        },
+        {
+          "method": "org.eclipse.emf.ecore.xmi.impl.XMLLoadImpl.load(Lorg/eclipse/emf/ecore/xmi/XMLResource;Ljava/io/InputStream;Ljava/util/Map;)V",
+          "source": "<unresolved>",
+          "thread": "main",
+          "phase": "automatic_build_fixture_changed",
+          "interval": "beforeBoundary"
+        },
+        {
+          "method": "org.eclipse.emf.ecore.xmi.impl.XMLResourceImpl.doLoad(Ljava/io/InputStream;Ljava/util/Map;)V",
+          "source": "<unresolved>",
+          "thread": "main",
+          "phase": "automatic_build_fixture_changed",
+          "interval": "beforeBoundary"
+        },
+        {
+          "method": "org.eclipse.emf.ecore.xmi.impl.XMLLoadImpl.load(Lorg/eclipse/emf/ecore/xmi/XMLResource;Ljava/io/InputStream;Ljava/util/Map;)V",
+          "source": "<unresolved>",
+          "thread": "main",
+          "phase": "automatic_build_fixture_changed",
+          "interval": "beforeBoundary"
+        }
+      ],
+      "readyWorkspace": {
+        "editorObservation": "getEditor(false); no forced restoration",
+        "autoBuildEnabled": true,
+        "editors": []
+      }
+    },
+    {
+      "id": "gui-editor-seed",
+      "events": 5818,
+      "closedSpans": 2412,
+      "headless": false,
+      "boundary": "workbench_ready",
+      "coverage": {
+        "registryLoadedFromCache": true,
+        "registryParses": 36,
+        "saxParses": 188,
+        "domParses": 28,
+        "emfLoads": 6,
+        "readyUptimeMs": 7335,
+        "settledUptimeMs": 10745,
+        "workspace": {
+          "autoBuildEnabled": false,
+          "editorObservation": "getEditor(false); no forced restoration",
+          "editors": [
+            {
+              "id": "org.eclipse.pde.ui.manifestEditor",
+              "name": "MANIFEST.MF",
+              "materialized": true,
+              "class": "org.eclipse.pde.internal.ui.editor.plugin.ManifestEditor"
+            },
+            {
+              "id": "org.eclipse.pde.ui.schemaEditor",
+              "name": "control.exsd",
+              "materialized": true,
+              "class": "org.eclipse.pde.internal.ui.editor.schema.SchemaEditor"
+            }
+          ]
+        }
+      },
+      "phases": [
+        {
+          "phase": "probe_started",
+          "jvmUptimeMs": 886,
+          "thread": "Start Level: Equinox Container: ec97890f-eb4e-4549-8d96-7217b9707ed7"
+        },
+        {
+          "phase": "application_running",
+          "jvmUptimeMs": 7131,
+          "thread": "main"
+        },
+        {
+          "phase": "workbench_ready",
+          "jvmUptimeMs": 7335,
+          "thread": "main"
+        },
+        {
+          "phase": "editor_seed_started",
+          "jvmUptimeMs": 7336,
+          "thread": "main"
+        },
+        {
+          "phase": "editor_seed_finished",
+          "jvmUptimeMs": 9008,
+          "thread": "main"
+        },
+        {
+          "phase": "background_settled",
+          "jvmUptimeMs": 10745,
+          "thread": "main"
+        }
+      ],
+      "operations": {
+        "beforeBoundary": {
+          "resource_lookup": 919,
+          "resource_open": 792,
+          "zip_entry_open": 128,
+          "sax_parse": 143,
+          "registry_start": 1,
+          "file_open": 18,
+          "dom_parse": 22,
+          "stax_parse": 102,
+          "e4_model_load": 2,
+          "emf_load": 6
+        },
+        "boundaryToSettled": {
+          "registry_contribution": 36,
+          "registry_parse": 36,
+          "sax_parse": 45,
+          "resource_lookup": 28,
+          "resource_open": 25,
+          "stax_parse": 68,
+          "file_open": 30,
+          "pde_model_load": 2,
+          "dom_parse": 5,
+          "schema_load": 2
+        },
+        "afterSettled": {
+          "file_open": 1,
+          "dom_parse": 1
+        }
+      },
+      "xmlZipDeliveredBytes": {
+        "beforeBoundary": 130512,
+        "boundaryToSettled": 0,
+        "afterSettled": 0
+      },
+      "jobEvents": 270,
+      "jobEventsBeforeProbe": 0,
+      "builders": [],
+      "schemas": [
+        {
+          "method": "org.eclipse.pde.internal.core.schema.Schema.load()V",
+          "source": "file:/home/runner/work/_temp/xml-startup-results/gui-install-fixture/org.eclipse.pde.xmlstudy.control/schema/control.exsd",
+          "thread": "main",
+          "phase": "editor_seed_started",
+          "interval": "boundaryToSettled"
+        },
+        {
+          "method": "org.eclipse.pde.internal.core.schema.Schema.load(Ljava/io/InputStream;)V",
+          "source": "file:/home/runner/work/_temp/xml-startup-results/gui-install-fixture/org.eclipse.pde.xmlstudy.control/schema/control.exsd",
+          "thread": "main",
+          "phase": "editor_seed_started",
+          "interval": "boundaryToSettled"
+        }
+      ],
+      "emf": [
+        {
+          "method": "org.eclipse.emf.ecore.xmi.impl.XMLResourceImpl.doLoad(Ljava/io/InputStream;Ljava/util/Map;)V",
+          "source": "file:/home/runner/work/_temp/xml-startup-results/gui-install-workspace/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi",
+          "thread": "main",
+          "phase": "probe_started",
+          "interval": "beforeBoundary"
+        },
+        {
+          "method": "org.eclipse.emf.ecore.xmi.impl.XMLLoadImpl.load(Lorg/eclipse/emf/ecore/xmi/XMLResource;Ljava/io/InputStream;Ljava/util/Map;)V",
+          "source": "<unresolved>",
+          "thread": "main",
+          "phase": "probe_started",
+          "interval": "beforeBoundary"
+        },
+        {
+          "method": "org.eclipse.emf.ecore.xmi.impl.XMLResourceImpl.doLoad(Ljava/io/InputStream;Ljava/util/Map;)V",
+          "source": "<unresolved>",
+          "thread": "main",
+          "phase": "probe_started",
+          "interval": "beforeBoundary"
+        },
+        {
+          "method": "org.eclipse.emf.ecore.xmi.impl.XMLLoadImpl.load(Lorg/eclipse/emf/ecore/xmi/XMLResource;Ljava/io/InputStream;Ljava/util/Map;)V",
+          "source": "<unresolved>",
+          "thread": "main",
+          "phase": "probe_started",
+          "interval": "beforeBoundary"
+        },
+        {
+          "method": "org.eclipse.emf.ecore.xmi.impl.XMLResourceImpl.doLoad(Ljava/io/InputStream;Ljava/util/Map;)V",
+          "source": "<unresolved>",
+          "thread": "main",
+          "phase": "probe_started",
+          "interval": "beforeBoundary"
+        },
+        {
+          "method": "org.eclipse.emf.ecore.xmi.impl.XMLLoadImpl.load(Lorg/eclipse/emf/ecore/xmi/XMLResource;Ljava/io/InputStream;Ljava/util/Map;)V",
+          "source": "<unresolved>",
+          "thread": "main",
+          "phase": "probe_started",
+          "interval": "beforeBoundary"
+        }
+      ],
+      "readyWorkspace": {
+        "autoBuildEnabled": false,
+        "editorObservation": "getEditor(false); no forced restoration",
+        "editors": []
+      }
+    },
+    {
+      "id": "gui-restored-editors",
+      "events": 5052,
+      "closedSpans": 2112,
+      "headless": false,
+      "boundary": "workbench_ready",
+      "coverage": {
+        "registryLoadedFromCache": true,
+        "registryParses": 36,
+        "saxParses": 165,
+        "domParses": 28,
+        "emfLoads": 6,
+        "readyUptimeMs": 7403,
+        "settledUptimeMs": 9137,
+        "workspace": {
+          "editors": [
+            {
+              "id": "org.eclipse.pde.ui.manifestEditor",
+              "name": "org.eclipse.pde.xmlstudy.consumer",
+              "materialized": false
+            },
+            {
+              "id": "org.eclipse.pde.ui.schemaEditor",
+              "name": "control.exsd",
+              "materialized": true,
+              "class": "org.eclipse.pde.internal.ui.editor.schema.SchemaEditor"
+            }
+          ],
+          "autoBuildEnabled": false,
+          "editorObservation": "getEditor(false); no forced restoration"
+        }
+      },
+      "phases": [
+        {
+          "phase": "probe_started",
+          "jvmUptimeMs": 896,
+          "thread": "Start Level: Equinox Container: 9006ea74-fbb1-430f-a211-d31518b48e96"
+        },
+        {
+          "phase": "application_running",
+          "jvmUptimeMs": 7011,
+          "thread": "main"
+        },
+        {
+          "phase": "workbench_ready",
+          "jvmUptimeMs": 7403,
+          "thread": "main"
+        },
+        {
+          "phase": "background_settled",
+          "jvmUptimeMs": 9137,
+          "thread": "main"
+        }
+      ],
+      "operations": {
+        "beforeBoundary": {
+          "resource_lookup": 837,
+          "resource_open": 709,
+          "zip_entry_open": 127,
+          "sax_parse": 163,
+          "registry_start": 1,
+          "stax_parse": 120,
+          "e4_model_load": 2,
+          "file_open": 30,
+          "emf_load": 6,
+          "dom_parse": 26,
+          "schema_load": 2,
+          "registry_contribution": 36,
+          "registry_parse": 36
+        },
+        "boundaryToSettled": {
+          "file_open": 4,
+          "dom_parse": 1,
+          "stax_parse": 2,
+          "pde_model_load": 2,
+          "resource_lookup": 2,
+          "resource_open": 2,
+          "sax_parse": 2
+        },
+        "afterSettled": {
+          "file_open": 1,
+          "dom_parse": 1
+        }
+      },
+      "xmlZipDeliveredBytes": {
+        "beforeBoundary": 130512,
+        "boundaryToSettled": 0,
+        "afterSettled": 0
+      },
+      "jobEvents": 210,
+      "jobEventsBeforeProbe": 0,
+      "builders": [],
+      "schemas": [
+        {
+          "method": "org.eclipse.pde.internal.core.schema.Schema.load()V",
+          "source": "file:/home/runner/work/_temp/xml-startup-results/gui-install-fixture/org.eclipse.pde.xmlstudy.control/schema/control.exsd",
+          "thread": "main",
+          "phase": "probe_started",
+          "interval": "beforeBoundary"
+        },
+        {
+          "method": "org.eclipse.pde.internal.core.schema.Schema.load(Ljava/io/InputStream;)V",
+          "source": "file:/home/runner/work/_temp/xml-startup-results/gui-install-fixture/org.eclipse.pde.xmlstudy.control/schema/control.exsd",
+          "thread": "main",
+          "phase": "probe_started",
+          "interval": "beforeBoundary"
+        }
+      ],
+      "emf": [
+        {
+          "method": "org.eclipse.emf.ecore.xmi.impl.XMLResourceImpl.doLoad(Ljava/io/InputStream;Ljava/util/Map;)V",
+          "source": "file:/home/runner/work/_temp/xml-startup-results/gui-install-workspace/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi",
+          "thread": "main",
+          "phase": "probe_started",
+          "interval": "beforeBoundary"
+        },
+        {
+          "method": "org.eclipse.emf.ecore.xmi.impl.XMLLoadImpl.load(Lorg/eclipse/emf/ecore/xmi/XMLResource;Ljava/io/InputStream;Ljava/util/Map;)V",
+          "source": "<unresolved>",
+          "thread": "main",
+          "phase": "probe_started",
+          "interval": "beforeBoundary"
+        },
+        {
+          "method": "org.eclipse.emf.ecore.xmi.impl.XMLResourceImpl.doLoad(Ljava/io/InputStream;Ljava/util/Map;)V",
+          "source": "<unresolved>",
+          "thread": "main",
+          "phase": "probe_started",
+          "interval": "beforeBoundary"
+        },
+        {
+          "method": "org.eclipse.emf.ecore.xmi.impl.XMLLoadImpl.load(Lorg/eclipse/emf/ecore/xmi/XMLResource;Ljava/io/InputStream;Ljava/util/Map;)V",
+          "source": "<unresolved>",
+          "thread": "main",
+          "phase": "probe_started",
+          "interval": "beforeBoundary"
+        },
+        {
+          "method": "org.eclipse.emf.ecore.xmi.impl.XMLResourceImpl.doLoad(Ljava/io/InputStream;Ljava/util/Map;)V",
+          "source": "<unresolved>",
+          "thread": "main",
+          "phase": "probe_started",
+          "interval": "beforeBoundary"
+        },
+        {
+          "method": "org.eclipse.emf.ecore.xmi.impl.XMLLoadImpl.load(Lorg/eclipse/emf/ecore/xmi/XMLResource;Ljava/io/InputStream;Ljava/util/Map;)V",
+          "source": "<unresolved>",
+          "thread": "main",
+          "phase": "probe_started",
+          "interval": "beforeBoundary"
+        }
+      ],
+      "readyWorkspace": {
+        "editors": [
+          {
+            "id": "org.eclipse.pde.ui.manifestEditor",
+            "name": "org.eclipse.pde.xmlstudy.consumer",
+            "materialized": false
+          },
+          {
+            "id": "org.eclipse.pde.ui.schemaEditor",
+            "name": "control.exsd",
+            "materialized": true,
+            "class": "org.eclipse.pde.internal.ui.editor.schema.SchemaEditor"
+          }
+        ],
+        "autoBuildEnabled": false,
+        "editorObservation": "getEditor(false); no forced restoration"
+      }
+    }
+  ],
+  "warnings": [
+    {
+      "run": "gui-cold-registry",
+      "text": "(java:3468): dbind-WARNING **: 20:13:56.674: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files"
+    },
+    {
+      "run": "gui-prepared-restart",
+      "text": "(java:3562): dbind-WARNING **: 20:14:14.478: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files"
+    },
+    {
+      "run": "gui-automatic-build",
+      "text": "(java:3662): dbind-WARNING **: 20:14:24.344: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files"
+    },
+    {
+      "run": "gui-editor-seed",
+      "text": "(java:3749): dbind-WARNING **: 20:14:35.738: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files"
+    },
+    {
+      "run": "gui-editor-seed",
+      "text": "(Eclipse:3749): Gtk-WARNING **: 20:14:41.239: Could not load a pixbuf from /org/gtk/libgtk/theme/Adwaita/assets/check-symbolic.svg."
+    },
+    {
+      "run": "gui-restored-editors",
+      "text": "(java:3836): dbind-WARNING **: 20:14:47.149: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files"
+    }
+  ],
+  "status": "verified"
+}

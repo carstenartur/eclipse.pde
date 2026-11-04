@@ -1,0 +1,87 @@
+{
+  "scope": "exact independent PR #1805 head versus its original base; not combined 12033 or a later integration",
+  "baseCommit": "ef946b6fad6276694f32389311cb7e71cf7f3955",
+  "headCommit": "f8dfe691a79de75f55c7633714a15c5626ca6166",
+  "sourceCorpusSha256": "442e16926ec5ee2e3842ee332ed93f6b5eba490c7c04b6bd9969e3ec95e7a491",
+  "schemas": 298,
+  "documentationNodes": 4557,
+  "actualCdataNodes": 0,
+  "tests": {
+    "total": 38,
+    "existingPreambleCases": 33,
+    "existingActualPdeConsumerCases": 4,
+    "fullCorpusAuditCases": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "idempotenceComparisons": 1192,
+    "transformationCalls": 2384
+  },
+  "layouts": [
+    {
+      "layout": "compact",
+      "baseBytes": 2014348,
+      "headBytes": 2003918,
+      "bytesSaved": 10430,
+      "fileStream": {
+        "baseCharacterCallbacks": 60641,
+        "headCharacterCallbacks": 60643,
+        "callbackDelta": 2,
+        "baseCharacterUtf16Units": 1136139,
+        "headCharacterUtf16Units": 1136139
+      },
+      "stringReader": {
+        "baseCharacterCallbacks": 60640,
+        "headCharacterCallbacks": 60640,
+        "callbackDelta": 0
+      },
+      "lexical": {
+        "baseCommentCallbacks": 298,
+        "headCommentCallbacks": 0,
+        "baseCommentUtf16Units": 8344,
+        "headCommentUtf16Units": 0
+      },
+      "outsideRootCharacterCallbacks": 0,
+      "characterContentEqualFilesPerInputMode": 298,
+      "documentationSignaturesUnchanged": 4557
+    },
+    {
+      "layout": "indented",
+      "baseBytes": 2129822,
+      "headBytes": 2119094,
+      "bytesSaved": 10728,
+      "fileStream": {
+        "baseCharacterCallbacks": 89851,
+        "headCharacterCallbacks": 89856,
+        "callbackDelta": 5,
+        "baseCharacterUtf16Units": 1250719,
+        "headCharacterUtf16Units": 1250719
+      },
+      "stringReader": {
+        "baseCharacterCallbacks": 89853,
+        "headCharacterCallbacks": 89855,
+        "callbackDelta": 2
+      },
+      "lexical": {
+        "baseCommentCallbacks": 298,
+        "headCommentCallbacks": 0,
+        "baseCommentUtf16Units": 8344,
+        "headCommentUtf16Units": 0
+      },
+      "outsideRootCharacterCallbacks": 0,
+      "characterContentEqualFilesPerInputMode": 298,
+      "documentationSignaturesUnchanged": 4557
+    }
+  ],
+  "conclusion": "Exact byte and lexical-comment savings reproduced. Character units and per-file content hashes are unchanged. Small callback-count shifts are grouping differences over identical character data. No startup/timing claim measured.",
+  "evidence": {
+    "summary": "measurement-summary.json",
+    "rawLog": "maven-audit.log",
+    "perFile": "per-file-results.jsonl",
+    "callbackDifferences": "callback-partition-differences.json",
+    "sourceIdentity": "source-identity.json",
+    "junitReports": "head/target/surefire-reports",
+    "reproduce": "run-audit.sh"
+  },
+  "summaryCreatedAt": "2026-11-04T20:25:15.493Z"
+}

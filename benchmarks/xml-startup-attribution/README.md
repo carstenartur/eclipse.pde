@@ -3,6 +3,16 @@
 Study date: 2026-11-03. This branch contains two small, independently usable
 repairs and an experiment. It does not change the reviewed text-coalescing PR.
 
+**4 November follow-up:** [Current-source full-model loading](load-current/RESULTS-2026-11-04.md)
+separates unchanged SAX callbacks from fewer temporary DOM nodes, and measures
+the current formatter on the same inputs. [Broad GUI startup diagnostics](trace-agent/RESULTS-GUI-2026-11-04.md)
+now observe registry, SAX/DOM, EMF, resource opens, automatic builds and restored
+editors. They confirm XML reads before readiness and scenario-dependent PDE
+schema loading. The older two-hook diagnostic below cannot establish absence
+of XML loading at startup. The new heavily instrumented traces establish
+attribution; they do not replace the older uninstrumented timing matrix with a
+startup speedup claim.
+
 **Follow-up:** [Actual extension-instance validation](instance-validation/README.md)
 now covers 939 contributions in all 83 configured production XML descriptors.
 It records schema/runtime inconsistencies, targeted schema patches, and actual

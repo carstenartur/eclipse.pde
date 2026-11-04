@@ -1,0 +1,122 @@
+Full 298-schema PDE consumer audit in active OSGi
+Completed 2026-11-04, Java 25
+
+OUTCOME
+
+The full recovered corpus passes the actual PDE consumer comparison on all eight formatter option combinations. This is now qualified on three separately identified runtime implementations, with exit code 0 for each:
+
+1. The untouched reference product's org.eclipse.pde.core 3.21.400.v20260810-0751 binary.
+2. The recovered source baseline f948c57878a1a011625b5214d63a1ec01bd243ff, with its compiled schema package, XMLDefaultHandler, and SchemaUtil overlaid into an isolated copy of the reference PDE bundle.
+3. The existing empty-documentation fix at 201c47e00f9e0bcae8ec3f435eb58704a6ee5027, using the same isolated overlay procedure.
+
+The overlay bundles retain the reference bundle's OSGi version metadata for resolution. Their source identity is the stated Git commit and recorded class hashes; they must not be described as unmodified released binaries. The loaded Schema.class digest was verified against each overlay's recorded class bytes. All 29 baseline production source files were independently checked byte-for-byte against f948c578 in the source repository.
+
+No parent harness, parent branch, parent checkout, original runtime bundle, PR, comment or integration state was changed. New drivers, runtime configurations, workspace providers, copied bundles and results were created only beneath xml-integration-audit/osgi-audit.
+
+EXACT FORMATTER AND CORPUS
+
+Formatter published commit: 12033ef005df89f631cb2752e6e0949fbba8a2cd (#1803).
+Equivalent measured local commit: 20dabecfb988073c5c27c9bf68004cf22c6a52f3.
+Entire Git tree: b8ccc2b4253da1e2e49b6cfe496c5aeb95e6ef8f.
+This includes metadata normalization, appinfo targeting and its first-pass fix, and documentation-boundary handling. It does not include #1805 generated-preamble removal. These results must not be transferred to a later changed formatter tree without validation.
+
+Original schemas: 298.
+Original uncompressed bytes: 2,337,930.
+Documentation nodes: 4,557.
+Original corpus SHA-256: 442e16926ec5ee2e3842ee332ed93f6b5eba490c7c04b6bd9969e3ec95e7a491.
+The original corpus was reverified after the OSGi runs, with zero file/hash/byte mismatches. input-hashes.json additionally pins all 2,682 original/transformed source operands across the nine trees.
+
+Eight modes: compact/indented × preserve/modernize appinfo × preserve/trim documentation boundaries.
+
+MEANINGFUL CONSUMER COMPARISON
+
+For each of the three runtime implementations, the audit processes 298 schemas in the original tree and each of eight transformed trees. It records 8,046 observations: 2,682 lightweight parses, 2,682 full model reads, and 2,682 abbreviated model reads. All 5,364 native model loads return isLoaded=true. It does not set loaded state or suppress native loading errors.
+
+Each transformed file is compared to its original in six components:
+
+Component                                      Equal per runtime   Different   Blocked
+Full metadata and grammar                              2,384              0         0
+Full documentation                                     2,384              0         0
+Generated HTML                                         2,384              0         0
+Abbreviated metadata and grammar                        2,384              0         0
+Abbreviated raw/lazy documentation                      2,384              0         0
+Lightweight SchemaAnnotationHandler output              2,384              0         0
+Total                                                 14,304              0         0
+
+All three implementations have zero observation failures and zero native PDE ERROR statuses during the recorded consumer operations.
+
+The model signatures include schema identity/name, loaded/valid state, deprecation/internal metadata, include locations, local/resolved element counts, element ownership, occurrence bounds, DTD representation, compositor structure, attribute metadata/defaults/types, and simple-type restrictions. Documentation signatures include schema/section/element/attribute descriptions. The abbreviated description calls exercise the actual raw/lazy PDE handlers. HTML is produced by the actual SchemaTransformer in BUILD mode and compared as an exact String, with no HTML normalization or filtering.
+
+Cross-implementation validation also compares the recorded component digests for the original plus all transformed trees. Both the source baseline and empty-documentation fix match all 16,092 component digests from the untouched reference product. Thus the fix produces no observed change on this corpus. Its specific empty-documentation edge cases are covered separately by the PDE agent's focused regression fixtures; this corpus does not reproduce that bug.
+
+INCLUDES, WORKSPACE CONTEXT AND CACHE ISOLATION
+
+PDECore is explicitly activated, its bundle state is ACTIVE, and a real ResourcesPlugin workspace is available. Configurations and workspaces are isolated under the audit directory; the restored reference product is used read-only.
+
+The original manifest contains 52 include entries. Forty schemas use cross-bundle schema:// locations; those locations depend on org.eclipse.core.expressions. An otherwise empty OSGi workspace can load the top-level schemas but cannot resolve that source provider automatically. A preliminary diagnostic retained in diagnostics/no-workspace-providers documents this boundary: all 298 top-level models loaded, but 40 model/HTML cases were correctly blocked for unresolved includes.
+
+The qualified audit creates real isolated workspace provider projects with the actual reference org.eclipse.core.expressions manifest (version 3.9.700.v20260710-0925). Each provider's schema directory is a filesystem link to the matching original or transformed fixture directory. Only the provider for the current tree is open. PDE's normal PluginRegistry and SchemaRegistry discover and resolve it. Relative includes use actual SchemaDescriptor URLs. No parser implementation or include-reader method is overridden.
+
+Every include is checked after native resolution: its actual canonical file must equal the expected file in the current fixture tree, and the included Schema must report isLoaded=true. There are 936 verified include resolutions per runtime: 52 × 9 trees × 2 model modes. The actual and expected URLs, caller and tree are preserved in each include-resolutions.json.
+
+Original and transformed top-level URLs are distinct. The provider aliases also differ by tree. The 2,691 unique reader URLs per runtime have zero Java String hash collisions, guarding the URL-hash-based XMLComponentRegistry description cache against accidental cross-fixture reuse. The audit clears the native schema registry at phase boundaries and disposes only after completing each phase's observations.
+
+PRECISE CAUSE OF THE EARLIER STANDALONE FAILURE
+
+The initial standalone test failed at PDECore.logException with "Logging bundle must not be null", which masked the original traversal exception. A small separate diagnostic now runs the same native XMLDefaultHandler and Schema.traverseDocumentTree outside Schema.load's catch/log boundary, without activating PDECore. After 23 successful traversals it exposes the underlying failure:
+
+File: org.eclipse.core.expressions/schema/definitions.exsd
+URL: file:///workspace/scratch/59a9c0b92707/xml-integration-audit/corpus/projects/org.eclipse.core.expressions/schema/definitions.exsd
+Mode: abbreviated=true
+Exception: java.lang.NullPointerException
+Message: Cannot invoke "org.eclipse.pde.internal.core.PDECore.getSchemaRegistry()" because the return value of "org.eclipse.pde.internal.core.PDECore.getDefault()" is null
+
+Native path:
+SchemaInclude.getIncludedSchema
+Schema.getResolvedElements
+Schema.resolveElementReference
+Schema.resolveReference
+Schema.resolveReferences
+Schema.traverseDocumentTree
+
+This establishes an inactive-PDE-registry harness failure. It is not the empty-documentation bug. With the real OSGi services and correct source provider, the unmodified reference consumer handles all 298 originals and all eight transformed sets without that failure. No corpus evidence here supports attributing a startup improvement to empty-documentation retries. Startup timing remains a separate measurement task.
+
+REPRODUCTION
+
+Working directory:
+/workspace/scratch/59a9c0b92707/xml-integration-audit
+
+Prerequisites already present:
+PDE_JAVA_HOME=/workspace/scratch/567cb6a530cb/wizard-test-runtime/jdk-25.0.5+8
+PDE_TEST_RUNTIME=/workspace/scratch/59a9c0b92707/recovered-runtime/reference-product
+Baseline compiled production classes:
+/workspace/scratch/59a9c0b92707/pde-fixes/build/writer-tabs-baseline
+Fixed compiled production classes:
+/workspace/scratch/59a9c0b92707/pde-fixes/build/empty-documentation-empty-documentation
+
+Commands:
+node verify-corpus.cjs
+osgi-audit/run-osgi.sh product
+osgi-audit/run-osgi.sh source-baseline
+osgi-audit/run-osgi.sh empty-documentation
+
+prepare-osgi.cjs compiles the audit application with javac --release 25, assembles a small application bundle, and writes an isolated Equinox configuration. run-osgi.sh launches the real Eclipse application in a fresh isolated workspace. The source-overlay variants copy the supplied production classes into an isolated copy of the product PDE bundle; the product variant uses the original product jar directly. This is a Java 25 OSGi corpus audit application, not a Tycho reactor run or a count of 14,304 JUnit test methods. The exact-head repository CI gates remain separate.
+
+EVIDENCE FILES
+
+qualification-summary.json — concise three-runtime outcome and code/corpus identities.
+standalone-underlying-error.json — exact native exception, source file, URL and stack.
+cross-implementation-comparison.json — 16,092 component digests equal for each overlay versus reference.
+baseline-source-verification.json — all 29 baseline source files match f948c578.
+url-and-class-verification.json — URL/cache uniqueness, fixture paths and loaded overlay-class identity.
+input-hashes.json — all source/transformed operands.
+src/pde/audit/CorpusApplication.java — complete OSGi comparison driver.
+src/pde/audit/DirectTraverseDiagnostic.java — diagnostic exposing the original catch/log-masked exception.
+prepare-osgi.cjs, run-osgi.sh, MANIFEST.MF, plugin.xml — reproducible isolated harness.
+product-provider-run.log, source-baseline-run.log, empty-documentation-run.log — complete successful run logs.
+runs/<implementation>/identity.json — effective bundles, source classes, hashes, runtime and launcher.
+runs/<implementation>/results/summary.json — complete per-tree/per-component results.
+runs/<implementation>/results/observations.jsonl — all 8,046 reader observations and hashes.
+runs/<implementation>/results/include-resolutions.json — all 936 native include resolutions.
+runs/<implementation>/results/runtime.json — observed active bundle and loaded-class identity.
+diagnostics/no-workspace-providers — preserved preliminary unresolved-provider diagnostic.

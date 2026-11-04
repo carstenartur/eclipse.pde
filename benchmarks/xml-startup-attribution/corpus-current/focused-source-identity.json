@@ -1,0 +1,46 @@
+{
+  "sourceCommit": "20dabecfb988073c5c27c9bf68004cf22c6a52f3",
+  "runtime": "/workspace/scratch/567cb6a530cb/wizard-test-runtime/jdk-25.0.5+8",
+  "files": [
+    {
+      "source": "sandbox_xml_cleanup/src/org/sandbox/jdt/internal/corext/fix/helper/SchemaTransformationUtils.java",
+      "copy": "src/main/java/org/sandbox/jdt/internal/corext/fix/helper/SchemaTransformationUtils.java",
+      "sha256": "60154b4499206e5325816c585f661b73c79e380dd4952d79deae2f488159d404"
+    },
+    {
+      "source": "sandbox_xml_cleanup/src/resources/formatter.xsl",
+      "copy": "src/main/resources/resources/formatter.xsl",
+      "sha256": "f36b1ac3fabbcce1e813851dfe63f42b9f0d06abec8305cad2bdf67fac62e6e7"
+    },
+    {
+      "source": "sandbox_xml_cleanup_test/src/test/java/org/sandbox/jdt/ui/tests/quickfix/XMLTestUtils.java",
+      "copy": "src/test/java/org/sandbox/jdt/ui/tests/quickfix/XMLTestUtils.java",
+      "sha256": "6c3aa82154aa57b556e7c2f638dbbb31dadc709cd092c189ce027f74e1ae51f5"
+    },
+    {
+      "source": "sandbox_xml_cleanup_test/src/test/java/org/sandbox/jdt/internal/corext/fix/helper/SchemaTransformationWhitespaceTest.java",
+      "copy": "src/test/java/org/sandbox/jdt/internal/corext/fix/helper/SchemaTransformationWhitespaceTest.java",
+      "sha256": "200779b3f06c2d7337b113d5954e41b4d5d5125a40f43436a4beb37196a27a14"
+    },
+    {
+      "source": "sandbox_xml_cleanup_test/src/test/java/org/sandbox/jdt/internal/corext/fix/helper/SchemaTransformationTextSafetyTest.java",
+      "copy": "src/test/java/org/sandbox/jdt/internal/corext/fix/helper/SchemaTransformationTextSafetyTest.java",
+      "sha256": "da7dcc3570a908aa6e31702317d76f8c6ebd6761cca19060d11cfb7baaa22cb7"
+    },
+    {
+      "source": "sandbox_xml_cleanup_test/src/test/java/org/sandbox/jdt/internal/corext/fix/helper/SchemaTransformationPdeMetadataTest.java",
+      "copy": "src/test/java/org/sandbox/jdt/internal/corext/fix/helper/SchemaTransformationPdeMetadataTest.java",
+      "sha256": "bc3cb24870c56c6129ec42ed763482a319a97a92e8de3da3289189f36c16db4d"
+    },
+    {
+      "source": "sandbox_xml_cleanup_test/src/test/java/org/sandbox/jdt/internal/corext/fix/helper/SchemaTransformationAppinfoTargetTest.java",
+      "copy": "src/test/java/org/sandbox/jdt/internal/corext/fix/helper/SchemaTransformationAppinfoTargetTest.java",
+      "sha256": "8076b9540357d933fff66dfda065cf1acb99139f87eb1abe5c8391fa24de48c8"
+    },
+    {
+      "source": "sandbox_xml_cleanup_test/src/test/java/org/sandbox/jdt/internal/corext/fix/helper/SchemaTransformationDocumentationTest.java",
+      "copy": "src/test/java/org/sandbox/jdt/internal/corext/fix/helper/SchemaTransformationDocumentationTest.java",
+      "sha256": "2066eb18cec2e954c97c2ac11a585ecb3a640fb2597acc790d05954f6f045833"
+    }
+  ]
+}

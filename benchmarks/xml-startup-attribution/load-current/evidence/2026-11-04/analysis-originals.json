@@ -1,0 +1,126 @@
+{
+  "rows": [
+    {
+      "block": 0,
+      "variant": "baseline",
+      "cpuMs": 16.46792118124848,
+      "allocatedBytes": 28180279.0534831
+    },
+    {
+      "block": 0,
+      "variant": "coalesced",
+      "cpuMs": 15.844521723517927,
+      "allocatedBytes": 8362690.05015674
+    },
+    {
+      "block": 0,
+      "variant": "reuse",
+      "cpuMs": 14.976267335093619,
+      "allocatedBytes": 25952799.655240595
+    },
+    {
+      "block": 0,
+      "variant": "combined",
+      "cpuMs": 12.437838853915373,
+      "allocatedBytes": 6087682.12616543
+    },
+    {
+      "block": 1,
+      "variant": "baseline",
+      "cpuMs": 15.703482249209157,
+      "allocatedBytes": 28173830.187134504
+    },
+    {
+      "block": 1,
+      "variant": "combined",
+      "cpuMs": 10.686616624779875,
+      "allocatedBytes": 6079945.984258749
+    },
+    {
+      "block": 1,
+      "variant": "reuse",
+      "cpuMs": 15.3877678384668,
+      "allocatedBytes": 25895330.057956476
+    },
+    {
+      "block": 1,
+      "variant": "coalesced",
+      "cpuMs": 14.842240929432451,
+      "allocatedBytes": 8362032.767274101
+    },
+    {
+      "block": 2,
+      "variant": "reuse",
+      "cpuMs": 17.651127903199416,
+      "allocatedBytes": 25903607.887122814
+    },
+    {
+      "block": 2,
+      "variant": "combined",
+      "cpuMs": 10.78046341610891,
+      "allocatedBytes": 6082383.0723582255
+    },
+    {
+      "block": 2,
+      "variant": "baseline",
+      "cpuMs": 15.836813472757598,
+      "allocatedBytes": 28174448.467526883
+    },
+    {
+      "block": 2,
+      "variant": "coalesced",
+      "cpuMs": 15.335299068010942,
+      "allocatedBytes": 8354318.0336417155
+    }
+  ],
+  "cells": {
+    "baseline": {
+      "cpuMs": 16.002738967738413,
+      "allocatedMB": 28.17618590271483
+    },
+    "coalesced": {
+      "cpuMs": 15.34068724032044,
+      "allocatedMB": 8.359680283690851
+    },
+    "reuse": {
+      "cpuMs": 16.005054358919946,
+      "allocatedMB": 25.917245866773293
+    },
+    "combined": {
+      "cpuMs": 11.301639631601384,
+      "allocatedMB": 6.083337060927469
+    }
+  },
+  "contrasts": [
+    {
+      "variant": "coalesced",
+      "savingsMs": 0.6620517274179724,
+      "ci95": [
+        0.20757425690494935,
+        1.1165291979309955
+      ],
+      "n": 3,
+      "df": 2
+    },
+    {
+      "variant": "reuse",
+      "savingsMs": -0.0023153911815327888,
+      "ci95": [
+        -4.165165281617039,
+        4.1605344992539735
+      ],
+      "n": 3,
+      "df": 2
+    },
+    {
+      "variant": "combined",
+      "savingsMs": 4.701099336137026,
+      "ci95": [
+        3.256689939687759,
+        6.145508732586293
+      ],
+      "n": 3,
+      "df": 2
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+"sourceCommit":"20dabecfb988073c5c27c9bf68004cf22c6a52f3",
+"java":"25.0.5+8-LTS",
+"sourceFiles":298,
+"sourceBytes":2337930,
+"documentationNodes":4557,
+"originalEvents":{"elements":22175,"textCallbacks":101992,"whitespaceCallbacks":40948,"textUtf16Units":1423422},
+"results":[
+{"mode":"compact-preserve-preserve","indent":false,"modernize":false,"trim":false,"outputBytes":1943420,"sourceBytesSaved":394510,"changedFiles":298,"documentationChanged":0,"documentationChangedFiles":0,"idempotentFiles":298,"events":{"elements":22175,"textCallbacks":54769,"whitespaceCallbacks":5816,"textUtf16Units":1065211}},
+{"mode":"compact-preserve-trim","indent":false,"modernize":false,"trim":true,"outputBytes":1941584,"sourceBytesSaved":396346,"changedFiles":298,"documentationChanged":108,"documentationChangedFiles":82,"idempotentFiles":298,"events":{"elements":22175,"textCallbacks":54765,"whitespaceCallbacks":5812,"textUtf16Units":1063375}},
+{"mode":"compact-modernize-preserve","indent":false,"modernize":true,"trim":false,"outputBytes":1943420,"sourceBytesSaved":394510,"changedFiles":298,"documentationChanged":0,"documentationChangedFiles":0,"idempotentFiles":298,"events":{"elements":22175,"textCallbacks":54769,"whitespaceCallbacks":5816,"textUtf16Units":1065211}},
+{"mode":"compact-modernize-trim","indent":false,"modernize":true,"trim":true,"outputBytes":1941584,"sourceBytesSaved":396346,"changedFiles":298,"documentationChanged":108,"documentationChangedFiles":82,"idempotentFiles":298,"events":{"elements":22175,"textCallbacks":54765,"whitespaceCallbacks":5812,"textUtf16Units":1063375}},
+{"mode":"indented-preserve-preserve","indent":true,"modernize":false,"trim":false,"outputBytes":2086446,"sourceBytesSaved":251484,"changedFiles":298,"documentationChanged":0,"documentationChangedFiles":0,"idempotentFiles":298,"events":{"elements":22175,"textCallbacks":89847,"whitespaceCallbacks":40895,"textUtf16Units":1207343}},
+{"mode":"indented-preserve-trim","indent":true,"modernize":false,"trim":true,"outputBytes":2084610,"sourceBytesSaved":253320,"changedFiles":298,"documentationChanged":108,"documentationChangedFiles":82,"idempotentFiles":298,"events":{"elements":22175,"textCallbacks":89842,"whitespaceCallbacks":40890,"textUtf16Units":1205507}},
+{"mode":"indented-modernize-preserve","indent":true,"modernize":true,"trim":false,"outputBytes":2086446,"sourceBytesSaved":251484,"changedFiles":298,"documentationChanged":0,"documentationChangedFiles":0,"idempotentFiles":298,"events":{"elements":22175,"textCallbacks":89847,"whitespaceCallbacks":40895,"textUtf16Units":1207343}},
+{"mode":"indented-modernize-trim","indent":true,"modernize":true,"trim":true,"outputBytes":2084610,"sourceBytesSaved":253320,"changedFiles":298,"documentationChanged":108,"documentationChangedFiles":82,"idempotentFiles":298,"events":{"elements":22175,"textCallbacks":89842,"whitespaceCallbacks":40890,"textUtf16Units":1205507}}]
+}

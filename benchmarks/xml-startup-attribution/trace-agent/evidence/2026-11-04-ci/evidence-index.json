@@ -1,0 +1,244 @@
+{
+  "formatVersion": 1,
+  "sourceRunStatus": "ok",
+  "files": [
+    {
+      "file": "run-manifest.json",
+      "sha256": "0a3d5c9f89a2a1ba31a3e258bfe7c2bd426f9eba935e66bfb193e84feafc1709",
+      "bytes": 293930
+    },
+    {
+      "file": "jdk-controls/process.log",
+      "sha256": "77cb59ce5da8a040e8057087e4ce4fcaa119e9ab3bf0a90c0db3de3cba4f601e",
+      "bytes": 161
+    },
+    {
+      "file": "jdk-controls/verification.json",
+      "sha256": "4626b5748815da88258bc7ffc5ce5d788e8f184b0055785d148d590994c883b0",
+      "bytes": 168
+    },
+    {
+      "file": "jdk-controls/trace.jsonl.gz",
+      "sha256": "9967efebc7f63f427869146af464b147c31fd7d6aa8cf1215e8569e29d65cdf1",
+      "bytes": 2909,
+      "uncompressedSha256": "d8cc693f1cfd2e28b4c7ddfe03016b18beaf5a2f046ece80a71ce8b1f84e9698",
+      "uncompressedBytes": 27680
+    },
+    {
+      "file": "eclipse-controls/process.log",
+      "sha256": "8137e16786b42c7332beb11cc9356fc0c0929c3063cbaac3552fb38f219736d2",
+      "bytes": 236
+    },
+    {
+      "file": "eclipse-controls/verification.json",
+      "sha256": "078c9db3e89e3f48d4e2fead908f7424f45fc35e5771e497f950f462a1d6cdb3",
+      "bytes": 138
+    },
+    {
+      "file": "eclipse-controls/trace.jsonl.gz",
+      "sha256": "6638b5976f1d8e386cbd43b068ceda5bc6dbe0f1e5315e0c4bf203778610429c",
+      "bytes": 167996,
+      "uncompressedSha256": "9790e9c2f44892eeb2965d2ca66f8e164de66f22b545b5b1f31824b8425bc7c0",
+      "uncompressedBytes": 6960721
+    },
+    {
+      "file": "headless-cold-registry/process.log",
+      "sha256": "a6c6c03b74e58df33478863da3dd749cca2fdb6084afb9d2e33b3deb96927506",
+      "bytes": 700
+    },
+    {
+      "file": "headless-cold-registry/probe.json",
+      "sha256": "910a5bb44407a8f1419338f266bd4584f5c9ecac29ecb4914670cf52079ffe31",
+      "bytes": 364
+    },
+    {
+      "file": "headless-cold-registry/trace-summary.json",
+      "sha256": "7c7e19f6517bc9ca44b45c471158da703fed2ad6cbbde718f0d2e39231c9647d",
+      "bytes": 8928
+    },
+    {
+      "file": "headless-cold-registry/trace.jsonl.gz",
+      "sha256": "035e70a932437c818816792a49ec5a69ad22462c6285abb4560cfcbec50e6ad0",
+      "bytes": 242043,
+      "uncompressedSha256": "e0a609506b7597f5d1be9dc46f68df3dcb5039682c8d40fdeb89da480d95774f",
+      "uncompressedBytes": 9801386
+    },
+    {
+      "file": "headless-prepared-restart/process.log",
+      "sha256": "a6c6c03b74e58df33478863da3dd749cca2fdb6084afb9d2e33b3deb96927506",
+      "bytes": 700
+    },
+    {
+      "file": "headless-prepared-restart/probe.json",
+      "sha256": "910a5bb44407a8f1419338f266bd4584f5c9ecac29ecb4914670cf52079ffe31",
+      "bytes": 364
+    },
+    {
+      "file": "headless-prepared-restart/trace-summary.json",
+      "sha256": "e595a8b2bb74a37970c337a6a16d9655002b09b6e16ad6ab353f4b50810763fc",
+      "bytes": 7762
+    },
+    {
+      "file": "headless-prepared-restart/trace.jsonl.gz",
+      "sha256": "1c48479edcc8b840ee97b3c724bc64d56837f4b66f55127b4b0b97e15f23ab37",
+      "bytes": 79072,
+      "uncompressedSha256": "230ff20415972c297b79eba4f393833e0ef29b29cc447e212152d94ea61a0975",
+      "uncompressedBytes": 3205760
+    },
+    {
+      "file": "headless-automatic-build/process.log",
+      "sha256": "b9828c20c80d31642b548f22d9866a7a795a8adc008f2ba78773066cd5c15cf6",
+      "bytes": 1276
+    },
+    {
+      "file": "headless-automatic-build/probe.json",
+      "sha256": "0d46f1c436ae8ac387301f2a834042ce33673d8a4a48c408687fde614277a3bc",
+      "bytes": 492
+    },
+    {
+      "file": "headless-automatic-build/trace-summary.json",
+      "sha256": "032f8be5852de7825482d7f3405bddf197cd9f6044004d5a0c3d2d1701a05a3b",
+      "bytes": 9980
+    },
+    {
+      "file": "headless-automatic-build/trace.jsonl.gz",
+      "sha256": "48481ecf90003692db3305de2a0dd1fe2f63072b4dcf35fe07f937349018b111",
+      "bytes": 150223,
+      "uncompressedSha256": "aff3500a8de5ed159484af80c67a33fd35cb7b4c0cf4b190bab531d44acb16b7",
+      "uncompressedBytes": 6332059
+    },
+    {
+      "file": "gui-workspace-preparation/process.log",
+      "sha256": "a6c6c03b74e58df33478863da3dd749cca2fdb6084afb9d2e33b3deb96927506",
+      "bytes": 700
+    },
+    {
+      "file": "gui-workspace-preparation/probe.json",
+      "sha256": "910a5bb44407a8f1419338f266bd4584f5c9ecac29ecb4914670cf52079ffe31",
+      "bytes": 364
+    },
+    {
+      "file": "gui-workspace-preparation/trace-summary.json",
+      "sha256": "b3e7dba535e24e0320ebffdead730bee24b5f43b46319fc49a34848ef25741bf",
+      "bytes": 8678
+    },
+    {
+      "file": "gui-workspace-preparation/trace.jsonl.gz",
+      "sha256": "bffafea7ec5df05fff47c4ec1d1b39554d305fa39deb220af7d9148576dabd37",
+      "bytes": 294959,
+      "uncompressedSha256": "5fd74a710c00efbca46e991650415616fc5fc6bb60a172d9c693250536d907f0",
+      "uncompressedBytes": 12313025
+    },
+    {
+      "file": "gui-cold-registry/process.log",
+      "sha256": "b1ea6d2d0be53837cd4d2cf928dbf92c1e171807c933335f171cb90d9f090b12",
+      "bytes": 18196
+    },
+    {
+      "file": "gui-cold-registry/probe.json",
+      "sha256": "51ea8a55ec8ecfa6a53d0f57c7883c0b3bd1bb4a655ad8bb5fe8ac47320676ae",
+      "bytes": 18004
+    },
+    {
+      "file": "gui-cold-registry/trace-summary.json",
+      "sha256": "1b3dd268b2149a610d4d07e093446fbcaa8ec9f742d4fc583e67885df7db479c",
+      "bytes": 11487
+    },
+    {
+      "file": "gui-cold-registry/trace.jsonl.gz",
+      "sha256": "62a7b4d9e476d953edfe3463fe7b67de0827418b98b1a5a0873f6979300c054d",
+      "bytes": 351568,
+      "uncompressedSha256": "652df8a132121c516fae438e3a02145e1581969322523440c6856ffabecbf1e9",
+      "uncompressedBytes": 13456781
+    },
+    {
+      "file": "gui-prepared-restart/process.log",
+      "sha256": "d028f27a105ee6f86e20aebb2b1003c0997daefab8a7164c620967c5e0ef8302",
+      "bytes": 17470
+    },
+    {
+      "file": "gui-prepared-restart/probe.json",
+      "sha256": "e9492f85ca016155caaa095936c68b58a14228ca757ae8cd8718f82fe312ad27",
+      "bytes": 17281
+    },
+    {
+      "file": "gui-prepared-restart/trace-summary.json",
+      "sha256": "f3a8385e8c3bcbd44182458795edf5c15f5726d258c30748418bc345f0a97851",
+      "bytes": 11011
+    },
+    {
+      "file": "gui-prepared-restart/trace.jsonl.gz",
+      "sha256": "59e8ed7d739bf4b8d8c7fe60f2daeaf462ccdffadb9c9de775ce5f4f79808208",
+      "bytes": 179169,
+      "uncompressedSha256": "837a6ab5720cd6db982b8bd68753359ea73cd109b3bba7cad1209c6538590824",
+      "uncompressedBytes": 6464000
+    },
+    {
+      "file": "gui-automatic-build/process.log",
+      "sha256": "0b8c54b21b1f1a0776bf7a1e019565594491b893c6b5bb396f0d042f54e38d6b",
+      "bytes": 29077
+    },
+    {
+      "file": "gui-automatic-build/probe.json",
+      "sha256": "f40bce8162f47c9a692acfb05261a41a7e6c87bf4637a64ccd0e9d9763c53864",
+      "bytes": 28871
+    },
+    {
+      "file": "gui-automatic-build/trace-summary.json",
+      "sha256": "bf91d4ac90d3f117fc91d630b822e0c13a54489e6057722fa48cd388abbf153b",
+      "bytes": 12485
+    },
+    {
+      "file": "gui-automatic-build/trace.jsonl.gz",
+      "sha256": "7606cb28f1d3ecce164e9fa0abdde005c0f8cf2b8cf52241a71ffd9279b459e6",
+      "bytes": 225436,
+      "uncompressedSha256": "c984fb6971cb7496d8f8021a6cd478583d1ed7456d818ccad241b3868264b050",
+      "uncompressedBytes": 8582642
+    },
+    {
+      "file": "gui-editor-seed/process.log",
+      "sha256": "f3de66c1eacbcc50102b9abf0d7918206d3e45614cf4c35d2f0b15af658f197c",
+      "bytes": 31834
+    },
+    {
+      "file": "gui-editor-seed/probe.json",
+      "sha256": "4dc03df03bd6ce0cdceb812b6d5d4dbfd391bde2af8d2c5cb2400dd960f56b5e",
+      "bytes": 31414
+    },
+    {
+      "file": "gui-editor-seed/trace-summary.json",
+      "sha256": "85b6c0e5cfc70afc503768efcb9345ec47a002ec5258ad3b2f8dc7481ea5400f",
+      "bytes": 11341
+    },
+    {
+      "file": "gui-editor-seed/trace.jsonl.gz",
+      "sha256": "9e14f3d32675b20a6602abe7957fa7c41223b63bc0da482aac608a715fa8ac70",
+      "bytes": 195570,
+      "uncompressedSha256": "0b0ae52bccee4ab09c43fce323f858c92106434a401978cc261778aee83be7c9",
+      "uncompressedBytes": 6847255
+    },
+    {
+      "file": "gui-restored-editors/process.log",
+      "sha256": "035aa87e59acf16d6535c93a5103df8edcca3a83353014184d8b1903c86a6e9d",
+      "bytes": 17748
+    },
+    {
+      "file": "gui-restored-editors/probe.json",
+      "sha256": "1e74c1958834bd8238586915aa1f79d2e244b30f8363ac3bed206534f4389620",
+      "bytes": 17559
+    },
+    {
+      "file": "gui-restored-editors/trace-summary.json",
+      "sha256": "6e2c9abffed0f39d56ad9997d8dd3d34e5e36851deb75c69d85632528c7ae27d",
+      "bytes": 11107
+    },
+    {
+      "file": "gui-restored-editors/trace.jsonl.gz",
+      "sha256": "ae459c04c4559918ec3ed0b32701b7cf35efae5271ab7b5d0dced7d3c13c0270",
+      "bytes": 168465,
+      "uncompressedSha256": "420fa97e68b8d806ce1629a2c5208a0e82cae2f4c0df2353aed19e91bc03ff70",
+      "uncompressedBytes": 5921862
+    }
+  ],
+  "meaning": "Raw traces are gzip-compressed without changing their JSONL bytes. Workspaces, installation copies and generated class files are omitted."
+}

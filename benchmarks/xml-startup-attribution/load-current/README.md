@@ -72,3 +72,14 @@ Output records include pinned source hashes, corpus hashes, compile logs, all
 validation logs, explicit schedules and complete per-fork JMH JSON/console logs.
 The machine is shared; treat observed CPU changes as workload-specific evidence
 and retain uncertainty. These results cannot establish an IDE startup percentage.
+
+The completed [4 November results](RESULTS-2026-11-04.md) include all raw fork
+records, the excluded preliminary schedules and exact transformed input JARs.
+Recompute the accepted four-block analysis with:
+
+```sh
+node analyze.cjs evidence/2026-11-04 balanced-v2
+```
+
+The analyzer checks the complete matrix, reversed orders, runner hash and every
+raw iteration value before using four fork/block means for each comparison.

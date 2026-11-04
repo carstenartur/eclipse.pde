@@ -1,0 +1,8 @@
+{
+  "verifiedAt": "2026-11-04T20:12:28.421Z",
+  "schemaCount": 298,
+  "bytes": 2337930,
+  "expectedCorpusSha256": "442e16926ec5ee2e3842ee332ed93f6b5eba490c7c04b6bd9969e3ec95e7a491",
+  "actualCorpusSha256": "442e16926ec5ee2e3842ee332ed93f6b5eba490c7c04b6bd9969e3ec95e7a491",
+  "failures": []
+}

@@ -1,0 +1,53 @@
+{
+  "baseCommit": "ef946b6fad6276694f32389311cb7e71cf7f3955",
+  "headCommit": "f8dfe691a79de75f55c7633714a15c5626ca6166",
+  "baseTree": "bc6ddc4aa0a8ede8951eda47715e4d5e057347df",
+  "headTree": "0d3af5d5e9bbe89be70174d58578ce92d90eae28",
+  "api": "SchemaTransformationUtils.transform(String, Charset, boolean)",
+  "independentBranch": true,
+  "includesCombined12033": false,
+  "files": [
+    {
+      "commit": "ef946b6fad6276694f32389311cb7e71cf7f3955",
+      "source": "sandbox_xml_cleanup/src/org/sandbox/jdt/internal/corext/fix/helper/SchemaTransformationUtils.java",
+      "destination": "preamble-independent/base/src/org/sandbox/jdt/internal/corext/fix/helper/SchemaTransformationUtils.java",
+      "bytes": 7998,
+      "sha256": "0b570f403e5824b4e24fbd081e014e8d0764acdb2ad1012e77a65ebfcdece7c3"
+    },
+    {
+      "commit": "ef946b6fad6276694f32389311cb7e71cf7f3955",
+      "source": "sandbox_xml_cleanup/src/resources/formatter.xsl",
+      "destination": "preamble-independent/base/classes/resources/formatter.xsl",
+      "bytes": 3466,
+      "sha256": "76080a5667c229ff76e718dd2b8903d1fce50c9f981a3770bdc94a0c48bde95d"
+    },
+    {
+      "commit": "f8dfe691a79de75f55c7633714a15c5626ca6166",
+      "source": "sandbox_xml_cleanup/src/org/sandbox/jdt/internal/corext/fix/helper/SchemaTransformationUtils.java",
+      "destination": "preamble-independent/head/src/main/java/org/sandbox/jdt/internal/corext/fix/helper/SchemaTransformationUtils.java",
+      "bytes": 8630,
+      "sha256": "7a4ca95d0e6c157f7b6adc5693fdc5c20596878f22cdf38f0842b1e0624db31c"
+    },
+    {
+      "commit": "f8dfe691a79de75f55c7633714a15c5626ca6166",
+      "source": "sandbox_xml_cleanup/src/resources/formatter.xsl",
+      "destination": "preamble-independent/head/src/main/resources/resources/formatter.xsl",
+      "bytes": 4245,
+      "sha256": "cffa491efd8723ca78c990063514fea6cc272151557088d04bf3c57acbadeb1e"
+    },
+    {
+      "commit": "f8dfe691a79de75f55c7633714a15c5626ca6166",
+      "source": "sandbox_xml_cleanup_test/src/test/java/org/sandbox/jdt/internal/corext/fix/helper/SchemaTransformationPdePreambleTest.java",
+      "destination": "preamble-independent/head/src/test/java/org/sandbox/jdt/internal/corext/fix/helper/SchemaTransformationPdePreambleTest.java",
+      "bytes": 14467,
+      "sha256": "1671436bf04e5ee52d7c1e8738ccbd98c882d484ed4301df9a1b1ef689f469ad"
+    },
+    {
+      "commit": "f8dfe691a79de75f55c7633714a15c5626ca6166",
+      "source": "sandbox_xml_cleanup_test/src/test/java/org/sandbox/jdt/internal/corext/fix/helper/PdePreambleConsumerTest.java",
+      "destination": "preamble-independent/head/src/test/java/org/sandbox/jdt/internal/corext/fix/helper/PdePreambleConsumerTest.java",
+      "bytes": 7758,
+      "sha256": "325e63b5ccd44917fc6e0e588c016553a629877c61009838f8c2dd927dd56891"
+    }
+  ]
+}

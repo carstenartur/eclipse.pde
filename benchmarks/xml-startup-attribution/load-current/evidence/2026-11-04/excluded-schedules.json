@@ -1,0 +1,9 @@
+{
+  "reason": "Preliminary cyclic rotation followed by odd-block reversal left some treatment pairs in the same order in all three blocks. Retain raw runs as exploratory; use a unified rerun with exact paired reversals for headline CPU comparisons.",
+  "series": [
+    "originals",
+    "formatting"
+  ],
+  "workCountersUnaffected": true,
+  "decisionBeforeUnifiedRerun": true
+}

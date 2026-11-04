@@ -1,0 +1,848 @@
+{
+  "date": "2026-11-04T19:51:11.415Z",
+  "scope": "49 top-level org.eclipse.ui schemas plus their 15 include loads; full SchemaDescriptor/Schema model path, not Eclipse startup",
+  "archive": "/workspace/scratch/59a9c0b92707/loading-measurement/xml-followup",
+  "repo": "/workspace/scratch/59a9c0b92707/pde-fixes/eclipse.pde",
+  "java": "/workspace/scratch/567cb6a530cb/wizard-test-runtime/jdk-25.0.5+8/bin/java",
+  "javac": "/workspace/scratch/567cb6a530cb/wizard-test-runtime/jdk-25.0.5+8/bin/javac",
+  "jar": "/workspace/scratch/567cb6a530cb/wizard-test-runtime/jdk-25.0.5+8/bin/jar",
+  "dependencies": [
+    "/workspace/scratch/59a9c0b92707/loading-measurement/xml-followup/lib/eclipse/org.eclipse.core.runtime-3.35.100.v20261023-0640.jar",
+    "/workspace/scratch/59a9c0b92707/loading-measurement/xml-followup/lib/eclipse/org.eclipse.equinox.common-3.21.100.v20260829-1451.jar",
+    "/workspace/scratch/59a9c0b92707/loading-measurement/xml-followup/lib/eclipse/org.eclipse.osgi-3.25.0.v20261008-2211.jar",
+    "/workspace/scratch/59a9c0b92707/loading-measurement/xml-followup/lib/eclipse/org.eclipse.core.resources-3.25.0.v20261023-0640.jar",
+    "/workspace/scratch/59a9c0b92707/loading-measurement/xml-followup/lib/eclipse/org.eclipse.core.jobs-3.15.900.v20260604-0622.jar",
+    "/workspace/scratch/59a9c0b92707/loading-measurement/xml-followup/lib/eclipse/org.eclipse.jdt.core-3.48.0.v20261023-0812.jar",
+    "/workspace/scratch/59a9c0b92707/loading-measurement/xml-followup/lib/eclipse/org.eclipse.equinox.preferences-3.12.200.v20261023-0641.jar",
+    "/workspace/scratch/59a9c0b92707/loading-measurement/xml-followup/lib/eclipse/org.eclipse.equinox.registry-3.12.700.v20261023-0641.jar",
+    "/workspace/scratch/59a9c0b92707/loading-measurement/xml-followup/lib/eclipse/org.eclipse.core.expressions-3.9.800.v20261023-0640.jar",
+    "/workspace/scratch/59a9c0b92707/loading-measurement/xml-followup/lib/eclipse/org.eclipse.text-3.14.900.v20261012-1310.jar",
+    "/workspace/scratch/59a9c0b92707/loading-measurement/xml-followup/lib/benchmark/commons-math3-3.6.1.jar",
+    "/workspace/scratch/59a9c0b92707/loading-measurement/xml-followup/lib/benchmark/jmh-core-1.37.jar",
+    "/workspace/scratch/59a9c0b92707/loading-measurement/xml-followup/lib/benchmark/jmh-generator-annprocess-1.37.jar",
+    "/workspace/scratch/59a9c0b92707/loading-measurement/xml-followup/lib/benchmark/jopt-simple-5.0.4.jar"
+  ],
+  "variants": {
+    "baseline": {
+      "handlerCommit": "f948c57878a1a011625b5214d63a1ec01bd243ff",
+      "schemaCommit": "f948c57878a1a011625b5214d63a1ec01bd243ff",
+      "files": [
+        {
+          "path": "ui/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/XMLDefaultHandler.java",
+          "ref": "f948c57878a1a011625b5214d63a1ec01bd243ff",
+          "sha256": "e15bb2bb62f1a745d98fb6eb1e1dfb44e829b4f34d81fe0174dcffca0af2fb73"
+        },
+        {
+          "path": "ui/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/schema/Schema.java",
+          "ref": "f948c57878a1a011625b5214d63a1ec01bd243ff",
+          "sha256": "4f6d5b3211455b656ad4dbbf55feb638c7c1075986448bee2e573de9f5cd38a3"
+        }
+      ]
+    },
+    "coalesced": {
+      "handlerCommit": "de6efde7becdbcc5515c0a45c908d2592ccd465e",
+      "schemaCommit": "f948c57878a1a011625b5214d63a1ec01bd243ff",
+      "files": [
+        {
+          "path": "ui/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/XMLDefaultHandler.java",
+          "ref": "de6efde7becdbcc5515c0a45c908d2592ccd465e",
+          "sha256": "96d3fb0a82a530ca70c7d2cc2c005e2092b02d4dbcca9ca4349970b7ba05c155"
+        },
+        {
+          "path": "ui/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/schema/Schema.java",
+          "ref": "f948c57878a1a011625b5214d63a1ec01bd243ff",
+          "sha256": "4f6d5b3211455b656ad4dbbf55feb638c7c1075986448bee2e573de9f5cd38a3"
+        }
+      ]
+    },
+    "reuse": {
+      "handlerCommit": "f948c57878a1a011625b5214d63a1ec01bd243ff",
+      "schemaCommit": "eedb94d809215598b39d53f711733e0313e04fbe",
+      "files": [
+        {
+          "path": "ui/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/XMLDefaultHandler.java",
+          "ref": "f948c57878a1a011625b5214d63a1ec01bd243ff",
+          "sha256": "e15bb2bb62f1a745d98fb6eb1e1dfb44e829b4f34d81fe0174dcffca0af2fb73"
+        },
+        {
+          "path": "ui/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/schema/Schema.java",
+          "ref": "eedb94d809215598b39d53f711733e0313e04fbe",
+          "sha256": "919bdf5fee3ad6a0f6b395302fb7cf02f673d5e2d4302edb87272132e8937d0e"
+        },
+        {
+          "path": "ui/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/schema/SchemaReader.java",
+          "ref": "eedb94d809215598b39d53f711733e0313e04fbe",
+          "sha256": "02811fc912abbb805692038054aa399d0fc859f380684eda897220a63a326ac3"
+        }
+      ]
+    },
+    "combined": {
+      "handlerCommit": "de6efde7becdbcc5515c0a45c908d2592ccd465e",
+      "schemaCommit": "eedb94d809215598b39d53f711733e0313e04fbe",
+      "files": [
+        {
+          "path": "ui/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/XMLDefaultHandler.java",
+          "ref": "de6efde7becdbcc5515c0a45c908d2592ccd465e",
+          "sha256": "96d3fb0a82a530ca70c7d2cc2c005e2092b02d4dbcca9ca4349970b7ba05c155"
+        },
+        {
+          "path": "ui/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/schema/Schema.java",
+          "ref": "eedb94d809215598b39d53f711733e0313e04fbe",
+          "sha256": "919bdf5fee3ad6a0f6b395302fb7cf02f673d5e2d4302edb87272132e8937d0e"
+        },
+        {
+          "path": "ui/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/schema/SchemaReader.java",
+          "ref": "eedb94d809215598b39d53f711733e0313e04fbe",
+          "sha256": "02811fc912abbb805692038054aa399d0fc859f380684eda897220a63a326ac3"
+        }
+      ]
+    }
+  },
+  "corpora": {
+    "original": [
+      {
+        "path": "schema/acceleratorConfigurations.exsd",
+        "bytes": 6512,
+        "sha256": "6f565f40a9b79d77c5af3e5613be6eff33f5907105460d69649198a1de6884ec"
+      },
+      {
+        "path": "schema/acceleratorScopes.exsd",
+        "bytes": 6354,
+        "sha256": "79763b01a0f895b8ccd25cf7d8f84f6c3f9d2d7fca4695e5d3e6d2ae360e50e1"
+      },
+      {
+        "path": "schema/acceleratorSets.exsd",
+        "bytes": 9738,
+        "sha256": "5f499ff555dee8ace32b7349d5a70750d8ab210e8e1d1c3aa405a86cafd81b7b"
+      },
+      {
+        "path": "schema/actionDefinitions.exsd",
+        "bytes": 5835,
+        "sha256": "491d1f020044ede10ed96a8cbe16602bb4225797022e669e03cc64ca159f45b5"
+      },
+      {
+        "path": "schema/actionSetPartAssociations.exsd",
+        "bytes": 5359,
+        "sha256": "1db7b00ddf709630d8931e22a52814c6f37820b000cdf6f17e48a9f79ff92929"
+      },
+      {
+        "path": "schema/actionSets.exsd",
+        "bytes": 31920,
+        "sha256": "44bf9ee667daab40488b917d2c79a1b0e7a91f86e560d773e0a99fb7559314bc"
+      },
+      {
+        "path": "schema/activities.exsd",
+        "bytes": 14411,
+        "sha256": "46a9b6e943632cb2a86f42fb2aea2872e449f93db378d7db94d1a050c94963d8"
+      },
+      {
+        "path": "schema/activitySupport.exsd",
+        "bytes": 11473,
+        "sha256": "c27f15a6b91762435e7c5b9850b4d66780e0bc0c8ce610b34fb657d911869a7d"
+      },
+      {
+        "path": "schema/bindings.exsd",
+        "bytes": 22130,
+        "sha256": "b9caea00d18aedb1f0b04e7f0925f1c081023eeb572991a16f72ab3755a6f709"
+      },
+      {
+        "path": "schema/browserSupport.exsd",
+        "bytes": 5163,
+        "sha256": "378faf49333cb4919b0dc29cb5d21a9880d75f0c27c5745f998828972ece2580"
+      },
+      {
+        "path": "schema/commandImages.exsd",
+        "bytes": 7150,
+        "sha256": "dcda672d5415d07f0b0c24e4aa02c7da705397acfe170e549a5ccb5e3fce5710"
+      },
+      {
+        "path": "schema/commands.exsd",
+        "bytes": 43190,
+        "sha256": "4dabce123c73fd0a19a82ad3e85f2a0945cdd12a9278c8c5615aae25f33c7a74"
+      },
+      {
+        "path": "schema/commonAction.exsd",
+        "bytes": 5987,
+        "sha256": "2610b35378a66e70096ad987726b07c1c58332d6f49e85f1006fca5e66922252"
+      },
+      {
+        "path": "schema/commonExpression.exsd",
+        "bytes": 10151,
+        "sha256": "c9614c7f1d714e5abfd189e07c6c3dcb0732e0f67de4144fc0aa9871ae747d7e"
+      },
+      {
+        "path": "schema/contexts.exsd",
+        "bytes": 5214,
+        "sha256": "1b5eb32164046e1ff93a013586b1b7ad6191c9d03d126396ce265187cc2fba98"
+      },
+      {
+        "path": "schema/decorators.exsd",
+        "bytes": 12652,
+        "sha256": "7486864e5057d1806a47aaab0431e4174718a63abed3308449aa70e655431dfd"
+      },
+      {
+        "path": "schema/dropActions.exsd",
+        "bytes": 6214,
+        "sha256": "7c6932a5ce67dcd5bbe3a210926bd2f6825dda159e888d0c73b116c5d56af8fe"
+      },
+      {
+        "path": "schema/editorActions.exsd",
+        "bytes": 27288,
+        "sha256": "530de61aca877b34ddd6b2991cb171d4d0657103f0d3cbeb6a6916368f4f3d0c"
+      },
+      {
+        "path": "schema/editors.exsd",
+        "bytes": 17269,
+        "sha256": "8fa740f0654878a87885964cc898d06ddb1dbe9d577757f274c3735f442912e5"
+      },
+      {
+        "path": "schema/elementFactories.exsd",
+        "bytes": 5871,
+        "sha256": "02e3b5d5da27e21af6b880e580e461a96bdefb4b5db6837f184543846f6597be"
+      },
+      {
+        "path": "schema/encodings.exsd",
+        "bytes": 4058,
+        "sha256": "5e04e8b504cdb05b0e0bf0db94cfa44fe1b921abb5794022dba86e165255b568"
+      },
+      {
+        "path": "schema/exportWizards.exsd",
+        "bytes": 9955,
+        "sha256": "7815c6360bef1f3125999506c4928f0aec1cd14c9384c811d90178ba4bae93c9"
+      },
+      {
+        "path": "schema/fontDefinitions.exsd",
+        "bytes": 7266,
+        "sha256": "c0604f178e5f06e53a94016e648956c449408867d146b45ccd68971fe6e65ba3"
+      },
+      {
+        "path": "schema/handlers.exsd",
+        "bytes": 13995,
+        "sha256": "f250168f69de3563a13a2f09e00737382918f0ce07b94a166c64edb059d0978f"
+      },
+      {
+        "path": "schema/helpSupport.exsd",
+        "bytes": 3958,
+        "sha256": "f63bff2969f08f7af655fd5dce5ef7444ed211d976a3564aa598709dd34d48e3"
+      },
+      {
+        "path": "schema/importWizards.exsd",
+        "bytes": 9980,
+        "sha256": "6db68ee7751775d2a71defa7cb8d2f3dc9e3f3487a1ee27dbda4a4428206f9f9"
+      },
+      {
+        "path": "schema/installationPages.exsd",
+        "bytes": 5612,
+        "sha256": "49e01f01eded0b6d06a285c6a2e9c3c6c723ad0c7f66887db1d0668f6d7798e3"
+      },
+      {
+        "path": "schema/internalTweaklets.exsd",
+        "bytes": 5938,
+        "sha256": "2e4b4f8857a9d95a644fa01af08ba117e75047d80c516db3d9ff1f6de425ca12"
+      },
+      {
+        "path": "schema/intro.exsd",
+        "bytes": 9039,
+        "sha256": "5ef58228c24549b36de140425c43e67a02de86b63641a9780286601468a9095b"
+      },
+      {
+        "path": "schema/keywords.exsd",
+        "bytes": 4314,
+        "sha256": "d5c14388d7ae4b3022159b2fd8e2065c664b3e11ddb9c67cdb03d0f89cecc56d"
+      },
+      {
+        "path": "schema/menus.exsd",
+        "bytes": 50796,
+        "sha256": "6222650011564b73351db61a118374839f13d22be9e094988d9817256afedb03"
+      },
+      {
+        "path": "schema/newWizards.exsd",
+        "bytes": 14108,
+        "sha256": "463a78c66344a1d71dcf859c8fc07dd9adead33eee1192ffb736ebae8c520b01"
+      },
+      {
+        "path": "schema/perspectiveExtensions.exsd",
+        "bytes": 18295,
+        "sha256": "1c12362ffdaf29819e5b127ea5b56a4eda6f6a1183fdf20fe63b93d45baa4f77"
+      },
+      {
+        "path": "schema/perspectives.exsd",
+        "bytes": 8117,
+        "sha256": "eb8c4e0b0a337975aedd402f652206de40fa3bfe4e6fc47f7e627f21d8cd20c1"
+      },
+      {
+        "path": "schema/popupMenus.exsd",
+        "bytes": 32707,
+        "sha256": "af618ca858a5c812dfa2d25489ec0cd933442c1f23323dd5d64f6be07bf556a0"
+      },
+      {
+        "path": "schema/preferencePages.exsd",
+        "bytes": 6994,
+        "sha256": "099df3602c128e3da99488642dec21e67af0f930f59be933f9f9e665f6fbb0d0"
+      },
+      {
+        "path": "schema/preferenceTransfer.exsd",
+        "bytes": 12045,
+        "sha256": "7831ecafe2eac7d211523264b89715671bb47322c635e3e244d651260dffb5cb"
+      },
+      {
+        "path": "schema/propertiesView.exsd",
+        "bytes": 3334,
+        "sha256": "0f87db7a5f23656557d3c3ea1486ccdb71eed99310038eb66ad95f34c6211459"
+      },
+      {
+        "path": "schema/propertyPages.exsd",
+        "bytes": 14646,
+        "sha256": "c8b5b46bb199b08b1ce08472bdebcce9a47440192ec3eeb76b0a762211f81d2d"
+      },
+      {
+        "path": "schema/quickAccess.exsd",
+        "bytes": 4351,
+        "sha256": "e827af762565d95fbe62fee1124ffa7881f947e98478ebad1d67fe0bb8d025f9"
+      },
+      {
+        "path": "schema/services.exsd",
+        "bytes": 9239,
+        "sha256": "90eb448b43815da073b90077e6255ab084affb695db4193e0eeb65fe90a7665b"
+      },
+      {
+        "path": "schema/splashHandlers.exsd",
+        "bytes": 6743,
+        "sha256": "465a87ead7da5908ce12a7e9433b60d98af4f3d99e9d1ef4c8206dd24d20b50d"
+      },
+      {
+        "path": "schema/startup.exsd",
+        "bytes": 4349,
+        "sha256": "e5850ad8261c218a1bc79c779952cbc6df230e5c1f00c6f71a4477b524fd6e80"
+      },
+      {
+        "path": "schema/statusHandlers.exsd",
+        "bytes": 9678,
+        "sha256": "a0c92535c15733df21226f9806e8185e9518c702f13d2975f81cae4ca692da59"
+      },
+      {
+        "path": "schema/systemSummarySections.exsd",
+        "bytes": 5392,
+        "sha256": "f379355ff0ef6a1d9dd22d12ba4fe80582e9c87e1495e3f6f6cdf024db17a273"
+      },
+      {
+        "path": "schema/themes.exsd",
+        "bytes": 31011,
+        "sha256": "cd3e29647fbe76495c572cb6e16dc6e455dd62274d5bfa4f991d527e2dd49f7e"
+      },
+      {
+        "path": "schema/viewActions.exsd",
+        "bytes": 24831,
+        "sha256": "c7c250d1357963844782cd600ae6d79d412f790ecc87cffdeddd4d375cf2f15d"
+      },
+      {
+        "path": "schema/views.exsd",
+        "bytes": 17999,
+        "sha256": "e0b173439c045a8ff3b0d9c1132efa169126af8ce80c21fa36b4bde40b60c252"
+      },
+      {
+        "path": "schema/workingSets.exsd",
+        "bytes": 9210,
+        "sha256": "313d232428060afba41f07fa257c4cb3b0800417636173effeb4f02cd9bd6e8d"
+      }
+    ],
+    "current-compact": [
+      {
+        "path": "schema/acceleratorConfigurations.exsd",
+        "bytes": 5428,
+        "sha256": "b4ee1901362525753cdcef530d9013dee506080c338925afa2aedc65e19e35c3"
+      },
+      {
+        "path": "schema/acceleratorScopes.exsd",
+        "bytes": 5218,
+        "sha256": "b53b0a0c4145b24cafb32e88a392bffcd2b694900b4b9c6574044c5d15ca601b"
+      },
+      {
+        "path": "schema/acceleratorSets.exsd",
+        "bytes": 8387,
+        "sha256": "f82d3d4becaef7fb5e12d14b0cf3e767d9c3c43ff88134fa8d2e641d84af714f"
+      },
+      {
+        "path": "schema/actionDefinitions.exsd",
+        "bytes": 4796,
+        "sha256": "e8ca8e5e2dc28ab2f6983f4e0b17042c58e7875cded664cbbdd958f2d6c82880"
+      },
+      {
+        "path": "schema/actionSetPartAssociations.exsd",
+        "bytes": 4447,
+        "sha256": "6ed26b95cbf168fe5445f81b04032cfbce7043597b63dc05735eb6d632715b2d"
+      },
+      {
+        "path": "schema/actionSets.exsd",
+        "bytes": 27135,
+        "sha256": "cb8d39727773c7e16a33f2f6a3d006448f92eb817cbbefc7239f48ccd1510b97"
+      },
+      {
+        "path": "schema/activities.exsd",
+        "bytes": 11622,
+        "sha256": "d4248b077f3cb105d1a8d5917142b290aa751230059f92b32b667570a3e14a6d"
+      },
+      {
+        "path": "schema/activitySupport.exsd",
+        "bytes": 9413,
+        "sha256": "d8413942426cc89c09f31fd1c83d05120482d64c9e9d10a512dedecc85c153f3"
+      },
+      {
+        "path": "schema/bindings.exsd",
+        "bytes": 19599,
+        "sha256": "7a1248d7dbf3816237ea24b5e774e331338afaa5fc958baf53bbcbb8263082e5"
+      },
+      {
+        "path": "schema/browserSupport.exsd",
+        "bytes": 4391,
+        "sha256": "f6ac99db671bc09a647084edd5e1e9c61989ff150866c05f008659dfa9bc25c1"
+      },
+      {
+        "path": "schema/commandImages.exsd",
+        "bytes": 5883,
+        "sha256": "b22c30bf1654c91d8a5935d70b88e68320f0dfa102ad87b864fc32507666ffb0"
+      },
+      {
+        "path": "schema/commands.exsd",
+        "bytes": 35511,
+        "sha256": "7122c149d4fb53ab62108c620831715de3e1a8cf04ef2b9df7fa9d5e85f3a63b"
+      },
+      {
+        "path": "schema/commonAction.exsd",
+        "bytes": 4877,
+        "sha256": "eab67a6ae16d9169c6f5a0523b73adb0b6e7dfa82cc4fb3039e0926db96d4dc5"
+      },
+      {
+        "path": "schema/commonExpression.exsd",
+        "bytes": 8266,
+        "sha256": "5364f8fd370f2bfcac9d5be3ddbaec8407bb54a6eb5e368a6ccf079b460e7a44"
+      },
+      {
+        "path": "schema/contexts.exsd",
+        "bytes": 4260,
+        "sha256": "7b3c75614fcafa73a46777f862b3ead62d5a0bc2c08278172cdef75f815b0009"
+      },
+      {
+        "path": "schema/decorators.exsd",
+        "bytes": 10728,
+        "sha256": "44c2bc98a949fd81bc0f0fb0f78780eb6fd42a60906931140da501a235a9dbb5"
+      },
+      {
+        "path": "schema/dropActions.exsd",
+        "bytes": 5457,
+        "sha256": "9941ceb003e8a17103759aaf4991bd3d3a075d0b0df6180ef7f77a8b175d6480"
+      },
+      {
+        "path": "schema/editorActions.exsd",
+        "bytes": 23214,
+        "sha256": "2ac79422440922cf13c075a4bf4bcf7c35be06c9d8779dad925005a4c4153acf"
+      },
+      {
+        "path": "schema/editors.exsd",
+        "bytes": 14894,
+        "sha256": "335b94256864bd645eac0dda3c1660d9743858ce6c22a30acda0eece55eb29e4"
+      },
+      {
+        "path": "schema/elementFactories.exsd",
+        "bytes": 5139,
+        "sha256": "c3b34d8757e9756a728c97973b421d1fc419a553a43070479f5cd0ee2e7c746b"
+      },
+      {
+        "path": "schema/encodings.exsd",
+        "bytes": 3341,
+        "sha256": "3b23daf2e1ceb1e5f240a1009b7d7e59ac4483357cba98f83779b9e6ced8079d"
+      },
+      {
+        "path": "schema/exportWizards.exsd",
+        "bytes": 7891,
+        "sha256": "bd7720cbfdc347f8ebda68ec3054271cb94e9bc502b33d8e96d932f901d12b1f"
+      },
+      {
+        "path": "schema/fontDefinitions.exsd",
+        "bytes": 6112,
+        "sha256": "391ce929b8b52a6dee350c1d4ffe530ae5e9d3634d59b6c030b1ac7efe5c7a7e"
+      },
+      {
+        "path": "schema/handlers.exsd",
+        "bytes": 12068,
+        "sha256": "9f690aef4188e33d270ab100b84e68fdbb2eeae68708ebe2ed67e83f81975996"
+      },
+      {
+        "path": "schema/helpSupport.exsd",
+        "bytes": 3258,
+        "sha256": "f0e5a9db27b57e0bf376aebda8043f83acb4eae4efd4f692f624790d3f7722d8"
+      },
+      {
+        "path": "schema/importWizards.exsd",
+        "bytes": 7916,
+        "sha256": "1ca9dc6292da29b7302f58c949429de408096ca39696a8d10a256f16da01dc15"
+      },
+      {
+        "path": "schema/installationPages.exsd",
+        "bytes": 4674,
+        "sha256": "44bd31ff06ba64343765720e002caaaa0e1197718d4b834f5f999bf6e9a0e8c8"
+      },
+      {
+        "path": "schema/internalTweaklets.exsd",
+        "bytes": 4729,
+        "sha256": "d2801242b7e5b862866f4009ad485c2a00c54a2608871e1205d66433b22531ca"
+      },
+      {
+        "path": "schema/intro.exsd",
+        "bytes": 7568,
+        "sha256": "e8267a6628cc4482831d1e516f42b75dea87f83758f6f6d778ff74c26ba9b0ec"
+      },
+      {
+        "path": "schema/keywords.exsd",
+        "bytes": 3494,
+        "sha256": "37c9c9aa0c8230dbf44b5de2cd730fa0b936f36660b19d3125e075db7f5bae03"
+      },
+      {
+        "path": "schema/menus.exsd",
+        "bytes": 42673,
+        "sha256": "3d8a2349dee814a4b752f1f0c995c74a286b1dac9a6769acfdd0a2b04a841ad1"
+      },
+      {
+        "path": "schema/newWizards.exsd",
+        "bytes": 11333,
+        "sha256": "6afdd5c6599643182718bcf21706bc3fb31c45a8a605ce0bd22e24a43595e27d"
+      },
+      {
+        "path": "schema/perspectiveExtensions.exsd",
+        "bytes": 14729,
+        "sha256": "af031fca88d4ba1b6898423eb93253c1f3e6e62e436b4d4ebbfa04c4949b634a"
+      },
+      {
+        "path": "schema/perspectives.exsd",
+        "bytes": 6709,
+        "sha256": "85e53f8dd2b00cb83614bdb3f6fcfe7f5bead9d0861243f142fa793183ba2edf"
+      },
+      {
+        "path": "schema/popupMenus.exsd",
+        "bytes": 28347,
+        "sha256": "8ab7603e2f71b9d24532127fcea9a6006e437167002b5ff1279a61e23f4caad7"
+      },
+      {
+        "path": "schema/preferencePages.exsd",
+        "bytes": 5714,
+        "sha256": "e9e8bc62a780b027ea68b9d229e99db2dd5e6736bc550d129806be535f165c07"
+      },
+      {
+        "path": "schema/preferenceTransfer.exsd",
+        "bytes": 9895,
+        "sha256": "ef31753c850ec3ec91efc9763a929bd877b390d7e2eb272a498f21bc9ea09e42"
+      },
+      {
+        "path": "schema/propertiesView.exsd",
+        "bytes": 2640,
+        "sha256": "7b3899919bb954018dc68f3a74f298c1da97679ee5db33dfac0444d45f5aba87"
+      },
+      {
+        "path": "schema/propertyPages.exsd",
+        "bytes": 12295,
+        "sha256": "b20adecfc97958a05009b77699720bae43316ed766f233cc614000f52d81d3c7"
+      },
+      {
+        "path": "schema/quickAccess.exsd",
+        "bytes": 3428,
+        "sha256": "7677cc4e784997311983d2f229bc03ee63339bac2acdc8df3b6dd90310ceb0da"
+      },
+      {
+        "path": "schema/services.exsd",
+        "bytes": 7759,
+        "sha256": "41bb8ad2ef6a88dc566de0e3099e9551417af5d6abaffe049ffa8444adafae7e"
+      },
+      {
+        "path": "schema/splashHandlers.exsd",
+        "bytes": 5791,
+        "sha256": "a68346ee9ea5b5dae318ce4ca5f6df1da671d424d9825748c5ac16eacdf60ab9"
+      },
+      {
+        "path": "schema/startup.exsd",
+        "bytes": 3635,
+        "sha256": "1d8cee28a5c36ce8583b61a2d9f121fe0f40d2d7bf56c7a4df6eb679c0627493"
+      },
+      {
+        "path": "schema/statusHandlers.exsd",
+        "bytes": 8283,
+        "sha256": "317409d55414eabd71bf691c227e5603abec839ae896d2e17b7b6a1111ddf84f"
+      },
+      {
+        "path": "schema/systemSummarySections.exsd",
+        "bytes": 4449,
+        "sha256": "b26688b95cc9bbd1afd960e332ee3cb2349d6e7d7733c43310a62d9700a8d37d"
+      },
+      {
+        "path": "schema/themes.exsd",
+        "bytes": 25978,
+        "sha256": "779fdb0145a2b63291194ee879610aaffa2a6046dcc555b1025bddd6bfdfe1f0"
+      },
+      {
+        "path": "schema/viewActions.exsd",
+        "bytes": 20953,
+        "sha256": "f41a302cf54567ec74eef1cc6469986c4cb5fe60cdf49fedde4c07b9966407db"
+      },
+      {
+        "path": "schema/views.exsd",
+        "bytes": 14698,
+        "sha256": "b6cc1997cbbe5284672b2c1d7d01bee44f6672bb153ee702d4c8aeaecc7ed32f"
+      },
+      {
+        "path": "schema/workingSets.exsd",
+        "bytes": 7773,
+        "sha256": "9313afd81571c43e95b7ee63c90c08e64d179a3d29599c79ffc35146c17ccb9d"
+      }
+    ],
+    "current-indented": [
+      {
+        "path": "schema/acceleratorConfigurations.exsd",
+        "bytes": 5806,
+        "sha256": "049019549338d531acb189868d831f73e7f95cf41182f9e2a5025e634935bc7c"
+      },
+      {
+        "path": "schema/acceleratorScopes.exsd",
+        "bytes": 5620,
+        "sha256": "64f278cdafd697809e15d588ad3497a1bc5f71d30683088f9df78fa1d821e939"
+      },
+      {
+        "path": "schema/acceleratorSets.exsd",
+        "bytes": 8849,
+        "sha256": "eddd3c589991c610628db8653526c50c1d52e5c50d1a8d6001d86662056e8383"
+      },
+      {
+        "path": "schema/actionDefinitions.exsd",
+        "bytes": 5174,
+        "sha256": "0217c4cd4182c844adc7fa7645a91b18970027673f01831589e733b51ca100e3"
+      },
+      {
+        "path": "schema/actionSetPartAssociations.exsd",
+        "bytes": 4790,
+        "sha256": "770fbd681c088ed75c569751cff2158d349d6f7ef3cdf139187324ec3fce4640"
+      },
+      {
+        "path": "schema/actionSets.exsd",
+        "bytes": 28514,
+        "sha256": "aa5e1e9fb783ac3043706ef65af2abc19f96992edd21c49b5d23c8f91fa861ff"
+      },
+      {
+        "path": "schema/activities.exsd",
+        "bytes": 12623,
+        "sha256": "40b980edaf4e0657aea3be71ca96690eb3dc558ab3561fe9ecb7ae8cf557a729"
+      },
+      {
+        "path": "schema/activitySupport.exsd",
+        "bytes": 10164,
+        "sha256": "43a2795b89386a3e40b1c9ff9b959d130ac08ad45a97c978397dccd7b61db188"
+      },
+      {
+        "path": "schema/bindings.exsd",
+        "bytes": 20456,
+        "sha256": "35039f5de8a61a810dee689372ddbbcfcdb1d6e9fc6b7959584327d870f5616e"
+      },
+      {
+        "path": "schema/browserSupport.exsd",
+        "bytes": 4688,
+        "sha256": "19e9a0c08d3a76c3ee527eb23c1c7307a19cc41729a3b8f3d20e8929c35a6755"
+      },
+      {
+        "path": "schema/commandImages.exsd",
+        "bytes": 6334,
+        "sha256": "13d39f66465e4367631af074e1ffe5cf00d3448527b893e33ae475c4642c55b8"
+      },
+      {
+        "path": "schema/commands.exsd",
+        "bytes": 38325,
+        "sha256": "bc6aff5e2a7aaa3ee08d7d78e81a7d6297000a633b24f820dcc3f5d839549da2"
+      },
+      {
+        "path": "schema/commonAction.exsd",
+        "bytes": 5314,
+        "sha256": "164d32350b05f7319746420f42dddbf153b8d0feac5db7133026d350e4db23c7"
+      },
+      {
+        "path": "schema/commonExpression.exsd",
+        "bytes": 8991,
+        "sha256": "e65bdf080e089aec5a888105ef94d756c4f6da283d29e644ba38eb801430b850"
+      },
+      {
+        "path": "schema/contexts.exsd",
+        "bytes": 4636,
+        "sha256": "c4fa4b82fc08cd5465e46ee3dbb2cdd594a996aea86c3f5e2eb83e837db3fdcf"
+      },
+      {
+        "path": "schema/decorators.exsd",
+        "bytes": 11397,
+        "sha256": "885074a31482b54dd82437e8815ec4212d9da6a581a5637856fff1fb5b72ba94"
+      },
+      {
+        "path": "schema/dropActions.exsd",
+        "bytes": 5737,
+        "sha256": "dc02ae618f9c5dfe8b97718397cdd062c0a2ff1e4c9f43c20f8d59b6b6e592f0"
+      },
+      {
+        "path": "schema/editorActions.exsd",
+        "bytes": 24428,
+        "sha256": "af89f5324adf741ced955a15a689387a087a0c24138e6b39b0757e74233f8152"
+      },
+      {
+        "path": "schema/editors.exsd",
+        "bytes": 15747,
+        "sha256": "f5770c8e55233e87905f2e1b84c861313efddf77951eaf031cab4a9415edcab1"
+      },
+      {
+        "path": "schema/elementFactories.exsd",
+        "bytes": 5419,
+        "sha256": "2bfbe04cba333eb6c756cf2419cd81372705088927e4ab0cf81473abaac1d757"
+      },
+      {
+        "path": "schema/encodings.exsd",
+        "bytes": 3615,
+        "sha256": "924238ee0404ecb0f350b483b9bf47364e9152130bfe2df41a35b0e395af50a6"
+      },
+      {
+        "path": "schema/exportWizards.exsd",
+        "bytes": 8667,
+        "sha256": "d2586ce939e027ba3a75b6a81bbe485c0cb707298e7bd5f9d38cb8b3441d36b6"
+      },
+      {
+        "path": "schema/fontDefinitions.exsd",
+        "bytes": 6524,
+        "sha256": "25fbb6d4a747115eb9304da0caed0018b6f4e9a559faf7fffbd91abe595159ff"
+      },
+      {
+        "path": "schema/handlers.exsd",
+        "bytes": 12750,
+        "sha256": "f26869a70308894f36447a18945038d5c2e9b18540fc91bf94c4a8cca229719b"
+      },
+      {
+        "path": "schema/helpSupport.exsd",
+        "bytes": 3531,
+        "sha256": "3286d5587557cb7e7d91ae8cda9cc4c75d3b1edb809aa68f0a8516e1bf3080ee"
+      },
+      {
+        "path": "schema/importWizards.exsd",
+        "bytes": 8692,
+        "sha256": "23438f5c1097477fc5d4f54808903d05dd1157ca7e39feb30f234fe4d5fbb650"
+      },
+      {
+        "path": "schema/installationPages.exsd",
+        "bytes": 5033,
+        "sha256": "9de83f6be8caf5af869d8fa6174dcdbc2b2c82f05f1046755b0dcc2bc68ff5e1"
+      },
+      {
+        "path": "schema/internalTweaklets.exsd",
+        "bytes": 5179,
+        "sha256": "4c47ee2d3535ceba6adfc082d5a883be2cdcb785e4e13005787b7823ada28cfa"
+      },
+      {
+        "path": "schema/intro.exsd",
+        "bytes": 8128,
+        "sha256": "a5427763b75cdc616f459fc410ec00d2eb1698b126b211fd3cea6020bd2b7300"
+      },
+      {
+        "path": "schema/keywords.exsd",
+        "bytes": 3810,
+        "sha256": "3c9739aace4fd69288f109863475bdab7975e88ac6776fe3cb4d095e219992a7"
+      },
+      {
+        "path": "schema/menus.exsd",
+        "bytes": 45492,
+        "sha256": "3661cca03722d2fa1eb15cfb0121884d454dce5c3d6e2a76ecf42a08e41609d0"
+      },
+      {
+        "path": "schema/newWizards.exsd",
+        "bytes": 12331,
+        "sha256": "9ba7ea6c60949d29fc8f9c4a11604ef1048411776ca43640aa1a7420720abbfb"
+      },
+      {
+        "path": "schema/perspectiveExtensions.exsd",
+        "bytes": 15951,
+        "sha256": "9bd1617359a6d255758752dfaff098c36a7b2495dde9e685e3ced7406504f626"
+      },
+      {
+        "path": "schema/perspectives.exsd",
+        "bytes": 7220,
+        "sha256": "6b6183a8a6cc1e10f3e57473b84d016db85a4d553b35714e0ebe5538bd7ceeb0"
+      },
+      {
+        "path": "schema/popupMenus.exsd",
+        "bytes": 29624,
+        "sha256": "2e1d7b14ae0e68489ec6650ee0d421a39c4c570d15d479d531a19fdc5c6c4de3"
+      },
+      {
+        "path": "schema/preferencePages.exsd",
+        "bytes": 6175,
+        "sha256": "4933ee52787fbf0a6789722d654e2cfa4521bd1577439bc65cdebec2bc856a9e"
+      },
+      {
+        "path": "schema/preferenceTransfer.exsd",
+        "bytes": 10640,
+        "sha256": "bb5fa6262f583b9230e1db151312ef767a75520c4a774f7a636aba1ba10135a9"
+      },
+      {
+        "path": "schema/propertiesView.exsd",
+        "bytes": 2908,
+        "sha256": "f86606dbe80c56382799c1026da867f2a05b0ee7e0d36d7bdac54fb91028cb26"
+      },
+      {
+        "path": "schema/propertyPages.exsd",
+        "bytes": 13152,
+        "sha256": "ff025e7b91501f42a653998780b6c822dfa1d8fd6b5a1d1100e75733f6268e7e"
+      },
+      {
+        "path": "schema/quickAccess.exsd",
+        "bytes": 3787,
+        "sha256": "2478affdcf57c6d2368e86fd20ad0ed755b0db153059ebf7cba2cf5be9a909af"
+      },
+      {
+        "path": "schema/services.exsd",
+        "bytes": 8331,
+        "sha256": "ae489408a295436701ecb59a4bcc686fb4119707cb309ec0db559ab22d3e6a04"
+      },
+      {
+        "path": "schema/splashHandlers.exsd",
+        "bytes": 6151,
+        "sha256": "9518c2e14a5315ece88705d6f9e19e457c9a39c93dc976ca8f0282e0b8cc88f0"
+      },
+      {
+        "path": "schema/startup.exsd",
+        "bytes": 3910,
+        "sha256": "3b283de07ead4d4db37edbfa64e313c6ec545ce32b145d2b012c82090d753c66"
+      },
+      {
+        "path": "schema/statusHandlers.exsd",
+        "bytes": 8776,
+        "sha256": "57785a4cf544beee21e724023fd22f3641e25b31a99f78b68946347ef2a43f1f"
+      },
+      {
+        "path": "schema/systemSummarySections.exsd",
+        "bytes": 4808,
+        "sha256": "cdf65a36e15663699e4f7801e2b5aed416c4dd2bae5720235fa700300a412743"
+      },
+      {
+        "path": "schema/themes.exsd",
+        "bytes": 27758,
+        "sha256": "1661e840facd93ecaddf56294e8004253e5de490bab5f1207342fc57c373b8a3"
+      },
+      {
+        "path": "schema/viewActions.exsd",
+        "bytes": 22107,
+        "sha256": "87c2920622f35c4ede622a7a090b586661df7fcf7860f2e34f891c5aa982321e"
+      },
+      {
+        "path": "schema/views.exsd",
+        "bytes": 15922,
+        "sha256": "9ea83930c537cd9298e843e06ef90b64b9a079d3fb8b55e83c3608a883306851"
+      },
+      {
+        "path": "schema/workingSets.exsd",
+        "bytes": 8289,
+        "sha256": "8ab6baea0c74e1d296af26a50d67c63bd7810b743939e6662ffb574fcdfc5a68"
+      }
+    ]
+  },
+  "sharedMachine": true,
+  "javaVersion": "openjdk version \"25.0.5\" 2026-10-20 LTS\nOpenJDK Runtime Environment Temurin-25.0.5+8 (build 25.0.5+8-LTS)\nOpenJDK 64-Bit Server VM Temurin-25.0.5+8 (build 25.0.5+8-LTS, mixed mode, sharing)\n",
+  "benchmarkSourceSha256": "c294d4a8bb4a2ddb71691d6a691b2b97743968f10a00554f341bf5319dce6cb9",
+  "normalizedModelHash": "7b3aa46c8ae4c2e0c8f6bbe004436821d112db636df5054066a40903e25a533e"
+}

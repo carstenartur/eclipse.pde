@@ -1,0 +1,345 @@
+{
+  "formatVersion": 1,
+  "measurement": "diagnostic attribution; not a timing comparison",
+  "events": 6976,
+  "phases": [
+    {
+      "phase": "probe_started",
+      "jvmUptimeMs": 869
+    },
+    {
+      "phase": "automatic_build_trigger_started",
+      "jvmUptimeMs": 1942
+    },
+    {
+      "phase": "automatic_build_fixture_changed",
+      "jvmUptimeMs": 1983
+    },
+    {
+      "phase": "application_running",
+      "jvmUptimeMs": 6282
+    },
+    {
+      "phase": "workbench_ready",
+      "jvmUptimeMs": 6476
+    },
+    {
+      "phase": "automatic_build_finished",
+      "jvmUptimeMs": 7498
+    },
+    {
+      "phase": "background_settled",
+      "jvmUptimeMs": 8919
+    }
+  ],
+  "registryStarts": [
+    {
+      "phase": "probe_started",
+      "loadedFromCache": true,
+      "jvmUptimeMs": 956
+    }
+  ],
+  "operations": {
+    "before_probe|resource_lookup|returned": 12,
+    "before_probe|zip_entry_open|returned": 1,
+    "before_probe|resource_open|returned": 11,
+    "before_probe|sax_parse|returned": 1,
+    "probe_started|resource_lookup|returned": 436,
+    "probe_started|zip_entry_open|returned": 109,
+    "probe_started|resource_open|returned": 327,
+    "probe_started|sax_parse|returned": 112,
+    "probe_started|registry_start|returned": 1,
+    "probe_started|resource_lookup|missing": 4,
+    "automatic_build_fixture_changed|resource_lookup|returned": 360,
+    "automatic_build_fixture_changed|zip_entry_open|returned": 17,
+    "automatic_build_fixture_changed|resource_open|returned": 360,
+    "automatic_build_fixture_changed|sax_parse|returned": 51,
+    "automatic_build_fixture_changed|dom_parse|returned": 21,
+    "automatic_build_fixture_changed|stax_parse|returned": 99,
+    "automatic_build_fixture_changed|file_open|returned": 26,
+    "automatic_build_fixture_changed|registry_parse|returned": 36,
+    "automatic_build_fixture_changed|registry_contribution|returned": 36,
+    "automatic_build_fixture_changed|resource_lookup|missing": 14,
+    "automatic_build_fixture_changed|emf_load|returned": 6,
+    "automatic_build_fixture_changed|e4_model_load|returned": 2,
+    "automatic_build_fixture_changed|pde_model_load|returned": 2,
+    "automatic_build_fixture_changed|file_open|threw": 1,
+    "application_running|stax_parse|returned": 1,
+    "workbench_ready|file_open|returned": 40,
+    "workbench_ready|dom_parse|returned": 5,
+    "workbench_ready|stax_parse|returned": 3,
+    "workbench_ready|java_builder|returned": 2,
+    "workbench_ready|sax_parse|threw": 7,
+    "workbench_ready|resource_lookup|returned": 161,
+    "workbench_ready|resource_open|returned": 13,
+    "workbench_ready|sax_parse|returned": 177,
+    "workbench_ready|registry_parse|returned": 172,
+    "workbench_ready|registry_contribution|returned": 172,
+    "workbench_ready|zip_entry_open|returned": 150,
+    "workbench_ready|resource_lookup|missing": 40,
+    "workbench_ready|pde_builder|returned": 4,
+    "workbench_ready|schema_load|returned": 4,
+    "background_settled|file_open|returned": 1,
+    "background_settled|dom_parse|returned": 1
+  },
+  "xmlZipBytesByReadPhase": {
+    "before_probe": 386,
+    "probe_started": 58348,
+    "automatic_build_fixture_changed": 71778,
+    "workbench_ready": 2156498
+  },
+  "xmlZipStreamRecords": 274,
+  "openFailures": [
+    {
+      "kind": "end",
+      "elapsedNs": 5594859097,
+      "jvmUptimeMs": 5659,
+      "phase": "automatic_build_fixture_changed",
+      "thread": "main",
+      "threadId": 3,
+      "id": 2008,
+      "parent": 0,
+      "operation": "file_open",
+      "method": "java.io.FileInputStream.<init>(Ljava/io/File;)V",
+      "source": "/home/runner/work/_temp/xml-startup-results/gui-install-workspace/.metadata/.plugins/org.eclipse.ui.workbench/editors.xml",
+      "resourceAttribution": "xml_suffix",
+      "bytesMeasured": false,
+      "exception": "java.io.FileNotFoundException",
+      "error": "/home/runner/work/_temp/xml-startup-results/gui-install-workspace/.metadata/.plugins/org.eclipse.ui.workbench/editors.xml (No such file or directory)",
+      "outcome": "threw",
+      "durationNs": 383479,
+      "endPhase": "automatic_build_fixture_changed"
+    }
+  ],
+  "coverageErrors": [],
+  "instrumented": [
+    {
+      "class": "java/nio/file/Files",
+      "methods": [
+        "newInputStream(Ljava/nio/file/Path;[Ljava/nio/file/OpenOption;)Ljava/io/InputStream;"
+      ]
+    },
+    {
+      "class": "java/util/zip/ZipFile",
+      "methods": [
+        "getInputStream(Ljava/util/zip/ZipEntry;)Ljava/io/InputStream;",
+        "getEntry(Ljava/lang/String;)Ljava/util/zip/ZipEntry;"
+      ]
+    },
+    {
+      "class": "java/io/FileInputStream",
+      "methods": [
+        "<init>(Ljava/io/FileDescriptor;)V",
+        "<init>(Ljava/io/File;)V",
+        "<init>(Ljava/lang/String;)V"
+      ]
+    },
+    {
+      "class": "java/net/URL",
+      "methods": [
+        "openStream()Ljava/io/InputStream;"
+      ]
+    },
+    {
+      "class": "sun/net/www/protocol/jar/JarURLConnection",
+      "methods": [
+        "getInputStream()Ljava/io/InputStream;"
+      ]
+    },
+    {
+      "class": "sun/net/www/protocol/file/FileURLConnection",
+      "methods": [
+        "getInputStream()Ljava/io/InputStream;"
+      ]
+    },
+    {
+      "class": "org/eclipse/osgi/storage/bundlefile/CloseableBundleFile",
+      "methods": [
+        "getEntry(Ljava/lang/String;)Lorg/eclipse/osgi/storage/bundlefile/BundleEntry;",
+        "getInputStream(Ljava/lang/Object;)Ljava/io/InputStream;"
+      ]
+    },
+    {
+      "class": "org/eclipse/osgi/storage/bundlefile/DirBundleFile",
+      "methods": [
+        "getEntry(Ljava/lang/String;)Lorg/eclipse/osgi/storage/bundlefile/BundleEntry;"
+      ]
+    },
+    {
+      "class": "org/eclipse/osgi/storage/bundlefile/BundleFileWrapper",
+      "methods": [
+        "getEntry(Ljava/lang/String;)Lorg/eclipse/osgi/storage/bundlefile/BundleEntry;"
+      ]
+    },
+    {
+      "class": "org/eclipse/osgi/storage/bundlefile/NestedDirBundleFile",
+      "methods": [
+        "getEntry(Ljava/lang/String;)Lorg/eclipse/osgi/storage/bundlefile/BundleEntry;"
+      ]
+    },
+    {
+      "class": "org/eclipse/osgi/storage/bundlefile/DirZipBundleEntry",
+      "methods": [
+        "getInputStream()Ljava/io/InputStream;"
+      ]
+    },
+    {
+      "class": "org/eclipse/osgi/storage/bundlefile/ZipBundleEntry",
+      "methods": [
+        "getInputStream()Ljava/io/InputStream;"
+      ]
+    },
+    {
+      "class": "org/eclipse/osgi/storage/url/reference/ReferenceURLConnection",
+      "methods": [
+        "getInputStream()Ljava/io/InputStream;"
+      ]
+    },
+    {
+      "class": "org/eclipse/osgi/storage/url/BundleURLConnection",
+      "methods": [
+        "getInputStream()Ljava/io/InputStream;"
+      ]
+    },
+    {
+      "class": "com/sun/org/apache/xerces/internal/parsers/AbstractSAXParser",
+      "methods": [
+        "parse(Ljava/lang/String;)V",
+        "parse(Lorg/xml/sax/InputSource;)V"
+      ]
+    },
+    {
+      "class": "org/eclipse/pde/xmlstudy/probe/Activator",
+      "methods": [
+        "emit(Ljava/lang/String;Ljava/util/Map;)V",
+        "finish(Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;)V"
+      ]
+    },
+    {
+      "class": "org/eclipse/core/internal/jobs/JobListeners",
+      "methods": [
+        "queueAboutToRun(Lorg/eclipse/core/runtime/jobs/Job;)V",
+        "queueAwake(Lorg/eclipse/core/runtime/jobs/Job;)V",
+        "queueDone(Lorg/eclipse/core/runtime/jobs/Job;Lorg/eclipse/core/runtime/IStatus;Z)V",
+        "queueRunning(Lorg/eclipse/core/runtime/jobs/Job;)V",
+        "queueScheduled(Lorg/eclipse/core/runtime/jobs/Job;JZ)V",
+        "queueSleeping(Lorg/eclipse/core/runtime/jobs/Job;)V"
+      ]
+    },
+    {
+      "class": "org/eclipse/core/internal/registry/osgi/RegistryStrategyOSGI",
+      "methods": [
+        "onStart(Lorg/eclipse/core/runtime/IExtensionRegistry;Z)V"
+      ]
+    },
+    {
+      "class": "org/eclipse/core/internal/registry/ExtensionRegistry",
+      "methods": [
+        "addContribution(Ljava/io/InputStream;Lorg/eclipse/core/runtime/IContributor;ZLjava/lang/String;Ljava/util/ResourceBundle;Ljava/lang/Object;J)Z",
+        "addContribution(Ljava/io/InputStream;Lorg/eclipse/core/runtime/IContributor;ZLjava/lang/String;Ljava/util/ResourceBundle;Ljava/lang/Object;)Z"
+      ]
+    },
+    {
+      "class": "org/eclipse/osgi/storage/bundlefile/FileBundleEntry",
+      "methods": [
+        "getInputStream()Ljava/io/InputStream;"
+      ]
+    },
+    {
+      "class": "com/sun/org/apache/xerces/internal/parsers/DOMParser",
+      "methods": [
+        "parse(Ljava/lang/String;)V",
+        "parse(Lorg/xml/sax/InputSource;)V"
+      ]
+    },
+    {
+      "class": "org/eclipse/jdt/internal/core/builder/JavaBuilder",
+      "methods": [
+        "build(ILjava/util/Map;Lorg/eclipse/core/runtime/IProgressMonitor;)[Lorg/eclipse/core/resources/IProject;"
+      ]
+    },
+    {
+      "class": "com/sun/xml/internal/stream/XMLInputFactoryImpl",
+      "methods": [
+        "createXMLStreamReader(Ljava/io/InputStream;)Ljavax/xml/stream/XMLStreamReader;",
+        "createXMLStreamReader(Ljava/io/Reader;)Ljavax/xml/stream/XMLStreamReader;",
+        "createXMLStreamReader(Ljava/lang/String;Ljava/io/Reader;)Ljavax/xml/stream/XMLStreamReader;",
+        "createXMLStreamReader(Ljavax/xml/transform/Source;)Ljavax/xml/stream/XMLStreamReader;",
+        "createXMLStreamReader(Ljava/lang/String;Ljava/io/InputStream;)Ljavax/xml/stream/XMLStreamReader;",
+        "createXMLStreamReader(Ljava/io/InputStream;Ljava/lang/String;)Ljavax/xml/stream/XMLStreamReader;"
+      ]
+    },
+    {
+      "class": "org/eclipse/core/internal/registry/ExtensionsParser",
+      "methods": [
+        "parseManifest(Ljavax/xml/parsers/SAXParserFactory;Lorg/xml/sax/InputSource;Ljava/lang/String;Lorg/eclipse/core/internal/registry/RegistryObjectManager;Lorg/eclipse/core/internal/registry/Contribution;Ljava/util/ResourceBundle;)Lorg/eclipse/core/internal/registry/Contribution;"
+      ]
+    },
+    {
+      "class": "org/eclipse/emf/ecore/xmi/impl/XMLResourceImpl",
+      "methods": [
+        "doLoad(Ljava/io/InputStream;Ljava/util/Map;)V",
+        "load(Lorg/w3c/dom/Node;Ljava/util/Map;)V",
+        "doLoad(Lorg/w3c/dom/Node;Ljava/util/Map;)V",
+        "load(Lorg/xml/sax/InputSource;Ljava/util/Map;)V",
+        "doLoad(Lorg/xml/sax/InputSource;Ljava/util/Map;)V"
+      ]
+    },
+    {
+      "class": "org/eclipse/e4/ui/internal/workbench/ResourceHandler",
+      "methods": [
+        "loadMostRecentModel()Lorg/eclipse/emf/ecore/resource/Resource;",
+        "loadResource(Lorg/eclipse/emf/common/util/URI;)Lorg/eclipse/emf/ecore/resource/Resource;"
+      ]
+    },
+    {
+      "class": "org/eclipse/emf/ecore/xmi/impl/XMLLoadImpl",
+      "methods": [
+        "load(Lorg/eclipse/emf/ecore/xmi/XMLResource;Ljava/io/InputStream;Ljava/util/Map;)V",
+        "load(Lorg/eclipse/emf/ecore/xmi/XMLResource;Lorg/xml/sax/InputSource;Ljava/util/Map;)V",
+        "load(Lorg/eclipse/emf/ecore/xmi/XMLResource;Lorg/w3c/dom/Node;Ljava/util/Map;)V"
+      ]
+    },
+    {
+      "class": "org/eclipse/pde/internal/core/plugin/AbstractExtensionsModel",
+      "methods": [
+        "load(Ljava/io/InputStream;Z)V",
+        "load(Lorg/eclipse/osgi/service/resolver/BundleDescription;Lorg/eclipse/pde/internal/core/PDEState;)V"
+      ]
+    },
+    {
+      "class": "org/eclipse/pde/internal/core/builders/ManifestConsistencyChecker",
+      "methods": [
+        "build(ILjava/util/Map;Lorg/eclipse/core/runtime/IProgressMonitor;)[Lorg/eclipse/core/resources/IProject;"
+      ]
+    },
+    {
+      "class": "org/eclipse/pde/internal/core/builders/ExtensionPointSchemaBuilder",
+      "methods": [
+        "build(ILjava/util/Map;Lorg/eclipse/core/runtime/IProgressMonitor;)[Lorg/eclipse/core/resources/IProject;"
+      ]
+    },
+    {
+      "class": "org/eclipse/pde/internal/core/schema/Schema",
+      "methods": [
+        "load()V",
+        "load(Ljava/io/InputStream;)V"
+      ]
+    }
+  ],
+  "jobEvents": 207,
+  "summary": {
+    "kind": "agent_summary",
+    "elapsedNs": 9971542943,
+    "jvmUptimeMs": 10036,
+    "phase": "background_settled",
+    "thread": "XML trace shutdown",
+    "threadId": 22,
+    "eventsBeforeSummary": 6975,
+    "outputFailed": false,
+    "droppedEvents": 0,
+    "inFlightSpans": 0
+  },
+  "complete": true,
+  "byteMeaning": "Only zip_entry_open stream records classified by XML suffix are summed. Bytes are uncompressed bytes delivered, including rereads. They are neither physical disk bytes nor a compressed-JAR traffic measurement. All URL/file/EMF/parser layers remain in the raw trace."
+}

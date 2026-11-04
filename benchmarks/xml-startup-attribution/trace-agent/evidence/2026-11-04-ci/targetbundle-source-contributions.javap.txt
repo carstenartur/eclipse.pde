@@ -1,0 +1,213 @@
+  private org.eclipse.equinox.frameworkadmin.BundleInfo getProvidedSource(java.io.File, java.lang.String, java.util.Map<java.lang.String, java.lang.String>);
+    Code:
+         0: aload_0
+         1: aconst_null
+         2: putfield      #38                 // Field fSourcePath:Ljava/lang/String;
+         5: aload_3
+         6: ifnull        156
+         9: aload_3
+        10: ldc           #178                // String Eclipse-SourceBundle
+        12: invokeinterface #147,  2          // InterfaceMethod java/util/Map.containsKey:(Ljava/lang/Object;)Z
+        17: ifeq          143
+        20: ldc           #178                // String Eclipse-SourceBundle
+        22: aload_3
+        23: ldc           #178                // String Eclipse-SourceBundle
+        25: invokeinterface #115,  2          // InterfaceMethod java/util/Map.get:(Ljava/lang/Object;)Ljava/lang/Object;
+        30: checkcast     #121                // class java/lang/String
+        33: invokestatic  #123                // Method org/eclipse/osgi/util/ManifestElement.parseHeader:(Ljava/lang/String;Ljava/lang/String;)[Lorg/eclipse/osgi/util/ManifestElement;
+        36: astore        4
+        38: aload         4
+        40: ifnull        143
+        43: aload         4
+        45: dup
+        46: astore        8
+        48: arraylength
+        49: istore        7
+        51: iconst_0
+        52: istore        6
+        54: goto          124
+        57: aload         8
+        59: iload         6
+        61: aaload
+        62: astore        5
+        64: aload         5
+        66: invokevirtual #129                // Method org/eclipse/osgi/util/ManifestElement.getValue:()Ljava/lang/String;
+        69: astore        9
+        71: aload         5
+        73: ldc           #180                // String version
+        75: invokevirtual #182                // Method org/eclipse/osgi/util/ManifestElement.getAttribute:(Ljava/lang/String;)Ljava/lang/String;
+        78: astore        10
+        80: aload         9
+        82: ifnull        121
+        85: aload         9
+        87: invokevirtual #186                // Method java/lang/String.length:()I
+        90: ifle          121
+        93: aload         10
+        95: ifnull        121
+        98: aload         10
+       100: invokevirtual #186                // Method java/lang/String.length:()I
+       103: ifle          121
+       106: new           #49                 // class org/eclipse/equinox/frameworkadmin/BundleInfo
+       109: dup
+       110: aload         9
+       112: aload         10
+       114: aconst_null
+       115: iconst_m1
+       116: iconst_0
+       117: invokespecial #190                // Method org/eclipse/equinox/frameworkadmin/BundleInfo."<init>":(Ljava/lang/String;Ljava/lang/String;Ljava/net/URI;IZ)V
+       120: areturn
+       121: iinc          6, 1
+       124: iload         6
+       126: iload         7
+       128: if_icmplt     57
+       131: goto          143
+       134: astore        4
+       136: aload         4
+       138: invokestatic  #193                // Method org/eclipse/pde/internal/core/PDECore.log:(Ljava/lang/Throwable;)V
+       141: aconst_null
+       142: areturn
+       143: aload_3
+       144: ldc           #199                // String Bundle-ClassPath
+       146: invokeinterface #147,  2          // InterfaceMethod java/util/Map.containsKey:(Ljava/lang/Object;)Z
+       151: ifeq          156
+       154: aconst_null
+       155: areturn
+       156: aload_1
+       157: ifnull        419
+       160: aload_2
+       161: ifnull        419
+       164: aload_1
+       165: invokevirtual #201                // Method java/io/File.isFile:()Z
+       168: ifeq          173
+       171: aconst_null
+       172: areturn
+       173: new           #74                 // class java/io/File
+       176: dup
+       177: aload_1
+       178: ldc           #204                // String plugin.xml
+       180: invokespecial #206                // Method java/io/File."<init>":(Ljava/io/File;Ljava/lang/String;)V
+       183: astore        4
+       185: aload         4
+       187: invokevirtual #73                 // Method java/io/File.exists:()Z
+       190: ifne          205
+       193: new           #74                 // class java/io/File
+       196: dup
+       197: aload_1
+       198: ldc           #209                // String fragment.xml
+       200: invokespecial #206                // Method java/io/File."<init>":(Ljava/io/File;Ljava/lang/String;)V
+       203: astore        4
+       205: aload         4
+       207: invokevirtual #73                 // Method java/io/File.exists:()Z
+       210: ifeq          419
+       213: aconst_null
+       214: aload_0
+       215: aload_0
+       216: invokestatic  #211                // Method org/eclipse/core/runtime/RegistryFactory.createRegistry:(Lorg/eclipse/core/runtime/spi/RegistryStrategy;Ljava/lang/Object;Ljava/lang/Object;)Lorg/eclipse/core/runtime/IExtensionRegistry;
+       219: astore        5
+       221: ldc           #217                // String <?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<?eclipse version=\"3.2\"?>\n<plugin><extension-point id=\"source\" name=\"source\"/>\n</plugin>
+       223: astore        6
+       225: new           #219                // class org/eclipse/core/runtime/spi/RegistryContributor
+       228: dup
+       229: ldc           #221                // String org.eclipse.pde.core
+       231: ldc           #221                // String org.eclipse.pde.core
+       233: aconst_null
+       234: aconst_null
+       235: invokespecial #223                // Method org/eclipse/core/runtime/spi/RegistryContributor."<init>":(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+       238: astore        7
+       240: aload         5
+       242: new           #226                // class java/io/ByteArrayInputStream
+       245: dup
+       246: aload         6
+       248: invokevirtual #228                // Method java/lang/String.getBytes:()[B
+       251: invokespecial #232                // Method java/io/ByteArrayInputStream."<init>":([B)V
+       254: aload         7
+       256: iconst_0
+       257: aconst_null
+       258: aconst_null
+       259: aload_0
+       260: invokeinterface #235,  7          // InterfaceMethod org/eclipse/core/runtime/IExtensionRegistry.addContribution:(Ljava/io/InputStream;Lorg/eclipse/core/runtime/IContributor;ZLjava/lang/String;Ljava/util/ResourceBundle;Ljava/lang/Object;)Z
+       265: pop
+       266: new           #219                // class org/eclipse/core/runtime/spi/RegistryContributor
+       269: dup
+       270: aload_2
+       271: aload_2
+       272: aconst_null
+       273: aconst_null
+       274: invokespecial #223                // Method org/eclipse/core/runtime/spi/RegistryContributor."<init>":(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+       277: astore        8
+       279: aload         5
+       281: new           #241                // class java/io/BufferedInputStream
+       284: dup
+       285: new           #243                // class java/io/FileInputStream
+       288: dup
+       289: aload         4
+       291: invokespecial #245                // Method java/io/FileInputStream."<init>":(Ljava/io/File;)V
+       294: invokespecial #247                // Method java/io/BufferedInputStream."<init>":(Ljava/io/InputStream;)V
+       297: aload         8
+       299: iconst_0
+       300: aconst_null
+       301: aconst_null
+       302: aload_0
+       303: invokeinterface #235,  7          // InterfaceMethod org/eclipse/core/runtime/IExtensionRegistry.addContribution:(Ljava/io/InputStream;Lorg/eclipse/core/runtime/IContributor;ZLjava/lang/String;Ljava/util/ResourceBundle;Ljava/lang/Object;)Z
+       308: pop
+       309: aload         5
+       311: aload         8
+       313: invokeinterface #250,  2          // InterfaceMethod org/eclipse/core/runtime/IExtensionRegistry.getExtensions:(Lorg/eclipse/core/runtime/IContributor;)[Lorg/eclipse/core/runtime/IExtension;
+       318: astore        9
+       320: aload         9
+       322: dup
+       323: astore        13
+       325: arraylength
+       326: istore        12
+       328: iconst_0
+       329: istore        11
+       331: goto          407
+       334: aload         13
+       336: iload         11
+       338: aaload
+       339: astore        10
+       341: ldc           #254                // String org.eclipse.pde.core.source
+       343: aload         10
+       345: invokeinterface #256,  1          // InterfaceMethod org/eclipse/core/runtime/IExtension.getExtensionPointUniqueIdentifier:()Ljava/lang/String;
+       350: invokevirtual #261                // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+       353: ifeq          404
+       356: aload         10
+       358: invokeinterface #264,  1          // InterfaceMethod org/eclipse/core/runtime/IExtension.getConfigurationElements:()[Lorg/eclipse/core/runtime/IConfigurationElement;
+       363: astore        14
+       365: aload         14
+       367: arraylength
+       368: iconst_1
+       369: if_icmpne     388
+       372: aload_0
+       373: aload         14
+       375: iconst_0
+       376: aaload
+       377: ldc_w         #268                // String path
+       380: invokeinterface #270,  2          // InterfaceMethod org/eclipse/core/runtime/IConfigurationElement.getAttribute:(Ljava/lang/String;)Ljava/lang/String;
+       385: putfield      #38                 // Field fSourcePath:Ljava/lang/String;
+       388: new           #49                 // class org/eclipse/equinox/frameworkadmin/BundleInfo
+       391: dup
+       392: aconst_null
+       393: aconst_null
+       394: aload_1
+       395: invokevirtual #104                // Method java/io/File.toURI:()Ljava/net/URI;
+       398: iconst_m1
+       399: iconst_0
+       400: invokespecial #190                // Method org/eclipse/equinox/frameworkadmin/BundleInfo."<init>":(Ljava/lang/String;Ljava/lang/String;Ljava/net/URI;IZ)V
+       403: areturn
+       404: iinc          11, 1
+       407: iload         11
+       409: iload         12
+       411: if_icmplt     334
+       414: goto          419
+       417: astore        9
+       419: aconst_null
+       420: areturn
+      Exception table:
+         from    to  target type
+            20   120   134   Class org/osgi/framework/BundleException
+           121   131   134   Class org/osgi/framework/BundleException
+           279   403   417   Class java/io/FileNotFoundException
+           404   414   417   Class java/io/FileNotFoundException
+
+  public java.lang.String toString();

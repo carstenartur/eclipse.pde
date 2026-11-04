@@ -154,8 +154,11 @@ A phase is the latest global phase marker, not exclusive ownership of every
 concurrent operation. The original phase and `endPhase` show work that spans a
 boundary. Jobs retain their identity and dispatch events even when they started
 before the late bundle probe could attach a listener. Job counts are not XML
-parse counts, and the quiet window ignores sleeping jobs. Later scheduled work
-can still happen after the recorded boundary.
+parse counts. The GUI quiet gate queries all currently registered jobs, including
+jobs that predate its listener; running and waiting jobs block it, as do sleeping
+BUILD-priority/PDE/AutoBuildJob jobs. The headless gate checks running and waiting
+jobs only. Other sleeping jobs, executor work and later scheduled work can still
+exist after the recorded boundary.
 
 ## Byte attribution and limits
 
@@ -216,5 +219,5 @@ compressed files and their uncompressed source. Keep the manifest and process
 logs together with the traces. The original workspaces remain in the run output
 for inspection; they are not needed to reproduce the fixture.
 
-The local results are documented in `RESULTS-2026-11-04.md`. GUI results must be
-reported independently when the display-capable CI run has completed.
+The local results are documented in `RESULTS-2026-11-04.md`. The completed
+display-capable CI run is reported separately in `RESULTS-GUI-2026-11-04.md`.

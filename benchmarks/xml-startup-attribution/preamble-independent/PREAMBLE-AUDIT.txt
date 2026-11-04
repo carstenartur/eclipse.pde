@@ -1,0 +1,121 @@
+Independent Sandbox PR #1805 preamble audit — 4 November 2026
+
+RESULT
+
+The historical byte savings reproduce exactly on the original independent revisions:
+
+Layout       Base output bytes    Head output bytes    Saved bytes
+Compact          2,014,348            2,003,918           10,430
+Indented         2,129,822            2,119,094           10,728
+
+The character-data payload is unchanged. File-stream SAX characters() callbacks increase by 2 compact and 5 indented; the StringReader control changes by 0 and 2. These small counts describe different callback grouping over identical text. The supported result is fewer XML bytes and removed generated comments, with no measured reduction in character data and no startup timing claim.
+
+EXACT REVISIONS AND CODE
+
+Repository: https://github.com/carstenartur/sandbox
+Base: ef946b6fad6276694f32389311cb7e71cf7f3955
+Base tree: bc6ddc4aa0a8ede8951eda47715e4d5e057347df
+Head: f8dfe691a79de75f55c7633714a15c5626ca6166
+Head tree: 0d3af5d5e9bbe89be70174d58578ce92d90eae28
+
+This is the independent #1805 head, not the combined #1803 commit 12033ef005df89f631cb2752e6e0949fbba8a2cd and not a later merged/rebased #1805 integration. No integration checkout or branch was modified.
+
+Both revisions expose SchemaTransformationUtils.transform(String, Charset, boolean). There is no separate preamble policy at this head. The preamble is removed by ordinary formatting when the XSLT recognizes the narrow PDE schema convention.
+
+Exact production files and the two existing regression classes were obtained with git show at the pinned commits. source-identity.json records each source path, byte count and SHA-256. Base Java SHA-256: 0b570f403e5824b4e24fbd081e014e8d0764acdb2ad1012e77a65ebfcdece7c3.
+Head Java SHA-256: 7a4ca95d0e6c157f7b6adc5693fdc5c20596878f22cdf38f0842b1e0624db31c.
+Base stylesheet SHA-256: 76080a5667c229ff76e718dd2b8903d1fce50c9f981a3770bdc94a0c48bde95d.
+Head stylesheet SHA-256: cffa491efd8723ca78c990063514fea6cc272151557088d04bf3c57acbadeb1e.
+
+The base class is loaded by a separate URLClassLoader whose parent is the platform classloader. It cannot inherit the head's identical class name or stylesheet resource. The head is the exact copied Maven production source. The test verifies both loaded stylesheet byte arrays and records code-source locations and loaded class hashes. No combined-tree formatter is used.
+
+CORPUS AND ATTRIBUTION
+
+298 original schemas, 2,337,930 source bytes, 4,557 documentation nodes.
+Corpus SHA-256: 442e16926ec5ee2e3842ee332ed93f6b5eba490c7c04b6bd9969e3ec95e7a491.
+Every original file's size and hash is checked against corpus-expected.tsv before transformation.
+
+Each input contains one exact generated comment before the document root:
+<!-- Schema file written by PDE -->
+Its serialized ASCII form has 35 bytes; its lexical body has 28 UTF-16 units. Actual DOM inspection finds zero CDATA nodes in the corpus. This matters because the head also adds whole-source retention for actual CDATA; that separate behavior cannot explain any of these corpus deltas.
+
+For every file, the audit asserts that the complete head output equals the complete base output after removing only that marker (compact) or the marker and its one preceding document-level LF slot (indented). It separately asserts per-file byte savings of exactly 35 or 36 bytes. Thus the measured totals are 298 x 35 = 10,430 and 298 x 36 = 10,728. There are no other output differences in this corpus.
+
+The head's XSLT recognizes an unprefixed schema/annotation/(appInfo|appinfo)/meta.schema chain with consistent no-namespace or default-XSD-namespace conventions. It preserves nonexact or human comments, PIs, identical comments inside/after the root, unsupported QName/namespace structures, and roots with xml:space="preserve". The Java CDATA guard retains the securely validated original when actual CDATA exists. The existing 33 regression invocations cover these boundaries; the corpus's 298 examples do not replace those edge fixtures.
+
+PARSER MEASUREMENT
+
+Java: Temurin 25.0.5+8-LTS.
+Factory API: org.eclipse.core.internal.runtime.XmlProcessorFactory.createSAXParserWithErrorOnDOCTYPE().
+Observed XMLReader: com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.
+Namespace processing: false, matching this factory's returned parser.
+Three input/observer configurations use the same parser API:
+- Actual file InputStream with a content handler, without a lexical handler.
+- Actual file InputStream with the same content handler and an explicit LexicalHandler.
+- StringReader with the same content handler and LexicalHandler, as an input-mode control.
+
+Primary file-stream measurements (both lexical configurations give the same character counts):
+
+Measure                         Compact base  Compact head  Indented base  Indented head
+characters() callbacks               60,641        60,643         89,851         89,856
+Callback delta                           +2                          +5
+Whitespace-only callbacks            11,688        11,688         40,897         40,903
+Character UTF-16 units            1,136,139     1,136,139      1,250,719      1,250,719
+Outside-root character callbacks          0             0              0              0
+Outside-root character units              0             0              0              0
+Elements                             22,175        22,175         22,175         22,175
+Lexical comment callbacks               298             0            298              0
+Lexical comment-body units            8,344             0          8,344              0
+
+The lexical rows are measured only when the lexical observer is registered. The normal content-only handler has no comment callbacks for either input. This audit does not claim that ordinary PDE consumers save 298 application-level comment callbacks; it establishes removal of the corresponding bytes and lexical comments from their input.
+
+StringReader control:
+
+Measure                         Compact base  Compact head  Indented base  Indented head
+characters() callbacks               60,640        60,640         89,853         89,855
+Callback delta                            0                          +2
+Whitespace-only callbacks            11,688        11,685         40,900         40,896
+Character UTF-16 units            1,136,139     1,136,139      1,250,719      1,250,719
+
+All three parser configurations verify identical per-file character-content SHA-256 before/after preamble removal. The digest encodes each UTF-16 code unit directly, so it is independent of callback boundaries and surrogate splitting. Every file also retains element counts, PI counts, and outside-root character counts. The actual callbacks differ only in how the unchanged character sequence is partitioned. The input-mode dependence is consistent with changed parser-buffer boundaries after shortening the prefix; no internal-buffer timing or CPU attribution is claimed.
+
+callback-partition-differences.json lists every per-file count change and its unchanged character units/content hash. measurement-summary.json retains all counters, including ignorable whitespace and comment location. There are zero inside-root or post-root comments in this corpus; preservation of those cases is covered by the existing regression tests.
+
+PRESERVATION AND IDEMPOTENCE
+
+All four output sets (base/head x compact/indented) preserve every original documentation-node signature. Each set has 4,557 nodes across 298 files. Signatures retain node types, names, namespace URIs, values, non-namespace-declaration attributes, and child order; XML documentation interiors are not normalized for this check.
+
+All 1,192 first/second-pass equality comparisons succeed: 298 files x 2 layouts x 2 revisions. The full-corpus audit makes 2,384 actual production transformation calls. Each complete transformed output is retained under outputs/<revision>-<layout>/projects/....
+
+The original and head character streams match after removal for every layout and parser input mode. These comparisons concern the preamble-only difference between base and head; formatting itself changes layout relative to the unformatted original corpus, which is a different comparison.
+
+TEST RESULT AND LIMITS
+
+Maven completed with BUILD SUCCESS and exit code 0:
+- SchemaTransformationPdePreambleTest: 33 passed.
+- PdePreambleConsumerTest: 4 passed.
+- PreambleCorpusAuditTest: 1 passed.
+Total: 38 tests, 0 failures, 0 errors, 0 skipped.
+
+The four consumer fixtures use actual reference PDE classes and distinct original/transformed URLs. Each covers both layouts and full/abbreviated/raw-lazy readers, lightweight annotations and exact generated HTML. These focused standalone-JVM fixtures have no includes and do not require the larger provider-workspace setup. They are not reported as a new full-298 OSGi audit on this independent head.
+
+Runtime dependencies: the existing restored reference product, including PDE Core 3.21.400.v20260810-0751. Local audit harness: Maven 3.9.16, compiler plugin 3.16.0, JUnit 6.0.3 and Surefire 3.5.6, using cached artifacts. Production source was not adapted. The repository's required CI gates and current integration ownership remain separate.
+
+REPRODUCTION AND EVIDENCE
+
+From /workspace/scratch/59a9c0b92707/xml-integration-audit:
+
+preamble-independent/run-audit.sh
+
+The thin adapter compiles the exact base Java source with --release 25 and invokes:
+JAVA_HOME=/workspace/scratch/567cb6a530cb/wizard-test-runtime/jdk-25.0.5+8 PATH=/workspace/scratch/567cb6a530cb/wizard-test-runtime/jdk-25.0.5+8/bin:$PATH /root/.m2/wrapper/dists/apache-maven-3.9.16/9c464432/bin/mvn -o -f preamble-independent/head/pom.xml -Daudit.root=/workspace/scratch/59a9c0b92707/xml-integration-audit test
+
+The complete original command output is maven-audit.log. The archive includes the corpus, original manifest/hash mapping, exact base/head sources/resources, isolated base class files, test sources, Maven POM, JUnit reports, output trees, and:
+- READY-FOR-PUBLICATION.json: compact structured publication data.
+- PREAMBLE-PUBLICATION-SUMMARY.txt: ready-to-copy narrative.
+- measurement-summary.json: all aggregate measurements and loaded identities.
+- per-file-results.jsonl: 1,192 original-source/output records with hashes and three parser configurations.
+- callback-partition-differences.json: count grouping shifts with unchanged character data.
+- source-identity.json: pinned Git identities and exact source hashes.
+
+No additional startup timing experiment or combined-tree rerun was performed. The previously saved OSGi evidence archive was left unchanged.

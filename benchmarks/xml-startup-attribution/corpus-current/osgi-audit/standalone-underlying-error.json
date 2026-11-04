@@ -1,0 +1,13 @@
+{
+  "qualification": "diagnostic, not a successful corpus consumer test",
+  "api": "XMLDefaultHandler followed by native Schema.traverseDocumentTree, outside Schema.load catch/log",
+  "java": "25.0.5+8-LTS",
+  "pdeCoreActive": false,
+  "successfulTraversalsBeforeFailure": 23,
+  "path": "org.eclipse.core.expressions/schema/definitions.exsd",
+  "url": "file:///workspace/scratch/59a9c0b92707/xml-integration-audit/corpus/projects/org.eclipse.core.expressions/schema/definitions.exsd",
+  "abbreviated": true,
+  "exception": "java.lang.NullPointerException",
+  "message": "Cannot invoke \"org.eclipse.pde.internal.core.PDECore.getSchemaRegistry()\" because the return value of \"org.eclipse.pde.internal.core.PDECore.getDefault()\" is null",
+  "stack": "java.lang.NullPointerException: Cannot invoke \"org.eclipse.pde.internal.core.PDECore.getSchemaRegistry()\" because the return value of \"org.eclipse.pde.internal.core.PDECore.getDefault()\" is null\n\tat org.eclipse.pde.internal.core.schema.SchemaInclude.getIncludedSchema(SchemaInclude.java:102)\n\tat org.eclipse.pde.internal.core.schema.Schema.getResolvedElements(Schema.java:325)\n\tat org.eclipse.pde.internal.core.schema.Schema.resolveElementReference(Schema.java:948)\n\tat org.eclipse.pde.internal.core.schema.Schema.resolveReference(Schema.java:961)\n\tat org.eclipse.pde.internal.core.schema.Schema.resolveReferences(Schema.java:968)\n\tat org.eclipse.pde.internal.core.schema.Schema.traverseDocumentTree(Schema.java:1065)\n\tat pde.audit.DirectTraverseDiagnostic$Reader.read(DirectTraverseDiagnostic.java:45)\n\tat pde.audit.DirectTraverseDiagnostic.main(DirectTraverseDiagnostic.java:20)\n"
+}

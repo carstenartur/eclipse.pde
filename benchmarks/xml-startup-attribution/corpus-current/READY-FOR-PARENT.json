@@ -1,0 +1,66 @@
+{
+  "schemaCount": 298,
+  "bytes": 2337930,
+  "expectedCorpusSha256": "442e16926ec5ee2e3842ee332ed93f6b5eba490c7c04b6bd9969e3ec95e7a491",
+  "actualCorpusSha256": "442e16926ec5ee2e3842ee332ed93f6b5eba490c7c04b6bd9969e3ec95e7a491",
+  "failures": [],
+  "sourceCommit": "20dabecfb988073c5c27c9bf68004cf22c6a52f3",
+  "focusedTests": {
+    "run": 99,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "java": "25.0.5+8",
+    "maven": "3.9.16",
+    "junit": "6.0.3",
+    "surefire": "3.5.6"
+  },
+  "corpusRoot": "/workspace/scratch/59a9c0b92707/xml-integration-audit/corpus/projects",
+  "compiledTransformer": "/workspace/scratch/59a9c0b92707/xml-integration-audit/focused/target/classes",
+  "transformerApi": "SchemaTransformationUtils.transform(String, Charset, boolean, PdeSchemaTarget, DocumentationPolicy)",
+  "qualification": "Focused Java 25 Maven/JUnit formatter checks plus full 298-schema native PDE reader/model/HTML comparison in active Equinox; does not replace repository Tycho/CI gates",
+  "publishedEquivalentCommit": "12033ef005df89f631cb2752e6e0949fbba8a2cd",
+  "gitTree": "b8ccc2b4253da1e2e49b6cfe496c5aeb95e6ef8f",
+  "includesPreamble1805": false,
+  "fullCorpusTransformer": {
+    "fileOptionComparisons": 2384,
+    "transformationCalls": 4768,
+    "documentationNodes": 4557,
+    "failures": 0,
+    "summary": "corpus-audit-summary.json"
+  },
+  "realPdeConsumerFixtures": {
+    "tests": 8,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "pdeVersion": "3.21.400.v20260810-0751",
+    "log": "native-consumer-maven.log"
+  },
+  "fullCorpusRealPdeConsumer": {
+    "status": "qualified in active OSGi",
+    "variants": [
+      "reference product PDE Core 3.21.400.v20260810-0751",
+      "source baseline f948c57878a1a011625b5214d63a1ec01bd243ff",
+      "empty-documentation fix 201c47e00f9e0bcae8ec3f435eb58704a6ee5027"
+    ],
+    "schemas": 298,
+    "formatterModes": 8,
+    "equalComponentComparisonsPerRuntime": 14304,
+    "failedComparisons": 0,
+    "blockedComparisons": 0,
+    "nativePdeErrorLogs": 0,
+    "verifiedIncludeResolutionsPerRuntime": 936,
+    "summary": "osgi-audit/qualification-summary.json",
+    "report": "osgi-audit/OSGI-CORPUS-AUDIT.txt"
+  },
+  "initialStandaloneAttempt": {
+    "status": "failed due to inactive PDECore schema registry",
+    "firstReproducedFailure": "org.eclipse.core.expressions/schema/definitions.exsd, abbreviated=true",
+    "underlyingDiagnostic": "osgi-audit/standalone-underlying-error.json",
+    "originalLogs": [
+      "native-corpus-maven.log",
+      "native-corpus-maven-reader-scope.log"
+    ]
+  }
+}

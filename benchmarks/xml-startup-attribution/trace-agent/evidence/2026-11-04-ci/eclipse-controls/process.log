@@ -1,0 +1,2 @@
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+ECLIPSE_CONTROL_OK registry=true emfObjects=1 schemaElements=1 earlyJob=true missingJarSchemaLoaded=false

@@ -1,0 +1,624 @@
+{
+  "analyzedAtUtc": "2026-11-04T20:21:47.650Z",
+  "label": "balanced-v2",
+  "scope": "One full-model operation loads49 org.eclipse.ui schemas plus15 real includes. CPU and allocation counters measure the benchmark thread, not startup or whole-process CPU.",
+  "method": "Six raw iteration values form one fork mean. Four paired block differences form each descriptive Student-t interval, df3. No multiple-comparison adjustment; one shared host and one pinned but unreserved CPU. These intervals do not capture host/environment uncertainty.",
+  "independentJvmObservations": 24,
+  "iterationsPerFork": 6,
+  "scheduleSha256": "85ec7318d1c3a377d49b8e81eb5f0929e2c220cdf9859be8e72db16f17a6409f",
+  "executedRunnerSha256": "d89176a53de0a112659335249a5ae5d96185623704d7bb28d5e73530c4f8c1b6",
+  "observationsSha256": "444376a242f309f802e593180e955353f912aa9061b1afae91e00f9a8cdc1064",
+  "analyzerSha256": "71a65562bac0638899d5a3ba0c763e1d8dfde0d78599ac3649f4c5c39ef31cce",
+  "cells": {
+    "baseline:original": {
+      "forks": 4,
+      "cpuMs": 18.070203645121744,
+      "allocatedBytes": 28171083.1439642,
+      "cpuMsByBlock": [
+        16.86392602221489,
+        18.515072020088144,
+        19.12016105969636,
+        17.781655478487576
+      ],
+      "allocatedBytesByBlock": [
+        28161906.832451496,
+        28167614.14581281,
+        28167466.114164904,
+        28187345.4834276
+      ]
+    },
+    "coalesced:original": {
+      "forks": 4,
+      "cpuMs": 13.953108605617246,
+      "allocatedBytes": 8362849.379631925,
+      "cpuMsByBlock": [
+        14.65968498837171,
+        14.310070773128627,
+        12.626269841373409,
+        14.216408819595236
+      ],
+      "allocatedBytesByBlock": [
+        8355150.993939395,
+        8372760.234650578,
+        8359058.783049293,
+        8364427.506888433
+      ]
+    },
+    "reuse:original": {
+      "forks": 4,
+      "cpuMs": 16.054150205644127,
+      "allocatedBytes": 25907336.968688462,
+      "cpuMsByBlock": [
+        15.660676784370764,
+        16.423195653455867,
+        14.981431013259945,
+        17.15129737148994
+      ],
+      "allocatedBytesByBlock": [
+        25905448.294472497,
+        25902069.14901704,
+        25891890.987770546,
+        25929939.443493772
+      ]
+    },
+    "combined:original": {
+      "forks": 4,
+      "cpuMs": 12.325433472624946,
+      "allocatedBytes": 6091407.28298944,
+      "cpuMsByBlock": [
+        11.333652129840553,
+        13.549255187177094,
+        11.051656883048372,
+        13.367169690433764
+      ],
+      "allocatedBytesByBlock": [
+        6080797.773551746,
+        6098904.204895564,
+        6089639.833207359,
+        6096287.320303089
+      ]
+    },
+    "combined:current-compact": {
+      "forks": 4,
+      "cpuMs": 10.439525026787754,
+      "allocatedBytes": 5224523.932221466,
+      "cpuMsByBlock": [
+        9.126924475689592,
+        10.343406657407447,
+        11.849352999749234,
+        10.43841597430474
+      ],
+      "allocatedBytesByBlock": [
+        5218633.876354766,
+        5222926.777552718,
+        5230709.6334086815,
+        5225825.441569696
+      ]
+    },
+    "combined:current-indented": {
+      "forks": 4,
+      "cpuMs": 11.469104587077414,
+      "allocatedBytes": 5998237.118958365,
+      "cpuMsByBlock": [
+        10.848252130442054,
+        11.869957810982022,
+        11.016824966703917,
+        12.141383440181663
+      ],
+      "allocatedBytesByBlock": [
+        5996108.169174016,
+        6000237.023956387,
+        5996464.2506775735,
+        6000139.032025483
+      ]
+    }
+  },
+  "contrasts": [
+    {
+      "reference": "baseline:original",
+      "treatment": "coalesced:original",
+      "blocks": 4,
+      "df": 3,
+      "metrics": {
+        "cpuMs": {
+          "savings": 4.117095039504497,
+          "savingsPercentOfReferenceMean": 22.78388844065935,
+          "descriptive95Interval": [
+            1.267600631863159,
+            6.966589447145836
+          ],
+          "pairedDifferences": [
+            2.2042410338431804,
+            4.205001246959517,
+            6.493891218322952,
+            3.56524665889234
+          ]
+        },
+        "allocatedBytes": {
+          "savings": 19808233.76433228,
+          "savingsPercentOfReferenceMean": 70.31406518203507,
+          "descriptive95Interval": [
+            19789932.13963634,
+            19826535.389028218
+          ],
+          "pairedDifferences": [
+            19806755.8385121,
+            19794853.91116223,
+            19808407.33111561,
+            19822917.976539165
+          ]
+        }
+      }
+    },
+    {
+      "reference": "baseline:original",
+      "treatment": "reuse:original",
+      "blocks": 4,
+      "df": 3,
+      "metrics": {
+        "cpuMs": {
+          "savings": 2.016053439477614,
+          "savingsPercentOfReferenceMean": 11.15678317229076,
+          "descriptive95Interval": [
+            -0.4305536777785317,
+            4.46266055673376
+          ],
+          "pairedDifferences": [
+            1.2032492378441262,
+            2.0918763666322775,
+            4.138730046436416,
+            0.6303581069976367
+          ]
+        },
+        "allocatedBytes": {
+          "savings": 2263746.1752757384,
+          "savingsPercentOfReferenceMean": 8.035708686482499,
+          "descriptive95Interval": [
+            2249618.9924834366,
+            2277873.35806804
+          ],
+          "pairedDifferences": [
+            2256458.5379789993,
+            2265544.99679577,
+            2275575.1263943575,
+            2257406.039933827
+          ]
+        }
+      }
+    },
+    {
+      "reference": "baseline:original",
+      "treatment": "combined:original",
+      "blocks": 4,
+      "df": 3,
+      "metrics": {
+        "cpuMs": {
+          "savings": 5.744770172496796,
+          "savingsPercentOfReferenceMean": 31.791396961083294,
+          "descriptive95Interval": [
+            3.1753556378229795,
+            8.314184707170613
+          ],
+          "pairedDifferences": [
+            5.530273892374337,
+            4.965816832911051,
+            8.06850417664799,
+            4.4144857880538115
+          ]
+        },
+        "allocatedBytes": {
+          "savings": 22079675.860974766,
+          "savingsPercentOfReferenceMean": 78.37709238278063,
+          "descriptive95Interval": [
+            22064997.36406417,
+            22094354.357885364
+          ],
+          "pairedDifferences": [
+            22081109.05889975,
+            22068709.940917246,
+            22077826.280957546,
+            22091058.16312451
+          ]
+        }
+      }
+    },
+    {
+      "reference": "coalesced:original",
+      "treatment": "combined:original",
+      "blocks": 4,
+      "df": 3,
+      "metrics": {
+        "cpuMs": {
+          "savings": 1.6276751329922998,
+          "savingsPercentOfReferenceMean": 11.66532261016753,
+          "descriptive95Interval": [
+            -0.26506516335508445,
+            3.520415429339684
+          ],
+          "pairedDifferences": [
+            3.326032858531157,
+            0.7608155859515335,
+            1.5746129583250372,
+            0.8492391291614716
+          ]
+        },
+        "allocatedBytes": {
+          "savings": 2271442.0966424854,
+          "savingsPercentOfReferenceMean": 27.161102556440618,
+          "descriptive95Interval": [
+            2266469.475702975,
+            2276414.7175819958
+          ],
+          "pairedDifferences": [
+            2274353.220387649,
+            2273856.029755014,
+            2269418.9498419343,
+            2268140.1865853444
+          ]
+        }
+      }
+    },
+    {
+      "reference": "reuse:original",
+      "treatment": "combined:original",
+      "blocks": 4,
+      "df": 3,
+      "metrics": {
+        "cpuMs": {
+          "savings": 3.728716733019183,
+          "savingsPercentOfReferenceMean": 23.225874214807614,
+          "descriptive95Interval": [
+            2.751221522745696,
+            4.70621194329267
+          ],
+          "pairedDifferences": [
+            4.327024654530211,
+            2.873940466278773,
+            3.929774130211573,
+            3.784127681056175
+          ]
+        },
+        "allocatedBytes": {
+          "savings": 19815929.685699023,
+          "savingsPercentOfReferenceMean": 76.48771353708992,
+          "descriptive95Interval": [
+            19790935.515437864,
+            19840923.855960183
+          ],
+          "pairedDifferences": [
+            19824650.52092075,
+            19803164.944121476,
+            19802251.15456319,
+            19833652.123190682
+          ]
+        }
+      }
+    },
+    {
+      "reference": "combined:original",
+      "treatment": "combined:current-compact",
+      "blocks": 4,
+      "df": 3,
+      "metrics": {
+        "cpuMs": {
+          "savings": 1.8859084458371922,
+          "savingsPercentOfReferenceMean": 15.300950266989275,
+          "descriptive95Interval": [
+            -1.0387156270656308,
+            4.810532518740015
+          ],
+          "pairedDifferences": [
+            2.2067276541509617,
+            3.2058485297696464,
+            -0.7976961167008625,
+            2.928753716129023
+          ]
+        },
+        "allocatedBytes": {
+          "savings": 866883.350767974,
+          "savingsPercentOfReferenceMean": 14.23124920884521,
+          "descriptive95Interval": [
+            854522.4401010603,
+            879244.2614348878
+          ],
+          "pairedDifferences": [
+            862163.8971969802,
+            875977.4273428461,
+            858930.1997986771,
+            870461.8787333928
+          ]
+        }
+      }
+    },
+    {
+      "reference": "combined:original",
+      "treatment": "combined:current-indented",
+      "blocks": 4,
+      "df": 3,
+      "metrics": {
+        "cpuMs": {
+          "savings": 0.8563288855475317,
+          "savingsPercentOfReferenceMean": 6.947657357848361,
+          "descriptive95Interval": [
+            -0.31521967940816786,
+            2.0278774505032313
+          ],
+          "pairedDifferences": [
+            0.4853999993984992,
+            1.6792973761950716,
+            0.03483191634445504,
+            1.225786250252101
+          ]
+        },
+        "allocatedBytes": {
+          "savings": 93170.16403107438,
+          "savingsPercentOfReferenceMean": 1.5295343046795893,
+          "descriptive95Interval": [
+            83490.85503292592,
+            102849.47302922285
+          ],
+          "pairedDifferences": [
+            84689.60437772982,
+            98667.18093917705,
+            93175.58252978511,
+            96148.28827760555
+          ]
+        }
+      }
+    },
+    {
+      "reference": "combined:current-indented",
+      "treatment": "combined:current-compact",
+      "blocks": 4,
+      "df": 3,
+      "metrics": {
+        "cpuMs": {
+          "savings": 1.0295795602896605,
+          "savingsPercentOfReferenceMean": 8.976982923756044,
+          "descriptive95Interval": [
+            -0.9507086066149022,
+            3.009867727194223
+          ],
+          "pairedDifferences": [
+            1.7213276547524625,
+            1.5265511535745748,
+            -0.8325280330453175,
+            1.702967465876922
+          ]
+        },
+        "allocatedBytes": {
+          "savings": 773713.1867368997,
+          "savingsPercentOfReferenceMean": 12.899009682219102,
+          "descriptive95Interval": [
+            764959.8167440279,
+            782466.5567297714
+          ],
+          "pairedDifferences": [
+            777474.2928192504,
+            777310.246403669,
+            765754.617268892,
+            774313.5904557873
+          ]
+        }
+      }
+    }
+  ],
+  "rows": [
+    {
+      "block": 0,
+      "case": "baseline:original",
+      "label": "balanced-v2-b0-baseline-original",
+      "cpuMs": 16.86392602221489,
+      "allocatedBytes": 28161906.832451496,
+      "rawJsonSha256": "ca771dd871b4519afdb90fd1df215dbe43716dcdecd97f91d8e97244ce143c3d",
+      "consoleLogSha256": "e3a6ce2dde092e4f6ec3d68a3538dbce5e6c9ce286b8c1001f2fe5050fce2275"
+    },
+    {
+      "block": 0,
+      "case": "coalesced:original",
+      "label": "balanced-v2-b0-coalesced-original",
+      "cpuMs": 14.65968498837171,
+      "allocatedBytes": 8355150.993939395,
+      "rawJsonSha256": "2a0317746fc49042bbba65eddb38be0ddbec8e9cbaecabeb4cd5b23e17f502e1",
+      "consoleLogSha256": "95446506776a1c4f150ad285d052384fea2a6b3f5e96336d98b21276562a0fc2"
+    },
+    {
+      "block": 0,
+      "case": "reuse:original",
+      "label": "balanced-v2-b0-reuse-original",
+      "cpuMs": 15.660676784370764,
+      "allocatedBytes": 25905448.294472497,
+      "rawJsonSha256": "d5df696a1cbe7dfa3ea2a343a250af21d412939c1309a9453492b4f6ccf2fae5",
+      "consoleLogSha256": "338a9fe29231eb8d721a616d20f6a366e60bfc1f4e95e1f896a4ca8d99313516"
+    },
+    {
+      "block": 0,
+      "case": "combined:original",
+      "label": "balanced-v2-b0-combined-original",
+      "cpuMs": 11.333652129840553,
+      "allocatedBytes": 6080797.773551746,
+      "rawJsonSha256": "9a100e7a19d6ddc88c1330fc5a882d01f987c0907e4e5a98f3676b8818e174d2",
+      "consoleLogSha256": "7cd6b7f101b45362dd278c6b4111ae62c8d9dff660b7a3f2bb832498f59dae3d"
+    },
+    {
+      "block": 0,
+      "case": "combined:current-compact",
+      "label": "balanced-v2-b0-combined-current-compact",
+      "cpuMs": 9.126924475689592,
+      "allocatedBytes": 5218633.876354766,
+      "rawJsonSha256": "1728b5df99c6cdfbae5569d739185c5543df52be6eb3e39421235da94e1e0764",
+      "consoleLogSha256": "49ebfd41d4858f3091eff833976fb147c763e3ec5277852bfebf322bdb31cd19"
+    },
+    {
+      "block": 0,
+      "case": "combined:current-indented",
+      "label": "balanced-v2-b0-combined-current-indented",
+      "cpuMs": 10.848252130442054,
+      "allocatedBytes": 5996108.169174016,
+      "rawJsonSha256": "2192762f172eef7a3941299e7fc9bdadc22fc75957aff15d4280fb9e64da4ce4",
+      "consoleLogSha256": "e4b58792d738100a502dc52281e89fdbd535431149555ebc11e8755fe5d1d52b"
+    },
+    {
+      "block": 1,
+      "case": "combined:current-indented",
+      "label": "balanced-v2-b1-combined-current-indented",
+      "cpuMs": 11.869957810982022,
+      "allocatedBytes": 6000237.023956387,
+      "rawJsonSha256": "f293bd89b05f924441c170e9dae960201dbf35ee4132e73ed2456dba6bd9bf0e",
+      "consoleLogSha256": "19ba68ffc67f698159feb78b18c5806dd8541199d62b812db9d3d1f84d520d22"
+    },
+    {
+      "block": 1,
+      "case": "combined:current-compact",
+      "label": "balanced-v2-b1-combined-current-compact",
+      "cpuMs": 10.343406657407447,
+      "allocatedBytes": 5222926.777552718,
+      "rawJsonSha256": "866480d70092b0713eda64443e0c8ae64b91ec934ed947efc771df6803848808",
+      "consoleLogSha256": "6a1478cb7af8bd113652e4d4e306297788c69512dee836d551aaa92cb6255a40"
+    },
+    {
+      "block": 1,
+      "case": "combined:original",
+      "label": "balanced-v2-b1-combined-original",
+      "cpuMs": 13.549255187177094,
+      "allocatedBytes": 6098904.204895564,
+      "rawJsonSha256": "2f98d5fc811b4b6d1f3fd8349f34af3b0d1980a4849c82e8a67da1ef704a78ad",
+      "consoleLogSha256": "1a575b7e3497352dab83be3cf5575cf4fbee055124610496f4eeafdab6066795"
+    },
+    {
+      "block": 1,
+      "case": "reuse:original",
+      "label": "balanced-v2-b1-reuse-original",
+      "cpuMs": 16.423195653455867,
+      "allocatedBytes": 25902069.14901704,
+      "rawJsonSha256": "a2086f12b986c8d36370cdb9ec80430ae4ed2b47add68d7bd3fdf0e01fbcda7d",
+      "consoleLogSha256": "55cdaa037b5c0f984cd1e4616387f2a299bc878f77c4c57c7cd2133c4bc802c2"
+    },
+    {
+      "block": 1,
+      "case": "coalesced:original",
+      "label": "balanced-v2-b1-coalesced-original",
+      "cpuMs": 14.310070773128627,
+      "allocatedBytes": 8372760.234650578,
+      "rawJsonSha256": "ad79a93ceeec9259c677aa051e978e84149b462d53c164208d6032ef2dc50495",
+      "consoleLogSha256": "284eadb3c3079d48ff00899f21aa890e7031f164c6bbea989d4ac94ccdf4324d"
+    },
+    {
+      "block": 1,
+      "case": "baseline:original",
+      "label": "balanced-v2-b1-baseline-original",
+      "cpuMs": 18.515072020088144,
+      "allocatedBytes": 28167614.14581281,
+      "rawJsonSha256": "77bd9a9cfb6d62fbc1f712b5e393c185ffacb796f040e82d7bc66a3b7836651e",
+      "consoleLogSha256": "c7977e78b241e1ed723ea765355d507df0599bd829f09cc96471c731e8c98c3e"
+    },
+    {
+      "block": 2,
+      "case": "coalesced:original",
+      "label": "balanced-v2-b2-coalesced-original",
+      "cpuMs": 12.626269841373409,
+      "allocatedBytes": 8359058.783049293,
+      "rawJsonSha256": "7ab6064aa1266cea45f05cb462089168e76b53de49e1838f9bb65c458dd723e9",
+      "consoleLogSha256": "84f4491f915798137d26b308e74a7bf0694eba85cb9088b4a5d4974437f445b1"
+    },
+    {
+      "block": 2,
+      "case": "reuse:original",
+      "label": "balanced-v2-b2-reuse-original",
+      "cpuMs": 14.981431013259945,
+      "allocatedBytes": 25891890.987770546,
+      "rawJsonSha256": "7ec615e18cb181d8280b74175d143194efd0bb6ea68075f1edd7ab031f02b56c",
+      "consoleLogSha256": "935cb9244b6b9640d6e4decb402fbabf1d35354c6a2a3996f05776fc942bbb16"
+    },
+    {
+      "block": 2,
+      "case": "combined:original",
+      "label": "balanced-v2-b2-combined-original",
+      "cpuMs": 11.051656883048372,
+      "allocatedBytes": 6089639.833207359,
+      "rawJsonSha256": "b7f05f0b5e3795f4f6090232a2084db0e939880aea1c66219496bfb161c37b7e",
+      "consoleLogSha256": "7256e7cb6008626b5ab07d4046610e98573d452e917d9c512d537dbcd73e8d26"
+    },
+    {
+      "block": 2,
+      "case": "combined:current-compact",
+      "label": "balanced-v2-b2-combined-current-compact",
+      "cpuMs": 11.849352999749234,
+      "allocatedBytes": 5230709.6334086815,
+      "rawJsonSha256": "5c15114eac3d0c1da691b5d3a4a1a11345c929c89c594e5978390dce5827b942",
+      "consoleLogSha256": "07db8f3ea97061d594c602c765b9635f4bb740bb3ec3af83916ec739799a1d0f"
+    },
+    {
+      "block": 2,
+      "case": "combined:current-indented",
+      "label": "balanced-v2-b2-combined-current-indented",
+      "cpuMs": 11.016824966703917,
+      "allocatedBytes": 5996464.2506775735,
+      "rawJsonSha256": "0cd63443da6fb9a327915eac1abe253006b3b1ac3b7c596ed31a8ab53e5bc3d1",
+      "consoleLogSha256": "e226f4b095783d68c8d7e29218a78c068479c4abe10fd4719eb454d8eb86601b"
+    },
+    {
+      "block": 2,
+      "case": "baseline:original",
+      "label": "balanced-v2-b2-baseline-original",
+      "cpuMs": 19.12016105969636,
+      "allocatedBytes": 28167466.114164904,
+      "rawJsonSha256": "7c578579b6a4eb76dce055400bd7977de39b312bc400c59c8c53a76a9ecd6d0b",
+      "consoleLogSha256": "bd58a8f28ab619d490dc08b70be8ee70a70a295dc03391662ec4e466eca543ed"
+    },
+    {
+      "block": 3,
+      "case": "baseline:original",
+      "label": "balanced-v2-b3-baseline-original",
+      "cpuMs": 17.781655478487576,
+      "allocatedBytes": 28187345.4834276,
+      "rawJsonSha256": "5c6adad6bc0fa1dbb79e0fae8c0873c68553a2fbad1b0e82036529809e921755",
+      "consoleLogSha256": "601c1a4716a2ba89283e8d894153ac04146aadd6176f040d03b6c03818f76f03"
+    },
+    {
+      "block": 3,
+      "case": "combined:current-indented",
+      "label": "balanced-v2-b3-combined-current-indented",
+      "cpuMs": 12.141383440181663,
+      "allocatedBytes": 6000139.032025483,
+      "rawJsonSha256": "14e165810cc6283177379ce5f04b2df421060e90473678eccebc7d630f8f0dad",
+      "consoleLogSha256": "056143f7bfde4f66d9242af02d2ff3eea8719ea11e0ba30ca9e7afcd8a376ac3"
+    },
+    {
+      "block": 3,
+      "case": "combined:current-compact",
+      "label": "balanced-v2-b3-combined-current-compact",
+      "cpuMs": 10.43841597430474,
+      "allocatedBytes": 5225825.441569696,
+      "rawJsonSha256": "46cdcaa6e7a4ab32c1f35f1a2e473cf155d1183ffafa29f5d13567cf7ca62afb",
+      "consoleLogSha256": "5b257b14f99f4ab21a4820e5e036205886affaf2a05417f2c72144b18b0702d9"
+    },
+    {
+      "block": 3,
+      "case": "combined:original",
+      "label": "balanced-v2-b3-combined-original",
+      "cpuMs": 13.367169690433764,
+      "allocatedBytes": 6096287.320303089,
+      "rawJsonSha256": "86e57bcb62b22f24cc0a8bb8d5bd5cc02062cf641e5bb64439b830447f8d9fc8",
+      "consoleLogSha256": "16be89c52ed99f2294713e74c645830240d193a65494d5fce52bc0584eb93340"
+    },
+    {
+      "block": 3,
+      "case": "reuse:original",
+      "label": "balanced-v2-b3-reuse-original",
+      "cpuMs": 17.15129737148994,
+      "allocatedBytes": 25929939.443493772,
+      "rawJsonSha256": "3767105200f94b53566b9bcf57b435a4ef48190a65dd3957db257035b63f13ab",
+      "consoleLogSha256": "96542335368d043bd5cd1e8d4f7e2dacd2cffa30fa621e752a4140d01284939b"
+    },
+    {
+      "block": 3,
+      "case": "coalesced:original",
+      "label": "balanced-v2-b3-coalesced-original",
+      "cpuMs": 14.216408819595236,
+      "allocatedBytes": 8364427.506888433,
+      "rawJsonSha256": "c4477456c3639a90053890c6dd00cc176b0a9bf95ac10da83d93ebb216b5e37a",
+      "consoleLogSha256": "dc821ad29b82e9747a0980f3644d241ff82e9ef31451adc1ed6a415f2c5e8ecc"
+    }
+  ]
+}

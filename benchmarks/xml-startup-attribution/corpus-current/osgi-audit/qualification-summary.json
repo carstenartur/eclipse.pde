@@ -1,0 +1,77 @@
+{
+  "verifiedAt": "2026-11-04T20:10:44.569Z",
+  "formatterPublishedCommit": "12033ef005df89f631cb2752e6e0949fbba8a2cd",
+  "formatterTree": "b8ccc2b4253da1e2e49b6cfe496c5aeb95e6ef8f",
+  "includesPreamble1805": false,
+  "sourceCorpusSha256": "442e16926ec5ee2e3842ee332ed93f6b5eba490c7c04b6bd9969e3ec95e7a491",
+  "variants": [
+    {
+      "variant": "product",
+      "sourceCommit": null,
+      "originalPdeBundle": "/workspace/scratch/59a9c0b92707/recovered-runtime/reference-product/plugins/org.eclipse.pde.core_3.21.400.v20260810-0751.jar",
+      "effectiveCore": "/workspace/scratch/59a9c0b92707/recovered-runtime/reference-product/plugins/org.eclipse.pde.core_3.21.400.v20260810-0751.jar",
+      "schemaClassSha256": "ecc90e854d3091da4fcd9b63d48860a0d86ac2c408662b3a0bd7f70c13bc7075",
+      "schemas": 298,
+      "modes": 8,
+      "loadedModels": 5364,
+      "observations": 8046,
+      "equalComponentComparisons": 14304,
+      "different": 0,
+      "blocked": 0,
+      "failures": 0,
+      "nativeLogErrors": 0,
+      "includeResolutions": 936,
+      "allIncludesLoaded": true
+    },
+    {
+      "variant": "source-baseline",
+      "sourceCommit": "f948c57878a1a011625b5214d63a1ec01bd243ff",
+      "originalPdeBundle": "/workspace/scratch/59a9c0b92707/recovered-runtime/reference-product/plugins/org.eclipse.pde.core_3.21.400.v20260810-0751.jar",
+      "effectiveCore": "/workspace/scratch/59a9c0b92707/xml-integration-audit/osgi-audit/runs/source-baseline/org.eclipse.pde.core.jar",
+      "schemaClassSha256": "af6fe8a43db7834c54c02a97aa17256649b92a0d4b27ee55c06033ad0f64e001",
+      "schemas": 298,
+      "modes": 8,
+      "loadedModels": 5364,
+      "observations": 8046,
+      "equalComponentComparisons": 14304,
+      "different": 0,
+      "blocked": 0,
+      "failures": 0,
+      "nativeLogErrors": 0,
+      "includeResolutions": 936,
+      "allIncludesLoaded": true
+    },
+    {
+      "variant": "empty-documentation",
+      "sourceCommit": "201c47e00f9e0bcae8ec3f435eb58704a6ee5027",
+      "originalPdeBundle": "/workspace/scratch/59a9c0b92707/recovered-runtime/reference-product/plugins/org.eclipse.pde.core_3.21.400.v20260810-0751.jar",
+      "effectiveCore": "/workspace/scratch/59a9c0b92707/xml-integration-audit/osgi-audit/runs/empty-documentation/org.eclipse.pde.core.jar",
+      "schemaClassSha256": "80041c2bfe8150efa82b8766fee35c3b435c372b36954a5f3941b498e67257dc",
+      "schemas": 298,
+      "modes": 8,
+      "loadedModels": 5364,
+      "observations": 8046,
+      "equalComponentComparisons": 14304,
+      "different": 0,
+      "blocked": 0,
+      "failures": 0,
+      "nativeLogErrors": 0,
+      "includeResolutions": 936,
+      "allIncludesLoaded": true
+    }
+  ],
+  "crossImplementation": [
+    {
+      "reference": "product",
+      "variant": "source-baseline",
+      "matchingComponentDigests": 16092,
+      "mismatches": []
+    },
+    {
+      "reference": "product",
+      "variant": "empty-documentation",
+      "matchingComponentDigests": 16092,
+      "mismatches": []
+    }
+  ]
+}

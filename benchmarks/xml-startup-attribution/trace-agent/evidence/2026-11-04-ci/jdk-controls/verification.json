@@ -1,0 +1,5 @@
+{
+  "exitCode": 0,
+  "stdout": "{\n  \"status\": \"ok\",\n  \"cases\": 8,\n  \"events\": 56,\n  \"zipBytes\": 66,\n  \"instrumentedMethods\": 8\n}\n",
+  "stderr": ""
+}

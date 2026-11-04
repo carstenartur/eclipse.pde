@@ -1,0 +1,35 @@
+{
+  "publishedSourceCommit": "12033ef005df89f631cb2752e6e0949fbba8a2cd",
+  "tree": "b8ccc2b4253da1e2e49b6cfe496c5aeb95e6ef8f",
+  "localEquivalentCommit": "20dabecfb988073c5c27c9bf68004cf22c6a52f3",
+  "includesPRs": [
+    1801,
+    1802,
+    1803
+  ],
+  "excludesPRs": [
+    1805
+  ],
+  "target": "PRESERVE",
+  "documentation": "PRESERVE",
+  "charset": "UTF-8",
+  "variants": {
+    "current-compact": {
+      "enableIndent": false
+    },
+    "current-indented": {
+      "enableIndent": true
+    }
+  },
+  "sourceCorpus": "Exact org.eclipse.ui 49-file subset of preserved298-schema corpus; unchanged include sources",
+  "fullCorpusGate": {
+    "fileOptionComparisons": 2384,
+    "documentationNodes": 4557,
+    "failures": 0
+  },
+  "metadataCorrection": {
+    "previousTargetLabel": "PRESERVE_EXISTING",
+    "reason": "Correct the descriptive label to the actual PdeSchemaTarget.PRESERVE enum. All98 timed formatted files were checked byte-for-byte against the audited compact-preserve-preserve and indented-preserve-preserve trees; no input bytes or measurement changed.",
+    "verifiedAtUtc": "2026-11-04T20:25:09.103Z"
+  }
+}

@@ -1,0 +1,16 @@
+Independent #1805 preamble result reproduced on the full 298-schema corpus
+
+Compared base ef946b6fad6276694f32389311cb7e71cf7f3955 with the exact independent PR #1805 head f8dfe691a79de75f55c7633714a15c5626ca6166. The recovered corpus is byte-identical to the original study: 298 schemas, 2,337,930 source bytes, and 4,557 documentation nodes.
+
+Compact formatted bytes:  2,014,348 -> 2,003,918; 10,430 saved.
+Indented formatted bytes: 2,129,822 -> 2,119,094; 10,728 saved.
+
+Every file loses exactly the 35-byte generated preamble. Indented formatting also loses its one external LF layout slot, for 36 bytes per file. There are no actual CDATA nodes in this corpus, so the head's separate CDATA safeguard does not contribute to these deltas.
+
+The character payload is unchanged. With Eclipse's XmlProcessorFactory and file streams, SAX characters() callbacks change from 60,641 to 60,643 (+2) in compact mode and from 89,851 to 89,856 (+5) in indented mode. The StringReader control gives 60,640 -> 60,640 (0) and 89,853 -> 89,855 (+2). These are grouping shifts over identical per-file character-content hashes, not a reduction in character data. Total character units remain 1,136,139 compact and 1,250,719 indented; outside-root character callbacks remain zero. The lexical observer sees comment callbacks fall from 298 to zero and comment-body units from 8,344 to zero. The normal content-only handler has no comment callbacks in either version.
+
+All 4,557 documentation signatures are preserved. All 1,192 base/head/layout/file first-pass idempotence comparisons pass. Maven completed 38 tests with zero failures, errors or skips: 33 existing preamble regression cases, four existing real-PDE consumer cases, and one full-corpus audit.
+
+This establishes exact byte/comment savings on the independent head. It does not measure startup time, and it does not describe the combined #1803 tree or a later integration of #1805.
+
+Primary evidence: measurement-summary.json, per-file-results.jsonl, callback-partition-differences.json, maven-audit.log, source-identity.json, and head/target/surefire-reports. The complete isolated source and run-audit.sh are included.

@@ -1,0 +1,127 @@
+[
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "bench.SchemaLoadBenchmark.loadSchemas",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/workspace/scratch/567cb6a530cb/wizard-test-runtime/jdk-25.0.5+8/bin/java",
+        "jvmArgs" : [
+            "-Devaluation=/workspace/scratch/59a9c0b92707/loading-measurement/xml-followup",
+            "-Dcorpus=/workspace/scratch/59a9c0b92707/loading-measurement/current/corpus",
+            "-Xms512m",
+            "-Xmx512m",
+            "-XX:+UseSerialGC",
+            "-XX:ActiveProcessorCount=1"
+        ],
+        "jdkVersion" : "25.0.5",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "25.0.5+8-LTS",
+        "warmupIterations" : 8,
+        "warmupTime" : "2 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 6,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "variant" : "original"
+        },
+        "primaryMetric" : {
+            "score" : 23.143208870166646,
+            "scoreError" : 20.540422784621835,
+            "scoreConfidence" : [
+                2.6027860855448104,
+                43.683631654788485
+            ],
+            "scorePercentiles" : {
+                "0.0" : 16.716447183333333,
+                "50.0" : 20.407508542464114,
+                "90.0" : 33.9785894,
+                "95.0" : 33.9785894,
+                "99.0" : 33.9785894,
+                "99.9" : 33.9785894,
+                "99.99" : 33.9785894,
+                "99.999" : 33.9785894,
+                "99.9999" : 33.9785894,
+                "100.0" : 33.9785894
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    33.9785894,
+                    29.967483294117645,
+                    23.130499295454545,
+                    17.38171625862069,
+                    16.716447183333333,
+                    17.684517789473684
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+            "allocatedBytes" : {
+                "score" : 5.017614030094044E7,
+                "scoreError" : "NaN",
+                "scoreConfidence" : [
+                    5.017614030094044E7,
+                    5.017614030094044E7
+                ],
+                "scorePercentiles" : {
+                    "0.0" : 8355464.0,
+                    "50.0" : 8359526.15047022,
+                    "90.0" : 8373080.0,
+                    "95.0" : 8373080.0,
+                    "99.0" : 8373080.0,
+                    "99.9" : 8373080.0,
+                    "99.99" : 8373080.0,
+                    "99.999" : 8373080.0,
+                    "99.9999" : 8373080.0,
+                    "100.0" : 8373080.0
+                },
+                "scoreUnit" : "#",
+                "rawData" : [
+                    [
+                        8373080.0,
+                        8373080.0,
+                        8362945.818181818,
+                        8356106.482758621,
+                        8355464.0,
+                        8355464.0
+                    ]
+                ]
+            },
+            "cpuMs" : {
+                "score" : 95.06713034110756,
+                "scoreError" : "NaN",
+                "scoreConfidence" : [
+                    95.06713034110756,
+                    95.06713034110756
+                ],
+                "scorePercentiles" : {
+                    "0.0" : 14.097470909090909,
+                    "50.0" : 15.793565886274509,
+                    "90.0" : 17.49287498245614,
+                    "95.0" : 17.49287498245614,
+                    "99.0" : 17.49287498245614,
+                    "99.9" : 17.49287498245614,
+                    "99.99" : 17.49287498245614,
+                    "99.999" : 17.49287498245614,
+                    "99.9999" : 17.49287498245614,
+                    "100.0" : 17.49287498245614
+                },
+                "scoreUnit" : "#",
+                "rawData" : [
+                    [
+                        16.907115366666666,
+                        14.992101705882352,
+                        14.097470909090909,
+                        14.982537310344828,
+                        16.595030066666666,
+                        17.49287498245614
+                    ]
+                ]
+            }
+        }
+    }
+]
+
+

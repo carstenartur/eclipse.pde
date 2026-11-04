@@ -1,0 +1,55 @@
+{
+  "blocks": 3,
+  "order": "Rotate cases by block; reverse odd blocks. All comparisons use fresh JVMs.",
+  "schedule": [
+    {
+      "block": 0,
+      "variant": "combined",
+      "corpus": "original"
+    },
+    {
+      "block": 0,
+      "variant": "combined",
+      "corpus": "current-compact"
+    },
+    {
+      "block": 0,
+      "variant": "combined",
+      "corpus": "current-indented"
+    },
+    {
+      "block": 1,
+      "variant": "combined",
+      "corpus": "original"
+    },
+    {
+      "block": 1,
+      "variant": "combined",
+      "corpus": "current-indented"
+    },
+    {
+      "block": 1,
+      "variant": "combined",
+      "corpus": "current-compact"
+    },
+    {
+      "block": 2,
+      "variant": "combined",
+      "corpus": "current-indented"
+    },
+    {
+      "block": 2,
+      "variant": "combined",
+      "corpus": "original"
+    },
+    {
+      "block": 2,
+      "variant": "combined",
+      "corpus": "current-compact"
+    }
+  ],
+  "warmup": "8 x 2 seconds",
+  "measurement": "6 x 1 second",
+  "forksPerCasePerBlock": 1,
+  "exclusiveCpu": "8"
+}
