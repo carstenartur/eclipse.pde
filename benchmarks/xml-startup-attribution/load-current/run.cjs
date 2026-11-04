@@ -104,7 +104,7 @@ if (mode === 'prepare') {
   }
   const runId=options.label||'current'; if(!/^[a-z0-9-]+$/.test(runId))throw Error('Unsafe label');
   fs.copyFileSync(__filename,path.join(out,`executed-runner-${runId}.cjs`));
-  save(`schedule-${runId}.json`,{runnerSha256:sha(fs.readFileSync(__filename)),blocks,order:'Rotate cases by block; reverse odd blocks. All comparisons use fresh JVMs.',schedule,warmup:'8 x 2 seconds',measurement:'6 x 1 second',forksPerCasePerBlock:1,cpuAffinity:options.cpu??null});
+  save(`schedule-${runId}.json`,{runnerSha256:sha(fs.readFileSync(__filename)),blocks,order:'Each pair of blocks uses one cyclic rotation; the second block reverses that same order. Rotate by one between pairs; every case uses a fresh JVM.',schedule,warmup:'8 x 2 seconds',measurement:'6 x 1 second',forksPerCasePerBlock:1,cpuAffinity:options.cpu??null});
   for(const item of schedule) {
     const label=`${runId}-b${item.block}-${item.variant}-${item.corpus}`, result=path.join(out,label+'.json'), log=path.join(out,label+'.log');
     const argv=['-Devaluation='+m.archive,'-Dcorpus='+path.join(out,'corpus'),'-cp',cp(m,item.variant),'org.openjdk.jmh.Main','^bench.SchemaLoadBenchmark.loadSchemas$','-p','variant='+item.corpus,'-wi','8','-w','2s','-i','6','-r','1s','-f','1','-rf','json','-rff',result];

@@ -28,7 +28,7 @@ jobs:
           distribution: temurin
           java-version: '25.0.5+8'
       - name: Install native display dependencies
-        run: sudo apt-get update && sudo apt-get install -y xvfb xauth libxtst6 libgtk-3-0t64
+        run: sudo apt-get update && sudo apt-get install -y xvfb xauth libxtst6 libgtk-3-0t64 ripgrep
       - name: Restore the pinned public Eclipse reference product
         env:
           GH_TOKEN: ${{ github.token }}
