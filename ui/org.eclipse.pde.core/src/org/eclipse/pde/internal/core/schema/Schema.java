@@ -1,5 +1,5 @@
 /*******************************************************************************
- *  Copyright (c) 2000, 2016 IBM Corporation and others.
+ *  Copyright (c) 2000, 2026 IBM Corporation and others.
  *
  *  This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License 2.0
@@ -26,8 +26,6 @@ import java.util.Iterator;
 import java.util.Locale;
 import java.util.Vector;
 
-import javax.xml.parsers.SAXParser;
-
 import org.eclipse.core.runtime.ListenerList;
 import org.eclipse.core.runtime.PlatformObject;
 import org.eclipse.pde.core.IModelChangedEvent;
@@ -37,7 +35,6 @@ import org.eclipse.pde.core.plugin.IPluginBase;
 import org.eclipse.pde.core.plugin.IPluginModelBase;
 import org.eclipse.pde.internal.core.PDECore;
 import org.eclipse.pde.internal.core.TargetPlatformHelper;
-import org.eclipse.pde.internal.core.XMLDefaultHandler;
 import org.eclipse.pde.internal.core.ischema.IDocumentSection;
 import org.eclipse.pde.internal.core.ischema.IMetaAttribute;
 import org.eclipse.pde.internal.core.ischema.ISchema;
@@ -61,6 +58,10 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 public class Schema extends PlatformObject implements ISchema {
+
+	@SuppressWarnings("restriction")
+	private static final SchemaReader READER = new SchemaReader(
+			org.eclipse.core.internal.runtime.XmlProcessorFactory::createSAXParserWithErrorOnDOCTYPE);
 
 	private URL fURL;
 
@@ -447,12 +448,7 @@ public class Schema extends PlatformObject implements ISchema {
 
 	public void load(InputStream stream) {
 		try {
-			XMLDefaultHandler handler = new XMLDefaultHandler(fAbbreviated);
-			@SuppressWarnings("restriction")
-			SAXParser parser = org.eclipse.core.internal.runtime.XmlProcessorFactory
-					.createSAXParserWithErrorOnDOCTYPE();
-			parser.parse(stream, handler);
-			traverseDocumentTree(handler.getDocumentElement());
+			traverseDocumentTree(READER.read(stream, fAbbreviated));
 		} catch (SAXException e) {
 			// ignore parse errors - 'loaded' will be false anyway
 		} catch (IOException e) {
