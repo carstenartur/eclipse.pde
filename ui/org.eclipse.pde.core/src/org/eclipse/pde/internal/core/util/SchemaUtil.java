@@ -1,5 +1,5 @@
 /*******************************************************************************
- *  Copyright (c) 2006, 2012 IBM Corporation and others.
+ *  Copyright (c) 2006, 2026 IBM Corporation and others.
  *
  *  This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License 2.0
@@ -40,7 +40,9 @@ public class SchemaUtil {
 	 * files and remote urls.
 	 * <p>
 	 * NOTE: If the connection is of type {@link JarURLConnection} the zip file
-	 * should be independantly closed using {@link JarURLConnection#getJarFile()}.close()
+	 * should be independently closed using {@link JarURLConnection#getJarFile()}.close()
+	 * after successfully opening the input stream. Calling {@code getJarFile()} after
+	 * a failed connection can open the JAR again.
 	 * https://bugs.eclipse.org/bugs/show_bug.cgi?id=326263
 	 * </p>
 	 *
@@ -61,14 +63,22 @@ public class SchemaUtil {
 	}
 
 	public static void parseURL(URL url, DefaultHandler handler) {
-		URLConnection connection = null;
 		try {
-			connection = getURLConnection(url);
-			try (InputStream input = connection.getInputStream()) {
+			URLConnection connection = getURLConnection(url);
+			InputStream input = connection.getInputStream();
+			try (input) {
 				@SuppressWarnings("restriction")
 				SAXParser parser = org.eclipse.core.internal.runtime.XmlProcessorFactory
 						.createSAXParserWithErrorOnDOCTYPE();
 				parser.parse(input, handler);
+			} finally {
+				try {
+					if (connection instanceof JarURLConnection jarConnection) {
+						// https://bugs.eclipse.org/bugs/show_bug.cgi?id=326263
+						jarConnection.getJarFile().close();
+					}
+				} catch (IOException e) {
+				}
 			}
 		} catch (MalformedURLException | SAXException e) {
 			// Ignore
@@ -77,14 +87,6 @@ public class SchemaUtil {
 			// created.
 		} catch (IOException | ParserConfigurationException | FactoryConfigurationError e) {
 			PDECore.logException(e);
-		} finally {
-			try {
-				if (connection instanceof JarURLConnection) {
-					// https://bugs.eclipse.org/bugs/show_bug.cgi?id=326263
-					((JarURLConnection) connection).getJarFile().close();
-				}
-			} catch (IOException e1) {
-			}
 		}
 	}
 }

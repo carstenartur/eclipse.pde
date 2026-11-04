@@ -1,5 +1,5 @@
 /*******************************************************************************
- *  Copyright (c) 2000, 2016 IBM Corporation and others.
+ *  Copyright (c) 2000, 2026 IBM Corporation and others.
  *
  *  This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License 2.0
@@ -425,23 +425,23 @@ public class Schema extends PlatformObject implements ISchema {
 	}
 
 	public void load() {
-		URLConnection connection = null;
 		try {
-			connection = SchemaUtil.getURLConnection(fURL);
-			try (InputStream input = connection.getInputStream()) {
+			URLConnection connection = SchemaUtil.getURLConnection(fURL);
+			InputStream input = connection.getInputStream();
+			try (input) {
 				load(input);
+			} finally {
+				try {
+					if (connection instanceof JarURLConnection jarConnection) {
+						jarConnection.getJarFile().close();
+					}
+				} catch (IOException e) {
+				}
 			}
 		} catch (FileNotFoundException e) {
 			fLoaded = false;
 		} catch (IOException e) {
 			PDECore.logException(e);
-		} finally {
-			try {
-				if (connection instanceof JarURLConnection) {
-					((JarURLConnection) connection).getJarFile().close();
-				}
-			} catch (IOException e1) {
-			}
 		}
 	}
 
