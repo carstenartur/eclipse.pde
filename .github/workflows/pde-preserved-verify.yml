@@ -1,0 +1,82 @@
+name: Preserved PDE branch qualification
+
+on:
+  push:
+    branches: [ experiment/xml-startup-costs ]
+    paths: [ .github/workflows/pde-preserved-verify.yml ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pde-preserved-qualification-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  pde-full-verify:
+    name: Full PDE verify (${{ matrix.name }})
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: schema-jar-cleanup
+            sha: cb61c28ccb90df1cc88d90321e9a0cb548c93b92
+          - name: schema-empty-documentation
+            sha: 201c47e00f9e0bcae8ec3f435eb58704a6ee5027
+          - name: single-schema-storage-stream
+            sha: 0af6ed7d6dca449a50822431a649f5bcad98c452
+          - name: schema-writer-tabs
+            sha: bc14ff377dd3557571b4151576496381e0ef9e31
+          - name: bounded-schema-parser-reuse
+            sha: eedb94d809215598b39d53f711733e0313e04fbe
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: carstenartur/eclipse.pde
+          ref: ${{ matrix.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-java@b843ebf9b913146b38da2eaa7aeddf76074ae1ad # v6.1.0
+        with:
+          distribution: temurin
+          java-version: |
+            11
+            17
+            21
+            25
+          mvn-toolchain-id: |
+            JavaSE-11
+            JavaSE-17
+            JavaSE-21
+            JavaSE-25
+          cache: maven
+      - name: Set up Maven
+        uses: stCarolas/setup-maven@12eb41b233df95d49b0c11fc1b5bc8312e5d4ce0 # v5.1
+        with:
+          maven-version: 3.9.16
+      - name: Install native display dependencies
+        run: sudo apt-get update && sudo apt-get install -y xvfb xauth libxtst6 libgtk-3-0t64
+      - name: Verify the complete configured PDE reactor
+        env:
+          PDE_EXPECTED_SHA: ${{ matrix.sha }}
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$PDE_EXPECTED_SHA"
+          xvfb-run -a -s '-screen 0 1280x1024x24 -nolisten tcp' \
+            mvn --batch-mode --no-transfer-progress --show-version --update-snapshots --errors \
+            -Dcompare-version-with-baselines.skip=false -Pbree-libs -Papi-check \
+            --fail-at-end clean verify -Ptck 2>&1 | tee pde-full-verify.log
+      - name: Preserve full build and test evidence
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: pde-full-verify-${{ matrix.name }}-${{ matrix.sha }}
+          path: |
+            pde-full-verify.log
+            **/target/surefire-reports/**
+            **/target/work/data/.metadata/.log
+          if-no-files-found: warn
+

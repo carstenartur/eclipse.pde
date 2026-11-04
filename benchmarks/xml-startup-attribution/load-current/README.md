@@ -26,7 +26,7 @@ its `xml-followup` contents, and verify `SHA256SUMS` before proceeding.
 node run.cjs prepare --repo /path/to/eclipse.pde \
   --archive /path/to/xml-followup --java-home /path/to/jdk25 --out /path/to/results
 node run.cjs diagnose --out /path/to/results
-node run.cjs measure --out /path/to/results --blocks 3 --label originals
+node run.cjs measure --out /path/to/results --blocks 4 --label originals
 ```
 
 `prepare` compiles the actual source overlays and unchanged archived JMH driver.
@@ -37,8 +37,10 @@ top-level schemas plus 15 real include loads through `SchemaDescriptor` and the
 actual PDE schema model. The workload has 229 top-level model elements.
 
 Each case in each block runs in a fresh JVM with 8 x 2 seconds warmup and 6 x 1
-second measurement, Serial GC, a 512 MiB heap and one active processor. Case order
-rotates and reverses between blocks. Optional `--cpu N` pins the parent and child
+second measurement, Serial GC, a 512 MiB heap and one active processor. The second block reverses the first block's entire case order; the next pair
+rotates by one case. Every pair of cases therefore appears in both orders in the
+first two blocks. Use an even number of blocks (at least four) to complete every
+reversed pair. Optional `--cpu N` pins the parent and child
 JVMs to one allowed Linux CPU; it does not reserve that CPU from other processes.
 Use fork/block means as observations, not six iterations as six independent JVMs.
 CPU and allocation values must come from JMH auxiliary counters' `rawData`; their

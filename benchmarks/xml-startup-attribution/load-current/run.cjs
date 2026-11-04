@@ -94,16 +94,17 @@ if (mode === 'prepare') {
   save('sax-dom-summary.json',rows); console.log(JSON.stringify(rows,null,2));
 } else if (mode === 'measure') {
   const m=read('manifest.json'), selected=(options.cases || 'baseline:original,coalesced:original,reuse:original,combined:original').split(',').map(x=>x.split(':'));
-  const blocks=Number(options.blocks||3), schedule=[], all=[];
-  if (!Number.isInteger(blocks)||blocks<3) throw Error('At least three fresh-JVM blocks required');
+  const blocks=Number(options.blocks||4), schedule=[], all=[];
+  if (!Number.isInteger(blocks)||blocks<4||blocks%2) throw Error('Use an even number of blocks, at least four, for complete reversed pairs');
   for (const [v,c] of selected) if(!m.variants[v]||!m.corpora[c]) throw Error('Unknown variant/corpus');
   validate(m,[...new Set(selected.map(x=>x[0]))],[...new Set(selected.map(x=>x[1]))]);
   for(let block=0;block<blocks;block++) {
-    let order=selected.slice(block%selected.length).concat(selected.slice(0,block%selected.length)); if(block%2)order=order.reverse();
+    const rotation=Math.floor(block/2)%selected.length; let order=selected.slice(rotation).concat(selected.slice(0,rotation)); if(block%2)order=order.reverse();
     for(const [variant,corpus] of order) schedule.push({block,variant,corpus});
   }
   const runId=options.label||'current'; if(!/^[a-z0-9-]+$/.test(runId))throw Error('Unsafe label');
-  save(`schedule-${runId}.json`,{blocks,order:'Rotate cases by block; reverse odd blocks. All comparisons use fresh JVMs.',schedule,warmup:'8 x 2 seconds',measurement:'6 x 1 second',forksPerCasePerBlock:1,exclusiveCpu:options.cpu??null});
+  fs.copyFileSync(__filename,path.join(out,`executed-runner-${runId}.cjs`));
+  save(`schedule-${runId}.json`,{runnerSha256:sha(fs.readFileSync(__filename)),blocks,order:'Rotate cases by block; reverse odd blocks. All comparisons use fresh JVMs.',schedule,warmup:'8 x 2 seconds',measurement:'6 x 1 second',forksPerCasePerBlock:1,cpuAffinity:options.cpu??null});
   for(const item of schedule) {
     const label=`${runId}-b${item.block}-${item.variant}-${item.corpus}`, result=path.join(out,label+'.json'), log=path.join(out,label+'.log');
     const argv=['-Devaluation='+m.archive,'-Dcorpus='+path.join(out,'corpus'),'-cp',cp(m,item.variant),'org.openjdk.jmh.Main','^bench.SchemaLoadBenchmark.loadSchemas$','-p','variant='+item.corpus,'-wi','8','-w','2s','-i','6','-r','1s','-f','1','-rf','json','-rff',result];
