@@ -10,6 +10,10 @@ raw audit metadata is `20dabecfb988073c5c27c9bf68004cf22c6a52f3`.
 The tree includes metadata normalization, appinfo handling and documentation
 policy work. It **does not include preamble PR1805**.
 
+The later [integrated PR1805 audit](../preamble-integrated/README.md) qualifies
+the complete combined formatter. The original figures below remain unchanged
+and provide the baseline for its marginal preamble measurements.
+
 All **298 original schemas** were recovered byte-for-byte: 2,337,930 UTF-8 bytes
 and 4,557 documentation nodes. Every file matches its preserved byte count and
 SHA-256. There are no missing files, substituted revisions or hash mismatches.

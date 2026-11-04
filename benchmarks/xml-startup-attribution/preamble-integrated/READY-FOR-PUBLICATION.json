@@ -1,0 +1,161 @@
+{
+  "status": "qualified",
+  "generatedAt": "2026-11-04T20:38:27.001Z",
+  "headCommit": "0b066c49b074b7c90000e45577a5df470040169f",
+  "headTree": "ffd04d9f47c04173866c471c288ae4d8d51e3965",
+  "baselineCommit": "12033ef005df89f631cb2752e6e0949fbba8a2cd",
+  "baselineTree": "b8ccc2b4253da1e2e49b6cfe496c5aeb95e6ef8f",
+  "corpus": {
+    "schemas": 298,
+    "bytes": 2337930,
+    "documentationNodes": 4557,
+    "sha256": "442e16926ec5ee2e3842ee332ed93f6b5eba490c7c04b6bd9969e3ec95e7a491"
+  },
+  "transformer": {
+    "policies": 8,
+    "idempotenceComparisons": 2384,
+    "transformationCalls": 4768,
+    "allFirstPassIdempotent": true,
+    "marginalDocumentationChanges": 0,
+    "trimNodesVersusOriginal": 108,
+    "trimFilesVersusOriginal": 82,
+    "saxPairs": 7152,
+    "saxInvocations": 14304,
+    "characterContentChanged": false
+  },
+  "native": {
+    "runtimeVariants": 1,
+    "trees": 9,
+    "observations": 8046,
+    "loadedModels": 5364,
+    "htmlDocuments": 2682,
+    "lightweightAnnotations": 2682,
+    "componentComparisons": 14304,
+    "equal": 14304,
+    "different": 0,
+    "blocked": 0,
+    "observationFailures": 0,
+    "includeResolutions": 936,
+    "providerProjects": 9
+  },
+  "byteDeltas": [
+    {
+      "mode": "compact-preserve-preserve",
+      "baselineBytes": 1943420,
+      "integratedBytes": 1932990,
+      "saved": 10430
+    },
+    {
+      "mode": "compact-preserve-trim",
+      "baselineBytes": 1941584,
+      "integratedBytes": 1931154,
+      "saved": 10430
+    },
+    {
+      "mode": "compact-modernize-preserve",
+      "baselineBytes": 1943420,
+      "integratedBytes": 1932990,
+      "saved": 10430
+    },
+    {
+      "mode": "compact-modernize-trim",
+      "baselineBytes": 1941584,
+      "integratedBytes": 1931154,
+      "saved": 10430
+    },
+    {
+      "mode": "indented-preserve-preserve",
+      "baselineBytes": 2086446,
+      "integratedBytes": 2075718,
+      "saved": 10728
+    },
+    {
+      "mode": "indented-preserve-trim",
+      "baselineBytes": 2084610,
+      "integratedBytes": 2073882,
+      "saved": 10728
+    },
+    {
+      "mode": "indented-modernize-preserve",
+      "baselineBytes": 2086446,
+      "integratedBytes": 2075718,
+      "saved": 10728
+    },
+    {
+      "mode": "indented-modernize-trim",
+      "baselineBytes": 2084610,
+      "integratedBytes": 2073882,
+      "saved": 10728
+    }
+  ],
+  "preambleCharacterCallbackDeltas": [
+    {
+      "mode": "compact-preserve-preserve",
+      "fileStream": -9,
+      "stringReader": -3
+    },
+    {
+      "mode": "compact-preserve-trim",
+      "fileStream": -8,
+      "stringReader": -3
+    },
+    {
+      "mode": "compact-modernize-preserve",
+      "fileStream": -9,
+      "stringReader": -3
+    },
+    {
+      "mode": "compact-modernize-trim",
+      "fileStream": -8,
+      "stringReader": -3
+    },
+    {
+      "mode": "indented-preserve-preserve",
+      "fileStream": 0,
+      "stringReader": 9
+    },
+    {
+      "mode": "indented-preserve-trim",
+      "fileStream": 0,
+      "stringReader": 10
+    },
+    {
+      "mode": "indented-modernize-preserve",
+      "fileStream": 0,
+      "stringReader": 9
+    },
+    {
+      "mode": "indented-modernize-trim",
+      "fileStream": 0,
+      "stringReader": 10
+    }
+  ],
+  "scope": {
+    "newTiming": false,
+    "requiredCiClaim": false,
+    "nativeRuntimeOverlay": false,
+    "previousIndependentEvidenceUnmodified": true
+  },
+  "previousArtifacts": [
+    {
+      "name": "xml-integration-audit-20261104-with-osgi.tar.gz",
+      "bytes": 9235665,
+      "sha256": "0c70a429e29e9458694c207cbeb7c7b48d15f6a5e2fca46bf7766218d3bb15fd",
+      "unchanged": true
+    },
+    {
+      "name": "xml-preamble-independent-20261104.tar.gz",
+      "bytes": 1758399,
+      "sha256": "16cae8bda84a56b004902e6b16a5e351d1439e1b26e73f374bd89c4701853107",
+      "unchanged": true
+    }
+  ],
+  "reports": [
+    "INTEGRATED-PREAMBLE-PUBLICATION-SUMMARY.txt",
+    "INTEGRATED-PREAMBLE-AUDIT.txt",
+    "measurement-summary.json",
+    "source-identity.json",
+    "source-review.json",
+    "osgi-audit/runs/product/results/summary.json"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "verifiedAt": "2026-11-04T20:38:26.134Z",
+  "checks": {
+    "publishedTreeExpected": true,
+    "mainTreeEqualsPreviouslyAudited": true,
+    "previousLocalAuditTreeEqualsPublishedBaseline": true,
+    "productionJavaEqualsMain": true,
+    "rootTemplateEqualsIndependent": true,
+    "stylesheetOutsideRootEqualsMain": true,
+    "loadedSourceEqualsPublished": true,
+    "loadedStylesheetEqualsPublished": true
+  },
+  "headRootTemplateSha256": "2f07ed2413142d8b3cd0d66b8997e51bd72eeb4e0501afc1fc218851988a2d15",
+  "productionDiffNumstat": "12\t1\tsandbox_xml_cleanup/src/resources/formatter.xsl\n",
+  "productionDiff": "diff --git a/sandbox_xml_cleanup/src/resources/formatter.xsl b/sandbox_xml_cleanup/src/resources/formatter.xsl\nindex e33b179f..cd8d0cc5 100644\n--- a/sandbox_xml_cleanup/src/resources/formatter.xsl\n+++ b/sandbox_xml_cleanup/src/resources/formatter.xsl\n@@ -11,7 +11,18 @@\n     <xsl:param name=\"trim-documentation\" select=\"false()\"/>\n \n     <xsl:template match=\"/\">\n-        <xsl:for-each select=\"*|comment()|processing-instruction()\">\n+        <!-- The PDE writer emits this provenance marker before schemas using\n+             these unprefixed QName and namespace conventions. Keep all other\n+             comments, including identical text inside or after the root. -->\n+        <xsl:variable name=\"pde-schema\" select=\"\n+            /*[(self::schema or self::xs:schema) and name() = 'schema'\n+                and not(@xml:space = 'preserve')]\n+            /*[name() = 'annotation' and namespace-uri() = namespace-uri(/*)]\n+            /*[(name() = 'appInfo' or name() = 'appinfo') and namespace-uri() = namespace-uri(/*)]\n+            /*[name() = 'meta.schema' and namespace-uri() = namespace-uri(/*)]\"/>\n+        <xsl:for-each select=\"*|processing-instruction()|comment()[\n+            not($pde-schema and not(preceding-sibling::*)\n+                and . = ' Schema file written by PDE ')]\">\n             <xsl:if test=\"$indent\"><xsl:text>&#10;</xsl:text></xsl:if>\n             <xsl:apply-templates select=\".\"/>\n         </xsl:for-each>\n",
+  "testReview": "The merge corrects two concatenated lines defining one exact expected indentation string; exact assertions remain. Integration strengthens mixed preamble/CDATA-token/PI and actual-CDATA combined-policy tests. Read-only secondary source review found no weakening."
+}

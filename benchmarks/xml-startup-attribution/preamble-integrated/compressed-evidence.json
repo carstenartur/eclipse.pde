@@ -1,0 +1,29 @@
+{
+  "purpose": "Lossless storage of unchanged raw observations. Decompress to the filenames used by the original audit report; the complete reproduction archive retains uncompressed originals.",
+  "files": [
+    {
+      "originalFile": "per-file-results.jsonl",
+      "originalBytes": 9242208,
+      "originalSha256": "a24b335bd0582c83a4ce54c68d114ef3069fd4699a7c6d4fcf0655e3ed08921f",
+      "publishedFile": "per-file-results.jsonl.gz",
+      "compressedBytes": 481277,
+      "compressedSha256": "5aaaef86a114f0ffc4d35b3f0ae449d5aa2bdf3643b375143005130a5f5200e9"
+    },
+    {
+      "originalFile": "osgi-audit/runs/product/results/observations.jsonl",
+      "originalBytes": 4742610,
+      "originalSha256": "6d9afca9858d3ee70e144139901cbb555c6bf12a6ccb4bced17fe1ea7631d474",
+      "publishedFile": "osgi-audit/runs/product/results/observations.jsonl.gz",
+      "compressedBytes": 757987,
+      "compressedSha256": "143c637a703b0c97451a69fca6d313469ab80cbf15f176cfe5db3bfec98be68f"
+    },
+    {
+      "originalFile": "osgi-audit/runs/product/results/include-resolutions.json",
+      "originalBytes": 767942,
+      "originalSha256": "6e35ed4ce517a869430b7d68a921783c6ab09029102a305937abbfd962c381d6",
+      "publishedFile": "osgi-audit/runs/product/results/include-resolutions.json.gz",
+      "compressedBytes": 18539,
+      "compressedSha256": "8bfd3055da74118e3512fc0db9bfc6bb75b3b233e7643d7001285ed8be7a312b"
+    }
+  ]
+}

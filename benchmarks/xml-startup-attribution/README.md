@@ -13,6 +13,20 @@ of XML loading at startup. The new heavily instrumented traces establish
 attribution; they do not replace the older uninstrumented timing matrix with a
 startup speedup claim.
 
+The [final integrated formatter audit](preamble-integrated/README.md) now also
+qualifies the actual combined PR1805 source against all 298 original schemas,
+all eight policies and native PDE consumers. The
+[independent-head preamble result](preamble-independent/README.md) remains
+separate so byte savings and callback grouping are not attributed to the wrong
+source revision.
+
+All five independent PDE fixes now pass their
+[complete Linux PDE reactor builds](pde-full-ci/README.md), including all 26
+focused regression methods in the full UI suite. The original CI artifact ZIPs
+are retained with hashes. The direct-DOM alternative also passes a
+[fresh compatibility check](direct-dom-current/README.md); its older timing
+comparison remains separately bounded.
+
 **Follow-up:** [Actual extension-instance validation](instance-validation/README.md)
 now covers 939 contributions in all 83 configured production XML descriptors.
 It records schema/runtime inconsistencies, targeted schema patches, and actual

@@ -1,0 +1,34 @@
+{
+  "recordedAt": "2026-11-04T20:34:04.136Z",
+  "headCommit": "0b066c49b074b7c90000e45577a5df470040169f",
+  "headTree": "ffd04d9f47c04173866c471c288ae4d8d51e3965",
+  "headParents": [
+    "f8dfe691a79de75f55c7633714a15c5626ca6166",
+    "bd5116de4929805bb719864e367684e945088b52"
+  ],
+  "mainCommit": "bd5116de4929805bb719864e367684e945088b52",
+  "mainTree": "b8ccc2b4253da1e2e49b6cfe496c5aeb95e6ef8f",
+  "previousAuditedCommit": "12033ef005df89f631cb2752e6e0949fbba8a2cd",
+  "previousAuditedTree": "b8ccc2b4253da1e2e49b6cfe496c5aeb95e6ef8f",
+  "independentHead": "f8dfe691a79de75f55c7633714a15c5626ca6166",
+  "productionJavaMatchesMain": true,
+  "productionJavaSha256": "60154b4499206e5325816c585f661b73c79e380dd4952d79deae2f488159d404",
+  "stylesheetSha256": "580943baf3e7735687dc1573aee2e7479acc5aa89157e3966c96408990fa9b6a",
+  "mainStylesheetSha256": "f36b1ac3fabbcce1e813851dfe63f42b9f0d06abec8305cad2bdf67fac62e6e7",
+  "independentStylesheetSha256": "cffa491efd8723ca78c990063514fea6cc272151557088d04bf3c57acbadeb1e",
+  "corpusSha256": "442e16926ec5ee2e3842ee332ed93f6b5eba490c7c04b6bd9969e3ec95e7a491",
+  "baselineOutputManifestSha256": "49fc739cd00ef24a6f2d172db6ff3d93bfe9b48567e6bef9c8bd55c9142214a8",
+  "previousArtifactsUnmodified": [
+    {
+      "name": "xml-integration-audit-20261104-with-osgi.tar.gz",
+      "bytes": 9235665,
+      "sha256": "0c70a429e29e9458694c207cbeb7c7b48d15f6a5e2fca46bf7766218d3bb15fd"
+    },
+    {
+      "name": "xml-preamble-independent-20261104.tar.gz",
+      "bytes": 1758399,
+      "sha256": "16cae8bda84a56b004902e6b16a5e351d1439e1b26e73f374bd89c4701853107"
+    }
+  ],
+  "scope": "Eight policies on integrated head; one unchanged reference OSGi runtime; no timing or CI claim"
+}

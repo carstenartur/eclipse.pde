@@ -1,0 +1,12 @@
+Integrated #1805 at 0b066c49b074b7c90000e45577a5df470040169f (tree ffd04d9f47c04173866c471c288ae4d8d51e3965) passed the exact recovered 298-schema audit. Main bd5116de has the same tree as the previously audited 12033ef. All eight formatting/appinfo/documentation policies are first-pass idempotent (2,384 comparisons, 4,768 transforms); all 4,557 documentation nodes remain, and documentation signatures exactly match the corresponding 12033 outputs. Against originals, preserve changes zero documentation nodes; opt-in trim changes only 108 eligible boundaries in 82 files.
+
+The integrated preamble marginal savings are 10,430 bytes compact and 10,728 bytes indented (35/36 bytes for each of 298 files), with no other output difference. Integrated corpus totals: compact preserve 1,932,990 bytes, compact trim 1,931,154; indented preserve 2,075,718, indented trim 2,073,882. Both appinfo policies share these aggregate counts.
+
+Character data did not decrease: every per-file UTF-16 character-content hash and unit count is identical before/after. File-stream character callbacks shift -9 compact/preserve, -8 compact/trim, and 0 for indented; StringReader shifts -3 compact, +9 indented/preserve, +10 indented/trim. These are input-dependent grouping changes over the same text. Lexical observation separately removes 298 comment callbacks / 8,344 comment-body units per policy. Outside-root character events remain zero. Do not substitute these integrated counts for the earlier independent-head +2/+5 file-stream results; that report remains intact.
+
+One unchanged reference OSGi/PDE Core 3.21.400.v20260810-0751 runtime qualified original plus eight outputs: 8,046 observations, 5,364 loaded models, 2,682 native HTML documents, 14,304 equal component comparisons, zero different/blocked/failures, and 936 verified actual include resolutions. Real matching workspace schema providers and native logging were active. No timing/startup claim is made; owning CI remains separate.
+
+Full report: INTEGRATED-PREAMBLE-AUDIT.txt
+Machine measurements: measurement-summary.json
+Native summary: osgi-audit/runs/product/results/summary.json
+Provenance and handoff: READY-FOR-PUBLICATION.json

@@ -1,0 +1,65 @@
+Integrated PR #1805: final 298-schema qualification
+
+Status: PASS for the exact integrated formatter and one unchanged reference OSGi product. This is corpus correctness and byte/event evidence; it does not establish a timing or startup improvement or replace the owning session's required CI.
+
+Pinned implementation
+
+Published head: 0b066c49b074b7c90000e45577a5df470040169f
+Tree: ffd04d9f47c04173866c471c288ae4d8d51e3965
+Main parent: bd5116de4929805bb719864e367684e945088b52
+Previously audited baseline: 12033ef005df89f631cb2752e6e0949fbba8a2cd
+Main and the previous audit share tree b8ccc2b4253da1e2e49b6cfe496c5aeb95e6ef8f.
+
+The production Java source is byte-identical to main and the previous audit (SHA-256 60154b4499206e5325816c585f661b73c79e380dd4952d79deae2f488159d404). Integrated formatter.xsl SHA-256 is 580943baf3e7735687dc1573aee2e7479acc5aa89157e3966c96408990fa9b6a. Its root template exactly matches independent f8dfe691; all stylesheet content outside that template exactly matches main. The only production delta from main is 12 additions and one deletion in the XSL root template. The integration correction changes two concatenated lines defining one exact expected indentation string; existing exact assertions remain. Read-only secondary review found no production weakening. source-review.json records the automatic comparisons and production diff.
+
+Corpus and documentation
+
+The same 298 original schemas were copied from the recovered historical study corpus, with every SHA-256 and byte length asserted before transformation: 2,337,930 original bytes, 4,557 documentation nodes, digest 442e16926ec5ee2e3842ee332ed93f6b5eba490c7c04b6bd9969e3ec95e7a491. All 298 files contain exactly one generated pre-root marker; the corpus contains zero actual CDATA nodes. The existing focused CDATA fixtures and owning CI remain separate from this corpus's coverage.
+
+All eight combinations of compact/indented, preserve/modernize appinfo, and preserve/trim plain documentation boundaries passed. There were 2,384 first-pass idempotence comparisons and 4,768 transformation calls. Each policy produces 298 files retaining all 4,557 documentation nodes. Documentation signatures are exactly equal to the corresponding previously audited output for every file and policy. Relative to the original files, preserve policies change no documentation signatures; opt-in trim policies change only the already qualified 108 eligible nodes in 82 files, preserving their interior text and structure.
+
+Marginal bytes versus the prior combined formatter
+
+| Layout | Documentation policy | Previous bytes | Integrated bytes | Additional bytes saved | Total saved versus original |
+|---|---|---:|---:|---:|---:|
+| Compact | Preserve | 1,943,420 | 1,932,990 | 10,430 | 404,940 |
+| Compact | Trim plain boundaries | 1,941,584 | 1,931,154 | 10,430 | 406,776 |
+| Indented | Preserve | 2,086,446 | 2,075,718 | 10,728 | 262,212 |
+| Indented | Trim plain boundaries | 2,084,610 | 2,073,882 | 10,728 | 264,048 |
+
+Both appinfo policies have these same aggregate values. Every complete new XML string was checked against its corresponding previous output: the only difference is removal of the exact generated marker, plus its single layout newline in indented output. That is 35 bytes per compact file and 36 per indented file, reproducing 10,430 and 10,728 marginal bytes on the integrated tree. The previous outputs were reused from the completed 12033 audit, copied, hashed individually, and checked against the new per-file evidence. They were not regenerated or claimed as a new baseline run.
+
+Character content is unchanged
+
+Both sides were parsed with the actual Eclipse XmlProcessorFactory.createSAXParserWithErrorOnDOCTYPE() API on Temurin Java 25.0.5+8-LTS, using the same JDK Xerces reader and namespace-awareness setting. Three input modes were paired: file stream/content handler only; file stream/content plus lexical handler; StringReader/content plus lexical handler. The 7,152 old/new pairs comprise 14,304 SAX parser invocations.
+
+| Layout / documentation | File-stream character callbacks | Delta | StringReader character callbacks | Delta | Character UTF-16 units on both sides |
+|---|---:|---:|---:|---:|---:|
+| Compact / preserve | 54,777 → 54,768 | -9 | 54,769 → 54,766 | -3 | 1,065,211 |
+| Compact / trim | 54,772 → 54,764 | -8 | 54,765 → 54,762 | -3 | 1,063,375 |
+| Indented / preserve | 89,850 → 89,850 | 0 | 89,847 → 89,856 | +9 | 1,207,343 |
+| Indented / trim | 89,845 → 89,845 | 0 | 89,842 → 89,852 | +10 | 1,205,507 |
+
+File-stream counts are identical with and without the lexical observer. Both appinfo policies have the same aggregates. Every file, policy, and input mode has the same concatenated character-content SHA-256 and UTF-16 unit count before and after. Outside-root character callbacks and units remain zero. The character callback shifts are grouping changes over identical character data; their dependence on the input mechanism is consistent with parser buffer-boundary effects. They are not evidence of reduced character data, and no timing was measured here.
+
+The lexical observer records 298 fewer comment callbacks and 8,344 fewer comment-body UTF-16 units for every policy: exactly one 28-unit generated comment per schema. Content-only handlers receive no comment callbacks on either side. Element, processing-instruction, inside-root/post-root comment, and ignorable-whitespace invariants hold. callback-partition-differences.json lists all files with changed character-callback grouping. These integrated counts are distinct from the independent f8dfe691 results (+2/+5 file-stream shifts); the earlier independent report remains unchanged.
+
+Actual PDE consumer qualification
+
+One real Equinox reference runtime was used, with active PDE Core and workspace services. PDE Core 3.21.400.v20260810-0751 is the unchanged reference jar (SHA-256 6c8e23b59dc7e7644deb2e4c8388531029326689ba8b6fcb0a2bc773dff72125); no production class overlay or mocked loaded state was used. Runtime identities and class hashes match the earlier native product audit.
+
+Original plus all eight transformed trees produced 8,046 observations: 2,682 lightweight annotation parses, 5,364 successfully loaded full/abbreviated models, and 2,682 full-model HTML documents. All 14,304 original-versus-transformed component comparisons are exactly equal, with zero different, blocked, or failed observations. Components cover lightweight annotation name/description; full metadata/grammar, documentation, and generated HTML; and abbreviated metadata/grammar plus raw/lazy documentation. HTML comparisons use exact native SchemaTransformer.BUILD output without normalization.
+
+All 936 actual include resolutions passed. Nine real workspace provider projects expose the matching original/transformed org.eclipse.core.expressions schema through PluginRegistry and SchemaRegistry; canonical include targets and loaded state are checked. Relative includes use actual file URLs. Exceptions and native ERROR statuses are retained as failures, not suppressed. The only framework log entry after the successful result is the severity-2 workspace shutdown warning about unsaved changes in the disposable audit workspace.
+
+Evidence and reproduction
+
+Run in this directory:
+  bash run-transformer-audit.sh
+  bash osgi-audit/run-osgi.sh product
+
+Both run scripts permit a PDE_JAVA_HOME override; the native runner also permits PDE_TEST_RUNTIME. The standalone Maven POM pins the restored reference-product paths used for this run. The standalone Maven POM uses cached JUnit 6.0.3 and Surefire 3.5.6, compiler 3.16.0, and exact production Java/XSL from the published head. This is a local bulk audit test (one JUnit test invoking the corpus matrix), not the repository's full Tycho or required CI suite. The prepared corpus and baseline outputs are included; source preparation scripts also record their previous-audit and Git-object dependencies.
+
+Raw evidence: measurement-summary.json; per-file-results.jsonl; callback-partition-differences.json; maven-audit.log; formatter/target/surefire-reports; osgi-audit/product-run.log; osgi-audit/runs/product/identity.json; osgi-audit/runs/product/results/{runtime.json,summary.json,observations.jsonl,include-resolutions.json}. Provenance: source-identity.json; source-review.json; baseline-output-manifest.json; corpus-expected.tsv; corpus-recovery.json; study-experiment-manifest.json.
+
+Both previous archives retain their exact byte lengths and SHA-256 identities. This integrated audit is a new, separate deliverable. No branch, PR, merge, foreign checkout, or previous report was changed.

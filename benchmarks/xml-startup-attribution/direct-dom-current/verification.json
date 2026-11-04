@@ -1,0 +1,132 @@
+{
+  "verifiedAtUtc": "2026-11-04T20:34:32.880Z",
+  "prototypeCommit": "f46383e59b70d06526857e0f3c85563862a88a3b",
+  "sourceTree": "0e0a3f25083965980dc3ae879e701f2024622522",
+  "schemaFiles": 21,
+  "command": "bash benchmarks/direct-dom-comparison/run.sh --check",
+  "runtime": "/workspace/scratch/59a9c0b92707/recovered-runtime/reference-product/plugins/org.eclipse.core.runtime_3.35.0.v20260623-1631.jar",
+  "runtimeSha256": "5b0c2794e9fe1785360dec920cc802f3388a0eb72ee25b89054b79ff3e2f07c9",
+  "javaHome": "/workspace/scratch/567cb6a530cb/wizard-test-runtime/jdk-25.0.5+8",
+  "javaVersion": "openjdk version \"25.0.5\" 2026-10-20 LTS\nOpenJDK Runtime Environment Temurin-25.0.5+8 (build 25.0.5+8-LTS)\nOpenJDK 64-Bit Server VM Temurin-25.0.5+8 (build 25.0.5+8-LTS, mixed mode, sharing)\n",
+  "exitCode": 0,
+  "error": null,
+  "logSha256": "81f5826dd4f197e061e4f4b1791566ac63849a44de229b634395b2ce03bcdfe7",
+  "files": [
+    {
+      "path": "benchmarks/direct-dom-comparison/README.md",
+      "sha256": "6391792b2bf597c796de1f25fef52e8ff45b5c917e9a67931628b8759e582592"
+    },
+    {
+      "path": "benchmarks/direct-dom-comparison/pilot-results.tsv",
+      "sha256": "ff518140bffc41635306292020c5b34cf3915fcaf632aeade8e7ae68bdcad585"
+    },
+    {
+      "path": "benchmarks/direct-dom-comparison/results.tsv",
+      "sha256": "32b4eef1b0247b7707e35bd6256acc56a983d87df0b4f3f4cab3a05257e9864b"
+    },
+    {
+      "path": "benchmarks/direct-dom-comparison/run.sh",
+      "sha256": "fa3bc82c5abf26114d84c798654ed2c623722627ebcf3d1d9e91ed907d31e271"
+    },
+    {
+      "path": "benchmarks/direct-dom-comparison/src/org/eclipse/pde/internal/core/schema/SchemaDocumentParserBenchmark.java",
+      "sha256": "1e9f182364b8642d2e8a045918b5c8096b7e19b14c90f713e38c5d68d2af7332"
+    },
+    {
+      "path": "benchmarks/direct-dom-comparison/src/org/eclipse/pde/internal/core/schema/SchemaDocumentParserComparison.java",
+      "sha256": "85f772cf3886881887360275297470531ee98fc2aaf6bc51c785ee637a5f2f21"
+    },
+    {
+      "path": "build/org.eclipse.pde.build/schema/fetchFactories.exsd",
+      "sha256": "2de3d41bebc016e1ad5241e578f29a5f7faa49aaddfdc26483393d34e3c778d1"
+    },
+    {
+      "path": "e4tools/bundles/org.eclipse.e4.tools.emf.ui/schema/org.eclipse.e4.tools.emf.ui.editors.exsd",
+      "sha256": "6d9d21cc123adccf77cf827849d27942f966814c44a44c04950db58686c00224"
+    },
+    {
+      "path": "e4tools/bundles/org.eclipse.e4.tools.emf.ui/schema/org.eclipse.e4.tools.emf.ui.scripting.exsd",
+      "sha256": "5811505ffd541d85985f4e71b1e5803d649bd46d0cac356db78c0366b26d5938"
+    },
+    {
+      "path": "ui/org.eclipse.pde.core/schema/bundleClasspathResolvers.exsd",
+      "sha256": "fa9a126456e4e8de13e342832578707d7464bf001cbc4011797fc671010c70f1"
+    },
+    {
+      "path": "ui/org.eclipse.pde.core/schema/dynamicSource.exsd",
+      "sha256": "1ba8031cc5b5a0a3aada40a2d8274c21d8d04edda62a812810a8d536c9f58079"
+    },
+    {
+      "path": "ui/org.eclipse.pde.core/schema/javadoc.exsd",
+      "sha256": "87f5f447b138b5f91dd1ed82c0940176f4a12e60a56ce127afebe00ef87cdaab"
+    },
+    {
+      "path": "ui/org.eclipse.pde.core/schema/pluginClasspathContributors.exsd",
+      "sha256": "8fad54a898217ba11e2dd232c0b9809ed397e9f08e3da737f36b4231e8792e94"
+    },
+    {
+      "path": "ui/org.eclipse.pde.core/schema/source.exsd",
+      "sha256": "438e89e772a1b00ff21f6905bbd0d4bc1c53e6d9f5130d7e9c73705a73d2e311"
+    },
+    {
+      "path": "ui/org.eclipse.pde.core/schema/targetLocations.exsd",
+      "sha256": "565d9e6c81508abe252dd5751832e8c10f533812d538d14f72ecc239930899b6"
+    },
+    {
+      "path": "ui/org.eclipse.pde.core/schema/targets.exsd",
+      "sha256": "9a8d545ac82a1515a725234e76cd1f42e0f17cad7dfdefc810d90caefb605ff0"
+    },
+    {
+      "path": "ui/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/XMLDefaultHandler.java",
+      "sha256": "96d3fb0a82a530ca70c7d2cc2c005e2092b02d4dbcca9ca4349970b7ba05c155"
+    },
+    {
+      "path": "ui/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/schema/SchemaDocumentParser.java",
+      "sha256": "5945b08e8e996ce7ab061cf6e5c3a7d6d21d0020e37cc6709e0bd270e5c88e7c"
+    },
+    {
+      "path": "ui/org.eclipse.pde.launching/schema/osgiFrameworks.exsd",
+      "sha256": "b721f547d64df6fb73e0b7177acc1968cab3eca509966f0d9a913b6f76b10a96"
+    },
+    {
+      "path": "ui/org.eclipse.pde.spy.core/schema/spyPart.exsd",
+      "sha256": "1dbae3053b5867dd7024ab1d8e165b4f0a5ad50cd9419aa0ed12617ce17435cd"
+    },
+    {
+      "path": "ui/org.eclipse.pde.ui/schema/launchShortcuts.exsd",
+      "sha256": "089f02878e71624cbcf75973365ca12c53cc5b0e0a415a97b8f90a34a7b125c9"
+    },
+    {
+      "path": "ui/org.eclipse.pde.ui/schema/newExtension.exsd",
+      "sha256": "8f1ec2b4783495e21182a0d2edce8de74fb5306fcbd457a403192b6e8ad90a4b"
+    },
+    {
+      "path": "ui/org.eclipse.pde.ui/schema/pluginContent.exsd",
+      "sha256": "f49ae3964d3250a4c640e897c710747dd70834b7bdf32e4aee9b94c4f4237ab8"
+    },
+    {
+      "path": "ui/org.eclipse.pde.ui/schema/samples.exsd",
+      "sha256": "b927c54f71d05c949d6febd537753676a1c3b37db02cb9af5eea348694a1eb8f"
+    },
+    {
+      "path": "ui/org.eclipse.pde.ui/schema/targetLocationProvisioners.exsd",
+      "sha256": "b82511223d3552a2644a9ca98bff7e9d5623673ac5e0e555ec0ef9145ed1e28b"
+    },
+    {
+      "path": "ui/org.eclipse.pde.ui/schema/templates.exsd",
+      "sha256": "2a2921a188ec279f8f25798f0fc482572a8a5faa3a7cfba0469ffda6772e89c0"
+    },
+    {
+      "path": "ui/org.eclipse.pde.ui.templates/templates_3.3/splashHandlers/schema/splashExtension.exsd",
+      "sha256": "69f749f6c8cb2be7b7e5d7d5398f16bfc78ba19c1d47969420d6a013bc15c5d3"
+    },
+    {
+      "path": "ui/org.eclipse.pde.ui.tests/tests/performance/schema/navigatorContent.exsd",
+      "sha256": "efa5216155371100c1ddc174386ea9571c15446dd29eb7d181c3c0e1df028192"
+    },
+    {
+      "path": "ui/org.eclipse.ui.trace/schema/traceComponents.exsd",
+      "sha256": "c722e26633bdf7b611612a8486d89f409410a33eed586d80efed3e0227ef6b07"
+    }
+  ]
+}

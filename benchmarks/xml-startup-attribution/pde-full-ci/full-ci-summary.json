@@ -1,0 +1,878 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-11-04T20:39:58.448Z",
+  "repository": "carstenartur/eclipse.pde",
+  "runId": 41903416722,
+  "runUrl": "https://github.com/carstenartur/eclipse.pde/actions/runs/41903416722",
+  "runAttempt": 1,
+  "runConclusion": "success",
+  "workflowCommit": "2f962bc935d6a8003abaee2863c4745cf90ad73c",
+  "workflowPath": ".github/workflows/pde-preserved-verify.yml",
+  "workflowSourceSha256": "361eba3fee841e00e7e49ad073b6e4b987ec9d576106fc7d1f89cfe7c6da1f51",
+  "runner": "ubuntu-24.04",
+  "jdkToolchains": [
+    11,
+    17,
+    21,
+    25
+  ],
+  "activeJdk": 25,
+  "mavenVersion": "3.9.16",
+  "command": "xvfb-run -a -s '-screen 0 1280x1024x24 -nolisten tcp' mvn --batch-mode --no-transfer-progress --show-version --update-snapshots --errors -Dcompare-version-with-baselines.skip=false -Pbree-libs -Papi-check --fail-at-end clean verify -Ptck",
+  "sourceHeadsUnchanged": true,
+  "countsMethod": "Sum the 14 final Maven result summaries, each from a completed Surefire invocation. Cross-check passed totals and focused methods with a real XML parser. XML suite header attributes and raw testcase counts are also retained because nested-suite/ignored records use different reporting conventions; neither is substituted for Maven totals.",
+  "scope": "Complete configured Linux PDE reactor at five independent preserved heads. Existing suite skips remain visible; no verification gate or focused regression test was disabled. This is not a Windows/macOS CI result.",
+  "aggregate": {
+    "jobs": 5,
+    "tests": 19991,
+    "passed": 19781,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 210,
+    "focusedPassed": 26,
+    "focusedSkipped": 0
+  },
+  "branches": [
+    {
+      "branch": "fix/schema-jar-cleanup",
+      "slug": "schema-jar-cleanup",
+      "sha": "cb61c28ccb90df1cc88d90321e9a0cb548c93b92",
+      "jobId": 126831565044,
+      "jobUrl": "https://github.com/carstenartur/eclipse.pde/actions/runs/41903416722/job/126831565044",
+      "conclusion": "success",
+      "reactorProjects": 69,
+      "successfulReactorProjects": 69,
+      "finishedAt": "2026-11-04T20:26:26Z",
+      "buildDuration": "19:14 min",
+      "mavenVersion": "3.9.16",
+      "javaVersion": "25.0.5",
+      "reportedTotals": {
+        "tests": 4000,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 42,
+        "passed": 3958
+      },
+      "moduleResultGroups": 14,
+      "moduleResults": [
+        {
+          "module": "org.eclipse.pde.ui.tests",
+          "line": 2969,
+          "tests": 743,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 13
+        },
+        {
+          "module": "org.eclipse.pde.api.tools.tests",
+          "line": 5879,
+          "tests": 2626,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "module": "org.eclipse.pde.ds.tests",
+          "line": 6021,
+          "tests": 44,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "module": "org.eclipse.pde.ds.annotations.tests",
+          "line": 6253,
+          "tests": 139,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "module": "org.eclipse.pde.ua.tests",
+          "line": 6436,
+          "tests": 45,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "module": "org.eclipse.pde.junit.runtime.tests",
+          "line": 6965,
+          "tests": 54,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "module": "org.eclipse.pde.ui.templates.tests",
+          "line": 8396,
+          "tests": 50,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 24
+        },
+        {
+          "module": "org.eclipse.pde.genericeditor.extension.tests",
+          "line": 8511,
+          "tests": 34,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "module": "org.eclipse.e4.tools.compatibility.migration.tests",
+          "line": 9128,
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "module": "org.eclipse.e4.tools.emf.ui.tests",
+          "line": 9622,
+          "tests": 73,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "module": "org.eclipse.e4.tools.persistence.tests",
+          "line": 9689,
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "module": "org.eclipse.e4.tools.test",
+          "line": 9777,
+          "tests": 24,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "module": "org.eclipse.pde.build.tests",
+          "line": 10290,
+          "tests": 112,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 4
+        },
+        {
+          "module": "org.eclipse.pde.build.tests",
+          "line": 11459,
+          "tests": 52,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 1
+        }
+      ],
+      "xmlReports": 50,
+      "xmlPassedRecords": 3958,
+      "xmlSuiteAttributeTests": 3245,
+      "xmlCaseRecords": 4011,
+      "xmlSkippedRecords": 53,
+      "focused": {
+        "className": "org.eclipse.pde.core.tests.internal.schema.SchemaURLConnectionTest",
+        "passed": 7,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "methods": [
+          "missingAnnotationEntryDoesNotReconnectDuringCleanup",
+          "malformedAnnotationParseClosesStreamAndJar",
+          "successfulSchemaLoadClosesStreamAndJar",
+          "successfulAnnotationParseClosesStreamAndJar",
+          "missingSchemaEntryDoesNotReconnectDuringCleanup",
+          "malformedSchemaClosesStreamAndJar",
+          "missingSchemaCanLoadAfterResourceIsCreated"
+        ],
+        "xmlReport": "ui/org.eclipse.pde.ui.tests/target/surefire-reports/TEST-org.eclipse.pde.ui.tests.AllPDETests.xml"
+      },
+      "artifact": {
+        "id": 13359454525,
+        "name": "pde-full-verify-schema-jar-cleanup-cb61c28ccb90df1cc88d90321e9a0cb548c93b92",
+        "file": "pde-full-verify-schema-jar-cleanup-41903416722.zip",
+        "bytes": 637244,
+        "sha256": "2d8c6fa90fca98dc1ae8268ea7dfdbbb24cb1056f38a684d2e2f039578a11086",
+        "crcVerified": true,
+        "createdAt": "2026-11-04T20:26:31Z",
+        "expiresAt": "2027-02-02T20:06:37Z"
+      },
+      "buildLogSha256": "b8747901a8354def39fa46f39720e8351da78f8dfc8117c45f3d4263d49eb55f",
+      "jobLogSha256": "f7a19e2d06da53337efffadad9e73f2a41e16178102647a8d20f95bf208cd137"
+    },
+    {
+      "branch": "fix/schema-empty-documentation",
+      "slug": "schema-empty-documentation",
+      "sha": "201c47e00f9e0bcae8ec3f435eb58704a6ee5027",
+      "jobId": 126831565375,
+      "jobUrl": "https://github.com/carstenartur/eclipse.pde/actions/runs/41903416722/job/126831565375",
+      "conclusion": "success",
+      "reactorProjects": 69,
+      "successfulReactorProjects": 69,
+      "finishedAt": "2026-11-04T20:29:51Z",
+      "buildDuration": "22:38 min",
+      "mavenVersion": "3.9.16",
+      "javaVersion": "25.0.5",
+      "reportedTotals": {
+        "tests": 3999,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 42,
+        "passed": 3957
+      },
+      "moduleResultGroups": 14,
+      "moduleResults": [
+        {
+          "module": "org.eclipse.pde.ui.tests",
+          "line": 2968,
+          "tests": 742,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 13
+        },
+        {
+          "module": "org.eclipse.pde.api.tools.tests",
+          "line": 5878,
+          "tests": 2626,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "module": "org.eclipse.pde.ds.tests",
+          "line": 6020,
+          "tests": 44,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "module": "org.eclipse.pde.ds.annotations.tests",
+          "line": 6252,
+          "tests": 139,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "module": "org.eclipse.pde.ua.tests",
+          "line": 6435,
+          "tests": 45,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "module": "org.eclipse.pde.junit.runtime.tests",
+          "line": 6964,
+          "tests": 54,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "module": "org.eclipse.pde.ui.templates.tests",
+          "line": 8396,
+          "tests": 50,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 24
+        },
+        {
+          "module": "org.eclipse.pde.genericeditor.extension.tests",
+          "line": 8511,
+          "tests": 34,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "module": "org.eclipse.e4.tools.compatibility.migration.tests",
+          "line": 9129,
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "module": "org.eclipse.e4.tools.emf.ui.tests",
+          "line": 9623,
+          "tests": 73,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "module": "org.eclipse.e4.tools.persistence.tests",
+          "line": 9690,
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "module": "org.eclipse.e4.tools.test",
+          "line": 9778,
+          "tests": 24,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "module": "org.eclipse.pde.build.tests",
+          "line": 10291,
+          "tests": 112,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 4
+        },
+        {
+          "module": "org.eclipse.pde.build.tests",
+          "line": 11460,
+          "tests": 52,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 1
+        }
+      ],
+      "xmlReports": 50,
+      "xmlPassedRecords": 3957,
+      "xmlSuiteAttributeTests": 3244,
+      "xmlCaseRecords": 4010,
+      "xmlSkippedRecords": 53,
+      "focused": {
+        "className": "org.eclipse.pde.core.tests.internal.SchemaDocumentationTest",
+        "passed": 6,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "methods": [
+          "preservesLiteralExamplesDuringFullLoad",
+          "loadsEmptyAndBlankDocumentationInBothModes",
+          "readsEmptyElementDocumentation",
+          "readsEmptyNamedDocumentationSection",
+          "keepsExistingDocumentationNormalization",
+          "readsEmptyOverviewDocumentation"
+        ],
+        "xmlReport": "ui/org.eclipse.pde.ui.tests/target/surefire-reports/TEST-org.eclipse.pde.ui.tests.AllPDETests.xml"
+      },
+      "artifact": {
+        "id": 13361775481,
+        "name": "pde-full-verify-schema-empty-documentation-201c47e00f9e0bcae8ec3f435eb58704a6ee5027",
+        "file": "pde-full-verify-schema-empty-documentation-41903416722.zip",
+        "bytes": 638022,
+        "sha256": "27f76f2b75c9f86385e9bda042fa6da4f4835b19fa84b8f2eaf75151fe7f3409",
+        "crcVerified": true,
+        "createdAt": "2026-11-04T20:29:57Z",
+        "expiresAt": "2027-02-02T20:06:37Z"
+      },
+      "buildLogSha256": "7f011f5d9adfe46e4744efa55cc04803c38d834fa8e48c0e943b1e4b67be735e",
+      "jobLogSha256": "84f73eab5941c97a0dfd213d25c8056b4f6f4dd50d2601f4a92672fb71a838bb"
+    },
+    {
+      "branch": "fix/single-schema-storage-stream",
+      "slug": "single-schema-storage-stream",
+      "sha": "0af6ed7d6dca449a50822431a649f5bcad98c452",
+      "jobId": 126831564752,
+      "jobUrl": "https://github.com/carstenartur/eclipse.pde/actions/runs/41903416722/job/126831564752",
+      "conclusion": "success",
+      "reactorProjects": 69,
+      "successfulReactorProjects": 69,
+      "finishedAt": "2026-11-04T20:34:06Z",
+      "buildDuration": "26:49 min",
+      "mavenVersion": "3.9.16",
+      "javaVersion": "25.0.5",
+      "reportedTotals": {
+        "tests": 3996,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 42,
+        "passed": 3954
+      },
+      "moduleResultGroups": 14,
+      "moduleResults": [
+        {
+          "module": "org.eclipse.pde.ui.tests",
+          "line": 2965,
+          "tests": 739,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 13
+        },
+        {
+          "module": "org.eclipse.pde.api.tools.tests",
+          "line": 5875,
+          "tests": 2626,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "module": "org.eclipse.pde.ds.tests",
+          "line": 6017,
+          "tests": 44,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "module": "org.eclipse.pde.ds.annotations.tests",
+          "line": 6249,
+          "tests": 139,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "module": "org.eclipse.pde.ua.tests",
+          "line": 6432,
+          "tests": 45,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "module": "org.eclipse.pde.junit.runtime.tests",
+          "line": 6961,
+          "tests": 54,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "module": "org.eclipse.pde.ui.templates.tests",
+          "line": 8392,
+          "tests": 50,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 24
+        },
+        {
+          "module": "org.eclipse.pde.genericeditor.extension.tests",
+          "line": 8507,
+          "tests": 34,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "module": "org.eclipse.e4.tools.compatibility.migration.tests",
+          "line": 9124,
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "module": "org.eclipse.e4.tools.emf.ui.tests",
+          "line": 9618,
+          "tests": 73,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "module": "org.eclipse.e4.tools.persistence.tests",
+          "line": 9685,
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "module": "org.eclipse.e4.tools.test",
+          "line": 9773,
+          "tests": 24,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "module": "org.eclipse.pde.build.tests",
+          "line": 10286,
+          "tests": 112,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 4
+        },
+        {
+          "module": "org.eclipse.pde.build.tests",
+          "line": 11455,
+          "tests": 52,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 1
+        }
+      ],
+      "xmlReports": 50,
+      "xmlPassedRecords": 3954,
+      "xmlSuiteAttributeTests": 3241,
+      "xmlCaseRecords": 4007,
+      "xmlSkippedRecords": 53,
+      "focused": {
+        "className": "org.eclipse.pde.core.tests.internal.schema.StorageSchemaDescriptorTest",
+        "passed": 3,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "methods": [
+          "cachedSchemaDoesNotReopenStorage",
+          "loadsSchemaFromOneClosedStorageStream",
+          "closesSingleStorageStreamAfterParseFailure"
+        ],
+        "xmlReport": "ui/org.eclipse.pde.ui.tests/target/surefire-reports/TEST-org.eclipse.pde.ui.tests.AllPDETests.xml"
+      },
+      "artifact": {
+        "id": 13360553124,
+        "name": "pde-full-verify-single-schema-storage-stream-0af6ed7d6dca449a50822431a649f5bcad98c452",
+        "file": "pde-full-verify-single-schema-storage-stream-41903416722.zip",
+        "bytes": 637793,
+        "sha256": "e3e139fdcbf3d066b96b680e52963d1f14b42858180cf64f40a128c5926d78d9",
+        "crcVerified": true,
+        "createdAt": "2026-11-04T20:34:14Z",
+        "expiresAt": "2027-02-02T20:06:37Z"
+      },
+      "buildLogSha256": "42015b5987737e33b748e585c0f1d97d11e0b6a2f4a0955051262c300e195a89",
+      "jobLogSha256": "76bbd3da0a803dcdf30e0cd0c2dc23c1696b05c6eff8b8e940e920d59a726256"
+    },
+    {
+      "branch": "format/schema-writer-tabs",
+      "slug": "schema-writer-tabs",
+      "sha": "bc14ff377dd3557571b4151576496381e0ef9e31",
+      "jobId": 126831565235,
+      "jobUrl": "https://github.com/carstenartur/eclipse.pde/actions/runs/41903416722/job/126831565235",
+      "conclusion": "success",
+      "reactorProjects": 69,
+      "successfulReactorProjects": 69,
+      "finishedAt": "2026-11-04T20:30:58Z",
+      "buildDuration": "23:49 min",
+      "mavenVersion": "3.9.16",
+      "javaVersion": "25.0.5",
+      "reportedTotals": {
+        "tests": 3995,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 42,
+        "passed": 3953
+      },
+      "moduleResultGroups": 14,
+      "moduleResults": [
+        {
+          "module": "org.eclipse.pde.ui.tests",
+          "line": 2964,
+          "tests": 738,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 13
+        },
+        {
+          "module": "org.eclipse.pde.api.tools.tests",
+          "line": 5874,
+          "tests": 2626,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "module": "org.eclipse.pde.ds.tests",
+          "line": 6016,
+          "tests": 44,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "module": "org.eclipse.pde.ds.annotations.tests",
+          "line": 6248,
+          "tests": 139,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "module": "org.eclipse.pde.ua.tests",
+          "line": 6431,
+          "tests": 45,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "module": "org.eclipse.pde.junit.runtime.tests",
+          "line": 6960,
+          "tests": 54,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "module": "org.eclipse.pde.ui.templates.tests",
+          "line": 8393,
+          "tests": 50,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 24
+        },
+        {
+          "module": "org.eclipse.pde.genericeditor.extension.tests",
+          "line": 8508,
+          "tests": 34,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "module": "org.eclipse.e4.tools.compatibility.migration.tests",
+          "line": 9125,
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "module": "org.eclipse.e4.tools.emf.ui.tests",
+          "line": 9619,
+          "tests": 73,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "module": "org.eclipse.e4.tools.persistence.tests",
+          "line": 9686,
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "module": "org.eclipse.e4.tools.test",
+          "line": 9774,
+          "tests": 24,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "module": "org.eclipse.pde.build.tests",
+          "line": 10287,
+          "tests": 112,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 4
+        },
+        {
+          "module": "org.eclipse.pde.build.tests",
+          "line": 11456,
+          "tests": 52,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 1
+        }
+      ],
+      "xmlReports": 50,
+      "xmlPassedRecords": 3953,
+      "xmlSuiteAttributeTests": 3240,
+      "xmlCaseRecords": 4006,
+      "xmlSkippedRecords": 53,
+      "focused": {
+        "className": "org.eclipse.pde.core.tests.internal.schema.SchemaWriterTest",
+        "passed": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "methods": [
+          "roundTripPreservesSchemaAndDocumentationForBothTargetVersions",
+          "usesTabsForStructuralIndentation"
+        ],
+        "xmlReport": "ui/org.eclipse.pde.ui.tests/target/surefire-reports/TEST-org.eclipse.pde.ui.tests.AllPDETests.xml"
+      },
+      "artifact": {
+        "id": 13362155081,
+        "name": "pde-full-verify-schema-writer-tabs-bc14ff377dd3557571b4151576496381e0ef9e31",
+        "file": "pde-full-verify-schema-writer-tabs-41903416722.zip",
+        "bytes": 637855,
+        "sha256": "1cb58c03d1e26d6d81b34b5aa83db48edd2066d34f88a2a5c450642cc9904bfb",
+        "crcVerified": true,
+        "createdAt": "2026-11-04T20:31:04Z",
+        "expiresAt": "2027-02-02T20:06:37Z"
+      },
+      "buildLogSha256": "70bdb75561f5d142aa5072b07de42bade2736294688178bb1721f955725265dd",
+      "jobLogSha256": "eba3fb9647d25afcd5fd0db081645ee0d00dfabf6bd8cce4d52ff9aff1a924e4"
+    },
+    {
+      "branch": "perf/bounded-schema-parser-reuse",
+      "slug": "bounded-schema-parser-reuse",
+      "sha": "eedb94d809215598b39d53f711733e0313e04fbe",
+      "jobId": 126831565097,
+      "jobUrl": "https://github.com/carstenartur/eclipse.pde/actions/runs/41903416722/job/126831565097",
+      "conclusion": "success",
+      "reactorProjects": 69,
+      "successfulReactorProjects": 69,
+      "finishedAt": "2026-11-04T20:32:40Z",
+      "buildDuration": "25:28 min",
+      "mavenVersion": "3.9.16",
+      "javaVersion": "25.0.5",
+      "reportedTotals": {
+        "tests": 4001,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 42,
+        "passed": 3959
+      },
+      "moduleResultGroups": 14,
+      "moduleResults": [
+        {
+          "module": "org.eclipse.pde.ui.tests",
+          "line": 2970,
+          "tests": 744,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 13
+        },
+        {
+          "module": "org.eclipse.pde.api.tools.tests",
+          "line": 5880,
+          "tests": 2626,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "module": "org.eclipse.pde.ds.tests",
+          "line": 6022,
+          "tests": 44,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "module": "org.eclipse.pde.ds.annotations.tests",
+          "line": 6254,
+          "tests": 139,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "module": "org.eclipse.pde.ua.tests",
+          "line": 6437,
+          "tests": 45,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "module": "org.eclipse.pde.junit.runtime.tests",
+          "line": 6966,
+          "tests": 54,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "module": "org.eclipse.pde.ui.templates.tests",
+          "line": 8397,
+          "tests": 50,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 24
+        },
+        {
+          "module": "org.eclipse.pde.genericeditor.extension.tests",
+          "line": 8512,
+          "tests": 34,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "module": "org.eclipse.e4.tools.compatibility.migration.tests",
+          "line": 9131,
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "module": "org.eclipse.e4.tools.emf.ui.tests",
+          "line": 9625,
+          "tests": 73,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "module": "org.eclipse.e4.tools.persistence.tests",
+          "line": 9692,
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "module": "org.eclipse.e4.tools.test",
+          "line": 9780,
+          "tests": 24,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "module": "org.eclipse.pde.build.tests",
+          "line": 10293,
+          "tests": 112,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 4
+        },
+        {
+          "module": "org.eclipse.pde.build.tests",
+          "line": 11462,
+          "tests": 52,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 1
+        }
+      ],
+      "xmlReports": 50,
+      "xmlPassedRecords": 3959,
+      "xmlSuiteAttributeTests": 3246,
+      "xmlCaseRecords": 4012,
+      "xmlSkippedRecords": 53,
+      "focused": {
+        "className": "org.eclipse.pde.core.tests.internal.SchemaReaderTest",
+        "passed": 8,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "methods": [
+          "rejectsDoctypeAfterReuseAndDiscardsFailedParser",
+          "releasesDocumentHandlersBeforeCachingParser",
+          "nestedReadDoesNotReuseActiveParser",
+          "concurrentReadsUseSeparateParsersAndKeepOnlyOneIdle",
+          "retiresParserStateAcrossRepeatedSchemaReads",
+          "reusesParserWithoutSharingDocumentsOrMode",
+          "doesNotCacheParsersThatCannotBeReset",
+          "discardsParserAfterInputFailure"
+        ],
+        "xmlReport": "ui/org.eclipse.pde.ui.tests/target/surefire-reports/TEST-org.eclipse.pde.ui.tests.AllPDETests.xml"
+      },
+      "artifact": {
+        "id": 13360178609,
+        "name": "pde-full-verify-bounded-schema-parser-reuse-eedb94d809215598b39d53f711733e0313e04fbe",
+        "file": "pde-full-verify-bounded-schema-parser-reuse-41903416722.zip",
+        "bytes": 638568,
+        "sha256": "cfb8bc987e725af4d2519da244db73fa5a5029c7d3b016d4d5b13f3e2f10dbfa",
+        "crcVerified": true,
+        "createdAt": "2026-11-04T20:32:47Z",
+        "expiresAt": "2027-02-02T20:06:37Z"
+      },
+      "buildLogSha256": "eee5b95af414b39c87ba0d2feb93688343fe39e619d9a8487fcd9bef2021ac3d",
+      "jobLogSha256": "99d586b4f5e99e4749cf7dfc2ef8429d538b46dbcb01856c6739a91ed84d30f3"
+    }
+  ]
+}
