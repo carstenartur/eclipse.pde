@@ -145,7 +145,7 @@ The following is an example of the extension point:
             class=&quot;org.eclipse.example.exampleTargetWizard&quot;
             icon=&quot;icons/obj16/exampleTargetLocation.svg&quot;
             id=&quot;org.eclipse.example.exampleTargetProvisioner&quot;
-            name=&quot;%targetLocationProvider.example.name&quot;
+            name=&quot;%targetLocationProvider.example.name&quot;&gt;
          &lt;description&gt;
             %targetLocationProvider.example.description
          &lt;/description&gt;
