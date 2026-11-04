@@ -1,0 +1,117 @@
+{
+  "formatVersion": 1,
+  "sourceRunStatus": "ok",
+  "files": [
+    {
+      "file": "run-manifest.json",
+      "sha256": "7844374341ffc4699b04ff2043c3e4e1a92f7af1550909808bec3d017e4b8e08",
+      "bytes": 73687
+    },
+    {
+      "file": "jdk-controls/process.log",
+      "sha256": "77cb59ce5da8a040e8057087e4ce4fcaa119e9ab3bf0a90c0db3de3cba4f601e",
+      "bytes": 161
+    },
+    {
+      "file": "jdk-controls/verification.json",
+      "sha256": "4626b5748815da88258bc7ffc5ce5d788e8f184b0055785d148d590994c883b0",
+      "bytes": 168
+    },
+    {
+      "file": "jdk-controls/trace.jsonl.gz",
+      "sha256": "c67fec8e8a09a7ea7ffe28065094cec6b9f9963312a0d19f9c65d6c0790d6dc0",
+      "bytes": 2922,
+      "uncompressedSha256": "d1b2360564ad4b96873077d983e7830672b75cde5723c55820019c688b74978b",
+      "uncompressedBytes": 28727
+    },
+    {
+      "file": "eclipse-controls/process.log",
+      "sha256": "8137e16786b42c7332beb11cc9356fc0c0929c3063cbaac3552fb38f219736d2",
+      "bytes": 236
+    },
+    {
+      "file": "eclipse-controls/verification.json",
+      "sha256": "078c9db3e89e3f48d4e2fead908f7424f45fc35e5771e497f950f462a1d6cdb3",
+      "bytes": 138
+    },
+    {
+      "file": "eclipse-controls/trace.jsonl.gz",
+      "sha256": "8168e2253952c6c418ec771bf94c768846586c14ae4a08bae88c19f8117bd888",
+      "bytes": 167249,
+      "uncompressedSha256": "5d1380f1b6c9b021c0ebb86b96a33b6fd91618d93f640d06aadea543debcb859",
+      "uncompressedBytes": 7078095
+    },
+    {
+      "file": "headless-cold-registry/process.log",
+      "sha256": "a6c6c03b74e58df33478863da3dd749cca2fdb6084afb9d2e33b3deb96927506",
+      "bytes": 700
+    },
+    {
+      "file": "headless-cold-registry/probe.json",
+      "sha256": "910a5bb44407a8f1419338f266bd4584f5c9ecac29ecb4914670cf52079ffe31",
+      "bytes": 364
+    },
+    {
+      "file": "headless-cold-registry/trace-summary.json",
+      "sha256": "338375fc3796ab740e5677b0c42809317ca051721e17042b2af9cfeb74897f3b",
+      "bytes": 8994
+    },
+    {
+      "file": "headless-cold-registry/trace.jsonl.gz",
+      "sha256": "47876e4a48f561e925bb709eb686be5756996bfe640ffaa8c1bffffa0ad4f56f",
+      "bytes": 243437,
+      "uncompressedSha256": "180343542cbed85feb3f2496ed56d5f33bf938466b05115ceb6c41602aa1f167",
+      "uncompressedBytes": 9874782
+    },
+    {
+      "file": "headless-prepared-restart/process.log",
+      "sha256": "a6c6c03b74e58df33478863da3dd749cca2fdb6084afb9d2e33b3deb96927506",
+      "bytes": 700
+    },
+    {
+      "file": "headless-prepared-restart/probe.json",
+      "sha256": "910a5bb44407a8f1419338f266bd4584f5c9ecac29ecb4914670cf52079ffe31",
+      "bytes": 364
+    },
+    {
+      "file": "headless-prepared-restart/trace-summary.json",
+      "sha256": "30779934957e284eec519520a7152dbd50366b0059818dca21281c484eb6fe8e",
+      "bytes": 7762
+    },
+    {
+      "file": "headless-prepared-restart/trace.jsonl.gz",
+      "sha256": "206df20c8ced862a0cb9f1e9646a0876bdfb022ae535231589c7e722cc35adfe",
+      "bytes": 79218,
+      "uncompressedSha256": "06ebeb90a153d3ce2548d13fbbaf10094114b9396399519fdfc629050673f3e7",
+      "uncompressedBytes": 3235528
+    },
+    {
+      "file": "headless-automatic-build/process.log",
+      "sha256": "0a8e04701ed3e3b706cb09d24f32f929e255b2f15f02acafa407ea37c50bde9e",
+      "bytes": 1276
+    },
+    {
+      "file": "headless-automatic-build/probe.json",
+      "sha256": "0d46f1c436ae8ac387301f2a834042ce33673d8a4a48c408687fde614277a3bc",
+      "bytes": 492
+    },
+    {
+      "file": "headless-automatic-build/trace-summary.json",
+      "sha256": "90c32ac799e25989837fc08d86bd46b1c21c615eb3c50b52d912b17224598c04",
+      "bytes": 9980
+    },
+    {
+      "file": "headless-automatic-build/trace.jsonl.gz",
+      "sha256": "740875da6e74c1b4f98909a902cf8255f74d1e9b40f164e459573240a656ab48",
+      "bytes": 150558,
+      "uncompressedSha256": "4670a1a475ca139131b4506fcd4898bb6575560c84a8a873ac06dcd5fbfa0deb",
+      "uncompressedBytes": 6399807
+    },
+    {
+      "file": "boundary-comparison.json",
+      "sha256": "8ef3a5f59756f3401690ec5cad968a16e76f3b7f1d054d1ec059f9f5ab5f4b84",
+      "bytes": 4024
+    }
+  ],
+  "meaning": "Raw traces are gzip-compressed without changing their JSONL bytes. Workspaces, installation copies and generated class files are omitted."
+}

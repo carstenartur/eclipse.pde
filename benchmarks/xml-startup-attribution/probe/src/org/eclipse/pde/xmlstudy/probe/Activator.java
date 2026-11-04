@@ -31,7 +31,7 @@ public final class Activator implements BundleActivator, StartupMonitor {
 
 	static final String BUNDLE_ID = "org.eclipse.pde.xmlstudy.probe";
 	private static final long QUIET_MS = 1_000;
-	private static final long TIMEOUT_MS = 60_000;
+	private static final long TIMEOUT_MS = Long.getLong("xml.study.timeoutMs", 60_000L);
 	private final QuietWindow quiet = new QuietWindow(TimeUnit.MILLISECONDS.toNanos(QUIET_MS));
 	private final AtomicBoolean applicationRunning = new AtomicBoolean();
 	private final AtomicBoolean ready = new AtomicBoolean();
@@ -46,6 +46,8 @@ public final class Activator implements BundleActivator, StartupMonitor {
 	private volatile int visibleWindows;
 	private volatile boolean workloadComplete;
 	private volatile Map<String, Object> validation = Map.of();
+	private volatile Map<String, Object> diagnostic = Map.of();
+	private boolean diagnostics;
 	private String scenario;
 	private String runId;
 	private long probeStartedNanos;
@@ -62,7 +64,8 @@ public final class Activator implements BundleActivator, StartupMonitor {
 		runId = System.getProperty("xml.study.runId", "");
 		output = System.getProperty("xml.study.output", "");
 		fdDiagnostics = Boolean.getBoolean("xml.study.fdDiagnostics");
-		workloadComplete = !"validation".equals(scenario);
+		diagnostics = Boolean.getBoolean("xml.study.diagnostics");
+		workloadComplete = !List.of("validation", "autobuild", "editors").contains(scenario);
 		jobs = new JobObservation(quiet);
 		Job.getJobManager().addJobChangeListener(jobs);
 		registration = context.registerService(StartupMonitor.class, this, null);
@@ -72,9 +75,12 @@ public final class Activator implements BundleActivator, StartupMonitor {
 			return thread;
 		});
 		emit("probe_started", Map.of("quietWindowMs", QUIET_MS, "observationTimeoutMs", TIMEOUT_MS));
-		if (!"startup".equals(scenario) && !"validation".equals(scenario)) {
+		if (!List.of("startup", "validation", "autobuild", "editors").contains(scenario)) {
 			finish("probe_error", "error", Map.of("error", "Unknown xml.study.scenario: " + scenario));
 			return;
+		}
+		if ("autobuild".equals(scenario)) {
+			DiagnosticScenarios.scheduleAutomaticBuild(this);
 		}
 		long remainingNanos = TimeUnit.MILLISECONDS.toNanos(TIMEOUT_MS) - (System.nanoTime() - probeStartedNanos);
 		observer.schedule(this::timeout, Math.max(0, remainingNanos), TimeUnit.NANOSECONDS);
@@ -140,16 +146,21 @@ public final class Activator implements BundleActivator, StartupMonitor {
 		}
 		if (ready.compareAndSet(false, true)) {
 			quiet.begin(System.nanoTime());
-			emit("workbench_ready", Map.of("measurement", "startup observation"));
+			emit("workbench_ready", diagnostics ? Map.of("measurement", "startup observation",
+					"workspace", DiagnosticScenarios.snapshot(current)) : Map.of("measurement", "startup observation"));
 			if ("validation".equals(scenario)) {
 				ValidationScenario.schedule(this);
+			} else if ("editors".equals(scenario)) {
+				try { DiagnosticScenarios.seedEditors(this, current); }
+				catch (Exception failure) { fail(failure); return; }
 			}
 		}
 		JobObservation.Snapshot snapshot = jobs.snapshot();
 		if (quiet.elapsed(System.nanoTime(), snapshot.blocking(), workloadComplete)) {
-			finish("validation_settled", "ok", Map.of("measurement", measurement(),
+			finish(diagnostics ? "background_settled" : "validation_settled", "ok", Map.of("measurement", measurement(),
 					"quietWindowMs", QUIET_MS, "quietWindowIncludedInTiming", true,
-					"validation", validation));
+					"validation", validation, "diagnostic", diagnostic,
+					"workspace", diagnostics ? DiagnosticScenarios.snapshot(current) : Map.of()));
 		}
 	}
 
@@ -164,6 +175,16 @@ public final class Activator implements BundleActivator, StartupMonitor {
 		workloadComplete = true;
 	}
 
+	void diagnosticPhase(String phase, Map<String, Object> details) {
+		emit(phase, details);
+	}
+
+	void diagnosticFinished(Map<String, Object> details) {
+		diagnostic = details;
+		quiet.activity(System.nanoTime());
+		workloadComplete = true;
+	}
+
 	void fail(Exception failure) {
 		finish("probe_error", "error", Map.of("error", failure.getClass().getName() + ": " + failure.getMessage()));
 	}
@@ -174,7 +195,12 @@ public final class Activator implements BundleActivator, StartupMonitor {
 	}
 
 	private String measurement() {
-		return "validation".equals(scenario) ? "post-start validation" : "startup observation";
+		return switch (scenario) {
+		case "validation" -> "post-start validation";
+		case "autobuild" -> "startup with a controlled automatic-build trigger";
+		case "editors" -> "editor seed after workbench readiness";
+		default -> "startup observation";
+		};
 	}
 
 	private Map<String, Object> event(String phase, Map<String, Object> extra) {

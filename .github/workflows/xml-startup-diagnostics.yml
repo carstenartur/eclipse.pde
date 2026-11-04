@@ -1,0 +1,78 @@
+name: XML startup diagnostics and PDE qualification
+
+on:
+  push:
+    branches: [ experiment/xml-startup-costs ]
+    paths:
+      - '.github/workflows/xml-startup-diagnostics.yml'
+      - 'benchmarks/xml-startup-attribution/trace-agent/**'
+      - 'benchmarks/xml-startup-attribution/probe/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: xml-startup-qualification-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  startup-diagnostics:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-java@b843ebf9b913146b38da2eaa7aeddf76074ae1ad # v6.1.0
+        with:
+          distribution: temurin
+          java-version: '25.0.5+8'
+      - name: Install native display dependencies
+        run: sudo apt-get update && sudo apt-get install -y xvfb xauth libxtst6 libgtk-3-0t64
+      - name: Restore the pinned public Eclipse reference product
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p "$RUNNER_TEMP/xml-reference/package" "$RUNNER_TEMP/xml-reference/eclipse"
+          gh api repos/carstenartur/sandbox/actions/artifacts/13213437131/zip > "$RUNNER_TEMP/xml-reference/product.zip"
+          cd "$RUNNER_TEMP/xml-reference"
+          printf '%s  %s\n' '9135b197c798bd7f8ca6ebccba4d5870ea00267ea01d3c14839ad912174a8b2b' 'product.zip' | sha256sum -c -
+          unzip -q product.zip -d package
+          cd package
+          sha256sum -c SHA256SUMS
+          tar --no-same-owner -xzf product.tar.gz -C ../eclipse
+      - name: Restore pinned ASM dependencies
+        run: |
+          mkdir -p "$RUNNER_TEMP/xml-trace-asm"
+          cd "$RUNNER_TEMP/xml-trace-asm"
+          for artifact in asm asm-commons asm-tree; do
+            curl --fail --location --retry 2 --connect-timeout 15 --max-time 120 "https://repo.maven.apache.org/maven2/org/ow2/asm/$artifact/9.10.1/$artifact-9.10.1.jar" --output "$artifact-9.10.1.jar"
+          done
+          printf '%s\n' \
+            'ed825d10ab1399c8c0cb669e688cf0c8c82629b4c8399b58352b68e92ca10fcb  asm-9.10.1.jar' \
+            '6d0abefb7cbf972ea16edb37ec14835372505063a45f976ab7ea889ed9497895  asm-commons-9.10.1.jar' \
+            '3dfb0d5b6a106cd40b5b250e39935fbf2f927f4477546a5369a3ac609cf0506b  asm-tree-9.10.1.jar' | sha256sum -c -
+      - name: Positive controls and real Eclipse startup scenarios
+        run: |
+          export XML_TRACE_JAVA_HOME="$JAVA_HOME"
+          export XML_TRACE_ASM_DIR="$RUNNER_TEMP/xml-trace-asm"
+          xvfb-run -a -s '-screen 0 1280x1024x24 -nolisten tcp' \
+            bash benchmarks/xml-startup-attribution/trace-agent/run-eclipse-scenarios.sh \
+            "$RUNNER_TEMP/xml-reference/eclipse" "$RUNNER_TEMP/xml-startup-results" all
+      - name: Package trace evidence without installation copies
+        if: always()
+        run: |
+          if test -f "$RUNNER_TEMP/xml-startup-results/run-manifest.json"; then
+            node benchmarks/xml-startup-attribution/trace-agent/package-evidence.mjs \
+              "$RUNNER_TEMP/xml-startup-results" "$RUNNER_TEMP/xml-startup-evidence"
+          fi
+      - name: Preserve raw diagnostics even on failure
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: xml-startup-diagnostics-${{ github.sha }}
+          path: |
+            ${{ runner.temp }}/xml-startup-evidence/**
+            benchmarks/xml-startup-attribution/trace-agent/build/*.jar
+          if-no-files-found: warn
+

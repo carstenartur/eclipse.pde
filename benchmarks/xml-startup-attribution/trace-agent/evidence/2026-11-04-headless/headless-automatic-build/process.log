@@ -1,0 +1,8 @@
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+XML_HEADLESS_BUILD_PHASE {"phase":"automatic_build_trigger_started","details":{"trigger":"enable auto build and touch provider schema plus consumer plugin.xml"}}
+XML_HEADLESS_BUILD_PHASE {"phase":"automatic_build_fixture_changed","details":{}}
+XML_HEADLESS_BUILD_PHASE {"phase":"automatic_build_finished","details":{"automaticBuildEvents":1,"autoBuildEnabled":true,"trigger":"resource touches; no explicit workspace.build call","errorMarkers":[]}}
+XML_HEADLESS_RESULT {"status":"ok","measurement":"headless diagnostic; no workbench created","autoBuild":true,"automaticBuild":{"automaticBuildEvents":1,"autoBuildEnabled":true,"trigger":"resource touches; no explicit workspace.build call","errorMarkers":[]},"fixtureProjects":["org.eclipse.pde.xmlstudy.control","org.eclipse.pde.xmlstudy.consumer"],"fixturePluginSchemaVersion":"3.4","pdeModelMode":"abbreviated header load","fixtureSchemaElements":2,"settled":true,"quietWindowMs":1000,"javaVersion":"25.0.5"}

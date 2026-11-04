@@ -6,4 +6,9 @@
          <run class="org.eclipse.pde.xmlstudy.probe.PrepApplication"/>
       </application>
    </extension>
+   <extension id="headlessDiagnostic" point="org.eclipse.core.runtime.applications">
+      <application cardinality="singleton-global" thread="main" visible="false">
+         <run class="org.eclipse.pde.xmlstudy.probe.HeadlessDiagnosticApplication"/>
+      </application>
+   </extension>
 </plugin>

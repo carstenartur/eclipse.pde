@@ -1,0 +1,167 @@
+[
+  {
+    "id": "headless-cold-registry",
+    "events": 7877,
+    "registryLoadedFromCache": false,
+    "beforeApplication": {
+      "registryParses": 170,
+      "saxParses": 291,
+      "domParses": 0,
+      "zipEntryOpenAttempts": 270,
+      "xmlZipUncompressedBytesDelivered": 2219945,
+      "jobEvents": 8
+    },
+    "phases": [
+      {
+        "phase": "headless_application_entered",
+        "jvmUptimeMs": 4241
+      },
+      {
+        "phase": "explicit_pde_model_load_started",
+        "jvmUptimeMs": 5584
+      },
+      {
+        "phase": "explicit_pde_schema_load_started",
+        "jvmUptimeMs": 5598
+      },
+      {
+        "phase": "explicit_pde_loads_finished",
+        "jvmUptimeMs": 5617
+      },
+      {
+        "phase": "headless_workspace_save_started",
+        "jvmUptimeMs": 11067
+      },
+      {
+        "phase": "headless_background_settled",
+        "jvmUptimeMs": 11088
+      }
+    ],
+    "summary": {
+      "kind": "agent_summary",
+      "elapsedNs": 11862166671,
+      "jvmUptimeMs": 11938,
+      "phase": "headless_background_settled",
+      "thread": "XML trace shutdown",
+      "threadId": 24,
+      "eventsBeforeSummary": 7876,
+      "outputFailed": false,
+      "droppedEvents": 0,
+      "inFlightSpans": 0
+    }
+  },
+  {
+    "id": "headless-prepared-restart",
+    "events": 2622,
+    "registryLoadedFromCache": true,
+    "beforeApplication": {
+      "registryParses": 0,
+      "saxParses": 119,
+      "domParses": 0,
+      "zipEntryOpenAttempts": 119,
+      "xmlZipUncompressedBytesDelivered": 63447,
+      "jobEvents": 0
+    },
+    "phases": [
+      {
+        "phase": "headless_application_entered",
+        "jvmUptimeMs": 1880
+      },
+      {
+        "phase": "explicit_pde_model_load_started",
+        "jvmUptimeMs": 2373
+      },
+      {
+        "phase": "explicit_pde_schema_load_started",
+        "jvmUptimeMs": 2665
+      },
+      {
+        "phase": "explicit_pde_loads_finished",
+        "jvmUptimeMs": 2684
+      },
+      {
+        "phase": "headless_workspace_save_started",
+        "jvmUptimeMs": 3691
+      },
+      {
+        "phase": "headless_background_settled",
+        "jvmUptimeMs": 3762
+      }
+    ],
+    "summary": {
+      "kind": "agent_summary",
+      "elapsedNs": 4405777884,
+      "jvmUptimeMs": 4482,
+      "phase": "headless_background_settled",
+      "thread": "XML trace shutdown",
+      "threadId": 24,
+      "eventsBeforeSummary": 2621,
+      "inFlightSpans": 0,
+      "droppedEvents": 0,
+      "outputFailed": false
+    }
+  },
+  {
+    "id": "headless-automatic-build",
+    "events": 4952,
+    "registryLoadedFromCache": true,
+    "beforeApplication": {
+      "registryParses": 0,
+      "saxParses": 119,
+      "domParses": 0,
+      "zipEntryOpenAttempts": 119,
+      "xmlZipUncompressedBytesDelivered": 63447,
+      "jobEvents": 0
+    },
+    "phases": [
+      {
+        "phase": "headless_application_entered",
+        "jvmUptimeMs": 2047
+      },
+      {
+        "phase": "explicit_pde_model_load_started",
+        "jvmUptimeMs": 2593
+      },
+      {
+        "phase": "explicit_pde_schema_load_started",
+        "jvmUptimeMs": 2881
+      },
+      {
+        "phase": "explicit_pde_loads_finished",
+        "jvmUptimeMs": 2897
+      },
+      {
+        "phase": "automatic_build_trigger_started",
+        "jvmUptimeMs": 2900
+      },
+      {
+        "phase": "automatic_build_fixture_changed",
+        "jvmUptimeMs": 2973
+      },
+      {
+        "phase": "automatic_build_finished",
+        "jvmUptimeMs": 5010
+      },
+      {
+        "phase": "headless_workspace_save_started",
+        "jvmUptimeMs": 6012
+      },
+      {
+        "phase": "headless_background_settled",
+        "jvmUptimeMs": 6081
+      }
+    ],
+    "summary": {
+      "kind": "agent_summary",
+      "elapsedNs": 6809816362,
+      "jvmUptimeMs": 6872,
+      "phase": "headless_background_settled",
+      "thread": "XML trace shutdown",
+      "threadId": 24,
+      "droppedEvents": 0,
+      "outputFailed": false,
+      "eventsBeforeSummary": 4951,
+      "inFlightSpans": 0
+    }
+  }
+]
