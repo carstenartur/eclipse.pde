@@ -1,5 +1,5 @@
 /*******************************************************************************
- *  Copyright (c) 2000, 2008 IBM Corporation and others.
+ *  Copyright (c) 2000, 2026 IBM Corporation and others.
  *
  *  This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License 2.0
@@ -44,7 +44,7 @@ public class StorageSchemaDescriptor implements ISchemaDescriptor {
 	protected void loadSchema(boolean abbreviated) {
 		fSchema = new Schema(this, null, false);
 		try (InputStream stream = fStorage.getContents()) {
-			fSchema.load(fStorage.getContents());
+			fSchema.load(stream);
 		} catch (CoreException | IOException e) {
 			PDECore.logException(e);
 		}
