@@ -1,5 +1,5 @@
 /*******************************************************************************
- *  Copyright (c) 2000, 2016 IBM Corporation and others.
+ *  Copyright (c) 2000, 2026 IBM Corporation and others.
  *
  *  This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License 2.0
@@ -90,7 +90,7 @@ public class Schema extends PlatformObject implements ISchema {
 
 	private boolean fNotificationEnabled;
 
-	public final static String INDENT = "   "; //$NON-NLS-1$
+	public final static String INDENT = "\t"; //$NON-NLS-1$
 
 	private boolean fDisposed;
 
